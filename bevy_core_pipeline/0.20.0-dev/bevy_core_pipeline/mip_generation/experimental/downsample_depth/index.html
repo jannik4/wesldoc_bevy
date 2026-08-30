@@ -1,0 +1,527 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+        downsample_depth - bevy_core_pipeline
+        
+    </title>
+
+    <link rel="stylesheet" href="../../../../../../-/static/css/inter/inter.css">
+    <link rel="stylesheet" href="../../../../../../-/static/css/source_code_pro/source_code_pro.css">
+
+    <link rel="stylesheet" href="../../../../../../-/static/css/themes.css">
+    <link rel="stylesheet" href="../../../../../../-/static/css/styles.css">
+    <link rel="stylesheet" href="../../../../../../-/static/css/icons.css">
+    <script src="../../../../../../-/static/js/settings.js"></script>
+
+    
+</head>
+
+<body>
+    <div class="nav">
+        <a class="icon icon-home" style="margin-right: 12px;" href="../../../../../../index.html"></a>
+        <span style="margin-right: 12px;">bevy_core_pipeline</span>
+        <select class="select" id="selectVersion" onchange="changeVersion()" autocomplete="off">
+            <option
+                value="../../../../../0.20.0-dev/bevy_core_pipeline/index.html">
+                0.20.0-dev
+            </option>
+        </select>
+        <button id="show-settings" class="icon icon-settings" aria-label="Show settings"></button>
+<div id="settings-menu">
+    <div class="settings-title">Theme</div>
+    <label>
+        <input type="radio" name="theme" id="theme-auto" value="auto"> Auto
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-dark" value="dark"> Dark
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-light" value="light"> Light
+    </label>
+</div>
+    </div>
+    <div class="content">
+        <input type="text" id="search" placeholder="Search" oninput="searchDebounced()" autocomplete="off">
+
+        <div id="innerContent">
+            
+            <h2>
+                <a class="path" href="../../../index.html">bevy_core_pipeline</a><span>::</span><wbr><a class="path" href="../../index.html">mip_generation</a><span>::</span><wbr><a class="path" href="../index.html">experimental</a><span>::</span><wbr><a class="module" href="index.html">downsample_depth</a>
+            </h2>
+            
+
+            
+
+<a class="module" href="../../../../src/bevy_core_pipeline/mip_generation/experimental/downsample_depth.html">Source</a>
+
+
+
+
+
+
+
+
+
+
+
+<h3 class="item-list-title">Global Variables</h3>
+<ul class="item-list">
+    
+    <li>
+        <div>
+            <a class="var" href="var.constants.html">constants</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.intermediate_memory.html">intermediate_memory</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.mip_0.html">mip_0</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.mip_1.html">mip_1</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.mip_10.html">mip_10</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.mip_11.html">mip_11</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.mip_12.html">mip_12</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.mip_2.html">mip_2</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.mip_3.html">mip_3</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.mip_4.html">mip_4</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.mip_5.html">mip_5</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.mip_6.html">mip_6</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.mip_7.html">mip_7</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.mip_8.html">mip_8</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.mip_9.html">mip_9</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.samplr.html">samplr</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+</ul>
+
+
+
+<h3 class="item-list-title">Structs</h3>
+<ul class="item-list">
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.Constants.html">Constants</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+</ul>
+
+
+
+<h3 class="item-list-title">Functions</h3>
+<ul class="item-list">
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.downsample_depth_first.html">downsample_depth_first</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.downsample_depth_second.html">downsample_depth_second</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.downsample_mip_10.html">downsample_mip_10</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.downsample_mip_11.html">downsample_mip_11</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.downsample_mip_2.html">downsample_mip_2</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.downsample_mip_3.html">downsample_mip_3</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.downsample_mip_4.html">downsample_mip_4</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.downsample_mip_5.html">downsample_mip_5</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.downsample_mip_8.html">downsample_mip_8</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.downsample_mip_9.html">downsample_mip_9</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.downsample_mips_0_and_1.html">downsample_mips_0_and_1</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.downsample_mips_2_to_5.html">downsample_mips_2_to_5</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.downsample_mips_6_and_7.html">downsample_mips_6_and_7</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.downsample_mips_8_to_11.html">downsample_mips_8_to_11</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.load_mip_0.html">load_mip_0</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.load_mip_0_meshlet.html">load_mip_0_meshlet</a>
+            
+            <span class="conditional-inline">MESHLET</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.load_mip_0_single_sample.html">load_mip_0_single_sample</a>
+            
+            <span class="conditional-inline">MULTISAMPLE</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.next_power_of_two.html">next_power_of_two</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.reduce_4.html">reduce_4</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.reduce_load_mip_0.html">reduce_load_mip_0</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.reduce_load_mip_6.html">reduce_load_mip_6</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.remap_for_wave_reduction.html">remap_for_wave_reduction</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+</ul>
+
+
+
+
+
+<h3 class="item-list-title">Translate-time features</h3>
+<ul class="item-list">
+    
+    <li class="feature">MESHLET</li>
+    
+    <li class="feature">MESHLET_VISIBILITY_BUFFER_RASTER_PASS_OUTPUT</li>
+    
+    <li class="feature">MULTISAMPLE</li>
+    
+</ul>
+
+
+
+        </div>
+    </div>
+
+    <script src="../../../../../common.js"></script>
+    <script src="../../../../items.js"></script>
+
+    <script>
+        window.DOCS_THIS_PACKAGE = {
+            version: "0.20.0-dev",
+            name: "bevy_core_pipeline",
+            root: "../../../../",
+        };
+    </script>
+    <script src="../../../../../../-/static/js/selectVersion.js"></script>
+    <script src="../../../../../../-/static/js/search.js"></script>
+    <script src="../../../../../../-/static/js/lineNumbers.js"></script>
+</body>
+
+</html>

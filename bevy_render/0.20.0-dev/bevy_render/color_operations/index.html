@@ -1,0 +1,427 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+        color_operations - bevy_render
+        
+    </title>
+
+    <link rel="stylesheet" href="../../../../-/static/css/inter/inter.css">
+    <link rel="stylesheet" href="../../../../-/static/css/source_code_pro/source_code_pro.css">
+
+    <link rel="stylesheet" href="../../../../-/static/css/themes.css">
+    <link rel="stylesheet" href="../../../../-/static/css/styles.css">
+    <link rel="stylesheet" href="../../../../-/static/css/icons.css">
+    <script src="../../../../-/static/js/settings.js"></script>
+
+    
+</head>
+
+<body>
+    <div class="nav">
+        <a class="icon icon-home" style="margin-right: 12px;" href="../../../../index.html"></a>
+        <span style="margin-right: 12px;">bevy_render</span>
+        <select class="select" id="selectVersion" onchange="changeVersion()" autocomplete="off">
+            <option
+                value="../../../0.20.0-dev/bevy_render/index.html">
+                0.20.0-dev
+            </option>
+        </select>
+        <button id="show-settings" class="icon icon-settings" aria-label="Show settings"></button>
+<div id="settings-menu">
+    <div class="settings-title">Theme</div>
+    <label>
+        <input type="radio" name="theme" id="theme-auto" value="auto"> Auto
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-dark" value="dark"> Dark
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-light" value="light"> Light
+    </label>
+</div>
+    </div>
+    <div class="content">
+        <input type="text" id="search" placeholder="Search" oninput="searchDebounced()" autocomplete="off">
+
+        <div id="innerContent">
+            
+            <h2>
+                <a class="path" href="../index.html">bevy_render</a><span>::</span><wbr><a class="module" href="index.html">color_operations</a>
+            </h2>
+            
+
+            
+
+<a class="module" href="../../src/bevy_render/color_operations.html">Source</a>
+
+
+
+
+
+
+
+<h3 class="item-list-title">Constants</h3>
+<ul class="item-list">
+    
+    <li>
+        <div>
+            <a class="const" href="const.HUE_GUARD.html">HUE_GUARD</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+</ul>
+
+
+
+
+
+
+
+
+
+<h3 class="item-list-title">Functions</h3>
+<ul class="item-list">
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.gamma.html">gamma</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.hsl_to_linear_rgb.html">hsl_to_linear_rgb</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.hsv_to_linear_rgb.html">hsv_to_linear_rgb</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.hsv_to_rgb.html">hsv_to_rgb</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.inverse_gamma.html">inverse_gamma</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.linear_rgb_to_oklab.html">linear_rgb_to_oklab</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.linear_rgb_to_srgb.html">linear_rgb_to_srgb</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.linear_to_srgb.html">linear_to_srgb</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.mix_hsl.html">mix_hsl</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.mix_hsl_long.html">mix_hsl_long</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.mix_hsv.html">mix_hsv</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.mix_hsv_long.html">mix_hsv_long</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.mix_okhsl.html">mix_okhsl</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.mix_okhsl_long.html">mix_okhsl_long</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.mix_oklch.html">mix_oklch</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.mix_oklch_long.html">mix_oklch_long</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.okhsl_compute_max_saturation.html">okhsl_compute_max_saturation</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.okhsl_find_cusp.html">okhsl_find_cusp</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.okhsl_find_gamut_intersection.html">okhsl_find_gamut_intersection</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.okhsl_get_Cs.html">okhsl_get_Cs</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.okhsl_get_ST_mid.html">okhsl_get_ST_mid</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.okhsl_to_ST.html">okhsl_to_ST</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.okhsl_to_linear_rgb.html">okhsl_to_linear_rgb</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.okhsl_to_oklab.html">okhsl_to_oklab</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.okhsl_toe_inv.html">okhsl_toe_inv</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.oklab_to_linear_rgb.html">oklab_to_linear_rgb</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.oklch_to_linear_rgb.html">oklch_to_linear_rgb</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.rgb_to_hsv.html">rgb_to_hsv</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.srgb_to_linear.html">srgb_to_linear</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.srgb_to_linear_rgb.html">srgb_to_linear_rgb</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+</ul>
+
+
+
+
+
+
+
+        </div>
+    </div>
+
+    <script src="../../../common.js"></script>
+    <script src="../../items.js"></script>
+
+    <script>
+        window.DOCS_THIS_PACKAGE = {
+            version: "0.20.0-dev",
+            name: "bevy_render",
+            root: "../../",
+        };
+    </script>
+    <script src="../../../../-/static/js/selectVersion.js"></script>
+    <script src="../../../../-/static/js/search.js"></script>
+    <script src="../../../../-/static/js/lineNumbers.js"></script>
+</body>
+
+</html>

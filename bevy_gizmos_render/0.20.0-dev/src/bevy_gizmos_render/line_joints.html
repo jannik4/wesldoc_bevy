@@ -1,0 +1,1590 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+        line_joints - bevy_gizmos_render
+        
+    </title>
+
+    <link rel="stylesheet" href="../../../../-/static/css/inter/inter.css">
+    <link rel="stylesheet" href="../../../../-/static/css/source_code_pro/source_code_pro.css">
+
+    <link rel="stylesheet" href="../../../../-/static/css/themes.css">
+    <link rel="stylesheet" href="../../../../-/static/css/styles.css">
+    <link rel="stylesheet" href="../../../../-/static/css/icons.css">
+    <script src="../../../../-/static/js/settings.js"></script>
+
+    
+</head>
+
+<body>
+    <div class="nav">
+        <a class="icon icon-home" style="margin-right: 12px;" href="../../../../index.html"></a>
+        <span style="margin-right: 12px;">bevy_gizmos_render</span>
+        <select class="select" id="selectVersion" onchange="changeVersion()" autocomplete="off">
+            <option
+                value="../../../0.20.0-dev/bevy_gizmos_render/index.html">
+                0.20.0-dev
+            </option>
+        </select>
+        <button id="show-settings" class="icon icon-settings" aria-label="Show settings"></button>
+<div id="settings-menu">
+    <div class="settings-title">Theme</div>
+    <label>
+        <input type="radio" name="theme" id="theme-auto" value="auto"> Auto
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-dark" value="dark"> Dark
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-light" value="light"> Light
+    </label>
+</div>
+    </div>
+    <div class="content">
+        <input type="text" id="search" placeholder="Search" oninput="searchDebounced()" autocomplete="off">
+
+        <div id="innerContent">
+            
+
+            
+
+<pre class="code-block">
+<code><a
+            href="#1"
+            id="1"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >1</a>import bevy_render::{view::View, maths::affine3_to_square};
+<a
+            href="#2"
+            id="2"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >2</a>
+<a
+            href="#3"
+            id="3"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >3</a>@group(0) @binding(0) var&#60;uniform&#62; view: View;
+<a
+            href="#4"
+            id="4"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >4</a>
+<a
+            href="#5"
+            id="5"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >5</a>
+<a
+            href="#6"
+            id="6"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >6</a>struct LineGizmoUniform {
+<a
+            href="#7"
+            id="7"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >7</a>    world_from_local: mat3x4&#60;f32&#62;,
+<a
+            href="#8"
+            id="8"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >8</a>    line_width: f32,
+<a
+            href="#9"
+            id="9"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >9</a>    depth_bias: f32,
+<a
+            href="#10"
+            id="10"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >10</a>    resolution: u32,
+<a
+            href="#11"
+            id="11"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >11</a>    @if(SIXTEEN_BYTE_ALIGNMENT)
+<a
+            href="#12"
+            id="12"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >12</a>    // WebGL2 structs must be 16 byte aligned.
+<a
+            href="#13"
+            id="13"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >13</a>    _padding: f32,
+<a
+            href="#14"
+            id="14"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >14</a>}
+<a
+            href="#15"
+            id="15"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >15</a>
+<a
+            href="#16"
+            id="16"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >16</a>@group(1) @binding(0) var&#60;uniform&#62; joints_gizmo: LineGizmoUniform;
+<a
+            href="#17"
+            id="17"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >17</a>
+<a
+            href="#18"
+            id="18"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >18</a>struct VertexInput {
+<a
+            href="#19"
+            id="19"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >19</a>    @location(0) position_a: vec3&#60;f32&#62;,
+<a
+            href="#20"
+            id="20"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >20</a>    @location(1) position_b: vec3&#60;f32&#62;,
+<a
+            href="#21"
+            id="21"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >21</a>    @location(2) position_c: vec3&#60;f32&#62;,
+<a
+            href="#22"
+            id="22"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >22</a>    @location(3) color: vec4&#60;f32&#62;,
+<a
+            href="#23"
+            id="23"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >23</a>    @builtin(vertex_index) index: u32,
+<a
+            href="#24"
+            id="24"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >24</a>};
+<a
+            href="#25"
+            id="25"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >25</a>
+<a
+            href="#26"
+            id="26"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >26</a>struct VertexOutput {
+<a
+            href="#27"
+            id="27"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >27</a>    @builtin(position) clip_position: vec4&#60;f32&#62;,
+<a
+            href="#28"
+            id="28"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >28</a>    @location(0) color: vec4&#60;f32&#62;,
+<a
+            href="#29"
+            id="29"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >29</a>};
+<a
+            href="#30"
+            id="30"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >30</a>
+<a
+            href="#31"
+            id="31"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >31</a>const EPSILON: f32 = 4.88e-04;
+<a
+            href="#32"
+            id="32"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >32</a>
+<a
+            href="#33"
+            id="33"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >33</a>@vertex
+<a
+            href="#34"
+            id="34"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >34</a>fn vertex_bevel(vertex: VertexInput) -&#62; VertexOutput {
+<a
+            href="#35"
+            id="35"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >35</a>    var positions = array&#60;vec2&#60;f32&#62;, 3&#62;(
+<a
+            href="#36"
+            id="36"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >36</a>        vec2(0, 0),
+<a
+            href="#37"
+            id="37"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >37</a>        vec2(0, 0.5),
+<a
+            href="#38"
+            id="38"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >38</a>        vec2(0.5, 0),
+<a
+            href="#39"
+            id="39"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >39</a>    );
+<a
+            href="#40"
+            id="40"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >40</a>    var position = positions[vertex.index];
+<a
+            href="#41"
+            id="41"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >41</a>
+<a
+            href="#42"
+            id="42"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >42</a>    let world_from_local = affine3_to_square(joints_gizmo.world_from_local);
+<a
+            href="#43"
+            id="43"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >43</a>
+<a
+            href="#44"
+            id="44"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >44</a>    var clip_a = view.clip_from_world * world_from_local * vec4(vertex.position_a, 1.);
+<a
+            href="#45"
+            id="45"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >45</a>    var clip_b = view.clip_from_world * world_from_local * vec4(vertex.position_b, 1.);
+<a
+            href="#46"
+            id="46"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >46</a>    var clip_c = view.clip_from_world * world_from_local * vec4(vertex.position_c, 1.);
+<a
+            href="#47"
+            id="47"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >47</a>
+<a
+            href="#48"
+            id="48"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >48</a>    // Manual near plane clipping to avoid errors when doing the perspective divide inside this shader.
+<a
+            href="#49"
+            id="49"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >49</a>    clip_a = clip_near_plane(clip_a, clip_c);
+<a
+            href="#50"
+            id="50"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >50</a>    clip_b = clip_near_plane(clip_b, clip_a);
+<a
+            href="#51"
+            id="51"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >51</a>    clip_c = clip_near_plane(clip_c, clip_b);
+<a
+            href="#52"
+            id="52"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >52</a>    clip_a = clip_near_plane(clip_a, clip_c);
+<a
+            href="#53"
+            id="53"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >53</a>
+<a
+            href="#54"
+            id="54"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >54</a>    let resolution = view.viewport.zw;
+<a
+            href="#55"
+            id="55"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >55</a>    let screen_a = resolution * (0.5 * clip_a.xy / clip_a.w + 0.5);
+<a
+            href="#56"
+            id="56"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >56</a>    let screen_b = resolution * (0.5 * clip_b.xy / clip_b.w + 0.5);
+<a
+            href="#57"
+            id="57"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >57</a>    let screen_c = resolution * (0.5 * clip_c.xy / clip_c.w + 0.5);
+<a
+            href="#58"
+            id="58"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >58</a>
+<a
+            href="#59"
+            id="59"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >59</a>    var color = vertex.color;
+<a
+            href="#60"
+            id="60"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >60</a>    var line_width = joints_gizmo.line_width;
+<a
+            href="#61"
+            id="61"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >61</a>
+<a
+            href="#62"
+            id="62"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >62</a>    @if(PERSPECTIVE)
+<a
+            href="#63"
+            id="63"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >63</a>    line_width /= clip_b.w;
+<a
+            href="#64"
+            id="64"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >64</a>
+<a
+            href="#65"
+            id="65"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >65</a>    // Line thinness fade from https://acegikmo.com/shapes/docs/#anti-aliasing
+<a
+            href="#66"
+            id="66"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >66</a>    if line_width &#62; 0.0 &#38;&#38; line_width &#60; 1. {
+<a
+            href="#67"
+            id="67"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >67</a>        color.a *= line_width;
+<a
+            href="#68"
+            id="68"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >68</a>        line_width = 1.;
+<a
+            href="#69"
+            id="69"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >69</a>    }
+<a
+            href="#70"
+            id="70"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >70</a>
+<a
+            href="#71"
+            id="71"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >71</a>    let ab = normalize(screen_b - screen_a);
+<a
+            href="#72"
+            id="72"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >72</a>    let cb = normalize(screen_b - screen_c);
+<a
+            href="#73"
+            id="73"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >73</a>    let ab_norm = vec2(-ab.y, ab.x);
+<a
+            href="#74"
+            id="74"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >74</a>    let cb_norm = vec2(cb.y, -cb.x);
+<a
+            href="#75"
+            id="75"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >75</a>    let tangent = normalize(ab - cb);
+<a
+            href="#76"
+            id="76"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >76</a>    let normal = vec2(-tangent.y, tangent.x);
+<a
+            href="#77"
+            id="77"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >77</a>    let sigma = sign(dot(ab + cb, normal));
+<a
+            href="#78"
+            id="78"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >78</a>
+<a
+            href="#79"
+            id="79"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >79</a>    var p0 = line_width * sigma * ab_norm;
+<a
+            href="#80"
+            id="80"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >80</a>    var p1 = line_width * sigma * cb_norm;
+<a
+            href="#81"
+            id="81"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >81</a>
+<a
+            href="#82"
+            id="82"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >82</a>    let screen = screen_b + position.x * p0 + position.y * p1;
+<a
+            href="#83"
+            id="83"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >83</a>
+<a
+            href="#84"
+            id="84"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >84</a>    let depth = depth(clip_b);
+<a
+            href="#85"
+            id="85"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >85</a>
+<a
+            href="#86"
+            id="86"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >86</a>    var clip_position = vec4(clip_b.w * ((2. * screen) / resolution - 1.), depth, clip_b.w);
+<a
+            href="#87"
+            id="87"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >87</a>    return VertexOutput(clip_position, color);
+<a
+            href="#88"
+            id="88"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >88</a>}
+<a
+            href="#89"
+            id="89"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >89</a>
+<a
+            href="#90"
+            id="90"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >90</a>@vertex
+<a
+            href="#91"
+            id="91"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >91</a>fn vertex_miter(vertex: VertexInput) -&#62; VertexOutput {
+<a
+            href="#92"
+            id="92"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >92</a>    var positions = array&#60;vec3&#60;f32&#62;, 6&#62;(
+<a
+            href="#93"
+            id="93"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >93</a>        vec3(0, 0, 0),
+<a
+            href="#94"
+            id="94"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >94</a>        vec3(0.5, 0, 0),
+<a
+            href="#95"
+            id="95"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >95</a>        vec3(0, 0.5, 0),
+<a
+            href="#96"
+            id="96"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >96</a>        vec3(0, 0, 0),
+<a
+            href="#97"
+            id="97"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >97</a>        vec3(0, 0.5, 0),
+<a
+            href="#98"
+            id="98"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >98</a>        vec3(0, 0, 0.5),
+<a
+            href="#99"
+            id="99"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >99</a>    );
+<a
+            href="#100"
+            id="100"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >100</a>    var position = positions[vertex.index];
+<a
+            href="#101"
+            id="101"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >101</a>
+<a
+            href="#102"
+            id="102"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >102</a>    let world_from_local = affine3_to_square(joints_gizmo.world_from_local);
+<a
+            href="#103"
+            id="103"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >103</a>
+<a
+            href="#104"
+            id="104"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >104</a>    var clip_a = view.clip_from_world * world_from_local * vec4(vertex.position_a, 1.);
+<a
+            href="#105"
+            id="105"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >105</a>    var clip_b = view.clip_from_world * world_from_local * vec4(vertex.position_b, 1.);
+<a
+            href="#106"
+            id="106"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >106</a>    var clip_c = view.clip_from_world * world_from_local * vec4(vertex.position_c, 1.);
+<a
+            href="#107"
+            id="107"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >107</a>
+<a
+            href="#108"
+            id="108"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >108</a>    // Manual near plane clipping to avoid errors when doing the perspective divide inside this shader.
+<a
+            href="#109"
+            id="109"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >109</a>    clip_a = clip_near_plane(clip_a, clip_c);
+<a
+            href="#110"
+            id="110"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >110</a>    clip_b = clip_near_plane(clip_b, clip_a);
+<a
+            href="#111"
+            id="111"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >111</a>    clip_c = clip_near_plane(clip_c, clip_b);
+<a
+            href="#112"
+            id="112"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >112</a>    clip_a = clip_near_plane(clip_a, clip_c);
+<a
+            href="#113"
+            id="113"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >113</a>
+<a
+            href="#114"
+            id="114"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >114</a>    let resolution = view.viewport.zw;
+<a
+            href="#115"
+            id="115"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >115</a>    let screen_a = resolution * (0.5 * clip_a.xy / clip_a.w + 0.5);
+<a
+            href="#116"
+            id="116"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >116</a>    let screen_b = resolution * (0.5 * clip_b.xy / clip_b.w + 0.5);
+<a
+            href="#117"
+            id="117"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >117</a>    let screen_c = resolution * (0.5 * clip_c.xy / clip_c.w + 0.5);
+<a
+            href="#118"
+            id="118"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >118</a>
+<a
+            href="#119"
+            id="119"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >119</a>    var color = vertex.color;
+<a
+            href="#120"
+            id="120"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >120</a>    var line_width = joints_gizmo.line_width;
+<a
+            href="#121"
+            id="121"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >121</a>
+<a
+            href="#122"
+            id="122"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >122</a>    @if(PERSPECTIVE)
+<a
+            href="#123"
+            id="123"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >123</a>    line_width /= clip_b.w;
+<a
+            href="#124"
+            id="124"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >124</a>
+<a
+            href="#125"
+            id="125"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >125</a>    // Line thinness fade from https://acegikmo.com/shapes/docs/#anti-aliasing
+<a
+            href="#126"
+            id="126"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >126</a>    if line_width &#62; 0.0 &#38;&#38; line_width &#60; 1. {
+<a
+            href="#127"
+            id="127"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >127</a>        color.a *= line_width;
+<a
+            href="#128"
+            id="128"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >128</a>        line_width = 1.;
+<a
+            href="#129"
+            id="129"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >129</a>    }
+<a
+            href="#130"
+            id="130"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >130</a>
+<a
+            href="#131"
+            id="131"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >131</a>    let ab = normalize(screen_b - screen_a);
+<a
+            href="#132"
+            id="132"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >132</a>    let cb = normalize(screen_b - screen_c);
+<a
+            href="#133"
+            id="133"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >133</a>    let ab_norm = vec2(-ab.y, ab.x);
+<a
+            href="#134"
+            id="134"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >134</a>    let cb_norm = vec2(cb.y, -cb.x);
+<a
+            href="#135"
+            id="135"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >135</a>    let tangent = normalize(ab - cb);
+<a
+            href="#136"
+            id="136"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >136</a>    let normal = vec2(-tangent.y, tangent.x);
+<a
+            href="#137"
+            id="137"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >137</a>    let sigma = sign(dot(ab + cb, normal));
+<a
+            href="#138"
+            id="138"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >138</a>
+<a
+            href="#139"
+            id="139"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >139</a>    var p0 = line_width * sigma * ab_norm;
+<a
+            href="#140"
+            id="140"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >140</a>    var p1 = line_width * sigma * normal / dot(normal, ab_norm);
+<a
+            href="#141"
+            id="141"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >141</a>    var p2 = line_width * sigma * cb_norm;
+<a
+            href="#142"
+            id="142"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >142</a>    
+<a
+            href="#143"
+            id="143"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >143</a>    var screen = screen_b + position.x * p0 + position.y * p1 + position.z * p2;
+<a
+            href="#144"
+            id="144"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >144</a>
+<a
+            href="#145"
+            id="145"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >145</a>    var depth = depth(clip_b);
+<a
+            href="#146"
+            id="146"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >146</a>
+<a
+            href="#147"
+            id="147"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >147</a>    var clip_position = vec4(clip_b.w * ((2. * screen) / resolution - 1.), depth, clip_b.w);
+<a
+            href="#148"
+            id="148"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >148</a>    return VertexOutput(clip_position, color);
+<a
+            href="#149"
+            id="149"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >149</a>}
+<a
+            href="#150"
+            id="150"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >150</a>
+<a
+            href="#151"
+            id="151"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >151</a>@vertex
+<a
+            href="#152"
+            id="152"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >152</a>fn vertex_round(vertex: VertexInput) -&#62; VertexOutput {
+<a
+            href="#153"
+            id="153"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >153</a>    let world_from_local = affine3_to_square(joints_gizmo.world_from_local);
+<a
+            href="#154"
+            id="154"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >154</a>
+<a
+            href="#155"
+            id="155"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >155</a>    var clip_a = view.clip_from_world * world_from_local * vec4(vertex.position_a, 1.);
+<a
+            href="#156"
+            id="156"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >156</a>    var clip_b = view.clip_from_world * world_from_local * vec4(vertex.position_b, 1.);
+<a
+            href="#157"
+            id="157"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >157</a>    var clip_c = view.clip_from_world * world_from_local * vec4(vertex.position_c, 1.);
+<a
+            href="#158"
+            id="158"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >158</a>
+<a
+            href="#159"
+            id="159"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >159</a>    // Manual near plane clipping to avoid errors when doing the perspective divide inside this shader.
+<a
+            href="#160"
+            id="160"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >160</a>    clip_a = clip_near_plane(clip_a, clip_c);
+<a
+            href="#161"
+            id="161"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >161</a>    clip_b = clip_near_plane(clip_b, clip_a);
+<a
+            href="#162"
+            id="162"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >162</a>    clip_c = clip_near_plane(clip_c, clip_b);
+<a
+            href="#163"
+            id="163"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >163</a>    clip_a = clip_near_plane(clip_a, clip_c);
+<a
+            href="#164"
+            id="164"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >164</a>
+<a
+            href="#165"
+            id="165"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >165</a>    let resolution = view.viewport.zw;
+<a
+            href="#166"
+            id="166"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >166</a>    let screen_a = resolution * (0.5 * clip_a.xy / clip_a.w + 0.5);
+<a
+            href="#167"
+            id="167"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >167</a>    let screen_b = resolution * (0.5 * clip_b.xy / clip_b.w + 0.5);
+<a
+            href="#168"
+            id="168"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >168</a>    let screen_c = resolution * (0.5 * clip_c.xy / clip_c.w + 0.5);
+<a
+            href="#169"
+            id="169"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >169</a>
+<a
+            href="#170"
+            id="170"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >170</a>    var color = vertex.color;
+<a
+            href="#171"
+            id="171"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >171</a>    var line_width = joints_gizmo.line_width;
+<a
+            href="#172"
+            id="172"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >172</a>
+<a
+            href="#173"
+            id="173"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >173</a>    @if(PERSPECTIVE)
+<a
+            href="#174"
+            id="174"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >174</a>    line_width /= clip_b.w;
+<a
+            href="#175"
+            id="175"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >175</a>
+<a
+            href="#176"
+            id="176"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >176</a>    // Line thinness fade from https://acegikmo.com/shapes/docs/#anti-aliasing
+<a
+            href="#177"
+            id="177"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >177</a>    if line_width &#62; 0.0 &#38;&#38; line_width &#60; 1. {
+<a
+            href="#178"
+            id="178"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >178</a>        color.a *= line_width;
+<a
+            href="#179"
+            id="179"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >179</a>        line_width = 1.;
+<a
+            href="#180"
+            id="180"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >180</a>    }
+<a
+            href="#181"
+            id="181"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >181</a>
+<a
+            href="#182"
+            id="182"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >182</a>    let ab = normalize(screen_b - screen_a);
+<a
+            href="#183"
+            id="183"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >183</a>    let cb = normalize(screen_b - screen_c);
+<a
+            href="#184"
+            id="184"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >184</a>    let ab_norm = vec2(-ab.y, ab.x);
+<a
+            href="#185"
+            id="185"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >185</a>    let cb_norm = vec2(cb.y, -cb.x);
+<a
+            href="#186"
+            id="186"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >186</a>
+<a
+            href="#187"
+            id="187"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >187</a>    // We render `joints_gizmo.resolution`triangles. The vertices in each triangle are ordered as follows:
+<a
+            href="#188"
+            id="188"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >188</a>    // - 0: The &#39;center&#39; vertex at `screen_b`.
+<a
+            href="#189"
+            id="189"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >189</a>    // - 1: The vertex closer to the ab line.
+<a
+            href="#190"
+            id="190"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >190</a>    // - 2: The vertex closer to the cb line. 
+<a
+            href="#191"
+            id="191"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >191</a>    var in_triangle_index = f32(vertex.index) % 3.0;
+<a
+            href="#192"
+            id="192"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >192</a>    var tri_index = floor(f32(vertex.index) / 3.0);
+<a
+            href="#193"
+            id="193"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >193</a>    var radius = sign(in_triangle_index) * 0.5 * line_width;
+<a
+            href="#194"
+            id="194"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >194</a>    var theta = acos(dot(ab_norm, cb_norm));
+<a
+            href="#195"
+            id="195"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >195</a>    let sigma = sign(dot(ab_norm, cb));
+<a
+            href="#196"
+            id="196"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >196</a>    var angle = theta * (tri_index + in_triangle_index - 1) / f32(joints_gizmo.resolution);
+<a
+            href="#197"
+            id="197"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >197</a>    var position_x = sigma * radius * cos(angle);
+<a
+            href="#198"
+            id="198"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >198</a>    var position_y = radius * sin(angle);
+<a
+            href="#199"
+            id="199"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >199</a>
+<a
+            href="#200"
+            id="200"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >200</a>    var screen = screen_b + position_x * ab_norm + position_y * ab;
+<a
+            href="#201"
+            id="201"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >201</a>
+<a
+            href="#202"
+            id="202"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >202</a>    var depth = depth(clip_b);
+<a
+            href="#203"
+            id="203"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >203</a>
+<a
+            href="#204"
+            id="204"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >204</a>    var clip_position = vec4(clip_b.w * ((2. * screen) / resolution - 1.), depth, clip_b.w);
+<a
+            href="#205"
+            id="205"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >205</a>    return VertexOutput(clip_position, color);
+<a
+            href="#206"
+            id="206"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >206</a>}
+<a
+            href="#207"
+            id="207"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >207</a>
+<a
+            href="#208"
+            id="208"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >208</a>fn clip_near_plane(a: vec4&#60;f32&#62;, b: vec4&#60;f32&#62;) -&#62; vec4&#60;f32&#62; {
+<a
+            href="#209"
+            id="209"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >209</a>    // Move a if a is behind the near plane and b is in front. 
+<a
+            href="#210"
+            id="210"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >210</a>    if a.z &#62; a.w &#38;&#38; b.z &#60;= b.w {
+<a
+            href="#211"
+            id="211"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >211</a>        // Interpolate a towards b until it&#39;s at the near plane.
+<a
+            href="#212"
+            id="212"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >212</a>        let distance_a = a.z - a.w;
+<a
+            href="#213"
+            id="213"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >213</a>        let distance_b = b.z - b.w;
+<a
+            href="#214"
+            id="214"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >214</a>        // Add an epsilon to the interpolator to ensure that the point is
+<a
+            href="#215"
+            id="215"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >215</a>        // not just behind the clip plane due to floating-point imprecision.
+<a
+            href="#216"
+            id="216"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >216</a>        let t = distance_a / (distance_a - distance_b) + EPSILON;
+<a
+            href="#217"
+            id="217"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >217</a>        return mix(a, b, t);
+<a
+            href="#218"
+            id="218"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >218</a>    }
+<a
+            href="#219"
+            id="219"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >219</a>    return a;
+<a
+            href="#220"
+            id="220"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >220</a>}
+<a
+            href="#221"
+            id="221"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >221</a>
+<a
+            href="#222"
+            id="222"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >222</a>fn depth(clip: vec4&#60;f32&#62;) -&#62; f32 {
+<a
+            href="#223"
+            id="223"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >223</a>    var depth: f32;
+<a
+            href="#224"
+            id="224"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >224</a>    if joints_gizmo.depth_bias &#62;= 0. {
+<a
+            href="#225"
+            id="225"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >225</a>        depth = clip.z * (1. - joints_gizmo.depth_bias);
+<a
+            href="#226"
+            id="226"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >226</a>    } else {
+<a
+            href="#227"
+            id="227"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >227</a>        // depth * (clip.w / depth)^-depth_bias. So that when -depth_bias is 1.0, this is equal to clip.w
+<a
+            href="#228"
+            id="228"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >228</a>        // and when equal to 0.0, it is exactly equal to depth.
+<a
+            href="#229"
+            id="229"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >229</a>        // the epsilon is here to prevent the depth from exceeding clip.w when -depth_bias = 1.0
+<a
+            href="#230"
+            id="230"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >230</a>        // clip.w represents the near plane in homogeneous clip space in bevy, having a depth
+<a
+            href="#231"
+            id="231"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >231</a>        // of this value means nothing can be in front of this
+<a
+            href="#232"
+            id="232"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >232</a>        // The reason this uses an exponential function is that it makes it much easier for the
+<a
+            href="#233"
+            id="233"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >233</a>        // user to chose a value that is convenient for them
+<a
+            href="#234"
+            id="234"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >234</a>        depth = clip.z * exp2(-joints_gizmo.depth_bias * log2(clip.w / clip.z - EPSILON));
+<a
+            href="#235"
+            id="235"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >235</a>    }
+<a
+            href="#236"
+            id="236"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >236</a>    return depth;
+<a
+            href="#237"
+            id="237"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >237</a>}
+<a
+            href="#238"
+            id="238"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >238</a>
+<a
+            href="#239"
+            id="239"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >239</a>struct FragmentInput {
+<a
+            href="#240"
+            id="240"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >240</a>    @location(0) color: vec4&#60;f32&#62;,
+<a
+            href="#241"
+            id="241"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >241</a>};
+<a
+            href="#242"
+            id="242"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >242</a>
+<a
+            href="#243"
+            id="243"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >243</a>struct FragmentOutput {
+<a
+            href="#244"
+            id="244"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >244</a>    @location(0) color: vec4&#60;f32&#62;,
+<a
+            href="#245"
+            id="245"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >245</a>};
+<a
+            href="#246"
+            id="246"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >246</a>
+<a
+            href="#247"
+            id="247"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >247</a>@fragment
+<a
+            href="#248"
+            id="248"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >248</a>fn fragment(in: FragmentInput) -&#62; FragmentOutput {
+<a
+            href="#249"
+            id="249"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >249</a>    // return FragmentOutput(vec4(1, 1, 1, 1));
+<a
+            href="#250"
+            id="250"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >250</a>    return FragmentOutput(in.color);
+<a
+            href="#251"
+            id="251"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >251</a>}</code>
+</pre>
+
+        </div>
+    </div>
+
+    <script src="../../../common.js"></script>
+    <script src="../../items.js"></script>
+
+    <script>
+        window.DOCS_THIS_PACKAGE = {
+            version: "0.20.0-dev",
+            name: "bevy_gizmos_render",
+            root: "../../",
+        };
+    </script>
+    <script src="../../../../-/static/js/selectVersion.js"></script>
+    <script src="../../../../-/static/js/search.js"></script>
+    <script src="../../../../-/static/js/lineNumbers.js"></script>
+</body>
+
+</html>

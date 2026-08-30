@@ -1,0 +1,375 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+        raymarch - bevy_pbr
+        
+    </title>
+
+    <link rel="stylesheet" href="../../../../../-/static/css/inter/inter.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/source_code_pro/source_code_pro.css">
+
+    <link rel="stylesheet" href="../../../../../-/static/css/themes.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/styles.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/icons.css">
+    <script src="../../../../../-/static/js/settings.js"></script>
+
+    
+</head>
+
+<body>
+    <div class="nav">
+        <a class="icon icon-home" style="margin-right: 12px;" href="../../../../../index.html"></a>
+        <span style="margin-right: 12px;">bevy_pbr</span>
+        <select class="select" id="selectVersion" onchange="changeVersion()" autocomplete="off">
+            <option
+                value="../../../../0.20.0-dev/bevy_pbr/index.html">
+                0.20.0-dev
+            </option>
+        </select>
+        <button id="show-settings" class="icon icon-settings" aria-label="Show settings"></button>
+<div id="settings-menu">
+    <div class="settings-title">Theme</div>
+    <label>
+        <input type="radio" name="theme" id="theme-auto" value="auto"> Auto
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-dark" value="dark"> Dark
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-light" value="light"> Light
+    </label>
+</div>
+    </div>
+    <div class="content">
+        <input type="text" id="search" placeholder="Search" oninput="searchDebounced()" autocomplete="off">
+
+        <div id="innerContent">
+            
+            <h2>
+                <a class="path" href="../../index.html">bevy_pbr</a><span>::</span><wbr><a class="path" href="../index.html">ssr</a><span>::</span><wbr><a class="module" href="index.html">raymarch</a>
+            </h2>
+            
+
+            
+
+<a class="module" href="../../../src/bevy_pbr/ssr/raymarch.html">Source</a>
+
+
+
+
+
+
+
+
+
+
+
+<h3 class="item-list-title">Global Variables</h3>
+<ul class="item-list">
+    
+    <li>
+        <div>
+            <a class="var" href="var.depth_linear_sampler.html">depth_linear_sampler</a>
+            
+            <span class="conditional-inline">USE_DEPTH_SAMPLERS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.depth_nearest_sampler.html">depth_nearest_sampler</a>
+            
+            <span class="conditional-inline">USE_DEPTH_SAMPLERS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+</ul>
+
+
+
+<h3 class="item-list-title">Structs</h3>
+<ul class="item-list">
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.DepthRayMarch.html">DepthRayMarch</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.DepthRayMarchResult.html">DepthRayMarchResult</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.DepthRaymarchDistanceFn.html">DepthRaymarchDistanceFn</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.DistanceWithPenetration.html">DistanceWithPenetration</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.HybridRootFinder.html">HybridRootFinder</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+</ul>
+
+
+
+<h3 class="item-list-title">Functions</h3>
+<ul class="item-list">
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.depth_ray_march_from_cs.html">depth_ray_march_from_cs</a>
+            
+        </div>
+        <div>
+            <div class="comment-inline"><p>March from a clip-space position (w = 1)</p>
+</div>
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.depth_ray_march_march.html">depth_ray_march_march</a>
+            
+        </div>
+        <div>
+            <div class="comment-inline"><p>Perform the ray march.</p>
+</div>
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.depth_ray_march_new_from_depth.html">depth_ray_march_new_from_depth</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.depth_ray_march_to_cs.html">depth_ray_march_to_cs</a>
+            
+        </div>
+        <div>
+            <div class="comment-inline"><p>March to a clip-space position (w = 1)</p>
+</div>
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.depth_ray_march_to_cs_dir.html">depth_ray_march_to_cs_dir</a>
+            
+        </div>
+        <div>
+            <div class="comment-inline"><p>March towards a clip-space direction. Infinite (ray is extended to cover the whole view frustum).</p>
+</div>
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.depth_ray_march_to_cs_dir_impl.html">depth_ray_march_to_cs_dir_impl</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.depth_ray_march_to_ws.html">depth_ray_march_to_ws</a>
+            
+        </div>
+        <div>
+            <div class="comment-inline"><p>March to a world-space position.</p>
+</div>
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.depth_ray_march_to_ws_dir.html">depth_ray_march_to_ws_dir</a>
+            
+        </div>
+        <div>
+            <div class="comment-inline"><p>March towards a world-space direction. Infinite (ray is extended to cover the whole view frustum).</p>
+</div>
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.depth_raymarch_distance_fn_evaluate.html">depth_raymarch_distance_fn_evaluate</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.depth_sample_bilinear_clamped.html">depth_sample_bilinear_clamped</a>
+            
+            <span class="conditional-inline">!USE_DEPTH_SAMPLERS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.depth_sample_linear.html">depth_sample_linear</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.depth_sample_nearest.html">depth_sample_nearest</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.depth_sample_nearest_clamped.html">depth_sample_nearest_clamped</a>
+            
+            <span class="conditional-inline">!USE_DEPTH_SAMPLERS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.depth_texel_clamped.html">depth_texel_clamped</a>
+            
+            <span class="conditional-inline">!USE_DEPTH_SAMPLERS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.hybrid_root_finder_find_root.html">hybrid_root_finder_find_root</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.hybrid_root_finder_new_with_linear_steps.html">hybrid_root_finder_new_with_linear_steps</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+</ul>
+
+
+
+
+
+<h3 class="item-list-title">Translate-time features</h3>
+<ul class="item-list">
+    
+    <li class="feature">USE_DEPTH_SAMPLERS</li>
+    
+</ul>
+
+
+
+        </div>
+    </div>
+
+    <script src="../../../../common.js"></script>
+    <script src="../../../items.js"></script>
+
+    <script>
+        window.DOCS_THIS_PACKAGE = {
+            version: "0.20.0-dev",
+            name: "bevy_pbr",
+            root: "../../../",
+        };
+    </script>
+    <script src="../../../../../-/static/js/selectVersion.js"></script>
+    <script src="../../../../../-/static/js/search.js"></script>
+    <script src="../../../../../-/static/js/lineNumbers.js"></script>
+</body>
+
+</html>

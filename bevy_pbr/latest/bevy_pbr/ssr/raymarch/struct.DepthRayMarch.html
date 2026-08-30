@@ -1,0 +1,177 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+        DepthRayMarch - bevy_pbr
+        
+    </title>
+
+    <link rel="stylesheet" href="../../../../../-/static/css/inter/inter.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/source_code_pro/source_code_pro.css">
+
+    <link rel="stylesheet" href="../../../../../-/static/css/themes.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/styles.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/icons.css">
+    <script src="../../../../../-/static/js/settings.js"></script>
+
+    
+</head>
+
+<body>
+    <div class="nav">
+        <a class="icon icon-home" style="margin-right: 12px;" href="../../../../../index.html"></a>
+        <span style="margin-right: 12px;">bevy_pbr</span>
+        <select class="select" id="selectVersion" onchange="changeVersion()" autocomplete="off">
+            <option
+                value="../../../../latest/bevy_pbr/index.html">
+                latest
+            </option>
+        </select>
+        <button id="show-settings" class="icon icon-settings" aria-label="Show settings"></button>
+<div id="settings-menu">
+    <div class="settings-title">Theme</div>
+    <label>
+        <input type="radio" name="theme" id="theme-auto" value="auto"> Auto
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-dark" value="dark"> Dark
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-light" value="light"> Light
+    </label>
+</div>
+    </div>
+    <div class="content">
+        <input type="text" id="search" placeholder="Search" oninput="searchDebounced()" autocomplete="off">
+
+        <div id="innerContent">
+            
+            <h2>
+                <a class="path" href="../../index.html">bevy_pbr</a><span>::</span><wbr><a class="path" href="../index.html">ssr</a><span>::</span><wbr><a class="path" href="index.html">raymarch</a><span>::</span><wbr><a class="struct" href="#">DepthRayMarch</a>
+            </h2>
+            
+
+            
+
+
+
+<a class="module" href="../../../src/bevy_pbr/ssr/raymarch.html#348-410">Source</a>
+
+
+<pre class="code-block">
+<code>struct DepthRayMarch {
+    linear_steps: u32,
+    linear_march_exponent: f32,
+    bisection_steps: u32,
+    use_secant: bool,
+    jitter: f32,
+    ray_start_cs: vec3&lt;f32&gt;,
+    ray_end_cs: vec3&lt;f32&gt;,
+    march_behind_surfaces: bool,
+    use_sloppy_march: bool,
+    depth_thickness_linear_z: f32,
+    depth_tex_size: vec2&lt;f32&gt;
+}</code>
+</pre>
+
+<h2 class="item-list-title">Fields</h2>
+
+<div style="margin: 8px 0;"><code>linear_steps: u32</code></div>
+<div class="comment"><p>Number of steps to be taken at regular intervals to find an initial intersection.
+Must not be zero.</p>
+</div>
+
+<div style="margin: 8px 0;"><code>linear_march_exponent: f32</code></div>
+<div class="comment"><p>Exponent to be applied in the linear part of the march.</p>
+<p>A value of 1.0 will result in equidistant steps, and higher values will compress
+the earlier steps, and expand the later ones. This might be desirable in order
+to get more detail close to objects in SSR or SSGI.</p>
+<p>For optimal performance, this should be a small compile-time unsigned integer,
+such as 1 or 2.</p>
+</div>
+
+<div style="margin: 8px 0;"><code>bisection_steps: u32</code></div>
+<div class="comment"><p>Number of steps in a bisection (binary search) to perform once the linear search
+has found an intersection. Helps narrow down the hit, increasing the chance of
+the secant method finding an accurate hit point.</p>
+<p>Useful when sampling color, e.g. SSR or SSGI, but pointless for contact shadows.</p>
+</div>
+
+<div style="margin: 8px 0;"><code>use_secant: bool</code></div>
+<div class="comment"><p>Approximate the root position using the secant method -- by solving for line-line
+intersection between the ray approach rate and the surface gradient.</p>
+<p>Useful when sampling color, e.g. SSR or SSGI, but pointless for contact shadows.</p>
+</div>
+
+<div style="margin: 8px 0;"><code>jitter: f32</code></div>
+<div class="comment"><p>Jitter to apply to the first step of the linear search; 0..=1 range, mapping
+to the extent of a single linear step in the first phase of the search.
+Use 1.0 if you don't want jitter.</p>
+</div>
+
+<div style="margin: 8px 0;"><code>ray_start_cs: vec3&lt;f32&gt;</code></div>
+<div class="comment"><p>Clip space coordinates (w=1) of the ray.</p>
+</div>
+
+<div style="margin: 8px 0;"><code>ray_end_cs: vec3&lt;f32&gt;</code></div>
+
+
+<div style="margin: 8px 0;"><code>march_behind_surfaces: bool</code></div>
+<div class="comment"><p>Should be used for contact shadows, but not for any color bounce, e.g. SSR.</p>
+<p>For SSR etc. this can easily create leaks, but with contact shadows it allows the rays
+to pass over invalid occlusions (due to thickness), and find potentially valid ones ahead.</p>
+<p>Note that this will cause the linear search to potentially miss surfaces,
+because when the ray overshoots and ends up penetrating a surface further than
+<code>depth_thickness_linear_z</code>, the ray marcher will just carry on.</p>
+<p>For this reason, this may require a lot of samples, or high depth thickness,
+so that <code>depth_thickness_linear_z &gt;= world space ray length / linear_steps</code>.</p>
+</div>
+
+<div style="margin: 8px 0;"><code>use_sloppy_march: bool</code></div>
+<div class="comment"><p>If <code>true</code>, the ray marcher only performs nearest lookups of the depth buffer,
+resulting in aliasing and false occlusion when marching tiny detail.
+It should work fine for longer traces with fewer rays though.</p>
+</div>
+
+<div style="margin: 8px 0;"><code>depth_thickness_linear_z: f32</code></div>
+<div class="comment"><p>When marching the depth buffer, we only have 2.5D information, and don't know how
+thick surfaces are. We shall assume that the depth buffer fragments are little squares
+with a constant thickness defined by this parameter.</p>
+</div>
+
+<div style="margin: 8px 0;"><code>depth_tex_size: vec2&lt;f32&gt;</code></div>
+<div class="comment"><p>Size of the depth buffer we're marching in, in pixels.</p>
+</div>
+
+
+
+        </div>
+    </div>
+
+    <script src="../../../../common.js"></script>
+    <script src="../../../items.js"></script>
+
+    <script>
+        window.DOCS_THIS_PACKAGE = {
+            version: "latest",
+            name: "bevy_pbr",
+            root: "../../../",
+        };
+    </script>
+    <script src="../../../../../-/static/js/selectVersion.js"></script>
+    <script src="../../../../../-/static/js/search.js"></script>
+    <script src="../../../../../-/static/js/lineNumbers.js"></script>
+</body>
+
+</html>

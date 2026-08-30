@@ -1,0 +1,623 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+        pbr_lighting - bevy_pbr
+        
+    </title>
+
+    <link rel="stylesheet" href="../../../../../-/static/css/inter/inter.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/source_code_pro/source_code_pro.css">
+
+    <link rel="stylesheet" href="../../../../../-/static/css/themes.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/styles.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/icons.css">
+    <script src="../../../../../-/static/js/settings.js"></script>
+
+    
+</head>
+
+<body>
+    <div class="nav">
+        <a class="icon icon-home" style="margin-right: 12px;" href="../../../../../index.html"></a>
+        <span style="margin-right: 12px;">bevy_pbr</span>
+        <select class="select" id="selectVersion" onchange="changeVersion()" autocomplete="off">
+            <option
+                value="../../../../0.20.0-dev/bevy_pbr/index.html">
+                0.20.0-dev
+            </option>
+        </select>
+        <button id="show-settings" class="icon icon-settings" aria-label="Show settings"></button>
+<div id="settings-menu">
+    <div class="settings-title">Theme</div>
+    <label>
+        <input type="radio" name="theme" id="theme-auto" value="auto"> Auto
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-dark" value="dark"> Dark
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-light" value="light"> Light
+    </label>
+</div>
+    </div>
+    <div class="content">
+        <input type="text" id="search" placeholder="Search" oninput="searchDebounced()" autocomplete="off">
+
+        <div id="innerContent">
+            
+            <h2>
+                <a class="path" href="../../index.html">bevy_pbr</a><span>::</span><wbr><a class="path" href="../index.html">render</a><span>::</span><wbr><a class="module" href="index.html">pbr_lighting</a>
+            </h2>
+            
+
+            
+
+<a class="module" href="../../../src/bevy_pbr/render/pbr_lighting.html">Source</a>
+
+
+
+
+
+
+
+<h3 class="item-list-title">Constants</h3>
+<ul class="item-list">
+    
+    <li>
+        <div>
+            <a class="const" href="const.CUBEMAP_TYPE_CROSS_HORIZONTAL.html">CUBEMAP_TYPE_CROSS_HORIZONTAL</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.CUBEMAP_TYPE_CROSS_VERTICAL.html">CUBEMAP_TYPE_CROSS_VERTICAL</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.CUBEMAP_TYPE_SEQUENCE_HORIZONTAL.html">CUBEMAP_TYPE_SEQUENCE_HORIZONTAL</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.CUBEMAP_TYPE_SEQUENCE_VERTICAL.html">CUBEMAP_TYPE_SEQUENCE_VERTICAL</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.LAYER_BASE.html">LAYER_BASE</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.LAYER_CLEARCOAT.html">LAYER_CLEARCOAT</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.X_MINUS.html">X_MINUS</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.X_PLUS.html">X_PLUS</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.Y_MINUS.html">Y_MINUS</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.Y_PLUS.html">Y_PLUS</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.Z_MINUS.html">Z_MINUS</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.Z_PLUS.html">Z_PLUS</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+</ul>
+
+
+
+
+
+
+
+<h3 class="item-list-title">Structs</h3>
+<ul class="item-list">
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.DerivedLightingInput.html">DerivedLightingInput</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.LayerLightingInput.html">LayerLightingInput</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.LightingInput.html">LightingInput</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+</ul>
+
+
+
+<h3 class="item-list-title">Functions</h3>
+<ul class="item-list">
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.D_GGX.html">D_GGX</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.D_GGX_anisotropic.html">D_GGX_anisotropic</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.EnvBRDFApprox.html">EnvBRDFApprox</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.F_AB.html">F_AB</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.F_Schlick.html">F_Schlick</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.F_Schlick_vec.html">F_Schlick_vec</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.Fd_Burley.html">Fd_Burley</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.G_Smith.html">G_Smith</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.V_GGX_anisotropic.html">V_GGX_anisotropic</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.V_Kelemen.html">V_Kelemen</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.V_SmithGGXCorrelated.html">V_SmithGGXCorrelated</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.compute_specular_layer_values_for_point_light.html">compute_specular_layer_values_for_point_light</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.cubemap_uv.html">cubemap_uv</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.derive_lighting_input.html">derive_lighting_input</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.directional_light.html">directional_light</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.fresnel.html">fresnel</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.getDistanceAttenuation.html">getDistanceAttenuation</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.getRangeFalloff.html">getRangeFalloff</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.ggx_vndf_pdf.html">ggx_vndf_pdf</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.ltc_integrate_edge.html">ltc_integrate_edge</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.ltc_integrate_quad.html">ltc_integrate_quad</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.perceptualRoughnessToRoughness.html">perceptualRoughnessToRoughness</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.point_light.html">point_light</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.rect_light.html">rect_light</a>
+            
+            <span class="conditional-inline">AREA_LIGHT_LUTS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.sample_transmittance_lut.html">sample_transmittance_lut</a>
+            
+            <span class="conditional-inline">ATMOSPHERE</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.sample_visible_ggx.html">sample_visible_ggx</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.specular.html">specular</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.specular_anisotropy.html">specular_anisotropy</a>
+            
+            <span class="conditional-inline">STANDARD_MATERIAL_ANISOTROPY</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.specular_clearcoat.html">specular_clearcoat</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.specular_fix_remap.html">specular_fix_remap</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.specular_multiscatter.html">specular_multiscatter</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.spot_light.html">spot_light</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.unpack_clustered_rect_light.html">unpack_clustered_rect_light</a>
+            
+            <span class="conditional-inline">AREA_LIGHT_LUTS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+</ul>
+
+
+
+
+
+<h3 class="item-list-title">Translate-time features</h3>
+<ul class="item-list">
+    
+    <li class="feature">AREA_LIGHT_LUTS</li>
+    
+    <li class="feature">ATMOSPHERE</li>
+    
+    <li class="feature">STANDARD_MATERIAL_ANISOTROPY</li>
+    
+    <li class="feature">STANDARD_MATERIAL_CLEARCOAT</li>
+    
+</ul>
+
+
+
+        </div>
+    </div>
+
+    <script src="../../../../common.js"></script>
+    <script src="../../../items.js"></script>
+
+    <script>
+        window.DOCS_THIS_PACKAGE = {
+            version: "0.20.0-dev",
+            name: "bevy_pbr",
+            root: "../../../",
+        };
+    </script>
+    <script src="../../../../../-/static/js/selectVersion.js"></script>
+    <script src="../../../../../-/static/js/search.js"></script>
+    <script src="../../../../../-/static/js/lineNumbers.js"></script>
+</body>
+
+</html>

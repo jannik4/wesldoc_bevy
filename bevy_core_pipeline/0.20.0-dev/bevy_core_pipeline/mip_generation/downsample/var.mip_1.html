@@ -1,0 +1,144 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+        mip_1 - bevy_core_pipeline
+        
+    </title>
+
+    <link rel="stylesheet" href="../../../../../-/static/css/inter/inter.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/source_code_pro/source_code_pro.css">
+
+    <link rel="stylesheet" href="../../../../../-/static/css/themes.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/styles.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/icons.css">
+    <script src="../../../../../-/static/js/settings.js"></script>
+
+    
+</head>
+
+<body>
+    <div class="nav">
+        <a class="icon icon-home" style="margin-right: 12px;" href="../../../../../index.html"></a>
+        <span style="margin-right: 12px;">bevy_core_pipeline</span>
+        <select class="select" id="selectVersion" onchange="changeVersion()" autocomplete="off">
+            <option
+                value="../../../../0.20.0-dev/bevy_core_pipeline/index.html">
+                0.20.0-dev
+            </option>
+        </select>
+        <button id="show-settings" class="icon icon-settings" aria-label="Show settings"></button>
+<div id="settings-menu">
+    <div class="settings-title">Theme</div>
+    <label>
+        <input type="radio" name="theme" id="theme-auto" value="auto"> Auto
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-dark" value="dark"> Dark
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-light" value="light"> Light
+    </label>
+</div>
+    </div>
+    <div class="content">
+        <input type="text" id="search" placeholder="Search" oninput="searchDebounced()" autocomplete="off">
+
+        <div id="innerContent">
+            
+            <h2>
+                <a class="path" href="../../index.html">bevy_core_pipeline</a><span>::</span><wbr><a class="path" href="../index.html">mip_generation</a><span>::</span><wbr><a class="path" href="index.html">downsample</a><span>::</span><wbr><a class="var" href="#">mip_1</a>
+            </h2>
+            
+
+            
+
+
+
+<a class="module" href="../../../src/bevy_core_pipeline/mip_generation/downsample.html#9">Source</a>
+
+
+<div><span class="conditional">ARRAY_TEXTURE &#38;&#38; COMBINE_BIND_GROUP</span></div>
+
+<pre class="code-block">
+<code>@group(0) @binding(3)
+var mip_1: texture_storage_2d_array&lt;TEXTURE_FORMAT, write&gt;;</code>
+</pre>
+
+
+
+<br />
+
+
+<a class="module" href="../../../src/bevy_core_pipeline/mip_generation/downsample.html#25">Source</a>
+
+
+<div><span class="conditional">ARRAY_TEXTURE &#38;&#38; FIRST_PASS</span></div>
+
+<pre class="code-block">
+<code>@group(0) @binding(3)
+var mip_1: texture_storage_2d_array&lt;TEXTURE_FORMAT, write&gt;;</code>
+</pre>
+
+
+
+<br />
+
+
+<a class="module" href="../../../src/bevy_core_pipeline/mip_generation/downsample.html#45">Source</a>
+
+
+<div><span class="conditional">!ARRAY_TEXTURE &#38;&#38; COMBINE_BIND_GROUP</span></div>
+
+<pre class="code-block">
+<code>@group(0) @binding(3)
+var mip_1: texture_storage_2d&lt;TEXTURE_FORMAT, write&gt;;</code>
+</pre>
+
+
+
+<br />
+
+
+<a class="module" href="../../../src/bevy_core_pipeline/mip_generation/downsample.html#61">Source</a>
+
+
+<div><span class="conditional">!ARRAY_TEXTURE &#38;&#38; FIRST_PASS</span></div>
+
+<pre class="code-block">
+<code>@group(0) @binding(3)
+var mip_1: texture_storage_2d&lt;TEXTURE_FORMAT, write&gt;;</code>
+</pre>
+
+
+
+        </div>
+    </div>
+
+    <script src="../../../../common.js"></script>
+    <script src="../../../items.js"></script>
+
+    <script>
+        window.DOCS_THIS_PACKAGE = {
+            version: "0.20.0-dev",
+            name: "bevy_core_pipeline",
+            root: "../../../",
+        };
+    </script>
+    <script src="../../../../../-/static/js/selectVersion.js"></script>
+    <script src="../../../../../-/static/js/search.js"></script>
+    <script src="../../../../../-/static/js/lineNumbers.js"></script>
+</body>
+
+</html>

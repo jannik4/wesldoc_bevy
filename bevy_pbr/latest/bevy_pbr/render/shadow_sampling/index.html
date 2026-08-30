@@ -1,0 +1,357 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+        shadow_sampling - bevy_pbr
+        
+    </title>
+
+    <link rel="stylesheet" href="../../../../../-/static/css/inter/inter.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/source_code_pro/source_code_pro.css">
+
+    <link rel="stylesheet" href="../../../../../-/static/css/themes.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/styles.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/icons.css">
+    <script src="../../../../../-/static/js/settings.js"></script>
+
+    
+</head>
+
+<body>
+    <div class="nav">
+        <a class="icon icon-home" style="margin-right: 12px;" href="../../../../../index.html"></a>
+        <span style="margin-right: 12px;">bevy_pbr</span>
+        <select class="select" id="selectVersion" onchange="changeVersion()" autocomplete="off">
+            <option
+                value="../../../../latest/bevy_pbr/index.html">
+                latest
+            </option>
+        </select>
+        <button id="show-settings" class="icon icon-settings" aria-label="Show settings"></button>
+<div id="settings-menu">
+    <div class="settings-title">Theme</div>
+    <label>
+        <input type="radio" name="theme" id="theme-auto" value="auto"> Auto
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-dark" value="dark"> Dark
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-light" value="light"> Light
+    </label>
+</div>
+    </div>
+    <div class="content">
+        <input type="text" id="search" placeholder="Search" oninput="searchDebounced()" autocomplete="off">
+
+        <div id="innerContent">
+            
+            <h2>
+                <a class="path" href="../../index.html">bevy_pbr</a><span>::</span><wbr><a class="path" href="../index.html">render</a><span>::</span><wbr><a class="module" href="index.html">shadow_sampling</a>
+            </h2>
+            
+
+            
+
+<a class="module" href="../../../src/bevy_pbr/render/shadow_sampling.html">Source</a>
+
+
+
+
+
+
+
+<h3 class="item-list-title">Constants</h3>
+<ul class="item-list">
+    
+    <li>
+        <div>
+            <a class="const" href="const.D3D_SAMPLE_POINT_COEFFS.html">D3D_SAMPLE_POINT_COEFFS</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.D3D_SAMPLE_POINT_POSITIONS.html">D3D_SAMPLE_POINT_POSITIONS</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.POINT_SHADOW_SCALE.html">POINT_SHADOW_SCALE</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.POINT_SHADOW_TEMPORAL_OFFSET_SCALE.html">POINT_SHADOW_TEMPORAL_OFFSET_SCALE</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.SPOT_SHADOW_TEXEL_SIZE.html">SPOT_SHADOW_TEXEL_SIZE</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+</ul>
+
+
+
+
+
+
+
+
+
+<h3 class="item-list-title">Functions</h3>
+<ul class="item-list">
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.calculate_uv_offset_scale_jimenez_fourteen.html">calculate_uv_offset_scale_jimenez_fourteen</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.map.html">map</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.random_rotation_matrix.html">random_rotation_matrix</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.sample_shadow_cubemap.html">sample_shadow_cubemap</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.sample_shadow_cubemap_at_offset.html">sample_shadow_cubemap_at_offset</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.sample_shadow_cubemap_gaussian.html">sample_shadow_cubemap_gaussian</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.sample_shadow_cubemap_hardware.html">sample_shadow_cubemap_hardware</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.sample_shadow_cubemap_jittered.html">sample_shadow_cubemap_jittered</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.sample_shadow_cubemap_pcss.html">sample_shadow_cubemap_pcss</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.sample_shadow_map.html">sample_shadow_map</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.sample_shadow_map_castano_thirteen.html">sample_shadow_map_castano_thirteen</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.sample_shadow_map_hardware.html">sample_shadow_map_hardware</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.sample_shadow_map_jimenez_fourteen.html">sample_shadow_map_jimenez_fourteen</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.sample_shadow_map_pcss.html">sample_shadow_map_pcss</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.search_for_blockers_in_shadow_cubemap.html">search_for_blockers_in_shadow_cubemap</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.search_for_blockers_in_shadow_cubemap_at_offset.html">search_for_blockers_in_shadow_cubemap_at_offset</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.search_for_blockers_in_shadow_cubemap_hardware.html">search_for_blockers_in_shadow_cubemap_hardware</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.search_for_blockers_in_shadow_map.html">search_for_blockers_in_shadow_map</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.search_for_blockers_in_shadow_map_hardware.html">search_for_blockers_in_shadow_map_hardware</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+</ul>
+
+
+
+
+
+
+
+        </div>
+    </div>
+
+    <script src="../../../../common.js"></script>
+    <script src="../../../items.js"></script>
+
+    <script>
+        window.DOCS_THIS_PACKAGE = {
+            version: "latest",
+            name: "bevy_pbr",
+            root: "../../../",
+        };
+    </script>
+    <script src="../../../../../-/static/js/selectVersion.js"></script>
+    <script src="../../../../../-/static/js/search.js"></script>
+    <script src="../../../../../-/static/js/lineNumbers.js"></script>
+</body>
+
+</html>

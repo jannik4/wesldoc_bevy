@@ -1,0 +1,192 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+        StandardMaterial - bevy_pbr
+        
+    </title>
+
+    <link rel="stylesheet" href="../../../../../-/static/css/inter/inter.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/source_code_pro/source_code_pro.css">
+
+    <link rel="stylesheet" href="../../../../../-/static/css/themes.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/styles.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/icons.css">
+    <script src="../../../../../-/static/js/settings.js"></script>
+
+    
+</head>
+
+<body>
+    <div class="nav">
+        <a class="icon icon-home" style="margin-right: 12px;" href="../../../../../index.html"></a>
+        <span style="margin-right: 12px;">bevy_pbr</span>
+        <select class="select" id="selectVersion" onchange="changeVersion()" autocomplete="off">
+            <option
+                value="../../../../0.20.0-dev/bevy_pbr/index.html">
+                0.20.0-dev
+            </option>
+        </select>
+        <button id="show-settings" class="icon icon-settings" aria-label="Show settings"></button>
+<div id="settings-menu">
+    <div class="settings-title">Theme</div>
+    <label>
+        <input type="radio" name="theme" id="theme-auto" value="auto"> Auto
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-dark" value="dark"> Dark
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-light" value="light"> Light
+    </label>
+</div>
+    </div>
+    <div class="content">
+        <input type="text" id="search" placeholder="Search" oninput="searchDebounced()" autocomplete="off">
+
+        <div id="innerContent">
+            
+            <h2>
+                <a class="path" href="../../index.html">bevy_pbr</a><span>::</span><wbr><a class="path" href="../index.html">render</a><span>::</span><wbr><a class="path" href="index.html">pbr_types</a><span>::</span><wbr><a class="struct" href="#">StandardMaterial</a>
+            </h2>
+            
+
+            
+
+
+
+<a class="module" href="../../../src/bevy_pbr/render/pbr_types.html#3-29">Source</a>
+
+
+<pre class="code-block">
+<code>struct StandardMaterial {
+    base_color: vec4&lt;f32&gt;,
+    emissive: vec4&lt;f32&gt;,
+    attenuation_color: vec4&lt;f32&gt;,
+    uv_transform: mat3x3&lt;f32&gt;,
+    reflectance: vec3&lt;f32&gt;,
+    perceptual_roughness: f32,
+    metallic: f32,
+    diffuse_transmission: f32,
+    specular_transmission: f32,
+    thickness: f32,
+    ior: f32,
+    attenuation_distance: f32,
+    clearcoat: f32,
+    clearcoat_perceptual_roughness: f32,
+    anisotropy_strength: f32,
+    anisotropy_rotation: vec2&lt;f32&gt;,
+    flags: u32,
+    alpha_cutoff: f32,
+    parallax_depth_scale: f32,
+    max_parallax_layer_count: f32,
+    lightmap_exposure: f32,
+    max_relief_mapping_search_steps: u32,
+    deferred_lighting_pass_id: u32
+}</code>
+</pre>
+
+<h2 class="item-list-title">Fields</h2>
+
+<div style="margin: 8px 0;"><code>base_color: vec4&lt;f32&gt;</code></div>
+
+
+<div style="margin: 8px 0;"><code>emissive: vec4&lt;f32&gt;</code></div>
+
+
+<div style="margin: 8px 0;"><code>attenuation_color: vec4&lt;f32&gt;</code></div>
+
+
+<div style="margin: 8px 0;"><code>uv_transform: mat3x3&lt;f32&gt;</code></div>
+
+
+<div style="margin: 8px 0;"><code>reflectance: vec3&lt;f32&gt;</code></div>
+
+
+<div style="margin: 8px 0;"><code>perceptual_roughness: f32</code></div>
+
+
+<div style="margin: 8px 0;"><code>metallic: f32</code></div>
+
+
+<div style="margin: 8px 0;"><code>diffuse_transmission: f32</code></div>
+
+
+<div style="margin: 8px 0;"><code>specular_transmission: f32</code></div>
+
+
+<div style="margin: 8px 0;"><code>thickness: f32</code></div>
+
+
+<div style="margin: 8px 0;"><code>ior: f32</code></div>
+
+
+<div style="margin: 8px 0;"><code>attenuation_distance: f32</code></div>
+
+
+<div style="margin: 8px 0;"><code>clearcoat: f32</code></div>
+
+
+<div style="margin: 8px 0;"><code>clearcoat_perceptual_roughness: f32</code></div>
+
+
+<div style="margin: 8px 0;"><code>anisotropy_strength: f32</code></div>
+
+
+<div style="margin: 8px 0;"><code>anisotropy_rotation: vec2&lt;f32&gt;</code></div>
+
+
+<div style="margin: 8px 0;"><code>flags: u32</code></div>
+
+
+<div style="margin: 8px 0;"><code>alpha_cutoff: f32</code></div>
+
+
+<div style="margin: 8px 0;"><code>parallax_depth_scale: f32</code></div>
+
+
+<div style="margin: 8px 0;"><code>max_parallax_layer_count: f32</code></div>
+
+
+<div style="margin: 8px 0;"><code>lightmap_exposure: f32</code></div>
+
+
+<div style="margin: 8px 0;"><code>max_relief_mapping_search_steps: u32</code></div>
+
+
+<div style="margin: 8px 0;"><code>deferred_lighting_pass_id: u32</code></div>
+<div class="comment"><p>ID for specifying which deferred lighting pass should be used for rendering this material, if any.</p>
+</div>
+
+
+
+        </div>
+    </div>
+
+    <script src="../../../../common.js"></script>
+    <script src="../../../items.js"></script>
+
+    <script>
+        window.DOCS_THIS_PACKAGE = {
+            version: "0.20.0-dev",
+            name: "bevy_pbr",
+            root: "../../../",
+        };
+    </script>
+    <script src="../../../../../-/static/js/selectVersion.js"></script>
+    <script src="../../../../../-/static/js/search.js"></script>
+    <script src="../../../../../-/static/js/lineNumbers.js"></script>
+</body>
+
+</html>

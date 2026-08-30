@@ -1,0 +1,130 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+        DepthRayMarchResult - bevy_pbr
+        
+    </title>
+
+    <link rel="stylesheet" href="../../../../../-/static/css/inter/inter.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/source_code_pro/source_code_pro.css">
+
+    <link rel="stylesheet" href="../../../../../-/static/css/themes.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/styles.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/icons.css">
+    <script src="../../../../../-/static/js/settings.js"></script>
+
+    
+</head>
+
+<body>
+    <div class="nav">
+        <a class="icon icon-home" style="margin-right: 12px;" href="../../../../../index.html"></a>
+        <span style="margin-right: 12px;">bevy_pbr</span>
+        <select class="select" id="selectVersion" onchange="changeVersion()" autocomplete="off">
+            <option
+                value="../../../../latest/bevy_pbr/index.html">
+                latest
+            </option>
+        </select>
+        <button id="show-settings" class="icon icon-settings" aria-label="Show settings"></button>
+<div id="settings-menu">
+    <div class="settings-title">Theme</div>
+    <label>
+        <input type="radio" name="theme" id="theme-auto" value="auto"> Auto
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-dark" value="dark"> Dark
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-light" value="light"> Light
+    </label>
+</div>
+    </div>
+    <div class="content">
+        <input type="text" id="search" placeholder="Search" oninput="searchDebounced()" autocomplete="off">
+
+        <div id="innerContent">
+            
+            <h2>
+                <a class="path" href="../../index.html">bevy_pbr</a><span>::</span><wbr><a class="path" href="../index.html">ssr</a><span>::</span><wbr><a class="path" href="index.html">raymarch</a><span>::</span><wbr><a class="struct" href="#">DepthRayMarchResult</a>
+            </h2>
+            
+
+            
+
+
+
+<a class="module" href="../../../src/bevy_pbr/ssr/raymarch.html#321-346">Source</a>
+
+
+<pre class="code-block">
+<code>struct DepthRayMarchResult {
+    hit: bool,
+    hit_t: f32,
+    hit_uv: vec2&lt;f32&gt;,
+    hit_penetration: f32,
+    hit_penetration_frac: f32
+}</code>
+</pre>
+
+<h2 class="item-list-title">Fields</h2>
+
+<div style="margin: 8px 0;"><code>hit: bool</code></div>
+<div class="comment"><p>True if the raymarch hit something.</p>
+</div>
+
+<div style="margin: 8px 0;"><code>hit_t: f32</code></div>
+<div class="comment"><p>In case of a hit, the normalized distance to it.</p>
+<p>In case of a miss, the furthest the ray managed to travel, which could either be
+exceeding the max range, or getting behind a surface further than the depth thickness.</p>
+<p>Range: <code>0..=1</code> as a lerp factor over <code>ray_start_cs..=ray_end_cs</code>.</p>
+</div>
+
+<div style="margin: 8px 0;"><code>hit_uv: vec2&lt;f32&gt;</code></div>
+<div class="comment"><p>UV corresponding to <code>hit_t</code>.</p>
+</div>
+
+<div style="margin: 8px 0;"><code>hit_penetration: f32</code></div>
+<div class="comment"><p>The distance that the hit point penetrates into the hit surface.
+Will normally be non-zero due to limited precision of the ray march.</p>
+<p>In case of a miss: undefined.</p>
+</div>
+
+<div style="margin: 8px 0;"><code>hit_penetration_frac: f32</code></div>
+<div class="comment"><p>Ditto, within the range <code>0..DepthRayMarch::depth_thickness_linear_z</code></p>
+<p>In case of a miss: undefined.</p>
+</div>
+
+
+
+        </div>
+    </div>
+
+    <script src="../../../../common.js"></script>
+    <script src="../../../items.js"></script>
+
+    <script>
+        window.DOCS_THIS_PACKAGE = {
+            version: "latest",
+            name: "bevy_pbr",
+            root: "../../../",
+        };
+    </script>
+    <script src="../../../../../-/static/js/selectVersion.js"></script>
+    <script src="../../../../../-/static/js/search.js"></script>
+    <script src="../../../../../-/static/js/lineNumbers.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,306 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+        color_plane - bevy_feathers
+        
+    </title>
+
+    <link rel="stylesheet" href="../../../../../../-/static/css/inter/inter.css">
+    <link rel="stylesheet" href="../../../../../../-/static/css/source_code_pro/source_code_pro.css">
+
+    <link rel="stylesheet" href="../../../../../../-/static/css/themes.css">
+    <link rel="stylesheet" href="../../../../../../-/static/css/styles.css">
+    <link rel="stylesheet" href="../../../../../../-/static/css/icons.css">
+    <script src="../../../../../../-/static/js/settings.js"></script>
+
+    
+</head>
+
+<body>
+    <div class="nav">
+        <a class="icon icon-home" style="margin-right: 12px;" href="../../../../../../index.html"></a>
+        <span style="margin-right: 12px;">bevy_feathers</span>
+        <select class="select" id="selectVersion" onchange="changeVersion()" autocomplete="off">
+            <option
+                value="../../../../../0.20.0-dev/bevy_feathers/index.html">
+                0.20.0-dev
+            </option>
+        </select>
+        <button id="show-settings" class="icon icon-settings" aria-label="Show settings"></button>
+<div id="settings-menu">
+    <div class="settings-title">Theme</div>
+    <label>
+        <input type="radio" name="theme" id="theme-auto" value="auto"> Auto
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-dark" value="dark"> Dark
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-light" value="light"> Light
+    </label>
+</div>
+    </div>
+    <div class="content">
+        <input type="text" id="search" placeholder="Search" oninput="searchDebounced()" autocomplete="off">
+
+        <div id="innerContent">
+            
+
+            
+
+<pre class="code-block">
+<code><a
+            href="#1"
+            id="1"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >1</a>// This shader draws the color plane in various color spaces.
+<a
+            href="#2"
+            id="2"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >2</a>import bevy_ui_render::ui_vertex_output::UiVertexOutput;
+<a
+            href="#3"
+            id="3"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >3</a>import bevy_render::color_operations::{
+<a
+            href="#4"
+            id="4"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >4</a>    srgb_to_linear_rgb,
+<a
+            href="#5"
+            id="5"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >5</a>    hsl_to_linear_rgb,
+<a
+            href="#6"
+            id="6"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >6</a>    okhsl_to_linear_rgb,
+<a
+            href="#7"
+            id="7"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >7</a>};
+<a
+            href="#8"
+            id="8"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >8</a>
+<a
+            href="#9"
+            id="9"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >9</a>struct ColorPlaneUniform {
+<a
+            href="#10"
+            id="10"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >10</a>  fixed_channel : f32,
+<a
+            href="#11"
+            id="11"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >11</a>@if(SIXTEEN_BYTE_ALIGNMENT)
+<a
+            href="#12"
+            id="12"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >12</a>  _webgl2_padding_12b : vec3&#60;f32&#62;,
+<a
+            href="#13"
+            id="13"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >13</a>}
+<a
+            href="#14"
+            id="14"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >14</a>
+<a
+            href="#15"
+            id="15"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >15</a>@group(1) @binding(0) var&#60;uniform&#62; uniform_data : ColorPlaneUniform;
+<a
+            href="#16"
+            id="16"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >16</a>
+<a
+            href="#17"
+            id="17"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >17</a>@fragment
+<a
+            href="#18"
+            id="18"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >18</a>fn fragment(in: UiVertexOutput) -&#62; @location(0) vec4&#60;f32&#62; {
+<a
+            href="#19"
+            id="19"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >19</a>    let uv = in.uv;
+<a
+            href="#20"
+            id="20"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >20</a>@if(PLANE_RG)
+<a
+            href="#21"
+            id="21"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >21</a>    return vec4(srgb_to_linear_rgb(vec3(uv.x, uv.y, uniform_data.fixed_channel)), 1.0);
+<a
+            href="#22"
+            id="22"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >22</a>@elif(PLANE_RB)
+<a
+            href="#23"
+            id="23"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >23</a>    return vec4(srgb_to_linear_rgb(vec3(uv.x, uniform_data.fixed_channel, uv.y)), 1.0);
+<a
+            href="#24"
+            id="24"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >24</a>@elif(PLANE_GB)
+<a
+            href="#25"
+            id="25"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >25</a>    return vec4(srgb_to_linear_rgb(vec3(uniform_data.fixed_channel, uv.x, uv.y)), 1.0);
+<a
+            href="#26"
+            id="26"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >26</a>@elif(PLANE_HS)
+<a
+            href="#27"
+            id="27"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >27</a>    return vec4(hsl_to_linear_rgb(vec3(uv.x, 1.0 - uv.y, uniform_data.fixed_channel)), 1.0);
+<a
+            href="#28"
+            id="28"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >28</a>@elif(PLANE_HL)
+<a
+            href="#29"
+            id="29"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >29</a>    return vec4(hsl_to_linear_rgb(vec3(uv.x, uniform_data.fixed_channel, 1.0 - uv.y)), 1.0);
+<a
+            href="#30"
+            id="30"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >30</a>@elif(PLANE_OKHS)
+<a
+            href="#31"
+            id="31"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >31</a>    return vec4(okhsl_to_linear_rgb(vec3(uv.x, 1.0 - uv.y, uniform_data.fixed_channel)), 1.0);
+<a
+            href="#32"
+            id="32"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >32</a>@elif(PLANE_OKHL)
+<a
+            href="#33"
+            id="33"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >33</a>    return vec4(okhsl_to_linear_rgb(vec3(uv.x, uniform_data.fixed_channel, 1.0 - uv.y)), 1.0);
+<a
+            href="#34"
+            id="34"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >34</a>@else
+<a
+            href="#35"
+            id="35"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >35</a>    // Error color
+<a
+            href="#36"
+            id="36"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >36</a>    return vec4(1.0, 0.0, 1.0, 1.0);
+<a
+            href="#37"
+            id="37"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >37</a>}</code>
+</pre>
+
+        </div>
+    </div>
+
+    <script src="../../../../../common.js"></script>
+    <script src="../../../../items.js"></script>
+
+    <script>
+        window.DOCS_THIS_PACKAGE = {
+            version: "0.20.0-dev",
+            name: "bevy_feathers",
+            root: "../../../../",
+        };
+    </script>
+    <script src="../../../../../../-/static/js/selectVersion.js"></script>
+    <script src="../../../../../../-/static/js/search.js"></script>
+    <script src="../../../../../../-/static/js/lineNumbers.js"></script>
+</body>
+
+</html>

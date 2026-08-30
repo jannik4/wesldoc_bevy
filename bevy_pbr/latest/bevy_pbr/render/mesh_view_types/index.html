@@ -1,0 +1,496 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+        mesh_view_types - bevy_pbr
+        
+    </title>
+
+    <link rel="stylesheet" href="../../../../../-/static/css/inter/inter.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/source_code_pro/source_code_pro.css">
+
+    <link rel="stylesheet" href="../../../../../-/static/css/themes.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/styles.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/icons.css">
+    <script src="../../../../../-/static/js/settings.js"></script>
+
+    
+</head>
+
+<body>
+    <div class="nav">
+        <a class="icon icon-home" style="margin-right: 12px;" href="../../../../../index.html"></a>
+        <span style="margin-right: 12px;">bevy_pbr</span>
+        <select class="select" id="selectVersion" onchange="changeVersion()" autocomplete="off">
+            <option
+                value="../../../../latest/bevy_pbr/index.html">
+                latest
+            </option>
+        </select>
+        <button id="show-settings" class="icon icon-settings" aria-label="Show settings"></button>
+<div id="settings-menu">
+    <div class="settings-title">Theme</div>
+    <label>
+        <input type="radio" name="theme" id="theme-auto" value="auto"> Auto
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-dark" value="dark"> Dark
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-light" value="light"> Light
+    </label>
+</div>
+    </div>
+    <div class="content">
+        <input type="text" id="search" placeholder="Search" oninput="searchDebounced()" autocomplete="off">
+
+        <div id="innerContent">
+            
+            <h2>
+                <a class="path" href="../../index.html">bevy_pbr</a><span>::</span><wbr><a class="path" href="../index.html">render</a><span>::</span><wbr><a class="module" href="index.html">mesh_view_types</a>
+            </h2>
+            
+
+            
+
+<a class="module" href="../../../src/bevy_pbr/render/mesh_view_types.html">Source</a>
+
+
+
+
+
+
+
+<h3 class="item-list-title">Constants</h3>
+<ul class="item-list">
+    
+    <li>
+        <div>
+            <a class="const" href="const.AMBIENT_LIGHT_FLAGS_AFFECTS_LIGHTMAPPED_MESHES_BIT.html">AMBIENT_LIGHT_FLAGS_AFFECTS_LIGHTMAPPED_MESHES_BIT</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.DIRECTIONAL_LIGHT_FLAGS_AFFECTS_LIGHTMAPPED_MESH_DIFFUSE_BIT.html">DIRECTIONAL_LIGHT_FLAGS_AFFECTS_LIGHTMAPPED_MESH_DIFFUSE_BIT</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.DIRECTIONAL_LIGHT_FLAGS_CONTACT_SHADOWS_ENABLED_BIT.html">DIRECTIONAL_LIGHT_FLAGS_CONTACT_SHADOWS_ENABLED_BIT</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.DIRECTIONAL_LIGHT_FLAGS_SHADOWS_ENABLED_BIT.html">DIRECTIONAL_LIGHT_FLAGS_SHADOWS_ENABLED_BIT</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.DIRECTIONAL_LIGHT_FLAGS_VOLUMETRIC_BIT.html">DIRECTIONAL_LIGHT_FLAGS_VOLUMETRIC_BIT</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.FOG_MODE_ATMOSPHERIC.html">FOG_MODE_ATMOSPHERIC</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.FOG_MODE_EXPONENTIAL.html">FOG_MODE_EXPONENTIAL</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.FOG_MODE_EXPONENTIAL_SQUARED.html">FOG_MODE_EXPONENTIAL_SQUARED</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.FOG_MODE_LINEAR.html">FOG_MODE_LINEAR</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.FOG_MODE_OFF.html">FOG_MODE_OFF</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.LIGHT_PROBE_FLAG_AFFECTS_LIGHTMAPPED_MESH_DIFFUSE.html">LIGHT_PROBE_FLAG_AFFECTS_LIGHTMAPPED_MESH_DIFFUSE</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.LIGHT_PROBE_FLAG_PARALLAX_CORRECT.html">LIGHT_PROBE_FLAG_PARALLAX_CORRECT</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.POINT_LIGHT_FLAGS_AFFECTS_LIGHTMAPPED_MESH_DIFFUSE_BIT.html">POINT_LIGHT_FLAGS_AFFECTS_LIGHTMAPPED_MESH_DIFFUSE_BIT</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.POINT_LIGHT_FLAGS_CONTACT_SHADOWS_ENABLED_BIT.html">POINT_LIGHT_FLAGS_CONTACT_SHADOWS_ENABLED_BIT</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.POINT_LIGHT_FLAGS_RECT_LIGHT_BIT.html">POINT_LIGHT_FLAGS_RECT_LIGHT_BIT</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.POINT_LIGHT_FLAGS_SHADOWS_ENABLED_BIT.html">POINT_LIGHT_FLAGS_SHADOWS_ENABLED_BIT</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.POINT_LIGHT_FLAGS_SPOT_LIGHT_BIT.html">POINT_LIGHT_FLAGS_SPOT_LIGHT_BIT</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.POINT_LIGHT_FLAGS_SPOT_LIGHT_Y_NEGATIVE.html">POINT_LIGHT_FLAGS_SPOT_LIGHT_Y_NEGATIVE</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.POINT_LIGHT_FLAGS_VOLUMETRIC_BIT.html">POINT_LIGHT_FLAGS_VOLUMETRIC_BIT</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+</ul>
+
+
+
+
+
+
+
+<h3 class="item-list-title">Structs</h3>
+<ul class="item-list">
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.ClusterOffsetsAndCounts.html">ClusterOffsetsAndCounts</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.ClusterableObjectIndexLists.html">ClusterableObjectIndexLists</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.ClusteredDecal.html">ClusteredDecal</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.ClusteredDecals.html">ClusteredDecals</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.ClusteredLight.html">ClusteredLight</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.ClusteredLights.html">ClusteredLights</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.ContactShadowsSettings.html">ContactShadowsSettings</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.DirectionalCascade.html">DirectionalCascade</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.DirectionalLight.html">DirectionalLight</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.EnvironmentMapUniform.html">EnvironmentMapUniform</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.Fog.html">Fog</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.LightProbe.html">LightProbe</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.LightProbes.html">LightProbes</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.Lights.html">Lights</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.OitFragmentNode.html">OitFragmentNode</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.OrderIndependentTransparencySettings.html">OrderIndependentTransparencySettings</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.RectLight.html">RectLight</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.ScreenSpaceReflectionsSettings.html">ScreenSpaceReflectionsSettings</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+</ul>
+
+
+
+
+
+
+
+<h3 class="item-list-title">Translate-time features</h3>
+<ul class="item-list">
+    
+    <li class="feature">AVAILABLE_STORAGE_BUFFER_BINDINGS__GE_3</li>
+    
+    <li class="feature">SIXTEEN_BYTE_ALIGNMENT</li>
+    
+</ul>
+
+
+
+        </div>
+    </div>
+
+    <script src="../../../../common.js"></script>
+    <script src="../../../items.js"></script>
+
+    <script>
+        window.DOCS_THIS_PACKAGE = {
+            version: "latest",
+            name: "bevy_pbr",
+            root: "../../../",
+        };
+    </script>
+    <script src="../../../../../-/static/js/selectVersion.js"></script>
+    <script src="../../../../../-/static/js/search.js"></script>
+    <script src="../../../../../-/static/js/lineNumbers.js"></script>
+</body>
+
+</html>

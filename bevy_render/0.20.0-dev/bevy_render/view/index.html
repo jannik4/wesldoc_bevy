@@ -1,0 +1,417 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+        view - bevy_render
+        
+    </title>
+
+    <link rel="stylesheet" href="../../../../-/static/css/inter/inter.css">
+    <link rel="stylesheet" href="../../../../-/static/css/source_code_pro/source_code_pro.css">
+
+    <link rel="stylesheet" href="../../../../-/static/css/themes.css">
+    <link rel="stylesheet" href="../../../../-/static/css/styles.css">
+    <link rel="stylesheet" href="../../../../-/static/css/icons.css">
+    <script src="../../../../-/static/js/settings.js"></script>
+
+    
+</head>
+
+<body>
+    <div class="nav">
+        <a class="icon icon-home" style="margin-right: 12px;" href="../../../../index.html"></a>
+        <span style="margin-right: 12px;">bevy_render</span>
+        <select class="select" id="selectVersion" onchange="changeVersion()" autocomplete="off">
+            <option
+                value="../../../0.20.0-dev/bevy_render/index.html">
+                0.20.0-dev
+            </option>
+        </select>
+        <button id="show-settings" class="icon icon-settings" aria-label="Show settings"></button>
+<div id="settings-menu">
+    <div class="settings-title">Theme</div>
+    <label>
+        <input type="radio" name="theme" id="theme-auto" value="auto"> Auto
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-dark" value="dark"> Dark
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-light" value="light"> Light
+    </label>
+</div>
+    </div>
+    <div class="content">
+        <input type="text" id="search" placeholder="Search" oninput="searchDebounced()" autocomplete="off">
+
+        <div id="innerContent">
+            
+            <h2>
+                <a class="path" href="../index.html">bevy_render</a><span>::</span><wbr><a class="module" href="index.html">view</a>
+            </h2>
+            
+
+            
+
+<a class="module" href="../../src/bevy_render/view.html">Source</a>
+
+
+
+
+
+<h3 class="item-list-title">Modules</h3>
+<ul class="item-list">
+    
+    <li>
+        <div><a class="module" href="window/index.html">window</a></div>
+        <div>
+            
+        </div>
+    </li>
+    
+</ul>
+
+
+
+
+
+
+
+
+
+<h3 class="item-list-title">Structs</h3>
+<ul class="item-list">
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.ColorGrading.html">ColorGrading</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.View.html">View</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+</ul>
+
+
+
+<h3 class="item-list-title">Functions</h3>
+<ul class="item-list">
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.depth_ndc_to_view_z.html">depth_ndc_to_view_z</a>
+            
+        </div>
+        <div>
+            <div class="comment-inline"><p>Convert ndc depth to linear view z.
+Note: Depth values in front of the camera will be negative as -z is forward</p>
+</div>
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.direction_clip_to_view.html">direction_clip_to_view</a>
+            
+        </div>
+        <div>
+            <div class="comment-inline"><p>Convert a clip space direction to view space</p>
+</div>
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.direction_clip_to_world.html">direction_clip_to_world</a>
+            
+        </div>
+        <div>
+            <div class="comment-inline"><p>Convert a clip space direction to world space</p>
+</div>
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.direction_view_to_clip.html">direction_view_to_clip</a>
+            
+        </div>
+        <div>
+            <div class="comment-inline"><p>Convert a view space direction to clip space</p>
+</div>
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.direction_view_to_world.html">direction_view_to_world</a>
+            
+        </div>
+        <div>
+            <div class="comment-inline"><p>Convert a view space direction to world space</p>
+</div>
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.direction_world_to_clip.html">direction_world_to_clip</a>
+            
+        </div>
+        <div>
+            <div class="comment-inline"><p>Convert a world space direction to clip space</p>
+</div>
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.direction_world_to_view.html">direction_world_to_view</a>
+            
+        </div>
+        <div>
+            <div class="comment-inline"><p>Convert a world space direction to view space</p>
+</div>
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.frag_coord_to_ndc.html">frag_coord_to_ndc</a>
+            
+        </div>
+        <div>
+            <div class="comment-inline"><p>Convert frag coord to ndc</p>
+</div>
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.frag_coord_to_uv.html">frag_coord_to_uv</a>
+            
+        </div>
+        <div>
+            <div class="comment-inline"><p>returns the (0.0, 0.0) .. (1.0, 1.0) position within the viewport for the current render target
+<a href="0%20..%20render%20target%20viewport%20size" title="0 .. render target viewport size" rel="noopener noreferrer">0 .. render target viewport size</a> eg. <a href="(0.0,%200.0)%20..%20(1280.0,%20720.0)" title="(0.0, 0.0) .. (1280.0, 720.0)" rel="noopener noreferrer">(0.0, 0.0) .. (1280.0, 720.0)</a> to <a href="(0.0,%200.0)%20..%20(1.0,%201.0)" title="(0.0, 0.0) .. (1.0, 1.0)" rel="noopener noreferrer">(0.0, 0.0) .. (1.0, 1.0)</a></p>
+</div>
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.ndc_to_frag_coord.html">ndc_to_frag_coord</a>
+            
+        </div>
+        <div>
+            <div class="comment-inline"><p>Convert ndc space xy coordinate <a href="-1.0%20..%201.0" title="-1.0 .. 1.0" rel="noopener noreferrer">-1.0 .. 1.0</a> to <a href="0%20..%20render%20target%20viewport%20size" title="0 .. render target viewport size" rel="noopener noreferrer">0 .. render target
+viewport size</a></p>
+</div>
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.ndc_to_uv.html">ndc_to_uv</a>
+            
+        </div>
+        <div>
+            <div class="comment-inline"><p>Convert ndc space xy coordinate <a href="-1.0%20..%201.0" title="-1.0 .. 1.0" rel="noopener noreferrer">-1.0 .. 1.0</a> to uv <a href="0.0%20..%201.0" title="0.0 .. 1.0" rel="noopener noreferrer">0.0 .. 1.0</a></p>
+</div>
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.perspective_camera_near.html">perspective_camera_near</a>
+            
+        </div>
+        <div>
+            <div class="comment-inline"><p>Retrieve the perspective camera near clipping plane</p>
+</div>
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.position_clip_to_view.html">position_clip_to_view</a>
+            
+        </div>
+        <div>
+            <div class="comment-inline"><p>Convert a clip space position to view space</p>
+</div>
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.position_clip_to_world.html">position_clip_to_world</a>
+            
+        </div>
+        <div>
+            <div class="comment-inline"><p>Convert a clip space position to world space</p>
+</div>
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.position_ndc_to_view.html">position_ndc_to_view</a>
+            
+        </div>
+        <div>
+            <div class="comment-inline"><p>Convert a ndc space position to view space</p>
+</div>
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.position_ndc_to_world.html">position_ndc_to_world</a>
+            
+        </div>
+        <div>
+            <div class="comment-inline"><p>Convert a ndc space position to world space</p>
+</div>
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.position_view_to_clip.html">position_view_to_clip</a>
+            
+        </div>
+        <div>
+            <div class="comment-inline"><p>Convert a view space position to clip space</p>
+</div>
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.position_view_to_ndc.html">position_view_to_ndc</a>
+            
+        </div>
+        <div>
+            <div class="comment-inline"><p>Convert a view space position to ndc space</p>
+</div>
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.position_view_to_world.html">position_view_to_world</a>
+            
+        </div>
+        <div>
+            <div class="comment-inline"><p>Convert a view space position to world space</p>
+</div>
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.position_world_to_clip.html">position_world_to_clip</a>
+            
+        </div>
+        <div>
+            <div class="comment-inline"><p>Convert a world space position to clip space</p>
+</div>
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.position_world_to_ndc.html">position_world_to_ndc</a>
+            
+        </div>
+        <div>
+            <div class="comment-inline"><p>Convert a world space position to ndc space</p>
+</div>
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.position_world_to_view.html">position_world_to_view</a>
+            
+        </div>
+        <div>
+            <div class="comment-inline"><p>Convert a world space position to view space</p>
+</div>
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.uv_to_ndc.html">uv_to_ndc</a>
+            
+        </div>
+        <div>
+            <div class="comment-inline"><p>Convert uv <a href="0.0%20..%201.0" title="0.0 .. 1.0" rel="noopener noreferrer">0.0 .. 1.0</a> coordinate to ndc space xy <a href="-1.0%20..%201.0" title="-1.0 .. 1.0" rel="noopener noreferrer">-1.0 .. 1.0</a></p>
+</div>
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.view_z_to_depth_ndc.html">view_z_to_depth_ndc</a>
+            
+        </div>
+        <div>
+            <div class="comment-inline"><p>Convert linear view z to ndc depth.
+Note: View z input should be negative for values in front of the camera as -z is forward</p>
+</div>
+        </div>
+    </li>
+    
+</ul>
+
+
+
+
+
+
+
+        </div>
+    </div>
+
+    <script src="../../../common.js"></script>
+    <script src="../../items.js"></script>
+
+    <script>
+        window.DOCS_THIS_PACKAGE = {
+            version: "0.20.0-dev",
+            name: "bevy_render",
+            root: "../../",
+        };
+    </script>
+    <script src="../../../../-/static/js/selectVersion.js"></script>
+    <script src="../../../../-/static/js/search.js"></script>
+    <script src="../../../../-/static/js/lineNumbers.js"></script>
+</body>
+
+</html>

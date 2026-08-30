@@ -1,0 +1,680 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+        smaa - bevy_anti_alias
+        
+    </title>
+
+    <link rel="stylesheet" href="../../../../../-/static/css/inter/inter.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/source_code_pro/source_code_pro.css">
+
+    <link rel="stylesheet" href="../../../../../-/static/css/themes.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/styles.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/icons.css">
+    <script src="../../../../../-/static/js/settings.js"></script>
+
+    
+</head>
+
+<body>
+    <div class="nav">
+        <a class="icon icon-home" style="margin-right: 12px;" href="../../../../../index.html"></a>
+        <span style="margin-right: 12px;">bevy_anti_alias</span>
+        <select class="select" id="selectVersion" onchange="changeVersion()" autocomplete="off">
+            <option
+                value="../../../../latest/bevy_anti_alias/index.html">
+                latest
+            </option>
+        </select>
+        <button id="show-settings" class="icon icon-settings" aria-label="Show settings"></button>
+<div id="settings-menu">
+    <div class="settings-title">Theme</div>
+    <label>
+        <input type="radio" name="theme" id="theme-auto" value="auto"> Auto
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-dark" value="dark"> Dark
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-light" value="light"> Light
+    </label>
+</div>
+    </div>
+    <div class="content">
+        <input type="text" id="search" placeholder="Search" oninput="searchDebounced()" autocomplete="off">
+
+        <div id="innerContent">
+            
+            <h2>
+                <a class="path" href="../../index.html">bevy_anti_alias</a><span>::</span><wbr><a class="path" href="../index.html">smaa</a><span>::</span><wbr><a class="module" href="index.html">smaa</a>
+            </h2>
+            
+
+            
+
+<a class="module" href="../../../src/bevy_anti_alias/smaa/smaa.html">Source</a>
+
+
+
+
+
+
+
+<h3 class="item-list-title">Constants</h3>
+<ul class="item-list">
+    
+    <li>
+        <div>
+            <a class="const" href="const.SMAA_AREATEX_MAX_DISTANCE.html">SMAA_AREATEX_MAX_DISTANCE</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.SMAA_AREATEX_MAX_DISTANCE_DIAG.html">SMAA_AREATEX_MAX_DISTANCE_DIAG</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.SMAA_AREATEX_PIXEL_SIZE.html">SMAA_AREATEX_PIXEL_SIZE</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.SMAA_AREATEX_SUBTEX_SIZE.html">SMAA_AREATEX_SUBTEX_SIZE</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.SMAA_CORNER_ROUNDING.html">SMAA_CORNER_ROUNDING</a>
+            
+            <span class="conditional-inline">SMAA_PRESET_HIGH || (SMAA_PRESET_ULTRA &#38;&#38; !SMAA_PRESET_HIGH) || (!SMAA_PRESET_LOW &#38;&#38; !SMAA_PRESET_MEDIUM &#38;&#38; !SMAA_PRESET_HIGH &#38;&#38; !SMAA_PRESET_ULTRA)</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.SMAA_CORNER_ROUNDING_NORM.html">SMAA_CORNER_ROUNDING_NORM</a>
+            
+            <span class="conditional-inline">!SMAA_DISABLE_CORNER_DETECTION</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.SMAA_LOCAL_CONTRAST_ADAPTATION_FACTOR.html">SMAA_LOCAL_CONTRAST_ADAPTATION_FACTOR</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.SMAA_MAX_SEARCH_STEPS.html">SMAA_MAX_SEARCH_STEPS</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.SMAA_MAX_SEARCH_STEPS_DIAG.html">SMAA_MAX_SEARCH_STEPS_DIAG</a>
+            
+            <span class="conditional-inline">SMAA_PRESET_HIGH || (SMAA_PRESET_ULTRA &#38;&#38; !SMAA_PRESET_HIGH) || (!SMAA_PRESET_LOW &#38;&#38; !SMAA_PRESET_MEDIUM &#38;&#38; !SMAA_PRESET_HIGH &#38;&#38; !SMAA_PRESET_ULTRA)</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.SMAA_SEARCHTEX_PACKED_SIZE.html">SMAA_SEARCHTEX_PACKED_SIZE</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.SMAA_SEARCHTEX_SIZE.html">SMAA_SEARCHTEX_SIZE</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.SMAA_THRESHOLD.html">SMAA_THRESHOLD</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+</ul>
+
+
+
+
+
+<h3 class="item-list-title">Global Variables</h3>
+<ul class="item-list">
+    
+    <li>
+        <div>
+            <a class="var" href="var.area_texture.html">area_texture</a>
+            
+            <span class="conditional-inline">SMAA_BLENDING_WEIGHT_CALCULATION</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.blend_sampler.html">blend_sampler</a>
+            
+            <span class="conditional-inline">SMAA_NEIGHBORHOOD_BLENDING</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.blend_texture.html">blend_texture</a>
+            
+            <span class="conditional-inline">SMAA_NEIGHBORHOOD_BLENDING</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.color_sampler.html">color_sampler</a>
+            
+            <span class="conditional-inline">SMAA_EDGE_DETECTION</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.color_texture.html">color_texture</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.edges_sampler.html">edges_sampler</a>
+            
+            <span class="conditional-inline">SMAA_BLENDING_WEIGHT_CALCULATION</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.edges_texture.html">edges_texture</a>
+            
+            <span class="conditional-inline">SMAA_BLENDING_WEIGHT_CALCULATION</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.search_texture.html">search_texture</a>
+            
+            <span class="conditional-inline">SMAA_BLENDING_WEIGHT_CALCULATION</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.smaa_info.html">smaa_info</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+</ul>
+
+
+
+<h3 class="item-list-title">Structs</h3>
+<ul class="item-list">
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.BlendingWeightCalculationVaryings.html">BlendingWeightCalculationVaryings</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.EdgeDetectionVaryings.html">EdgeDetectionVaryings</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.NeighborhoodBlendingVaryings.html">NeighborhoodBlendingVaryings</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.SmaaInfo.html">SmaaInfo</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.VertexVaryings.html">VertexVaryings</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+</ul>
+
+
+
+<h3 class="item-list-title">Functions</h3>
+<ul class="item-list">
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.area.html">area</a>
+            
+            <span class="conditional-inline">SMAA_BLENDING_WEIGHT_CALCULATION</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.area_diag.html">area_diag</a>
+            
+            <span class="conditional-inline">SMAA_BLENDING_WEIGHT_CALCULATION &#38;&#38; !SMAA_DISABLE_DIAG_DETECTION</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.blending_weight_calculation_fragment_main.html">blending_weight_calculation_fragment_main</a>
+            
+            <span class="conditional-inline">SMAA_BLENDING_WEIGHT_CALCULATION</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.blending_weight_calculation_vertex_main.html">blending_weight_calculation_vertex_main</a>
+            
+            <span class="conditional-inline">SMAA_BLENDING_WEIGHT_CALCULATION</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.calculate_diag_weights.html">calculate_diag_weights</a>
+            
+            <span class="conditional-inline">SMAA_BLENDING_WEIGHT_CALCULATION &#38;&#38; !SMAA_DISABLE_DIAG_DETECTION</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.calculate_vertex_varyings.html">calculate_vertex_varyings</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.decode_diag_bilinear_access_2.html">decode_diag_bilinear_access_2</a>
+            
+            <span class="conditional-inline">SMAA_BLENDING_WEIGHT_CALCULATION &#38;&#38; !SMAA_DISABLE_DIAG_DETECTION</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.decode_diag_bilinear_access_4.html">decode_diag_bilinear_access_4</a>
+            
+            <span class="conditional-inline">SMAA_BLENDING_WEIGHT_CALCULATION &#38;&#38; !SMAA_DISABLE_DIAG_DETECTION</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.detect_horizontal_corner_pattern.html">detect_horizontal_corner_pattern</a>
+            
+            <span class="conditional-inline">SMAA_BLENDING_WEIGHT_CALCULATION</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.detect_vertical_corner_pattern.html">detect_vertical_corner_pattern</a>
+            
+            <span class="conditional-inline">SMAA_BLENDING_WEIGHT_CALCULATION</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.edge_detection_vertex_main.html">edge_detection_vertex_main</a>
+            
+            <span class="conditional-inline">SMAA_EDGE_DETECTION</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.luma_edge_detection_fragment_main.html">luma_edge_detection_fragment_main</a>
+            
+            <span class="conditional-inline">SMAA_EDGE_DETECTION</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.neighborhood_blending_fragment_main.html">neighborhood_blending_fragment_main</a>
+            
+            <span class="conditional-inline">SMAA_NEIGHBORHOOD_BLENDING</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.neighborhood_blending_vertex_main.html">neighborhood_blending_vertex_main</a>
+            
+            <span class="conditional-inline">SMAA_NEIGHBORHOOD_BLENDING</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.search_diag_1.html">search_diag_1</a>
+            
+            <span class="conditional-inline">SMAA_BLENDING_WEIGHT_CALCULATION &#38;&#38; !SMAA_DISABLE_DIAG_DETECTION</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.search_diag_2.html">search_diag_2</a>
+            
+            <span class="conditional-inline">SMAA_BLENDING_WEIGHT_CALCULATION &#38;&#38; !SMAA_DISABLE_DIAG_DETECTION</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.search_length.html">search_length</a>
+            
+            <span class="conditional-inline">SMAA_BLENDING_WEIGHT_CALCULATION</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.search_x_left.html">search_x_left</a>
+            
+            <span class="conditional-inline">SMAA_BLENDING_WEIGHT_CALCULATION</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.search_x_right.html">search_x_right</a>
+            
+            <span class="conditional-inline">SMAA_BLENDING_WEIGHT_CALCULATION</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.search_y_down.html">search_y_down</a>
+            
+            <span class="conditional-inline">SMAA_BLENDING_WEIGHT_CALCULATION</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.search_y_up.html">search_y_up</a>
+            
+            <span class="conditional-inline">SMAA_BLENDING_WEIGHT_CALCULATION</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+</ul>
+
+
+
+
+
+<h3 class="item-list-title">Translate-time features</h3>
+<ul class="item-list">
+    
+    <li class="feature">SMAA_BLENDING_WEIGHT_CALCULATION</li>
+    
+    <li class="feature">SMAA_DISABLE_CORNER_DETECTION</li>
+    
+    <li class="feature">SMAA_DISABLE_DIAG_DETECTION</li>
+    
+    <li class="feature">SMAA_EDGE_DETECTION</li>
+    
+    <li class="feature">SMAA_NEIGHBORHOOD_BLENDING</li>
+    
+    <li class="feature">SMAA_PRESET_HIGH</li>
+    
+    <li class="feature">SMAA_PRESET_LOW</li>
+    
+    <li class="feature">SMAA_PRESET_MEDIUM</li>
+    
+    <li class="feature">SMAA_PRESET_ULTRA</li>
+    
+</ul>
+
+
+
+        </div>
+    </div>
+
+    <script src="../../../../common.js"></script>
+    <script src="../../../items.js"></script>
+
+    <script>
+        window.DOCS_THIS_PACKAGE = {
+            version: "latest",
+            name: "bevy_anti_alias",
+            root: "../../../",
+        };
+    </script>
+    <script src="../../../../../-/static/js/selectVersion.js"></script>
+    <script src="../../../../../-/static/js/search.js"></script>
+    <script src="../../../../../-/static/js/lineNumbers.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,814 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+        bindings - bevy_pbr
+        
+    </title>
+
+    <link rel="stylesheet" href="../../../../../-/static/css/inter/inter.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/source_code_pro/source_code_pro.css">
+
+    <link rel="stylesheet" href="../../../../../-/static/css/themes.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/styles.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/icons.css">
+    <script src="../../../../../-/static/js/settings.js"></script>
+
+    
+</head>
+
+<body>
+    <div class="nav">
+        <a class="icon icon-home" style="margin-right: 12px;" href="../../../../../index.html"></a>
+        <span style="margin-right: 12px;">bevy_pbr</span>
+        <select class="select" id="selectVersion" onchange="changeVersion()" autocomplete="off">
+            <option
+                value="../../../../latest/bevy_pbr/index.html">
+                latest
+            </option>
+        </select>
+        <button id="show-settings" class="icon icon-settings" aria-label="Show settings"></button>
+<div id="settings-menu">
+    <div class="settings-title">Theme</div>
+    <label>
+        <input type="radio" name="theme" id="theme-auto" value="auto"> Auto
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-dark" value="dark"> Dark
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-light" value="light"> Light
+    </label>
+</div>
+    </div>
+    <div class="content">
+        <input type="text" id="search" placeholder="Search" oninput="searchDebounced()" autocomplete="off">
+
+        <div id="innerContent">
+            
+            <h2>
+                <a class="path" href="../../index.html">bevy_pbr</a><span>::</span><wbr><a class="path" href="../index.html">meshlet</a><span>::</span><wbr><a class="module" href="index.html">bindings</a>
+            </h2>
+            
+
+            
+
+<a class="module" href="../../../src/bevy_pbr/meshlet/bindings.html">Source</a>
+
+
+
+
+
+
+
+<h3 class="item-list-title">Constants</h3>
+<ul class="item-list">
+    
+    <li>
+        <div>
+            <a class="const" href="const.CENTIMETERS_PER_METER.html">CENTIMETERS_PER_METER</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+</ul>
+
+
+
+
+
+<h3 class="item-list-title">Global Variables</h3>
+<ul class="item-list">
+    
+    <li>
+        <div>
+            <a class="var" href="var.constants.html">constants</a>
+            
+            <span class="conditional-inline">MESHLET_INSTANCE_CULLING_PASS || MESHLET_BVH_CULLING_PASS || MESHLET_CLUSTER_CULLING_PASS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.depth_pyramid.html">depth_pyramid</a>
+            
+            <span class="conditional-inline">MESHLET_INSTANCE_CULLING_PASS || MESHLET_BVH_CULLING_PASS || MESHLET_CLUSTER_CULLING_PASS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.meshlet_bvh_cull_count_read.html">meshlet_bvh_cull_count_read</a>
+            
+            <span class="conditional-inline">MESHLET_BVH_CULLING_PASS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.meshlet_bvh_cull_count_write.html">meshlet_bvh_cull_count_write</a>
+            
+            <span class="conditional-inline">MESHLET_INSTANCE_CULLING_PASS || MESHLET_BVH_CULLING_PASS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.meshlet_bvh_cull_dispatch.html">meshlet_bvh_cull_dispatch</a>
+            
+            <span class="conditional-inline">MESHLET_INSTANCE_CULLING_PASS || MESHLET_BVH_CULLING_PASS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.meshlet_bvh_cull_queue.html">meshlet_bvh_cull_queue</a>
+            
+            <span class="conditional-inline">MESHLET_INSTANCE_CULLING_PASS || MESHLET_BVH_CULLING_PASS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.meshlet_bvh_nodes.html">meshlet_bvh_nodes</a>
+            
+            <span class="conditional-inline">MESHLET_BVH_CULLING_PASS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.meshlet_cull_data.html">meshlet_cull_data</a>
+            
+            <span class="conditional-inline">MESHLET_CLUSTER_CULLING_PASS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.meshlet_hardware_raster_indirect_args.html">meshlet_hardware_raster_indirect_args</a>
+            
+            <span class="conditional-inline">MESHLET_CLUSTER_CULLING_PASS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.meshlet_indices.html">meshlet_indices</a>
+            
+            <span class="conditional-inline">MESHLET_VISIBILITY_BUFFER_RASTER_PASS || MESHLET_MESH_MATERIAL_PASS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.meshlet_instance_aabbs.html">meshlet_instance_aabbs</a>
+            
+            <span class="conditional-inline">MESHLET_INSTANCE_CULLING_PASS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.meshlet_instance_bvh_root_nodes.html">meshlet_instance_bvh_root_nodes</a>
+            
+            <span class="conditional-inline">MESHLET_INSTANCE_CULLING_PASS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.meshlet_instance_uniforms.html">meshlet_instance_uniforms</a>
+            
+            <span class="conditional-inline">MESHLET_INSTANCE_CULLING_PASS || MESHLET_BVH_CULLING_PASS || MESHLET_CLUSTER_CULLING_PASS || MESHLET_VISIBILITY_BUFFER_RASTER_PASS || MESHLET_MESH_MATERIAL_PASS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.meshlet_meshlet_cull_count_early.html">meshlet_meshlet_cull_count_early</a>
+            
+            <span class="conditional-inline">MESHLET_BVH_CULLING_PASS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.meshlet_meshlet_cull_count_late.html">meshlet_meshlet_cull_count_late</a>
+            
+            <span class="conditional-inline">MESHLET_BVH_CULLING_PASS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.meshlet_meshlet_cull_count_read.html">meshlet_meshlet_cull_count_read</a>
+            
+            <span class="conditional-inline">MESHLET_CLUSTER_CULLING_PASS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.meshlet_meshlet_cull_count_write.html">meshlet_meshlet_cull_count_write</a>
+            
+            <span class="conditional-inline">MESHLET_CLUSTER_CULLING_PASS &#38;&#38; MESHLET_FIRST_CULLING_PASS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.meshlet_meshlet_cull_dispatch.html">meshlet_meshlet_cull_dispatch</a>
+            
+            <span class="conditional-inline">MESHLET_CLUSTER_CULLING_PASS &#38;&#38; MESHLET_FIRST_CULLING_PASS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.meshlet_meshlet_cull_dispatch_early.html">meshlet_meshlet_cull_dispatch_early</a>
+            
+            <span class="conditional-inline">MESHLET_BVH_CULLING_PASS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.meshlet_meshlet_cull_dispatch_late.html">meshlet_meshlet_cull_dispatch_late</a>
+            
+            <span class="conditional-inline">MESHLET_BVH_CULLING_PASS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.meshlet_meshlet_cull_queue.html">meshlet_meshlet_cull_queue</a>
+            
+            <span class="conditional-inline">MESHLET_BVH_CULLING_PASS || (MESHLET_CLUSTER_CULLING_PASS &#38;&#38; MESHLET_FIRST_CULLING_PASS) || (MESHLET_CLUSTER_CULLING_PASS &#38;&#38; !MESHLET_FIRST_CULLING_PASS)</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.meshlet_previous_raster_counts.html">meshlet_previous_raster_counts</a>
+            
+            <span class="conditional-inline">MESHLET_CLUSTER_CULLING_PASS || MESHLET_VISIBILITY_BUFFER_RASTER_PASS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.meshlet_raster_clusters.html">meshlet_raster_clusters</a>
+            
+            <span class="conditional-inline">MESHLET_CLUSTER_CULLING_PASS || MESHLET_VISIBILITY_BUFFER_RASTER_PASS || MESHLET_MESH_MATERIAL_PASS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.meshlet_second_pass_bvh_count.html">meshlet_second_pass_bvh_count</a>
+            
+            <span class="conditional-inline">MESHLET_BVH_CULLING_PASS &#38;&#38; MESHLET_FIRST_CULLING_PASS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.meshlet_second_pass_bvh_dispatch.html">meshlet_second_pass_bvh_dispatch</a>
+            
+            <span class="conditional-inline">MESHLET_BVH_CULLING_PASS &#38;&#38; MESHLET_FIRST_CULLING_PASS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.meshlet_second_pass_bvh_queue.html">meshlet_second_pass_bvh_queue</a>
+            
+            <span class="conditional-inline">MESHLET_BVH_CULLING_PASS &#38;&#38; MESHLET_FIRST_CULLING_PASS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.meshlet_second_pass_instance_candidates.html">meshlet_second_pass_instance_candidates</a>
+            
+            <span class="conditional-inline">(MESHLET_INSTANCE_CULLING_PASS &#38;&#38; MESHLET_FIRST_CULLING_PASS) || (MESHLET_INSTANCE_CULLING_PASS &#38;&#38; !MESHLET_FIRST_CULLING_PASS)</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.meshlet_second_pass_instance_count.html">meshlet_second_pass_instance_count</a>
+            
+            <span class="conditional-inline">(MESHLET_INSTANCE_CULLING_PASS &#38;&#38; MESHLET_FIRST_CULLING_PASS) || (MESHLET_INSTANCE_CULLING_PASS &#38;&#38; !MESHLET_FIRST_CULLING_PASS)</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.meshlet_second_pass_instance_dispatch.html">meshlet_second_pass_instance_dispatch</a>
+            
+            <span class="conditional-inline">MESHLET_INSTANCE_CULLING_PASS &#38;&#38; MESHLET_FIRST_CULLING_PASS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.meshlet_software_raster_cluster_count.html">meshlet_software_raster_cluster_count</a>
+            
+            <span class="conditional-inline">MESHLET_VISIBILITY_BUFFER_RASTER_PASS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.meshlet_software_raster_indirect_args.html">meshlet_software_raster_indirect_args</a>
+            
+            <span class="conditional-inline">MESHLET_CLUSTER_CULLING_PASS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.meshlet_vertex_normals.html">meshlet_vertex_normals</a>
+            
+            <span class="conditional-inline">MESHLET_MESH_MATERIAL_PASS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.meshlet_vertex_positions.html">meshlet_vertex_positions</a>
+            
+            <span class="conditional-inline">MESHLET_VISIBILITY_BUFFER_RASTER_PASS || MESHLET_MESH_MATERIAL_PASS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.meshlet_vertex_uvs.html">meshlet_vertex_uvs</a>
+            
+            <span class="conditional-inline">MESHLET_MESH_MATERIAL_PASS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.meshlet_view_instance_visibility.html">meshlet_view_instance_visibility</a>
+            
+            <span class="conditional-inline">MESHLET_INSTANCE_CULLING_PASS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.meshlet_visibility_buffer.html">meshlet_visibility_buffer</a>
+            
+            <span class="conditional-inline">(MESHLET_VISIBILITY_BUFFER_RASTER_PASS &#38;&#38; MESHLET_VISIBILITY_BUFFER_RASTER_PASS_OUTPUT) || (MESHLET_VISIBILITY_BUFFER_RASTER_PASS &#38;&#38; !MESHLET_VISIBILITY_BUFFER_RASTER_PASS_OUTPUT) || MESHLET_MESH_MATERIAL_PASS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.meshlets.html">meshlets</a>
+            
+            <span class="conditional-inline">MESHLET_VISIBILITY_BUFFER_RASTER_PASS || MESHLET_MESH_MATERIAL_PASS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.previous_view.html">previous_view</a>
+            
+            <span class="conditional-inline">MESHLET_INSTANCE_CULLING_PASS || MESHLET_BVH_CULLING_PASS || MESHLET_CLUSTER_CULLING_PASS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.view.html">view</a>
+            
+            <span class="conditional-inline">MESHLET_INSTANCE_CULLING_PASS || MESHLET_BVH_CULLING_PASS || MESHLET_CLUSTER_CULLING_PASS || MESHLET_VISIBILITY_BUFFER_RASTER_PASS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+</ul>
+
+
+
+<h3 class="item-list-title">Structs</h3>
+<ul class="item-list">
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.BvhNode.html">BvhNode</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.Constants.html">Constants</a>
+            
+            <span class="conditional-inline">MESHLET_INSTANCE_CULLING_PASS || MESHLET_BVH_CULLING_PASS || MESHLET_CLUSTER_CULLING_PASS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.DispatchIndirectArgs.html">DispatchIndirectArgs</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.DrawIndirectArgs.html">DrawIndirectArgs</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.InstancedOffset.html">InstancedOffset</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.Meshlet.html">Meshlet</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.MeshletAabb.html">MeshletAabb</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.MeshletAabbErrorOffset.html">MeshletAabbErrorOffset</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.MeshletCullData.html">MeshletCullData</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+</ul>
+
+
+
+<h3 class="item-list-title">Functions</h3>
+<ul class="item-list">
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.get_aabb.html">get_aabb</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.get_aabb_child_offset.html">get_aabb_child_offset</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.get_aabb_error.html">get_aabb_error</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.get_meshlet_triangle_count.html">get_meshlet_triangle_count</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.get_meshlet_vertex_count.html">get_meshlet_vertex_count</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.get_meshlet_vertex_id.html">get_meshlet_vertex_id</a>
+            
+            <span class="conditional-inline">MESHLET_VISIBILITY_BUFFER_RASTER_PASS || MESHLET_MESH_MATERIAL_PASS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.get_meshlet_vertex_normal.html">get_meshlet_vertex_normal</a>
+            
+            <span class="conditional-inline">MESHLET_MESH_MATERIAL_PASS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.get_meshlet_vertex_position.html">get_meshlet_vertex_position</a>
+            
+            <span class="conditional-inline">MESHLET_VISIBILITY_BUFFER_RASTER_PASS || MESHLET_MESH_MATERIAL_PASS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.get_meshlet_vertex_uv.html">get_meshlet_vertex_uv</a>
+            
+            <span class="conditional-inline">MESHLET_MESH_MATERIAL_PASS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+</ul>
+
+
+
+
+
+<h3 class="item-list-title">Translate-time features</h3>
+<ul class="item-list">
+    
+    <li class="feature">MESHLET_BVH_CULLING_PASS</li>
+    
+    <li class="feature">MESHLET_CLUSTER_CULLING_PASS</li>
+    
+    <li class="feature">MESHLET_FIRST_CULLING_PASS</li>
+    
+    <li class="feature">MESHLET_INSTANCE_CULLING_PASS</li>
+    
+    <li class="feature">MESHLET_MESH_MATERIAL_PASS</li>
+    
+    <li class="feature">MESHLET_VISIBILITY_BUFFER_RASTER_PASS</li>
+    
+    <li class="feature">MESHLET_VISIBILITY_BUFFER_RASTER_PASS_OUTPUT</li>
+    
+</ul>
+
+
+
+        </div>
+    </div>
+
+    <script src="../../../../common.js"></script>
+    <script src="../../../items.js"></script>
+
+    <script>
+        window.DOCS_THIS_PACKAGE = {
+            version: "latest",
+            name: "bevy_pbr",
+            root: "../../../",
+        };
+    </script>
+    <script src="../../../../../-/static/js/selectVersion.js"></script>
+    <script src="../../../../../-/static/js/search.js"></script>
+    <script src="../../../../../-/static/js/lineNumbers.js"></script>
+</body>
+
+</html>

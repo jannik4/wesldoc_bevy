@@ -1,0 +1,149 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+        DepthOfFieldParams - bevy_post_process
+        
+    </title>
+
+    <link rel="stylesheet" href="../../../../../-/static/css/inter/inter.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/source_code_pro/source_code_pro.css">
+
+    <link rel="stylesheet" href="../../../../../-/static/css/themes.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/styles.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/icons.css">
+    <script src="../../../../../-/static/js/settings.js"></script>
+
+    
+</head>
+
+<body>
+    <div class="nav">
+        <a class="icon icon-home" style="margin-right: 12px;" href="../../../../../index.html"></a>
+        <span style="margin-right: 12px;">bevy_post_process</span>
+        <select class="select" id="selectVersion" onchange="changeVersion()" autocomplete="off">
+            <option
+                value="../../../../latest/bevy_post_process/index.html">
+                latest
+            </option>
+        </select>
+        <button id="show-settings" class="icon icon-settings" aria-label="Show settings"></button>
+<div id="settings-menu">
+    <div class="settings-title">Theme</div>
+    <label>
+        <input type="radio" name="theme" id="theme-auto" value="auto"> Auto
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-dark" value="dark"> Dark
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-light" value="light"> Light
+    </label>
+</div>
+    </div>
+    <div class="content">
+        <input type="text" id="search" placeholder="Search" oninput="searchDebounced()" autocomplete="off">
+
+        <div id="innerContent">
+            
+            <h2>
+                <a class="path" href="../../index.html">bevy_post_process</a><span>::</span><wbr><a class="path" href="../index.html">dof</a><span>::</span><wbr><a class="path" href="index.html">dof</a><span>::</span><wbr><a class="struct" href="#">DepthOfFieldParams</a>
+            </h2>
+            
+
+            
+
+
+
+<a class="module" href="../../../src/bevy_post_process/dof/dof.html#27-65">Source</a>
+
+
+<pre class="code-block">
+<code>struct DepthOfFieldParams {
+    focal_distance: f32,
+    focal_length: f32,
+    coc_scale_factor: f32,
+    max_circle_of_confusion_diameter: f32,
+    max_depth: f32,
+    pad_a: u32,
+    pad_b: u32,
+    pad_c: u32
+}</code>
+</pre>
+
+<h2 class="item-list-title">Fields</h2>
+
+<div style="margin: 8px 0;"><code>focal_distance: f32</code></div>
+<div class="comment"><p>The distance in meters to the location in focus.</p>
+</div>
+
+<div style="margin: 8px 0;"><code>focal_length: f32</code></div>
+<div class="comment"><p>The <a href="https://en.wikipedia.org/wiki/Focal_length" rel="noopener noreferrer">focal length</a>. Physically speaking, this represents "the distance
+from the center of the lens to the principal foci of the lens". The
+default value, 50 mm, is considered representative of human eyesight.
+Real-world lenses range from anywhere from 5 mm for "fisheye" lenses to
+2000 mm for "super-telephoto" lenses designed for very distant objects.</p>
+<p>The higher the value, the more blurry objects not in focus will be.</p>
+</div>
+
+<div style="margin: 8px 0;"><code>coc_scale_factor: f32</code></div>
+<div class="comment"><p>The premultiplied factor that we scale the circle of confusion by.</p>
+<p>This is calculated as <code>focal_length² / (sensor_height * aperture_f_stops)</code>.</p>
+</div>
+
+<div style="margin: 8px 0;"><code>max_circle_of_confusion_diameter: f32</code></div>
+<div class="comment"><p>The maximum diameter, in pixels, that we allow a circle of confusion to be.</p>
+<p>A circle of confusion essentially describes the size of a blur.</p>
+<p>This value is nonphysical but is useful for avoiding pathologically-slow
+behavior.</p>
+</div>
+
+<div style="margin: 8px 0;"><code>max_depth: f32</code></div>
+<div class="comment"><p>The depth value that we clamp distant objects to. See the comment in
+<a href="DepthOfField" title="DepthOfField" rel="noopener noreferrer"><code>DepthOfField</code></a> for more information.</p>
+</div>
+
+<div style="margin: 8px 0;"><code>pad_a: u32</code></div>
+<div class="comment"><p>Padding.</p>
+</div>
+
+<div style="margin: 8px 0;"><code>pad_b: u32</code></div>
+<div class="comment"><p>Padding.</p>
+</div>
+
+<div style="margin: 8px 0;"><code>pad_c: u32</code></div>
+<div class="comment"><p>Padding.</p>
+</div>
+
+
+
+        </div>
+    </div>
+
+    <script src="../../../../common.js"></script>
+    <script src="../../../items.js"></script>
+
+    <script>
+        window.DOCS_THIS_PACKAGE = {
+            version: "latest",
+            name: "bevy_post_process",
+            root: "../../../",
+        };
+    </script>
+    <script src="../../../../../-/static/js/selectVersion.js"></script>
+    <script src="../../../../../-/static/js/search.js"></script>
+    <script src="../../../../../-/static/js/lineNumbers.js"></script>
+</body>
+
+</html>

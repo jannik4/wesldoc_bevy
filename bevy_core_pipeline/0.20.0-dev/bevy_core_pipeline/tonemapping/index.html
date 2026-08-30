@@ -1,0 +1,406 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+        tonemapping - bevy_core_pipeline
+        
+    </title>
+
+    <link rel="stylesheet" href="../../../../-/static/css/inter/inter.css">
+    <link rel="stylesheet" href="../../../../-/static/css/source_code_pro/source_code_pro.css">
+
+    <link rel="stylesheet" href="../../../../-/static/css/themes.css">
+    <link rel="stylesheet" href="../../../../-/static/css/styles.css">
+    <link rel="stylesheet" href="../../../../-/static/css/icons.css">
+    <script src="../../../../-/static/js/settings.js"></script>
+
+    
+</head>
+
+<body>
+    <div class="nav">
+        <a class="icon icon-home" style="margin-right: 12px;" href="../../../../index.html"></a>
+        <span style="margin-right: 12px;">bevy_core_pipeline</span>
+        <select class="select" id="selectVersion" onchange="changeVersion()" autocomplete="off">
+            <option
+                value="../../../0.20.0-dev/bevy_core_pipeline/index.html">
+                0.20.0-dev
+            </option>
+        </select>
+        <button id="show-settings" class="icon icon-settings" aria-label="Show settings"></button>
+<div id="settings-menu">
+    <div class="settings-title">Theme</div>
+    <label>
+        <input type="radio" name="theme" id="theme-auto" value="auto"> Auto
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-dark" value="dark"> Dark
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-light" value="light"> Light
+    </label>
+</div>
+    </div>
+    <div class="content">
+        <input type="text" id="search" placeholder="Search" oninput="searchDebounced()" autocomplete="off">
+
+        <div id="innerContent">
+            
+            <h2>
+                <a class="path" href="../index.html">bevy_core_pipeline</a><span>::</span><wbr><a class="module" href="index.html">tonemapping</a>
+            </h2>
+            
+
+            
+
+<a class="module" href="../../src/bevy_core_pipeline/tonemapping.html">Source</a>
+
+
+
+
+
+<h3 class="item-list-title">Modules</h3>
+<ul class="item-list">
+    
+    <li>
+        <div><a class="module" href="lut_bindings/index.html">lut_bindings</a></div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div><a class="module" href="tonemapping_frag/index.html">tonemapping_frag</a></div>
+        <div>
+            
+        </div>
+    </li>
+    
+</ul>
+
+
+
+<h3 class="item-list-title">Constants</h3>
+<ul class="item-list">
+    
+    <li>
+        <div>
+            <a class="const" href="const.LEVEL_MARGIN.html">LEVEL_MARGIN</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.LEVEL_MARGIN_DIV.html">LEVEL_MARGIN_DIV</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.TONY_MC_MAPFACE_LUT_DIMS.html">TONY_MC_MAPFACE_LUT_DIMS</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+</ul>
+
+
+
+
+
+
+
+
+
+<h3 class="item-list-title">Functions</h3>
+<ul class="item-list">
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.ACESFitted.html">ACESFitted</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.RRTAndODTFit.html">RRTAndODTFit</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.applyAgXLog.html">applyAgXLog</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.applyLUT3D.html">applyLUT3D</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.approximate_inverse_tone_mapping.html">approximate_inverse_tone_mapping</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.convertNormalizedLog2ToOpenDomain.html">convertNormalizedLog2ToOpenDomain</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.convertOpenDomainToNormalizedLog2_.html">convertOpenDomainToNormalizedLog2_</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.rgb_to_srgb_simple.html">rgb_to_srgb_simple</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.rgb_to_ycbcr.html">rgb_to_ycbcr</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.sample_blender_filmic_lut.html">sample_blender_filmic_lut</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.sample_current_lut.html">sample_current_lut</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.sample_tony_mc_mapface_lut.html">sample_tony_mc_mapface_lut</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.saturation.html">saturation</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.screen_space_dither.html">screen_space_dither</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.sectional_color_grading.html">sectional_color_grading</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.somewhat_boring_display_transform.html">somewhat_boring_display_transform</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.tone_mapping.html">tone_mapping</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.tonemap_curve.html">tonemap_curve</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.tonemap_curve3_.html">tonemap_curve3_</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.tonemapping_change_luminance.html">tonemapping_change_luminance</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.tonemapping_luminance.html">tonemapping_luminance</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.tonemapping_pbr_neutral.html">tonemapping_pbr_neutral</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.tonemapping_reinhard.html">tonemapping_reinhard</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.tonemapping_reinhard_luminance.html">tonemapping_reinhard_luminance</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+</ul>
+
+
+
+
+
+
+
+        </div>
+    </div>
+
+    <script src="../../../common.js"></script>
+    <script src="../../items.js"></script>
+
+    <script>
+        window.DOCS_THIS_PACKAGE = {
+            version: "0.20.0-dev",
+            name: "bevy_core_pipeline",
+            root: "../../",
+        };
+    </script>
+    <script src="../../../../-/static/js/selectVersion.js"></script>
+    <script src="../../../../-/static/js/search.js"></script>
+    <script src="../../../../-/static/js/lineNumbers.js"></script>
+</body>
+
+</html>

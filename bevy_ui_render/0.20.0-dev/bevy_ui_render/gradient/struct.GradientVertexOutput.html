@@ -1,0 +1,174 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+        GradientVertexOutput - bevy_ui_render
+        
+    </title>
+
+    <link rel="stylesheet" href="../../../../-/static/css/inter/inter.css">
+    <link rel="stylesheet" href="../../../../-/static/css/source_code_pro/source_code_pro.css">
+
+    <link rel="stylesheet" href="../../../../-/static/css/themes.css">
+    <link rel="stylesheet" href="../../../../-/static/css/styles.css">
+    <link rel="stylesheet" href="../../../../-/static/css/icons.css">
+    <script src="../../../../-/static/js/settings.js"></script>
+
+    
+</head>
+
+<body>
+    <div class="nav">
+        <a class="icon icon-home" style="margin-right: 12px;" href="../../../../index.html"></a>
+        <span style="margin-right: 12px;">bevy_ui_render</span>
+        <select class="select" id="selectVersion" onchange="changeVersion()" autocomplete="off">
+            <option
+                value="../../../0.20.0-dev/bevy_ui_render/index.html">
+                0.20.0-dev
+            </option>
+        </select>
+        <button id="show-settings" class="icon icon-settings" aria-label="Show settings"></button>
+<div id="settings-menu">
+    <div class="settings-title">Theme</div>
+    <label>
+        <input type="radio" name="theme" id="theme-auto" value="auto"> Auto
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-dark" value="dark"> Dark
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-light" value="light"> Light
+    </label>
+</div>
+    </div>
+    <div class="content">
+        <input type="text" id="search" placeholder="Search" oninput="searchDebounced()" autocomplete="off">
+
+        <div id="innerContent">
+            
+            <h2>
+                <a class="path" href="../index.html">bevy_ui_render</a><span>::</span><wbr><a class="path" href="index.html">gradient</a><span>::</span><wbr><a class="struct" href="#">GradientVertexOutput</a>
+            </h2>
+            
+
+            
+
+
+
+<a class="module" href="../../src/bevy_ui_render/gradient.html#47-65">Source</a>
+
+
+<pre class="code-block">
+<code>struct GradientVertexOutput {
+    @location(0)
+    uv: vec2&lt;f32&gt;,
+    @location(1) @interpolate(flat)
+    size: vec2&lt;f32&gt;,
+    @location(2) @interpolate(flat)
+    flags: u32,
+    @location(3) @interpolate(flat)
+    radius_x: vec4&lt;f32&gt;,
+    @location(4) @interpolate(flat)
+    radius_y: vec4&lt;f32&gt;,
+    @location(5) @interpolate(flat)
+    border: vec4&lt;f32&gt;,
+    @location(6)
+    point: vec2&lt;f32&gt;,
+    @location(7) @interpolate(flat)
+    g_start: vec2&lt;f32&gt;,
+    @location(8) @interpolate(flat)
+    dir: vec2&lt;f32&gt;,
+    @location(9) @interpolate(flat)
+    start_color: vec4&lt;f32&gt;,
+    @location(10) @interpolate(flat)
+    start_len: f32,
+    @location(11) @interpolate(flat)
+    end_len: f32,
+    @location(12) @interpolate(flat)
+    end_color: vec4&lt;f32&gt;,
+    @location(13) @interpolate(flat)
+    hint: f32,
+    @builtin(position)
+    position: vec4&lt;f32&gt;
+}</code>
+</pre>
+
+<h2 class="item-list-title">Fields</h2>
+
+<div style="margin: 8px 0;"><code>@location(0) uv: vec2&lt;f32&gt;</code></div>
+
+
+<div style="margin: 8px 0;"><code>@location(1) @interpolate(flat) size: vec2&lt;f32&gt;</code></div>
+
+
+<div style="margin: 8px 0;"><code>@location(2) @interpolate(flat) flags: u32</code></div>
+
+
+<div style="margin: 8px 0;"><code>@location(3) @interpolate(flat) radius_x: vec4&lt;f32&gt;</code></div>
+
+
+<div style="margin: 8px 0;"><code>@location(4) @interpolate(flat) radius_y: vec4&lt;f32&gt;</code></div>
+
+
+<div style="margin: 8px 0;"><code>@location(5) @interpolate(flat) border: vec4&lt;f32&gt;</code></div>
+
+
+<div style="margin: 8px 0;"><code>@location(6) point: vec2&lt;f32&gt;</code></div>
+
+
+<div style="margin: 8px 0;"><code>@location(7) @interpolate(flat) g_start: vec2&lt;f32&gt;</code></div>
+
+
+<div style="margin: 8px 0;"><code>@location(8) @interpolate(flat) dir: vec2&lt;f32&gt;</code></div>
+
+
+<div style="margin: 8px 0;"><code>@location(9) @interpolate(flat) start_color: vec4&lt;f32&gt;</code></div>
+
+
+<div style="margin: 8px 0;"><code>@location(10) @interpolate(flat) start_len: f32</code></div>
+
+
+<div style="margin: 8px 0;"><code>@location(11) @interpolate(flat) end_len: f32</code></div>
+
+
+<div style="margin: 8px 0;"><code>@location(12) @interpolate(flat) end_color: vec4&lt;f32&gt;</code></div>
+
+
+<div style="margin: 8px 0;"><code>@location(13) @interpolate(flat) hint: f32</code></div>
+
+
+<div style="margin: 8px 0;"><code>@builtin(position) position: vec4&lt;f32&gt;</code></div>
+
+
+
+
+        </div>
+    </div>
+
+    <script src="../../../common.js"></script>
+    <script src="../../items.js"></script>
+
+    <script>
+        window.DOCS_THIS_PACKAGE = {
+            version: "0.20.0-dev",
+            name: "bevy_ui_render",
+            root: "../../",
+        };
+    </script>
+    <script src="../../../../-/static/js/selectVersion.js"></script>
+    <script src="../../../../-/static/js/search.js"></script>
+    <script src="../../../../-/static/js/lineNumbers.js"></script>
+</body>
+
+</html>

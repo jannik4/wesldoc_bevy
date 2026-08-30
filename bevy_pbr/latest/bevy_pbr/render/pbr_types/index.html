@@ -1,0 +1,442 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+        pbr_types - bevy_pbr
+        
+    </title>
+
+    <link rel="stylesheet" href="../../../../../-/static/css/inter/inter.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/source_code_pro/source_code_pro.css">
+
+    <link rel="stylesheet" href="../../../../../-/static/css/themes.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/styles.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/icons.css">
+    <script src="../../../../../-/static/js/settings.js"></script>
+
+    
+</head>
+
+<body>
+    <div class="nav">
+        <a class="icon icon-home" style="margin-right: 12px;" href="../../../../../index.html"></a>
+        <span style="margin-right: 12px;">bevy_pbr</span>
+        <select class="select" id="selectVersion" onchange="changeVersion()" autocomplete="off">
+            <option
+                value="../../../../latest/bevy_pbr/index.html">
+                latest
+            </option>
+        </select>
+        <button id="show-settings" class="icon icon-settings" aria-label="Show settings"></button>
+<div id="settings-menu">
+    <div class="settings-title">Theme</div>
+    <label>
+        <input type="radio" name="theme" id="theme-auto" value="auto"> Auto
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-dark" value="dark"> Dark
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-light" value="light"> Light
+    </label>
+</div>
+    </div>
+    <div class="content">
+        <input type="text" id="search" placeholder="Search" oninput="searchDebounced()" autocomplete="off">
+
+        <div id="innerContent">
+            
+            <h2>
+                <a class="path" href="../../index.html">bevy_pbr</a><span>::</span><wbr><a class="path" href="../index.html">render</a><span>::</span><wbr><a class="module" href="index.html">pbr_types</a>
+            </h2>
+            
+
+            
+
+<a class="module" href="../../../src/bevy_pbr/render/pbr_types.html">Source</a>
+
+
+
+
+
+
+
+<h3 class="item-list-title">Constants</h3>
+<ul class="item-list">
+    
+    <li>
+        <div>
+            <a class="const" href="const.STANDARD_MATERIAL_FLAGS_ALPHA_MODE_ADD.html">STANDARD_MATERIAL_FLAGS_ALPHA_MODE_ADD</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.STANDARD_MATERIAL_FLAGS_ALPHA_MODE_ALPHA_TO_COVERAGE.html">STANDARD_MATERIAL_FLAGS_ALPHA_MODE_ALPHA_TO_COVERAGE</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.STANDARD_MATERIAL_FLAGS_ALPHA_MODE_BLEND.html">STANDARD_MATERIAL_FLAGS_ALPHA_MODE_BLEND</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.STANDARD_MATERIAL_FLAGS_ALPHA_MODE_MASK.html">STANDARD_MATERIAL_FLAGS_ALPHA_MODE_MASK</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.STANDARD_MATERIAL_FLAGS_ALPHA_MODE_MULTIPLY.html">STANDARD_MATERIAL_FLAGS_ALPHA_MODE_MULTIPLY</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.STANDARD_MATERIAL_FLAGS_ALPHA_MODE_OPAQUE.html">STANDARD_MATERIAL_FLAGS_ALPHA_MODE_OPAQUE</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.STANDARD_MATERIAL_FLAGS_ALPHA_MODE_PREMULTIPLIED.html">STANDARD_MATERIAL_FLAGS_ALPHA_MODE_PREMULTIPLIED</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.STANDARD_MATERIAL_FLAGS_ALPHA_MODE_RESERVED_BITS.html">STANDARD_MATERIAL_FLAGS_ALPHA_MODE_RESERVED_BITS</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.STANDARD_MATERIAL_FLAGS_ANISOTROPY_TEXTURE_BIT.html">STANDARD_MATERIAL_FLAGS_ANISOTROPY_TEXTURE_BIT</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.STANDARD_MATERIAL_FLAGS_ATTENUATION_ENABLED_BIT.html">STANDARD_MATERIAL_FLAGS_ATTENUATION_ENABLED_BIT</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.STANDARD_MATERIAL_FLAGS_BASE_COLOR_TEXTURE_BIT.html">STANDARD_MATERIAL_FLAGS_BASE_COLOR_TEXTURE_BIT</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.STANDARD_MATERIAL_FLAGS_CLEARCOAT_NORMAL_TEXTURE_BIT.html">STANDARD_MATERIAL_FLAGS_CLEARCOAT_NORMAL_TEXTURE_BIT</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.STANDARD_MATERIAL_FLAGS_CLEARCOAT_ROUGHNESS_TEXTURE_BIT.html">STANDARD_MATERIAL_FLAGS_CLEARCOAT_ROUGHNESS_TEXTURE_BIT</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.STANDARD_MATERIAL_FLAGS_CLEARCOAT_TEXTURE_BIT.html">STANDARD_MATERIAL_FLAGS_CLEARCOAT_TEXTURE_BIT</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.STANDARD_MATERIAL_FLAGS_DEPTH_MAP_BIT.html">STANDARD_MATERIAL_FLAGS_DEPTH_MAP_BIT</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.STANDARD_MATERIAL_FLAGS_DIFFUSE_TRANSMISSION_TEXTURE_BIT.html">STANDARD_MATERIAL_FLAGS_DIFFUSE_TRANSMISSION_TEXTURE_BIT</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.STANDARD_MATERIAL_FLAGS_DOUBLE_SIDED_BIT.html">STANDARD_MATERIAL_FLAGS_DOUBLE_SIDED_BIT</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.STANDARD_MATERIAL_FLAGS_EMISSIVE_TEXTURE_BIT.html">STANDARD_MATERIAL_FLAGS_EMISSIVE_TEXTURE_BIT</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.STANDARD_MATERIAL_FLAGS_FLIP_NORMAL_MAP_Y.html">STANDARD_MATERIAL_FLAGS_FLIP_NORMAL_MAP_Y</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.STANDARD_MATERIAL_FLAGS_FOG_ENABLED_BIT.html">STANDARD_MATERIAL_FLAGS_FOG_ENABLED_BIT</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.STANDARD_MATERIAL_FLAGS_METALLIC_ROUGHNESS_TEXTURE_BIT.html">STANDARD_MATERIAL_FLAGS_METALLIC_ROUGHNESS_TEXTURE_BIT</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.STANDARD_MATERIAL_FLAGS_OCCLUSION_TEXTURE_BIT.html">STANDARD_MATERIAL_FLAGS_OCCLUSION_TEXTURE_BIT</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.STANDARD_MATERIAL_FLAGS_SPECULAR_TEXTURE_BIT.html">STANDARD_MATERIAL_FLAGS_SPECULAR_TEXTURE_BIT</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.STANDARD_MATERIAL_FLAGS_SPECULAR_TINT_TEXTURE_BIT.html">STANDARD_MATERIAL_FLAGS_SPECULAR_TINT_TEXTURE_BIT</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.STANDARD_MATERIAL_FLAGS_SPECULAR_TRANSMISSION_TEXTURE_BIT.html">STANDARD_MATERIAL_FLAGS_SPECULAR_TRANSMISSION_TEXTURE_BIT</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.STANDARD_MATERIAL_FLAGS_THICKNESS_TEXTURE_BIT.html">STANDARD_MATERIAL_FLAGS_THICKNESS_TEXTURE_BIT</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.STANDARD_MATERIAL_FLAGS_TWO_COMPONENT_NORMAL_MAP.html">STANDARD_MATERIAL_FLAGS_TWO_COMPONENT_NORMAL_MAP</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.STANDARD_MATERIAL_FLAGS_UNLIT_BIT.html">STANDARD_MATERIAL_FLAGS_UNLIT_BIT</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+</ul>
+
+
+
+
+
+
+
+<h3 class="item-list-title">Structs</h3>
+<ul class="item-list">
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.PbrInput.html">PbrInput</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.StandardMaterial.html">StandardMaterial</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+</ul>
+
+
+
+<h3 class="item-list-title">Functions</h3>
+<ul class="item-list">
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.pbr_input_new.html">pbr_input_new</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.standard_material_new.html">standard_material_new</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+</ul>
+
+
+
+
+
+
+
+        </div>
+    </div>
+
+    <script src="../../../../common.js"></script>
+    <script src="../../../items.js"></script>
+
+    <script>
+        window.DOCS_THIS_PACKAGE = {
+            version: "latest",
+            name: "bevy_pbr",
+            root: "../../../",
+        };
+    </script>
+    <script src="../../../../../-/static/js/selectVersion.js"></script>
+    <script src="../../../../../-/static/js/search.js"></script>
+    <script src="../../../../../-/static/js/lineNumbers.js"></script>
+</body>
+
+</html>

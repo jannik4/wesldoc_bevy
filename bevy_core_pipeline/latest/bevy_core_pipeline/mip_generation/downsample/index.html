@@ -1,0 +1,555 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+        downsample - bevy_core_pipeline
+        
+    </title>
+
+    <link rel="stylesheet" href="../../../../../-/static/css/inter/inter.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/source_code_pro/source_code_pro.css">
+
+    <link rel="stylesheet" href="../../../../../-/static/css/themes.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/styles.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/icons.css">
+    <script src="../../../../../-/static/js/settings.js"></script>
+
+    
+</head>
+
+<body>
+    <div class="nav">
+        <a class="icon icon-home" style="margin-right: 12px;" href="../../../../../index.html"></a>
+        <span style="margin-right: 12px;">bevy_core_pipeline</span>
+        <select class="select" id="selectVersion" onchange="changeVersion()" autocomplete="off">
+            <option
+                value="../../../../latest/bevy_core_pipeline/index.html">
+                latest
+            </option>
+        </select>
+        <button id="show-settings" class="icon icon-settings" aria-label="Show settings"></button>
+<div id="settings-menu">
+    <div class="settings-title">Theme</div>
+    <label>
+        <input type="radio" name="theme" id="theme-auto" value="auto"> Auto
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-dark" value="dark"> Dark
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-light" value="light"> Light
+    </label>
+</div>
+    </div>
+    <div class="content">
+        <input type="text" id="search" placeholder="Search" oninput="searchDebounced()" autocomplete="off">
+
+        <div id="innerContent">
+            
+            <h2>
+                <a class="path" href="../../index.html">bevy_core_pipeline</a><span>::</span><wbr><a class="path" href="../index.html">mip_generation</a><span>::</span><wbr><a class="module" href="index.html">downsample</a>
+            </h2>
+            
+
+            
+
+<a class="module" href="../../../src/bevy_core_pipeline/mip_generation/downsample.html">Source</a>
+
+
+
+
+
+
+
+
+
+
+
+<h3 class="item-list-title">Global Variables</h3>
+<ul class="item-list">
+    
+    <li>
+        <div>
+            <a class="var" href="var.constants.html">constants</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.mip_0.html">mip_0</a>
+            
+            <span class="conditional-inline">(ARRAY_TEXTURE &#38;&#38; COMBINE_BIND_GROUP) || (ARRAY_TEXTURE &#38;&#38; FIRST_PASS) || (!ARRAY_TEXTURE &#38;&#38; COMBINE_BIND_GROUP) || (!ARRAY_TEXTURE &#38;&#38; FIRST_PASS)</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.mip_1.html">mip_1</a>
+            
+            <span class="conditional-inline">(ARRAY_TEXTURE &#38;&#38; COMBINE_BIND_GROUP) || (ARRAY_TEXTURE &#38;&#38; FIRST_PASS) || (!ARRAY_TEXTURE &#38;&#38; COMBINE_BIND_GROUP) || (!ARRAY_TEXTURE &#38;&#38; FIRST_PASS)</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.mip_10.html">mip_10</a>
+            
+            <span class="conditional-inline">(ARRAY_TEXTURE &#38;&#38; COMBINE_BIND_GROUP) || (ARRAY_TEXTURE &#38;&#38; SECOND_PASS) || (!ARRAY_TEXTURE &#38;&#38; COMBINE_BIND_GROUP) || (!ARRAY_TEXTURE &#38;&#38; SECOND_PASS)</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.mip_11.html">mip_11</a>
+            
+            <span class="conditional-inline">(ARRAY_TEXTURE &#38;&#38; COMBINE_BIND_GROUP) || (ARRAY_TEXTURE &#38;&#38; SECOND_PASS) || (!ARRAY_TEXTURE &#38;&#38; COMBINE_BIND_GROUP) || (!ARRAY_TEXTURE &#38;&#38; SECOND_PASS)</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.mip_12.html">mip_12</a>
+            
+            <span class="conditional-inline">(ARRAY_TEXTURE &#38;&#38; COMBINE_BIND_GROUP) || (ARRAY_TEXTURE &#38;&#38; SECOND_PASS) || (!ARRAY_TEXTURE &#38;&#38; COMBINE_BIND_GROUP) || (!ARRAY_TEXTURE &#38;&#38; SECOND_PASS)</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.mip_2.html">mip_2</a>
+            
+            <span class="conditional-inline">(ARRAY_TEXTURE &#38;&#38; COMBINE_BIND_GROUP) || (ARRAY_TEXTURE &#38;&#38; FIRST_PASS) || (!ARRAY_TEXTURE &#38;&#38; COMBINE_BIND_GROUP) || (!ARRAY_TEXTURE &#38;&#38; FIRST_PASS)</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.mip_3.html">mip_3</a>
+            
+            <span class="conditional-inline">(ARRAY_TEXTURE &#38;&#38; COMBINE_BIND_GROUP) || (ARRAY_TEXTURE &#38;&#38; FIRST_PASS) || (!ARRAY_TEXTURE &#38;&#38; COMBINE_BIND_GROUP) || (!ARRAY_TEXTURE &#38;&#38; FIRST_PASS)</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.mip_4.html">mip_4</a>
+            
+            <span class="conditional-inline">(ARRAY_TEXTURE &#38;&#38; COMBINE_BIND_GROUP) || (ARRAY_TEXTURE &#38;&#38; FIRST_PASS) || (!ARRAY_TEXTURE &#38;&#38; COMBINE_BIND_GROUP) || (!ARRAY_TEXTURE &#38;&#38; FIRST_PASS)</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.mip_5.html">mip_5</a>
+            
+            <span class="conditional-inline">(ARRAY_TEXTURE &#38;&#38; COMBINE_BIND_GROUP) || (ARRAY_TEXTURE &#38;&#38; FIRST_PASS) || (!ARRAY_TEXTURE &#38;&#38; COMBINE_BIND_GROUP) || (!ARRAY_TEXTURE &#38;&#38; FIRST_PASS)</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.mip_6.html">mip_6</a>
+            
+            <span class="conditional-inline">(ARRAY_TEXTURE &#38;&#38; COMBINE_BIND_GROUP) || (ARRAY_TEXTURE &#38;&#38; FIRST_PASS) || (ARRAY_TEXTURE &#38;&#38; SECOND_PASS) || (!ARRAY_TEXTURE &#38;&#38; COMBINE_BIND_GROUP) || (!ARRAY_TEXTURE &#38;&#38; FIRST_PASS) || (!ARRAY_TEXTURE &#38;&#38; SECOND_PASS)</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.mip_7.html">mip_7</a>
+            
+            <span class="conditional-inline">(ARRAY_TEXTURE &#38;&#38; COMBINE_BIND_GROUP) || (ARRAY_TEXTURE &#38;&#38; SECOND_PASS) || (!ARRAY_TEXTURE &#38;&#38; COMBINE_BIND_GROUP) || (!ARRAY_TEXTURE &#38;&#38; SECOND_PASS)</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.mip_8.html">mip_8</a>
+            
+            <span class="conditional-inline">(ARRAY_TEXTURE &#38;&#38; COMBINE_BIND_GROUP) || (ARRAY_TEXTURE &#38;&#38; SECOND_PASS) || (!ARRAY_TEXTURE &#38;&#38; COMBINE_BIND_GROUP) || (!ARRAY_TEXTURE &#38;&#38; SECOND_PASS)</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.mip_9.html">mip_9</a>
+            
+            <span class="conditional-inline">(ARRAY_TEXTURE &#38;&#38; COMBINE_BIND_GROUP) || (ARRAY_TEXTURE &#38;&#38; SECOND_PASS) || (!ARRAY_TEXTURE &#38;&#38; COMBINE_BIND_GROUP) || (!ARRAY_TEXTURE &#38;&#38; SECOND_PASS)</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.sampler_linear_clamp.html">sampler_linear_clamp</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.spd_intermediate_a.html">spd_intermediate_a</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.spd_intermediate_b.html">spd_intermediate_b</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.spd_intermediate_g.html">spd_intermediate_g</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.spd_intermediate_r.html">spd_intermediate_r</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+</ul>
+
+
+
+<h3 class="item-list-title">Structs</h3>
+<ul class="item-list">
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.Constants.html">Constants</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+</ul>
+
+
+
+<h3 class="item-list-title">Functions</h3>
+<ul class="item-list">
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.downsample_first.html">downsample_first</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.downsample_second.html">downsample_second</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.remap_for_wave_reduction.html">remap_for_wave_reduction</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.spd_downsample_mip_2.html">spd_downsample_mip_2</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.spd_downsample_mip_3.html">spd_downsample_mip_3</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.spd_downsample_mip_4.html">spd_downsample_mip_4</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.spd_downsample_mip_5.html">spd_downsample_mip_5</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.spd_downsample_mips_0_1.html">spd_downsample_mips_0_1</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.spd_downsample_mips_6_7.html">spd_downsample_mips_6_7</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.spd_downsample_next_four.html">spd_downsample_next_four</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.spd_load_intermediate.html">spd_load_intermediate</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.spd_reduce_4.html">spd_reduce_4</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.spd_reduce_intermediate.html">spd_reduce_intermediate</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.spd_reduce_load_4.html">spd_reduce_load_4</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.spd_reduce_load_source_image.html">spd_reduce_load_source_image</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.spd_reduce_quad.html">spd_reduce_quad</a>
+            
+            <span class="conditional-inline">SUBGROUP_SUPPORT</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.spd_store.html">spd_store</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.spd_store_intermediate.html">spd_store_intermediate</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.srgb_from_linear.html">srgb_from_linear</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+</ul>
+
+
+
+
+
+<h3 class="item-list-title">Translate-time features</h3>
+<ul class="item-list">
+    
+    <li class="feature">ARRAY_TEXTURE</li>
+    
+    <li class="feature">COMBINE_BIND_GROUP</li>
+    
+    <li class="feature">FIRST_PASS</li>
+    
+    <li class="feature">SECOND_PASS</li>
+    
+    <li class="feature">SUBGROUP_SUPPORT</li>
+    
+</ul>
+
+
+
+        </div>
+    </div>
+
+    <script src="../../../../common.js"></script>
+    <script src="../../../items.js"></script>
+
+    <script>
+        window.DOCS_THIS_PACKAGE = {
+            version: "latest",
+            name: "bevy_core_pipeline",
+            root: "../../../",
+        };
+    </script>
+    <script src="../../../../../-/static/js/selectVersion.js"></script>
+    <script src="../../../../../-/static/js/search.js"></script>
+    <script src="../../../../../-/static/js/lineNumbers.js"></script>
+</body>
+
+</html>

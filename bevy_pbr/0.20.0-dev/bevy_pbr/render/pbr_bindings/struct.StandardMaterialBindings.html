@@ -1,0 +1,225 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+        StandardMaterialBindings - bevy_pbr
+        
+    </title>
+
+    <link rel="stylesheet" href="../../../../../-/static/css/inter/inter.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/source_code_pro/source_code_pro.css">
+
+    <link rel="stylesheet" href="../../../../../-/static/css/themes.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/styles.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/icons.css">
+    <script src="../../../../../-/static/js/settings.js"></script>
+
+    
+</head>
+
+<body>
+    <div class="nav">
+        <a class="icon icon-home" style="margin-right: 12px;" href="../../../../../index.html"></a>
+        <span style="margin-right: 12px;">bevy_pbr</span>
+        <select class="select" id="selectVersion" onchange="changeVersion()" autocomplete="off">
+            <option
+                value="../../../../0.20.0-dev/bevy_pbr/index.html">
+                0.20.0-dev
+            </option>
+        </select>
+        <button id="show-settings" class="icon icon-settings" aria-label="Show settings"></button>
+<div id="settings-menu">
+    <div class="settings-title">Theme</div>
+    <label>
+        <input type="radio" name="theme" id="theme-auto" value="auto"> Auto
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-dark" value="dark"> Dark
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-light" value="light"> Light
+    </label>
+</div>
+    </div>
+    <div class="content">
+        <input type="text" id="search" placeholder="Search" oninput="searchDebounced()" autocomplete="off">
+
+        <div id="innerContent">
+            
+            <h2>
+                <a class="path" href="../../index.html">bevy_pbr</a><span>::</span><wbr><a class="path" href="../index.html">render</a><span>::</span><wbr><a class="path" href="index.html">pbr_bindings</a><span>::</span><wbr><a class="struct" href="#">StandardMaterialBindings</a>
+            </h2>
+            
+
+            
+
+
+
+<a class="module" href="../../../src/bevy_pbr/render/pbr_bindings.html#4-36">Source</a>
+
+
+<div><span class="conditional">BINDLESS</span></div>
+
+<pre class="code-block">
+<code>struct StandardMaterialBindings {
+    material: u32,
+    base_color_texture: u32,
+    base_color_sampler: u32,
+    emissive_texture: u32,
+    emissive_sampler: u32,
+    metallic_roughness_texture: u32,
+    metallic_roughness_sampler: u32,
+    occlusion_texture: u32,
+    occlusion_sampler: u32,
+    normal_map_texture: u32,
+    normal_map_sampler: u32,
+    depth_map_texture: u32,
+    depth_map_sampler: u32,
+    anisotropy_texture: u32,
+    anisotropy_sampler: u32,
+    specular_transmission_texture: u32,
+    specular_transmission_sampler: u32,
+    thickness_texture: u32,
+    thickness_sampler: u32,
+    diffuse_transmission_texture: u32,
+    diffuse_transmission_sampler: u32,
+    clearcoat_texture: u32,
+    clearcoat_sampler: u32,
+    clearcoat_roughness_texture: u32,
+    clearcoat_roughness_sampler: u32,
+    clearcoat_normal_texture: u32,
+    clearcoat_normal_sampler: u32,
+    specular_texture: u32,
+    specular_sampler: u32,
+    specular_tint_texture: u32,
+    specular_tint_sampler: u32
+}</code>
+</pre>
+
+<h2 class="item-list-title">Fields</h2>
+
+<div style="margin: 8px 0;"><code>material: u32</code></div>
+
+
+<div style="margin: 8px 0;"><code>base_color_texture: u32</code></div>
+
+
+<div style="margin: 8px 0;"><code>base_color_sampler: u32</code></div>
+
+
+<div style="margin: 8px 0;"><code>emissive_texture: u32</code></div>
+
+
+<div style="margin: 8px 0;"><code>emissive_sampler: u32</code></div>
+
+
+<div style="margin: 8px 0;"><code>metallic_roughness_texture: u32</code></div>
+
+
+<div style="margin: 8px 0;"><code>metallic_roughness_sampler: u32</code></div>
+
+
+<div style="margin: 8px 0;"><code>occlusion_texture: u32</code></div>
+
+
+<div style="margin: 8px 0;"><code>occlusion_sampler: u32</code></div>
+
+
+<div style="margin: 8px 0;"><code>normal_map_texture: u32</code></div>
+
+
+<div style="margin: 8px 0;"><code>normal_map_sampler: u32</code></div>
+
+
+<div style="margin: 8px 0;"><code>depth_map_texture: u32</code></div>
+
+
+<div style="margin: 8px 0;"><code>depth_map_sampler: u32</code></div>
+
+
+<div style="margin: 8px 0;"><code>anisotropy_texture: u32</code></div>
+
+
+<div style="margin: 8px 0;"><code>anisotropy_sampler: u32</code></div>
+
+
+<div style="margin: 8px 0;"><code>specular_transmission_texture: u32</code></div>
+
+
+<div style="margin: 8px 0;"><code>specular_transmission_sampler: u32</code></div>
+
+
+<div style="margin: 8px 0;"><code>thickness_texture: u32</code></div>
+
+
+<div style="margin: 8px 0;"><code>thickness_sampler: u32</code></div>
+
+
+<div style="margin: 8px 0;"><code>diffuse_transmission_texture: u32</code></div>
+
+
+<div style="margin: 8px 0;"><code>diffuse_transmission_sampler: u32</code></div>
+
+
+<div style="margin: 8px 0;"><code>clearcoat_texture: u32</code></div>
+
+
+<div style="margin: 8px 0;"><code>clearcoat_sampler: u32</code></div>
+
+
+<div style="margin: 8px 0;"><code>clearcoat_roughness_texture: u32</code></div>
+
+
+<div style="margin: 8px 0;"><code>clearcoat_roughness_sampler: u32</code></div>
+
+
+<div style="margin: 8px 0;"><code>clearcoat_normal_texture: u32</code></div>
+
+
+<div style="margin: 8px 0;"><code>clearcoat_normal_sampler: u32</code></div>
+
+
+<div style="margin: 8px 0;"><code>specular_texture: u32</code></div>
+
+
+<div style="margin: 8px 0;"><code>specular_sampler: u32</code></div>
+
+
+<div style="margin: 8px 0;"><code>specular_tint_texture: u32</code></div>
+
+
+<div style="margin: 8px 0;"><code>specular_tint_sampler: u32</code></div>
+
+
+
+
+        </div>
+    </div>
+
+    <script src="../../../../common.js"></script>
+    <script src="../../../items.js"></script>
+
+    <script>
+        window.DOCS_THIS_PACKAGE = {
+            version: "0.20.0-dev",
+            name: "bevy_pbr",
+            root: "../../../",
+        };
+    </script>
+    <script src="../../../../../-/static/js/selectVersion.js"></script>
+    <script src="../../../../../-/static/js/search.js"></script>
+    <script src="../../../../../-/static/js/lineNumbers.js"></script>
+</body>
+
+</html>

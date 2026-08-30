@@ -1,0 +1,252 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+        occlusion_culling - bevy_pbr
+        
+    </title>
+
+    <link rel="stylesheet" href="../../../../../-/static/css/inter/inter.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/source_code_pro/source_code_pro.css">
+
+    <link rel="stylesheet" href="../../../../../-/static/css/themes.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/styles.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/icons.css">
+    <script src="../../../../../-/static/js/settings.js"></script>
+
+    
+</head>
+
+<body>
+    <div class="nav">
+        <a class="icon icon-home" style="margin-right: 12px;" href="../../../../../index.html"></a>
+        <span style="margin-right: 12px;">bevy_pbr</span>
+        <select class="select" id="selectVersion" onchange="changeVersion()" autocomplete="off">
+            <option
+                value="../../../../0.20.0-dev/bevy_pbr/index.html">
+                0.20.0-dev
+            </option>
+        </select>
+        <button id="show-settings" class="icon icon-settings" aria-label="Show settings"></button>
+<div id="settings-menu">
+    <div class="settings-title">Theme</div>
+    <label>
+        <input type="radio" name="theme" id="theme-auto" value="auto"> Auto
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-dark" value="dark"> Dark
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-light" value="light"> Light
+    </label>
+</div>
+    </div>
+    <div class="content">
+        <input type="text" id="search" placeholder="Search" oninput="searchDebounced()" autocomplete="off">
+
+        <div id="innerContent">
+            
+
+            
+
+<pre class="code-block">
+<code><a
+            href="#1"
+            id="1"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >1</a>// Occlusion culling utility functions.
+<a
+            href="#2"
+            id="2"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >2</a>
+<a
+            href="#3"
+            id="3"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >3</a>fn get_aabb_size_in_pixels(aabb: vec4&#60;f32&#62;, depth_pyramid: texture_2d&#60;f32&#62;) -&#62; vec2&#60;f32&#62; {
+<a
+            href="#4"
+            id="4"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >4</a>    let depth_pyramid_size_mip_0 = vec2&#60;f32&#62;(textureDimensions(depth_pyramid, 0));
+<a
+            href="#5"
+            id="5"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >5</a>    let aabb_width_pixels = (aabb.z - aabb.x) * depth_pyramid_size_mip_0.x;
+<a
+            href="#6"
+            id="6"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >6</a>    let aabb_height_pixels = (aabb.w - aabb.y) * depth_pyramid_size_mip_0.y;
+<a
+            href="#7"
+            id="7"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >7</a>    return vec2(aabb_width_pixels, aabb_height_pixels);
+<a
+            href="#8"
+            id="8"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >8</a>}
+<a
+            href="#9"
+            id="9"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >9</a>
+<a
+            href="#10"
+            id="10"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >10</a>fn get_occluder_depth(
+<a
+            href="#11"
+            id="11"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >11</a>    aabb: vec4&#60;f32&#62;,
+<a
+            href="#12"
+            id="12"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >12</a>    aabb_pixel_size: vec2&#60;f32&#62;,
+<a
+            href="#13"
+            id="13"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >13</a>    depth_pyramid: texture_2d&#60;f32&#62;
+<a
+            href="#14"
+            id="14"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >14</a>) -&#62; f32 {
+<a
+            href="#15"
+            id="15"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >15</a>    let aabb_width_pixels = aabb_pixel_size.x;
+<a
+            href="#16"
+            id="16"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >16</a>    let aabb_height_pixels = aabb_pixel_size.y;
+<a
+            href="#17"
+            id="17"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >17</a>
+<a
+            href="#18"
+            id="18"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >18</a>    let depth_pyramid_size_mip_0 = vec2&#60;f32&#62;(textureDimensions(depth_pyramid, 0));
+<a
+            href="#19"
+            id="19"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >19</a>    let depth_level = max(0, i32(ceil(log2(max(aabb_width_pixels, aabb_height_pixels))))); // TODO: Naga doesn&#39;t like this being a u32
+<a
+            href="#20"
+            id="20"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >20</a>    let depth_pyramid_size = vec2&#60;f32&#62;(textureDimensions(depth_pyramid, depth_level));
+<a
+            href="#21"
+            id="21"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >21</a>    let aabb_top_left = vec2&#60;u32&#62;(aabb.xy * depth_pyramid_size);
+<a
+            href="#22"
+            id="22"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >22</a>
+<a
+            href="#23"
+            id="23"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >23</a>    let depth_quad_a = textureLoad(depth_pyramid, aabb_top_left, depth_level).x;
+<a
+            href="#24"
+            id="24"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >24</a>    let depth_quad_b = textureLoad(depth_pyramid, aabb_top_left + vec2(1u, 0u), depth_level).x;
+<a
+            href="#25"
+            id="25"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >25</a>    let depth_quad_c = textureLoad(depth_pyramid, aabb_top_left + vec2(0u, 1u), depth_level).x;
+<a
+            href="#26"
+            id="26"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >26</a>    let depth_quad_d = textureLoad(depth_pyramid, aabb_top_left + vec2(1u, 1u), depth_level).x;
+<a
+            href="#27"
+            id="27"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >27</a>    return min(min(depth_quad_a, depth_quad_b), min(depth_quad_c, depth_quad_d));
+<a
+            href="#28"
+            id="28"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >28</a>}</code>
+</pre>
+
+        </div>
+    </div>
+
+    <script src="../../../../common.js"></script>
+    <script src="../../../items.js"></script>
+
+    <script>
+        window.DOCS_THIS_PACKAGE = {
+            version: "0.20.0-dev",
+            name: "bevy_pbr",
+            root: "../../../",
+        };
+    </script>
+    <script src="../../../../../-/static/js/selectVersion.js"></script>
+    <script src="../../../../../-/static/js/search.js"></script>
+    <script src="../../../../../-/static/js/lineNumbers.js"></script>
+</body>
+
+</html>

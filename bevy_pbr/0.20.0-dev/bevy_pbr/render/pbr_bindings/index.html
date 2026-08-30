@@ -1,0 +1,540 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+        pbr_bindings - bevy_pbr
+        
+    </title>
+
+    <link rel="stylesheet" href="../../../../../-/static/css/inter/inter.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/source_code_pro/source_code_pro.css">
+
+    <link rel="stylesheet" href="../../../../../-/static/css/themes.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/styles.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/icons.css">
+    <script src="../../../../../-/static/js/settings.js"></script>
+
+    
+</head>
+
+<body>
+    <div class="nav">
+        <a class="icon icon-home" style="margin-right: 12px;" href="../../../../../index.html"></a>
+        <span style="margin-right: 12px;">bevy_pbr</span>
+        <select class="select" id="selectVersion" onchange="changeVersion()" autocomplete="off">
+            <option
+                value="../../../../0.20.0-dev/bevy_pbr/index.html">
+                0.20.0-dev
+            </option>
+        </select>
+        <button id="show-settings" class="icon icon-settings" aria-label="Show settings"></button>
+<div id="settings-menu">
+    <div class="settings-title">Theme</div>
+    <label>
+        <input type="radio" name="theme" id="theme-auto" value="auto"> Auto
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-dark" value="dark"> Dark
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-light" value="light"> Light
+    </label>
+</div>
+    </div>
+    <div class="content">
+        <input type="text" id="search" placeholder="Search" oninput="searchDebounced()" autocomplete="off">
+
+        <div id="innerContent">
+            
+            <h2>
+                <a class="path" href="../../index.html">bevy_pbr</a><span>::</span><wbr><a class="path" href="../index.html">render</a><span>::</span><wbr><a class="module" href="index.html">pbr_bindings</a>
+            </h2>
+            
+
+            
+
+<a class="module" href="../../../src/bevy_pbr/render/pbr_bindings.html">Source</a>
+
+
+
+
+
+
+
+
+
+
+
+<h3 class="item-list-title">Global Variables</h3>
+<ul class="item-list">
+    
+    <li>
+        <div>
+            <a class="var" href="var.anisotropy_sampler.html">anisotropy_sampler</a>
+            
+            <span class="conditional-inline">!BINDLESS &#38;&#38; PBR_ANISOTROPY_TEXTURE_SUPPORTED</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.anisotropy_texture.html">anisotropy_texture</a>
+            
+            <span class="conditional-inline">!BINDLESS &#38;&#38; PBR_ANISOTROPY_TEXTURE_SUPPORTED</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.base_color_sampler.html">base_color_sampler</a>
+            
+            <span class="conditional-inline">!BINDLESS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.base_color_texture.html">base_color_texture</a>
+            
+            <span class="conditional-inline">!BINDLESS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.clearcoat_normal_sampler.html">clearcoat_normal_sampler</a>
+            
+            <span class="conditional-inline">!BINDLESS &#38;&#38; PBR_MULTI_LAYER_MATERIAL_TEXTURES_SUPPORTED</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.clearcoat_normal_texture.html">clearcoat_normal_texture</a>
+            
+            <span class="conditional-inline">!BINDLESS &#38;&#38; PBR_MULTI_LAYER_MATERIAL_TEXTURES_SUPPORTED</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.clearcoat_roughness_sampler.html">clearcoat_roughness_sampler</a>
+            
+            <span class="conditional-inline">!BINDLESS &#38;&#38; PBR_MULTI_LAYER_MATERIAL_TEXTURES_SUPPORTED</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.clearcoat_roughness_texture.html">clearcoat_roughness_texture</a>
+            
+            <span class="conditional-inline">!BINDLESS &#38;&#38; PBR_MULTI_LAYER_MATERIAL_TEXTURES_SUPPORTED</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.clearcoat_sampler.html">clearcoat_sampler</a>
+            
+            <span class="conditional-inline">!BINDLESS &#38;&#38; PBR_MULTI_LAYER_MATERIAL_TEXTURES_SUPPORTED</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.clearcoat_texture.html">clearcoat_texture</a>
+            
+            <span class="conditional-inline">!BINDLESS &#38;&#38; PBR_MULTI_LAYER_MATERIAL_TEXTURES_SUPPORTED</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.depth_map_sampler.html">depth_map_sampler</a>
+            
+            <span class="conditional-inline">!BINDLESS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.depth_map_texture.html">depth_map_texture</a>
+            
+            <span class="conditional-inline">!BINDLESS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.diffuse_transmission_sampler.html">diffuse_transmission_sampler</a>
+            
+            <span class="conditional-inline">!BINDLESS &#38;&#38; PBR_TRANSMISSION_TEXTURES_SUPPORTED</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.diffuse_transmission_texture.html">diffuse_transmission_texture</a>
+            
+            <span class="conditional-inline">!BINDLESS &#38;&#38; PBR_TRANSMISSION_TEXTURES_SUPPORTED</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.emissive_sampler.html">emissive_sampler</a>
+            
+            <span class="conditional-inline">!BINDLESS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.emissive_texture.html">emissive_texture</a>
+            
+            <span class="conditional-inline">!BINDLESS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.material.html">material</a>
+            
+            <span class="conditional-inline">!BINDLESS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.material_array.html">material_array</a>
+            
+            <span class="conditional-inline">BINDLESS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.material_indices.html">material_indices</a>
+            
+            <span class="conditional-inline">BINDLESS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.metallic_roughness_sampler.html">metallic_roughness_sampler</a>
+            
+            <span class="conditional-inline">!BINDLESS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.metallic_roughness_texture.html">metallic_roughness_texture</a>
+            
+            <span class="conditional-inline">!BINDLESS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.normal_map_sampler.html">normal_map_sampler</a>
+            
+            <span class="conditional-inline">!BINDLESS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.normal_map_texture.html">normal_map_texture</a>
+            
+            <span class="conditional-inline">!BINDLESS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.occlusion_sampler.html">occlusion_sampler</a>
+            
+            <span class="conditional-inline">!BINDLESS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.occlusion_texture.html">occlusion_texture</a>
+            
+            <span class="conditional-inline">!BINDLESS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.specular_sampler.html">specular_sampler</a>
+            
+            <span class="conditional-inline">!BINDLESS &#38;&#38; PBR_SPECULAR_TEXTURES_SUPPORTED</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.specular_texture.html">specular_texture</a>
+            
+            <span class="conditional-inline">!BINDLESS &#38;&#38; PBR_SPECULAR_TEXTURES_SUPPORTED</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.specular_tint_sampler.html">specular_tint_sampler</a>
+            
+            <span class="conditional-inline">!BINDLESS &#38;&#38; PBR_SPECULAR_TEXTURES_SUPPORTED</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.specular_tint_texture.html">specular_tint_texture</a>
+            
+            <span class="conditional-inline">!BINDLESS &#38;&#38; PBR_SPECULAR_TEXTURES_SUPPORTED</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.specular_transmission_sampler.html">specular_transmission_sampler</a>
+            
+            <span class="conditional-inline">!BINDLESS &#38;&#38; PBR_TRANSMISSION_TEXTURES_SUPPORTED</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.specular_transmission_texture.html">specular_transmission_texture</a>
+            
+            <span class="conditional-inline">!BINDLESS &#38;&#38; PBR_TRANSMISSION_TEXTURES_SUPPORTED</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.thickness_sampler.html">thickness_sampler</a>
+            
+            <span class="conditional-inline">!BINDLESS &#38;&#38; PBR_TRANSMISSION_TEXTURES_SUPPORTED</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.thickness_texture.html">thickness_texture</a>
+            
+            <span class="conditional-inline">!BINDLESS &#38;&#38; PBR_TRANSMISSION_TEXTURES_SUPPORTED</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+</ul>
+
+
+
+<h3 class="item-list-title">Structs</h3>
+<ul class="item-list">
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.StandardMaterialBindings.html">StandardMaterialBindings</a>
+            
+            <span class="conditional-inline">BINDLESS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+</ul>
+
+
+
+
+
+
+
+<h3 class="item-list-title">Translate-time features</h3>
+<ul class="item-list">
+    
+    <li class="feature">BINDLESS</li>
+    
+    <li class="feature">PBR_ANISOTROPY_TEXTURE_SUPPORTED</li>
+    
+    <li class="feature">PBR_MULTI_LAYER_MATERIAL_TEXTURES_SUPPORTED</li>
+    
+    <li class="feature">PBR_SPECULAR_TEXTURES_SUPPORTED</li>
+    
+    <li class="feature">PBR_TRANSMISSION_TEXTURES_SUPPORTED</li>
+    
+</ul>
+
+
+
+        </div>
+    </div>
+
+    <script src="../../../../common.js"></script>
+    <script src="../../../items.js"></script>
+
+    <script>
+        window.DOCS_THIS_PACKAGE = {
+            version: "0.20.0-dev",
+            name: "bevy_pbr",
+            root: "../../../",
+        };
+    </script>
+    <script src="../../../../../-/static/js/selectVersion.js"></script>
+    <script src="../../../../../-/static/js/search.js"></script>
+    <script src="../../../../../-/static/js/lineNumbers.js"></script>
+</body>
+
+</html>

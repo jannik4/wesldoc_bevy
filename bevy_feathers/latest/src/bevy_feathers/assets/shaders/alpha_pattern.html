@@ -1,0 +1,186 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+        alpha_pattern - bevy_feathers
+        
+    </title>
+
+    <link rel="stylesheet" href="../../../../../../-/static/css/inter/inter.css">
+    <link rel="stylesheet" href="../../../../../../-/static/css/source_code_pro/source_code_pro.css">
+
+    <link rel="stylesheet" href="../../../../../../-/static/css/themes.css">
+    <link rel="stylesheet" href="../../../../../../-/static/css/styles.css">
+    <link rel="stylesheet" href="../../../../../../-/static/css/icons.css">
+    <script src="../../../../../../-/static/js/settings.js"></script>
+
+    
+</head>
+
+<body>
+    <div class="nav">
+        <a class="icon icon-home" style="margin-right: 12px;" href="../../../../../../index.html"></a>
+        <span style="margin-right: 12px;">bevy_feathers</span>
+        <select class="select" id="selectVersion" onchange="changeVersion()" autocomplete="off">
+            <option
+                value="../../../../../latest/bevy_feathers/index.html">
+                latest
+            </option>
+        </select>
+        <button id="show-settings" class="icon icon-settings" aria-label="Show settings"></button>
+<div id="settings-menu">
+    <div class="settings-title">Theme</div>
+    <label>
+        <input type="radio" name="theme" id="theme-auto" value="auto"> Auto
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-dark" value="dark"> Dark
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-light" value="light"> Light
+    </label>
+</div>
+    </div>
+    <div class="content">
+        <input type="text" id="search" placeholder="Search" oninput="searchDebounced()" autocomplete="off">
+
+        <div id="innerContent">
+            
+
+            
+
+<pre class="code-block">
+<code><a
+            href="#1"
+            id="1"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >1</a>// This shader draws a checkerboard pattern
+<a
+            href="#2"
+            id="2"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >2</a>import bevy_ui_render::ui_vertex_output::UiVertexOutput;
+<a
+            href="#3"
+            id="3"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >3</a>import bevy_ui_render::ui::sd_rounded_box;
+<a
+            href="#4"
+            id="4"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >4</a>
+<a
+            href="#5"
+            id="5"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >5</a>@fragment
+<a
+            href="#6"
+            id="6"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >6</a>fn fragment(in: UiVertexOutput) -&#62; @location(0) vec4&#60;f32&#62; {
+<a
+            href="#7"
+            id="7"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >7</a>    let uv = (in.uv - vec2&#60;f32&#62;(0.5, 0.5)) * in.size / 16.;
+<a
+            href="#8"
+            id="8"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >8</a>    let check = select(0.0, 1.0, (fract(uv.x) &#60; 0.5) != (fract(uv.y) &#60; 0.5));
+<a
+            href="#9"
+            id="9"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >9</a>    let bg = mix(vec3&#60;f32&#62;(0.2, 0.2, 0.2), vec3&#60;f32&#62;(0.6, 0.6, 0.6), check);
+<a
+            href="#10"
+            id="10"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >10</a>
+<a
+            href="#11"
+            id="11"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >11</a>    let size = vec2&#60;f32&#62;(in.size.x, in.size.y);
+<a
+            href="#12"
+            id="12"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >12</a>    // With rounded non-elliptical border radius, in.border_radius_x == in.border_radius.y. 
+<a
+            href="#13"
+            id="13"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >13</a>    let external_distance = sd_rounded_box((in.uv - 0.5) * size, size, in.border_radius_x, in.border_radius_y);
+<a
+            href="#14"
+            id="14"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >14</a>    let alpha = smoothstep(0.5, -0.5, external_distance);
+<a
+            href="#15"
+            id="15"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >15</a>
+<a
+            href="#16"
+            id="16"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >16</a>    return vec4&#60;f32&#62;(bg, alpha);
+<a
+            href="#17"
+            id="17"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >17</a>}</code>
+</pre>
+
+        </div>
+    </div>
+
+    <script src="../../../../../common.js"></script>
+    <script src="../../../../items.js"></script>
+
+    <script>
+        window.DOCS_THIS_PACKAGE = {
+            version: "latest",
+            name: "bevy_feathers",
+            root: "../../../../",
+        };
+    </script>
+    <script src="../../../../../../-/static/js/selectVersion.js"></script>
+    <script src="../../../../../../-/static/js/search.js"></script>
+    <script src="../../../../../../-/static/js/lineNumbers.js"></script>
+</body>
+
+</html>

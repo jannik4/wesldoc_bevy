@@ -1,0 +1,754 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+        mesh_view_bindings - bevy_pbr
+        
+    </title>
+
+    <link rel="stylesheet" href="../../../../../-/static/css/inter/inter.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/source_code_pro/source_code_pro.css">
+
+    <link rel="stylesheet" href="../../../../../-/static/css/themes.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/styles.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/icons.css">
+    <script src="../../../../../-/static/js/settings.js"></script>
+
+    
+</head>
+
+<body>
+    <div class="nav">
+        <a class="icon icon-home" style="margin-right: 12px;" href="../../../../../index.html"></a>
+        <span style="margin-right: 12px;">bevy_pbr</span>
+        <select class="select" id="selectVersion" onchange="changeVersion()" autocomplete="off">
+            <option
+                value="../../../../0.20.0-dev/bevy_pbr/index.html">
+                0.20.0-dev
+            </option>
+        </select>
+        <button id="show-settings" class="icon icon-settings" aria-label="Show settings"></button>
+<div id="settings-menu">
+    <div class="settings-title">Theme</div>
+    <label>
+        <input type="radio" name="theme" id="theme-auto" value="auto"> Auto
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-dark" value="dark"> Dark
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-light" value="light"> Light
+    </label>
+</div>
+    </div>
+    <div class="content">
+        <input type="text" id="search" placeholder="Search" oninput="searchDebounced()" autocomplete="off">
+
+        <div id="innerContent">
+            
+            <h2>
+                <a class="path" href="../../index.html">bevy_pbr</a><span>::</span><wbr><a class="path" href="../index.html">render</a><span>::</span><wbr><a class="module" href="index.html">mesh_view_bindings</a>
+            </h2>
+            
+
+            
+
+<a class="module" href="../../../src/bevy_pbr/render/mesh_view_bindings.html">Source</a>
+
+
+
+
+
+
+
+<h3 class="item-list-title">Constants</h3>
+<ul class="item-list">
+    
+    <li>
+        <div>
+            <a class="const" href="const.VISIBILITY_RANGE_UNIFORM_BUFFER_SIZE.html">VISIBILITY_RANGE_UNIFORM_BUFFER_SIZE</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+</ul>
+
+
+
+
+
+<h3 class="item-list-title">Global Variables</h3>
+<ul class="item-list">
+    
+    <li>
+        <div>
+            <a class="var" href="var.area_light_luts.html">area_light_luts</a>
+            
+            <span class="conditional-inline">AREA_LIGHT_LUTS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.area_light_luts_sampler.html">area_light_luts_sampler</a>
+            
+            <span class="conditional-inline">AREA_LIGHT_LUTS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.atmosphere.html">atmosphere</a>
+            
+            <span class="conditional-inline">ATMOSPHERE</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.atmosphere_transmittance_sampler.html">atmosphere_transmittance_sampler</a>
+            
+            <span class="conditional-inline">ATMOSPHERE</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.atmosphere_transmittance_texture.html">atmosphere_transmittance_texture</a>
+            
+            <span class="conditional-inline">ATMOSPHERE</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.blue_noise_texture.html">blue_noise_texture</a>
+            
+            <span class="conditional-inline">BLUE_NOISE_TEXTURE</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.cluster_offsets_and_counts.html">cluster_offsets_and_counts</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.clusterable_object_index_lists.html">clusterable_object_index_lists</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.clustered_decal_sampler.html">clustered_decal_sampler</a>
+            
+            <span class="conditional-inline">CLUSTERED_DECALS_ARE_USABLE</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.clustered_decal_textures.html">clustered_decal_textures</a>
+            
+            <span class="conditional-inline">CLUSTERED_DECALS_ARE_USABLE</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.clustered_decals.html">clustered_decals</a>
+            
+            <span class="conditional-inline">CLUSTERED_DECALS_ARE_USABLE</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.clustered_lights.html">clustered_lights</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.contact_shadows_settings.html">contact_shadows_settings</a>
+            
+            <span class="conditional-inline">CONTACT_SHADOWS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.deferred_prepass_texture.html">deferred_prepass_texture</a>
+            
+            <span class="conditional-inline">DEFERRED_PREPASS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.depth_prepass_texture.html">depth_prepass_texture</a>
+            
+            <span class="conditional-inline">(MULTISAMPLED &#38;&#38; DEPTH_PREPASS) || (!MULTISAMPLED &#38;&#38; DEPTH_PREPASS)</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.dfg_lut.html">dfg_lut</a>
+            
+            <span class="conditional-inline">DFG_LUT</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.dfg_lut_sampler.html">dfg_lut_sampler</a>
+            
+            <span class="conditional-inline">DFG_LUT</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.diffuse_environment_map.html">diffuse_environment_map</a>
+            
+            <span class="conditional-inline">ENVIRONMENT_MAP &#38;&#38; !MULTIPLE_LIGHT_PROBES_IN_ARRAY</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.diffuse_environment_maps.html">diffuse_environment_maps</a>
+            
+            <span class="conditional-inline">ENVIRONMENT_MAP &#38;&#38; MULTIPLE_LIGHT_PROBES_IN_ARRAY</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.directional_shadow_textures.html">directional_shadow_textures</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.directional_shadow_textures_comparison_sampler.html">directional_shadow_textures_comparison_sampler</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.directional_shadow_textures_linear_sampler.html">directional_shadow_textures_linear_sampler</a>
+            
+            <span class="conditional-inline">PCSS_SAMPLERS_AVAILABLE</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.dt_lut_sampler.html">dt_lut_sampler</a>
+            
+            <span class="conditional-inline">TONEMAP_IN_SHADER</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.dt_lut_texture.html">dt_lut_texture</a>
+            
+            <span class="conditional-inline">TONEMAP_IN_SHADER</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.environment_map_sampler.html">environment_map_sampler</a>
+            
+            <span class="conditional-inline">ENVIRONMENT_MAP</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.fog.html">fog</a>
+            
+            <span class="conditional-inline">DISTANCE_FOG</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.globals.html">globals</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.irradiance_volume.html">irradiance_volume</a>
+            
+            <span class="conditional-inline">IRRADIANCE_VOLUME &#38;&#38; IRRADIANCE_VOLUMES_ARE_USABLE &#38;&#38; !MULTIPLE_LIGHT_PROBES_IN_ARRAY</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.irradiance_volume_sampler.html">irradiance_volume_sampler</a>
+            
+            <span class="conditional-inline">IRRADIANCE_VOLUME &#38;&#38; IRRADIANCE_VOLUMES_ARE_USABLE</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.irradiance_volumes.html">irradiance_volumes</a>
+            
+            <span class="conditional-inline">IRRADIANCE_VOLUME &#38;&#38; IRRADIANCE_VOLUMES_ARE_USABLE &#38;&#38; MULTIPLE_LIGHT_PROBES_IN_ARRAY</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.light_probes.html">light_probes</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.lights.html">lights</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.motion_vector_prepass_texture.html">motion_vector_prepass_texture</a>
+            
+            <span class="conditional-inline">(MULTISAMPLED &#38;&#38; MOTION_VECTOR_PREPASS) || (!MULTISAMPLED &#38;&#38; MOTION_VECTOR_PREPASS)</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.normal_prepass_texture.html">normal_prepass_texture</a>
+            
+            <span class="conditional-inline">(MULTISAMPLED &#38;&#38; NORMAL_PREPASS) || (!MULTISAMPLED &#38;&#38; NORMAL_PREPASS)</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.oit_atomic_counter.html">oit_atomic_counter</a>
+            
+            <span class="conditional-inline">OIT_ENABLED</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.oit_heads.html">oit_heads</a>
+            
+            <span class="conditional-inline">OIT_ENABLED</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.oit_nodes.html">oit_nodes</a>
+            
+            <span class="conditional-inline">OIT_ENABLED</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.oit_nodes_capacity.html">oit_nodes_capacity</a>
+            
+            <span class="conditional-inline">OIT_ENABLED</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.oit_settings.html">oit_settings</a>
+            
+            <span class="conditional-inline">OIT_ENABLED</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.point_shadow_textures.html">point_shadow_textures</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.point_shadow_textures_comparison_sampler.html">point_shadow_textures_comparison_sampler</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.point_shadow_textures_linear_sampler.html">point_shadow_textures_linear_sampler</a>
+            
+            <span class="conditional-inline">PCSS_SAMPLERS_AVAILABLE</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.screen_space_ambient_occlusion_texture.html">screen_space_ambient_occlusion_texture</a>
+            
+            <span class="conditional-inline">SCREEN_SPACE_AMBIENT_OCCLUSION</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.specular_environment_map.html">specular_environment_map</a>
+            
+            <span class="conditional-inline">ENVIRONMENT_MAP &#38;&#38; !MULTIPLE_LIGHT_PROBES_IN_ARRAY</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.specular_environment_maps.html">specular_environment_maps</a>
+            
+            <span class="conditional-inline">ENVIRONMENT_MAP &#38;&#38; MULTIPLE_LIGHT_PROBES_IN_ARRAY</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.ssr_settings.html">ssr_settings</a>
+            
+            <span class="conditional-inline">SCREEN_SPACE_REFLECTIONS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.view.html">view</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.view_transmission_sampler.html">view_transmission_sampler</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.view_transmission_texture.html">view_transmission_texture</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.visibility_ranges.html">visibility_ranges</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+</ul>
+
+
+
+
+
+
+
+
+
+<h3 class="item-list-title">Translate-time features</h3>
+<ul class="item-list">
+    
+    <li class="feature">AREA_LIGHT_LUTS</li>
+    
+    <li class="feature">ATMOSPHERE</li>
+    
+    <li class="feature">AVAILABLE_STORAGE_BUFFER_BINDINGS__GE_3</li>
+    
+    <li class="feature">AVAILABLE_STORAGE_BUFFER_BINDINGS__GE_6</li>
+    
+    <li class="feature">BLUE_NOISE_TEXTURE</li>
+    
+    <li class="feature">CLUSTERED_DECALS_ARE_USABLE</li>
+    
+    <li class="feature">CONTACT_SHADOWS</li>
+    
+    <li class="feature">DEFERRED_PREPASS</li>
+    
+    <li class="feature">DEPTH_PREPASS</li>
+    
+    <li class="feature">DFG_LUT</li>
+    
+    <li class="feature">DISTANCE_FOG</li>
+    
+    <li class="feature">ENVIRONMENT_MAP</li>
+    
+    <li class="feature">IRRADIANCE_VOLUME</li>
+    
+    <li class="feature">IRRADIANCE_VOLUMES_ARE_USABLE</li>
+    
+    <li class="feature">MOTION_VECTOR_PREPASS</li>
+    
+    <li class="feature">MULTIPLE_LIGHT_PROBES_IN_ARRAY</li>
+    
+    <li class="feature">MULTISAMPLED</li>
+    
+    <li class="feature">NORMAL_PREPASS</li>
+    
+    <li class="feature">NO_ARRAY_TEXTURES_SUPPORT</li>
+    
+    <li class="feature">NO_CUBE_ARRAY_TEXTURES_SUPPORT</li>
+    
+    <li class="feature">OIT_ENABLED</li>
+    
+    <li class="feature">PCSS_SAMPLERS_AVAILABLE</li>
+    
+    <li class="feature">SCREEN_SPACE_AMBIENT_OCCLUSION</li>
+    
+    <li class="feature">SCREEN_SPACE_REFLECTIONS</li>
+    
+    <li class="feature">TONEMAP_IN_SHADER</li>
+    
+</ul>
+
+
+
+        </div>
+    </div>
+
+    <script src="../../../../common.js"></script>
+    <script src="../../../items.js"></script>
+
+    <script>
+        window.DOCS_THIS_PACKAGE = {
+            version: "0.20.0-dev",
+            name: "bevy_pbr",
+            root: "../../../",
+        };
+    </script>
+    <script src="../../../../../-/static/js/selectVersion.js"></script>
+    <script src="../../../../../-/static/js/search.js"></script>
+    <script src="../../../../../-/static/js/lineNumbers.js"></script>
+</body>
+
+</html>

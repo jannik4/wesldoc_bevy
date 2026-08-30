@@ -1,0 +1,40 @@
+name: pages
+
+on:
+    push:
+        branches:
+            - main
+    schedule:
+        - cron: "0 0 * * *"
+
+permissions:
+    contents: write
+
+env:
+    CARGO_TERM_COLOR: always
+
+jobs:
+    gh_pages:
+        name: Github Pages
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Setup toolchain
+              uses: actions-rs/toolchain@v1
+              with:
+                  toolchain: stable
+
+            - name: Install wesldoc
+              run: cargo install --locked --git https://github.com/jannik4/wesldoc
+
+            - name: Clone bevy
+              run: git clone https://github.com/bevyengine/bevy
+
+            - name: Build docs
+              run: wesldoc ./bevy --statistics
+
+            - name: Deploy
+              uses: JamesIves/github-pages-deploy-action@v4
+              with:
+                  branch: gh-pages
+                  folder: target/wesldoc

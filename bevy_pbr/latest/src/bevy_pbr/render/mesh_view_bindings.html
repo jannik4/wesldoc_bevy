@@ -30,16 +30,57 @@
 
 <body>
     <div class="nav">
-        <a class="icon icon-home" style="margin-right: 12px;" href="../../../../../index.html"></a>
-        <span style="margin-right: 12px;">bevy_pbr</span>
-        <select class="select" id="selectVersion" onchange="changeVersion()" autocomplete="off">
-            <option
-                value="../../../../latest/bevy_pbr/index.html">
-                latest
-            </option>
-        </select>
-        <button id="show-settings" class="icon icon-settings" aria-label="Show settings"></button>
-<div id="settings-menu">
+        <a class="nav-item nav-item-bd-right muted-link" href="../../../../../index.html">
+            <span class="icon icon-home"></span>
+        </a>
+        <a id="show-package" class="nav-item nav-item-bd-right muted-link icon-and-text" href="#">
+            bevy_pbr 0.20.0-dev
+            <span class="icon icon-mod-small icon-down"></span>
+        </a>
+        <div id="package-menu">
+    <div>
+        <div class="title">Package</div>
+        <div class="body">
+            
+            <a class="muted-link icon-and-text" href="https://bevy.org"><span class="icon icon-home"></span>Homepage</a>
+            
+            
+            <a class="muted-link icon-and-text" href="https://github.com/bevyengine/bevy"><span
+                    class="icon icon-repository"></span>Repository</a>
+            
+            
+            <a class="muted-link icon-and-text" href="#"><span class="icon icon-license"></span>MIT OR Apache-2.0</a>
+            
+        </div>
+    </div>
+
+    <div>
+        <div class="title">Dependencies</div>
+        <div class="body">
+            
+            <a class="muted-link"
+                href="../../../../../bevy_core_pipeline/0.20.0-dev/bevy_core_pipeline/index.html">
+                bevy_core_pipeline 0.20.0-dev
+            </a>
+            
+            <a class="muted-link"
+                href="../../../../../bevy_render/0.20.0-dev/bevy_render/index.html">
+                bevy_render 0.20.0-dev
+            </a>
+            
+            
+        </div>
+    </div>
+
+    <div>
+        <div class="title">Versions</div>
+        <div id="package-versions-list" class="body"></div>
+    </div>
+</div>
+        <button id="show-settings" class="nav-item nav-item-bd-left muted-link" aria-label="Show settings">
+            <span class="icon icon-settings"></span>
+        </button>
+        <div id="settings-menu">
     <div class="settings-title">Theme</div>
     <label>
         <input type="radio" name="theme" id="theme-auto" value="auto"> Auto
@@ -558,319 +599,331 @@
             id="83"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >83</a>@group(0) @binding(24) var view_transmission_texture: texture_2d&#60;f32&#62;;
+        >83</a>@if (VIEW_TRANSMISSION_TEXTURE) {
 <a
             href="#84"
             id="84"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >84</a>@group(0) @binding(25) var view_transmission_sampler: sampler;
+        >84</a>@group(0) @binding(24) var view_transmission_texture: texture_2d&#60;f32&#62;;
 <a
             href="#85"
             id="85"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >85</a>
+        >85</a>@group(0) @binding(25) var view_transmission_sampler: sampler;
 <a
             href="#86"
             id="86"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >86</a>@if(OIT_ENABLED) {
+        >86</a>}
 <a
             href="#87"
             id="87"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >87</a>@group(0) @binding(26) var&#60;uniform&#62; oit_settings: types::OrderIndependentTransparencySettings;
+        >87</a>
 <a
             href="#88"
             id="88"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >88</a>@group(0) @binding(27) var&#60;uniform&#62; oit_nodes_capacity: u32;
+        >88</a>@if(OIT_ENABLED) {
 <a
             href="#89"
             id="89"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >89</a>@group(0) @binding(28) var&#60;storage, read_write&#62; oit_nodes: array&#60;types::OitFragmentNode&#62;;
+        >89</a>@group(0) @binding(26) var&#60;uniform&#62; oit_settings: types::OrderIndependentTransparencySettings;
 <a
             href="#90"
             id="90"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >90</a>@group(0) @binding(29) var&#60;storage, read_write&#62; oit_heads: array&#60;atomic&#60;u32&#62;&#62;;
+        >90</a>@group(0) @binding(27) var&#60;uniform&#62; oit_nodes_capacity: u32;
 <a
             href="#91"
             id="91"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >91</a>@group(0) @binding(30) var&#60;storage, read_write&#62; oit_atomic_counter: atomic&#60;u32&#62;;
+        >91</a>@group(0) @binding(28) var&#60;storage, read_write&#62; oit_nodes: array&#60;types::OitFragmentNode&#62;;
 <a
             href="#92"
             id="92"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >92</a>}
+        >92</a>@group(0) @binding(29) var&#60;storage, read_write&#62; oit_heads: array&#60;atomic&#60;u32&#62;&#62;;
 <a
             href="#93"
             id="93"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >93</a>
+        >93</a>@group(0) @binding(30) var&#60;storage, read_write&#62; oit_atomic_counter: atomic&#60;u32&#62;;
 <a
             href="#94"
             id="94"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >94</a>@if(ATMOSPHERE) {
+        >94</a>}
 <a
             href="#95"
             id="95"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >95</a>@group(0) @binding(31) var atmosphere_transmittance_texture: texture_2d&#60;f32&#62;;
+        >95</a>
 <a
             href="#96"
             id="96"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >96</a>@group(0) @binding(32) var atmosphere_transmittance_sampler: sampler;
+        >96</a>@if(ATMOSPHERE) {
 <a
             href="#97"
             id="97"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >97</a>@group(0) @binding(33) var&#60;storage&#62; atmosphere: atmosphere_types::Atmosphere;
+        >97</a>@group(0) @binding(31) var atmosphere_transmittance_texture: texture_2d&#60;f32&#62;;
 <a
             href="#98"
             id="98"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >98</a>}
+        >98</a>@group(0) @binding(32) var atmosphere_transmittance_sampler: sampler;
 <a
             href="#99"
             id="99"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >99</a>
+        >99</a>@group(0) @binding(33) var&#60;storage&#62; atmosphere: atmosphere_types::Atmosphere;
 <a
             href="#100"
             id="100"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >100</a>@if(BLUE_NOISE_TEXTURE)
+        >100</a>}
 <a
             href="#101"
             id="101"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >101</a>@group(0) @binding(34) var blue_noise_texture: texture_2d_array&#60;f32&#62;;
+        >101</a>
 <a
             href="#102"
             id="102"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >102</a>
+        >102</a>@if(BLUE_NOISE_TEXTURE)
 <a
             href="#103"
             id="103"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >103</a>@if(AREA_LIGHT_LUTS) {
+        >103</a>@group(0) @binding(34) var blue_noise_texture: texture_2d_array&#60;f32&#62;;
 <a
             href="#104"
             id="104"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >104</a>@group(0) @binding(35) var area_light_luts: texture_2d_array&#60;f32&#62;;
+        >104</a>
 <a
             href="#105"
             id="105"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >105</a>@group(0) @binding(36) var area_light_luts_sampler: sampler;
+        >105</a>@if(AREA_LIGHT_LUTS) {
 <a
             href="#106"
             id="106"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >106</a>}
+        >106</a>@group(0) @binding(35) var area_light_luts: texture_2d_array&#60;f32&#62;;
 <a
             href="#107"
             id="107"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >107</a>
+        >107</a>@group(0) @binding(36) var area_light_luts_sampler: sampler;
 <a
             href="#108"
             id="108"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >108</a>@if(DFG_LUT) {
+        >108</a>}
 <a
             href="#109"
             id="109"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >109</a>@group(0) @binding(37) var dfg_lut: texture_2d&#60;f32&#62;;
+        >109</a>
 <a
             href="#110"
             id="110"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >110</a>@group(0) @binding(38) var dfg_lut_sampler: sampler;
+        >110</a>@if(DFG_LUT) {
 <a
             href="#111"
             id="111"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >111</a>}
+        >111</a>@group(0) @binding(37) var dfg_lut: texture_2d&#60;f32&#62;;
 <a
             href="#112"
             id="112"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >112</a>
+        >112</a>@group(0) @binding(38) var dfg_lut_sampler: sampler;
 <a
             href="#113"
             id="113"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >113</a>@if(ENVIRONMENT_MAP &#38;&#38; MULTIPLE_LIGHT_PROBES_IN_ARRAY) {
+        >113</a>}
 <a
             href="#114"
             id="114"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >114</a>@group(1) @binding(0) var diffuse_environment_maps: binding_array&#60;texture_cube&#60;f32&#62;, 8u&#62;;
+        >114</a>
 <a
             href="#115"
             id="115"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >115</a>@group(1) @binding(1) var specular_environment_maps: binding_array&#60;texture_cube&#60;f32&#62;, 8u&#62;;
+        >115</a>@if(ENVIRONMENT_MAP &#38;&#38; MULTIPLE_LIGHT_PROBES_IN_ARRAY) {
 <a
             href="#116"
             id="116"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >116</a>}
+        >116</a>@group(1) @binding(0) var diffuse_environment_maps: binding_array&#60;texture_cube&#60;f32&#62;, 8u&#62;;
 <a
             href="#117"
             id="117"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >117</a>@if(ENVIRONMENT_MAP &#38;&#38; !MULTIPLE_LIGHT_PROBES_IN_ARRAY) {
+        >117</a>@group(1) @binding(1) var specular_environment_maps: binding_array&#60;texture_cube&#60;f32&#62;, 8u&#62;;
 <a
             href="#118"
             id="118"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >118</a>@group(1) @binding(0) var diffuse_environment_map: texture_cube&#60;f32&#62;;
+        >118</a>}
 <a
             href="#119"
             id="119"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >119</a>@group(1) @binding(1) var specular_environment_map: texture_cube&#60;f32&#62;;
+        >119</a>@if(ENVIRONMENT_MAP &#38;&#38; !MULTIPLE_LIGHT_PROBES_IN_ARRAY) {
 <a
             href="#120"
             id="120"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >120</a>}
+        >120</a>@group(1) @binding(0) var diffuse_environment_map: texture_cube&#60;f32&#62;;
 <a
             href="#121"
             id="121"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >121</a>@if(ENVIRONMENT_MAP)
+        >121</a>@group(1) @binding(1) var specular_environment_map: texture_cube&#60;f32&#62;;
 <a
             href="#122"
             id="122"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >122</a>@group(1) @binding(2) var environment_map_sampler: sampler;
+        >122</a>}
 <a
             href="#123"
             id="123"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >123</a>
+        >123</a>@if(ENVIRONMENT_MAP)
 <a
             href="#124"
             id="124"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >124</a>@if(IRRADIANCE_VOLUME &#38;&#38; IRRADIANCE_VOLUMES_ARE_USABLE &#38;&#38; MULTIPLE_LIGHT_PROBES_IN_ARRAY)
+        >124</a>@group(1) @binding(2) var environment_map_sampler: sampler;
 <a
             href="#125"
             id="125"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >125</a>@group(1) @binding(3) var irradiance_volumes: binding_array&#60;texture_3d&#60;f32&#62;, 8u&#62;;
+        >125</a>
 <a
             href="#126"
             id="126"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >126</a>@if(IRRADIANCE_VOLUME &#38;&#38; IRRADIANCE_VOLUMES_ARE_USABLE &#38;&#38; !MULTIPLE_LIGHT_PROBES_IN_ARRAY)
+        >126</a>@if(IRRADIANCE_VOLUME &#38;&#38; IRRADIANCE_VOLUMES_ARE_USABLE &#38;&#38; MULTIPLE_LIGHT_PROBES_IN_ARRAY)
 <a
             href="#127"
             id="127"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >127</a>@group(1) @binding(3) var irradiance_volume: texture_3d&#60;f32&#62;;
+        >127</a>@group(1) @binding(3) var irradiance_volumes: binding_array&#60;texture_3d&#60;f32&#62;, 8u&#62;;
 <a
             href="#128"
             id="128"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >128</a>@if(IRRADIANCE_VOLUME &#38;&#38; IRRADIANCE_VOLUMES_ARE_USABLE)
+        >128</a>@if(IRRADIANCE_VOLUME &#38;&#38; IRRADIANCE_VOLUMES_ARE_USABLE &#38;&#38; !MULTIPLE_LIGHT_PROBES_IN_ARRAY)
 <a
             href="#129"
             id="129"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >129</a>@group(1) @binding(4) var irradiance_volume_sampler: sampler;
+        >129</a>@group(1) @binding(3) var irradiance_volume: texture_3d&#60;f32&#62;;
 <a
             href="#130"
             id="130"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >130</a>
+        >130</a>@if(IRRADIANCE_VOLUME &#38;&#38; IRRADIANCE_VOLUMES_ARE_USABLE)
 <a
             href="#131"
             id="131"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >131</a>@if(CLUSTERED_DECALS_ARE_USABLE) {
+        >131</a>@group(1) @binding(4) var irradiance_volume_sampler: sampler;
 <a
             href="#132"
             id="132"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >132</a>@group(1) @binding(5) var&#60;storage&#62; clustered_decals: types::ClusteredDecals;
+        >132</a>
 <a
             href="#133"
             id="133"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >133</a>@group(1) @binding(6) var clustered_decal_textures: binding_array&#60;texture_2d&#60;f32&#62;, 8u&#62;;
+        >133</a>@if(CLUSTERED_DECALS_ARE_USABLE) {
 <a
             href="#134"
             id="134"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >134</a>@group(1) @binding(7) var clustered_decal_sampler: sampler;
+        >134</a>@group(1) @binding(5) var&#60;storage&#62; clustered_decals: types::ClusteredDecals;
 <a
             href="#135"
             id="135"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >135</a>}</code>
+        >135</a>@group(1) @binding(6) var clustered_decal_textures: binding_array&#60;texture_2d&#60;f32&#62;, 8u&#62;;
+<a
+            href="#136"
+            id="136"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >136</a>@group(1) @binding(7) var clustered_decal_sampler: sampler;
+<a
+            href="#137"
+            id="137"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >137</a>}</code>
 </pre>
 
         </div>
@@ -886,7 +939,7 @@
             root: "../../../",
         };
     </script>
-    <script src="../../../../../-/static/js/selectVersion.js"></script>
+    <script src="../../../../../-/static/js/package.js"></script>
     <script src="../../../../../-/static/js/search.js"></script>
     <script src="../../../../../-/static/js/lineNumbers.js"></script>
 </body>

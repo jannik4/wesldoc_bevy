@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="../../../../../-/static/css/themes.css">
     <link rel="stylesheet" href="../../../../../-/static/css/styles.css">
     <link rel="stylesheet" href="../../../../../-/static/css/icons.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/syntax.css">
     <script src="../../../../../-/static/js/settings.js"></script>
 
     
@@ -107,7 +108,7 @@
             id="1"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >1</a>// Occlusion culling utility functions.
+        >1</a><span class="syntax-comment syntax-comment-line">// Occlusion culling utility functions.</span>
 <a
             href="#2"
             id="2"
@@ -119,37 +120,37 @@
             id="3"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >3</a>fn get_aabb_size_in_pixels(aabb: vec4&#60;f32&#62;, depth_pyramid: texture_2d&#60;f32&#62;) -&#62; vec2&#60;f32&#62; {
+        >3</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">get_aabb_size_in_pixels</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">aabb</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">depth_pyramid</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">texture_2d</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-type">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#4"
             id="4"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >4</a>    let depth_pyramid_size_mip_0 = vec2&#60;f32&#62;(textureDimensions(depth_pyramid, 0));
+        >4</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">depth_pyramid_size_mip_0</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">textureDimensions</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">depth_pyramid</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#5"
             id="5"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >5</a>    let aabb_width_pixels = (aabb.z - aabb.x) * depth_pyramid_size_mip_0.x;
+        >5</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">aabb_width_pixels</span> <span class="syntax-operator">=</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">aabb</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">z</span> <span class="syntax-operator">-</span> <span class="syntax-variable">aabb</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">x</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-variable">depth_pyramid_size_mip_0</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">x</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#6"
             id="6"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >6</a>    let aabb_height_pixels = (aabb.w - aabb.y) * depth_pyramid_size_mip_0.y;
+        >6</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">aabb_height_pixels</span> <span class="syntax-operator">=</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">aabb</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">w</span> <span class="syntax-operator">-</span> <span class="syntax-variable">aabb</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">y</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-variable">depth_pyramid_size_mip_0</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">y</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#7"
             id="7"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >7</a>    return vec2(aabb_width_pixels, aabb_height_pixels);
+        >7</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-function syntax-function-call">vec2</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">aabb_width_pixels</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">aabb_height_pixels</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#8"
             id="8"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >8</a>}
+        >8</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#9"
             id="9"
@@ -161,43 +162,43 @@
             id="10"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >10</a>fn get_occluder_depth(
+        >10</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">get_occluder_depth</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span>
 <a
             href="#11"
             id="11"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >11</a>    aabb: vec4&#60;f32&#62;,
+        >11</a>    <span class="syntax-variable syntax-variable-parameter">aabb</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#12"
             id="12"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >12</a>    aabb_pixel_size: vec2&#60;f32&#62;,
+        >12</a>    <span class="syntax-variable syntax-variable-parameter">aabb_pixel_size</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#13"
             id="13"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >13</a>    depth_pyramid: texture_2d&#60;f32&#62;
+        >13</a>    <span class="syntax-variable syntax-variable-parameter">depth_pyramid</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">texture_2d</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span>
 <a
             href="#14"
             id="14"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >14</a>) -&#62; f32 {
+        >14</a><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-type">f32</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#15"
             id="15"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >15</a>    let aabb_width_pixels = aabb_pixel_size.x;
+        >15</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">aabb_width_pixels</span> <span class="syntax-operator">=</span> <span class="syntax-variable">aabb_pixel_size</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">x</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#16"
             id="16"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >16</a>    let aabb_height_pixels = aabb_pixel_size.y;
+        >16</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">aabb_height_pixels</span> <span class="syntax-operator">=</span> <span class="syntax-variable">aabb_pixel_size</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">y</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#17"
             id="17"
@@ -209,25 +210,25 @@
             id="18"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >18</a>    let depth_pyramid_size_mip_0 = vec2&#60;f32&#62;(textureDimensions(depth_pyramid, 0));
+        >18</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">depth_pyramid_size_mip_0</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">textureDimensions</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">depth_pyramid</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#19"
             id="19"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >19</a>    let depth_level = max(0, i32(ceil(log2(max(aabb_width_pixels, aabb_height_pixels))))); // TODO: Naga doesn&#39;t like this being a u32
+        >19</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">depth_level</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">max</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-function syntax-function-call">i32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">ceil</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">log2</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">max</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">aabb_width_pixels</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">aabb_height_pixels</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span> <span class="syntax-comment syntax-comment-line">// TODO: Naga doesn&#39;t like this being a u32</span>
 <a
             href="#20"
             id="20"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >20</a>    let depth_pyramid_size = vec2&#60;f32&#62;(textureDimensions(depth_pyramid, depth_level));
+        >20</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">depth_pyramid_size</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">textureDimensions</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">depth_pyramid</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">depth_level</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#21"
             id="21"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >21</a>    let aabb_top_left = vec2&#60;u32&#62;(aabb.xy * depth_pyramid_size);
+        >21</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">aabb_top_left</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">u32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">aabb</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">xy</span> <span class="syntax-operator">*</span> <span class="syntax-variable">depth_pyramid_size</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#22"
             id="22"
@@ -239,37 +240,37 @@
             id="23"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >23</a>    let depth_quad_a = textureLoad(depth_pyramid, aabb_top_left, depth_level).x;
+        >23</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">depth_quad_a</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">textureLoad</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">depth_pyramid</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">aabb_top_left</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">depth_level</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">x</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#24"
             id="24"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >24</a>    let depth_quad_b = textureLoad(depth_pyramid, aabb_top_left + vec2(1u, 0u), depth_level).x;
+        >24</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">depth_quad_b</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">textureLoad</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">depth_pyramid</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">aabb_top_left</span> <span class="syntax-operator">+</span> <span class="syntax-function syntax-function-call">vec2</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1u</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0u</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">depth_level</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">x</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#25"
             id="25"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >25</a>    let depth_quad_c = textureLoad(depth_pyramid, aabb_top_left + vec2(0u, 1u), depth_level).x;
+        >25</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">depth_quad_c</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">textureLoad</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">depth_pyramid</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">aabb_top_left</span> <span class="syntax-operator">+</span> <span class="syntax-function syntax-function-call">vec2</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0u</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1u</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">depth_level</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">x</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#26"
             id="26"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >26</a>    let depth_quad_d = textureLoad(depth_pyramid, aabb_top_left + vec2(1u, 1u), depth_level).x;
+        >26</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">depth_quad_d</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">textureLoad</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">depth_pyramid</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">aabb_top_left</span> <span class="syntax-operator">+</span> <span class="syntax-function syntax-function-call">vec2</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1u</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1u</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">depth_level</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">x</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#27"
             id="27"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >27</a>    return min(min(depth_quad_a, depth_quad_b), min(depth_quad_c, depth_quad_d));
+        >27</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-function syntax-function-call">min</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">min</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">depth_quad_a</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">depth_quad_b</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-function syntax-function-call">min</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">depth_quad_c</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">depth_quad_d</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#28"
             id="28"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >28</a>}</code>
+        >28</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span></code>
 </pre>
 
         </div>

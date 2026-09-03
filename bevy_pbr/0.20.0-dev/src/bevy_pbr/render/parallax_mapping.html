@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="../../../../../-/static/css/themes.css">
     <link rel="stylesheet" href="../../../../../-/static/css/styles.css">
     <link rel="stylesheet" href="../../../../../-/static/css/icons.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/syntax.css">
     <script src="../../../../../-/static/js/settings.js"></script>
 
     
@@ -107,7 +108,7 @@
             id="1"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >1</a>import bevy_render::bindless::{bindless_samplers_filtering, bindless_textures_2d};
+        >1</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">bevy_render</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">bindless</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-punctuation syntax-punctuation-bracket">{</span><span class="syntax-namespace">bindless_samplers_filtering</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-namespace">bindless_textures_2d</span><span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#2"
             id="2"
@@ -119,25 +120,25 @@
             id="3"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >3</a>import package::render::{
+        >3</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">package</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">render</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#4"
             id="4"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >4</a>    pbr_bindings::{depth_map_texture, depth_map_sampler},
+        >4</a>    <span class="syntax-namespace">pbr_bindings</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-punctuation syntax-punctuation-bracket">{</span><span class="syntax-namespace">depth_map_texture</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-namespace">depth_map_sampler</span><span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#5"
             id="5"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >5</a>    mesh_bindings::mesh
+        >5</a>    <span class="syntax-namespace">mesh_bindings</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">mesh</span>
 <a
             href="#6"
             id="6"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >6</a>};
+        >6</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#7"
             id="7"
@@ -149,13 +150,13 @@
             id="8"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >8</a>@if(BINDLESS)
+        >8</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">BINDLESS</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#9"
             id="9"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >9</a>import package::render::pbr_bindings::material_indices;
+        >9</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">package</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">render</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">pbr_bindings</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">material_indices</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#10"
             id="10"
@@ -167,157 +168,157 @@
             id="11"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >11</a>fn sample_depth_map(uv: vec2&#60;f32&#62;, material_bind_group_slot: u32) -&#62; f32 {
+        >11</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">sample_depth_map</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">uv</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">material_bind_group_slot</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-type">f32</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#12"
             id="12"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >12</a>    // We use `textureSampleLevel` over `textureSample` because the wgpu DX12
+        >12</a>    <span class="syntax-comment syntax-comment-line">// We use `textureSampleLevel` over `textureSample` because the wgpu DX12</span>
 <a
             href="#13"
             id="13"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >13</a>    // backend (Fxc) panics when using &#34;gradient instructions&#34; inside a loop.
+        >13</a>    <span class="syntax-comment syntax-comment-line">// backend (Fxc) panics when using &quot;gradient instructions&quot; inside a loop.</span>
 <a
             href="#14"
             id="14"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >14</a>    // It results in the whole loop being unrolled by the shader compiler,
+        >14</a>    <span class="syntax-comment syntax-comment-line">// It results in the whole loop being unrolled by the shader compiler,</span>
 <a
             href="#15"
             id="15"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >15</a>    // which it can&#39;t do because the upper limit of the loop in steep parallax
+        >15</a>    <span class="syntax-comment syntax-comment-line">// which it can&#39;t do because the upper limit of the loop in steep parallax</span>
 <a
             href="#16"
             id="16"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >16</a>    // mapping is a variable set by the user.
+        >16</a>    <span class="syntax-comment syntax-comment-line">// mapping is a variable set by the user.</span>
 <a
             href="#17"
             id="17"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >17</a>    // The &#34;gradient instructions&#34; comes from `textureSample` computing MIP level
+        >17</a>    <span class="syntax-comment syntax-comment-line">// The &quot;gradient instructions&quot; comes from `textureSample` computing MIP level</span>
 <a
             href="#18"
             id="18"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >18</a>    // based on UV derivative. With `textureSampleLevel`, we provide ourselves
+        >18</a>    <span class="syntax-comment syntax-comment-line">// based on UV derivative. With `textureSampleLevel`, we provide ourselves</span>
 <a
             href="#19"
             id="19"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >19</a>    // the MIP level, so no gradient instructions are used, and we can use
+        >19</a>    <span class="syntax-comment syntax-comment-line">// the MIP level, so no gradient instructions are used, and we can use</span>
 <a
             href="#20"
             id="20"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >20</a>    // sample_depth_map in our loop.
+        >20</a>    <span class="syntax-comment syntax-comment-line">// sample_depth_map in our loop.</span>
 <a
             href="#21"
             id="21"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >21</a>    // See https://stackoverflow.com/questions/56581141/direct3d11-gradient-instruction-used-in-a-loop-with-varying-iteration-forcing
+        >21</a>    <span class="syntax-comment syntax-comment-line">// See https://stackoverflow.com/questions/56581141/direct3d11-gradient-instruction-used-in-a-loop-with-varying-iteration-forcing</span>
 <a
             href="#22"
             id="22"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >22</a>    @if(BINDLESS)
+        >22</a>    <span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">BINDLESS</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#23"
             id="23"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >23</a>    return textureSampleLevel(
+        >23</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-function syntax-function-call">textureSampleLevel</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span>
 <a
             href="#24"
             id="24"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >24</a>        bindless_textures_2d[material_indices[material_bind_group_slot].depth_map_texture],
+        >24</a>        <span class="syntax-variable">bindless_textures_2d</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">material_indices</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">material_bind_group_slot</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">depth_map_texture</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#25"
             id="25"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >25</a>        bindless_samplers_filtering[material_indices[material_bind_group_slot].depth_map_sampler],
+        >25</a>        <span class="syntax-variable">bindless_samplers_filtering</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">material_indices</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">material_bind_group_slot</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">depth_map_sampler</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#26"
             id="26"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >26</a>        uv,
+        >26</a>        <span class="syntax-variable">uv</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#27"
             id="27"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >27</a>        0.0
+        >27</a>        <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span>
 <a
             href="#28"
             id="28"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >28</a>    ).r;
+        >28</a>    <span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">r</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#29"
             id="29"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >29</a>    @else
+        >29</a>    <span class="syntax-attribute">@<span class="syntax-attribute">else</span></span>
 <a
             href="#30"
             id="30"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >30</a>    return textureSampleLevel(
+        >30</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-function syntax-function-call">textureSampleLevel</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span>
 <a
             href="#31"
             id="31"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >31</a>        depth_map_texture,
+        >31</a>        <span class="syntax-variable">depth_map_texture</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#32"
             id="32"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >32</a>        depth_map_sampler,
+        >32</a>        <span class="syntax-variable">depth_map_sampler</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#33"
             id="33"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >33</a>        uv,
+        >33</a>        <span class="syntax-variable">uv</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#34"
             id="34"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >34</a>        0.0
+        >34</a>        <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span>
 <a
             href="#35"
             id="35"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >35</a>    ).r;
+        >35</a>    <span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">r</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#36"
             id="36"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >36</a>}
+        >36</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#37"
             id="37"
@@ -329,97 +330,97 @@
             id="38"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >38</a>// An implementation of parallax mapping, see https://en.wikipedia.org/wiki/Parallax_mapping
+        >38</a><span class="syntax-comment syntax-comment-line">// An implementation of parallax mapping, see https://en.wikipedia.org/wiki/Parallax_mapping</span>
 <a
             href="#39"
             id="39"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >39</a>// Code derived from: https://web.archive.org/web/20150419215321/http://sunandblackcat.com/tipFullView.php?l=eng&#38;topicid=28
+        >39</a><span class="syntax-comment syntax-comment-line">// Code derived from: https://web.archive.org/web/20150419215321/http://sunandblackcat.com/tipFullView.php?l=eng&amp;topicid=28</span>
 <a
             href="#40"
             id="40"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >40</a>fn parallaxed_uv(
+        >40</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">parallaxed_uv</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span>
 <a
             href="#41"
             id="41"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >41</a>    depth_scale: f32,
+        >41</a>    <span class="syntax-variable syntax-variable-parameter">depth_scale</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#42"
             id="42"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >42</a>    max_layer_count: f32,
+        >42</a>    <span class="syntax-variable syntax-variable-parameter">max_layer_count</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#43"
             id="43"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >43</a>    max_steps: u32,
+        >43</a>    <span class="syntax-variable syntax-variable-parameter">max_steps</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#44"
             id="44"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >44</a>    // The original interpolated uv
+        >44</a>    <span class="syntax-comment syntax-comment-line">// The original interpolated uv</span>
 <a
             href="#45"
             id="45"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >45</a>    original_uv: vec2&#60;f32&#62;,
+        >45</a>    <span class="syntax-variable syntax-variable-parameter">original_uv</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#46"
             id="46"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >46</a>    // The vector from the camera to the fragment at the surface in tangent space
+        >46</a>    <span class="syntax-comment syntax-comment-line">// The vector from the camera to the fragment at the surface in tangent space</span>
 <a
             href="#47"
             id="47"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >47</a>    Vt: vec3&#60;f32&#62;,
+        >47</a>    <span class="syntax-type">Vt</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#48"
             id="48"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >48</a>    material_bind_group_slot: u32,
+        >48</a>    <span class="syntax-variable syntax-variable-parameter">material_bind_group_slot</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#49"
             id="49"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >49</a>) -&#62; vec2&#60;f32&#62; {
+        >49</a><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-type">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#50"
             id="50"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >50</a>    if max_layer_count &#60; 1.0 {
+        >50</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-variable">max_layer_count</span> <span class="syntax-operator">&lt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#51"
             id="51"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >51</a>        return original_uv;
+        >51</a>        <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-variable">original_uv</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#52"
             id="52"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >52</a>    }
+        >52</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#53"
             id="53"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >53</a>    var uv = original_uv;
+        >53</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">uv</span> <span class="syntax-operator">=</span> <span class="syntax-variable">original_uv</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#54"
             id="54"
@@ -431,67 +432,67 @@
             id="55"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >55</a>    // Steep Parallax Mapping
+        >55</a>    <span class="syntax-comment syntax-comment-line">// Steep Parallax Mapping</span>
 <a
             href="#56"
             id="56"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >56</a>    // ======================
+        >56</a>    <span class="syntax-comment syntax-comment-line">// ======================</span>
 <a
             href="#57"
             id="57"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >57</a>    // Split the depth map into `layer_count` layers.
+        >57</a>    <span class="syntax-comment syntax-comment-line">// Split the depth map into `layer_count` layers.</span>
 <a
             href="#58"
             id="58"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >58</a>    // When Vt hits the surface of the mesh (excluding depth displacement),
+        >58</a>    <span class="syntax-comment syntax-comment-line">// When Vt hits the surface of the mesh (excluding depth displacement),</span>
 <a
             href="#59"
             id="59"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >59</a>    // if the depth is not below or on surface including depth displacement (textureSample), then
+        >59</a>    <span class="syntax-comment syntax-comment-line">// if the depth is not below or on surface including depth displacement (textureSample), then</span>
 <a
             href="#60"
             id="60"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >60</a>    // look forward (+= delta_uv) on depth texture according to
+        >60</a>    <span class="syntax-comment syntax-comment-line">// look forward (+= delta_uv) on depth texture according to</span>
 <a
             href="#61"
             id="61"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >61</a>    // Vt and distance between hit surface and depth map surface,
+        >61</a>    <span class="syntax-comment syntax-comment-line">// Vt and distance between hit surface and depth map surface,</span>
 <a
             href="#62"
             id="62"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >62</a>    // repeat until below the surface.
+        >62</a>    <span class="syntax-comment syntax-comment-line">// repeat until below the surface.</span>
 <a
             href="#63"
             id="63"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >63</a>    //
+        >63</a>    <span class="syntax-comment syntax-comment-line">//</span>
 <a
             href="#64"
             id="64"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >64</a>    // Where `layer_count` is interpolated between `1.0` and
+        >64</a>    <span class="syntax-comment syntax-comment-line">// Where `layer_count` is interpolated between `1.0` and</span>
 <a
             href="#65"
             id="65"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >65</a>    // `max_layer_count` according to the steepness of Vt.
+        >65</a>    <span class="syntax-comment syntax-comment-line">// `max_layer_count` according to the steepness of Vt.</span>
 <a
             href="#66"
             id="66"
@@ -503,43 +504,43 @@
             id="67"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >67</a>    let view_steepness = abs(Vt.z);
+        >67</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">view_steepness</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">abs</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-type">Vt</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">z</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#68"
             id="68"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >68</a>    // We mix with minimum value 1.0 because otherwise,
+        >68</a>    <span class="syntax-comment syntax-comment-line">// We mix with minimum value 1.0 because otherwise,</span>
 <a
             href="#69"
             id="69"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >69</a>    // with 0.0, we get a division by zero in surfaces parallel to viewport,
+        >69</a>    <span class="syntax-comment syntax-comment-line">// with 0.0, we get a division by zero in surfaces parallel to viewport,</span>
 <a
             href="#70"
             id="70"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >70</a>    // resulting in a singularity.
+        >70</a>    <span class="syntax-comment syntax-comment-line">// resulting in a singularity.</span>
 <a
             href="#71"
             id="71"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >71</a>    let layer_count = mix(max_layer_count, 1.0, view_steepness);
+        >71</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">layer_count</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">mix</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">max_layer_count</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">view_steepness</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#72"
             id="72"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >72</a>    let layer_depth = 1.0 / layer_count;
+        >72</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">layer_depth</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span> <span class="syntax-operator">/</span> <span class="syntax-variable">layer_count</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#73"
             id="73"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >73</a>    var delta_uv = depth_scale * layer_depth * Vt.xy * vec2(1.0, -1.0) / view_steepness;
+        >73</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">delta_uv</span> <span class="syntax-operator">=</span> <span class="syntax-variable">depth_scale</span> <span class="syntax-operator">*</span> <span class="syntax-variable">layer_depth</span> <span class="syntax-operator">*</span> <span class="syntax-type">Vt</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">xy</span> <span class="syntax-operator">*</span> <span class="syntax-function syntax-function-call">vec2</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-operator">-</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">/</span> <span class="syntax-variable">view_steepness</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#74"
             id="74"
@@ -551,13 +552,13 @@
             id="75"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >75</a>    var current_layer_depth = 0.0;
+        >75</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">current_layer_depth</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#76"
             id="76"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >76</a>    var texture_depth = sample_depth_map(uv, material_bind_group_slot);
+        >76</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">texture_depth</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">sample_depth_map</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">uv</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">material_bind_group_slot</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#77"
             id="77"
@@ -569,49 +570,49 @@
             id="78"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >78</a>    // texture_depth &#62; current_layer_depth means the depth map depth is deeper
+        >78</a>    <span class="syntax-comment syntax-comment-line">// texture_depth &gt; current_layer_depth means the depth map depth is deeper</span>
 <a
             href="#79"
             id="79"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >79</a>    // than the depth the ray would be at this UV offset so the ray has not
+        >79</a>    <span class="syntax-comment syntax-comment-line">// than the depth the ray would be at this UV offset so the ray has not</span>
 <a
             href="#80"
             id="80"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >80</a>    // intersected the surface
+        >80</a>    <span class="syntax-comment syntax-comment-line">// intersected the surface</span>
 <a
             href="#81"
             id="81"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >81</a>    for (var i: i32 = 0; texture_depth &#62; current_layer_depth &#38;&#38; i &#60;= i32(layer_count); i++) {
+        >81</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-repeat">for</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">i</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">i32</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span> <span class="syntax-variable">texture_depth</span> <span class="syntax-operator">&gt;</span> <span class="syntax-variable">current_layer_depth</span> <span class="syntax-operator">&amp;&amp;</span> <span class="syntax-variable">i</span> <span class="syntax-operator">&lt;=</span> <span class="syntax-function syntax-function-call">i32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">layer_count</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span> <span class="syntax-variable">i</span><span class="syntax-operator">++</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#82"
             id="82"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >82</a>        current_layer_depth += layer_depth;
+        >82</a>        <span class="syntax-variable">current_layer_depth</span> <span class="syntax-operator">+=</span> <span class="syntax-variable">layer_depth</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#83"
             id="83"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >83</a>        uv += delta_uv;
+        >83</a>        <span class="syntax-variable">uv</span> <span class="syntax-operator">+=</span> <span class="syntax-variable">delta_uv</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#84"
             id="84"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >84</a>        texture_depth = sample_depth_map(uv, material_bind_group_slot);
+        >84</a>        <span class="syntax-variable">texture_depth</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">sample_depth_map</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">uv</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">material_bind_group_slot</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#85"
             id="85"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >85</a>    }
+        >85</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#86"
             id="86"
@@ -623,43 +624,43 @@
             id="87"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >87</a>    @if(RELIEF_MAPPING) {
+        >87</a>    <span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">RELIEF_MAPPING</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#88"
             id="88"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >88</a>    // Relief Mapping
+        >88</a>    <span class="syntax-comment syntax-comment-line">// Relief Mapping</span>
 <a
             href="#89"
             id="89"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >89</a>    // ==============
+        >89</a>    <span class="syntax-comment syntax-comment-line">// ==============</span>
 <a
             href="#90"
             id="90"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >90</a>    // &#34;Refine&#34; the rough result from Steep Parallax Mapping
+        >90</a>    <span class="syntax-comment syntax-comment-line">// &quot;Refine&quot; the rough result from Steep Parallax Mapping</span>
 <a
             href="#91"
             id="91"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >91</a>    // with a **binary search** between the layer selected by steep parallax
+        >91</a>    <span class="syntax-comment syntax-comment-line">// with a **binary search** between the layer selected by steep parallax</span>
 <a
             href="#92"
             id="92"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >92</a>    // and the next one to find a point closer to the depth map surface.
+        >92</a>    <span class="syntax-comment syntax-comment-line">// and the next one to find a point closer to the depth map surface.</span>
 <a
             href="#93"
             id="93"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >93</a>    // This reduces the jaggy step artifacts from steep parallax mapping.
+        >93</a>    <span class="syntax-comment syntax-comment-line">// This reduces the jaggy step artifacts from steep parallax mapping.</span>
 <a
             href="#94"
             id="94"
@@ -671,13 +672,13 @@
             id="95"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >95</a>    delta_uv *= 0.5;
+        >95</a>    <span class="syntax-variable">delta_uv</span> <span class="syntax-operator">*=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.5</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#96"
             id="96"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >96</a>    var delta_depth = 0.5 * layer_depth;
+        >96</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">delta_depth</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.5</span> <span class="syntax-operator">*</span> <span class="syntax-variable">layer_depth</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#97"
             id="97"
@@ -689,13 +690,13 @@
             id="98"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >98</a>    uv -= delta_uv;
+        >98</a>    <span class="syntax-variable">uv</span> <span class="syntax-operator">-=</span> <span class="syntax-variable">delta_uv</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#99"
             id="99"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >99</a>    current_layer_depth -= delta_depth;
+        >99</a>    <span class="syntax-variable">current_layer_depth</span> <span class="syntax-operator">-=</span> <span class="syntax-variable">delta_depth</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#100"
             id="100"
@@ -707,13 +708,13 @@
             id="101"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >101</a>    for (var i: u32 = 0u; i &#60; max_steps; i++) {
+        >101</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-repeat">for</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">i</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span> <span class="syntax-variable">i</span> <span class="syntax-operator">&lt;</span> <span class="syntax-variable">max_steps</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span> <span class="syntax-variable">i</span><span class="syntax-operator">++</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#102"
             id="102"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >102</a>        texture_depth = sample_depth_map(uv, material_bind_group_slot);
+        >102</a>        <span class="syntax-variable">texture_depth</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">sample_depth_map</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">uv</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">material_bind_group_slot</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#103"
             id="103"
@@ -725,19 +726,19 @@
             id="104"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >104</a>        // Halve the deltas for the next step
+        >104</a>        <span class="syntax-comment syntax-comment-line">// Halve the deltas for the next step</span>
 <a
             href="#105"
             id="105"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >105</a>        delta_uv *= 0.5;
+        >105</a>        <span class="syntax-variable">delta_uv</span> <span class="syntax-operator">*=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.5</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#106"
             id="106"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >106</a>        delta_depth *= 0.5;
+        >106</a>        <span class="syntax-variable">delta_depth</span> <span class="syntax-operator">*=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.5</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#107"
             id="107"
@@ -749,121 +750,121 @@
             id="108"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >108</a>        // Step based on whether the current depth is above or below the depth map
+        >108</a>        <span class="syntax-comment syntax-comment-line">// Step based on whether the current depth is above or below the depth map</span>
 <a
             href="#109"
             id="109"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >109</a>        if (texture_depth &#62; current_layer_depth) {
+        >109</a>        <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">texture_depth</span> <span class="syntax-operator">&gt;</span> <span class="syntax-variable">current_layer_depth</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#110"
             id="110"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >110</a>            uv += delta_uv;
+        >110</a>            <span class="syntax-variable">uv</span> <span class="syntax-operator">+=</span> <span class="syntax-variable">delta_uv</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#111"
             id="111"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >111</a>            current_layer_depth += delta_depth;
+        >111</a>            <span class="syntax-variable">current_layer_depth</span> <span class="syntax-operator">+=</span> <span class="syntax-variable">delta_depth</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#112"
             id="112"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >112</a>        } else {
+        >112</a>        <span class="syntax-punctuation syntax-punctuation-bracket">}</span> <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">else</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#113"
             id="113"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >113</a>            uv -= delta_uv;
+        >113</a>            <span class="syntax-variable">uv</span> <span class="syntax-operator">-=</span> <span class="syntax-variable">delta_uv</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#114"
             id="114"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >114</a>            current_layer_depth -= delta_depth;
+        >114</a>            <span class="syntax-variable">current_layer_depth</span> <span class="syntax-operator">-=</span> <span class="syntax-variable">delta_depth</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#115"
             id="115"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >115</a>        }
+        >115</a>        <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#116"
             id="116"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >116</a>    }
+        >116</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#117"
             id="117"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >117</a>    } @else {
+        >117</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span> <span class="syntax-attribute">@<span class="syntax-attribute">else</span></span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#118"
             id="118"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >118</a>    // Parallax Occlusion mapping
+        >118</a>    <span class="syntax-comment syntax-comment-line">// Parallax Occlusion mapping</span>
 <a
             href="#119"
             id="119"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >119</a>    // ==========================
+        >119</a>    <span class="syntax-comment syntax-comment-line">// ==========================</span>
 <a
             href="#120"
             id="120"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >120</a>    // &#34;Refine&#34; Steep Parallax Mapping by interpolating between the
+        >120</a>    <span class="syntax-comment syntax-comment-line">// &quot;Refine&quot; Steep Parallax Mapping by interpolating between the</span>
 <a
             href="#121"
             id="121"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >121</a>    // previous layer&#39;s depth and the computed layer depth.
+        >121</a>    <span class="syntax-comment syntax-comment-line">// previous layer&#39;s depth and the computed layer depth.</span>
 <a
             href="#122"
             id="122"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >122</a>    // Only requires a single lookup, unlike Relief Mapping, but
+        >122</a>    <span class="syntax-comment syntax-comment-line">// Only requires a single lookup, unlike Relief Mapping, but</span>
 <a
             href="#123"
             id="123"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >123</a>    // may skip small details and result in writhing material artifacts.
+        >123</a>    <span class="syntax-comment syntax-comment-line">// may skip small details and result in writhing material artifacts.</span>
 <a
             href="#124"
             id="124"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >124</a>    let previous_uv = uv - delta_uv;
+        >124</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">previous_uv</span> <span class="syntax-operator">=</span> <span class="syntax-variable">uv</span> <span class="syntax-operator">-</span> <span class="syntax-variable">delta_uv</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#125"
             id="125"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >125</a>    let next_depth = texture_depth - current_layer_depth;
+        >125</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">next_depth</span> <span class="syntax-operator">=</span> <span class="syntax-variable">texture_depth</span> <span class="syntax-operator">-</span> <span class="syntax-variable">current_layer_depth</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#126"
             id="126"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >126</a>    let previous_depth = sample_depth_map(previous_uv, material_bind_group_slot) -
+        >126</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">previous_depth</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">sample_depth_map</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">previous_uv</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">material_bind_group_slot</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-</span>
 <a
             href="#127"
             id="127"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >127</a>        current_layer_depth + layer_depth;
+        >127</a>        <span class="syntax-variable">current_layer_depth</span> <span class="syntax-operator">+</span> <span class="syntax-variable">layer_depth</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#128"
             id="128"
@@ -875,7 +876,7 @@
             id="129"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >129</a>    let weight = next_depth / (next_depth - previous_depth);
+        >129</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">weight</span> <span class="syntax-operator">=</span> <span class="syntax-variable">next_depth</span> <span class="syntax-operator">/</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">next_depth</span> <span class="syntax-operator">-</span> <span class="syntax-variable">previous_depth</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#130"
             id="130"
@@ -887,7 +888,7 @@
             id="131"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >131</a>    uv = mix(uv, previous_uv, weight);
+        >131</a>    <span class="syntax-variable">uv</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">mix</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">uv</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">previous_uv</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">weight</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#132"
             id="132"
@@ -899,13 +900,13 @@
             id="133"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >133</a>    current_layer_depth += mix(next_depth, previous_depth, weight);
+        >133</a>    <span class="syntax-variable">current_layer_depth</span> <span class="syntax-operator">+=</span> <span class="syntax-function syntax-function-call">mix</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">next_depth</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">previous_depth</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">weight</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#134"
             id="134"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >134</a>    }
+        >134</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#135"
             id="135"
@@ -917,25 +918,25 @@
             id="136"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >136</a>    // Note: `current_layer_depth` is not returned, but may be useful
+        >136</a>    <span class="syntax-comment syntax-comment-line">// Note: `current_layer_depth` is not returned, but may be useful</span>
 <a
             href="#137"
             id="137"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >137</a>    // for light computation later on in future improvements of the pbr shader.
+        >137</a>    <span class="syntax-comment syntax-comment-line">// for light computation later on in future improvements of the pbr shader.</span>
 <a
             href="#138"
             id="138"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >138</a>    return uv;
+        >138</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-variable">uv</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#139"
             id="139"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >139</a>}</code>
+        >139</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span></code>
 </pre>
 
         </div>

@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="../../../../../-/static/css/themes.css">
     <link rel="stylesheet" href="../../../../../-/static/css/styles.css">
     <link rel="stylesheet" href="../../../../../-/static/css/icons.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/syntax.css">
     <script src="../../../../../-/static/js/settings.js"></script>
 
     
@@ -107,73 +108,73 @@
             id="1"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >1</a>import package::{
+        >1</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">package</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#2"
             id="2"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >2</a>    atmosphere::{
+        >2</a>    <span class="syntax-namespace">atmosphere</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#3"
             id="3"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >3</a>        bindings::{atmosphere, settings},
+        >3</a>        <span class="syntax-namespace">bindings</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-punctuation syntax-punctuation-bracket">{</span><span class="syntax-namespace">atmosphere</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-namespace">settings</span><span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#4"
             id="4"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >4</a>        functions::{
+        >4</a>        <span class="syntax-namespace">functions</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#5"
             id="5"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >5</a>            multiscattering_lut_uv_to_r_mu, sample_transmittance_lut,
+        >5</a>            <span class="syntax-namespace">multiscattering_lut_uv_to_r_mu</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-namespace">sample_transmittance_lut</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#6"
             id="6"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >6</a>            get_local_r, get_local_up, sample_density_lut, FRAC_4_PI,
+        >6</a>            <span class="syntax-namespace">get_local_r</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-namespace">get_local_up</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-namespace">sample_density_lut</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant">FRAC_4_PI</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#7"
             id="7"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >7</a>            max_atmosphere_distance,
+        >7</a>            <span class="syntax-namespace">max_atmosphere_distance</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#8"
             id="8"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >8</a>            MIN_EXTINCTION, ABSORPTION_DENSITY, SCATTERING_DENSITY,
+        >8</a>            <span class="syntax-constant">MIN_EXTINCTION</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant">ABSORPTION_DENSITY</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant">SCATTERING_DENSITY</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#9"
             id="9"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >9</a>        },
+        >9</a>        <span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#10"
             id="10"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >10</a>        bruneton_functions::ray_intersects_ground
+        >10</a>        <span class="syntax-namespace">bruneton_functions</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">ray_intersects_ground</span>
 <a
             href="#11"
             id="11"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >11</a>    }
+        >11</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#12"
             id="12"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >12</a>};
+        >12</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#13"
             id="13"
@@ -185,7 +186,7 @@
             id="14"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >14</a>import bevy_render::maths::{PI, PI_2};
+        >14</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">bevy_render</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">maths</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-punctuation syntax-punctuation-bracket">{</span><span class="syntax-constant">PI</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant">PI_2</span><span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#15"
             id="15"
@@ -197,7 +198,7 @@
             id="16"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >16</a>const PHI_2: vec2&#60;f32&#62; = vec2(1.3247179572447460259609088, 1.7548776662466927600495087);
+        >16</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">const</span> <span class="syntax-constant">PHI_2</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">vec2</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.3247179572447460259609088</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.7548776662466927600495087</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#17"
             id="17"
@@ -209,7 +210,7 @@
             id="18"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >18</a>@group(0) @binding(13) var multiscattering_lut_out: texture_storage_2d&#60;rgba16float, write&#62;;
+        >18</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">13</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">multiscattering_lut_out</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">texture_storage_2d</span><span class="syntax-punctuation">&lt;<span class="syntax-type">rgba16float</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">write</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#19"
             id="19"
@@ -221,19 +222,19 @@
             id="20"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >20</a>fn s2_sequence(n: u32) -&#62; vec2&#60;f32&#62; {
+        >20</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">s2_sequence</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">n</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-type">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#21"
             id="21"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >21</a>    return fract(0.5 + f32(n) * PHI_2);
+        >21</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-function syntax-function-call">fract</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.5</span> <span class="syntax-operator">+</span> <span class="syntax-function syntax-function-call">f32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">n</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-constant">PHI_2</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#22"
             id="22"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >22</a>}
+        >22</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#23"
             id="23"
@@ -245,31 +246,31 @@
             id="24"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >24</a>// Lambert equal-area projection. 
+        >24</a><span class="syntax-comment syntax-comment-line">// Lambert equal-area projection. </span>
 <a
             href="#25"
             id="25"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >25</a>fn uv_to_sphere(uv: vec2&#60;f32&#62;) -&#62; vec3&#60;f32&#62; {
+        >25</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">uv_to_sphere</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">uv</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#26"
             id="26"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >26</a>    let phi = PI_2 * uv.y;
+        >26</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">phi</span> <span class="syntax-operator">=</span> <span class="syntax-constant">PI_2</span> <span class="syntax-operator">*</span> <span class="syntax-variable">uv</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">y</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#27"
             id="27"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >27</a>    let sin_lambda = 2 * uv.x - 1;
+        >27</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">sin_lambda</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">2</span> <span class="syntax-operator">*</span> <span class="syntax-variable">uv</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">x</span> <span class="syntax-operator">-</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#28"
             id="28"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >28</a>    let cos_lambda = sqrt(1 - sin_lambda * sin_lambda);
+        >28</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">cos_lambda</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">sqrt</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span> <span class="syntax-operator">-</span> <span class="syntax-variable">sin_lambda</span> <span class="syntax-operator">*</span> <span class="syntax-variable">sin_lambda</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#29"
             id="29"
@@ -281,13 +282,13 @@
             id="30"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >30</a>    return vec3(cos_lambda * cos(phi), cos_lambda * sin(phi), sin_lambda);
+        >30</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-function syntax-function-call">vec3</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">cos_lambda</span> <span class="syntax-operator">*</span> <span class="syntax-function syntax-function-call">cos</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">phi</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">cos_lambda</span> <span class="syntax-operator">*</span> <span class="syntax-function syntax-function-call">sin</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">phi</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">sin_lambda</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#31"
             id="31"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >31</a>}
+        >31</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#32"
             id="32"
@@ -299,19 +300,19 @@
             id="33"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >33</a>// Shared memory arrays for workgroup communication
+        >33</a><span class="syntax-comment syntax-comment-line">// Shared memory arrays for workgroup communication</span>
 <a
             href="#34"
             id="34"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >34</a>var&#60;workgroup&#62; multi_scat_shared_mem: array&#60;vec3&#60;f32&#62;, 64&#62;;
+        >34</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span><span class="syntax-punctuation">&lt;<span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-modifier">workgroup</span>&gt;</span> <span class="syntax-variable">multi_scat_shared_mem</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">array</span><span class="syntax-punctuation">&lt;<span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">64</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#35"
             id="35"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >35</a>var&#60;workgroup&#62; l_shared_mem: array&#60;vec3&#60;f32&#62;, 64&#62;;
+        >35</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span><span class="syntax-punctuation">&lt;<span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-modifier">workgroup</span>&gt;</span> <span class="syntax-variable">l_shared_mem</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">array</span><span class="syntax-punctuation">&lt;<span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">64</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#36"
             id="36"
@@ -323,25 +324,25 @@
             id="37"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >37</a>@compute 
+        >37</a><span class="syntax-attribute">@<span class="syntax-attribute">compute</span></span> 
 <a
             href="#38"
             id="38"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >38</a>@workgroup_size(1, 1, 64)
+        >38</a><span class="syntax-attribute">@<span class="syntax-attribute">workgroup_size</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">64</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#39"
             id="39"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >39</a>fn main(@builtin(global_invocation_id) global_id: vec3&#60;u32&#62;) {
+        >39</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">main</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-attribute">@<span class="syntax-attribute">builtin</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-builtin">global_invocation_id</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-variable syntax-variable-parameter">global_id</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">u32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#40"
             id="40"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >40</a>    var uv = (vec2&#60;f32&#62;(global_id.xy) + 0.5) / vec2&#60;f32&#62;(settings.multiscattering_lut_size);
+        >40</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">uv</span> <span class="syntax-operator">=</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">global_id</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">xy</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">+</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.5</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">/</span> <span class="syntax-function syntax-function-call">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">settings</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">multiscattering_lut_size</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#41"
             id="41"
@@ -353,13 +354,13 @@
             id="42"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >42</a>    let r_mu = multiscattering_lut_uv_to_r_mu(uv);
+        >42</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">r_mu</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">multiscattering_lut_uv_to_r_mu</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">uv</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#43"
             id="43"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >43</a>    let light_dir = normalize(vec3(0.0, r_mu.y, -1.0));
+        >43</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">light_dir</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">normalize</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">vec3</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">r_mu</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">y</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-operator">-</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#44"
             id="44"
@@ -371,13 +372,13 @@
             id="45"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >45</a>    let ray_dir = uv_to_sphere(s2_sequence(global_id.z));
+        >45</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">ray_dir</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">uv_to_sphere</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">s2_sequence</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">global_id</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">z</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#46"
             id="46"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >46</a>    let ms_sample = sample_multiscattering_dir(r_mu.x, ray_dir, light_dir);
+        >46</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">ms_sample</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">sample_multiscattering_dir</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">r_mu</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">x</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">ray_dir</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">light_dir</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#47"
             id="47"
@@ -389,31 +390,31 @@
             id="48"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >48</a>    // Calculate the contribution for this sample
+        >48</a>    <span class="syntax-comment syntax-comment-line">// Calculate the contribution for this sample</span>
 <a
             href="#49"
             id="49"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >49</a>    let sphere_solid_angle = 4.0 * PI;
+        >49</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">sphere_solid_angle</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">4.0</span> <span class="syntax-operator">*</span> <span class="syntax-constant">PI</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#50"
             id="50"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >50</a>    let sample_weight = sphere_solid_angle / 64.0;
+        >50</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">sample_weight</span> <span class="syntax-operator">=</span> <span class="syntax-variable">sphere_solid_angle</span> <span class="syntax-operator">/</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">64.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#51"
             id="51"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >51</a>    multi_scat_shared_mem[global_id.z] = ms_sample.f_ms * sample_weight;
+        >51</a>    <span class="syntax-variable">multi_scat_shared_mem</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">global_id</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">z</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span> <span class="syntax-operator">=</span> <span class="syntax-variable">ms_sample</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">f_ms</span> <span class="syntax-operator">*</span> <span class="syntax-variable">sample_weight</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#52"
             id="52"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >52</a>    l_shared_mem[global_id.z] = ms_sample.l_2 * sample_weight;
+        >52</a>    <span class="syntax-variable">l_shared_mem</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">global_id</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">z</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span> <span class="syntax-operator">=</span> <span class="syntax-variable">ms_sample</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">l_2</span> <span class="syntax-operator">*</span> <span class="syntax-variable">sample_weight</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#53"
             id="53"
@@ -425,7 +426,7 @@
             id="54"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >54</a>    workgroupBarrier();
+        >54</a>    <span class="syntax-function">workgroupBarrier</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#55"
             id="55"
@@ -437,49 +438,49 @@
             id="56"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >56</a>    // Parallel reduction bitshift to the right to divide by 2 each step
+        >56</a>    <span class="syntax-comment syntax-comment-line">// Parallel reduction bitshift to the right to divide by 2 each step</span>
 <a
             href="#57"
             id="57"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >57</a>    for (var step = 32u; step &#62; 0u; step &#62;&#62;= 1u) {
+        >57</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-repeat">for</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">step</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">32u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span> <span class="syntax-variable">step</span> <span class="syntax-operator">&gt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span> <span class="syntax-variable">step</span> &gt;&gt;= <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1u</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#58"
             id="58"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >58</a>        if global_id.z &#60; step {
+        >58</a>        <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-variable">global_id</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">z</span> <span class="syntax-operator">&lt;</span> <span class="syntax-variable">step</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#59"
             id="59"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >59</a>            multi_scat_shared_mem[global_id.z] += multi_scat_shared_mem[global_id.z + step];
+        >59</a>            <span class="syntax-variable">multi_scat_shared_mem</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">global_id</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">z</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span> <span class="syntax-operator">+=</span> <span class="syntax-variable">multi_scat_shared_mem</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">global_id</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">z</span> <span class="syntax-operator">+</span> <span class="syntax-variable">step</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#60"
             id="60"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >60</a>            l_shared_mem[global_id.z] += l_shared_mem[global_id.z + step];
+        >60</a>            <span class="syntax-variable">l_shared_mem</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">global_id</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">z</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span> <span class="syntax-operator">+=</span> <span class="syntax-variable">l_shared_mem</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">global_id</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">z</span> <span class="syntax-operator">+</span> <span class="syntax-variable">step</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#61"
             id="61"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >61</a>        }
+        >61</a>        <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#62"
             id="62"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >62</a>        workgroupBarrier();
+        >62</a>        <span class="syntax-function">workgroupBarrier</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#63"
             id="63"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >63</a>    }
+        >63</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#64"
             id="64"
@@ -491,19 +492,19 @@
             id="65"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >65</a>    if global_id.z &#62; 0u {
+        >65</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-variable">global_id</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">z</span> <span class="syntax-operator">&gt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0u</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#66"
             id="66"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >66</a>        return;
+        >66</a>        <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#67"
             id="67"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >67</a>    }
+        >67</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#68"
             id="68"
@@ -515,19 +516,19 @@
             id="69"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >69</a>    // Apply isotropic phase function
+        >69</a>    <span class="syntax-comment syntax-comment-line">// Apply isotropic phase function</span>
 <a
             href="#70"
             id="70"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >70</a>    let f_ms = multi_scat_shared_mem[0] * FRAC_4_PI;
+        >70</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">f_ms</span> <span class="syntax-operator">=</span> <span class="syntax-variable">multi_scat_shared_mem</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span> <span class="syntax-operator">*</span> <span class="syntax-constant">FRAC_4_PI</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#71"
             id="71"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >71</a>    let l_2 = l_shared_mem[0] * FRAC_4_PI;
+        >71</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">l_2</span> <span class="syntax-operator">=</span> <span class="syntax-variable">l_shared_mem</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span> <span class="syntax-operator">*</span> <span class="syntax-constant">FRAC_4_PI</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#72"
             id="72"
@@ -539,25 +540,25 @@
             id="73"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >73</a>    // Equation 10 from the paper: Geometric series for infinite scattering
+        >73</a>    <span class="syntax-comment syntax-comment-line">// Equation 10 from the paper: Geometric series for infinite scattering</span>
 <a
             href="#74"
             id="74"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >74</a>    let psi_ms = l_2 / (1.0 - f_ms);
+        >74</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">psi_ms</span> <span class="syntax-operator">=</span> <span class="syntax-variable">l_2</span> <span class="syntax-operator">/</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span> <span class="syntax-operator">-</span> <span class="syntax-variable">f_ms</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#75"
             id="75"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >75</a>    textureStore(multiscattering_lut_out, global_id.xy, vec4&#60;f32&#62;(psi_ms, 1.0));
+        >75</a>    <span class="syntax-function">textureStore</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">multiscattering_lut_out</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">global_id</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">xy</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-function syntax-function-call">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">psi_ms</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#76"
             id="76"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >76</a>}
+        >76</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#77"
             id="77"
@@ -569,25 +570,25 @@
             id="78"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >78</a>struct MultiscatteringSample {
+        >78</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">struct</span> <span class="syntax-type">MultiscatteringSample</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#79"
             id="79"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >79</a>    l_2: vec3&#60;f32&#62;,
+        >79</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">l_2</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#80"
             id="80"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >80</a>    f_ms: vec3&#60;f32&#62;,
+        >80</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">f_ms</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#81"
             id="81"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >81</a>};
+        >81</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#82"
             id="82"
@@ -599,25 +600,25 @@
             id="83"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >83</a>fn sample_multiscattering_dir(r: f32, ray_dir: vec3&#60;f32&#62;, light_dir: vec3&#60;f32&#62;) -&#62; MultiscatteringSample {
+        >83</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">sample_multiscattering_dir</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">r</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">ray_dir</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">light_dir</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-type">MultiscatteringSample</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#84"
             id="84"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >84</a>    // get the cosine of the zenith angle of the view direction with respect to the light direction
+        >84</a>    <span class="syntax-comment syntax-comment-line">// get the cosine of the zenith angle of the view direction with respect to the light direction</span>
 <a
             href="#85"
             id="85"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >85</a>    let mu_view = ray_dir.y;
+        >85</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">mu_view</span> <span class="syntax-operator">=</span> <span class="syntax-variable">ray_dir</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">y</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#86"
             id="86"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >86</a>    let t_max = max_atmosphere_distance(r, mu_view);
+        >86</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">t_max</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">max_atmosphere_distance</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">r</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">mu_view</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#87"
             id="87"
@@ -629,13 +630,13 @@
             id="88"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >88</a>    let dt = t_max / f32(settings.multiscattering_lut_samples);
+        >88</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">dt</span> <span class="syntax-operator">=</span> <span class="syntax-variable">t_max</span> <span class="syntax-operator">/</span> <span class="syntax-function syntax-function-call">f32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">settings</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">multiscattering_lut_samples</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#89"
             id="89"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >89</a>    var optical_depth = vec3&#60;f32&#62;(0.0);
+        >89</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">optical_depth</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#90"
             id="90"
@@ -647,43 +648,43 @@
             id="91"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >91</a>    var l_2 = vec3(0.0);
+        >91</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">l_2</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">vec3</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#92"
             id="92"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >92</a>    var f_ms = vec3(0.0);
+        >92</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">f_ms</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">vec3</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#93"
             id="93"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >93</a>    var throughput = vec3(1.0);
+        >93</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">throughput</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">vec3</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#94"
             id="94"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >94</a>    for (var i: u32 = 0u; i &#60; settings.multiscattering_lut_samples; i++) {
+        >94</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-repeat">for</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">i</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span> <span class="syntax-variable">i</span> <span class="syntax-operator">&lt;</span> <span class="syntax-variable">settings</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">multiscattering_lut_samples</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span> <span class="syntax-variable">i</span><span class="syntax-operator">++</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#95"
             id="95"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >95</a>        let t_i = dt * (f32(i) + 0.5);
+        >95</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">t_i</span> <span class="syntax-operator">=</span> <span class="syntax-variable">dt</span> <span class="syntax-operator">*</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">f32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">i</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">+</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.5</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#96"
             id="96"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >96</a>        let local_r = get_local_r(r, mu_view, t_i);
+        >96</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">local_r</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">get_local_r</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">r</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">mu_view</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">t_i</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#97"
             id="97"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >97</a>        let local_up = get_local_up(r, t_i, ray_dir);
+        >97</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">local_up</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">get_local_up</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">r</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">t_i</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">ray_dir</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#98"
             id="98"
@@ -695,19 +696,19 @@
             id="99"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >99</a>        let absorption = sample_density_lut(local_r, ABSORPTION_DENSITY);
+        >99</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">absorption</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">sample_density_lut</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">local_r</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant">ABSORPTION_DENSITY</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#100"
             id="100"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >100</a>        let scattering = sample_density_lut(local_r, SCATTERING_DENSITY);
+        >100</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">scattering</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">sample_density_lut</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">local_r</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant">SCATTERING_DENSITY</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#101"
             id="101"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >101</a>        let extinction = absorption + scattering;
+        >101</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">extinction</span> <span class="syntax-operator">=</span> <span class="syntax-variable">absorption</span> <span class="syntax-operator">+</span> <span class="syntax-variable">scattering</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#102"
             id="102"
@@ -719,19 +720,19 @@
             id="103"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >103</a>        let sample_optical_depth = extinction * dt;
+        >103</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">sample_optical_depth</span> <span class="syntax-operator">=</span> <span class="syntax-variable">extinction</span> <span class="syntax-operator">*</span> <span class="syntax-variable">dt</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#104"
             id="104"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >104</a>        let sample_transmittance = exp(-sample_optical_depth);
+        >104</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">sample_transmittance</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">exp</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">-</span><span class="syntax-variable">sample_optical_depth</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#105"
             id="105"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >105</a>        optical_depth += sample_optical_depth;
+        >105</a>        <span class="syntax-variable">optical_depth</span> <span class="syntax-operator">+=</span> <span class="syntax-variable">sample_optical_depth</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#106"
             id="106"
@@ -743,19 +744,19 @@
             id="107"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >107</a>        let ms = scattering;
+        >107</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">ms</span> <span class="syntax-operator">=</span> <span class="syntax-variable">scattering</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#108"
             id="108"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >108</a>        let ms_int = (ms - ms * sample_transmittance) / max(extinction, MIN_EXTINCTION);
+        >108</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">ms_int</span> <span class="syntax-operator">=</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">ms</span> <span class="syntax-operator">-</span> <span class="syntax-variable">ms</span> <span class="syntax-operator">*</span> <span class="syntax-variable">sample_transmittance</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">/</span> <span class="syntax-function syntax-function-call">max</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">extinction</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant">MIN_EXTINCTION</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#109"
             id="109"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >109</a>        f_ms += throughput * ms_int;
+        >109</a>        <span class="syntax-variable">f_ms</span> <span class="syntax-operator">+=</span> <span class="syntax-variable">throughput</span> <span class="syntax-operator">*</span> <span class="syntax-variable">ms_int</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#110"
             id="110"
@@ -767,19 +768,19 @@
             id="111"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >111</a>        let mu_light = dot(light_dir, local_up);
+        >111</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">mu_light</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">dot</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">light_dir</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">local_up</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#112"
             id="112"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >112</a>        let transmittance_to_light = sample_transmittance_lut(local_r, mu_light);
+        >112</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">transmittance_to_light</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">sample_transmittance_lut</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">local_r</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">mu_light</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#113"
             id="113"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >113</a>        let shadow_factor = transmittance_to_light * f32(!ray_intersects_ground(local_r, mu_light));
+        >113</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">shadow_factor</span> <span class="syntax-operator">=</span> <span class="syntax-variable">transmittance_to_light</span> <span class="syntax-operator">*</span> <span class="syntax-function syntax-function-call">f32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">!</span><span class="syntax-function syntax-function-call">ray_intersects_ground</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">local_r</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">mu_light</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#114"
             id="114"
@@ -791,19 +792,19 @@
             id="115"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >115</a>        let s = scattering * shadow_factor * FRAC_4_PI;
+        >115</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">s</span> <span class="syntax-operator">=</span> <span class="syntax-variable">scattering</span> <span class="syntax-operator">*</span> <span class="syntax-variable">shadow_factor</span> <span class="syntax-operator">*</span> <span class="syntax-constant">FRAC_4_PI</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#116"
             id="116"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >116</a>        let s_int = (s - s * sample_transmittance) / max(extinction, MIN_EXTINCTION);
+        >116</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">s_int</span> <span class="syntax-operator">=</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">s</span> <span class="syntax-operator">-</span> <span class="syntax-variable">s</span> <span class="syntax-operator">*</span> <span class="syntax-variable">sample_transmittance</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">/</span> <span class="syntax-function syntax-function-call">max</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">extinction</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant">MIN_EXTINCTION</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#117"
             id="117"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >117</a>        l_2 += throughput * s_int;
+        >117</a>        <span class="syntax-variable">l_2</span> <span class="syntax-operator">+=</span> <span class="syntax-variable">throughput</span> <span class="syntax-operator">*</span> <span class="syntax-variable">s_int</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#118"
             id="118"
@@ -815,31 +816,31 @@
             id="119"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >119</a>        throughput *= sample_transmittance;
+        >119</a>        <span class="syntax-variable">throughput</span> <span class="syntax-operator">*=</span> <span class="syntax-variable">sample_transmittance</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#120"
             id="120"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >120</a>        if all(throughput &#60; vec3(0.001)) {
+        >120</a>        <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-function syntax-function-call">all</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">throughput</span> <span class="syntax-operator">&lt;</span> <span class="syntax-function syntax-function-call">vec3</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.001</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#121"
             id="121"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >121</a>            break;
+        >121</a>            <span class="syntax-keyword syntax-keyword-control">break</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#122"
             id="122"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >122</a>        }
+        >122</a>        <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#123"
             id="123"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >123</a>    }
+        >123</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#124"
             id="124"
@@ -851,55 +852,55 @@
             id="125"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >125</a>    //include reflected luminance from planet ground 
+        >125</a>    <span class="syntax-comment syntax-comment-line">//include reflected luminance from planet ground </span>
 <a
             href="#126"
             id="126"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >126</a>    if ray_intersects_ground(r, mu_view) {
+        >126</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-function syntax-function-call">ray_intersects_ground</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">r</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">mu_view</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#127"
             id="127"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >127</a>        let transmittance_to_ground = exp(-optical_depth);
+        >127</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">transmittance_to_ground</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">exp</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">-</span><span class="syntax-variable">optical_depth</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#128"
             id="128"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >128</a>        let local_up = get_local_up(r, t_max, ray_dir);
+        >128</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">local_up</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">get_local_up</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">r</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">t_max</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">ray_dir</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#129"
             id="129"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >129</a>        let mu_light = dot(light_dir, local_up);
+        >129</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">mu_light</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">dot</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">light_dir</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">local_up</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#130"
             id="130"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >130</a>        let transmittance_to_light = sample_transmittance_lut(0.0, mu_light);
+        >130</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">transmittance_to_light</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">sample_transmittance_lut</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">mu_light</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#131"
             id="131"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >131</a>        let ground_luminance = transmittance_to_light * transmittance_to_ground * max(mu_light, 0.0) * atmosphere.ground_albedo;
+        >131</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">ground_luminance</span> <span class="syntax-operator">=</span> <span class="syntax-variable">transmittance_to_light</span> <span class="syntax-operator">*</span> <span class="syntax-variable">transmittance_to_ground</span> <span class="syntax-operator">*</span> <span class="syntax-function syntax-function-call">max</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">mu_light</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-variable">atmosphere</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">ground_albedo</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#132"
             id="132"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >132</a>        l_2 += ground_luminance;
+        >132</a>        <span class="syntax-variable">l_2</span> <span class="syntax-operator">+=</span> <span class="syntax-variable">ground_luminance</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#133"
             id="133"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >133</a>    }
+        >133</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#134"
             id="134"
@@ -911,13 +912,13 @@
             id="135"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >135</a>    return MultiscatteringSample(l_2, f_ms);
+        >135</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-function syntax-function-call">MultiscatteringSample</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">l_2</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">f_ms</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#136"
             id="136"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >136</a>}</code>
+        >136</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span></code>
 </pre>
 
         </div>

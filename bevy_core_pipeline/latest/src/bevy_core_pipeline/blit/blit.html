@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="../../../../../-/static/css/themes.css">
     <link rel="stylesheet" href="../../../../../-/static/css/styles.css">
     <link rel="stylesheet" href="../../../../../-/static/css/icons.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/syntax.css">
     <script src="../../../../../-/static/js/settings.js"></script>
 
     
@@ -102,19 +103,19 @@
             id="1"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >1</a>import package::fullscreen_vertex_shader::FullscreenVertexOutput;
+        >1</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">package</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">fullscreen_vertex_shader</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-type">FullscreenVertexOutput</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#2"
             id="2"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >2</a>@if(SRGB_TO_LINEAR) import bevy_render::color_operations::srgb_to_linear;
+        >2</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">SRGB_TO_LINEAR</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">bevy_render</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">color_operations</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">srgb_to_linear</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#3"
             id="3"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >3</a>@if(OKLAB_TO_LINEAR) import bevy_render::color_operations::oklab_to_linear_rgb;
+        >3</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">OKLAB_TO_LINEAR</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">bevy_render</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">color_operations</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">oklab_to_linear_rgb</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#4"
             id="4"
@@ -126,13 +127,13 @@
             id="5"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >5</a>@group(0) @binding(0) var in_texture: texture_2d&#60;f32&#62;;
+        >5</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">in_texture</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">texture_2d</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#6"
             id="6"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >6</a>@group(0) @binding(1) var in_sampler: sampler;
+        >6</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">in_sampler</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">sampler</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#7"
             id="7"
@@ -144,55 +145,55 @@
             id="8"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >8</a>@fragment
+        >8</a><span class="syntax-attribute">@<span class="syntax-attribute">fragment</span></span>
 <a
             href="#9"
             id="9"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >9</a>fn fs_main(in: FullscreenVertexOutput) -&#62; @location(0) vec4&#60;f32&#62; {
+        >9</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">fs_main</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">in</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">FullscreenVertexOutput</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-attribute">@<span class="syntax-attribute">location</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-type">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#10"
             id="10"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >10</a>    var color = textureSample(in_texture, in_sampler, in.uv);
+        >10</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">color</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">textureSample</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">in_texture</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">in_sampler</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">in</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">uv</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#11"
             id="11"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >11</a>    @if(SRGB_TO_LINEAR)
+        >11</a>    <span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">SRGB_TO_LINEAR</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#12"
             id="12"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >12</a>    color = vec4(srgb_to_linear(color.rgb), color.a);
+        >12</a>    <span class="syntax-variable">color</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">vec4</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">srgb_to_linear</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">color</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">rgb</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">color</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">a</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#13"
             id="13"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >13</a>    @if(OKLAB_TO_LINEAR)
+        >13</a>    <span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">OKLAB_TO_LINEAR</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#14"
             id="14"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >14</a>    color = vec4(oklab_to_linear_rgb(color.rgb), color.a);
+        >14</a>    <span class="syntax-variable">color</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">vec4</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">oklab_to_linear_rgb</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">color</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">rgb</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">color</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">a</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#15"
             id="15"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >15</a>    return color;
+        >15</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-variable">color</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#16"
             id="16"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >16</a>}</code>
+        >16</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span></code>
 </pre>
 
         </div>

@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="../../../../../-/static/css/themes.css">
     <link rel="stylesheet" href="../../../../../-/static/css/styles.css">
     <link rel="stylesheet" href="../../../../../-/static/css/icons.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/syntax.css">
     <script src="../../../../../-/static/js/settings.js"></script>
 
     
@@ -107,43 +108,43 @@
             id="1"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >1</a>// Resets the indirect draw counts to zero.
+        >1</a><span class="syntax-comment syntax-comment-line">// Resets the indirect draw counts to zero.</span>
 <a
             href="#2"
             id="2"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >2</a>//
+        >2</a><span class="syntax-comment syntax-comment-line">//</span>
 <a
             href="#3"
             id="3"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >3</a>// This shader is needed because we reuse the same indirect batch set count
+        >3</a><span class="syntax-comment syntax-comment-line">// This shader is needed because we reuse the same indirect batch set count</span>
 <a
             href="#4"
             id="4"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >4</a>// buffer (i.e. the buffer that gets passed to `multi_draw_indirect_count` to
+        >4</a><span class="syntax-comment syntax-comment-line">// buffer (i.e. the buffer that gets passed to `multi_draw_indirect_count` to</span>
 <a
             href="#5"
             id="5"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >5</a>// determine how many objects to draw) between phases (early, late, and main).
+        >5</a><span class="syntax-comment syntax-comment-line">// determine how many objects to draw) between phases (early, late, and main).</span>
 <a
             href="#6"
             id="6"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >6</a>// Before launching `build_indirect_params.wesl`, we need to reinitialize the
+        >6</a><span class="syntax-comment syntax-comment-line">// Before launching `build_indirect_params.wesl`, we need to reinitialize the</span>
 <a
             href="#7"
             id="7"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >7</a>// value to 0.
+        >7</a><span class="syntax-comment syntax-comment-line">// value to 0.</span>
 <a
             href="#8"
             id="8"
@@ -155,7 +156,7 @@
             id="9"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >9</a>import bevy_render::occlusion_culling::mesh_preprocess_types::IndirectBatchSet;
+        >9</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">bevy_render</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">occlusion_culling</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">mesh_preprocess_types</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-type">IndirectBatchSet</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#10"
             id="10"
@@ -167,7 +168,7 @@
             id="11"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >11</a>@group(0) @binding(0) var&#60;storage, read_write&#62; indirect_batch_sets: array&#60;IndirectBatchSet&#62;;
+        >11</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span><span class="syntax-punctuation">&lt;<span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-modifier">storage</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-modifier">read_write</span>&gt;</span> <span class="syntax-variable">indirect_batch_sets</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">array</span><span class="syntax-punctuation">&lt;<span class="syntax-type">IndirectBatchSet</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#12"
             id="12"
@@ -179,55 +180,55 @@
             id="13"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >13</a>@compute
+        >13</a><span class="syntax-attribute">@<span class="syntax-attribute">compute</span></span>
 <a
             href="#14"
             id="14"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >14</a>@workgroup_size(64)
+        >14</a><span class="syntax-attribute">@<span class="syntax-attribute">workgroup_size</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">64</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#15"
             id="15"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >15</a>fn main(@builtin(global_invocation_id) global_invocation_id: vec3&#60;u32&#62;) {
+        >15</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">main</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-attribute">@<span class="syntax-attribute">builtin</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-builtin">global_invocation_id</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-variable syntax-variable-parameter">global_invocation_id</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">u32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#16"
             id="16"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >16</a>    // Figure out our instance index. If this thread doesn&#39;t correspond to any
+        >16</a>    <span class="syntax-comment syntax-comment-line">// Figure out our instance index. If this thread doesn&#39;t correspond to any</span>
 <a
             href="#17"
             id="17"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >17</a>    // index, bail.
+        >17</a>    <span class="syntax-comment syntax-comment-line">// index, bail.</span>
 <a
             href="#18"
             id="18"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >18</a>    let instance_index = global_invocation_id.x;
+        >18</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">instance_index</span> <span class="syntax-operator">=</span> <span class="syntax-variable">global_invocation_id</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">x</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#19"
             id="19"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >19</a>    if (instance_index &#62;= arrayLength(&#38;indirect_batch_sets)) {
+        >19</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">instance_index</span> <span class="syntax-operator">&gt;=</span> <span class="syntax-function syntax-function-call">arrayLength</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">&amp;</span><span class="syntax-variable">indirect_batch_sets</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#20"
             id="20"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >20</a>        return;
+        >20</a>        <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#21"
             id="21"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >21</a>    }
+        >21</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#22"
             id="22"
@@ -239,19 +240,19 @@
             id="23"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >23</a>    // Reset the number of batch sets to 0.
+        >23</a>    <span class="syntax-comment syntax-comment-line">// Reset the number of batch sets to 0.</span>
 <a
             href="#24"
             id="24"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >24</a>    atomicStore(&#38;indirect_batch_sets[instance_index].indirect_parameters_count, 0u);
+        >24</a>    <span class="syntax-function">atomicStore</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">&amp;</span><span class="syntax-variable">indirect_batch_sets</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">instance_index</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">indirect_parameters_count</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0u</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#25"
             id="25"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >25</a>}</code>
+        >25</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span></code>
 </pre>
 
         </div>

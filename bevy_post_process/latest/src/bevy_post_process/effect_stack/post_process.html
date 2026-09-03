@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="../../../../../-/static/css/themes.css">
     <link rel="stylesheet" href="../../../../../-/static/css/styles.css">
     <link rel="stylesheet" href="../../../../../-/static/css/icons.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/syntax.css">
     <script src="../../../../../-/static/js/settings.js"></script>
 
     
@@ -107,7 +108,7 @@
             id="1"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >1</a>// Miscellaneous postprocessing effects, currently just chromatic aberration.
+        >1</a><span class="syntax-comment syntax-comment-line">// Miscellaneous postprocessing effects, currently just chromatic aberration.</span>
 <a
             href="#2"
             id="2"
@@ -119,25 +120,25 @@
             id="3"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >3</a>import bevy_core_pipeline::fullscreen_vertex_shader::FullscreenVertexOutput;
+        >3</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">bevy_core_pipeline</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">fullscreen_vertex_shader</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-type">FullscreenVertexOutput</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#4"
             id="4"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >4</a>import package::effect_stack::chromatic_aberration::chromatic_aberration;
+        >4</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">package</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">effect_stack</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">chromatic_aberration</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">chromatic_aberration</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#5"
             id="5"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >5</a>import package::effect_stack::lens_distortion::lens_distortion;
+        >5</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">package</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">effect_stack</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">lens_distortion</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">lens_distortion</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#6"
             id="6"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >6</a>import package::effect_stack::vignette::vignette;
+        >6</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">package</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">effect_stack</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">vignette</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">vignette</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#7"
             id="7"
@@ -149,37 +150,37 @@
             id="8"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >8</a>@fragment
+        >8</a><span class="syntax-attribute">@<span class="syntax-attribute">fragment</span></span>
 <a
             href="#9"
             id="9"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >9</a>fn fragment_main(in: FullscreenVertexOutput) -&#62; @location(0) vec4&#60;f32&#62; {
+        >9</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">fragment_main</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">in</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">FullscreenVertexOutput</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-attribute">@<span class="syntax-attribute">location</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-type">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#10"
             id="10"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >10</a>    let distorted_uv = lens_distortion(in.uv);
+        >10</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">distorted_uv</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">lens_distortion</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">in</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">uv</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#11"
             id="11"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >11</a>    let color = chromatic_aberration(distorted_uv);
+        >11</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">color</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">chromatic_aberration</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">distorted_uv</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#12"
             id="12"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >12</a>    return vec4(vignette(in.uv, color), 1.0);
+        >12</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-function syntax-function-call">vec4</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">vignette</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">in</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">uv</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">color</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#13"
             id="13"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >13</a>}</code>
+        >13</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span></code>
 </pre>
 
         </div>

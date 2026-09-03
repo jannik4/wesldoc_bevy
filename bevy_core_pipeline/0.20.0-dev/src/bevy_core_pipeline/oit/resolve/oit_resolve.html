@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="../../../../../../-/static/css/themes.css">
     <link rel="stylesheet" href="../../../../../../-/static/css/styles.css">
     <link rel="stylesheet" href="../../../../../../-/static/css/icons.css">
+    <link rel="stylesheet" href="../../../../../../-/static/css/syntax.css">
     <script src="../../../../../../-/static/js/settings.js"></script>
 
     
@@ -102,13 +103,13 @@
             id="1"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >1</a>// Reference:
+        >1</a><span class="syntax-comment syntax-comment-line">// Reference:</span>
 <a
             href="#2"
             id="2"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >2</a>// Order-independent transparency with per-pixel ordered linked lists - https://github.com/KhronosGroup/Vulkan-Samples/blob/main/shaders/oit_linked_lists/combine.frag
+        >2</a><span class="syntax-comment syntax-comment-line">// Order-independent transparency with per-pixel ordered linked lists - https://github.com/KhronosGroup/Vulkan-Samples/blob/main/shaders/oit_linked_lists/combine.frag</span>
 <a
             href="#3"
             id="3"
@@ -120,13 +121,13 @@
             id="4"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >4</a>import bevy_render::view::View;
+        >4</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">bevy_render</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">view</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-type">View</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#5"
             id="5"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >5</a>import bevy_pbr::render::mesh_view_types::OitFragmentNode;
+        >5</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">bevy_pbr</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">render</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">mesh_view_types</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-type">OitFragmentNode</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#6"
             id="6"
@@ -138,25 +139,25 @@
             id="7"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >7</a>@group(0) @binding(0) var&#60;uniform&#62; view: View;
+        >7</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span><span class="syntax-punctuation">&lt;<span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-modifier">uniform</span>&gt;</span> <span class="syntax-variable">view</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">View</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#8"
             id="8"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >8</a>@group(0) @binding(1) var&#60;storage, read&#62; nodes: array&#60;OitFragmentNode&#62;;
+        >8</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span><span class="syntax-punctuation">&lt;<span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-modifier">storage</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-modifier">read</span>&gt;</span> <span class="syntax-variable">nodes</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">array</span><span class="syntax-punctuation">&lt;<span class="syntax-type">OitFragmentNode</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#9"
             id="9"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >9</a>@group(0) @binding(2) var&#60;storage, read_write&#62; heads: array&#60;u32&#62;; // No need to be atomic
+        >9</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">2</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span><span class="syntax-punctuation">&lt;<span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-modifier">storage</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-modifier">read_write</span>&gt;</span> <span class="syntax-variable">heads</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">array</span><span class="syntax-punctuation">&lt;<span class="syntax-type">u32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span> <span class="syntax-comment syntax-comment-line">// No need to be atomic</span>
 <a
             href="#10"
             id="10"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >10</a>@group(0) @binding(3) var&#60;storage, read_write&#62; atomic_counter: u32; // No need to be atomic
+        >10</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">3</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span><span class="syntax-punctuation">&lt;<span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-modifier">storage</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-modifier">read_write</span>&gt;</span> <span class="syntax-variable">atomic_counter</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span> <span class="syntax-comment syntax-comment-line">// No need to be atomic</span>
 <a
             href="#11"
             id="11"
@@ -168,13 +169,13 @@
             id="12"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >12</a>@if(!DEPTH_PREPASS)
+        >12</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">!</span><span class="syntax-constant">DEPTH_PREPASS</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#13"
             id="13"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >13</a>@group(1) @binding(0) var depth: texture_depth_2d;
+        >13</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">depth</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">texture_depth_2d</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#14"
             id="14"
@@ -186,25 +187,25 @@
             id="15"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >15</a>struct OitFragment {
+        >15</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">struct</span> <span class="syntax-type">OitFragment</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#16"
             id="16"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >16</a>    color: u32,
+        >16</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">color</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#17"
             id="17"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >17</a>    depth_alpha: u32,
+        >17</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">depth_alpha</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#18"
             id="18"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >18</a>}
+        >18</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#19"
             id="19"
@@ -216,25 +217,25 @@
             id="20"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >20</a>struct FullscreenVertexOutput {
+        >20</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">struct</span> <span class="syntax-type">FullscreenVertexOutput</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#21"
             id="21"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >21</a>    @builtin(position) position: vec4&#60;f32&#62;,
+        >21</a>    <span class="syntax-attribute">@<span class="syntax-attribute">builtin</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-builtin">position</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-variable syntax-variable-other syntax-variable-other-member">position</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#22"
             id="22"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >22</a>    @location(0) uv: vec2&#60;f32&#62;,
+        >22</a>    <span class="syntax-attribute">@<span class="syntax-attribute">location</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-variable syntax-variable-other syntax-variable-other-member">uv</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#23"
             id="23"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >23</a>};
+        >23</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#24"
             id="24"
@@ -246,13 +247,13 @@
             id="25"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >25</a>const LINKED_LIST_END_SENTINEL: u32 = 0xFFFFFFFFu;
+        >25</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">const</span> <span class="syntax-constant">LINKED_LIST_END_SENTINEL</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer"><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0xFFFFFFFFu</span></span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#26"
             id="26"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >26</a>const SORTED_FRAGMENT_MAX_COUNT: u32 = constants::SORTED_FRAGMENT_MAX_COUNT;
+        >26</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">const</span> <span class="syntax-constant">SORTED_FRAGMENT_MAX_COUNT</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span> <span class="syntax-operator">=</span> <span class="syntax-namespace">constants</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-constant">SORTED_FRAGMENT_MAX_COUNT</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#27"
             id="27"
@@ -264,25 +265,25 @@
             id="28"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >28</a>@fragment
+        >28</a><span class="syntax-attribute">@<span class="syntax-attribute">fragment</span></span>
 <a
             href="#29"
             id="29"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >29</a>fn fragment(in: FullscreenVertexOutput) -&#62; @location(0) vec4&#60;f32&#62; {
+        >29</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">fragment</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">in</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">FullscreenVertexOutput</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-attribute">@<span class="syntax-attribute">location</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-type">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#30"
             id="30"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >30</a>    atomic_counter = 0u;
+        >30</a>    <span class="syntax-variable">atomic_counter</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#31"
             id="31"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >31</a>    let screen_index = u32(floor(in.position.x) + floor(in.position.y) * view.viewport.z);
+        >31</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">screen_index</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">u32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">floor</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">in</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">position</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">x</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">+</span> <span class="syntax-function syntax-function-call">floor</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">in</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">position</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">y</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-variable">view</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">viewport</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">z</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#32"
             id="32"
@@ -294,127 +295,127 @@
             id="33"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >33</a>    let head = heads[screen_index] - 1u;
+        >33</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">head</span> <span class="syntax-operator">=</span> <span class="syntax-variable">heads</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">screen_index</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span> <span class="syntax-operator">-</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#34"
             id="34"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >34</a>    if head == LINKED_LIST_END_SENTINEL {
+        >34</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-variable">head</span> <span class="syntax-operator">==</span> <span class="syntax-constant">LINKED_LIST_END_SENTINEL</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#35"
             id="35"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >35</a>        // https://github.com/gfx-rs/wgpu/issues/4416
+        >35</a>        <span class="syntax-comment syntax-comment-line">// https://github.com/gfx-rs/wgpu/issues/4416</span>
 <a
             href="#36"
             id="36"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >36</a>        if true {
+        >36</a>        <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-constant syntax-constant-builtin syntax-constant-builtin-boolean">true</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#37"
             id="37"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >37</a>            discard;
+        >37</a>            <span class="syntax-keyword syntax-keyword-control">discard</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#38"
             id="38"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >38</a>        }
+        >38</a>        <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#39"
             id="39"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >39</a>        return vec4(0.0);
+        >39</a>        <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-function syntax-function-call">vec4</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#40"
             id="40"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >40</a>    } else {
+        >40</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span> <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">else</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#41"
             id="41"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >41</a>        @if(!DEPTH_PREPASS)
+        >41</a>        <span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">!</span><span class="syntax-constant">DEPTH_PREPASS</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#42"
             id="42"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >42</a>        // If depth prepass is disabled, load depth for manual depth testing.
+        >42</a>        <span class="syntax-comment syntax-comment-line">// If depth prepass is disabled, load depth for manual depth testing.</span>
 <a
             href="#43"
             id="43"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >43</a>        // This is necessary because early z doesn&#39;t seem to trigger in the transparent pass.
+        >43</a>        <span class="syntax-comment syntax-comment-line">// This is necessary because early z doesn&#39;t seem to trigger in the transparent pass.</span>
 <a
             href="#44"
             id="44"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >44</a>        // This should be done during the draw pass so those fragments simply don&#39;t exist in the list,
+        >44</a>        <span class="syntax-comment syntax-comment-line">// This should be done during the draw pass so those fragments simply don&#39;t exist in the list,</span>
 <a
             href="#45"
             id="45"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >45</a>        // but this requires a bigger refactor
+        >45</a>        <span class="syntax-comment syntax-comment-line">// but this requires a bigger refactor</span>
 <a
             href="#46"
             id="46"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >46</a>        let d = textureLoad(depth, vec2&#60;i32&#62;(in.position.xy), 0);
+        >46</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">d</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">textureLoad</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">depth</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-function syntax-function-call">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">i32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">in</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">position</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">xy</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#47"
             id="47"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >47</a>        @else
+        >47</a>        <span class="syntax-attribute">@<span class="syntax-attribute">else</span></span>
 <a
             href="#48"
             id="48"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >48</a>        let d = 0.0;
+        >48</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">d</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#49"
             id="49"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >49</a>        let color = resolve(head, d);
+        >49</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">color</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">resolve</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">head</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">d</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#50"
             id="50"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >50</a>        heads[screen_index] = 0u; // LINKED_LIST_END_SENTINEL + 1u;
+        >50</a>        <span class="syntax-variable">heads</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">screen_index</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span> <span class="syntax-comment syntax-comment-line">// LINKED_LIST_END_SENTINEL + 1u;</span>
 <a
             href="#51"
             id="51"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >51</a>        return color;
+        >51</a>        <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-variable">color</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#52"
             id="52"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >52</a>    }
+        >52</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#53"
             id="53"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >53</a>}
+        >53</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#54"
             id="54"
@@ -426,43 +427,43 @@
             id="55"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >55</a>fn resolve(head: u32, opaque_depth: f32) -&#62; vec4&#60;f32&#62; {
+        >55</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">resolve</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">head</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">opaque_depth</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-type">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#56"
             id="56"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >56</a>    // Contains all the colors and depth for this specific fragment
+        >56</a>    <span class="syntax-comment syntax-comment-line">// Contains all the colors and depth for this specific fragment</span>
 <a
             href="#57"
             id="57"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >57</a>    // Fragments are sorted from front to back (depth values are in descending order)
+        >57</a>    <span class="syntax-comment syntax-comment-line">// Fragments are sorted from front to back (depth values are in descending order)</span>
 <a
             href="#58"
             id="58"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >58</a>    // This should make insertion sort slightly faster
+        >58</a>    <span class="syntax-comment syntax-comment-line">// This should make insertion sort slightly faster</span>
 <a
             href="#59"
             id="59"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >59</a>    // because transparent pass sorts objects so the linked list iteration is usually in descending order.
+        >59</a>    <span class="syntax-comment syntax-comment-line">// because transparent pass sorts objects so the linked list iteration is usually in descending order.</span>
 <a
             href="#60"
             id="60"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >60</a>    var fragment_list: array&#60;OitFragment, SORTED_FRAGMENT_MAX_COUNT&#62;;
+        >60</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">fragment_list</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">array</span><span class="syntax-punctuation">&lt;<span class="syntax-type">OitFragment</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">SORTED_FRAGMENT_MAX_COUNT</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#61"
             id="61"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >61</a>    var final_color = vec4&#60;f32&#62;(0.0);
+        >61</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">final_color</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#62"
             id="62"
@@ -474,7 +475,7 @@
             id="63"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >63</a>    var packed_opaque_depth = package::oit::draw::pack_24bit_depth_8bit_alpha(opaque_depth, 1.0);
+        >63</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">packed_opaque_depth</span> <span class="syntax-operator">=</span> <span class="syntax-namespace">package</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">oit</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">draw</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-function syntax-function-call">pack_24bit_depth_8bit_alpha</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">opaque_depth</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#64"
             id="64"
@@ -486,37 +487,37 @@
             id="65"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >65</a>    // fill list
+        >65</a>    <span class="syntax-comment syntax-comment-line">// fill list</span>
 <a
             href="#66"
             id="66"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >66</a>    var current_node = head;
+        >66</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">current_node</span> <span class="syntax-operator">=</span> <span class="syntax-variable">head</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#67"
             id="67"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >67</a>    var sorted_frag_count = 0u;
+        >67</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">sorted_frag_count</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#68"
             id="68"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >68</a>    while current_node != LINKED_LIST_END_SENTINEL {
+        >68</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-repeat">while</span> <span class="syntax-variable">current_node</span> <span class="syntax-operator">!=</span> <span class="syntax-constant">LINKED_LIST_END_SENTINEL</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#69"
             id="69"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >69</a>        let fragment_node = nodes[current_node];
+        >69</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">fragment_node</span> <span class="syntax-operator">=</span> <span class="syntax-variable">nodes</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">current_node</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#70"
             id="70"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >70</a>        current_node = fragment_node.next;
+        >70</a>        <span class="syntax-variable">current_node</span> <span class="syntax-operator">=</span> <span class="syntax-variable">fragment_node</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">next</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#71"
             id="71"
@@ -528,31 +529,31 @@
             id="72"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >72</a>        @if(!DEPTH_PREPASS)
+        >72</a>        <span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">!</span><span class="syntax-constant">DEPTH_PREPASS</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#73"
             id="73"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >73</a>        // depth testing
+        >73</a>        <span class="syntax-comment syntax-comment-line">// depth testing</span>
 <a
             href="#74"
             id="74"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >74</a>        if fragment_node.depth_alpha &#60; packed_opaque_depth {
+        >74</a>        <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-variable">fragment_node</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">depth_alpha</span> <span class="syntax-operator">&lt;</span> <span class="syntax-variable">packed_opaque_depth</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#75"
             id="75"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >75</a>            continue;
+        >75</a>            <span class="syntax-keyword syntax-keyword-control">continue</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#76"
             id="76"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >76</a>        }
+        >76</a>        <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#77"
             id="77"
@@ -564,199 +565,199 @@
             id="78"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >78</a>        if sorted_frag_count &#60; SORTED_FRAGMENT_MAX_COUNT {
+        >78</a>        <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-variable">sorted_frag_count</span> <span class="syntax-operator">&lt;</span> <span class="syntax-constant">SORTED_FRAGMENT_MAX_COUNT</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#79"
             id="79"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >79</a>            // There is still room in the sorted list.
+        >79</a>            <span class="syntax-comment syntax-comment-line">// There is still room in the sorted list.</span>
 <a
             href="#80"
             id="80"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >80</a>            // Insert the fragment so that the list stay sorted.
+        >80</a>            <span class="syntax-comment syntax-comment-line">// Insert the fragment so that the list stay sorted.</span>
 <a
             href="#81"
             id="81"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >81</a>            var i = sorted_frag_count;
+        >81</a>            <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">i</span> <span class="syntax-operator">=</span> <span class="syntax-variable">sorted_frag_count</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#82"
             id="82"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >82</a>            for (; i &#62; 0 &#38;&#38; fragment_node.depth_alpha &#62; fragment_list[i - 1].depth_alpha; i -= 1) {
+        >82</a>            <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-repeat">for</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span> <span class="syntax-variable">i</span> <span class="syntax-operator">&gt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span> <span class="syntax-operator">&amp;&amp;</span> <span class="syntax-variable">fragment_node</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">depth_alpha</span> <span class="syntax-operator">&gt;</span> <span class="syntax-variable">fragment_list</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">i</span> <span class="syntax-operator">-</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">depth_alpha</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span> <span class="syntax-variable">i</span> <span class="syntax-operator">-=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#83"
             id="83"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >83</a>                fragment_list[i] = fragment_list[i - 1];
+        >83</a>                <span class="syntax-variable">fragment_list</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">i</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span> <span class="syntax-operator">=</span> <span class="syntax-variable">fragment_list</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">i</span> <span class="syntax-operator">-</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#84"
             id="84"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >84</a>            }
+        >84</a>            <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#85"
             id="85"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >85</a>            fragment_list[i].color = fragment_node.color;
+        >85</a>            <span class="syntax-variable">fragment_list</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">i</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">color</span> <span class="syntax-operator">=</span> <span class="syntax-variable">fragment_node</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">color</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#86"
             id="86"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >86</a>            fragment_list[i].depth_alpha = fragment_node.depth_alpha;
+        >86</a>            <span class="syntax-variable">fragment_list</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">i</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">depth_alpha</span> <span class="syntax-operator">=</span> <span class="syntax-variable">fragment_node</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">depth_alpha</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#87"
             id="87"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >87</a>            sorted_frag_count += 1;
+        >87</a>            <span class="syntax-variable">sorted_frag_count</span> <span class="syntax-operator">+=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#88"
             id="88"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >88</a>        } else if fragment_list[0].depth_alpha &#62; fragment_node.depth_alpha {
+        >88</a>        <span class="syntax-punctuation syntax-punctuation-bracket">}</span> <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">else</span> <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-variable">fragment_list</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">depth_alpha</span> <span class="syntax-operator">&gt;</span> <span class="syntax-variable">fragment_node</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">depth_alpha</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#89"
             id="89"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >89</a>            // The fragment is farther than the nearest sorted one.
+        >89</a>            <span class="syntax-comment syntax-comment-line">// The fragment is farther than the nearest sorted one.</span>
 <a
             href="#90"
             id="90"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >90</a>            // First, make room by blending the nearest fragment from the sorted list.
+        >90</a>            <span class="syntax-comment syntax-comment-line">// First, make room by blending the nearest fragment from the sorted list.</span>
 <a
             href="#91"
             id="91"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >91</a>            // Then, insert the fragment in the sorted list.
+        >91</a>            <span class="syntax-comment syntax-comment-line">// Then, insert the fragment in the sorted list.</span>
 <a
             href="#92"
             id="92"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >92</a>            // This is an approximation.
+        >92</a>            <span class="syntax-comment syntax-comment-line">// This is an approximation.</span>
 <a
             href="#93"
             id="93"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >93</a>            let nearest_color = bevy_pbr::render::rgb9e5::rgb9e5_to_vec3_(fragment_list[0].color);
+        >93</a>            <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">nearest_color</span> <span class="syntax-operator">=</span> <span class="syntax-namespace">bevy_pbr</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">render</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">rgb9e5</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-function syntax-function-call">rgb9e5_to_vec3_</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">fragment_list</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">color</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#94"
             id="94"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >94</a>            let nearest_alpha = packed_depth_alpha_get_alpha(fragment_list[0].depth_alpha);
+        >94</a>            <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">nearest_alpha</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">packed_depth_alpha_get_alpha</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">fragment_list</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">depth_alpha</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#95"
             id="95"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >95</a>            final_color = blend(final_color, vec4f(nearest_color * nearest_alpha, nearest_alpha));
+        >95</a>            <span class="syntax-variable">final_color</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">blend</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">final_color</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-function syntax-function-call">vec4f</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">nearest_color</span> <span class="syntax-operator">*</span> <span class="syntax-variable">nearest_alpha</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">nearest_alpha</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#96"
             id="96"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >96</a>            var i = 0u;
+        >96</a>            <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">i</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#97"
             id="97"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >97</a>            for (; i &#60; SORTED_FRAGMENT_MAX_COUNT - 1 &#38;&#38; fragment_node.depth_alpha &#60; fragment_list[i + 1].depth_alpha; i += 1) {
+        >97</a>            <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-repeat">for</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span> <span class="syntax-variable">i</span> <span class="syntax-operator">&lt;</span> <span class="syntax-constant">SORTED_FRAGMENT_MAX_COUNT</span> <span class="syntax-operator">-</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span> <span class="syntax-operator">&amp;&amp;</span> <span class="syntax-variable">fragment_node</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">depth_alpha</span> <span class="syntax-operator">&lt;</span> <span class="syntax-variable">fragment_list</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">i</span> <span class="syntax-operator">+</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">depth_alpha</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span> <span class="syntax-variable">i</span> <span class="syntax-operator">+=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#98"
             id="98"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >98</a>                fragment_list[i] = fragment_list[i + 1];
+        >98</a>                <span class="syntax-variable">fragment_list</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">i</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span> <span class="syntax-operator">=</span> <span class="syntax-variable">fragment_list</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">i</span> <span class="syntax-operator">+</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#99"
             id="99"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >99</a>            }
+        >99</a>            <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#100"
             id="100"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >100</a>            fragment_list[i].color = fragment_node.color;
+        >100</a>            <span class="syntax-variable">fragment_list</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">i</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">color</span> <span class="syntax-operator">=</span> <span class="syntax-variable">fragment_node</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">color</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#101"
             id="101"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >101</a>            fragment_list[i].depth_alpha = fragment_node.depth_alpha;
+        >101</a>            <span class="syntax-variable">fragment_list</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">i</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">depth_alpha</span> <span class="syntax-operator">=</span> <span class="syntax-variable">fragment_node</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">depth_alpha</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#102"
             id="102"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >102</a>        } else {
+        >102</a>        <span class="syntax-punctuation syntax-punctuation-bracket">}</span> <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">else</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#103"
             id="103"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >103</a>            // The next fragment is nearer than any of the sorted ones.
+        >103</a>            <span class="syntax-comment syntax-comment-line">// The next fragment is nearer than any of the sorted ones.</span>
 <a
             href="#104"
             id="104"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >104</a>            // Blend it early.
+        >104</a>            <span class="syntax-comment syntax-comment-line">// Blend it early.</span>
 <a
             href="#105"
             id="105"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >105</a>            // This is an approximation.
+        >105</a>            <span class="syntax-comment syntax-comment-line">// This is an approximation.</span>
 <a
             href="#106"
             id="106"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >106</a>            let color = bevy_pbr::render::rgb9e5::rgb9e5_to_vec3_(fragment_node.color);
+        >106</a>            <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">color</span> <span class="syntax-operator">=</span> <span class="syntax-namespace">bevy_pbr</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">render</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">rgb9e5</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-function syntax-function-call">rgb9e5_to_vec3_</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">fragment_node</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">color</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#107"
             id="107"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >107</a>            let alpha = packed_depth_alpha_get_alpha(fragment_node.depth_alpha);
+        >107</a>            <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">alpha</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">packed_depth_alpha_get_alpha</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">fragment_node</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">depth_alpha</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#108"
             id="108"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >108</a>            final_color = blend(final_color, vec4f(color * alpha, alpha));
+        >108</a>            <span class="syntax-variable">final_color</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">blend</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">final_color</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-function syntax-function-call">vec4f</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">color</span> <span class="syntax-operator">*</span> <span class="syntax-variable">alpha</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">alpha</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#109"
             id="109"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >109</a>        }
+        >109</a>        <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#110"
             id="110"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >110</a>    }
+        >110</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#111"
             id="111"
@@ -768,61 +769,61 @@
             id="112"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >112</a>    // blend sorted fragments
+        >112</a>    <span class="syntax-comment syntax-comment-line">// blend sorted fragments</span>
 <a
             href="#113"
             id="113"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >113</a>    for (var i = 0u; i &#60; sorted_frag_count; i += 1) {
+        >113</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-repeat">for</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">i</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span> <span class="syntax-variable">i</span> <span class="syntax-operator">&lt;</span> <span class="syntax-variable">sorted_frag_count</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span> <span class="syntax-variable">i</span> <span class="syntax-operator">+=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#114"
             id="114"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >114</a>        let color = bevy_pbr::render::rgb9e5::rgb9e5_to_vec3_(fragment_list[i].color);
+        >114</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">color</span> <span class="syntax-operator">=</span> <span class="syntax-namespace">bevy_pbr</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">render</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">rgb9e5</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-function syntax-function-call">rgb9e5_to_vec3_</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">fragment_list</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">i</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">color</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#115"
             id="115"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >115</a>        let alpha = packed_depth_alpha_get_alpha(fragment_list[i].depth_alpha);
+        >115</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">alpha</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">packed_depth_alpha_get_alpha</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">fragment_list</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">i</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">depth_alpha</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#116"
             id="116"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >116</a>        var base_color = vec4(color.rgb, alpha);
+        >116</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">base_color</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">vec4</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">color</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">rgb</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">alpha</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#117"
             id="117"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >117</a>        final_color = blend(final_color, base_color);
+        >117</a>        <span class="syntax-variable">final_color</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">blend</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">final_color</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">base_color</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#118"
             id="118"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >118</a>        if final_color.a == 1.0 {
+        >118</a>        <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-variable">final_color</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">a</span> <span class="syntax-operator">==</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#119"
             id="119"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >119</a>            break;
+        >119</a>            <span class="syntax-keyword syntax-keyword-control">break</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#120"
             id="120"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >120</a>        }
+        >120</a>        <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#121"
             id="121"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >121</a>    }
+        >121</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#122"
             id="122"
@@ -834,13 +835,13 @@
             id="123"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >123</a>    return final_color;
+        >123</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-variable">final_color</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#124"
             id="124"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >124</a>}
+        >124</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#125"
             id="125"
@@ -852,43 +853,43 @@
             id="126"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >126</a>// OVER operator using premultiplied alpha
+        >126</a><span class="syntax-comment syntax-comment-line">// OVER operator using premultiplied alpha</span>
 <a
             href="#127"
             id="127"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >127</a>// see: https://en.wikipedia.org/wiki/Alpha_compositing
+        >127</a><span class="syntax-comment syntax-comment-line">// see: https://en.wikipedia.org/wiki/Alpha_compositing</span>
 <a
             href="#128"
             id="128"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >128</a>fn blend(color_a: vec4&#60;f32&#62;, color_b: vec4&#60;f32&#62;) -&#62; vec4&#60;f32&#62; {
+        >128</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">blend</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">color_a</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">color_b</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-type">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#129"
             id="129"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >129</a>    let final_color = color_a.rgb + (1.0 - color_a.a) * color_b.rgb;
+        >129</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">final_color</span> <span class="syntax-operator">=</span> <span class="syntax-variable">color_a</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">rgb</span> <span class="syntax-operator">+</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span> <span class="syntax-operator">-</span> <span class="syntax-variable">color_a</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">a</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-variable">color_b</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">rgb</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#130"
             id="130"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >130</a>    let alpha = color_a.a + (1.0 - color_a.a) * color_b.a;
+        >130</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">alpha</span> <span class="syntax-operator">=</span> <span class="syntax-variable">color_a</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">a</span> <span class="syntax-operator">+</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span> <span class="syntax-operator">-</span> <span class="syntax-variable">color_a</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">a</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-variable">color_b</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">a</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#131"
             id="131"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >131</a>    return vec4(final_color.rgb, alpha);
+        >131</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-function syntax-function-call">vec4</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">final_color</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">rgb</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">alpha</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#132"
             id="132"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >132</a>}
+        >132</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#133"
             id="133"
@@ -900,19 +901,19 @@
             id="134"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >134</a>fn packed_depth_alpha_get_alpha(packed: u32) -&#62; f32 {
+        >134</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">packed_depth_alpha_get_alpha</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">packed</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-type">f32</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#135"
             id="135"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >135</a>    return package::oit::draw::unpack_24bit_depth_8bit_alpha(packed).y;
+        >135</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-namespace">package</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">oit</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">draw</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-function syntax-function-call">unpack_24bit_depth_8bit_alpha</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">packed</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">y</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#136"
             id="136"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >136</a>}</code>
+        >136</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span></code>
 </pre>
 
         </div>

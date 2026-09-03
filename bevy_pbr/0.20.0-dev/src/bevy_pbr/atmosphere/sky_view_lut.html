@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="../../../../../-/static/css/themes.css">
     <link rel="stylesheet" href="../../../../../-/static/css/styles.css">
     <link rel="stylesheet" href="../../../../../-/static/css/icons.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/syntax.css">
     <script src="../../../../../-/static/js/settings.js"></script>
 
     
@@ -107,61 +108,61 @@
             id="1"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >1</a>import package::{
+        >1</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">package</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#2"
             id="2"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >2</a>    atmosphere::{
+        >2</a>    <span class="syntax-namespace">atmosphere</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#3"
             id="3"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >3</a>        bindings::settings,
+        >3</a>        <span class="syntax-namespace">bindings</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">settings</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#4"
             id="4"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >4</a>        functions::{
+        >4</a>        <span class="syntax-namespace">functions</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#5"
             id="5"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >5</a>            get_view_position, raymarch_atmosphere,
+        >5</a>            <span class="syntax-namespace">get_view_position</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-namespace">raymarch_atmosphere</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#6"
             id="6"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >6</a>            max_atmosphere_distance, direction_atmosphere_to_world,
+        >6</a>            <span class="syntax-namespace">max_atmosphere_distance</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-namespace">direction_atmosphere_to_world</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#7"
             id="7"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >7</a>            sky_view_lut_uv_to_zenith_azimuth, zenith_azimuth_to_ray_dir,
+        >7</a>            <span class="syntax-namespace">sky_view_lut_uv_to_zenith_azimuth</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-namespace">zenith_azimuth_to_ray_dir</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#8"
             id="8"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >8</a>        },
+        >8</a>        <span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#9"
             id="9"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >9</a>    }
+        >9</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#10"
             id="10"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >10</a>};
+        >10</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#11"
             id="11"
@@ -173,31 +174,31 @@
             id="12"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >12</a>import bevy_render::{
+        >12</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">bevy_render</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#13"
             id="13"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >13</a>    view::View,
+        >13</a>    <span class="syntax-namespace">view</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-type">View</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#14"
             id="14"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >14</a>    maths::HALF_PI,
+        >14</a>    <span class="syntax-namespace">maths</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-constant">HALF_PI</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#15"
             id="15"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >15</a>};
+        >15</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#16"
             id="16"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >16</a>import bevy_core_pipeline::fullscreen_vertex_shader::FullscreenVertexOutput;
+        >16</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">bevy_core_pipeline</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">fullscreen_vertex_shader</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-type">FullscreenVertexOutput</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#17"
             id="17"
@@ -209,7 +210,7 @@
             id="18"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >18</a>@group(0) @binding(13) var sky_view_lut_out: texture_storage_2d&#60;rgba16float, write&#62;;
+        >18</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">13</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">sky_view_lut_out</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">texture_storage_2d</span><span class="syntax-punctuation">&lt;<span class="syntax-type">rgba16float</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">write</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#19"
             id="19"
@@ -221,25 +222,25 @@
             id="20"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >20</a>@compute
+        >20</a><span class="syntax-attribute">@<span class="syntax-attribute">compute</span></span>
 <a
             href="#21"
             id="21"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >21</a>@workgroup_size(16, 16, 1)
+        >21</a><span class="syntax-attribute">@<span class="syntax-attribute">workgroup_size</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">16</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">16</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#22"
             id="22"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >22</a>fn main(@builtin(global_invocation_id) idx: vec3&#60;u32&#62;) {
+        >22</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">main</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-attribute">@<span class="syntax-attribute">builtin</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-builtin">global_invocation_id</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-variable syntax-variable-parameter">idx</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">u32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#23"
             id="23"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >23</a>    let uv = vec2&#60;f32&#62;(idx.xy) / vec2&#60;f32&#62;(settings.sky_view_lut_size);
+        >23</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">uv</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">idx</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">xy</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">/</span> <span class="syntax-function syntax-function-call">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">settings</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">sky_view_lut_size</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#24"
             id="24"
@@ -251,19 +252,19 @@
             id="25"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >25</a>    let cam_pos = get_view_position();
+        >25</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">cam_pos</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">get_view_position</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#26"
             id="26"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >26</a>    let r = length(cam_pos);
+        >26</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">r</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">length</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">cam_pos</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#27"
             id="27"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >27</a>    var zenith_azimuth = sky_view_lut_uv_to_zenith_azimuth(r, uv);
+        >27</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">zenith_azimuth</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">sky_view_lut_uv_to_zenith_azimuth</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">r</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">uv</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#28"
             id="28"
@@ -275,13 +276,13 @@
             id="29"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >29</a>    let ray_dir_as = zenith_azimuth_to_ray_dir(zenith_azimuth.x, zenith_azimuth.y);
+        >29</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">ray_dir_as</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">zenith_azimuth_to_ray_dir</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">zenith_azimuth</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">x</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">zenith_azimuth</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">y</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#30"
             id="30"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >30</a>    let ray_dir_ws = direction_atmosphere_to_world(ray_dir_as);
+        >30</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">ray_dir_ws</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">direction_atmosphere_to_world</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">ray_dir_as</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#31"
             id="31"
@@ -293,25 +294,25 @@
             id="32"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >32</a>    let world_pos = cam_pos;
+        >32</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">world_pos</span> <span class="syntax-operator">=</span> <span class="syntax-variable">cam_pos</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#33"
             id="33"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >33</a>    let up = normalize(world_pos);
+        >33</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">up</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">normalize</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">world_pos</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#34"
             id="34"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >34</a>    let mu = dot(ray_dir_ws, up);
+        >34</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">mu</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">dot</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">ray_dir_ws</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">up</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#35"
             id="35"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >35</a>    let t_max = max_atmosphere_distance(r, mu);
+        >35</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">t_max</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">max_atmosphere_distance</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">r</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">mu</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#36"
             id="36"
@@ -323,7 +324,7 @@
             id="37"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >37</a>    let result = raymarch_atmosphere(world_pos, ray_dir_ws, t_max, settings.sky_view_lut_samples, uv, true);
+        >37</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">result</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">raymarch_atmosphere</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">world_pos</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">ray_dir_ws</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">t_max</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">settings</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">sky_view_lut_samples</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">uv</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-builtin syntax-constant-builtin-boolean">true</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#38"
             id="38"
@@ -335,13 +336,13 @@
             id="39"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >39</a>    textureStore(sky_view_lut_out, idx.xy, vec4(result.inscattering, 1.0));
+        >39</a>    <span class="syntax-function">textureStore</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">sky_view_lut_out</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">idx</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">xy</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-function syntax-function-call">vec4</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">result</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">inscattering</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#40"
             id="40"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >40</a>}</code>
+        >40</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span></code>
 </pre>
 
         </div>

@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="../../../../-/static/css/themes.css">
     <link rel="stylesheet" href="../../../../-/static/css/styles.css">
     <link rel="stylesheet" href="../../../../-/static/css/icons.css">
+    <link rel="stylesheet" href="../../../../-/static/css/syntax.css">
     <script src="../../../../-/static/js/settings.js"></script>
 
     
@@ -102,79 +103,79 @@
             id="1"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >1</a>// The Vertex output of the default vertex shader for the Ui Material pipeline.
+        >1</a><span class="syntax-comment syntax-comment-line">// The Vertex output of the default vertex shader for the Ui Material pipeline.</span>
 <a
             href="#2"
             id="2"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >2</a>struct UiVertexOutput {
+        >2</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">struct</span> <span class="syntax-type">UiVertexOutput</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#3"
             id="3"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >3</a>    @location(0) uv: vec2&#60;f32&#62;,
+        >3</a>    <span class="syntax-attribute">@<span class="syntax-attribute">location</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-variable syntax-variable-other syntax-variable-other-member">uv</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#4"
             id="4"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >4</a>    // The size of the borders in UV space. Order is Left, Right, Top, Bottom.
+        >4</a>    <span class="syntax-comment syntax-comment-line">// The size of the borders in UV space. Order is Left, Right, Top, Bottom.</span>
 <a
             href="#5"
             id="5"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >5</a>    @location(1) border_widths: vec4&#60;f32&#62;,
+        >5</a>    <span class="syntax-attribute">@<span class="syntax-attribute">location</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-variable syntax-variable-other syntax-variable-other-member">border_widths</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#6"
             id="6"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >6</a>    // The border radius x value in pixels. Order is top left, top right, bottom right, bottom left.
+        >6</a>    <span class="syntax-comment syntax-comment-line">// The border radius x value in pixels. Order is top left, top right, bottom right, bottom left.</span>
 <a
             href="#7"
             id="7"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >7</a>    @location(2) border_radius_x: vec4&#60;f32&#62;,
+        >7</a>    <span class="syntax-attribute">@<span class="syntax-attribute">location</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">2</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-variable syntax-variable-other syntax-variable-other-member">border_radius_x</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#8"
             id="8"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >8</a>    // The border radius y value in pixels. Order is top left, top right, bottom right, bottom left.
+        >8</a>    <span class="syntax-comment syntax-comment-line">// The border radius y value in pixels. Order is top left, top right, bottom right, bottom left.</span>
 <a
             href="#9"
             id="9"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >9</a>    @location(3) border_radius_y: vec4&#60;f32&#62;,
+        >9</a>    <span class="syntax-attribute">@<span class="syntax-attribute">location</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">3</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-variable syntax-variable-other syntax-variable-other-member">border_radius_y</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#10"
             id="10"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >10</a>    // The size of the node in pixels. Order is width, height.
+        >10</a>    <span class="syntax-comment syntax-comment-line">// The size of the node in pixels. Order is width, height.</span>
 <a
             href="#11"
             id="11"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >11</a>    @location(4) @interpolate(flat) size: vec2&#60;f32&#62;,
+        >11</a>    <span class="syntax-attribute">@<span class="syntax-attribute">location</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">4</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">interpolate</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">flat</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-variable syntax-variable-other syntax-variable-other-member">size</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#12"
             id="12"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >12</a>    @builtin(position) position: vec4&#60;f32&#62;,
+        >12</a>    <span class="syntax-attribute">@<span class="syntax-attribute">builtin</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-builtin">position</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-variable syntax-variable-other syntax-variable-other-member">position</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#13"
             id="13"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >13</a>};</code>
+        >13</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span></code>
 </pre>
 
         </div>

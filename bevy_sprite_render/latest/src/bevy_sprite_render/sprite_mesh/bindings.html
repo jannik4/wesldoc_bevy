@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="../../../../../-/static/css/themes.css">
     <link rel="stylesheet" href="../../../../../-/static/css/styles.css">
     <link rel="stylesheet" href="../../../../../-/static/css/icons.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/syntax.css">
     <script src="../../../../../-/static/js/settings.js"></script>
 
     
@@ -102,19 +103,19 @@
             id="1"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >1</a>import package::sprite_mesh::types::SpriteMaterial;
+        >1</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">package</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">sprite_mesh</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">types</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-type">SpriteMaterial</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#2"
             id="2"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >2</a>@if(BINDLESS)
+        >2</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">BINDLESS</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#3"
             id="3"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >3</a>import package::sprite_mesh::types::SpriteMaterialBindings;
+        >3</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">package</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">sprite_mesh</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">types</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-type">SpriteMaterialBindings</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#4"
             id="4"
@@ -126,61 +127,61 @@
             id="5"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >5</a>@if(BINDLESS) {
+        >5</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">BINDLESS</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#6"
             id="6"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >6</a>@group(constants::MATERIAL_BIND_GROUP) @binding(0) var&#60;storage&#62; material_indices:
+        >6</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-namespace">constants</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-constant">MATERIAL_BIND_GROUP</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span><span class="syntax-punctuation">&lt;<span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-modifier">storage</span>&gt;</span> <span class="syntax-variable">material_indices</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span>
 <a
             href="#7"
             id="7"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >7</a>    array&#60;SpriteMaterialBindings&#62;;
+        >7</a>    <span class="syntax-type">array</span><span class="syntax-punctuation">&lt;<span class="syntax-type">SpriteMaterialBindings</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#8"
             id="8"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >8</a>@group(constants::MATERIAL_BIND_GROUP) @binding(10) var&#60;storage&#62; material: array&#60;SpriteMaterial&#62;;
+        >8</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-namespace">constants</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-constant">MATERIAL_BIND_GROUP</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">10</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span><span class="syntax-punctuation">&lt;<span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-modifier">storage</span>&gt;</span> <span class="syntax-variable">material</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">array</span><span class="syntax-punctuation">&lt;<span class="syntax-type">SpriteMaterial</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#9"
             id="9"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >9</a>}
+        >9</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#10"
             id="10"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >10</a>@else {
+        >10</a><span class="syntax-attribute">@<span class="syntax-attribute">else</span></span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#11"
             id="11"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >11</a>@group(constants::MATERIAL_BIND_GROUP) @binding(0) var&#60;uniform&#62; material: SpriteMaterial;
+        >11</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-namespace">constants</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-constant">MATERIAL_BIND_GROUP</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span><span class="syntax-punctuation">&lt;<span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-modifier">uniform</span>&gt;</span> <span class="syntax-variable">material</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">SpriteMaterial</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#12"
             id="12"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >12</a>@group(constants::MATERIAL_BIND_GROUP) @binding(1) var texture: texture_2d&#60;f32&#62;;
+        >12</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-namespace">constants</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-constant">MATERIAL_BIND_GROUP</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">texture</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">texture_2d</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#13"
             id="13"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >13</a>@group(constants::MATERIAL_BIND_GROUP) @binding(2) var texture_sampler: sampler;
+        >13</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-namespace">constants</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-constant">MATERIAL_BIND_GROUP</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">2</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">texture_sampler</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">sampler</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#14"
             id="14"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >14</a>}</code>
+        >14</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span></code>
 </pre>
 
         </div>

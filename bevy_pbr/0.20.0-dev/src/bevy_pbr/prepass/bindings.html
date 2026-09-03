@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="../../../../../-/static/css/themes.css">
     <link rel="stylesheet" href="../../../../../-/static/css/styles.css">
     <link rel="stylesheet" href="../../../../../-/static/css/icons.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/syntax.css">
     <script src="../../../../../-/static/js/settings.js"></script>
 
     
@@ -107,49 +108,49 @@
             id="1"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >1</a>struct PreviousViewUniforms {
+        >1</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">struct</span> <span class="syntax-type">PreviousViewUniforms</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#2"
             id="2"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >2</a>    view_from_world: mat4x4&#60;f32&#62;,
+        >2</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">view_from_world</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">mat4x4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#3"
             id="3"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >3</a>    clip_from_world: mat4x4&#60;f32&#62;,
+        >3</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">clip_from_world</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">mat4x4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#4"
             id="4"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >4</a>    unjittered_clip_from_world: mat4x4&#60;f32&#62;,
+        >4</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">unjittered_clip_from_world</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">mat4x4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#5"
             id="5"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >5</a>    clip_from_view: mat4x4&#60;f32&#62;,
+        >5</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">clip_from_view</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">mat4x4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#6"
             id="6"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >6</a>    world_from_clip: mat4x4&#60;f32&#62;,
+        >6</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">world_from_clip</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">mat4x4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#7"
             id="7"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >7</a>    view_from_clip: mat4x4&#60;f32&#62;,
+        >7</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">view_from_clip</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">mat4x4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#8"
             id="8"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >8</a>}
+        >8</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#9"
             id="9"
@@ -161,7 +162,7 @@
             id="10"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >10</a>@group(0) @binding(2) var&#60;uniform&#62; previous_view_uniforms: PreviousViewUniforms;
+        >10</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">2</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span><span class="syntax-punctuation">&lt;<span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-modifier">uniform</span>&gt;</span> <span class="syntax-variable">previous_view_uniforms</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">PreviousViewUniforms</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#11"
             id="11"
@@ -173,7 +174,7 @@
             id="12"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >12</a>// Material bindings will be in @group(2)</code>
+        >12</a><span class="syntax-comment syntax-comment-line">// Material bindings will be in @group(2)</span></code>
 </pre>
 
         </div>

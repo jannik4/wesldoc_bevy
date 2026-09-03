@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="../../../../../-/static/css/themes.css">
     <link rel="stylesheet" href="../../../../../-/static/css/styles.css">
     <link rel="stylesheet" href="../../../../../-/static/css/icons.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/syntax.css">
     <script src="../../../../../-/static/js/settings.js"></script>
 
     
@@ -107,55 +108,55 @@
             id="1"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >1</a>// A compute shader that unpacks bins.
+        >1</a><span class="syntax-comment syntax-comment-line">// A compute shader that unpacks bins.</span>
 <a
             href="#2"
             id="2"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >2</a>//
+        >2</a><span class="syntax-comment syntax-comment-line">//</span>
 <a
             href="#3"
             id="3"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >3</a>// This shader runs before mesh preprocessing in order to generate
+        >3</a><span class="syntax-comment syntax-comment-line">// This shader runs before mesh preprocessing in order to generate</span>
 <a
             href="#4"
             id="4"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >4</a>// `PreprocessWorkItem`s from cached bins. A single dispatch of this shader
+        >4</a><span class="syntax-comment syntax-comment-line">// `PreprocessWorkItem`s from cached bins. A single dispatch of this shader</span>
 <a
             href="#5"
             id="5"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >5</a>// corresponds to a single batch set, and one invocation of this shader
+        >5</a><span class="syntax-comment syntax-comment-line">// corresponds to a single batch set, and one invocation of this shader</span>
 <a
             href="#6"
             id="6"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >6</a>// corresponds to one binned entity. Each shader invocation builds the work item
+        >6</a><span class="syntax-comment syntax-comment-line">// corresponds to one binned entity. Each shader invocation builds the work item</span>
 <a
             href="#7"
             id="7"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >7</a>// for its entity by copying over the mesh input uniform index and calculating
+        >7</a><span class="syntax-comment syntax-comment-line">// for its entity by copying over the mesh input uniform index and calculating</span>
 <a
             href="#8"
             id="8"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >8</a>// the position of the command in the indirect parameters buffer that will draw
+        >8</a><span class="syntax-comment syntax-comment-line">// the position of the command in the indirect parameters buffer that will draw</span>
 <a
             href="#9"
             id="9"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >9</a>// that entity.
+        >9</a><span class="syntax-comment syntax-comment-line">// that entity.</span>
 <a
             href="#10"
             id="10"
@@ -167,7 +168,7 @@
             id="11"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >11</a>import bevy_render::occlusion_culling::mesh_preprocess_types::{BinMetadata, PreprocessWorkItem};
+        >11</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">bevy_render</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">occlusion_culling</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">mesh_preprocess_types</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-punctuation syntax-punctuation-bracket">{</span><span class="syntax-type">BinMetadata</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">PreprocessWorkItem</span><span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#12"
             id="12"
@@ -179,97 +180,97 @@
             id="13"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >13</a>// Information needed to unpack bins belonging to a single batch set.
+        >13</a><span class="syntax-comment syntax-comment-line">// Information needed to unpack bins belonging to a single batch set.</span>
 <a
             href="#14"
             id="14"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >14</a>struct BinUnpackingMetadata {
+        >14</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">struct</span> <span class="syntax-type">BinUnpackingMetadata</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#15"
             id="15"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >15</a>    // The index of the first `PreprocessWorkItem` that this compute shader
+        >15</a>    <span class="syntax-comment syntax-comment-line">// The index of the first `PreprocessWorkItem` that this compute shader</span>
 <a
             href="#16"
             id="16"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >16</a>    // dispatch is to write to.
+        >16</a>    <span class="syntax-comment syntax-comment-line">// dispatch is to write to.</span>
 <a
             href="#17"
             id="17"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >17</a>    base_output_work_item_index: u32,
+        >17</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">base_output_work_item_index</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#18"
             id="18"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >18</a>    // The index of the first GPU indirect parameters command for this batch
+        >18</a>    <span class="syntax-comment syntax-comment-line">// The index of the first GPU indirect parameters command for this batch</span>
 <a
             href="#19"
             id="19"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >19</a>    // set.
+        >19</a>    <span class="syntax-comment syntax-comment-line">// set.</span>
 <a
             href="#20"
             id="20"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >20</a>    base_indirect_parameters_index: u32,
+        >20</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">base_indirect_parameters_index</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#21"
             id="21"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >21</a>    // The number of binned mesh instances in the `binned_mesh_instances`
+        >21</a>    <span class="syntax-comment syntax-comment-line">// The number of binned mesh instances in the `binned_mesh_instances`</span>
 <a
             href="#22"
             id="22"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >22</a>    // array.
+        >22</a>    <span class="syntax-comment syntax-comment-line">// array.</span>
 <a
             href="#23"
             id="23"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >23</a>    binned_mesh_instance_count: u32,
+        >23</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">binned_mesh_instance_count</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#24"
             id="24"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >24</a>    // Padding.
+        >24</a>    <span class="syntax-comment syntax-comment-line">// Padding.</span>
 <a
             href="#25"
             id="25"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >25</a>    pad_a: u32,
+        >25</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">pad_a</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#26"
             id="26"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >26</a>    // Padding.
+        >26</a>    <span class="syntax-comment syntax-comment-line">// Padding.</span>
 <a
             href="#27"
             id="27"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >27</a>    pad_b: array&#60;vec4&#60;u32&#62;, 15&#62;,
+        >27</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">pad_b</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">array</span><span class="syntax-punctuation">&lt;<span class="syntax-type">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">u32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">15</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#28"
             id="28"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >28</a>};
+        >28</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#29"
             id="29"
@@ -281,85 +282,85 @@
             id="30"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >30</a>// One mesh instance in a bin.
+        >30</a><span class="syntax-comment syntax-comment-line">// One mesh instance in a bin.</span>
 <a
             href="#31"
             id="31"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >31</a>//
+        >31</a><span class="syntax-comment syntax-comment-line">//</span>
 <a
             href="#32"
             id="32"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >32</a>// This corresponds to the CPU-side `GpuRenderBinnedMeshInstance` structure.
+        >32</a><span class="syntax-comment syntax-comment-line">// This corresponds to the CPU-side `GpuRenderBinnedMeshInstance` structure.</span>
 <a
             href="#33"
             id="33"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >33</a>//
+        >33</a><span class="syntax-comment syntax-comment-line">//</span>
 <a
             href="#34"
             id="34"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >34</a>// Note that this structure isn&#39;t sorted within the
+        >34</a><span class="syntax-comment syntax-comment-line">// Note that this structure isn&#39;t sorted within the</span>
 <a
             href="#35"
             id="35"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >35</a>// `binned_mesh_instances` buffer. Instances from the same bin aren&#39;t
+        >35</a><span class="syntax-comment syntax-comment-line">// `binned_mesh_instances` buffer. Instances from the same bin aren&#39;t</span>
 <a
             href="#36"
             id="36"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >36</a>// guaranteed to be adjacent to one another.
+        >36</a><span class="syntax-comment syntax-comment-line">// guaranteed to be adjacent to one another.</span>
 <a
             href="#37"
             id="37"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >37</a>struct BinnedMeshInstance {
+        >37</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">struct</span> <span class="syntax-type">BinnedMeshInstance</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#38"
             id="38"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >38</a>    // The index of the `MeshInputUniform` corresponding to this mesh instance
+        >38</a>    <span class="syntax-comment syntax-comment-line">// The index of the `MeshInputUniform` corresponding to this mesh instance</span>
 <a
             href="#39"
             id="39"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >39</a>    // in the `MeshInputUniform` buffer.
+        >39</a>    <span class="syntax-comment syntax-comment-line">// in the `MeshInputUniform` buffer.</span>
 <a
             href="#40"
             id="40"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >40</a>    input_uniform_index: u32,
+        >40</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">input_uniform_index</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#41"
             id="41"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >41</a>    // The index of the bin that this mesh instance belongs to.
+        >41</a>    <span class="syntax-comment syntax-comment-line">// The index of the bin that this mesh instance belongs to.</span>
 <a
             href="#42"
             id="42"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >42</a>    bin_index: u32,
+        >42</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">bin_index</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#43"
             id="43"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >43</a>};
+        >43</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#44"
             id="44"
@@ -371,13 +372,13 @@
             id="45"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >45</a>// Metadata for the entire batch set.
+        >45</a><span class="syntax-comment syntax-comment-line">// Metadata for the entire batch set.</span>
 <a
             href="#46"
             id="46"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >46</a>@group(0) @binding(0) var&#60;uniform&#62; bin_unpacking_metadata: BinUnpackingMetadata;
+        >46</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span><span class="syntax-punctuation">&lt;<span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-modifier">uniform</span>&gt;</span> <span class="syntax-variable">bin_unpacking_metadata</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">BinUnpackingMetadata</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#47"
             id="47"
@@ -389,25 +390,25 @@
             id="48"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >48</a>// The input array of `BinnedMeshInstance`s.
+        >48</a><span class="syntax-comment syntax-comment-line">// The input array of `BinnedMeshInstance`s.</span>
 <a
             href="#49"
             id="49"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >49</a>//
+        >49</a><span class="syntax-comment syntax-comment-line">//</span>
 <a
             href="#50"
             id="50"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >50</a>// Note that this array isn&#39;t sorted.
+        >50</a><span class="syntax-comment syntax-comment-line">// Note that this array isn&#39;t sorted.</span>
 <a
             href="#51"
             id="51"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >51</a>@group(0) @binding(1) var&#60;storage&#62; binned_mesh_instances: array&#60;BinnedMeshInstance&#62;;
+        >51</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span><span class="syntax-punctuation">&lt;<span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-modifier">storage</span>&gt;</span> <span class="syntax-variable">binned_mesh_instances</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">array</span><span class="syntax-punctuation">&lt;<span class="syntax-type">BinnedMeshInstance</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#52"
             id="52"
@@ -419,13 +420,13 @@
             id="53"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >53</a>// The output list of `PreprocessWorkItem`s.
+        >53</a><span class="syntax-comment syntax-comment-line">// The output list of `PreprocessWorkItem`s.</span>
 <a
             href="#54"
             id="54"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >54</a>@group(0) @binding(2) var&#60;storage, read_write&#62; preprocess_work_items: array&#60;PreprocessWorkItem&#62;;
+        >54</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">2</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span><span class="syntax-punctuation">&lt;<span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-modifier">storage</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-modifier">read_write</span>&gt;</span> <span class="syntax-variable">preprocess_work_items</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">array</span><span class="syntax-punctuation">&lt;<span class="syntax-type">PreprocessWorkItem</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#55"
             id="55"
@@ -437,37 +438,37 @@
             id="56"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >56</a>// The bin metadata, which contains the index of the GPU indirect parameters for
+        >56</a><span class="syntax-comment syntax-comment-line">// The bin metadata, which contains the index of the GPU indirect parameters for</span>
 <a
             href="#57"
             id="57"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >57</a>// this bin, relative to the start of the indirect parameters for this batch
+        >57</a><span class="syntax-comment syntax-comment-line">// this bin, relative to the start of the indirect parameters for this batch</span>
 <a
             href="#58"
             id="58"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >58</a>// set.
+        >58</a><span class="syntax-comment syntax-comment-line">// set.</span>
 <a
             href="#59"
             id="59"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >59</a>//
+        >59</a><span class="syntax-comment syntax-comment-line">//</span>
 <a
             href="#60"
             id="60"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >60</a>// This is indexed by the bin metadata index below.
+        >60</a><span class="syntax-comment syntax-comment-line">// This is indexed by the bin metadata index below.</span>
 <a
             href="#61"
             id="61"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >61</a>@group(0) @binding(3) var&#60;storage&#62; bin_metadata: array&#60;BinMetadata&#62;;
+        >61</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">3</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span><span class="syntax-punctuation">&lt;<span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-modifier">storage</span>&gt;</span> <span class="syntax-variable">bin_metadata</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">array</span><span class="syntax-punctuation">&lt;<span class="syntax-type">BinMetadata</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#62"
             id="62"
@@ -479,19 +480,19 @@
             id="63"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >63</a>// A mapping from the bin index to the metadata index within the `bin_metadata`
+        >63</a><span class="syntax-comment syntax-comment-line">// A mapping from the bin index to the metadata index within the `bin_metadata`</span>
 <a
             href="#64"
             id="64"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >64</a>// buffer.
+        >64</a><span class="syntax-comment syntax-comment-line">// buffer.</span>
 <a
             href="#65"
             id="65"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >65</a>@group(0) @binding(4) var&#60;storage&#62; bin_index_to_bin_metadata_index: array&#60;u32&#62;;
+        >65</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">4</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span><span class="syntax-punctuation">&lt;<span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-modifier">storage</span>&gt;</span> <span class="syntax-variable">bin_index_to_bin_metadata_index</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">array</span><span class="syntax-punctuation">&lt;<span class="syntax-type">u32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#66"
             id="66"
@@ -503,49 +504,49 @@
             id="67"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >67</a>@compute
+        >67</a><span class="syntax-attribute">@<span class="syntax-attribute">compute</span></span>
 <a
             href="#68"
             id="68"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >68</a>@workgroup_size(64)
+        >68</a><span class="syntax-attribute">@<span class="syntax-attribute">workgroup_size</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">64</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#69"
             id="69"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >69</a>fn main(@builtin(global_invocation_id) global_invocation_id: vec3&#60;u32&#62;) {
+        >69</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">main</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-attribute">@<span class="syntax-attribute">builtin</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-builtin">global_invocation_id</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-variable syntax-variable-parameter">global_invocation_id</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">u32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#70"
             id="70"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >70</a>    // Figure out which instance we&#39;re looking at.
+        >70</a>    <span class="syntax-comment syntax-comment-line">// Figure out which instance we&#39;re looking at.</span>
 <a
             href="#71"
             id="71"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >71</a>    let global_id = global_invocation_id.x;
+        >71</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">global_id</span> <span class="syntax-operator">=</span> <span class="syntax-variable">global_invocation_id</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">x</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#72"
             id="72"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >72</a>    if (global_id &#62;= bin_unpacking_metadata.binned_mesh_instance_count) {
+        >72</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">global_id</span> <span class="syntax-operator">&gt;=</span> <span class="syntax-variable">bin_unpacking_metadata</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">binned_mesh_instance_count</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#73"
             id="73"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >73</a>        return;
+        >73</a>        <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#74"
             id="74"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >74</a>    }
+        >74</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#75"
             id="75"
@@ -557,19 +558,19 @@
             id="76"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >76</a>    // Unpack the `BinnedMeshInstance`.
+        >76</a>    <span class="syntax-comment syntax-comment-line">// Unpack the `BinnedMeshInstance`.</span>
 <a
             href="#77"
             id="77"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >77</a>    let input_uniform_index = binned_mesh_instances[global_id].input_uniform_index;
+        >77</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">input_uniform_index</span> <span class="syntax-operator">=</span> <span class="syntax-variable">binned_mesh_instances</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">global_id</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">input_uniform_index</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#78"
             id="78"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >78</a>    let bin_index = binned_mesh_instances[global_id].bin_index;
+        >78</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">bin_index</span> <span class="syntax-operator">=</span> <span class="syntax-variable">binned_mesh_instances</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">global_id</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">bin_index</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#79"
             id="79"
@@ -581,25 +582,25 @@
             id="80"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >80</a>    // Look up the indirect parameters index for this bin, relative to the first
+        >80</a>    <span class="syntax-comment syntax-comment-line">// Look up the indirect parameters index for this bin, relative to the first</span>
 <a
             href="#81"
             id="81"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >81</a>    // indirect parameters offset for this batch set.
+        >81</a>    <span class="syntax-comment syntax-comment-line">// indirect parameters offset for this batch set.</span>
 <a
             href="#82"
             id="82"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >82</a>    let bin_metadata_index = bin_index_to_bin_metadata_index[bin_index];
+        >82</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">bin_metadata_index</span> <span class="syntax-operator">=</span> <span class="syntax-variable">bin_index_to_bin_metadata_index</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">bin_index</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#83"
             id="83"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >83</a>    let indirect_parameters_offset = bin_metadata[bin_metadata_index].indirect_parameters_offset;
+        >83</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">indirect_parameters_offset</span> <span class="syntax-operator">=</span> <span class="syntax-variable">bin_metadata</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">bin_metadata_index</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">indirect_parameters_offset</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#84"
             id="84"
@@ -611,13 +612,13 @@
             id="85"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >85</a>    // Determine the location we should write the work item to.
+        >85</a>    <span class="syntax-comment syntax-comment-line">// Determine the location we should write the work item to.</span>
 <a
             href="#86"
             id="86"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >86</a>    let output_index = bin_unpacking_metadata.base_output_work_item_index + global_id;
+        >86</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">output_index</span> <span class="syntax-operator">=</span> <span class="syntax-variable">bin_unpacking_metadata</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">base_output_work_item_index</span> <span class="syntax-operator">+</span> <span class="syntax-variable">global_id</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#87"
             id="87"
@@ -629,31 +630,31 @@
             id="88"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >88</a>    // Write out the resulting work item.
+        >88</a>    <span class="syntax-comment syntax-comment-line">// Write out the resulting work item.</span>
 <a
             href="#89"
             id="89"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >89</a>    preprocess_work_items[output_index].input_index = input_uniform_index;
+        >89</a>    <span class="syntax-variable">preprocess_work_items</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">output_index</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">input_index</span> <span class="syntax-operator">=</span> <span class="syntax-variable">input_uniform_index</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#90"
             id="90"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >90</a>    preprocess_work_items[output_index].output_or_indirect_parameters_index =
+        >90</a>    <span class="syntax-variable">preprocess_work_items</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">output_index</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">output_or_indirect_parameters_index</span> <span class="syntax-operator">=</span>
 <a
             href="#91"
             id="91"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >91</a>        bin_unpacking_metadata.base_indirect_parameters_index + indirect_parameters_offset;
+        >91</a>        <span class="syntax-variable">bin_unpacking_metadata</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">base_indirect_parameters_index</span> <span class="syntax-operator">+</span> <span class="syntax-variable">indirect_parameters_offset</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#92"
             id="92"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >92</a>}</code>
+        >92</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span></code>
 </pre>
 
         </div>

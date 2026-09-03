@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="../../../../-/static/css/themes.css">
     <link rel="stylesheet" href="../../../../-/static/css/styles.css">
     <link rel="stylesheet" href="../../../../-/static/css/icons.css">
+    <link rel="stylesheet" href="../../../../-/static/css/syntax.css">
     <script src="../../../../-/static/js/settings.js"></script>
 
     
@@ -107,25 +108,25 @@
             id="1"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >1</a>// A library containing a 1D Gaussian blur kernel.
+        >1</a><span class="syntax-comment syntax-comment-line">// A library containing a 1D Gaussian blur kernel.</span>
 <a
             href="#2"
             id="2"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >2</a>//
+        >2</a><span class="syntax-comment syntax-comment-line">//</span>
 <a
             href="#3"
             id="3"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >3</a>// This is used by depth of field, but you can also use it in custom
+        >3</a><span class="syntax-comment syntax-comment-line">// This is used by depth of field, but you can also use it in custom</span>
 <a
             href="#4"
             id="4"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >4</a>// postprocessing passes.
+        >4</a><span class="syntax-comment syntax-comment-line">// postprocessing passes.</span>
 <a
             href="#5"
             id="5"
@@ -137,133 +138,133 @@
             id="6"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >6</a>// Performs a single direction of the separable Gaussian blur kernel.
+        >6</a><span class="syntax-comment syntax-comment-line">// Performs a single direction of the separable Gaussian blur kernel.</span>
 <a
             href="#7"
             id="7"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >7</a>//
+        >7</a><span class="syntax-comment syntax-comment-line">//</span>
 <a
             href="#8"
             id="8"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >8</a>// * `color_texture` is the texture to blur.
+        >8</a><span class="syntax-comment syntax-comment-line">// * `color_texture` is the texture to blur.</span>
 <a
             href="#9"
             id="9"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >9</a>//
+        >9</a><span class="syntax-comment syntax-comment-line">//</span>
 <a
             href="#10"
             id="10"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >10</a>// * `color_texture_sampler` is a sampler to sample the texture. It must have
+        >10</a><span class="syntax-comment syntax-comment-line">// * `color_texture_sampler` is a sampler to sample the texture. It must have</span>
 <a
             href="#11"
             id="11"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >11</a>//   linear filtering for both minification and magnification.
+        >11</a><span class="syntax-comment syntax-comment-line">//   linear filtering for both minification and magnification.</span>
 <a
             href="#12"
             id="12"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >12</a>//
+        >12</a><span class="syntax-comment syntax-comment-line">//</span>
 <a
             href="#13"
             id="13"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >13</a>// * `frag_coord` is the screen-space pixel coordinate of the fragment (i.e. the
+        >13</a><span class="syntax-comment syntax-comment-line">// * `frag_coord` is the screen-space pixel coordinate of the fragment (i.e. the</span>
 <a
             href="#14"
             id="14"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >14</a>//   `position` input to the fragment).
+        >14</a><span class="syntax-comment syntax-comment-line">//   `position` input to the fragment).</span>
 <a
             href="#15"
             id="15"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >15</a>//
+        >15</a><span class="syntax-comment syntax-comment-line">//</span>
 <a
             href="#16"
             id="16"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >16</a>// * `coc` is the diameter (not the radius) of the circle of confusion for this
+        >16</a><span class="syntax-comment syntax-comment-line">// * `coc` is the diameter (not the radius) of the circle of confusion for this</span>
 <a
             href="#17"
             id="17"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >17</a>//   fragment.
+        >17</a><span class="syntax-comment syntax-comment-line">//   fragment.</span>
 <a
             href="#18"
             id="18"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >18</a>//
+        >18</a><span class="syntax-comment syntax-comment-line">//</span>
 <a
             href="#19"
             id="19"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >19</a>// * `frag_offset` is the vector, in screen-space units, from one sample to the
+        >19</a><span class="syntax-comment syntax-comment-line">// * `frag_offset` is the vector, in screen-space units, from one sample to the</span>
 <a
             href="#20"
             id="20"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >20</a>//   next. For a horizontal blur this will be `vec2(1.0, 0.0)`; for a vertical
+        >20</a><span class="syntax-comment syntax-comment-line">//   next. For a horizontal blur this will be `vec2(1.0, 0.0)`; for a vertical</span>
 <a
             href="#21"
             id="21"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >21</a>//   blur this will be `vec2(0.0, 1.0)`.
+        >21</a><span class="syntax-comment syntax-comment-line">//   blur this will be `vec2(0.0, 1.0)`.</span>
 <a
             href="#22"
             id="22"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >22</a>//
+        >22</a><span class="syntax-comment syntax-comment-line">//</span>
 <a
             href="#23"
             id="23"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >23</a>// Returns the resulting color of the fragment.
+        >23</a><span class="syntax-comment syntax-comment-line">// Returns the resulting color of the fragment.</span>
 <a
             href="#24"
             id="24"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >24</a>fn gaussian_blur(color_texture: texture_2d&#60;f32&#62;, color_texture_sampler: sampler, frag_coord: vec4&#60;f32&#62;, coc: f32, frag_offset: vec2&#60;f32&#62;) -&#62; vec4&#60;f32&#62; {
+        >24</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">gaussian_blur</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">color_texture</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">texture_2d</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">color_texture_sampler</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">sampler</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">frag_coord</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">coc</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">frag_offset</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-type">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#25"
             id="25"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >25</a>    // Usually σ (the standard deviation) is half the radius, and the radius is
+        >25</a>    <span class="syntax-comment syntax-comment-line">// Usually σ (the standard deviation) is half the radius, and the radius is</span>
 <a
             href="#26"
             id="26"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >26</a>    // half the CoC. So we multiply by 0.25.
+        >26</a>    <span class="syntax-comment syntax-comment-line">// half the CoC. So we multiply by 0.25.</span>
 <a
             href="#27"
             id="27"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >27</a>    let sigma = coc * 0.25;
+        >27</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">sigma</span> <span class="syntax-operator">=</span> <span class="syntax-variable">coc</span> <span class="syntax-operator">*</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.25</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#28"
             id="28"
@@ -275,31 +276,31 @@
             id="29"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >29</a>    // 1.5σ is a good, somewhat aggressive default for support—the number of
+        >29</a>    <span class="syntax-comment syntax-comment-line">// 1.5σ is a good, somewhat aggressive default for support—the number of</span>
 <a
             href="#30"
             id="30"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >30</a>    // texels on each side of the center that we process.
+        >30</a>    <span class="syntax-comment syntax-comment-line">// texels on each side of the center that we process.</span>
 <a
             href="#31"
             id="31"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >31</a>    let support = i32(ceil(sigma * 1.5));
+        >31</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">support</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">i32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">ceil</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">sigma</span> <span class="syntax-operator">*</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.5</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#32"
             id="32"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >32</a>    let uv = frag_coord.xy / vec2&#60;f32&#62;(textureDimensions(color_texture));
+        >32</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">uv</span> <span class="syntax-operator">=</span> <span class="syntax-variable">frag_coord</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">xy</span> <span class="syntax-operator">/</span> <span class="syntax-function syntax-function-call">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">textureDimensions</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">color_texture</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#33"
             id="33"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >33</a>    let offset = frag_offset / vec2&#60;f32&#62;(textureDimensions(color_texture));
+        >33</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">offset</span> <span class="syntax-operator">=</span> <span class="syntax-variable">frag_offset</span> <span class="syntax-operator">/</span> <span class="syntax-function syntax-function-call">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">textureDimensions</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">color_texture</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#34"
             id="34"
@@ -311,25 +312,25 @@
             id="35"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >35</a>    // The probability density function of the Gaussian blur is (up to constant factors) `exp(-1 / 2σ² *
+        >35</a>    <span class="syntax-comment syntax-comment-line">// The probability density function of the Gaussian blur is (up to constant factors) `exp(-1 / 2σ² *</span>
 <a
             href="#36"
             id="36"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >36</a>    // x²). We precalculate the constant factor here to avoid having to
+        >36</a>    <span class="syntax-comment syntax-comment-line">// x²). We precalculate the constant factor here to avoid having to</span>
 <a
             href="#37"
             id="37"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >37</a>    // calculate it in the inner loop.
+        >37</a>    <span class="syntax-comment syntax-comment-line">// calculate it in the inner loop.</span>
 <a
             href="#38"
             id="38"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >38</a>    let exp_factor = -1.0 / (2.0 * sigma * sigma);
+        >38</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">exp_factor</span> <span class="syntax-operator">=</span> <span class="syntax-operator">-</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span> <span class="syntax-operator">/</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">2.0</span> <span class="syntax-operator">*</span> <span class="syntax-variable">sigma</span> <span class="syntax-operator">*</span> <span class="syntax-variable">sigma</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#39"
             id="39"
@@ -341,139 +342,139 @@
             id="40"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >40</a>    // Accumulate samples on both sides of the current texel. Go two at a time,
+        >40</a>    <span class="syntax-comment syntax-comment-line">// Accumulate samples on both sides of the current texel. Go two at a time,</span>
 <a
             href="#41"
             id="41"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >41</a>    // taking advantage of bilinear filtering.
+        >41</a>    <span class="syntax-comment syntax-comment-line">// taking advantage of bilinear filtering.</span>
 <a
             href="#42"
             id="42"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >42</a>    var sum = textureSampleLevel(color_texture, color_texture_sampler, uv, 0.0).rgb;
+        >42</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">sum</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">textureSampleLevel</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">color_texture</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">color_texture_sampler</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">uv</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">rgb</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#43"
             id="43"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >43</a>    var weight_sum = 1.0;
+        >43</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">weight_sum</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#44"
             id="44"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >44</a>    for (var i = 1; i &#60;= support; i += 2) {
+        >44</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-repeat">for</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">i</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span> <span class="syntax-variable">i</span> <span class="syntax-operator">&lt;=</span> <span class="syntax-variable">support</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span> <span class="syntax-variable">i</span> <span class="syntax-operator">+=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">2</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#45"
             id="45"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >45</a>        // This is a well-known trick to reduce the number of needed texture
+        >45</a>        <span class="syntax-comment syntax-comment-line">// This is a well-known trick to reduce the number of needed texture</span>
 <a
             href="#46"
             id="46"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >46</a>        // samples by a factor of two. We seek to accumulate two adjacent
+        >46</a>        <span class="syntax-comment syntax-comment-line">// samples by a factor of two. We seek to accumulate two adjacent</span>
 <a
             href="#47"
             id="47"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >47</a>        // samples c₀ and c₁ with weights w₀ and w₁ respectively, with a single
+        >47</a>        <span class="syntax-comment syntax-comment-line">// samples c₀ and c₁ with weights w₀ and w₁ respectively, with a single</span>
 <a
             href="#48"
             id="48"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >48</a>        // texture sample at a carefully chosen location. Observe that:
+        >48</a>        <span class="syntax-comment syntax-comment-line">// texture sample at a carefully chosen location. Observe that:</span>
 <a
             href="#49"
             id="49"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >49</a>        //
+        >49</a>        <span class="syntax-comment syntax-comment-line">//</span>
 <a
             href="#50"
             id="50"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >50</a>        //     k ⋅ lerp(c₀, c₁, t) = w₀⋅c₀ + w₁⋅c₁
+        >50</a>        <span class="syntax-comment syntax-comment-line">//     k ⋅ lerp(c₀, c₁, t) = w₀⋅c₀ + w₁⋅c₁</span>
 <a
             href="#51"
             id="51"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >51</a>        //
+        >51</a>        <span class="syntax-comment syntax-comment-line">//</span>
 <a
             href="#52"
             id="52"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >52</a>        //                              w₁
+        >52</a>        <span class="syntax-comment syntax-comment-line">//                              w₁</span>
 <a
             href="#53"
             id="53"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >53</a>        //     if k = w₀ + w₁ and t = ───────
+        >53</a>        <span class="syntax-comment syntax-comment-line">//     if k = w₀ + w₁ and t = ───────</span>
 <a
             href="#54"
             id="54"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >54</a>        //                            w₀ + w₁
+        >54</a>        <span class="syntax-comment syntax-comment-line">//                            w₀ + w₁</span>
 <a
             href="#55"
             id="55"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >55</a>        //
+        >55</a>        <span class="syntax-comment syntax-comment-line">//</span>
 <a
             href="#56"
             id="56"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >56</a>        // Therefore, if we sample at a distance of t = w₁ / (w₀ + w₁) texels in
+        >56</a>        <span class="syntax-comment syntax-comment-line">// Therefore, if we sample at a distance of t = w₁ / (w₀ + w₁) texels in</span>
 <a
             href="#57"
             id="57"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >57</a>        // between the two texel centers and scale by k = w₀ + w₁ afterward, we
+        >57</a>        <span class="syntax-comment syntax-comment-line">// between the two texel centers and scale by k = w₀ + w₁ afterward, we</span>
 <a
             href="#58"
             id="58"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >58</a>        // effectively evaluate w₀⋅c₀ + w₁⋅c₁ with a single texture lookup.
+        >58</a>        <span class="syntax-comment syntax-comment-line">// effectively evaluate w₀⋅c₀ + w₁⋅c₁ with a single texture lookup.</span>
 <a
             href="#59"
             id="59"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >59</a>        let w0 = exp(exp_factor * f32(i) * f32(i));
+        >59</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">w0</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">exp</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">exp_factor</span> <span class="syntax-operator">*</span> <span class="syntax-function syntax-function-call">f32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">i</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-function syntax-function-call">f32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">i</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#60"
             id="60"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >60</a>        let w1 = exp(exp_factor * f32(i + 1) * f32(i + 1));
+        >60</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">w1</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">exp</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">exp_factor</span> <span class="syntax-operator">*</span> <span class="syntax-function syntax-function-call">f32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">i</span> <span class="syntax-operator">+</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-function syntax-function-call">f32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">i</span> <span class="syntax-operator">+</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#61"
             id="61"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >61</a>        let uv_offset = offset * (f32(i) + w1 / (w0 + w1));
+        >61</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">uv_offset</span> <span class="syntax-operator">=</span> <span class="syntax-variable">offset</span> <span class="syntax-operator">*</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">f32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">i</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">+</span> <span class="syntax-variable">w1</span> <span class="syntax-operator">/</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">w0</span> <span class="syntax-operator">+</span> <span class="syntax-variable">w1</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#62"
             id="62"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >62</a>        let weight = w0 + w1;
+        >62</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">weight</span> <span class="syntax-operator">=</span> <span class="syntax-variable">w0</span> <span class="syntax-operator">+</span> <span class="syntax-variable">w1</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#63"
             id="63"
@@ -485,37 +486,37 @@
             id="64"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >64</a>        sum += (
+        >64</a>        <span class="syntax-variable">sum</span> <span class="syntax-operator">+=</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span>
 <a
             href="#65"
             id="65"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >65</a>            textureSampleLevel(color_texture, color_texture_sampler, uv + uv_offset, 0.0).rgb +
+        >65</a>            <span class="syntax-function syntax-function-call">textureSampleLevel</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">color_texture</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">color_texture_sampler</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">uv</span> <span class="syntax-operator">+</span> <span class="syntax-variable">uv_offset</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">rgb</span> <span class="syntax-operator">+</span>
 <a
             href="#66"
             id="66"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >66</a>            textureSampleLevel(color_texture, color_texture_sampler, uv - uv_offset, 0.0).rgb
+        >66</a>            <span class="syntax-function syntax-function-call">textureSampleLevel</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">color_texture</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">color_texture_sampler</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">uv</span> <span class="syntax-operator">-</span> <span class="syntax-variable">uv_offset</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">rgb</span>
 <a
             href="#67"
             id="67"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >67</a>        ) * weight;
+        >67</a>        <span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-variable">weight</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#68"
             id="68"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >68</a>        weight_sum += weight * 2.0;
+        >68</a>        <span class="syntax-variable">weight_sum</span> <span class="syntax-operator">+=</span> <span class="syntax-variable">weight</span> <span class="syntax-operator">*</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">2.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#69"
             id="69"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >69</a>    }
+        >69</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#70"
             id="70"
@@ -527,13 +528,13 @@
             id="71"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >71</a>    return vec4(sum / weight_sum, 1.0);
+        >71</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-function syntax-function-call">vec4</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">sum</span> <span class="syntax-operator">/</span> <span class="syntax-variable">weight_sum</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#72"
             id="72"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >72</a>}
+        >72</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#73"
             id="73"

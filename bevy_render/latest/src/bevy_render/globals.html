@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="../../../../-/static/css/themes.css">
     <link rel="stylesheet" href="../../../../-/static/css/styles.css">
     <link rel="stylesheet" href="../../../../-/static/css/icons.css">
+    <link rel="stylesheet" href="../../../../-/static/css/syntax.css">
     <script src="../../../../-/static/js/settings.js"></script>
 
     
@@ -99,79 +100,79 @@
             id="1"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >1</a>struct Globals {
+        >1</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">struct</span> <span class="syntax-type">Globals</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#2"
             id="2"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >2</a>    // The time since startup in seconds
+        >2</a>    <span class="syntax-comment syntax-comment-line">// The time since startup in seconds</span>
 <a
             href="#3"
             id="3"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >3</a>    // Wraps to 0 after 1 hour.
+        >3</a>    <span class="syntax-comment syntax-comment-line">// Wraps to 0 after 1 hour.</span>
 <a
             href="#4"
             id="4"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >4</a>    time: f32,
+        >4</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">time</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#5"
             id="5"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >5</a>    // The delta time since the previous frame in seconds
+        >5</a>    <span class="syntax-comment syntax-comment-line">// The delta time since the previous frame in seconds</span>
 <a
             href="#6"
             id="6"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >6</a>    delta_time: f32,
+        >6</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">delta_time</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#7"
             id="7"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >7</a>    // Frame count since the start of the app.
+        >7</a>    <span class="syntax-comment syntax-comment-line">// Frame count since the start of the app.</span>
 <a
             href="#8"
             id="8"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >8</a>    // It wraps to zero when it reaches the maximum value of a u32.
+        >8</a>    <span class="syntax-comment syntax-comment-line">// It wraps to zero when it reaches the maximum value of a u32.</span>
 <a
             href="#9"
             id="9"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >9</a>    frame_count: u32,
+        >9</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">frame_count</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#10"
             id="10"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >10</a>    @if(SIXTEEN_BYTE_ALIGNMENT)
+        >10</a>    <span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">SIXTEEN_BYTE_ALIGNMENT</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#11"
             id="11"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >11</a>    // WebGL2 structs must be 16 byte aligned.
+        >11</a>    <span class="syntax-comment syntax-comment-line">// WebGL2 structs must be 16 byte aligned.</span>
 <a
             href="#12"
             id="12"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >12</a>    _webgl2_padding: f32
+        >12</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">_webgl2_padding</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span>
 <a
             href="#13"
             id="13"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >13</a>};</code>
+        >13</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span></code>
 </pre>
 
         </div>

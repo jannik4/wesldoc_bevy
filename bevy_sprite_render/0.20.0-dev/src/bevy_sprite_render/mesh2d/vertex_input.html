@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="../../../../../-/static/css/themes.css">
     <link rel="stylesheet" href="../../../../../-/static/css/styles.css">
     <link rel="stylesheet" href="../../../../../-/static/css/icons.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/syntax.css">
     <script src="../../../../../-/static/js/settings.js"></script>
 
     
@@ -102,7 +103,7 @@
             id="1"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >1</a>import package::mesh2d::functions as mesh_functions;
+        >1</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">package</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">mesh2d</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">functions</span> <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">as</span> <span class="syntax-namespace">mesh_functions</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#2"
             id="2"
@@ -114,79 +115,79 @@
             id="3"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >3</a>struct UncompressedVertex {
+        >3</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">struct</span> <span class="syntax-type">UncompressedVertex</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#4"
             id="4"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >4</a>    @builtin(instance_index) instance_index: u32,
+        >4</a>    <span class="syntax-attribute">@<span class="syntax-attribute">builtin</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-builtin">instance_index</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-variable syntax-variable-other syntax-variable-other-member">instance_index</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#5"
             id="5"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >5</a>    @if(VERTEX_POSITIONS)
+        >5</a>    <span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">VERTEX_POSITIONS</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#6"
             id="6"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >6</a>    @location(0) position: vec3&#60;f32&#62;,
+        >6</a>    <span class="syntax-attribute">@<span class="syntax-attribute">location</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-variable syntax-variable-other syntax-variable-other-member">position</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#7"
             id="7"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >7</a>    @if(VERTEX_NORMALS)
+        >7</a>    <span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">VERTEX_NORMALS</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#8"
             id="8"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >8</a>    @location(1) normal: vec3&#60;f32&#62;,
+        >8</a>    <span class="syntax-attribute">@<span class="syntax-attribute">location</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-variable syntax-variable-other syntax-variable-other-member">normal</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#9"
             id="9"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >9</a>    @if(VERTEX_UVS)
+        >9</a>    <span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">VERTEX_UVS</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#10"
             id="10"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >10</a>    @location(2) uv: vec2&#60;f32&#62;,
+        >10</a>    <span class="syntax-attribute">@<span class="syntax-attribute">location</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">2</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-variable syntax-variable-other syntax-variable-other-member">uv</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#11"
             id="11"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >11</a>    @if(VERTEX_TANGENTS)
+        >11</a>    <span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">VERTEX_TANGENTS</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#12"
             id="12"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >12</a>    @location(3) tangent: vec4&#60;f32&#62;,
+        >12</a>    <span class="syntax-attribute">@<span class="syntax-attribute">location</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">3</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-variable syntax-variable-other syntax-variable-other-member">tangent</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#13"
             id="13"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >13</a>    @if(VERTEX_COLORS)
+        >13</a>    <span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">VERTEX_COLORS</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#14"
             id="14"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >14</a>    @location(4) color: vec4&#60;f32&#62;,
+        >14</a>    <span class="syntax-attribute">@<span class="syntax-attribute">location</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">4</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-variable syntax-variable-other syntax-variable-other-member">color</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#15"
             id="15"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >15</a>};
+        >15</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#16"
             id="16"
@@ -198,127 +199,127 @@
             id="17"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >17</a>struct Vertex {
+        >17</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">struct</span> <span class="syntax-type">Vertex</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#18"
             id="18"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >18</a>    @builtin(instance_index) instance_index: u32,
+        >18</a>    <span class="syntax-attribute">@<span class="syntax-attribute">builtin</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-builtin">instance_index</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-variable syntax-variable-other syntax-variable-other-member">instance_index</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#19"
             id="19"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >19</a>    @if(VERTEX_POSITIONS &#38;&#38; VERTEX_POSITIONS_COMPRESSED)
+        >19</a>    <span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">VERTEX_POSITIONS</span> <span class="syntax-operator">&amp;&amp;</span> <span class="syntax-constant">VERTEX_POSITIONS_COMPRESSED</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#20"
             id="20"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >20</a>    @location(0) compressed_position: vec4&#60;f32&#62;,
+        >20</a>    <span class="syntax-attribute">@<span class="syntax-attribute">location</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-variable syntax-variable-other syntax-variable-other-member">compressed_position</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#21"
             id="21"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >21</a>    @if(VERTEX_POSITIONS &#38;&#38; !VERTEX_POSITIONS_COMPRESSED)
+        >21</a>    <span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">VERTEX_POSITIONS</span> <span class="syntax-operator">&amp;&amp;</span> <span class="syntax-operator">!</span><span class="syntax-constant">VERTEX_POSITIONS_COMPRESSED</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#22"
             id="22"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >22</a>    @location(0) position: vec3&#60;f32&#62;,
+        >22</a>    <span class="syntax-attribute">@<span class="syntax-attribute">location</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-variable syntax-variable-other syntax-variable-other-member">position</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#23"
             id="23"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >23</a>    @if(VERTEX_NORMALS &#38;&#38; VERTEX_NORMALS_COMPRESSED)
+        >23</a>    <span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">VERTEX_NORMALS</span> <span class="syntax-operator">&amp;&amp;</span> <span class="syntax-constant">VERTEX_NORMALS_COMPRESSED</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#24"
             id="24"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >24</a>    @location(1) compressed_normal: vec2&#60;f32&#62;,
+        >24</a>    <span class="syntax-attribute">@<span class="syntax-attribute">location</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-variable syntax-variable-other syntax-variable-other-member">compressed_normal</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#25"
             id="25"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >25</a>    @if(VERTEX_NORMALS &#38;&#38; !VERTEX_NORMALS_COMPRESSED)
+        >25</a>    <span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">VERTEX_NORMALS</span> <span class="syntax-operator">&amp;&amp;</span> <span class="syntax-operator">!</span><span class="syntax-constant">VERTEX_NORMALS_COMPRESSED</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#26"
             id="26"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >26</a>    @location(1) normal: vec3&#60;f32&#62;,
+        >26</a>    <span class="syntax-attribute">@<span class="syntax-attribute">location</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-variable syntax-variable-other syntax-variable-other-member">normal</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#27"
             id="27"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >27</a>    @if(VERTEX_UVS &#38;&#38; VERTEX_UVS_COMPRESSED)
+        >27</a>    <span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">VERTEX_UVS</span> <span class="syntax-operator">&amp;&amp;</span> <span class="syntax-constant">VERTEX_UVS_COMPRESSED</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#28"
             id="28"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >28</a>    @location(2) compressed_uv: vec2&#60;f32&#62;,
+        >28</a>    <span class="syntax-attribute">@<span class="syntax-attribute">location</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">2</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-variable syntax-variable-other syntax-variable-other-member">compressed_uv</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#29"
             id="29"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >29</a>    @if(VERTEX_UVS &#38;&#38; !VERTEX_UVS_COMPRESSED)
+        >29</a>    <span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">VERTEX_UVS</span> <span class="syntax-operator">&amp;&amp;</span> <span class="syntax-operator">!</span><span class="syntax-constant">VERTEX_UVS_COMPRESSED</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#30"
             id="30"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >30</a>    @location(2) uv: vec2&#60;f32&#62;,
+        >30</a>    <span class="syntax-attribute">@<span class="syntax-attribute">location</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">2</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-variable syntax-variable-other syntax-variable-other-member">uv</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#31"
             id="31"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >31</a>    @if(VERTEX_TANGENTS &#38;&#38; VERTEX_TANGENTS_COMPRESSED)
+        >31</a>    <span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">VERTEX_TANGENTS</span> <span class="syntax-operator">&amp;&amp;</span> <span class="syntax-constant">VERTEX_TANGENTS_COMPRESSED</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#32"
             id="32"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >32</a>    @location(3) compressed_tangent: vec2&#60;f32&#62;,
+        >32</a>    <span class="syntax-attribute">@<span class="syntax-attribute">location</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">3</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-variable syntax-variable-other syntax-variable-other-member">compressed_tangent</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#33"
             id="33"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >33</a>    @if(VERTEX_TANGENTS &#38;&#38; !VERTEX_TANGENTS_COMPRESSED)
+        >33</a>    <span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">VERTEX_TANGENTS</span> <span class="syntax-operator">&amp;&amp;</span> <span class="syntax-operator">!</span><span class="syntax-constant">VERTEX_TANGENTS_COMPRESSED</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#34"
             id="34"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >34</a>    @location(3) tangent: vec4&#60;f32&#62;,
+        >34</a>    <span class="syntax-attribute">@<span class="syntax-attribute">location</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">3</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-variable syntax-variable-other syntax-variable-other-member">tangent</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#35"
             id="35"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >35</a>    @if(VERTEX_COLORS)
+        >35</a>    <span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">VERTEX_COLORS</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#36"
             id="36"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >36</a>    @location(4) color: vec4&#60;f32&#62;,
+        >36</a>    <span class="syntax-attribute">@<span class="syntax-attribute">location</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">4</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-variable syntax-variable-other syntax-variable-other-member">color</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#37"
             id="37"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >37</a>};
+        >37</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#38"
             id="38"
@@ -330,169 +331,169 @@
             id="39"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >39</a>// The instance_index parameter must match vertex_in.instance_index. This is a work around for a wgpu dx12 bug.
+        >39</a><span class="syntax-comment syntax-comment-line">// The instance_index parameter must match vertex_in.instance_index. This is a work around for a wgpu dx12 bug.</span>
 <a
             href="#40"
             id="40"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >40</a>// See https://github.com/gfx-rs/naga/issues/2416
+        >40</a><span class="syntax-comment syntax-comment-line">// See https://github.com/gfx-rs/naga/issues/2416</span>
 <a
             href="#41"
             id="41"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >41</a>fn decompress_vertex(vertex_in: Vertex, instance_index: u32) -&#62; UncompressedVertex {
+        >41</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">decompress_vertex</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">vertex_in</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">Vertex</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">instance_index</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-type">UncompressedVertex</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#42"
             id="42"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >42</a>    let mesh_metadata = mesh_functions::get_metadata(instance_index);
+        >42</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">mesh_metadata</span> <span class="syntax-operator">=</span> <span class="syntax-namespace">mesh_functions</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-function syntax-function-call">get_metadata</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">instance_index</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#43"
             id="43"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >43</a>    var uncompressed_vertex: UncompressedVertex;
+        >43</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">uncompressed_vertex</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">UncompressedVertex</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#44"
             id="44"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >44</a>    uncompressed_vertex.instance_index = instance_index;
+        >44</a>    <span class="syntax-variable">uncompressed_vertex</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">instance_index</span> <span class="syntax-operator">=</span> <span class="syntax-variable">instance_index</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#45"
             id="45"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >45</a>    @if(VERTEX_POSITIONS_COMPRESSED)
+        >45</a>    <span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">VERTEX_POSITIONS_COMPRESSED</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#46"
             id="46"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >46</a>    uncompressed_vertex.position = bevy_render::utils::decompress_vertex_position(vertex_in.compressed_position, mesh_metadata.aabb_center, mesh_metadata.aabb_half_extents);
+        >46</a>    <span class="syntax-variable">uncompressed_vertex</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">position</span> <span class="syntax-operator">=</span> <span class="syntax-namespace">bevy_render</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">utils</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-function syntax-function-call">decompress_vertex_position</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">vertex_in</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">compressed_position</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">mesh_metadata</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">aabb_center</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">mesh_metadata</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">aabb_half_extents</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#47"
             id="47"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >47</a>    @else
+        >47</a>    <span class="syntax-attribute">@<span class="syntax-attribute">else</span></span>
 <a
             href="#48"
             id="48"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >48</a>    uncompressed_vertex.position = vertex_in.position;
+        >48</a>    <span class="syntax-variable">uncompressed_vertex</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">position</span> <span class="syntax-operator">=</span> <span class="syntax-variable">vertex_in</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">position</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#49"
             id="49"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >49</a>    @if(VERTEX_NORMALS &#38;&#38; VERTEX_NORMALS_COMPRESSED)
+        >49</a>    <span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">VERTEX_NORMALS</span> <span class="syntax-operator">&amp;&amp;</span> <span class="syntax-constant">VERTEX_NORMALS_COMPRESSED</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#50"
             id="50"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >50</a>    uncompressed_vertex.normal = bevy_render::utils::decompress_vertex_normal(vertex_in.compressed_normal);
+        >50</a>    <span class="syntax-variable">uncompressed_vertex</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">normal</span> <span class="syntax-operator">=</span> <span class="syntax-namespace">bevy_render</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">utils</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-function syntax-function-call">decompress_vertex_normal</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">vertex_in</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">compressed_normal</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#51"
             id="51"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >51</a>    @if(VERTEX_NORMALS &#38;&#38; !VERTEX_NORMALS_COMPRESSED)
+        >51</a>    <span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">VERTEX_NORMALS</span> <span class="syntax-operator">&amp;&amp;</span> <span class="syntax-operator">!</span><span class="syntax-constant">VERTEX_NORMALS_COMPRESSED</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#52"
             id="52"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >52</a>    uncompressed_vertex.normal = vertex_in.normal;
+        >52</a>    <span class="syntax-variable">uncompressed_vertex</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">normal</span> <span class="syntax-operator">=</span> <span class="syntax-variable">vertex_in</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">normal</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#53"
             id="53"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >53</a>    @if(VERTEX_UVS &#38;&#38; VERTEX_UVS_COMPRESSED)
+        >53</a>    <span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">VERTEX_UVS</span> <span class="syntax-operator">&amp;&amp;</span> <span class="syntax-constant">VERTEX_UVS_COMPRESSED</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#54"
             id="54"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >54</a>    let uv_min_and_extents = mesh_metadata.uv_channels_min_and_extents[0];
+        >54</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">uv_min_and_extents</span> <span class="syntax-operator">=</span> <span class="syntax-variable">mesh_metadata</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">uv_channels_min_and_extents</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#55"
             id="55"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >55</a>    @if(VERTEX_UVS &#38;&#38; VERTEX_UVS_COMPRESSED)
+        >55</a>    <span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">VERTEX_UVS</span> <span class="syntax-operator">&amp;&amp;</span> <span class="syntax-constant">VERTEX_UVS_COMPRESSED</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#56"
             id="56"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >56</a>    uncompressed_vertex.uv = bevy_render::utils::decompress_vertex_uv(vertex_in.compressed_uv, uv_min_and_extents);
+        >56</a>    <span class="syntax-variable">uncompressed_vertex</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">uv</span> <span class="syntax-operator">=</span> <span class="syntax-namespace">bevy_render</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">utils</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-function syntax-function-call">decompress_vertex_uv</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">vertex_in</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">compressed_uv</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">uv_min_and_extents</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#57"
             id="57"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >57</a>    @if(VERTEX_UVS &#38;&#38; !VERTEX_UVS_COMPRESSED)
+        >57</a>    <span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">VERTEX_UVS</span> <span class="syntax-operator">&amp;&amp;</span> <span class="syntax-operator">!</span><span class="syntax-constant">VERTEX_UVS_COMPRESSED</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#58"
             id="58"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >58</a>    uncompressed_vertex.uv = vertex_in.uv;
+        >58</a>    <span class="syntax-variable">uncompressed_vertex</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">uv</span> <span class="syntax-operator">=</span> <span class="syntax-variable">vertex_in</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">uv</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#59"
             id="59"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >59</a>    @if(VERTEX_TANGENTS &#38;&#38; VERTEX_TANGENTS_COMPRESSED)
+        >59</a>    <span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">VERTEX_TANGENTS</span> <span class="syntax-operator">&amp;&amp;</span> <span class="syntax-constant">VERTEX_TANGENTS_COMPRESSED</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#60"
             id="60"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >60</a>    uncompressed_vertex.tangent = bevy_render::utils::decompress_vertex_tangent(vertex_in.compressed_tangent);
+        >60</a>    <span class="syntax-variable">uncompressed_vertex</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">tangent</span> <span class="syntax-operator">=</span> <span class="syntax-namespace">bevy_render</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">utils</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-function syntax-function-call">decompress_vertex_tangent</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">vertex_in</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">compressed_tangent</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#61"
             id="61"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >61</a>    @if(VERTEX_TANGENTS &#38;&#38; !VERTEX_TANGENTS_COMPRESSED)
+        >61</a>    <span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">VERTEX_TANGENTS</span> <span class="syntax-operator">&amp;&amp;</span> <span class="syntax-operator">!</span><span class="syntax-constant">VERTEX_TANGENTS_COMPRESSED</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#62"
             id="62"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >62</a>    uncompressed_vertex.tangent = vertex_in.tangent;
+        >62</a>    <span class="syntax-variable">uncompressed_vertex</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">tangent</span> <span class="syntax-operator">=</span> <span class="syntax-variable">vertex_in</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">tangent</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#63"
             id="63"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >63</a>    @if(VERTEX_COLORS)
+        >63</a>    <span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">VERTEX_COLORS</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#64"
             id="64"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >64</a>    uncompressed_vertex.color = vertex_in.color;
+        >64</a>    <span class="syntax-variable">uncompressed_vertex</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">color</span> <span class="syntax-operator">=</span> <span class="syntax-variable">vertex_in</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">color</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#65"
             id="65"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >65</a>    return uncompressed_vertex;
+        >65</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-variable">uncompressed_vertex</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#66"
             id="66"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >66</a>}</code>
+        >66</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span></code>
 </pre>
 
         </div>

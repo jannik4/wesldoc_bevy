@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="../../../../../-/static/css/themes.css">
     <link rel="stylesheet" href="../../../../../-/static/css/styles.css">
     <link rel="stylesheet" href="../../../../../-/static/css/icons.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/syntax.css">
     <script src="../../../../../-/static/js/settings.js"></script>
 
     
@@ -107,175 +108,175 @@
             id="1"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >1</a>// Since this is a hot path, try to keep the alignment and size of the struct members in mind.
+        >1</a><span class="syntax-comment syntax-comment-line">// Since this is a hot path, try to keep the alignment and size of the struct members in mind.</span>
 <a
             href="#2"
             id="2"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >2</a>// You can find the alignment and sizes at &#60;https://www.w3.org/TR/WGSL/#alignment-and-size&#62;.
+        >2</a><span class="syntax-comment syntax-comment-line">// You can find the alignment and sizes at &lt;https://www.w3.org/TR/WGSL/#alignment-and-size&gt;.</span>
 <a
             href="#3"
             id="3"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >3</a>struct StandardMaterial {
+        >3</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">struct</span> <span class="syntax-type">StandardMaterial</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#4"
             id="4"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >4</a>    base_color: vec4&#60;f32&#62;,
+        >4</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">base_color</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#5"
             id="5"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >5</a>    emissive: vec4&#60;f32&#62;,
+        >5</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">emissive</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#6"
             id="6"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >6</a>    attenuation_color: vec4&#60;f32&#62;,
+        >6</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">attenuation_color</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#7"
             id="7"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >7</a>    uv_transform: mat3x3&#60;f32&#62;,
+        >7</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">uv_transform</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">mat3x3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#8"
             id="8"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >8</a>    reflectance: vec3&#60;f32&#62;,
+        >8</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">reflectance</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#9"
             id="9"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >9</a>    perceptual_roughness: f32,
+        >9</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">perceptual_roughness</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#10"
             id="10"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >10</a>    metallic: f32,
+        >10</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">metallic</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#11"
             id="11"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >11</a>    diffuse_transmission: f32,
+        >11</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">diffuse_transmission</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#12"
             id="12"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >12</a>    specular_transmission: f32,
+        >12</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">specular_transmission</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#13"
             id="13"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >13</a>    thickness: f32,
+        >13</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">thickness</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#14"
             id="14"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >14</a>    ior: f32,
+        >14</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">ior</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#15"
             id="15"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >15</a>    attenuation_distance: f32,
+        >15</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">attenuation_distance</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#16"
             id="16"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >16</a>    clearcoat: f32,
+        >16</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">clearcoat</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#17"
             id="17"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >17</a>    clearcoat_perceptual_roughness: f32,
+        >17</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">clearcoat_perceptual_roughness</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#18"
             id="18"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >18</a>    anisotropy_strength: f32,
+        >18</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">anisotropy_strength</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#19"
             id="19"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >19</a>    anisotropy_rotation: vec2&#60;f32&#62;,
+        >19</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">anisotropy_rotation</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#20"
             id="20"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >20</a>    // &#39;flags&#39; is a bit field indicating various options. u32 is 32 bits so we have up to 32 options.
+        >20</a>    <span class="syntax-comment syntax-comment-line">// &#39;flags&#39; is a bit field indicating various options. u32 is 32 bits so we have up to 32 options.</span>
 <a
             href="#21"
             id="21"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >21</a>    flags: u32,
+        >21</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">flags</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#22"
             id="22"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >22</a>    alpha_cutoff: f32,
+        >22</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">alpha_cutoff</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#23"
             id="23"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >23</a>    parallax_depth_scale: f32,
+        >23</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">parallax_depth_scale</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#24"
             id="24"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >24</a>    max_parallax_layer_count: f32,
+        >24</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">max_parallax_layer_count</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#25"
             id="25"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >25</a>    lightmap_exposure: f32,
+        >25</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">lightmap_exposure</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#26"
             id="26"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >26</a>    max_relief_mapping_search_steps: u32,
+        >26</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">max_relief_mapping_search_steps</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#27"
             id="27"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >27</a>    /// ID for specifying which deferred lighting pass should be used for rendering this material, if any.
+        >27</a>    <span class="syntax-comment syntax-comment-line">/// ID for specifying which deferred lighting pass should be used for rendering this material, if any.</span>
 <a
             href="#28"
             id="28"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >28</a>    deferred_lighting_pass_id: u32,
+        >28</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">deferred_lighting_pass_id</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#29"
             id="29"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >29</a>};
+        >29</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#30"
             id="30"
@@ -287,193 +288,193 @@
             id="31"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >31</a>// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        >31</a><span class="syntax-comment syntax-comment-line">// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</span>
 <a
             href="#32"
             id="32"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >32</a>// NOTE: if these flags are updated or changed. Be sure to also update
+        >32</a><span class="syntax-comment syntax-comment-line">// NOTE: if these flags are updated or changed. Be sure to also update</span>
 <a
             href="#33"
             id="33"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >33</a>// deferred_flags_from_mesh_material_flags and mesh_material_flags_from_deferred_flags
+        >33</a><span class="syntax-comment syntax-comment-line">// deferred_flags_from_mesh_material_flags and mesh_material_flags_from_deferred_flags</span>
 <a
             href="#34"
             id="34"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >34</a>// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        >34</a><span class="syntax-comment syntax-comment-line">// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</span>
 <a
             href="#35"
             id="35"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >35</a>const STANDARD_MATERIAL_FLAGS_BASE_COLOR_TEXTURE_BIT: u32            = 1u &#60;&#60; 0u;
+        >35</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">const</span> <span class="syntax-constant">STANDARD_MATERIAL_FLAGS_BASE_COLOR_TEXTURE_BIT</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span>            <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1u</span> <span class="syntax-operator">&lt;&lt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#36"
             id="36"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >36</a>const STANDARD_MATERIAL_FLAGS_EMISSIVE_TEXTURE_BIT: u32              = 1u &#60;&#60; 1u;
+        >36</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">const</span> <span class="syntax-constant">STANDARD_MATERIAL_FLAGS_EMISSIVE_TEXTURE_BIT</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span>              <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1u</span> <span class="syntax-operator">&lt;&lt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#37"
             id="37"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >37</a>const STANDARD_MATERIAL_FLAGS_METALLIC_ROUGHNESS_TEXTURE_BIT: u32    = 1u &#60;&#60; 2u;
+        >37</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">const</span> <span class="syntax-constant">STANDARD_MATERIAL_FLAGS_METALLIC_ROUGHNESS_TEXTURE_BIT</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span>    <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1u</span> <span class="syntax-operator">&lt;&lt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">2u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#38"
             id="38"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >38</a>const STANDARD_MATERIAL_FLAGS_OCCLUSION_TEXTURE_BIT: u32             = 1u &#60;&#60; 3u;
+        >38</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">const</span> <span class="syntax-constant">STANDARD_MATERIAL_FLAGS_OCCLUSION_TEXTURE_BIT</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span>             <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1u</span> <span class="syntax-operator">&lt;&lt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">3u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#39"
             id="39"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >39</a>const STANDARD_MATERIAL_FLAGS_DOUBLE_SIDED_BIT: u32                  = 1u &#60;&#60; 4u;
+        >39</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">const</span> <span class="syntax-constant">STANDARD_MATERIAL_FLAGS_DOUBLE_SIDED_BIT</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span>                  <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1u</span> <span class="syntax-operator">&lt;&lt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">4u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#40"
             id="40"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >40</a>const STANDARD_MATERIAL_FLAGS_UNLIT_BIT: u32                         = 1u &#60;&#60; 5u;
+        >40</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">const</span> <span class="syntax-constant">STANDARD_MATERIAL_FLAGS_UNLIT_BIT</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span>                         <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1u</span> <span class="syntax-operator">&lt;&lt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">5u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#41"
             id="41"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >41</a>const STANDARD_MATERIAL_FLAGS_TWO_COMPONENT_NORMAL_MAP: u32          = 1u &#60;&#60; 6u;
+        >41</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">const</span> <span class="syntax-constant">STANDARD_MATERIAL_FLAGS_TWO_COMPONENT_NORMAL_MAP</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span>          <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1u</span> <span class="syntax-operator">&lt;&lt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">6u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#42"
             id="42"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >42</a>const STANDARD_MATERIAL_FLAGS_FLIP_NORMAL_MAP_Y: u32                 = 1u &#60;&#60; 7u;
+        >42</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">const</span> <span class="syntax-constant">STANDARD_MATERIAL_FLAGS_FLIP_NORMAL_MAP_Y</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span>                 <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1u</span> <span class="syntax-operator">&lt;&lt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">7u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#43"
             id="43"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >43</a>const STANDARD_MATERIAL_FLAGS_FOG_ENABLED_BIT: u32                   = 1u &#60;&#60; 8u;
+        >43</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">const</span> <span class="syntax-constant">STANDARD_MATERIAL_FLAGS_FOG_ENABLED_BIT</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span>                   <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1u</span> <span class="syntax-operator">&lt;&lt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">8u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#44"
             id="44"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >44</a>const STANDARD_MATERIAL_FLAGS_DEPTH_MAP_BIT: u32                     = 1u &#60;&#60; 9u;
+        >44</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">const</span> <span class="syntax-constant">STANDARD_MATERIAL_FLAGS_DEPTH_MAP_BIT</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span>                     <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1u</span> <span class="syntax-operator">&lt;&lt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">9u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#45"
             id="45"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >45</a>const STANDARD_MATERIAL_FLAGS_SPECULAR_TRANSMISSION_TEXTURE_BIT: u32 = 1u &#60;&#60; 10u;
+        >45</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">const</span> <span class="syntax-constant">STANDARD_MATERIAL_FLAGS_SPECULAR_TRANSMISSION_TEXTURE_BIT</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1u</span> <span class="syntax-operator">&lt;&lt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">10u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#46"
             id="46"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >46</a>const STANDARD_MATERIAL_FLAGS_THICKNESS_TEXTURE_BIT: u32             = 1u &#60;&#60; 11u;
+        >46</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">const</span> <span class="syntax-constant">STANDARD_MATERIAL_FLAGS_THICKNESS_TEXTURE_BIT</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span>             <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1u</span> <span class="syntax-operator">&lt;&lt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">11u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#47"
             id="47"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >47</a>const STANDARD_MATERIAL_FLAGS_DIFFUSE_TRANSMISSION_TEXTURE_BIT: u32  = 1u &#60;&#60; 12u;
+        >47</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">const</span> <span class="syntax-constant">STANDARD_MATERIAL_FLAGS_DIFFUSE_TRANSMISSION_TEXTURE_BIT</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span>  <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1u</span> <span class="syntax-operator">&lt;&lt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">12u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#48"
             id="48"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >48</a>const STANDARD_MATERIAL_FLAGS_ATTENUATION_ENABLED_BIT: u32           = 1u &#60;&#60; 13u;
+        >48</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">const</span> <span class="syntax-constant">STANDARD_MATERIAL_FLAGS_ATTENUATION_ENABLED_BIT</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span>           <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1u</span> <span class="syntax-operator">&lt;&lt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">13u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#49"
             id="49"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >49</a>const STANDARD_MATERIAL_FLAGS_CLEARCOAT_TEXTURE_BIT: u32             = 1u &#60;&#60; 14u;
+        >49</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">const</span> <span class="syntax-constant">STANDARD_MATERIAL_FLAGS_CLEARCOAT_TEXTURE_BIT</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span>             <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1u</span> <span class="syntax-operator">&lt;&lt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">14u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#50"
             id="50"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >50</a>const STANDARD_MATERIAL_FLAGS_CLEARCOAT_ROUGHNESS_TEXTURE_BIT: u32   = 1u &#60;&#60; 15u;
+        >50</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">const</span> <span class="syntax-constant">STANDARD_MATERIAL_FLAGS_CLEARCOAT_ROUGHNESS_TEXTURE_BIT</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span>   <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1u</span> <span class="syntax-operator">&lt;&lt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">15u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#51"
             id="51"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >51</a>const STANDARD_MATERIAL_FLAGS_CLEARCOAT_NORMAL_TEXTURE_BIT: u32      = 1u &#60;&#60; 16u;
+        >51</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">const</span> <span class="syntax-constant">STANDARD_MATERIAL_FLAGS_CLEARCOAT_NORMAL_TEXTURE_BIT</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span>      <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1u</span> <span class="syntax-operator">&lt;&lt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">16u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#52"
             id="52"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >52</a>const STANDARD_MATERIAL_FLAGS_ANISOTROPY_TEXTURE_BIT: u32            = 1u &#60;&#60; 17u;
+        >52</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">const</span> <span class="syntax-constant">STANDARD_MATERIAL_FLAGS_ANISOTROPY_TEXTURE_BIT</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span>            <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1u</span> <span class="syntax-operator">&lt;&lt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">17u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#53"
             id="53"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >53</a>const STANDARD_MATERIAL_FLAGS_SPECULAR_TEXTURE_BIT: u32              = 1u &#60;&#60; 18u;
+        >53</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">const</span> <span class="syntax-constant">STANDARD_MATERIAL_FLAGS_SPECULAR_TEXTURE_BIT</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span>              <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1u</span> <span class="syntax-operator">&lt;&lt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">18u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#54"
             id="54"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >54</a>const STANDARD_MATERIAL_FLAGS_SPECULAR_TINT_TEXTURE_BIT: u32         = 1u &#60;&#60; 19u;
+        >54</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">const</span> <span class="syntax-constant">STANDARD_MATERIAL_FLAGS_SPECULAR_TINT_TEXTURE_BIT</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span>         <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1u</span> <span class="syntax-operator">&lt;&lt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">19u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#55"
             id="55"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >55</a>const STANDARD_MATERIAL_FLAGS_ALPHA_MODE_RESERVED_BITS: u32          = 7u &#60;&#60; 29u; // (0b111u &#60;&#60; 29u)
+        >55</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">const</span> <span class="syntax-constant">STANDARD_MATERIAL_FLAGS_ALPHA_MODE_RESERVED_BITS</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span>          <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">7u</span> <span class="syntax-operator">&lt;&lt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">29u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span> <span class="syntax-comment syntax-comment-line">// (0b111u &lt;&lt; 29u)</span>
 <a
             href="#56"
             id="56"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >56</a>const STANDARD_MATERIAL_FLAGS_ALPHA_MODE_OPAQUE: u32                 = 0u &#60;&#60; 29u;
+        >56</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">const</span> <span class="syntax-constant">STANDARD_MATERIAL_FLAGS_ALPHA_MODE_OPAQUE</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span>                 <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0u</span> <span class="syntax-operator">&lt;&lt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">29u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#57"
             id="57"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >57</a>const STANDARD_MATERIAL_FLAGS_ALPHA_MODE_MASK: u32                   = 1u &#60;&#60; 29u;
+        >57</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">const</span> <span class="syntax-constant">STANDARD_MATERIAL_FLAGS_ALPHA_MODE_MASK</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span>                   <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1u</span> <span class="syntax-operator">&lt;&lt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">29u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#58"
             id="58"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >58</a>const STANDARD_MATERIAL_FLAGS_ALPHA_MODE_BLEND: u32                  = 2u &#60;&#60; 29u;
+        >58</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">const</span> <span class="syntax-constant">STANDARD_MATERIAL_FLAGS_ALPHA_MODE_BLEND</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span>                  <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">2u</span> <span class="syntax-operator">&lt;&lt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">29u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#59"
             id="59"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >59</a>const STANDARD_MATERIAL_FLAGS_ALPHA_MODE_PREMULTIPLIED: u32          = 3u &#60;&#60; 29u;
+        >59</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">const</span> <span class="syntax-constant">STANDARD_MATERIAL_FLAGS_ALPHA_MODE_PREMULTIPLIED</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span>          <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">3u</span> <span class="syntax-operator">&lt;&lt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">29u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#60"
             id="60"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >60</a>const STANDARD_MATERIAL_FLAGS_ALPHA_MODE_ADD: u32                    = 4u &#60;&#60; 29u;
+        >60</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">const</span> <span class="syntax-constant">STANDARD_MATERIAL_FLAGS_ALPHA_MODE_ADD</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span>                    <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">4u</span> <span class="syntax-operator">&lt;&lt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">29u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#61"
             id="61"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >61</a>const STANDARD_MATERIAL_FLAGS_ALPHA_MODE_MULTIPLY: u32               = 5u &#60;&#60; 29u;
+        >61</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">const</span> <span class="syntax-constant">STANDARD_MATERIAL_FLAGS_ALPHA_MODE_MULTIPLY</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span>               <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">5u</span> <span class="syntax-operator">&lt;&lt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">29u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#62"
             id="62"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >62</a>const STANDARD_MATERIAL_FLAGS_ALPHA_MODE_ALPHA_TO_COVERAGE: u32      = 6u &#60;&#60; 29u;
+        >62</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">const</span> <span class="syntax-constant">STANDARD_MATERIAL_FLAGS_ALPHA_MODE_ALPHA_TO_COVERAGE</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span>      <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">6u</span> <span class="syntax-operator">&lt;&lt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">29u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#63"
             id="63"
@@ -491,19 +492,19 @@
             id="65"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >65</a>// Creates a StandardMaterial with default values
+        >65</a><span class="syntax-comment syntax-comment-line">// Creates a StandardMaterial with default values</span>
 <a
             href="#66"
             id="66"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >66</a>fn standard_material_new() -&#62; StandardMaterial {
+        >66</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">standard_material_new</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-type">StandardMaterial</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#67"
             id="67"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >67</a>    var material: StandardMaterial;
+        >67</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">material</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">StandardMaterial</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#68"
             id="68"
@@ -515,133 +516,133 @@
             id="69"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >69</a>    // NOTE: Keep in-sync with src/pbr_material.rs!
+        >69</a>    <span class="syntax-comment syntax-comment-line">// NOTE: Keep in-sync with src/pbr_material.rs!</span>
 <a
             href="#70"
             id="70"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >70</a>    material.base_color = vec4&#60;f32&#62;(1.0, 1.0, 1.0, 1.0);
+        >70</a>    <span class="syntax-variable">material</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">base_color</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#71"
             id="71"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >71</a>    material.emissive = vec4&#60;f32&#62;(0.0, 0.0, 0.0, 1.0);
+        >71</a>    <span class="syntax-variable">material</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">emissive</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#72"
             id="72"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >72</a>    material.perceptual_roughness = 0.5;
+        >72</a>    <span class="syntax-variable">material</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">perceptual_roughness</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.5</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#73"
             id="73"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >73</a>    material.metallic = 0.00;
+        >73</a>    <span class="syntax-variable">material</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">metallic</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.00</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#74"
             id="74"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >74</a>    material.reflectance = vec3&#60;f32&#62;(0.5);
+        >74</a>    <span class="syntax-variable">material</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">reflectance</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.5</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#75"
             id="75"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >75</a>    material.diffuse_transmission = 0.0;
+        >75</a>    <span class="syntax-variable">material</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">diffuse_transmission</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#76"
             id="76"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >76</a>    material.specular_transmission = 0.0;
+        >76</a>    <span class="syntax-variable">material</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">specular_transmission</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#77"
             id="77"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >77</a>    material.thickness = 0.0;
+        >77</a>    <span class="syntax-variable">material</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">thickness</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#78"
             id="78"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >78</a>    material.ior = 1.5;
+        >78</a>    <span class="syntax-variable">material</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">ior</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.5</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#79"
             id="79"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >79</a>    material.attenuation_distance = 1.0;
+        >79</a>    <span class="syntax-variable">material</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">attenuation_distance</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#80"
             id="80"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >80</a>    material.attenuation_color = vec4&#60;f32&#62;(1.0, 1.0, 1.0, 1.0);
+        >80</a>    <span class="syntax-variable">material</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">attenuation_color</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#81"
             id="81"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >81</a>    material.clearcoat = 0.0;
+        >81</a>    <span class="syntax-variable">material</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">clearcoat</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#82"
             id="82"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >82</a>    material.clearcoat_perceptual_roughness = 0.0;
+        >82</a>    <span class="syntax-variable">material</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">clearcoat_perceptual_roughness</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#83"
             id="83"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >83</a>    material.flags = STANDARD_MATERIAL_FLAGS_ALPHA_MODE_OPAQUE;
+        >83</a>    <span class="syntax-variable">material</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">flags</span> <span class="syntax-operator">=</span> <span class="syntax-constant">STANDARD_MATERIAL_FLAGS_ALPHA_MODE_OPAQUE</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#84"
             id="84"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >84</a>    material.alpha_cutoff = 0.5;
+        >84</a>    <span class="syntax-variable">material</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">alpha_cutoff</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.5</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#85"
             id="85"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >85</a>    material.parallax_depth_scale = 0.1;
+        >85</a>    <span class="syntax-variable">material</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">parallax_depth_scale</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.1</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#86"
             id="86"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >86</a>    material.max_parallax_layer_count = 16.0;
+        >86</a>    <span class="syntax-variable">material</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">max_parallax_layer_count</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">16.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#87"
             id="87"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >87</a>    material.max_relief_mapping_search_steps = 5u;
+        >87</a>    <span class="syntax-variable">material</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">max_relief_mapping_search_steps</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">5u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#88"
             id="88"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >88</a>    material.deferred_lighting_pass_id = 1u;
+        >88</a>    <span class="syntax-variable">material</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">deferred_lighting_pass_id</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#89"
             id="89"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >89</a>    // scale 1, translation 0, rotation 0
+        >89</a>    <span class="syntax-comment syntax-comment-line">// scale 1, translation 0, rotation 0</span>
 <a
             href="#90"
             id="90"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >90</a>    material.uv_transform = mat3x3&#60;f32&#62;(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0);
+        >90</a>    <span class="syntax-variable">material</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">uv_transform</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">mat3x3</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#91"
             id="91"
@@ -653,13 +654,13 @@
             id="92"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >92</a>    return material;
+        >92</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-variable">material</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#93"
             id="93"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >93</a>}
+        >93</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#94"
             id="94"
@@ -671,175 +672,175 @@
             id="95"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >95</a>struct PbrInput {
+        >95</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">struct</span> <span class="syntax-type">PbrInput</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#96"
             id="96"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >96</a>    material: StandardMaterial,
+        >96</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">material</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">StandardMaterial</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#97"
             id="97"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >97</a>    // Note: this gets monochromized upon deferred PbrInput reconstruction.
+        >97</a>    <span class="syntax-comment syntax-comment-line">// Note: this gets monochromized upon deferred PbrInput reconstruction.</span>
 <a
             href="#98"
             id="98"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >98</a>    diffuse_occlusion: vec3&#60;f32&#62;,
+        >98</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">diffuse_occlusion</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#99"
             id="99"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >99</a>    // Note: this is 1.0 (entirely unoccluded) when SSAO and SSR are off.
+        >99</a>    <span class="syntax-comment syntax-comment-line">// Note: this is 1.0 (entirely unoccluded) when SSAO and SSR are off.</span>
 <a
             href="#100"
             id="100"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >100</a>    specular_occlusion: f32,
+        >100</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">specular_occlusion</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#101"
             id="101"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >101</a>    frag_coord: vec4&#60;f32&#62;,
+        >101</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">frag_coord</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#102"
             id="102"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >102</a>    world_position: vec4&#60;f32&#62;,
+        >102</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">world_position</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#103"
             id="103"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >103</a>    // Normalized world normal used for shadow mapping as normal-mapping is not used for shadow
+        >103</a>    <span class="syntax-comment syntax-comment-line">// Normalized world normal used for shadow mapping as normal-mapping is not used for shadow</span>
 <a
             href="#104"
             id="104"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >104</a>    // mapping
+        >104</a>    <span class="syntax-comment syntax-comment-line">// mapping</span>
 <a
             href="#105"
             id="105"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >105</a>    world_normal: vec3&#60;f32&#62;,
+        >105</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">world_normal</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#106"
             id="106"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >106</a>    // Normalized normal-mapped world normal used for lighting
+        >106</a>    <span class="syntax-comment syntax-comment-line">// Normalized normal-mapped world normal used for lighting</span>
 <a
             href="#107"
             id="107"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >107</a>    N: vec3&#60;f32&#62;,
+        >107</a>    <span class="syntax-constant">N</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#108"
             id="108"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >108</a>    // Normalized view vector in world space, pointing from the fragment world position toward the
+        >108</a>    <span class="syntax-comment syntax-comment-line">// Normalized view vector in world space, pointing from the fragment world position toward the</span>
 <a
             href="#109"
             id="109"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >109</a>    // view world position
+        >109</a>    <span class="syntax-comment syntax-comment-line">// view world position</span>
 <a
             href="#110"
             id="110"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >110</a>    V: vec3&#60;f32&#62;,
+        >110</a>    <span class="syntax-constant">V</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#111"
             id="111"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >111</a>    lightmap_light: vec3&#60;f32&#62;,
+        >111</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">lightmap_light</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#112"
             id="112"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >112</a>    clearcoat_N: vec3&#60;f32&#62;,
+        >112</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">clearcoat_N</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#113"
             id="113"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >113</a>    anisotropy_strength: f32,
+        >113</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">anisotropy_strength</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#114"
             id="114"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >114</a>    // These two aren&#39;t specific to anisotropy, but we only fill them in if
+        >114</a>    <span class="syntax-comment syntax-comment-line">// These two aren&#39;t specific to anisotropy, but we only fill them in if</span>
 <a
             href="#115"
             id="115"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >115</a>    // we&#39;re doing anisotropy, so they&#39;re prefixed with `anisotropy_`.
+        >115</a>    <span class="syntax-comment syntax-comment-line">// we&#39;re doing anisotropy, so they&#39;re prefixed with `anisotropy_`.</span>
 <a
             href="#116"
             id="116"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >116</a>    anisotropy_T: vec3&#60;f32&#62;,
+        >116</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">anisotropy_T</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#117"
             id="117"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >117</a>    anisotropy_B: vec3&#60;f32&#62;,
+        >117</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">anisotropy_B</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#118"
             id="118"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >118</a>    is_orthographic: bool,
+        >118</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">is_orthographic</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">bool</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#119"
             id="119"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >119</a>    flags: u32,
+        >119</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">flags</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#120"
             id="120"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >120</a>    // Multiplier applied to all directional lights before cascade and contact shadows,
+        >120</a>    <span class="syntax-comment syntax-comment-line">// Multiplier applied to all directional lights before cascade and contact shadows,</span>
 <a
             href="#121"
             id="121"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >121</a>    // use this for custom shadow maps. Defaults to 1.0. 
+        >121</a>    <span class="syntax-comment syntax-comment-line">// use this for custom shadow maps. Defaults to 1.0. </span>
 <a
             href="#122"
             id="122"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >122</a>    directional_shadow_factor: f32,
+        >122</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">directional_shadow_factor</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#123"
             id="123"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >123</a>};
+        >123</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#124"
             id="124"
@@ -851,19 +852,19 @@
             id="125"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >125</a>// Creates a PbrInput with default values
+        >125</a><span class="syntax-comment syntax-comment-line">// Creates a PbrInput with default values</span>
 <a
             href="#126"
             id="126"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >126</a>fn pbr_input_new() -&#62; PbrInput {
+        >126</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">pbr_input_new</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-type">PbrInput</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#127"
             id="127"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >127</a>    var pbr_input: PbrInput;
+        >127</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">pbr_input</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">PbrInput</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#128"
             id="128"
@@ -875,25 +876,25 @@
             id="129"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >129</a>    pbr_input.material = standard_material_new();
+        >129</a>    <span class="syntax-variable">pbr_input</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">material</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">standard_material_new</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#130"
             id="130"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >130</a>    pbr_input.diffuse_occlusion = vec3&#60;f32&#62;(1.0);
+        >130</a>    <span class="syntax-variable">pbr_input</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">diffuse_occlusion</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#131"
             id="131"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >131</a>    // If SSAO is enabled, then this gets overwritten with proper specular occlusion. If its not, then we get specular environment map unoccluded (we have no data with which to occlude it with).
+        >131</a>    <span class="syntax-comment syntax-comment-line">// If SSAO is enabled, then this gets overwritten with proper specular occlusion. If its not, then we get specular environment map unoccluded (we have no data with which to occlude it with).</span>
 <a
             href="#132"
             id="132"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >132</a>    pbr_input.specular_occlusion = 1.0;
+        >132</a>    <span class="syntax-variable">pbr_input</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">specular_occlusion</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#133"
             id="133"
@@ -905,19 +906,19 @@
             id="134"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >134</a>    pbr_input.frag_coord = vec4&#60;f32&#62;(0.0, 0.0, 0.0, 1.0);
+        >134</a>    <span class="syntax-variable">pbr_input</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">frag_coord</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#135"
             id="135"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >135</a>    pbr_input.world_position = vec4&#60;f32&#62;(0.0, 0.0, 0.0, 1.0);
+        >135</a>    <span class="syntax-variable">pbr_input</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">world_position</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#136"
             id="136"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >136</a>    pbr_input.world_normal = vec3&#60;f32&#62;(0.0, 0.0, 1.0);
+        >136</a>    <span class="syntax-variable">pbr_input</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">world_normal</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#137"
             id="137"
@@ -929,7 +930,7 @@
             id="138"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >138</a>    pbr_input.is_orthographic = false;
+        >138</a>    <span class="syntax-variable">pbr_input</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">is_orthographic</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-builtin syntax-constant-builtin-boolean">false</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#139"
             id="139"
@@ -941,13 +942,13 @@
             id="140"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >140</a>    pbr_input.N = vec3&#60;f32&#62;(0.0, 0.0, 1.0);
+        >140</a>    <span class="syntax-variable">pbr_input</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-constant">N</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#141"
             id="141"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >141</a>    pbr_input.V = vec3&#60;f32&#62;(1.0, 0.0, 0.0);
+        >141</a>    <span class="syntax-variable">pbr_input</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-constant">V</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#142"
             id="142"
@@ -959,19 +960,19 @@
             id="143"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >143</a>    pbr_input.clearcoat_N = vec3&#60;f32&#62;(0.0);
+        >143</a>    <span class="syntax-variable">pbr_input</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">clearcoat_N</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#144"
             id="144"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >144</a>    pbr_input.anisotropy_T = vec3&#60;f32&#62;(0.0);
+        >144</a>    <span class="syntax-variable">pbr_input</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">anisotropy_T</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#145"
             id="145"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >145</a>    pbr_input.anisotropy_B = vec3&#60;f32&#62;(0.0);
+        >145</a>    <span class="syntax-variable">pbr_input</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">anisotropy_B</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#146"
             id="146"
@@ -983,7 +984,7 @@
             id="147"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >147</a>    pbr_input.lightmap_light = vec3&#60;f32&#62;(0.0);
+        >147</a>    <span class="syntax-variable">pbr_input</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">lightmap_light</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#148"
             id="148"
@@ -995,13 +996,13 @@
             id="149"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >149</a>    pbr_input.flags = 0u;
+        >149</a>    <span class="syntax-variable">pbr_input</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">flags</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#150"
             id="150"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >150</a>    pbr_input.directional_shadow_factor = 1.0;
+        >150</a>    <span class="syntax-variable">pbr_input</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">directional_shadow_factor</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#151"
             id="151"
@@ -1013,13 +1014,13 @@
             id="152"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >152</a>    return pbr_input;
+        >152</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-variable">pbr_input</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#153"
             id="153"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >153</a>}</code>
+        >153</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span></code>
 </pre>
 
         </div>

@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="../../../../-/static/css/themes.css">
     <link rel="stylesheet" href="../../../../-/static/css/styles.css">
     <link rel="stylesheet" href="../../../../-/static/css/icons.css">
+    <link rel="stylesheet" href="../../../../-/static/css/syntax.css">
     <script src="../../../../-/static/js/settings.js"></script>
 
     
@@ -107,55 +108,55 @@
             id="1"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >1</a>import package::{
+        >1</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">package</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#2"
             id="2"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >2</a>    render::{
+        >2</a>    <span class="syntax-namespace">render</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#3"
             id="3"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >3</a>        pbr_lighting as lighting,
+        >3</a>        <span class="syntax-namespace">pbr_lighting</span> <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">as</span> <span class="syntax-namespace">lighting</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#4"
             id="4"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >4</a>        utils::interleaved_gradient_noise,
+        >4</a>        <span class="syntax-namespace">utils</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">interleaved_gradient_noise</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#5"
             id="5"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >5</a>        utils,
+        >5</a>        <span class="syntax-namespace">utils</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#6"
             id="6"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >6</a>        mesh_view_bindings as view_bindings,
+        >6</a>        <span class="syntax-namespace">mesh_view_bindings</span> <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">as</span> <span class="syntax-namespace">view_bindings</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#7"
             id="7"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >7</a>    },
+        >7</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#8"
             id="8"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >8</a>    prepass::utils as prepass_utils,
+        >8</a>    <span class="syntax-namespace">prepass</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">utils</span> <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">as</span> <span class="syntax-namespace">prepass_utils</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#9"
             id="9"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >9</a>};
+        >9</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#10"
             id="10"
@@ -167,7 +168,7 @@
             id="11"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >11</a>import bevy_render::maths::PI;
+        >11</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">bevy_render</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">maths</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-constant">PI</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#12"
             id="12"
@@ -179,13 +180,13 @@
             id="13"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >13</a>@if(TONEMAP_IN_SHADER)
+        >13</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">TONEMAP_IN_SHADER</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#14"
             id="14"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >14</a>import bevy_core_pipeline::tonemapping::approximate_inverse_tone_mapping;
+        >14</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">bevy_core_pipeline</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">tonemapping</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">approximate_inverse_tone_mapping</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#15"
             id="15"
@@ -197,7 +198,7 @@
             id="16"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >16</a>@if (VIEW_TRANSMISSION_TEXTURE) {
+        >16</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">VIEW_TRANSMISSION_TEXTURE</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#17"
             id="17"
@@ -209,49 +210,49 @@
             id="18"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >18</a>// The IOR impacts how much a single microfacet refracts incoming light. In turn this changes how
+        >18</a><span class="syntax-comment syntax-comment-line">// The IOR impacts how much a single microfacet refracts incoming light. In turn this changes how</span>
 <a
             href="#19"
             id="19"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >19</a>// &#34;wide&#34; the distribution of output ray directions is and how rough the BRDF should be.
+        >19</a><span class="syntax-comment syntax-comment-line">// &quot;wide&quot; the distribution of output ray directions is and how rough the BRDF should be.</span>
 <a
             href="#20"
             id="20"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >20</a>// This function scales the roughness toward 0.0 as IOR tends towards 1.0, while leaving the default
+        >20</a><span class="syntax-comment syntax-comment-line">// This function scales the roughness toward 0.0 as IOR tends towards 1.0, while leaving the default</span>
 <a
             href="#21"
             id="21"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >21</a>// roughness for IOR = 1.5.
+        >21</a><span class="syntax-comment syntax-comment-line">// roughness for IOR = 1.5.</span>
 <a
             href="#22"
             id="22"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >22</a>// Adapted from Khronos gltf-Sample-Renderer (https://github.com/KhronosGroup/glTF-Sample-Renderer/blob/bec106e53da4a6a398aa3205f0f96563519a657e/source/Renderer/shaders/functions.glsl#L84-L89)
+        >22</a><span class="syntax-comment syntax-comment-line">// Adapted from Khronos gltf-Sample-Renderer (https://github.com/KhronosGroup/glTF-Sample-Renderer/blob/bec106e53da4a6a398aa3205f0f96563519a657e/source/Renderer/shaders/functions.glsl#L84-L89)</span>
 <a
             href="#23"
             id="23"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >23</a>fn ior_corrected_roughness(roughness: f32, ior: f32) -&#62; f32 {
+        >23</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">ior_corrected_roughness</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">roughness</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">ior</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-type">f32</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#24"
             id="24"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >24</a>    return roughness * clamp(ior * 2.0 - 2.0, 0.0, 1.0);
+        >24</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-variable">roughness</span> <span class="syntax-operator">*</span> <span class="syntax-function syntax-function-call">clamp</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">ior</span> <span class="syntax-operator">*</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">2.0</span> <span class="syntax-operator">-</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">2.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#25"
             id="25"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >25</a>}
+        >25</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#26"
             id="26"
@@ -263,19 +264,19 @@
             id="27"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >27</a>fn specular_transmissive_light(world_position: vec4&#60;f32&#62;, frag_coord: vec3&#60;f32&#62;, view_z: f32, N: vec3&#60;f32&#62;, V: vec3&#60;f32&#62;, F0: vec3&#60;f32&#62;, ior: f32, thickness: f32, perceptual_roughness: f32, specular_transmissive_color: vec3&#60;f32&#62;, transmitted_environment_light_specular: vec3&#60;f32&#62;) -&#62; vec3&#60;f32&#62; {
+        >27</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">specular_transmissive_light</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">world_position</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">frag_coord</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">view_z</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant">N</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant">V</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant">F0</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">ior</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">thickness</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">perceptual_roughness</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">specular_transmissive_color</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">transmitted_environment_light_specular</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#28"
             id="28"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >28</a>    // Calculate the ratio between refraction indexes. Assume air/vacuum for the space outside the mesh
+        >28</a>    <span class="syntax-comment syntax-comment-line">// Calculate the ratio between refraction indexes. Assume air/vacuum for the space outside the mesh</span>
 <a
             href="#29"
             id="29"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >29</a>    let eta = 1.0 / ior;
+        >29</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">eta</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span> <span class="syntax-operator">/</span> <span class="syntax-variable">ior</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#30"
             id="30"
@@ -287,19 +288,19 @@
             id="31"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >31</a>    // Calculate incidence vector (opposite to view vector) and its dot product with the mesh normal
+        >31</a>    <span class="syntax-comment syntax-comment-line">// Calculate incidence vector (opposite to view vector) and its dot product with the mesh normal</span>
 <a
             href="#32"
             id="32"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >32</a>    let I = -V;
+        >32</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-constant">I</span> <span class="syntax-operator">=</span> <span class="syntax-operator">-</span><span class="syntax-constant">V</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#33"
             id="33"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >33</a>    let NdotI = dot(N, I);
+        >33</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-type">NdotI</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">dot</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">N</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant">I</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#34"
             id="34"
@@ -311,19 +312,19 @@
             id="35"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >35</a>    // Calculate refracted direction using Snell&#39;s law
+        >35</a>    <span class="syntax-comment syntax-comment-line">// Calculate refracted direction using Snell&#39;s law</span>
 <a
             href="#36"
             id="36"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >36</a>    let k = 1.0 - eta * eta * (1.0 - NdotI * NdotI);
+        >36</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">k</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span> <span class="syntax-operator">-</span> <span class="syntax-variable">eta</span> <span class="syntax-operator">*</span> <span class="syntax-variable">eta</span> <span class="syntax-operator">*</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span> <span class="syntax-operator">-</span> <span class="syntax-type">NdotI</span> <span class="syntax-operator">*</span> <span class="syntax-type">NdotI</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#37"
             id="37"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >37</a>    let T = eta * I - (eta * NdotI + sqrt(k)) * N;
+        >37</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-constant">T</span> <span class="syntax-operator">=</span> <span class="syntax-variable">eta</span> <span class="syntax-operator">*</span> <span class="syntax-constant">I</span> <span class="syntax-operator">-</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">eta</span> <span class="syntax-operator">*</span> <span class="syntax-type">NdotI</span> <span class="syntax-operator">+</span> <span class="syntax-function syntax-function-call">sqrt</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">k</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-constant">N</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#38"
             id="38"
@@ -335,13 +336,13 @@
             id="39"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >39</a>    // Calculate the exit position of the refracted ray, by propagating refracted direction through thickness
+        >39</a>    <span class="syntax-comment syntax-comment-line">// Calculate the exit position of the refracted ray, by propagating refracted direction through thickness</span>
 <a
             href="#40"
             id="40"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >40</a>    let exit_position = world_position.xyz + T * thickness;
+        >40</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">exit_position</span> <span class="syntax-operator">=</span> <span class="syntax-variable">world_position</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">xyz</span> <span class="syntax-operator">+</span> <span class="syntax-constant">T</span> <span class="syntax-operator">*</span> <span class="syntax-variable">thickness</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#41"
             id="41"
@@ -353,13 +354,13 @@
             id="42"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >42</a>    // Transform exit_position into clip space
+        >42</a>    <span class="syntax-comment syntax-comment-line">// Transform exit_position into clip space</span>
 <a
             href="#43"
             id="43"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >43</a>    let clip_exit_position = view_bindings::view.clip_from_world * vec4&#60;f32&#62;(exit_position, 1.0);
+        >43</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">clip_exit_position</span> <span class="syntax-operator">=</span> <span class="syntax-namespace">view_bindings</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-variable">view</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">clip_from_world</span> <span class="syntax-operator">*</span> <span class="syntax-function syntax-function-call">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">exit_position</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#44"
             id="44"
@@ -371,37 +372,37 @@
             id="45"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >45</a>    // Scale / offset position so that coordinate is in right space for sampling transmissive background texture
+        >45</a>    <span class="syntax-comment syntax-comment-line">// Scale / offset position so that coordinate is in right space for sampling transmissive background texture</span>
 <a
             href="#46"
             id="46"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >46</a>    let subview_position = (clip_exit_position.xy / clip_exit_position.w) * vec2&#60;f32&#62;(0.5, -0.5) + 0.5;
+        >46</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">subview_position</span> <span class="syntax-operator">=</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">clip_exit_position</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">xy</span> <span class="syntax-operator">/</span> <span class="syntax-variable">clip_exit_position</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">w</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-function syntax-function-call">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.5</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-operator">-</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.5</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">+</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.5</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#47"
             id="47"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >47</a>    let viewport_origin = view_bindings::view.viewport.xy;
+        >47</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">viewport_origin</span> <span class="syntax-operator">=</span> <span class="syntax-namespace">view_bindings</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-variable">view</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">viewport</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">xy</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#48"
             id="48"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >48</a>    let viewport_size = view_bindings::view.viewport.zw;
+        >48</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">viewport_size</span> <span class="syntax-operator">=</span> <span class="syntax-namespace">view_bindings</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-variable">view</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">viewport</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">zw</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#49"
             id="49"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >49</a>    let full_size = vec2&#60;f32&#62;(textureDimensions(view_bindings::view_transmission_texture));
+        >49</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">full_size</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">textureDimensions</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-namespace">view_bindings</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-variable">view_transmission_texture</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#50"
             id="50"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >50</a>    let offset_position = (subview_position * viewport_size + viewport_origin) / full_size;
+        >50</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">offset_position</span> <span class="syntax-operator">=</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">subview_position</span> <span class="syntax-operator">*</span> <span class="syntax-variable">viewport_size</span> <span class="syntax-operator">+</span> <span class="syntax-variable">viewport_origin</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">/</span> <span class="syntax-variable">full_size</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#51"
             id="51"
@@ -413,55 +414,55 @@
             id="52"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >52</a>    // Fetch background color
+        >52</a>    <span class="syntax-comment syntax-comment-line">// Fetch background color</span>
 <a
             href="#53"
             id="53"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >53</a>    var background_color: vec4&#60;f32&#62;;
+        >53</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">background_color</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#54"
             id="54"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >54</a>    let transmission_roughness = ior_corrected_roughness(perceptual_roughness, ior);
+        >54</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">transmission_roughness</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">ior_corrected_roughness</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">perceptual_roughness</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">ior</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#55"
             id="55"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >55</a>    if transmission_roughness == 0.0 {
+        >55</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-variable">transmission_roughness</span> <span class="syntax-operator">==</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#56"
             id="56"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >56</a>        // If transmission roughness is zero, we can use a faster approach without the blur.
+        >56</a>        <span class="syntax-comment syntax-comment-line">// If transmission roughness is zero, we can use a faster approach without the blur.</span>
 <a
             href="#57"
             id="57"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >57</a>        background_color = fetch_transmissive_background_non_rough(offset_position, frag_coord);
+        >57</a>        <span class="syntax-variable">background_color</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">fetch_transmissive_background_non_rough</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">offset_position</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">frag_coord</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#58"
             id="58"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >58</a>    } else {
+        >58</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span> <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">else</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#59"
             id="59"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >59</a>        background_color = fetch_transmissive_background(offset_position, frag_coord, view_z, transmission_roughness);
+        >59</a>        <span class="syntax-variable">background_color</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">fetch_transmissive_background</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">offset_position</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">frag_coord</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">view_z</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">transmission_roughness</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#60"
             id="60"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >60</a>    }
+        >60</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#61"
             id="61"
@@ -473,13 +474,13 @@
             id="62"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >62</a>    // Compensate for exposure, since the background color is coming from an already exposure-adjusted texture
+        >62</a>    <span class="syntax-comment syntax-comment-line">// Compensate for exposure, since the background color is coming from an already exposure-adjusted texture</span>
 <a
             href="#63"
             id="63"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >63</a>    background_color = vec4(background_color.rgb / view_bindings::view.exposure, background_color.a);
+        >63</a>    <span class="syntax-variable">background_color</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">vec4</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">background_color</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">rgb</span> <span class="syntax-operator">/</span> <span class="syntax-namespace">view_bindings</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-variable">view</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">exposure</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">background_color</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">a</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#64"
             id="64"
@@ -491,13 +492,13 @@
             id="65"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >65</a>    // Dot product of the refracted direction with the exit normal (Note: We assume the exit normal is the entry normal but inverted)
+        >65</a>    <span class="syntax-comment syntax-comment-line">// Dot product of the refracted direction with the exit normal (Note: We assume the exit normal is the entry normal but inverted)</span>
 <a
             href="#66"
             id="66"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >66</a>    let MinusNdotT = dot(-N, T);
+        >66</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-type">MinusNdotT</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">dot</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">-</span><span class="syntax-constant">N</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant">T</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#67"
             id="67"
@@ -509,13 +510,13 @@
             id="68"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >68</a>    // Calculate 1.0 - fresnel factor (how much light is _NOT_ reflected, i.e. how much is transmitted)
+        >68</a>    <span class="syntax-comment syntax-comment-line">// Calculate 1.0 - fresnel factor (how much light is _NOT_ reflected, i.e. how much is transmitted)</span>
 <a
             href="#69"
             id="69"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >69</a>    let F = vec3(1.0) - lighting::fresnel(F0, MinusNdotT);
+        >69</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-constant">F</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">vec3</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-</span> <span class="syntax-namespace">lighting</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-function syntax-function-call">fresnel</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">F0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">MinusNdotT</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#70"
             id="70"
@@ -527,19 +528,19 @@
             id="71"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >71</a>    // Calculate final color by applying fresnel multiplied specular transmissive color to a mix of background color and transmitted specular environment light
+        >71</a>    <span class="syntax-comment syntax-comment-line">// Calculate final color by applying fresnel multiplied specular transmissive color to a mix of background color and transmitted specular environment light</span>
 <a
             href="#72"
             id="72"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >72</a>    return F * specular_transmissive_color * mix(transmitted_environment_light_specular, background_color.rgb, background_color.a);
+        >72</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-constant">F</span> <span class="syntax-operator">*</span> <span class="syntax-variable">specular_transmissive_color</span> <span class="syntax-operator">*</span> <span class="syntax-function syntax-function-call">mix</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">transmitted_environment_light_specular</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">background_color</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">rgb</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">background_color</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">a</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#73"
             id="73"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >73</a>}
+        >73</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#74"
             id="74"
@@ -551,43 +552,43 @@
             id="75"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >75</a>fn fetch_transmissive_background_non_rough(offset_position: vec2&#60;f32&#62;, frag_coord: vec3&#60;f32&#62;) -&#62; vec4&#60;f32&#62; {
+        >75</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">fetch_transmissive_background_non_rough</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">offset_position</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">frag_coord</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-type">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#76"
             id="76"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >76</a>    var background_color = textureSampleLevel(
+        >76</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">background_color</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">textureSampleLevel</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span>
 <a
             href="#77"
             id="77"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >77</a>        view_bindings::view_transmission_texture,
+        >77</a>        <span class="syntax-namespace">view_bindings</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-variable">view_transmission_texture</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#78"
             id="78"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >78</a>        view_bindings::view_transmission_sampler,
+        >78</a>        <span class="syntax-namespace">view_bindings</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-variable">view_transmission_sampler</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#79"
             id="79"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >79</a>        offset_position,
+        >79</a>        <span class="syntax-variable">offset_position</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#80"
             id="80"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >80</a>        0.0
+        >80</a>        <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span>
 <a
             href="#81"
             id="81"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >81</a>    );
+        >81</a>    <span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#82"
             id="82"
@@ -599,31 +600,31 @@
             id="83"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >83</a>    @if(DEPTH_PREPASS &#38;&#38; !WEBGL2)
+        >83</a>    <span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">DEPTH_PREPASS</span> <span class="syntax-operator">&amp;&amp;</span> <span class="syntax-operator">!</span><span class="syntax-constant">WEBGL2</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#84"
             id="84"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >84</a>    // Use depth prepass data to reject values that are in front of the current fragment
+        >84</a>    <span class="syntax-comment syntax-comment-line">// Use depth prepass data to reject values that are in front of the current fragment</span>
 <a
             href="#85"
             id="85"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >85</a>    if prepass_utils::prepass_depth(vec4&#60;f32&#62;(offset_position * view_bindings::view.viewport.zw, 0.0, 0.0), 0u) &#62; frag_coord.z {
+        >85</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-namespace">prepass_utils</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-function syntax-function-call">prepass_depth</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">offset_position</span> <span class="syntax-operator">*</span> <span class="syntax-namespace">view_bindings</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-variable">view</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">viewport</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">zw</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0u</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">&gt;</span> <span class="syntax-variable">frag_coord</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">z</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#86"
             id="86"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >86</a>        background_color.a = 0.0;
+        >86</a>        <span class="syntax-variable">background_color</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">a</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#87"
             id="87"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >87</a>    }
+        >87</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#88"
             id="88"
@@ -635,13 +636,13 @@
             id="89"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >89</a>    @if(TONEMAP_IN_SHADER)
+        >89</a>    <span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">TONEMAP_IN_SHADER</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#90"
             id="90"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >90</a>    background_color = approximate_inverse_tone_mapping(background_color, view_bindings::view.color_grading);
+        >90</a>    <span class="syntax-variable">background_color</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">approximate_inverse_tone_mapping</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">background_color</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-namespace">view_bindings</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-variable">view</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">color_grading</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#91"
             id="91"
@@ -653,13 +654,13 @@
             id="92"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >92</a>    return background_color;
+        >92</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-variable">background_color</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#93"
             id="93"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >93</a>}
+        >93</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#94"
             id="94"
@@ -671,19 +672,19 @@
             id="95"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >95</a>fn fetch_transmissive_background(offset_position: vec2&#60;f32&#62;, frag_coord: vec3&#60;f32&#62;, view_z: f32, transmission_roughness: f32) -&#62; vec4&#60;f32&#62; {
+        >95</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">fetch_transmissive_background</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">offset_position</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">frag_coord</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">view_z</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">transmission_roughness</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-type">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#96"
             id="96"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >96</a>    // Calculate view aspect ratio, used to scale offset so that it&#39;s proportionate
+        >96</a>    <span class="syntax-comment syntax-comment-line">// Calculate view aspect ratio, used to scale offset so that it&#39;s proportionate</span>
 <a
             href="#97"
             id="97"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >97</a>    let aspect = view_bindings::view.viewport.z / view_bindings::view.viewport.w;
+        >97</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">aspect</span> <span class="syntax-operator">=</span> <span class="syntax-namespace">view_bindings</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-variable">view</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">viewport</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">z</span> <span class="syntax-operator">/</span> <span class="syntax-namespace">view_bindings</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-variable">view</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">viewport</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">w</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#98"
             id="98"
@@ -695,73 +696,73 @@
             id="99"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >99</a>    // Calculate how “blurry” the transmission should be.
+        >99</a>    <span class="syntax-comment syntax-comment-line">// Calculate how “blurry” the transmission should be.</span>
 <a
             href="#100"
             id="100"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >100</a>    // Blur is more or less eyeballed to look approximately “right”, since the “correct”
+        >100</a>    <span class="syntax-comment syntax-comment-line">// Blur is more or less eyeballed to look approximately “right”, since the “correct”</span>
 <a
             href="#101"
             id="101"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >101</a>    // approach would involve projecting many scattered rays and figuring out their individual
+        >101</a>    <span class="syntax-comment syntax-comment-line">// approach would involve projecting many scattered rays and figuring out their individual</span>
 <a
             href="#102"
             id="102"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >102</a>    // exit positions. IRL, light rays can be scattered when entering/exiting a material (due to
+        >102</a>    <span class="syntax-comment syntax-comment-line">// exit positions. IRL, light rays can be scattered when entering/exiting a material (due to</span>
 <a
             href="#103"
             id="103"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >103</a>    // roughness) or inside the material (due to subsurface scattering). Here, we only consider
+        >103</a>    <span class="syntax-comment syntax-comment-line">// roughness) or inside the material (due to subsurface scattering). Here, we only consider</span>
 <a
             href="#104"
             id="104"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >104</a>    // the first scenario.
+        >104</a>    <span class="syntax-comment syntax-comment-line">// the first scenario.</span>
 <a
             href="#105"
             id="105"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >105</a>    //
+        >105</a>    <span class="syntax-comment syntax-comment-line">//</span>
 <a
             href="#106"
             id="106"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >106</a>    // Blur intensity is:
+        >106</a>    <span class="syntax-comment syntax-comment-line">// Blur intensity is:</span>
 <a
             href="#107"
             id="107"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >107</a>    // - proportional to the square of `perceptual_roughness`
+        >107</a>    <span class="syntax-comment syntax-comment-line">// - proportional to the square of `perceptual_roughness`</span>
 <a
             href="#108"
             id="108"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >108</a>    // - reduced for IOR &#60; 1.5 (through `transmission_roughness`)
+        >108</a>    <span class="syntax-comment syntax-comment-line">// - reduced for IOR &lt; 1.5 (through `transmission_roughness`)</span>
 <a
             href="#109"
             id="109"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >109</a>    // - proportional to the inverse of view z
+        >109</a>    <span class="syntax-comment syntax-comment-line">// - proportional to the inverse of view z</span>
 <a
             href="#110"
             id="110"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >110</a>    let blur_intensity = (transmission_roughness * transmission_roughness) / view_z;
+        >110</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">blur_intensity</span> <span class="syntax-operator">=</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">transmission_roughness</span> <span class="syntax-operator">*</span> <span class="syntax-variable">transmission_roughness</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">/</span> <span class="syntax-variable">view_z</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#111"
             id="111"
@@ -773,121 +774,121 @@
             id="112"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >112</a>    @if(SCREEN_SPACE_SPECULAR_TRANSMISSION_BLUR_TAPS)
+        >112</a>    <span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">SCREEN_SPACE_SPECULAR_TRANSMISSION_BLUR_TAPS</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#113"
             id="113"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >113</a>    let num_taps = constants::SCREEN_SPACE_SPECULAR_TRANSMISSION_BLUR_TAPS; // Controlled by the `ScreenSpaceTransmission::quality` property
+        >113</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">num_taps</span> <span class="syntax-operator">=</span> <span class="syntax-namespace">constants</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-constant">SCREEN_SPACE_SPECULAR_TRANSMISSION_BLUR_TAPS</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span> <span class="syntax-comment syntax-comment-line">// Controlled by the `ScreenSpaceTransmission::quality` property</span>
 <a
             href="#114"
             id="114"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >114</a>    @else
+        >114</a>    <span class="syntax-attribute">@<span class="syntax-attribute">else</span></span>
 <a
             href="#115"
             id="115"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >115</a>    let num_taps = 8; // Fallback to 8 taps, if not specified
+        >115</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">num_taps</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">8</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span> <span class="syntax-comment syntax-comment-line">// Fallback to 8 taps, if not specified</span>
 <a
             href="#116"
             id="116"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >116</a>    let num_spirals = i32(ceil(f32(num_taps) / 8.0));
+        >116</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">num_spirals</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">i32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">ceil</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">f32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">num_taps</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">/</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">8.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#117"
             id="117"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >117</a>    @if(TEMPORAL_JITTER)
+        >117</a>    <span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">TEMPORAL_JITTER</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#118"
             id="118"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >118</a>    let random_angle = interleaved_gradient_noise(frag_coord.xy, view_bindings::globals.frame_count);
+        >118</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">random_angle</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">interleaved_gradient_noise</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">frag_coord</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">xy</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-namespace">view_bindings</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-variable">globals</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">frame_count</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#119"
             id="119"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >119</a>    @else
+        >119</a>    <span class="syntax-attribute">@<span class="syntax-attribute">else</span></span>
 <a
             href="#120"
             id="120"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >120</a>    let random_angle = interleaved_gradient_noise(frag_coord.xy, 0u);
+        >120</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">random_angle</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">interleaved_gradient_noise</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">frag_coord</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">xy</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0u</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#121"
             id="121"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >121</a>    // Pixel checkerboard pattern (helps make the interleaved gradient noise pattern less visible)
+        >121</a>    <span class="syntax-comment syntax-comment-line">// Pixel checkerboard pattern (helps make the interleaved gradient noise pattern less visible)</span>
 <a
             href="#122"
             id="122"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >122</a>    @if(TEMPORAL_JITTER)
+        >122</a>    <span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">TEMPORAL_JITTER</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#123"
             id="123"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >123</a>    let pixel_checkboard = (
+        >123</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">pixel_checkboard</span> <span class="syntax-operator">=</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span>
 <a
             href="#124"
             id="124"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >124</a>        // 0 or 1 on even/odd pixels, alternates every frame
+        >124</a>        <span class="syntax-comment syntax-comment-line">// 0 or 1 on even/odd pixels, alternates every frame</span>
 <a
             href="#125"
             id="125"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >125</a>        (i32(frag_coord.x) + i32(frag_coord.y) + i32(view_bindings::globals.frame_count)) % 2
+        >125</a>        <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">i32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">frag_coord</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">x</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">+</span> <span class="syntax-function syntax-function-call">i32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">frag_coord</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">y</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">+</span> <span class="syntax-function syntax-function-call">i32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-namespace">view_bindings</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-variable">globals</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">frame_count</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">%</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">2</span>
 <a
             href="#126"
             id="126"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >126</a>    );
+        >126</a>    <span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#127"
             id="127"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >127</a>    @else
+        >127</a>    <span class="syntax-attribute">@<span class="syntax-attribute">else</span></span>
 <a
             href="#128"
             id="128"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >128</a>    let pixel_checkboard = (
+        >128</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">pixel_checkboard</span> <span class="syntax-operator">=</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span>
 <a
             href="#129"
             id="129"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >129</a>        // 0 or 1 on even/odd pixels
+        >129</a>        <span class="syntax-comment syntax-comment-line">// 0 or 1 on even/odd pixels</span>
 <a
             href="#130"
             id="130"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >130</a>        (i32(frag_coord.x) + i32(frag_coord.y)) % 2
+        >130</a>        <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">i32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">frag_coord</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">x</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">+</span> <span class="syntax-function syntax-function-call">i32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">frag_coord</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">y</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">%</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">2</span>
 <a
             href="#131"
             id="131"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >131</a>    );
+        >131</a>    <span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#132"
             id="132"
@@ -899,55 +900,55 @@
             id="133"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >133</a>    var result = vec4&#60;f32&#62;(0.0);
+        >133</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">result</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#134"
             id="134"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >134</a>    for (var i: i32 = 0; i &#60; num_taps; i = i + 1) {
+        >134</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-repeat">for</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">i</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">i32</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span> <span class="syntax-variable">i</span> <span class="syntax-operator">&lt;</span> <span class="syntax-variable">num_taps</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span> <span class="syntax-variable">i</span> <span class="syntax-operator">=</span> <span class="syntax-variable">i</span> <span class="syntax-operator">+</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#135"
             id="135"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >135</a>        let current_spiral = (i &#62;&#62; 3u);
+        >135</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">current_spiral</span> <span class="syntax-operator">=</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">i</span> <span class="syntax-operator">&gt;&gt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">3u</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#136"
             id="136"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >136</a>        let angle = (random_angle + f32(current_spiral) / f32(num_spirals)) * 2.0 * PI;
+        >136</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">angle</span> <span class="syntax-operator">=</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">random_angle</span> <span class="syntax-operator">+</span> <span class="syntax-function syntax-function-call">f32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">current_spiral</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">/</span> <span class="syntax-function syntax-function-call">f32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">num_spirals</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">2.0</span> <span class="syntax-operator">*</span> <span class="syntax-constant">PI</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#137"
             id="137"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >137</a>        let m = vec2(sin(angle), cos(angle));
+        >137</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">m</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">vec2</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">sin</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">angle</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-function syntax-function-call">cos</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">angle</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#138"
             id="138"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >138</a>        let rotation_matrix = mat2x2(
+        >138</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">rotation_matrix</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">mat2x2</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span>
 <a
             href="#139"
             id="139"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >139</a>            m.y, -m.x,
+        >139</a>            <span class="syntax-variable">m</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">y</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-operator">-</span><span class="syntax-variable">m</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">x</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#140"
             id="140"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >140</a>            m.x, m.y
+        >140</a>            <span class="syntax-variable">m</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">x</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">m</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">y</span>
 <a
             href="#141"
             id="141"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >141</a>        );
+        >141</a>        <span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#142"
             id="142"
@@ -959,109 +960,109 @@
             id="143"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >143</a>        // Get spiral offset
+        >143</a>        <span class="syntax-comment syntax-comment-line">// Get spiral offset</span>
 <a
             href="#144"
             id="144"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >144</a>        var spiral_offset: vec2&#60;f32&#62;;
+        >144</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">spiral_offset</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#145"
             id="145"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >145</a>        switch i &#38; 7 {
+        >145</a>        <span class="syntax-keyword syntax-keyword-control">switch</span> <span class="syntax-variable">i</span> <span class="syntax-operator">&amp;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">7</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#146"
             id="146"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >146</a>            // https://www.iryoku.com/next-generation-post-processing-in-call-of-duty-advanced-warfare (slides 120-135)
+        >146</a>            <span class="syntax-comment syntax-comment-line">// https://www.iryoku.com/next-generation-post-processing-in-call-of-duty-advanced-warfare (slides 120-135)</span>
 <a
             href="#147"
             id="147"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >147</a>            // TODO: Figure out a more reasonable way of doing this, as WGSL
+        >147</a>            <span class="syntax-comment syntax-comment-line">// TODO: Figure out a more reasonable way of doing this, as WGSL</span>
 <a
             href="#148"
             id="148"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >148</a>            // seems to only allow constant indexes into constant arrays at the moment.
+        >148</a>            <span class="syntax-comment syntax-comment-line">// seems to only allow constant indexes into constant arrays at the moment.</span>
 <a
             href="#149"
             id="149"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >149</a>            // The downstream shader compiler should be able to optimize this into a single
+        >149</a>            <span class="syntax-comment syntax-comment-line">// The downstream shader compiler should be able to optimize this into a single</span>
 <a
             href="#150"
             id="150"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >150</a>            // constant when unrolling the for loop, but it&#39;s still not ideal.
+        >150</a>            <span class="syntax-comment syntax-comment-line">// constant when unrolling the for loop, but it&#39;s still not ideal.</span>
 <a
             href="#151"
             id="151"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >151</a>            case 0: { spiral_offset = utils::SPIRAL_OFFSET_0_; } // Note: We go even first and then odd, so that the lowest
+        >151</a>            <span class="syntax-keyword syntax-keyword-control">case</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span> <span class="syntax-variable">spiral_offset</span> <span class="syntax-operator">=</span> <span class="syntax-namespace">utils</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-constant">SPIRAL_OFFSET_0_</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span> <span class="syntax-punctuation syntax-punctuation-bracket">}</span> <span class="syntax-comment syntax-comment-line">// Note: We go even first and then odd, so that the lowest</span>
 <a
             href="#152"
             id="152"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >152</a>            case 1: { spiral_offset = utils::SPIRAL_OFFSET_2_; } // quality possible (which does 4 taps) still does a full spiral
+        >152</a>            <span class="syntax-keyword syntax-keyword-control">case</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span> <span class="syntax-variable">spiral_offset</span> <span class="syntax-operator">=</span> <span class="syntax-namespace">utils</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-constant">SPIRAL_OFFSET_2_</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span> <span class="syntax-punctuation syntax-punctuation-bracket">}</span> <span class="syntax-comment syntax-comment-line">// quality possible (which does 4 taps) still does a full spiral</span>
 <a
             href="#153"
             id="153"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >153</a>            case 2: { spiral_offset = utils::SPIRAL_OFFSET_4_; } // instead of just the first half of it
+        >153</a>            <span class="syntax-keyword syntax-keyword-control">case</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">2</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span> <span class="syntax-variable">spiral_offset</span> <span class="syntax-operator">=</span> <span class="syntax-namespace">utils</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-constant">SPIRAL_OFFSET_4_</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span> <span class="syntax-punctuation syntax-punctuation-bracket">}</span> <span class="syntax-comment syntax-comment-line">// instead of just the first half of it</span>
 <a
             href="#154"
             id="154"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >154</a>            case 3: { spiral_offset = utils::SPIRAL_OFFSET_6_; }
+        >154</a>            <span class="syntax-keyword syntax-keyword-control">case</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">3</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span> <span class="syntax-variable">spiral_offset</span> <span class="syntax-operator">=</span> <span class="syntax-namespace">utils</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-constant">SPIRAL_OFFSET_6_</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span> <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#155"
             id="155"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >155</a>            case 4: { spiral_offset = utils::SPIRAL_OFFSET_1_; }
+        >155</a>            <span class="syntax-keyword syntax-keyword-control">case</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">4</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span> <span class="syntax-variable">spiral_offset</span> <span class="syntax-operator">=</span> <span class="syntax-namespace">utils</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-constant">SPIRAL_OFFSET_1_</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span> <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#156"
             id="156"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >156</a>            case 5: { spiral_offset = utils::SPIRAL_OFFSET_3_; }
+        >156</a>            <span class="syntax-keyword syntax-keyword-control">case</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">5</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span> <span class="syntax-variable">spiral_offset</span> <span class="syntax-operator">=</span> <span class="syntax-namespace">utils</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-constant">SPIRAL_OFFSET_3_</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span> <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#157"
             id="157"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >157</a>            case 6: { spiral_offset = utils::SPIRAL_OFFSET_5_; }
+        >157</a>            <span class="syntax-keyword syntax-keyword-control">case</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">6</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span> <span class="syntax-variable">spiral_offset</span> <span class="syntax-operator">=</span> <span class="syntax-namespace">utils</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-constant">SPIRAL_OFFSET_5_</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span> <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#158"
             id="158"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >158</a>            case 7: { spiral_offset = utils::SPIRAL_OFFSET_7_; }
+        >158</a>            <span class="syntax-keyword syntax-keyword-control">case</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">7</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span> <span class="syntax-variable">spiral_offset</span> <span class="syntax-operator">=</span> <span class="syntax-namespace">utils</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-constant">SPIRAL_OFFSET_7_</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span> <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#159"
             id="159"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >159</a>            default: {}
+        >159</a>            <span class="syntax-keyword syntax-keyword-control">default</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#160"
             id="160"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >160</a>        }
+        >160</a>        <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#161"
             id="161"
@@ -1073,13 +1074,13 @@
             id="162"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >162</a>        // Make each consecutive spiral slightly smaller than the previous one
+        >162</a>        <span class="syntax-comment syntax-comment-line">// Make each consecutive spiral slightly smaller than the previous one</span>
 <a
             href="#163"
             id="163"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >163</a>        spiral_offset *= 1.0 - (0.5 * f32(current_spiral + 1) / f32(num_spirals));
+        >163</a>        <span class="syntax-variable">spiral_offset</span> <span class="syntax-operator">*=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span> <span class="syntax-operator">-</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.5</span> <span class="syntax-operator">*</span> <span class="syntax-function syntax-function-call">f32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">current_spiral</span> <span class="syntax-operator">+</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">/</span> <span class="syntax-function syntax-function-call">f32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">num_spirals</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#164"
             id="164"
@@ -1091,13 +1092,13 @@
             id="165"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >165</a>        // Rotate and correct for aspect ratio
+        >165</a>        <span class="syntax-comment syntax-comment-line">// Rotate and correct for aspect ratio</span>
 <a
             href="#166"
             id="166"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >166</a>        let rotated_spiral_offset = (rotation_matrix * spiral_offset) * vec2(1.0, aspect);
+        >166</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">rotated_spiral_offset</span> <span class="syntax-operator">=</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">rotation_matrix</span> <span class="syntax-operator">*</span> <span class="syntax-variable">spiral_offset</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-function syntax-function-call">vec2</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">aspect</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#167"
             id="167"
@@ -1109,13 +1110,13 @@
             id="168"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >168</a>        // Calculate final offset position, with blur and spiral offset
+        >168</a>        <span class="syntax-comment syntax-comment-line">// Calculate final offset position, with blur and spiral offset</span>
 <a
             href="#169"
             id="169"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >169</a>        let modified_offset_position = offset_position + rotated_spiral_offset * blur_intensity * (1.0 - f32(pixel_checkboard) * 0.1);
+        >169</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">modified_offset_position</span> <span class="syntax-operator">=</span> <span class="syntax-variable">offset_position</span> <span class="syntax-operator">+</span> <span class="syntax-variable">rotated_spiral_offset</span> <span class="syntax-operator">*</span> <span class="syntax-variable">blur_intensity</span> <span class="syntax-operator">*</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span> <span class="syntax-operator">-</span> <span class="syntax-function syntax-function-call">f32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">pixel_checkboard</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.1</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#170"
             id="170"
@@ -1127,43 +1128,43 @@
             id="171"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >171</a>        // Sample the view transmission texture at the offset position + noise offset, to get the background color
+        >171</a>        <span class="syntax-comment syntax-comment-line">// Sample the view transmission texture at the offset position + noise offset, to get the background color</span>
 <a
             href="#172"
             id="172"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >172</a>        var sample = textureSampleLevel(
+        >172</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">sample</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">textureSampleLevel</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span>
 <a
             href="#173"
             id="173"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >173</a>            view_bindings::view_transmission_texture,
+        >173</a>            <span class="syntax-namespace">view_bindings</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-variable">view_transmission_texture</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#174"
             id="174"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >174</a>            view_bindings::view_transmission_sampler,
+        >174</a>            <span class="syntax-namespace">view_bindings</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-variable">view_transmission_sampler</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#175"
             id="175"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >175</a>            modified_offset_position,
+        >175</a>            <span class="syntax-variable">modified_offset_position</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#176"
             id="176"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >176</a>            0.0
+        >176</a>            <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span>
 <a
             href="#177"
             id="177"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >177</a>        );
+        >177</a>        <span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#178"
             id="178"
@@ -1175,31 +1176,31 @@
             id="179"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >179</a>        @if(DEPTH_PREPASS &#38;&#38; !WEBGL2)
+        >179</a>        <span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">DEPTH_PREPASS</span> <span class="syntax-operator">&amp;&amp;</span> <span class="syntax-operator">!</span><span class="syntax-constant">WEBGL2</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#180"
             id="180"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >180</a>        // Use depth prepass data to reject values that are in front of the current fragment
+        >180</a>        <span class="syntax-comment syntax-comment-line">// Use depth prepass data to reject values that are in front of the current fragment</span>
 <a
             href="#181"
             id="181"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >181</a>        if prepass_utils::prepass_depth(vec4&#60;f32&#62;(modified_offset_position * view_bindings::view.viewport.zw, 0.0, 0.0), 0u) &#62; frag_coord.z {
+        >181</a>        <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-namespace">prepass_utils</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-function syntax-function-call">prepass_depth</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">modified_offset_position</span> <span class="syntax-operator">*</span> <span class="syntax-namespace">view_bindings</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-variable">view</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">viewport</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">zw</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0u</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">&gt;</span> <span class="syntax-variable">frag_coord</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">z</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#182"
             id="182"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >182</a>            sample = vec4&#60;f32&#62;(0.0);
+        >182</a>            <span class="syntax-variable">sample</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#183"
             id="183"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >183</a>        }
+        >183</a>        <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#184"
             id="184"
@@ -1211,43 +1212,43 @@
             id="185"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >185</a>        // As blur intensity grows higher, gradually limit *very bright* color RGB values towards a
+        >185</a>        <span class="syntax-comment syntax-comment-line">// As blur intensity grows higher, gradually limit *very bright* color RGB values towards a</span>
 <a
             href="#186"
             id="186"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >186</a>        // maximum length of 1.0 to prevent stray “firefly” pixel artifacts. This can potentially make
+        >186</a>        <span class="syntax-comment syntax-comment-line">// maximum length of 1.0 to prevent stray “firefly” pixel artifacts. This can potentially make</span>
 <a
             href="#187"
             id="187"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >187</a>        // very strong emissive meshes appear much dimmer, but the artifacts are noticeable enough to
+        >187</a>        <span class="syntax-comment syntax-comment-line">// very strong emissive meshes appear much dimmer, but the artifacts are noticeable enough to</span>
 <a
             href="#188"
             id="188"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >188</a>        // warrant this treatment.
+        >188</a>        <span class="syntax-comment syntax-comment-line">// warrant this treatment.</span>
 <a
             href="#189"
             id="189"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >189</a>        let normalized_rgb = normalize(sample.rgb);
+        >189</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">normalized_rgb</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">normalize</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">sample</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">rgb</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#190"
             id="190"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >190</a>        result += vec4(min(sample.rgb, normalized_rgb / saturate(blur_intensity / 2.0)), sample.a);
+        >190</a>        <span class="syntax-variable">result</span> <span class="syntax-operator">+=</span> <span class="syntax-function syntax-function-call">vec4</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">min</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">sample</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">rgb</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">normalized_rgb</span> <span class="syntax-operator">/</span> <span class="syntax-function syntax-function-call">saturate</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">blur_intensity</span> <span class="syntax-operator">/</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">2.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">sample</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">a</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#191"
             id="191"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >191</a>    }
+        >191</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#192"
             id="192"
@@ -1259,7 +1260,7 @@
             id="193"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >193</a>    result /= f32(num_taps);
+        >193</a>    <span class="syntax-variable">result</span> <span class="syntax-operator">/=</span> <span class="syntax-function syntax-function-call">f32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">num_taps</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#194"
             id="194"
@@ -1271,13 +1272,13 @@
             id="195"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >195</a>    @if(TONEMAP_IN_SHADER)
+        >195</a>    <span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">TONEMAP_IN_SHADER</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#196"
             id="196"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >196</a>    result = approximate_inverse_tone_mapping(result, view_bindings::view.color_grading);
+        >196</a>    <span class="syntax-variable">result</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">approximate_inverse_tone_mapping</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">result</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-namespace">view_bindings</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-variable">view</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">color_grading</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#197"
             id="197"
@@ -1289,13 +1290,13 @@
             id="198"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >198</a>    return result;
+        >198</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-variable">result</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#199"
             id="199"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >199</a>}
+        >199</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#200"
             id="200"
@@ -1307,7 +1308,7 @@
             id="201"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >201</a>}</code>
+        >201</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span></code>
 </pre>
 
         </div>

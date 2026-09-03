@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="../../../../../-/static/css/themes.css">
     <link rel="stylesheet" href="../../../../../-/static/css/styles.css">
     <link rel="stylesheet" href="../../../../../-/static/css/icons.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/syntax.css">
     <script src="../../../../../-/static/js/settings.js"></script>
 
     
@@ -107,91 +108,91 @@
             id="1"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >1</a>import package::{
+        >1</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">package</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#2"
             id="2"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >2</a>    prepass::{
+        >2</a>    <span class="syntax-namespace">prepass</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#3"
             id="3"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >3</a>        bindings as prepass_bindings,
+        >3</a>        <span class="syntax-namespace">bindings</span> <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">as</span> <span class="syntax-namespace">prepass_bindings</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#4"
             id="4"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >4</a>        io::{Vertex, UncompressedVertex, VertexOutput, FragmentOutput, decompress_vertex},
+        >4</a>        <span class="syntax-namespace">io</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-punctuation syntax-punctuation-bracket">{</span><span class="syntax-type">Vertex</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">UncompressedVertex</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">VertexOutput</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">FragmentOutput</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-namespace">decompress_vertex</span><span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#5"
             id="5"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >5</a>    },
+        >5</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#6"
             id="6"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >6</a>    render::{
+        >6</a>    <span class="syntax-namespace">render</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#7"
             id="7"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >7</a>        mesh_bindings::mesh,
+        >7</a>        <span class="syntax-namespace">mesh_bindings</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">mesh</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#8"
             id="8"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >8</a>        mesh_functions,
+        >8</a>        <span class="syntax-namespace">mesh_functions</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#9"
             id="9"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >9</a>        skinning,
+        >9</a>        <span class="syntax-namespace">skinning</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#10"
             id="10"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >10</a>        morph,
+        >10</a>        <span class="syntax-namespace">morph</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#11"
             id="11"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >11</a>        morph::{morph_position, morph_normal, morph_tangent},
+        >11</a>        <span class="syntax-namespace">morph</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-punctuation syntax-punctuation-bracket">{</span><span class="syntax-namespace">morph_position</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-namespace">morph_normal</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-namespace">morph_tangent</span><span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#12"
             id="12"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >12</a>        mesh_view_bindings::view,
+        >12</a>        <span class="syntax-namespace">mesh_view_bindings</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">view</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#13"
             id="13"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >13</a>        view_transformations::position_world_to_clip,
+        >13</a>        <span class="syntax-namespace">view_transformations</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">position_world_to_clip</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#14"
             id="14"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >14</a>    },
+        >14</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#15"
             id="15"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >15</a>};
+        >15</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#16"
             id="16"
@@ -203,13 +204,13 @@
             id="17"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >17</a>@if(DEFERRED_PREPASS)
+        >17</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">DEFERRED_PREPASS</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#18"
             id="18"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >18</a>import package::render::rgb9e5;
+        >18</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">package</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">render</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">rgb9e5</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#19"
             id="19"
@@ -221,49 +222,49 @@
             id="20"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >20</a>@if(MORPH_TARGETS)
+        >20</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">MORPH_TARGETS</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#21"
             id="21"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >21</a>// The instance_index parameter must match vertex_in.instance_index. This is a work around for a wgpu dx12 bug.
+        >21</a><span class="syntax-comment syntax-comment-line">// The instance_index parameter must match vertex_in.instance_index. This is a work around for a wgpu dx12 bug.</span>
 <a
             href="#22"
             id="22"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >22</a>// See https://github.com/gfx-rs/naga/issues/2416
+        >22</a><span class="syntax-comment syntax-comment-line">// See https://github.com/gfx-rs/naga/issues/2416</span>
 <a
             href="#23"
             id="23"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >23</a>fn morph_vertex(vertex_in: UncompressedVertex, instance_index: u32) -&#62; UncompressedVertex  {
+        >23</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">morph_vertex</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">vertex_in</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">UncompressedVertex</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">instance_index</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-type">UncompressedVertex</span>  <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#24"
             id="24"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >24</a>    var vertex = vertex_in;
+        >24</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">vertex</span> <span class="syntax-operator">=</span> <span class="syntax-variable">vertex_in</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#25"
             id="25"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >25</a>    let first_vertex = mesh[instance_index].first_vertex_index;
+        >25</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">first_vertex</span> <span class="syntax-operator">=</span> <span class="syntax-variable">mesh</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">instance_index</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">first_vertex_index</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#26"
             id="26"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >26</a>    let vertex_index = vertex.index - first_vertex;
+        >26</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">vertex_index</span> <span class="syntax-operator">=</span> <span class="syntax-variable">vertex</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">index</span> <span class="syntax-operator">-</span> <span class="syntax-variable">first_vertex</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#27"
             id="27"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >27</a>    let morph_descriptor_index  = mesh[instance_index].morph_descriptor_index;
+        >27</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">morph_descriptor_index</span>  <span class="syntax-operator">=</span> <span class="syntax-variable">mesh</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">instance_index</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">morph_descriptor_index</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#28"
             id="28"
@@ -275,85 +276,85 @@
             id="29"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >29</a>    let weight_count = morph::layer_count(morph_descriptor_index);
+        >29</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">weight_count</span> <span class="syntax-operator">=</span> <span class="syntax-namespace">morph</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-function syntax-function-call">layer_count</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">morph_descriptor_index</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#30"
             id="30"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >30</a>    for (var i: u32 = 0u; i &#60; weight_count; i ++) {
+        >30</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-repeat">for</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">i</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span> <span class="syntax-variable">i</span> <span class="syntax-operator">&lt;</span> <span class="syntax-variable">weight_count</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span> <span class="syntax-variable">i</span> <span class="syntax-operator">++</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#31"
             id="31"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >31</a>        let weight = morph::weight_at(i, morph_descriptor_index);
+        >31</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">weight</span> <span class="syntax-operator">=</span> <span class="syntax-namespace">morph</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-function syntax-function-call">weight_at</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">i</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">morph_descriptor_index</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#32"
             id="32"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >32</a>        if weight == 0.0 {
+        >32</a>        <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-variable">weight</span> <span class="syntax-operator">==</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#33"
             id="33"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >33</a>            continue;
+        >33</a>            <span class="syntax-keyword syntax-keyword-control">continue</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#34"
             id="34"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >34</a>        }
+        >34</a>        <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#35"
             id="35"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >35</a>        vertex.position += weight * morph_position(vertex_index, i, morph_descriptor_index);
+        >35</a>        <span class="syntax-variable">vertex</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">position</span> <span class="syntax-operator">+=</span> <span class="syntax-variable">weight</span> <span class="syntax-operator">*</span> <span class="syntax-function syntax-function-call">morph_position</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">vertex_index</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">i</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">morph_descriptor_index</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#36"
             id="36"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >36</a>@if(VERTEX_NORMALS)
+        >36</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">VERTEX_NORMALS</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#37"
             id="37"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >37</a>        vertex.normal += weight * morph_normal(vertex_index, i, morph_descriptor_index);
+        >37</a>        <span class="syntax-variable">vertex</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">normal</span> <span class="syntax-operator">+=</span> <span class="syntax-variable">weight</span> <span class="syntax-operator">*</span> <span class="syntax-function syntax-function-call">morph_normal</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">vertex_index</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">i</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">morph_descriptor_index</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#38"
             id="38"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >38</a>@if(VERTEX_TANGENTS)
+        >38</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">VERTEX_TANGENTS</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#39"
             id="39"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >39</a>        vertex.tangent += vec4(weight * morph_tangent(vertex_index, i, morph_descriptor_index), 0.0);
+        >39</a>        <span class="syntax-variable">vertex</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">tangent</span> <span class="syntax-operator">+=</span> <span class="syntax-function syntax-function-call">vec4</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">weight</span> <span class="syntax-operator">*</span> <span class="syntax-function syntax-function-call">morph_tangent</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">vertex_index</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">i</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">morph_descriptor_index</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#40"
             id="40"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >40</a>    }
+        >40</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#41"
             id="41"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >41</a>    return vertex;
+        >41</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-variable">vertex</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#42"
             id="42"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >42</a>}
+        >42</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#43"
             id="43"
@@ -365,151 +366,151 @@
             id="44"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >44</a>@if(MORPH_TARGETS)
+        >44</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">MORPH_TARGETS</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#45"
             id="45"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >45</a>// Returns the morphed position of the given vertex from the previous frame.
+        >45</a><span class="syntax-comment syntax-comment-line">// Returns the morphed position of the given vertex from the previous frame.</span>
 <a
             href="#46"
             id="46"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >46</a>//
+        >46</a><span class="syntax-comment syntax-comment-line">//</span>
 <a
             href="#47"
             id="47"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >47</a>// This function is used for motion vector calculation, and, as such, it doesn&#39;t
+        >47</a><span class="syntax-comment syntax-comment-line">// This function is used for motion vector calculation, and, as such, it doesn&#39;t</span>
 <a
             href="#48"
             id="48"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >48</a>// bother morphing the normals and tangents.
+        >48</a><span class="syntax-comment syntax-comment-line">// bother morphing the normals and tangents.</span>
 <a
             href="#49"
             id="49"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >49</a>//
+        >49</a><span class="syntax-comment syntax-comment-line">//</span>
 <a
             href="#50"
             id="50"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >50</a>// The instance_index parameter must match vertex_in.instance_index. This is a work around for a wgpu dx12 bug.
+        >50</a><span class="syntax-comment syntax-comment-line">// The instance_index parameter must match vertex_in.instance_index. This is a work around for a wgpu dx12 bug.</span>
 <a
             href="#51"
             id="51"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >51</a>// See https://github.com/gfx-rs/naga/issues/2416
+        >51</a><span class="syntax-comment syntax-comment-line">// See https://github.com/gfx-rs/naga/issues/2416</span>
 <a
             href="#52"
             id="52"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >52</a>fn morph_prev_vertex(vertex_in: UncompressedVertex, instance_index: u32) -&#62; UncompressedVertex {
+        >52</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">morph_prev_vertex</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">vertex_in</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">UncompressedVertex</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">instance_index</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-type">UncompressedVertex</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#53"
             id="53"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >53</a>    var vertex = vertex_in;
+        >53</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">vertex</span> <span class="syntax-operator">=</span> <span class="syntax-variable">vertex_in</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#54"
             id="54"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >54</a>    let first_vertex = mesh[instance_index].first_vertex_index;
+        >54</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">first_vertex</span> <span class="syntax-operator">=</span> <span class="syntax-variable">mesh</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">instance_index</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">first_vertex_index</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#55"
             id="55"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >55</a>    let vertex_index = vertex.index - first_vertex;
+        >55</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">vertex_index</span> <span class="syntax-operator">=</span> <span class="syntax-variable">vertex</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">index</span> <span class="syntax-operator">-</span> <span class="syntax-variable">first_vertex</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#56"
             id="56"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >56</a>    let morph_descriptor_index  = mesh[instance_index].morph_descriptor_index;
+        >56</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">morph_descriptor_index</span>  <span class="syntax-operator">=</span> <span class="syntax-variable">mesh</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">instance_index</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">morph_descriptor_index</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#57"
             id="57"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >57</a>    let weight_count = morph::layer_count(morph_descriptor_index);
+        >57</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">weight_count</span> <span class="syntax-operator">=</span> <span class="syntax-namespace">morph</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-function syntax-function-call">layer_count</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">morph_descriptor_index</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#58"
             id="58"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >58</a>    for (var i: u32 = 0u; i &#60; weight_count; i ++) {
+        >58</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-repeat">for</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">i</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span> <span class="syntax-variable">i</span> <span class="syntax-operator">&lt;</span> <span class="syntax-variable">weight_count</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span> <span class="syntax-variable">i</span> <span class="syntax-operator">++</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#59"
             id="59"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >59</a>        let weight = morph::prev_weight_at(i, morph_descriptor_index);
+        >59</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">weight</span> <span class="syntax-operator">=</span> <span class="syntax-namespace">morph</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-function syntax-function-call">prev_weight_at</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">i</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">morph_descriptor_index</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#60"
             id="60"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >60</a>        if weight == 0.0 {
+        >60</a>        <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-variable">weight</span> <span class="syntax-operator">==</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#61"
             id="61"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >61</a>            continue;
+        >61</a>            <span class="syntax-keyword syntax-keyword-control">continue</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#62"
             id="62"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >62</a>        }
+        >62</a>        <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#63"
             id="63"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >63</a>        vertex.position += weight * morph_position(vertex_index, i, morph_descriptor_index);
+        >63</a>        <span class="syntax-variable">vertex</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">position</span> <span class="syntax-operator">+=</span> <span class="syntax-variable">weight</span> <span class="syntax-operator">*</span> <span class="syntax-function syntax-function-call">morph_position</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">vertex_index</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">i</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">morph_descriptor_index</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#64"
             id="64"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >64</a>        // Don&#39;t bother morphing normals and tangents; we don&#39;t need them for
+        >64</a>        <span class="syntax-comment syntax-comment-line">// Don&#39;t bother morphing normals and tangents; we don&#39;t need them for</span>
 <a
             href="#65"
             id="65"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >65</a>        // motion vector calculation.
+        >65</a>        <span class="syntax-comment syntax-comment-line">// motion vector calculation.</span>
 <a
             href="#66"
             id="66"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >66</a>    }
+        >66</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#67"
             id="67"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >67</a>    return vertex;
+        >67</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-variable">vertex</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#68"
             id="68"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >68</a>}
+        >68</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#69"
             id="69"
@@ -521,49 +522,49 @@
             id="70"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >70</a>@vertex
+        >70</a><span class="syntax-attribute">@<span class="syntax-attribute">vertex</span></span>
 <a
             href="#71"
             id="71"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >71</a>fn vertex(vertex_no_morph: Vertex) -&#62; VertexOutput {
+        >71</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">vertex</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">vertex_no_morph</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">Vertex</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-type">VertexOutput</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#72"
             id="72"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >72</a>    var out: VertexOutput;
+        >72</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">out</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">VertexOutput</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#73"
             id="73"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >73</a>    let uncompressed_vertex_no_morph = decompress_vertex(vertex_no_morph, vertex_no_morph.instance_index);
+        >73</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">uncompressed_vertex_no_morph</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">decompress_vertex</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">vertex_no_morph</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">vertex_no_morph</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">instance_index</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#74"
             id="74"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >74</a>@if(MORPH_TARGETS)
+        >74</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">MORPH_TARGETS</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#75"
             id="75"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >75</a>    var vertex = morph_vertex(uncompressed_vertex_no_morph, vertex_no_morph.instance_index);
+        >75</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">vertex</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">morph_vertex</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">uncompressed_vertex_no_morph</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">vertex_no_morph</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">instance_index</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#76"
             id="76"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >76</a>@else
+        >76</a><span class="syntax-attribute">@<span class="syntax-attribute">else</span></span>
 <a
             href="#77"
             id="77"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >77</a>    var vertex = uncompressed_vertex_no_morph;
+        >77</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">vertex</span> <span class="syntax-operator">=</span> <span class="syntax-variable">uncompressed_vertex_no_morph</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#78"
             id="78"
@@ -575,7 +576,7 @@
             id="79"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >79</a>    let mesh_world_from_local = mesh_functions::get_world_from_local(vertex_no_morph.instance_index);
+        >79</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">mesh_world_from_local</span> <span class="syntax-operator">=</span> <span class="syntax-namespace">mesh_functions</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-function syntax-function-call">get_world_from_local</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">vertex_no_morph</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">instance_index</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#80"
             id="80"
@@ -587,61 +588,61 @@
             id="81"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >81</a>@if(SKINNED)
+        >81</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">SKINNED</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#82"
             id="82"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >82</a>    // Use vertex_no_morph.instance_index instead of vertex.instance_index to work around a wgpu dx12 bug.
+        >82</a>    <span class="syntax-comment syntax-comment-line">// Use vertex_no_morph.instance_index instead of vertex.instance_index to work around a wgpu dx12 bug.</span>
 <a
             href="#83"
             id="83"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >83</a>    // See https://github.com/gfx-rs/naga/issues/2416
+        >83</a>    <span class="syntax-comment syntax-comment-line">// See https://github.com/gfx-rs/naga/issues/2416</span>
 <a
             href="#84"
             id="84"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >84</a>    var world_from_local = skinning::skin_model(
+        >84</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">world_from_local</span> <span class="syntax-operator">=</span> <span class="syntax-namespace">skinning</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-function syntax-function-call">skin_model</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span>
 <a
             href="#85"
             id="85"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >85</a>        vertex.joint_indices,
+        >85</a>        <span class="syntax-variable">vertex</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">joint_indices</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#86"
             id="86"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >86</a>        vertex.joint_weights,
+        >86</a>        <span class="syntax-variable">vertex</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">joint_weights</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#87"
             id="87"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >87</a>        vertex_no_morph.instance_index
+        >87</a>        <span class="syntax-variable">vertex_no_morph</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">instance_index</span>
 <a
             href="#88"
             id="88"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >88</a>    );
+        >88</a>    <span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#89"
             id="89"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >89</a>@else // SKINNED
+        >89</a><span class="syntax-attribute">@<span class="syntax-attribute">else</span></span> <span class="syntax-comment syntax-comment-line">// SKINNED</span>
 <a
             href="#90"
             id="90"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >90</a>    var world_from_local = mesh_world_from_local;
+        >90</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">world_from_local</span> <span class="syntax-operator">=</span> <span class="syntax-variable">mesh_world_from_local</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#91"
             id="91"
@@ -653,37 +654,37 @@
             id="92"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >92</a>    out.world_position = mesh_functions::mesh_position_local_to_world(world_from_local, vec4&#60;f32&#62;(vertex.position, 1.0));
+        >92</a>    <span class="syntax-variable">out</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">world_position</span> <span class="syntax-operator">=</span> <span class="syntax-namespace">mesh_functions</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-function syntax-function-call">mesh_position_local_to_world</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">world_from_local</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-function syntax-function-call">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">vertex</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">position</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#93"
             id="93"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >93</a>    out.position = position_world_to_clip(out.world_position.xyz);
+        >93</a>    <span class="syntax-variable">out</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">position</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">position_world_to_clip</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">out</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">world_position</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">xyz</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#94"
             id="94"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >94</a>@if(UNCLIPPED_DEPTH_ORTHO_EMULATION) {
+        >94</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">UNCLIPPED_DEPTH_ORTHO_EMULATION</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#95"
             id="95"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >95</a>    out.unclipped_depth = out.position.z;
+        >95</a>    <span class="syntax-variable">out</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">unclipped_depth</span> <span class="syntax-operator">=</span> <span class="syntax-variable">out</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">position</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">z</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#96"
             id="96"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >96</a>    out.position.z = min(out.position.z, 1.0); // Clamp depth to avoid clipping
+        >96</a>    <span class="syntax-variable">out</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">position</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">z</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">min</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">out</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">position</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">z</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span> <span class="syntax-comment syntax-comment-line">// Clamp depth to avoid clipping</span>
 <a
             href="#97"
             id="97"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >97</a>}
+        >97</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#98"
             id="98"
@@ -695,13 +696,13 @@
             id="99"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >99</a>@if(VERTEX_UVS_A)
+        >99</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">VERTEX_UVS_A</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#100"
             id="100"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >100</a>    out.uv = vertex.uv;
+        >100</a>    <span class="syntax-variable">out</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">uv</span> <span class="syntax-operator">=</span> <span class="syntax-variable">vertex</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">uv</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#101"
             id="101"
@@ -713,13 +714,13 @@
             id="102"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >102</a>@if(VERTEX_UVS_B)
+        >102</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">VERTEX_UVS_B</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#103"
             id="103"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >103</a>    out.uv_b = vertex.uv_b;
+        >103</a>    <span class="syntax-variable">out</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">uv_b</span> <span class="syntax-operator">=</span> <span class="syntax-variable">vertex</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">uv_b</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#104"
             id="104"
@@ -731,61 +732,61 @@
             id="105"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >105</a>@if(NORMAL_PREPASS_OR_DEFERRED_PREPASS) {
+        >105</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">NORMAL_PREPASS_OR_DEFERRED_PREPASS</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#106"
             id="106"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >106</a>@if(VERTEX_NORMALS &#38;&#38; SKINNED)
+        >106</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">VERTEX_NORMALS</span> <span class="syntax-operator">&amp;&amp;</span> <span class="syntax-constant">SKINNED</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#107"
             id="107"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >107</a>    out.world_normal = skinning::skin_normals(world_from_local, vertex.normal);
+        >107</a>    <span class="syntax-variable">out</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">world_normal</span> <span class="syntax-operator">=</span> <span class="syntax-namespace">skinning</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-function syntax-function-call">skin_normals</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">world_from_local</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">vertex</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">normal</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#108"
             id="108"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >108</a>@elif(VERTEX_NORMALS)
+        >108</a><span class="syntax-attribute">@<span class="syntax-attribute">elif</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">VERTEX_NORMALS</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#109"
             id="109"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >109</a>    out.world_normal = mesh_functions::mesh_normal_local_to_world(
+        >109</a>    <span class="syntax-variable">out</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">world_normal</span> <span class="syntax-operator">=</span> <span class="syntax-namespace">mesh_functions</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-function syntax-function-call">mesh_normal_local_to_world</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span>
 <a
             href="#110"
             id="110"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >110</a>        vertex.normal,
+        >110</a>        <span class="syntax-variable">vertex</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">normal</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#111"
             id="111"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >111</a>        // Use vertex_no_morph.instance_index instead of vertex.instance_index to work around a wgpu dx12 bug.
+        >111</a>        <span class="syntax-comment syntax-comment-line">// Use vertex_no_morph.instance_index instead of vertex.instance_index to work around a wgpu dx12 bug.</span>
 <a
             href="#112"
             id="112"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >112</a>        // See https://github.com/gfx-rs/naga/issues/2416
+        >112</a>        <span class="syntax-comment syntax-comment-line">// See https://github.com/gfx-rs/naga/issues/2416</span>
 <a
             href="#113"
             id="113"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >113</a>        vertex_no_morph.instance_index
+        >113</a>        <span class="syntax-variable">vertex_no_morph</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">instance_index</span>
 <a
             href="#114"
             id="114"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >114</a>    );
+        >114</a>    <span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#115"
             id="115"
@@ -797,55 +798,55 @@
             id="116"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >116</a>@if(VERTEX_TANGENTS)
+        >116</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">VERTEX_TANGENTS</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#117"
             id="117"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >117</a>    out.world_tangent = mesh_functions::mesh_tangent_local_to_world(
+        >117</a>    <span class="syntax-variable">out</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">world_tangent</span> <span class="syntax-operator">=</span> <span class="syntax-namespace">mesh_functions</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-function syntax-function-call">mesh_tangent_local_to_world</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span>
 <a
             href="#118"
             id="118"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >118</a>        world_from_local,
+        >118</a>        <span class="syntax-variable">world_from_local</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#119"
             id="119"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >119</a>        vertex.tangent,
+        >119</a>        <span class="syntax-variable">vertex</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">tangent</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#120"
             id="120"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >120</a>        // Use vertex_no_morph.instance_index instead of vertex.instance_index to work around a wgpu dx12 bug.
+        >120</a>        <span class="syntax-comment syntax-comment-line">// Use vertex_no_morph.instance_index instead of vertex.instance_index to work around a wgpu dx12 bug.</span>
 <a
             href="#121"
             id="121"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >121</a>        // See https://github.com/gfx-rs/naga/issues/2416
+        >121</a>        <span class="syntax-comment syntax-comment-line">// See https://github.com/gfx-rs/naga/issues/2416</span>
 <a
             href="#122"
             id="122"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >122</a>        vertex_no_morph.instance_index
+        >122</a>        <span class="syntax-variable">vertex_no_morph</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">instance_index</span>
 <a
             href="#123"
             id="123"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >123</a>    );
+        >123</a>    <span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#124"
             id="124"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >124</a>}
+        >124</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#125"
             id="125"
@@ -857,13 +858,13 @@
             id="126"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >126</a>@if(VERTEX_COLORS)
+        >126</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">VERTEX_COLORS</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#127"
             id="127"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >127</a>    out.color = vertex.color;
+        >127</a>    <span class="syntax-variable">out</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">color</span> <span class="syntax-operator">=</span> <span class="syntax-variable">vertex</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">color</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#128"
             id="128"
@@ -875,19 +876,19 @@
             id="129"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >129</a>    // Compute the motion vector for TAA among other purposes. For this we need
+        >129</a>    <span class="syntax-comment syntax-comment-line">// Compute the motion vector for TAA among other purposes. For this we need</span>
 <a
             href="#130"
             id="130"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >130</a>    // to know where the vertex was last frame.
+        >130</a>    <span class="syntax-comment syntax-comment-line">// to know where the vertex was last frame.</span>
 <a
             href="#131"
             id="131"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >131</a>@if(MOTION_VECTOR_PREPASS) {
+        >131</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">MOTION_VECTOR_PREPASS</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#132"
             id="132"
@@ -899,43 +900,43 @@
             id="133"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >133</a>    // Take morph targets into account.
+        >133</a>    <span class="syntax-comment syntax-comment-line">// Take morph targets into account.</span>
 <a
             href="#134"
             id="134"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >134</a>@if(MORPH_TARGETS &#38;&#38; HAS_PREVIOUS_MORPH)
+        >134</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">MORPH_TARGETS</span> <span class="syntax-operator">&amp;&amp;</span> <span class="syntax-constant">HAS_PREVIOUS_MORPH</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#135"
             id="135"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >135</a>    let prev_vertex = morph_prev_vertex(uncompressed_vertex_no_morph, vertex_no_morph.instance_index);
+        >135</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">prev_vertex</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">morph_prev_vertex</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">uncompressed_vertex_no_morph</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">vertex_no_morph</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">instance_index</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#136"
             id="136"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >136</a>@elif(MORPH_TARGETS)
+        >136</a><span class="syntax-attribute">@<span class="syntax-attribute">elif</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">MORPH_TARGETS</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#137"
             id="137"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >137</a>    let prev_vertex = uncompressed_vertex_no_morph;
+        >137</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">prev_vertex</span> <span class="syntax-operator">=</span> <span class="syntax-variable">uncompressed_vertex_no_morph</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#138"
             id="138"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >138</a>@else   // MORPH_TARGETS
+        >138</a><span class="syntax-attribute">@<span class="syntax-attribute">else</span></span>   <span class="syntax-comment syntax-comment-line">// MORPH_TARGETS</span>
 <a
             href="#139"
             id="139"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >139</a>    let prev_vertex = uncompressed_vertex_no_morph;
+        >139</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">prev_vertex</span> <span class="syntax-operator">=</span> <span class="syntax-variable">uncompressed_vertex_no_morph</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#140"
             id="140"
@@ -947,91 +948,91 @@
             id="141"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >141</a>    // Take skinning into account.
+        >141</a>    <span class="syntax-comment syntax-comment-line">// Take skinning into account.</span>
 <a
             href="#142"
             id="142"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >142</a>@if(SKINNED &#38;&#38; HAS_PREVIOUS_SKIN)
+        >142</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">SKINNED</span> <span class="syntax-operator">&amp;&amp;</span> <span class="syntax-constant">HAS_PREVIOUS_SKIN</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#143"
             id="143"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >143</a>    let prev_model = skinning::skin_prev_model(
+        >143</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">prev_model</span> <span class="syntax-operator">=</span> <span class="syntax-namespace">skinning</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-function syntax-function-call">skin_prev_model</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span>
 <a
             href="#144"
             id="144"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >144</a>        prev_vertex.joint_indices,
+        >144</a>        <span class="syntax-variable">prev_vertex</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">joint_indices</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#145"
             id="145"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >145</a>        prev_vertex.joint_weights,
+        >145</a>        <span class="syntax-variable">prev_vertex</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">joint_weights</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#146"
             id="146"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >146</a>        vertex_no_morph.instance_index
+        >146</a>        <span class="syntax-variable">vertex_no_morph</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">instance_index</span>
 <a
             href="#147"
             id="147"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >147</a>    );
+        >147</a>    <span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#148"
             id="148"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >148</a>@elif(SKINNED)
+        >148</a><span class="syntax-attribute">@<span class="syntax-attribute">elif</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">SKINNED</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#149"
             id="149"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >149</a>    // Use vertex_no_morph.instance_index instead of prev_vertex.instance_index to work around a wgpu dx12 bug.
+        >149</a>    <span class="syntax-comment syntax-comment-line">// Use vertex_no_morph.instance_index instead of prev_vertex.instance_index to work around a wgpu dx12 bug.</span>
 <a
             href="#150"
             id="150"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >150</a>    // See https://github.com/gfx-rs/naga/issues/2416
+        >150</a>    <span class="syntax-comment syntax-comment-line">// See https://github.com/gfx-rs/naga/issues/2416</span>
 <a
             href="#151"
             id="151"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >151</a>    let prev_model = mesh_functions::get_previous_world_from_local(vertex_no_morph.instance_index);
+        >151</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">prev_model</span> <span class="syntax-operator">=</span> <span class="syntax-namespace">mesh_functions</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-function syntax-function-call">get_previous_world_from_local</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">vertex_no_morph</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">instance_index</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#152"
             id="152"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >152</a>@else   // SKINNED
+        >152</a><span class="syntax-attribute">@<span class="syntax-attribute">else</span></span>   <span class="syntax-comment syntax-comment-line">// SKINNED</span>
 <a
             href="#153"
             id="153"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >153</a>    // Use vertex_no_morph.instance_index instead of prev_vertex.instance_index to work around a wgpu dx12 bug.
+        >153</a>    <span class="syntax-comment syntax-comment-line">// Use vertex_no_morph.instance_index instead of prev_vertex.instance_index to work around a wgpu dx12 bug.</span>
 <a
             href="#154"
             id="154"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >154</a>    // See https://github.com/gfx-rs/naga/issues/2416
+        >154</a>    <span class="syntax-comment syntax-comment-line">// See https://github.com/gfx-rs/naga/issues/2416</span>
 <a
             href="#155"
             id="155"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >155</a>    let prev_model = mesh_functions::get_previous_world_from_local(vertex_no_morph.instance_index);
+        >155</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">prev_model</span> <span class="syntax-operator">=</span> <span class="syntax-namespace">mesh_functions</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-function syntax-function-call">get_previous_world_from_local</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">vertex_no_morph</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">instance_index</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#156"
             id="156"
@@ -1043,31 +1044,31 @@
             id="157"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >157</a>    out.previous_world_position = mesh_functions::mesh_position_local_to_world(
+        >157</a>    <span class="syntax-variable">out</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">previous_world_position</span> <span class="syntax-operator">=</span> <span class="syntax-namespace">mesh_functions</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-function syntax-function-call">mesh_position_local_to_world</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span>
 <a
             href="#158"
             id="158"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >158</a>        prev_model,
+        >158</a>        <span class="syntax-variable">prev_model</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#159"
             id="159"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >159</a>        vec4&#60;f32&#62;(prev_vertex.position, 1.0)
+        >159</a>        <span class="syntax-function syntax-function-call">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">prev_vertex</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">position</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span>
 <a
             href="#160"
             id="160"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >160</a>    );
+        >160</a>    <span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#161"
             id="161"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >161</a>}
+        >161</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#162"
             id="162"
@@ -1079,25 +1080,25 @@
             id="163"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >163</a>@if(VERTEX_OUTPUT_INSTANCE_INDEX)
+        >163</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">VERTEX_OUTPUT_INSTANCE_INDEX</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#164"
             id="164"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >164</a>    // Use vertex_no_morph.instance_index instead of vertex.instance_index to work around a wgpu dx12 bug.
+        >164</a>    <span class="syntax-comment syntax-comment-line">// Use vertex_no_morph.instance_index instead of vertex.instance_index to work around a wgpu dx12 bug.</span>
 <a
             href="#165"
             id="165"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >165</a>    // See https://github.com/gfx-rs/naga/issues/2416
+        >165</a>    <span class="syntax-comment syntax-comment-line">// See https://github.com/gfx-rs/naga/issues/2416</span>
 <a
             href="#166"
             id="166"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >166</a>    out.instance_index = vertex_no_morph.instance_index;
+        >166</a>    <span class="syntax-variable">out</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">instance_index</span> <span class="syntax-operator">=</span> <span class="syntax-variable">vertex_no_morph</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">instance_index</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#167"
             id="167"
@@ -1109,19 +1110,19 @@
             id="168"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >168</a>@if(VISIBILITY_RANGE_DITHER)
+        >168</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">VISIBILITY_RANGE_DITHER</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#169"
             id="169"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >169</a>    out.visibility_range_dither = mesh_functions::get_visibility_range_dither_level(
+        >169</a>    <span class="syntax-variable">out</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">visibility_range_dither</span> <span class="syntax-operator">=</span> <span class="syntax-namespace">mesh_functions</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-function syntax-function-call">get_visibility_range_dither_level</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span>
 <a
             href="#170"
             id="170"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >170</a>        vertex_no_morph.instance_index, mesh_world_from_local[3]);
+        >170</a>        <span class="syntax-variable">vertex_no_morph</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">instance_index</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">mesh_world_from_local</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">3</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#171"
             id="171"
@@ -1133,13 +1134,13 @@
             id="172"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >172</a>    return out;
+        >172</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-variable">out</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#173"
             id="173"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >173</a>}
+        >173</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#174"
             id="174"
@@ -1151,25 +1152,25 @@
             id="175"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >175</a>@if(PREPASS_FRAGMENT)
+        >175</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">PREPASS_FRAGMENT</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#176"
             id="176"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >176</a>@fragment
+        >176</a><span class="syntax-attribute">@<span class="syntax-attribute">fragment</span></span>
 <a
             href="#177"
             id="177"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >177</a>fn fragment(in: VertexOutput) -&#62; FragmentOutput {
+        >177</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">fragment</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">in</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">VertexOutput</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-type">FragmentOutput</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#178"
             id="178"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >178</a>    var out: FragmentOutput;
+        >178</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">out</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">FragmentOutput</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#179"
             id="179"
@@ -1181,13 +1182,13 @@
             id="180"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >180</a>@if(NORMAL_PREPASS)
+        >180</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">NORMAL_PREPASS</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#181"
             id="181"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >181</a>    out.normal = vec4(in.world_normal * 0.5 + vec3(0.5), 1.0);
+        >181</a>    <span class="syntax-variable">out</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">normal</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">vec4</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">in</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">world_normal</span> <span class="syntax-operator">*</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.5</span> <span class="syntax-operator">+</span> <span class="syntax-function syntax-function-call">vec3</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.5</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#182"
             id="182"
@@ -1199,13 +1200,13 @@
             id="183"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >183</a>@if(UNCLIPPED_DEPTH_ORTHO_EMULATION)
+        >183</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">UNCLIPPED_DEPTH_ORTHO_EMULATION</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#184"
             id="184"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >184</a>    out.frag_depth = in.unclipped_depth;
+        >184</a>    <span class="syntax-variable">out</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">frag_depth</span> <span class="syntax-operator">=</span> <span class="syntax-variable">in</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">unclipped_depth</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#185"
             id="185"
@@ -1217,79 +1218,79 @@
             id="186"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >186</a>@if(MOTION_VECTOR_PREPASS) {
+        >186</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">MOTION_VECTOR_PREPASS</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#187"
             id="187"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >187</a>    let clip_position_t = view.unjittered_clip_from_world * in.world_position;
+        >187</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">clip_position_t</span> <span class="syntax-operator">=</span> <span class="syntax-variable">view</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">unjittered_clip_from_world</span> <span class="syntax-operator">*</span> <span class="syntax-variable">in</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">world_position</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#188"
             id="188"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >188</a>    let clip_position = clip_position_t.xy / clip_position_t.w;
+        >188</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">clip_position</span> <span class="syntax-operator">=</span> <span class="syntax-variable">clip_position_t</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">xy</span> <span class="syntax-operator">/</span> <span class="syntax-variable">clip_position_t</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">w</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#189"
             id="189"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >189</a>    let previous_clip_position_t = prepass_bindings::previous_view_uniforms.unjittered_clip_from_world * in.previous_world_position;
+        >189</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">previous_clip_position_t</span> <span class="syntax-operator">=</span> <span class="syntax-namespace">prepass_bindings</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-variable">previous_view_uniforms</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">unjittered_clip_from_world</span> <span class="syntax-operator">*</span> <span class="syntax-variable">in</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">previous_world_position</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#190"
             id="190"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >190</a>    let previous_clip_position = previous_clip_position_t.xy / previous_clip_position_t.w;
+        >190</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">previous_clip_position</span> <span class="syntax-operator">=</span> <span class="syntax-variable">previous_clip_position_t</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">xy</span> <span class="syntax-operator">/</span> <span class="syntax-variable">previous_clip_position_t</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">w</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#191"
             id="191"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >191</a>    // These motion vectors are used as offsets to UV positions and are stored
+        >191</a>    <span class="syntax-comment syntax-comment-line">// These motion vectors are used as offsets to UV positions and are stored</span>
 <a
             href="#192"
             id="192"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >192</a>    // in the range -1,1 to allow offsetting from the one corner to the
+        >192</a>    <span class="syntax-comment syntax-comment-line">// in the range -1,1 to allow offsetting from the one corner to the</span>
 <a
             href="#193"
             id="193"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >193</a>    // diagonally-opposite corner in UV coordinates, in either direction.
+        >193</a>    <span class="syntax-comment syntax-comment-line">// diagonally-opposite corner in UV coordinates, in either direction.</span>
 <a
             href="#194"
             id="194"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >194</a>    // A difference between diagonally-opposite corners of clip space is in the
+        >194</a>    <span class="syntax-comment syntax-comment-line">// A difference between diagonally-opposite corners of clip space is in the</span>
 <a
             href="#195"
             id="195"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >195</a>    // range -2,2, so this needs to be scaled by 0.5. And the V direction goes
+        >195</a>    <span class="syntax-comment syntax-comment-line">// range -2,2, so this needs to be scaled by 0.5. And the V direction goes</span>
 <a
             href="#196"
             id="196"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >196</a>    // down where clip space y goes up, so y needs to be flipped.
+        >196</a>    <span class="syntax-comment syntax-comment-line">// down where clip space y goes up, so y needs to be flipped.</span>
 <a
             href="#197"
             id="197"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >197</a>    out.motion_vector = (clip_position - previous_clip_position) * vec2(0.5, -0.5);
+        >197</a>    <span class="syntax-variable">out</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">motion_vector</span> <span class="syntax-operator">=</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">clip_position</span> <span class="syntax-operator">-</span> <span class="syntax-variable">previous_clip_position</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-function syntax-function-call">vec2</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.5</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-operator">-</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.5</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#198"
             id="198"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >198</a>}
+        >198</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#199"
             id="199"
@@ -1301,49 +1302,49 @@
             id="200"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >200</a>@if(DEFERRED_PREPASS) {
+        >200</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">DEFERRED_PREPASS</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#201"
             id="201"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >201</a>    // There isn&#39;t any material info available for this default prepass shader so we are just writing 
+        >201</a>    <span class="syntax-comment syntax-comment-line">// There isn&#39;t any material info available for this default prepass shader so we are just writing </span>
 <a
             href="#202"
             id="202"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >202</a>    // emissive magenta out to the deferred gbuffer to be rendered by the first deferred lighting pass layer.
+        >202</a>    <span class="syntax-comment syntax-comment-line">// emissive magenta out to the deferred gbuffer to be rendered by the first deferred lighting pass layer.</span>
 <a
             href="#203"
             id="203"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >203</a>    // This is here so if the default prepass fragment is used for deferred magenta will be rendered, and also
+        >203</a>    <span class="syntax-comment syntax-comment-line">// This is here so if the default prepass fragment is used for deferred magenta will be rendered, and also</span>
 <a
             href="#204"
             id="204"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >204</a>    // as an example to show that a user could write to the deferred gbuffer if they were to start from this shader.
+        >204</a>    <span class="syntax-comment syntax-comment-line">// as an example to show that a user could write to the deferred gbuffer if they were to start from this shader.</span>
 <a
             href="#205"
             id="205"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >205</a>    out.deferred = vec4(0u, package::render::rgb9e5::vec3_to_rgb9e5_(vec3(1.0, 0.0, 1.0)), 0u, 0u);
+        >205</a>    <span class="syntax-variable">out</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">deferred</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">vec4</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0u</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-namespace">package</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">render</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">rgb9e5</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-function syntax-function-call">vec3_to_rgb9e5_</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">vec3</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0u</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0u</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#206"
             id="206"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >206</a>    out.deferred_lighting_pass_id = 1u;
+        >206</a>    <span class="syntax-variable">out</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">deferred_lighting_pass_id</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#207"
             id="207"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >207</a>}
+        >207</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#208"
             id="208"
@@ -1355,13 +1356,13 @@
             id="209"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >209</a>    return out;
+        >209</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-variable">out</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#210"
             id="210"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >210</a>}</code>
+        >210</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span></code>
 </pre>
 
         </div>

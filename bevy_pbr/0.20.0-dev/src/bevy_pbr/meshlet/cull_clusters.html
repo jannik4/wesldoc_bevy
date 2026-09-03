@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="../../../../../-/static/css/themes.css">
     <link rel="stylesheet" href="../../../../../-/static/css/styles.css">
     <link rel="stylesheet" href="../../../../../-/static/css/icons.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/syntax.css">
     <script src="../../../../../-/static/js/settings.js"></script>
 
     
@@ -107,151 +108,151 @@
             id="1"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >1</a>import package::meshlet::bindings::{
+        >1</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">package</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">meshlet</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">bindings</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#2"
             id="2"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >2</a>    InstancedOffset,
+        >2</a>    <span class="syntax-type">InstancedOffset</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#3"
             id="3"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >3</a>    get_aabb,
+        >3</a>    <span class="syntax-namespace">get_aabb</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#4"
             id="4"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >4</a>    get_aabb_error,
+        >4</a>    <span class="syntax-namespace">get_aabb_error</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#5"
             id="5"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >5</a>    constants,
+        >5</a>    <span class="syntax-namespace">constants</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#6"
             id="6"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >6</a>    view,
+        >6</a>    <span class="syntax-namespace">view</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#7"
             id="7"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >7</a>    meshlet_instance_uniforms,
+        >7</a>    <span class="syntax-namespace">meshlet_instance_uniforms</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#8"
             id="8"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >8</a>    meshlet_cull_data,
+        >8</a>    <span class="syntax-namespace">meshlet_cull_data</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#9"
             id="9"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >9</a>    meshlet_software_raster_indirect_args,
+        >9</a>    <span class="syntax-namespace">meshlet_software_raster_indirect_args</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#10"
             id="10"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >10</a>    meshlet_hardware_raster_indirect_args,
+        >10</a>    <span class="syntax-namespace">meshlet_hardware_raster_indirect_args</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#11"
             id="11"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >11</a>    meshlet_previous_raster_counts,
+        >11</a>    <span class="syntax-namespace">meshlet_previous_raster_counts</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#12"
             id="12"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >12</a>    meshlet_raster_clusters,
+        >12</a>    <span class="syntax-namespace">meshlet_raster_clusters</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#13"
             id="13"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >13</a>    meshlet_meshlet_cull_count_read,
+        >13</a>    <span class="syntax-namespace">meshlet_meshlet_cull_count_read</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#14"
             id="14"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >14</a>    meshlet_meshlet_cull_count_write,
+        >14</a>    <span class="syntax-namespace">meshlet_meshlet_cull_count_write</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#15"
             id="15"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >15</a>    meshlet_meshlet_cull_dispatch,
+        >15</a>    <span class="syntax-namespace">meshlet_meshlet_cull_dispatch</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#16"
             id="16"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >16</a>    meshlet_meshlet_cull_queue,
+        >16</a>    <span class="syntax-namespace">meshlet_meshlet_cull_queue</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#17"
             id="17"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >17</a>};
+        >17</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#18"
             id="18"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >18</a>import package::meshlet::cull_shared::{
+        >18</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">package</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">meshlet</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">cull_shared</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#19"
             id="19"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >19</a>    ScreenAabb,
+        >19</a>    <span class="syntax-type">ScreenAabb</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#20"
             id="20"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >20</a>    project_aabb,
+        >20</a>    <span class="syntax-namespace">project_aabb</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#21"
             id="21"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >21</a>    lod_error_is_imperceptible,
+        >21</a>    <span class="syntax-namespace">lod_error_is_imperceptible</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#22"
             id="22"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >22</a>    aabb_in_frustum,
+        >22</a>    <span class="syntax-namespace">aabb_in_frustum</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#23"
             id="23"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >23</a>    should_occlusion_cull_aabb,
+        >23</a>    <span class="syntax-namespace">should_occlusion_cull_aabb</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#24"
             id="24"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >24</a>};
+        >24</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#25"
             id="25"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >25</a>import bevy_render::maths::affine3_to_square;
+        >25</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">bevy_render</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">maths</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">affine3_to_square</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#26"
             id="26"
@@ -263,25 +264,25 @@
             id="27"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >27</a>@compute
+        >27</a><span class="syntax-attribute">@<span class="syntax-attribute">compute</span></span>
 <a
             href="#28"
             id="28"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >28</a>@workgroup_size(128, 1, 1) // 1 cluster per thread
+        >28</a><span class="syntax-attribute">@<span class="syntax-attribute">workgroup_size</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">128</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-comment syntax-comment-line">// 1 cluster per thread</span>
 <a
             href="#29"
             id="29"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >29</a>fn cull_clusters(@builtin(global_invocation_id) global_invocation_id: vec3&#60;u32&#62;) {
+        >29</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">cull_clusters</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-attribute">@<span class="syntax-attribute">builtin</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-builtin">global_invocation_id</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-variable syntax-variable-parameter">global_invocation_id</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">u32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#30"
             id="30"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >30</a>    if global_invocation_id.x &#62;= meshlet_meshlet_cull_count_read { return; }
+        >30</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-variable">global_invocation_id</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">x</span> <span class="syntax-operator">&gt;=</span> <span class="syntax-variable">meshlet_meshlet_cull_count_read</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span> <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span> <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#31"
             id="31"
@@ -293,67 +294,67 @@
             id="32"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >32</a>    @if(MESHLET_FIRST_CULLING_PASS)
+        >32</a>    <span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">MESHLET_FIRST_CULLING_PASS</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#33"
             id="33"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >33</a>    let meshlet_id = global_invocation_id.x;
+        >33</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">meshlet_id</span> <span class="syntax-operator">=</span> <span class="syntax-variable">global_invocation_id</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">x</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#34"
             id="34"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >34</a>    @else
+        >34</a>    <span class="syntax-attribute">@<span class="syntax-attribute">else</span></span>
 <a
             href="#35"
             id="35"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >35</a>    let meshlet_id = constants.rightmost_slot - global_invocation_id.x;
+        >35</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">meshlet_id</span> <span class="syntax-operator">=</span> <span class="syntax-variable">constants</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">rightmost_slot</span> <span class="syntax-operator">-</span> <span class="syntax-variable">global_invocation_id</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">x</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#36"
             id="36"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >36</a>    let instanced_offset = meshlet_meshlet_cull_queue[meshlet_id];
+        >36</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">instanced_offset</span> <span class="syntax-operator">=</span> <span class="syntax-variable">meshlet_meshlet_cull_queue</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">meshlet_id</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#37"
             id="37"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >37</a>    let instance_id = instanced_offset.instance_id;
+        >37</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">instance_id</span> <span class="syntax-operator">=</span> <span class="syntax-variable">instanced_offset</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">instance_id</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#38"
             id="38"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >38</a>    let cull_data = &#38;meshlet_cull_data[instanced_offset.offset];
+        >38</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">cull_data</span> <span class="syntax-operator">=</span> <span class="syntax-operator">&amp;</span><span class="syntax-variable">meshlet_cull_data</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">instanced_offset</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">offset</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#39"
             id="39"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >39</a>    var aabb_error_offset = (*cull_data).aabb;
+        >39</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">aabb_error_offset</span> <span class="syntax-operator">=</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">*</span><span class="syntax-variable">cull_data</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">aabb</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#40"
             id="40"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >40</a>    let aabb = get_aabb(&#38;aabb_error_offset);
+        >40</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">aabb</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">get_aabb</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">&amp;</span><span class="syntax-variable">aabb_error_offset</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#41"
             id="41"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >41</a>    let error = get_aabb_error(&#38;aabb_error_offset);
+        >41</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">error</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">get_aabb_error</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">&amp;</span><span class="syntax-variable">aabb_error_offset</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#42"
             id="42"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >42</a>    let lod_sphere = (*cull_data).lod_group_sphere;
+        >42</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">lod_sphere</span> <span class="syntax-operator">=</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">*</span><span class="syntax-variable">cull_data</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">lod_group_sphere</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#43"
             id="43"
@@ -365,19 +366,19 @@
             id="44"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >44</a>    let is_imperceptible = lod_error_is_imperceptible(lod_sphere, error, instance_id);
+        >44</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">is_imperceptible</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">lod_error_is_imperceptible</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">lod_sphere</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">error</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">instance_id</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#45"
             id="45"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >45</a>    // Error and frustum cull, in both passes
+        >45</a>    <span class="syntax-comment syntax-comment-line">// Error and frustum cull, in both passes</span>
 <a
             href="#46"
             id="46"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >46</a>    if !is_imperceptible || !aabb_in_frustum(aabb, instance_id) { return; }
+        >46</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-operator">!</span><span class="syntax-variable">is_imperceptible</span> <span class="syntax-operator">||</span> <span class="syntax-operator">!</span><span class="syntax-function syntax-function-call">aabb_in_frustum</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">aabb</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">instance_id</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span> <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span> <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#47"
             id="47"
@@ -389,79 +390,79 @@
             id="48"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >48</a>    // If we pass, try occlusion culling
+        >48</a>    <span class="syntax-comment syntax-comment-line">// If we pass, try occlusion culling</span>
 <a
             href="#49"
             id="49"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >49</a>    // If this node was occluded, push it&#39;s children to the second pass to check against this frame&#39;s HZB
+        >49</a>    <span class="syntax-comment syntax-comment-line">// If this node was occluded, push it&#39;s children to the second pass to check against this frame&#39;s HZB</span>
 <a
             href="#50"
             id="50"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >50</a>    if should_occlusion_cull_aabb(aabb, instance_id) {
+        >50</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-function syntax-function-call">should_occlusion_cull_aabb</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">aabb</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">instance_id</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#51"
             id="51"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >51</a>@if(MESHLET_FIRST_CULLING_PASS) {
+        >51</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">MESHLET_FIRST_CULLING_PASS</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#52"
             id="52"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >52</a>        let id = atomicAdd(&#38;meshlet_meshlet_cull_count_write, 1u);
+        >52</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">id</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">atomicAdd</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">&amp;</span><span class="syntax-variable">meshlet_meshlet_cull_count_write</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1u</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#53"
             id="53"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >53</a>        let value = InstancedOffset(instance_id, instanced_offset.offset);
+        >53</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">value</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">InstancedOffset</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">instance_id</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">instanced_offset</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">offset</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#54"
             id="54"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >54</a>        meshlet_meshlet_cull_queue[constants.rightmost_slot - id] = value;
+        >54</a>        <span class="syntax-variable">meshlet_meshlet_cull_queue</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">constants</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">rightmost_slot</span> <span class="syntax-operator">-</span> <span class="syntax-variable">id</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span> <span class="syntax-operator">=</span> <span class="syntax-variable">value</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#55"
             id="55"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >55</a>        if ((id &#38; 127u) == 0) {
+        >55</a>        <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">id</span> <span class="syntax-operator">&amp;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">127u</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">==</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#56"
             id="56"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >56</a>            atomicAdd(&#38;meshlet_meshlet_cull_dispatch.x, 1u);
+        >56</a>            <span class="syntax-function">atomicAdd</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">&amp;</span><span class="syntax-variable">meshlet_meshlet_cull_dispatch</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">x</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1u</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#57"
             id="57"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >57</a>        }
+        >57</a>        <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#58"
             id="58"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >58</a>}
+        >58</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#59"
             id="59"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >59</a>        return;
+        >59</a>        <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#60"
             id="60"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >60</a>    }
+        >60</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#61"
             id="61"
@@ -473,103 +474,103 @@
             id="62"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >62</a>    // If we pass, rasterize the meshlet
+        >62</a>    <span class="syntax-comment syntax-comment-line">// If we pass, rasterize the meshlet</span>
 <a
             href="#63"
             id="63"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >63</a>    // Check how big the cluster is in screen space
+        >63</a>    <span class="syntax-comment syntax-comment-line">// Check how big the cluster is in screen space</span>
 <a
             href="#64"
             id="64"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >64</a>    let world_from_local = affine3_to_square(meshlet_instance_uniforms[instance_id].world_from_local);
+        >64</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">world_from_local</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">affine3_to_square</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">meshlet_instance_uniforms</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">instance_id</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">world_from_local</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#65"
             id="65"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >65</a>    let clip_from_local  = view.clip_from_world * world_from_local;
+        >65</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">clip_from_local</span>  <span class="syntax-operator">=</span> <span class="syntax-variable">view</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">clip_from_world</span> <span class="syntax-operator">*</span> <span class="syntax-variable">world_from_local</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#66"
             id="66"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >66</a>    let projection = view.clip_from_world;
+        >66</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">projection</span> <span class="syntax-operator">=</span> <span class="syntax-variable">view</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">clip_from_world</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#67"
             id="67"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >67</a>    var near: f32;
+        >67</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">near</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#68"
             id="68"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >68</a>    if projection[3][3] == 1.0 {
+        >68</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-variable">projection</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">3</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">3</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span> <span class="syntax-operator">==</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#69"
             id="69"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >69</a>        near = projection[3][2] / projection[2][2];
+        >69</a>        <span class="syntax-variable">near</span> <span class="syntax-operator">=</span> <span class="syntax-variable">projection</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">3</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">2</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span> <span class="syntax-operator">/</span> <span class="syntax-variable">projection</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">2</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">2</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#70"
             id="70"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >70</a>    } else {
+        >70</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span> <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">else</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#71"
             id="71"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >71</a>        near = projection[3][2];
+        >71</a>        <span class="syntax-variable">near</span> <span class="syntax-operator">=</span> <span class="syntax-variable">projection</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">3</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">2</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#72"
             id="72"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >72</a>    }
+        >72</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#73"
             id="73"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >73</a>    var screen_aabb = ScreenAabb(vec3&#60;f32&#62;(0.0), vec3&#60;f32&#62;(0.0));
+        >73</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">screen_aabb</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">ScreenAabb</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-function syntax-function-call">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#74"
             id="74"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >74</a>    var sw_raster = project_aabb(clip_from_local, near, aabb, &#38;screen_aabb);
+        >74</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">sw_raster</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">project_aabb</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">clip_from_local</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">near</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">aabb</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-operator">&amp;</span><span class="syntax-variable">screen_aabb</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#75"
             id="75"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >75</a>    if sw_raster {
+        >75</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-variable">sw_raster</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#76"
             id="76"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >76</a>        let aabb_size = (screen_aabb.max.xy - screen_aabb.min.xy) * view.viewport.zw;
+        >76</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">aabb_size</span> <span class="syntax-operator">=</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">screen_aabb</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">max</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">xy</span> <span class="syntax-operator">-</span> <span class="syntax-variable">screen_aabb</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">min</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">xy</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-variable">view</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">viewport</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">zw</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#77"
             id="77"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >77</a>        sw_raster = all(aabb_size &#60;= vec2&#60;f32&#62;(64.0));
+        >77</a>        <span class="syntax-variable">sw_raster</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">all</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">aabb_size</span> <span class="syntax-operator">&lt;=</span> <span class="syntax-function syntax-function-call">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">64.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#78"
             id="78"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >78</a>    }
+        >78</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#79"
             id="79"
@@ -581,79 +582,79 @@
             id="80"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >80</a>    var buffer_slot: u32;
+        >80</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">buffer_slot</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#81"
             id="81"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >81</a>    if sw_raster {
+        >81</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-variable">sw_raster</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#82"
             id="82"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >82</a>        // Append this cluster to the list for software rasterization
+        >82</a>        <span class="syntax-comment syntax-comment-line">// Append this cluster to the list for software rasterization</span>
 <a
             href="#83"
             id="83"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >83</a>        buffer_slot = atomicAdd(&#38;meshlet_software_raster_indirect_args.x, 1u);
+        >83</a>        <span class="syntax-variable">buffer_slot</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">atomicAdd</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">&amp;</span><span class="syntax-variable">meshlet_software_raster_indirect_args</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">x</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1u</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#84"
             id="84"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >84</a>        buffer_slot += meshlet_previous_raster_counts[0];
+        >84</a>        <span class="syntax-variable">buffer_slot</span> <span class="syntax-operator">+=</span> <span class="syntax-variable">meshlet_previous_raster_counts</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#85"
             id="85"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >85</a>    } else {
+        >85</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span> <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">else</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#86"
             id="86"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >86</a>        // Append this cluster to the list for hardware rasterization
+        >86</a>        <span class="syntax-comment syntax-comment-line">// Append this cluster to the list for hardware rasterization</span>
 <a
             href="#87"
             id="87"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >87</a>        buffer_slot = atomicAdd(&#38;meshlet_hardware_raster_indirect_args.instance_count, 1u);
+        >87</a>        <span class="syntax-variable">buffer_slot</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">atomicAdd</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">&amp;</span><span class="syntax-variable">meshlet_hardware_raster_indirect_args</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">instance_count</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1u</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#88"
             id="88"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >88</a>        buffer_slot += meshlet_previous_raster_counts[1];
+        >88</a>        <span class="syntax-variable">buffer_slot</span> <span class="syntax-operator">+=</span> <span class="syntax-variable">meshlet_previous_raster_counts</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#89"
             id="89"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >89</a>        buffer_slot = constants.rightmost_slot - buffer_slot;
+        >89</a>        <span class="syntax-variable">buffer_slot</span> <span class="syntax-operator">=</span> <span class="syntax-variable">constants</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">rightmost_slot</span> <span class="syntax-operator">-</span> <span class="syntax-variable">buffer_slot</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#90"
             id="90"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >90</a>    }
+        >90</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#91"
             id="91"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >91</a>    meshlet_raster_clusters[buffer_slot] = InstancedOffset(instance_id, instanced_offset.offset);
+        >91</a>    <span class="syntax-variable">meshlet_raster_clusters</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">buffer_slot</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">InstancedOffset</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">instance_id</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">instanced_offset</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">offset</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#92"
             id="92"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >92</a>}</code>
+        >92</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span></code>
 </pre>
 
         </div>

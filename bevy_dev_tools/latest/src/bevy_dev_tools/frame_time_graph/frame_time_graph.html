@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="../../../../../-/static/css/themes.css">
     <link rel="stylesheet" href="../../../../../-/static/css/styles.css">
     <link rel="stylesheet" href="../../../../../-/static/css/icons.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/syntax.css">
     <script src="../../../../../-/static/js/settings.js"></script>
 
     
@@ -112,7 +113,7 @@
             id="1"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >1</a>import bevy_ui_render::ui_vertex_output::UiVertexOutput;
+        >1</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">bevy_ui_render</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">ui_vertex_output</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-type">UiVertexOutput</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#2"
             id="2"
@@ -124,55 +125,55 @@
             id="3"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >3</a>@group(1) @binding(0) var&#60;storage&#62; values: array&#60;f32&#62;;
+        >3</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span><span class="syntax-punctuation">&lt;<span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-modifier">storage</span>&gt;</span> <span class="syntax-variable">values</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">array</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#4"
             id="4"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >4</a>struct Config {
+        >4</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">struct</span> <span class="syntax-type">Config</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#5"
             id="5"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >5</a>    dt_min: f32,
+        >5</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">dt_min</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#6"
             id="6"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >6</a>    dt_max: f32,
+        >6</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">dt_max</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#7"
             id="7"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >7</a>    dt_min_log2: f32,
+        >7</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">dt_min_log2</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#8"
             id="8"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >8</a>    dt_max_log2: f32,
+        >8</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">dt_max_log2</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#9"
             id="9"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >9</a>    proportional_width: u32,
+        >9</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">proportional_width</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#10"
             id="10"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >10</a>}
+        >10</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#11"
             id="11"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >11</a>@group(1) @binding(1) var&#60;uniform&#62; config: Config;
+        >11</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span><span class="syntax-punctuation">&lt;<span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-modifier">uniform</span>&gt;</span> <span class="syntax-variable">config</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">Config</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#12"
             id="12"
@@ -184,13 +185,13 @@
             id="13"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >13</a>const RED: vec4&#60;f32&#62; = vec4(1.0, 0.0, 0.0, 1.0);
+        >13</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">const</span> <span class="syntax-constant">RED</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">vec4</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#14"
             id="14"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >14</a>const GREEN: vec4&#60;f32&#62; = vec4(0.0, 1.0, 0.0, 1.0);
+        >14</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">const</span> <span class="syntax-constant">GREEN</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">vec4</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#15"
             id="15"
@@ -202,31 +203,31 @@
             id="16"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >16</a>// Gets a color based on the delta time
+        >16</a><span class="syntax-comment syntax-comment-line">// Gets a color based on the delta time</span>
 <a
             href="#17"
             id="17"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >17</a>// TODO use customizable gradient
+        >17</a><span class="syntax-comment syntax-comment-line">// TODO use customizable gradient</span>
 <a
             href="#18"
             id="18"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >18</a>fn color_from_dt(dt: f32) -&#62; vec4&#60;f32&#62; {
+        >18</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">color_from_dt</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">dt</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-type">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#19"
             id="19"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >19</a>    return mix(GREEN, RED, dt / config.dt_max);
+        >19</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-function syntax-function-call">mix</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">GREEN</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant">RED</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">dt</span> <span class="syntax-operator">/</span> <span class="syntax-variable">config</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">dt_max</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#20"
             id="20"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >20</a>}
+        >20</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#21"
             id="21"
@@ -238,49 +239,49 @@
             id="22"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >22</a>// Draw an SDF square
+        >22</a><span class="syntax-comment syntax-comment-line">// Draw an SDF square</span>
 <a
             href="#23"
             id="23"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >23</a>fn sdf_square(pos: vec2&#60;f32&#62;, half_size: vec2&#60;f32&#62;, offset: vec2&#60;f32&#62;) -&#62; f32 {
+        >23</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">sdf_square</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">pos</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">half_size</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">offset</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-type">f32</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#24"
             id="24"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >24</a>    let p = pos - offset;
+        >24</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">p</span> <span class="syntax-operator">=</span> <span class="syntax-variable">pos</span> <span class="syntax-operator">-</span> <span class="syntax-variable">offset</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#25"
             id="25"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >25</a>    let dist = abs(p) - half_size;
+        >25</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">dist</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">abs</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">p</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-</span> <span class="syntax-variable">half_size</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#26"
             id="26"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >26</a>    let outside_dist = length(max(dist, vec2&#60;f32&#62;(0.0, 0.0)));
+        >26</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">outside_dist</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">length</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">max</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">dist</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-function syntax-function-call">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#27"
             id="27"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >27</a>    let inside_dist = min(max(dist.x, dist.y), 0.0);
+        >27</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">inside_dist</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">min</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">max</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">dist</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">x</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">dist</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">y</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#28"
             id="28"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >28</a>    return outside_dist + inside_dist;
+        >28</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-variable">outside_dist</span> <span class="syntax-operator">+</span> <span class="syntax-variable">inside_dist</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#29"
             id="29"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >29</a>}
+        >29</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#30"
             id="30"
@@ -292,37 +293,37 @@
             id="31"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >31</a>@fragment
+        >31</a><span class="syntax-attribute">@<span class="syntax-attribute">fragment</span></span>
 <a
             href="#32"
             id="32"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >32</a>fn fragment(in: UiVertexOutput) -&#62; @location(0) vec4&#60;f32&#62; {
+        >32</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">fragment</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">in</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">UiVertexOutput</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-attribute">@<span class="syntax-attribute">location</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-type">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#33"
             id="33"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >33</a>    let dt_min = config.dt_min;
+        >33</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">dt_min</span> <span class="syntax-operator">=</span> <span class="syntax-variable">config</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">dt_min</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#34"
             id="34"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >34</a>    let dt_max = config.dt_max;
+        >34</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">dt_max</span> <span class="syntax-operator">=</span> <span class="syntax-variable">config</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">dt_max</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#35"
             id="35"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >35</a>    let dt_min_log2 = config.dt_min_log2;
+        >35</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">dt_min_log2</span> <span class="syntax-operator">=</span> <span class="syntax-variable">config</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">dt_min_log2</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#36"
             id="36"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >36</a>    let dt_max_log2 = config.dt_max_log2;
+        >36</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">dt_max_log2</span> <span class="syntax-operator">=</span> <span class="syntax-variable">config</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">dt_max_log2</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#37"
             id="37"
@@ -334,13 +335,13 @@
             id="38"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >38</a>    // The general algorithm is highly inspired by
+        >38</a>    <span class="syntax-comment syntax-comment-line">// The general algorithm is highly inspired by</span>
 <a
             href="#39"
             id="39"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >39</a>    // &#60;https://asawicki.info/news_1758_an_idea_for_visualization_of_frame_times&#62;
+        >39</a>    <span class="syntax-comment syntax-comment-line">// &lt;https://asawicki.info/news_1758_an_idea_for_visualization_of_frame_times&gt;</span>
 <a
             href="#40"
             id="40"
@@ -352,25 +353,25 @@
             id="41"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >41</a>    let len = arrayLength(&#38;values);
+        >41</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">len</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">arrayLength</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">&amp;</span><span class="syntax-variable">values</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#42"
             id="42"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >42</a>    var graph_width = 0.0;
+        >42</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">graph_width</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#43"
             id="43"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >43</a>    for (var i = 1u; i &#60;= len; i += 1u) {
+        >43</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-repeat">for</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">i</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span> <span class="syntax-variable">i</span> <span class="syntax-operator">&lt;=</span> <span class="syntax-variable">len</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span> <span class="syntax-variable">i</span> <span class="syntax-operator">+=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1u</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#44"
             id="44"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >44</a>        let dt = values[len - i];
+        >44</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">dt</span> <span class="syntax-operator">=</span> <span class="syntax-variable">values</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">len</span> <span class="syntax-operator">-</span> <span class="syntax-variable">i</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#45"
             id="45"
@@ -382,37 +383,37 @@
             id="46"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >46</a>        var frame_width: f32;
+        >46</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">frame_width</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#47"
             id="47"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >47</a>        if config.proportional_width == 1u {
+        >47</a>        <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-variable">config</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">proportional_width</span> <span class="syntax-operator">==</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1u</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#48"
             id="48"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >48</a>            frame_width = (dt / dt_min) / f32(len);
+        >48</a>            <span class="syntax-variable">frame_width</span> <span class="syntax-operator">=</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">dt</span> <span class="syntax-operator">/</span> <span class="syntax-variable">dt_min</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">/</span> <span class="syntax-function syntax-function-call">f32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">len</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#49"
             id="49"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >49</a>        } else {
+        >49</a>        <span class="syntax-punctuation syntax-punctuation-bracket">}</span> <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">else</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#50"
             id="50"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >50</a>            frame_width = 0.015;
+        >50</a>            <span class="syntax-variable">frame_width</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.015</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#51"
             id="51"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >51</a>        }
+        >51</a>        <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#52"
             id="52"
@@ -424,19 +425,19 @@
             id="53"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >53</a>        let frame_height_factor = (log2(dt) - dt_min_log2) / (dt_max_log2 - dt_min_log2);
+        >53</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">frame_height_factor</span> <span class="syntax-operator">=</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">log2</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">dt</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-</span> <span class="syntax-variable">dt_min_log2</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">/</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">dt_max_log2</span> <span class="syntax-operator">-</span> <span class="syntax-variable">dt_min_log2</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#54"
             id="54"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >54</a>        let frame_height_factor_norm = min(max(0.0, frame_height_factor), 1.0);
+        >54</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">frame_height_factor_norm</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">min</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">max</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">frame_height_factor</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#55"
             id="55"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >55</a>        let frame_height = mix(0.0, 1.0, frame_height_factor_norm);
+        >55</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">frame_height</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">mix</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">frame_height_factor_norm</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#56"
             id="56"
@@ -448,31 +449,31 @@
             id="57"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >57</a>        let size = vec2(frame_width, frame_height) / 2.0;
+        >57</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">size</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">vec2</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">frame_width</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">frame_height</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">/</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">2.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#58"
             id="58"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >58</a>        let offset = vec2(1.0 - graph_width - size.x, 1. - size.y);
+        >58</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">offset</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">vec2</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span> <span class="syntax-operator">-</span> <span class="syntax-variable">graph_width</span> <span class="syntax-operator">-</span> <span class="syntax-variable">size</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">x</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.</span> <span class="syntax-operator">-</span> <span class="syntax-variable">size</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">y</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#59"
             id="59"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >59</a>        if (sdf_square(in.uv, size, offset) &#60; 0.0) {
+        >59</a>        <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">sdf_square</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">in</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">uv</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">size</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">offset</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">&lt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#60"
             id="60"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >60</a>            return color_from_dt(dt);
+        >60</a>            <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-function syntax-function-call">color_from_dt</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">dt</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#61"
             id="61"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >61</a>        }
+        >61</a>        <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#62"
             id="62"
@@ -484,13 +485,13 @@
             id="63"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >63</a>        graph_width += frame_width;
+        >63</a>        <span class="syntax-variable">graph_width</span> <span class="syntax-operator">+=</span> <span class="syntax-variable">frame_width</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#64"
             id="64"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >64</a>    }
+        >64</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#65"
             id="65"
@@ -502,13 +503,13 @@
             id="66"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >66</a>    return vec4(0.0, 0.0, 0.0, 0.5);
+        >66</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-function syntax-function-call">vec4</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.5</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#67"
             id="67"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >67</a>}
+        >67</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#68"
             id="68"

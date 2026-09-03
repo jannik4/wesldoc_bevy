@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="../../../../../-/static/css/themes.css">
     <link rel="stylesheet" href="../../../../../-/static/css/styles.css">
     <link rel="stylesheet" href="../../../../../-/static/css/icons.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/syntax.css">
     <script src="../../../../../-/static/js/settings.js"></script>
 
     
@@ -102,7 +103,7 @@
             id="1"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >1</a>import package::mesh2d::vertex_output::VertexOutput;
+        >1</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">package</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">mesh2d</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">vertex_output</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-type">VertexOutput</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#2"
             id="2"
@@ -114,19 +115,19 @@
             id="3"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >3</a>struct PushConstants {
+        >3</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">struct</span> <span class="syntax-type">PushConstants</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#4"
             id="4"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >4</a>    color: vec4&#60;f32&#62;
+        >4</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">color</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span>
 <a
             href="#5"
             id="5"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >5</a>}
+        >5</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#6"
             id="6"
@@ -138,7 +139,7 @@
             id="7"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >7</a>var&#60;immediate&#62; push_constants: PushConstants;
+        >7</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span><span class="syntax-punctuation">&lt;<span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-modifier">immediate</span>&gt;</span> <span class="syntax-variable">push_constants</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">PushConstants</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#8"
             id="8"
@@ -150,25 +151,25 @@
             id="9"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >9</a>@fragment
+        >9</a><span class="syntax-attribute">@<span class="syntax-attribute">fragment</span></span>
 <a
             href="#10"
             id="10"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >10</a>fn fragment(in: VertexOutput) -&#62; @location(0) vec4&#60;f32&#62; {
+        >10</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">fragment</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">in</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">VertexOutput</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-attribute">@<span class="syntax-attribute">location</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-type">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#11"
             id="11"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >11</a>    return push_constants.color;
+        >11</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-variable">push_constants</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">color</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#12"
             id="12"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >12</a>}</code>
+        >12</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span></code>
 </pre>
 
         </div>

@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="../../../../../-/static/css/themes.css">
     <link rel="stylesheet" href="../../../../../-/static/css/styles.css">
     <link rel="stylesheet" href="../../../../../-/static/css/icons.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/syntax.css">
     <script src="../../../../../-/static/js/settings.js"></script>
 
     
@@ -107,25 +108,25 @@
             id="1"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >1</a>import package::render::{
+        >1</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">package</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">render</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#2"
             id="2"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >2</a>    mesh_types::MESH_FLAGS_SHADOW_RECEIVER_BIT,
+        >2</a>    <span class="syntax-namespace">mesh_types</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-constant">MESH_FLAGS_SHADOW_RECEIVER_BIT</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#3"
             id="3"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >3</a>    pbr_types::{STANDARD_MATERIAL_FLAGS_FOG_ENABLED_BIT, STANDARD_MATERIAL_FLAGS_UNLIT_BIT},
+        >3</a>    <span class="syntax-namespace">pbr_types</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-punctuation syntax-punctuation-bracket">{</span><span class="syntax-constant">STANDARD_MATERIAL_FLAGS_FOG_ENABLED_BIT</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant">STANDARD_MATERIAL_FLAGS_UNLIT_BIT</span><span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#4"
             id="4"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >4</a>};
+        >4</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#5"
             id="5"
@@ -137,25 +138,25 @@
             id="6"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >6</a>// Maximum of 8 bits available
+        >6</a><span class="syntax-comment syntax-comment-line">// Maximum of 8 bits available</span>
 <a
             href="#7"
             id="7"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >7</a>const DEFERRED_FLAGS_UNLIT_BIT: u32                 = 1u &#60;&#60; 0u;
+        >7</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">const</span> <span class="syntax-constant">DEFERRED_FLAGS_UNLIT_BIT</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span>                 <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1u</span> <span class="syntax-operator">&lt;&lt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#8"
             id="8"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >8</a>const DEFERRED_FLAGS_FOG_ENABLED_BIT: u32           = 1u &#60;&#60; 1u;
+        >8</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">const</span> <span class="syntax-constant">DEFERRED_FLAGS_FOG_ENABLED_BIT</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span>           <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1u</span> <span class="syntax-operator">&lt;&lt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#9"
             id="9"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >9</a>const DEFERRED_MESH_FLAGS_SHADOW_RECEIVER_BIT: u32  = 1u &#60;&#60; 2u;
+        >9</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">const</span> <span class="syntax-constant">DEFERRED_MESH_FLAGS_SHADOW_RECEIVER_BIT</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span>  <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1u</span> <span class="syntax-operator">&lt;&lt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">2u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#10"
             id="10"
@@ -167,43 +168,43 @@
             id="11"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >11</a>fn deferred_flags_from_mesh_material_flags(mesh_flags: u32, mat_flags: u32) -&#62; u32 {
+        >11</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">deferred_flags_from_mesh_material_flags</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">mesh_flags</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">mat_flags</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-type">u32</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#12"
             id="12"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >12</a>    var flags = 0u;
+        >12</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">flags</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#13"
             id="13"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >13</a>    flags |= u32((mesh_flags &#38; MESH_FLAGS_SHADOW_RECEIVER_BIT) != 0u) * DEFERRED_MESH_FLAGS_SHADOW_RECEIVER_BIT;
+        >13</a>    <span class="syntax-variable">flags</span> <span class="syntax-operator">|=</span> <span class="syntax-function syntax-function-call">u32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">mesh_flags</span> <span class="syntax-operator">&amp;</span> <span class="syntax-constant">MESH_FLAGS_SHADOW_RECEIVER_BIT</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">!=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0u</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-constant">DEFERRED_MESH_FLAGS_SHADOW_RECEIVER_BIT</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#14"
             id="14"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >14</a>    flags |= u32((mat_flags &#38; STANDARD_MATERIAL_FLAGS_FOG_ENABLED_BIT) != 0u) * DEFERRED_FLAGS_FOG_ENABLED_BIT;
+        >14</a>    <span class="syntax-variable">flags</span> <span class="syntax-operator">|=</span> <span class="syntax-function syntax-function-call">u32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">mat_flags</span> <span class="syntax-operator">&amp;</span> <span class="syntax-constant">STANDARD_MATERIAL_FLAGS_FOG_ENABLED_BIT</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">!=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0u</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-constant">DEFERRED_FLAGS_FOG_ENABLED_BIT</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#15"
             id="15"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >15</a>    flags |= u32((mat_flags &#38; STANDARD_MATERIAL_FLAGS_UNLIT_BIT) != 0u) * DEFERRED_FLAGS_UNLIT_BIT;
+        >15</a>    <span class="syntax-variable">flags</span> <span class="syntax-operator">|=</span> <span class="syntax-function syntax-function-call">u32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">mat_flags</span> <span class="syntax-operator">&amp;</span> <span class="syntax-constant">STANDARD_MATERIAL_FLAGS_UNLIT_BIT</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">!=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0u</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-constant">DEFERRED_FLAGS_UNLIT_BIT</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#16"
             id="16"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >16</a>    return flags;
+        >16</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-variable">flags</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#17"
             id="17"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >17</a>}
+        >17</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#18"
             id="18"
@@ -215,49 +216,49 @@
             id="19"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >19</a>fn mesh_material_flags_from_deferred_flags(deferred_flags: u32) -&#62; vec2&#60;u32&#62; {
+        >19</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">mesh_material_flags_from_deferred_flags</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">deferred_flags</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-type">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-type">u32</span>&gt;</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#20"
             id="20"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >20</a>    var mat_flags = 0u;
+        >20</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">mat_flags</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#21"
             id="21"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >21</a>    var mesh_flags = 0u;
+        >21</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">mesh_flags</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#22"
             id="22"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >22</a>    mesh_flags |= u32((deferred_flags &#38; DEFERRED_MESH_FLAGS_SHADOW_RECEIVER_BIT) != 0u) * MESH_FLAGS_SHADOW_RECEIVER_BIT;
+        >22</a>    <span class="syntax-variable">mesh_flags</span> <span class="syntax-operator">|=</span> <span class="syntax-function syntax-function-call">u32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">deferred_flags</span> <span class="syntax-operator">&amp;</span> <span class="syntax-constant">DEFERRED_MESH_FLAGS_SHADOW_RECEIVER_BIT</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">!=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0u</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-constant">MESH_FLAGS_SHADOW_RECEIVER_BIT</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#23"
             id="23"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >23</a>    mat_flags |= u32((deferred_flags &#38; DEFERRED_FLAGS_FOG_ENABLED_BIT) != 0u) * STANDARD_MATERIAL_FLAGS_FOG_ENABLED_BIT;
+        >23</a>    <span class="syntax-variable">mat_flags</span> <span class="syntax-operator">|=</span> <span class="syntax-function syntax-function-call">u32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">deferred_flags</span> <span class="syntax-operator">&amp;</span> <span class="syntax-constant">DEFERRED_FLAGS_FOG_ENABLED_BIT</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">!=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0u</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-constant">STANDARD_MATERIAL_FLAGS_FOG_ENABLED_BIT</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#24"
             id="24"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >24</a>    mat_flags |= u32((deferred_flags &#38; DEFERRED_FLAGS_UNLIT_BIT) != 0u) * STANDARD_MATERIAL_FLAGS_UNLIT_BIT;
+        >24</a>    <span class="syntax-variable">mat_flags</span> <span class="syntax-operator">|=</span> <span class="syntax-function syntax-function-call">u32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">deferred_flags</span> <span class="syntax-operator">&amp;</span> <span class="syntax-constant">DEFERRED_FLAGS_UNLIT_BIT</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">!=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0u</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-constant">STANDARD_MATERIAL_FLAGS_UNLIT_BIT</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#25"
             id="25"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >25</a>    return vec2(mesh_flags, mat_flags);
+        >25</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-function syntax-function-call">vec2</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">mesh_flags</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">mat_flags</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#26"
             id="26"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >26</a>}
+        >26</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#27"
             id="27"
@@ -269,19 +270,19 @@
             id="28"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >28</a>const U12MAXF = 4095.0;
+        >28</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">const</span> <span class="syntax-constant">U12MAXF</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">4095.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#29"
             id="29"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >29</a>const U16MAXF = 65535.0;
+        >29</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">const</span> <span class="syntax-constant">U16MAXF</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">65535.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#30"
             id="30"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >30</a>const U20MAXF = 1048575.0;
+        >30</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">const</span> <span class="syntax-constant">U20MAXF</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1048575.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#31"
             id="31"
@@ -293,25 +294,25 @@
             id="32"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >32</a>// Storing normals as oct24.
+        >32</a><span class="syntax-comment syntax-comment-line">// Storing normals as oct24.</span>
 <a
             href="#33"
             id="33"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >33</a>// Flags are stored in the remaining 8 bits.
+        >33</a><span class="syntax-comment syntax-comment-line">// Flags are stored in the remaining 8 bits.</span>
 <a
             href="#34"
             id="34"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >34</a>// https://jcgt.org/published/0003/02/01/paper.pdf
+        >34</a><span class="syntax-comment syntax-comment-line">// https://jcgt.org/published/0003/02/01/paper.pdf</span>
 <a
             href="#35"
             id="35"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >35</a>// Could possibly go down to oct20 if the space is needed.
+        >35</a><span class="syntax-comment syntax-comment-line">// Could possibly go down to oct20 if the space is needed.</span>
 <a
             href="#36"
             id="36"
@@ -323,31 +324,31 @@
             id="37"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >37</a>fn pack_24bit_normal_and_flags(octahedral_normal: vec2&#60;f32&#62;, flags: u32) -&#62; u32 {
+        >37</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">pack_24bit_normal_and_flags</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">octahedral_normal</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">flags</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-type">u32</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#38"
             id="38"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >38</a>    let unorm1 = u32(saturate(octahedral_normal.x) * U12MAXF + 0.5);
+        >38</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">unorm1</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">u32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">saturate</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">octahedral_normal</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">x</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-constant">U12MAXF</span> <span class="syntax-operator">+</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.5</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#39"
             id="39"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >39</a>    let unorm2 = u32(saturate(octahedral_normal.y) * U12MAXF + 0.5);
+        >39</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">unorm2</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">u32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">saturate</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">octahedral_normal</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">y</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-constant">U12MAXF</span> <span class="syntax-operator">+</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.5</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#40"
             id="40"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >40</a>    return (unorm1 &#38; 0xFFFu) | ((unorm2 &#38; 0xFFFu) &#60;&#60; 12u) | ((flags &#38; 0xFFu) &#60;&#60; 24u);
+        >40</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">unorm1</span> <span class="syntax-operator">&amp;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer"><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0xFFFu</span></span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">|</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">unorm2</span> <span class="syntax-operator">&amp;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer"><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0xFFFu</span></span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">&lt;&lt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">12u</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">|</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">flags</span> <span class="syntax-operator">&amp;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer"><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0xFFu</span></span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">&lt;&lt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">24u</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#41"
             id="41"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >41</a>}
+        >41</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#42"
             id="42"
@@ -359,31 +360,31 @@
             id="43"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >43</a>fn unpack_24bit_normal(packed: u32) -&#62; vec2&#60;f32&#62; {
+        >43</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">unpack_24bit_normal</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">packed</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-type">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#44"
             id="44"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >44</a>    let unorm1 = packed &#38; 0xFFFu;
+        >44</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">unorm1</span> <span class="syntax-operator">=</span> <span class="syntax-variable">packed</span> <span class="syntax-operator">&amp;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer"><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0xFFFu</span></span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#45"
             id="45"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >45</a>    let unorm2 = (packed &#62;&#62; 12u) &#38; 0xFFFu;
+        >45</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">unorm2</span> <span class="syntax-operator">=</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">packed</span> <span class="syntax-operator">&gt;&gt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">12u</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">&amp;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer"><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0xFFFu</span></span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#46"
             id="46"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >46</a>    return vec2(f32(unorm1) / U12MAXF, f32(unorm2) / U12MAXF);
+        >46</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-function syntax-function-call">vec2</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">f32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">unorm1</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">/</span> <span class="syntax-constant">U12MAXF</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-function syntax-function-call">f32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">unorm2</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">/</span> <span class="syntax-constant">U12MAXF</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#47"
             id="47"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >47</a>}
+        >47</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#48"
             id="48"
@@ -395,19 +396,19 @@
             id="49"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >49</a>fn unpack_flags(packed: u32) -&#62; u32 {
+        >49</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">unpack_flags</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">packed</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-type">u32</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#50"
             id="50"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >50</a>    return (packed &#62;&#62; 24u) &#38; 0xFFu;
+        >50</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">packed</span> <span class="syntax-operator">&gt;&gt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">24u</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">&amp;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer"><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0xFFu</span></span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#51"
             id="51"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >51</a>}
+        >51</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#52"
             id="52"
@@ -419,67 +420,67 @@
             id="53"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >53</a>// The builtin one didn&#39;t work in webgl.
+        >53</a><span class="syntax-comment syntax-comment-line">// The builtin one didn&#39;t work in webgl.</span>
 <a
             href="#54"
             id="54"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >54</a>// &#34;&#39;unpackUnorm4x8&#39; : no matching overloaded function found&#34;
+        >54</a><span class="syntax-comment syntax-comment-line">// &quot;&#39;unpackUnorm4x8&#39; : no matching overloaded function found&quot;</span>
 <a
             href="#55"
             id="55"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >55</a>// https://github.com/gfx-rs/naga/issues/2006
+        >55</a><span class="syntax-comment syntax-comment-line">// https://github.com/gfx-rs/naga/issues/2006</span>
 <a
             href="#56"
             id="56"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >56</a>fn unpack_unorm4x8_(v: u32) -&#62; vec4&#60;f32&#62; {
+        >56</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">unpack_unorm4x8_</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">v</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-type">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#57"
             id="57"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >57</a>    return vec4(
+        >57</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-function syntax-function-call">vec4</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span>
 <a
             href="#58"
             id="58"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >58</a>        f32(v &#38; 0xFFu),
+        >58</a>        <span class="syntax-function syntax-function-call">f32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">v</span> <span class="syntax-operator">&amp;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer"><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0xFFu</span></span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#59"
             id="59"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >59</a>        f32((v &#62;&#62; 8u) &#38; 0xFFu),
+        >59</a>        <span class="syntax-function syntax-function-call">f32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">v</span> <span class="syntax-operator">&gt;&gt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">8u</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">&amp;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer"><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0xFFu</span></span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#60"
             id="60"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >60</a>        f32((v &#62;&#62; 16u) &#38; 0xFFu),
+        >60</a>        <span class="syntax-function syntax-function-call">f32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">v</span> <span class="syntax-operator">&gt;&gt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">16u</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">&amp;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer"><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0xFFu</span></span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#61"
             id="61"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >61</a>        f32((v &#62;&#62; 24u) &#38; 0xFFu)
+        >61</a>        <span class="syntax-function syntax-function-call">f32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">v</span> <span class="syntax-operator">&gt;&gt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">24u</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">&amp;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer"><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0xFFu</span></span><span class="syntax-punctuation syntax-punctuation-bracket">)</span>
 <a
             href="#62"
             id="62"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >62</a>    ) / 255.0;
+        >62</a>    <span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">/</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">255.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#63"
             id="63"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >63</a>}
+        >63</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#64"
             id="64"
@@ -491,37 +492,37 @@
             id="65"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >65</a>// &#39;packUnorm4x8&#39; : no matching overloaded function found
+        >65</a><span class="syntax-comment syntax-comment-line">// &#39;packUnorm4x8&#39; : no matching overloaded function found</span>
 <a
             href="#66"
             id="66"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >66</a>// https://github.com/gfx-rs/naga/issues/2006
+        >66</a><span class="syntax-comment syntax-comment-line">// https://github.com/gfx-rs/naga/issues/2006</span>
 <a
             href="#67"
             id="67"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >67</a>fn pack_unorm4x8_(values: vec4&#60;f32&#62;) -&#62; u32 {
+        >67</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">pack_unorm4x8_</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">values</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-type">u32</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#68"
             id="68"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >68</a>    let v = vec4&#60;u32&#62;(saturate(values) * 255.0 + 0.5);
+        >68</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">v</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">u32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">saturate</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">values</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">255.0</span> <span class="syntax-operator">+</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.5</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#69"
             id="69"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >69</a>    return (v.w &#60;&#60; 24u) | (v.z &#60;&#60; 16u) | (v.y &#60;&#60; 8u) | v.x;
+        >69</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">v</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">w</span> <span class="syntax-operator">&lt;&lt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">24u</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">|</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">v</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">z</span> <span class="syntax-operator">&lt;&lt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">16u</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">|</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">v</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">y</span> <span class="syntax-operator">&lt;&lt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">8u</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">|</span> <span class="syntax-variable">v</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">x</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#70"
             id="70"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >70</a>}
+        >70</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#71"
             id="71"
@@ -533,37 +534,37 @@
             id="72"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >72</a>// Pack 3x 4bit unorm + 1x 20bit
+        >72</a><span class="syntax-comment syntax-comment-line">// Pack 3x 4bit unorm + 1x 20bit</span>
 <a
             href="#73"
             id="73"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >73</a>fn pack_unorm3x4_plus_unorm_20_(v: vec4&#60;f32&#62;) -&#62; u32 {
+        >73</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">pack_unorm3x4_plus_unorm_20_</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">v</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-type">u32</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#74"
             id="74"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >74</a>    let sm = vec3&#60;u32&#62;(saturate(v.xyz) * 15.0 + 0.5);
+        >74</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">sm</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">u32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">saturate</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">v</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">xyz</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">15.0</span> <span class="syntax-operator">+</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.5</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#75"
             id="75"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >75</a>    let bg = u32(saturate(v.w) * U20MAXF + 0.5);
+        >75</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">bg</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">u32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">saturate</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">v</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">w</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-constant">U20MAXF</span> <span class="syntax-operator">+</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.5</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#76"
             id="76"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >76</a>    return (bg &#60;&#60; 12u) | (sm.z &#60;&#60; 8u) | (sm.y &#60;&#60; 4u) | sm.x;
+        >76</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">bg</span> <span class="syntax-operator">&lt;&lt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">12u</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">|</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">sm</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">z</span> <span class="syntax-operator">&lt;&lt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">8u</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">|</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">sm</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">y</span> <span class="syntax-operator">&lt;&lt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">4u</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">|</span> <span class="syntax-variable">sm</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">x</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#77"
             id="77"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >77</a>}
+        >77</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#78"
             id="78"
@@ -575,55 +576,55 @@
             id="79"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >79</a>// Unpack 3x 4bit unorm + 1x 20bit
+        >79</a><span class="syntax-comment syntax-comment-line">// Unpack 3x 4bit unorm + 1x 20bit</span>
 <a
             href="#80"
             id="80"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >80</a>fn unpack_unorm3x4_plus_unorm_20_(v: u32) -&#62; vec4&#60;f32&#62; {
+        >80</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">unpack_unorm3x4_plus_unorm_20_</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">v</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-type">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#81"
             id="81"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >81</a>    return vec4(
+        >81</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-function syntax-function-call">vec4</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span>
 <a
             href="#82"
             id="82"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >82</a>        f32(v &#38; 0xfu) / 15.0,
+        >82</a>        <span class="syntax-function syntax-function-call">f32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">v</span> <span class="syntax-operator">&amp;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer"><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0xfu</span></span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">/</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">15.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#83"
             id="83"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >83</a>        f32((v &#62;&#62; 4u) &#38; 0xFu) / 15.0,
+        >83</a>        <span class="syntax-function syntax-function-call">f32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">v</span> <span class="syntax-operator">&gt;&gt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">4u</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">&amp;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer"><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0xFu</span></span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">/</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">15.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#84"
             id="84"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >84</a>        f32((v &#62;&#62; 8u) &#38; 0xFu) / 15.0,
+        >84</a>        <span class="syntax-function syntax-function-call">f32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">v</span> <span class="syntax-operator">&gt;&gt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">8u</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">&amp;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer"><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0xFu</span></span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">/</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">15.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#85"
             id="85"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >85</a>        f32((v &#62;&#62; 12u) &#38; 0xFFFFFFu) / U20MAXF,
+        >85</a>        <span class="syntax-function syntax-function-call">f32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">v</span> <span class="syntax-operator">&gt;&gt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">12u</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">&amp;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer"><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0xFFFFFFu</span></span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">/</span> <span class="syntax-constant">U20MAXF</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#86"
             id="86"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >86</a>    );
+        >86</a>    <span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#87"
             id="87"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >87</a>}</code>
+        >87</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span></code>
 </pre>
 
         </div>

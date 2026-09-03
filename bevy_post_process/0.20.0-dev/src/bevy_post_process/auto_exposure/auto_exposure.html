@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="../../../../../-/static/css/themes.css">
     <link rel="stylesheet" href="../../../../../-/static/css/styles.css">
     <link rel="stylesheet" href="../../../../../-/static/css/icons.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/syntax.css">
     <script src="../../../../../-/static/js/settings.js"></script>
 
     
@@ -107,109 +108,109 @@
             id="1"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >1</a>// Auto exposure
+        >1</a><span class="syntax-comment syntax-comment-line">// Auto exposure</span>
 <a
             href="#2"
             id="2"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >2</a>//
+        >2</a><span class="syntax-comment syntax-comment-line">//</span>
 <a
             href="#3"
             id="3"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >3</a>// This shader computes an auto exposure value for the current frame,
+        >3</a><span class="syntax-comment syntax-comment-line">// This shader computes an auto exposure value for the current frame,</span>
 <a
             href="#4"
             id="4"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >4</a>// which is then used as an exposure correction in the tone mapping shader.
+        >4</a><span class="syntax-comment syntax-comment-line">// which is then used as an exposure correction in the tone mapping shader.</span>
 <a
             href="#5"
             id="5"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >5</a>//
+        >5</a><span class="syntax-comment syntax-comment-line">//</span>
 <a
             href="#6"
             id="6"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >6</a>// The auto exposure value is computed in two passes:
+        >6</a><span class="syntax-comment syntax-comment-line">// The auto exposure value is computed in two passes:</span>
 <a
             href="#7"
             id="7"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >7</a>// * The compute_histogram pass calculates a histogram of the luminance values in the scene,
+        >7</a><span class="syntax-comment syntax-comment-line">// * The compute_histogram pass calculates a histogram of the luminance values in the scene,</span>
 <a
             href="#8"
             id="8"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >8</a>// taking into account the metering mask texture. The metering mask is a grayscale texture
+        >8</a><span class="syntax-comment syntax-comment-line">// taking into account the metering mask texture. The metering mask is a grayscale texture</span>
 <a
             href="#9"
             id="9"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >9</a>// that defines the areas of the screen that should be given more weight when calculating
+        >9</a><span class="syntax-comment syntax-comment-line">// that defines the areas of the screen that should be given more weight when calculating</span>
 <a
             href="#10"
             id="10"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >10</a>// the average luminance value. For example, the middle area of the screen might be more important
+        >10</a><span class="syntax-comment syntax-comment-line">// the average luminance value. For example, the middle area of the screen might be more important</span>
 <a
             href="#11"
             id="11"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >11</a>// than the edges.
+        >11</a><span class="syntax-comment syntax-comment-line">// than the edges.</span>
 <a
             href="#12"
             id="12"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >12</a>// * The compute_average pass calculates the average luminance value of the scene, taking
+        >12</a><span class="syntax-comment syntax-comment-line">// * The compute_average pass calculates the average luminance value of the scene, taking</span>
 <a
             href="#13"
             id="13"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >13</a>// into account the low_percent and high_percent settings. These settings define the
+        >13</a><span class="syntax-comment syntax-comment-line">// into account the low_percent and high_percent settings. These settings define the</span>
 <a
             href="#14"
             id="14"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >14</a>// percentage of the histogram that should be excluded when calculating the average. This
+        >14</a><span class="syntax-comment syntax-comment-line">// percentage of the histogram that should be excluded when calculating the average. This</span>
 <a
             href="#15"
             id="15"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >15</a>// is useful to avoid overexposure when you have a lot of shadows, or underexposure when you
+        >15</a><span class="syntax-comment syntax-comment-line">// is useful to avoid overexposure when you have a lot of shadows, or underexposure when you</span>
 <a
             href="#16"
             id="16"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >16</a>// have a lot of bright specular reflections.
+        >16</a><span class="syntax-comment syntax-comment-line">// have a lot of bright specular reflections.</span>
 <a
             href="#17"
             id="17"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >17</a>//
+        >17</a><span class="syntax-comment syntax-comment-line">//</span>
 <a
             href="#18"
             id="18"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >18</a>// The final target_exposure is finally used to smoothly adjust the exposure value over time.
+        >18</a><span class="syntax-comment syntax-comment-line">// The final target_exposure is finally used to smoothly adjust the exposure value over time.</span>
 <a
             href="#19"
             id="19"
@@ -221,13 +222,13 @@
             id="20"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >20</a>import bevy_render::view::View;
+        >20</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">bevy_render</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">view</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-type">View</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#21"
             id="21"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >21</a>import bevy_render::globals::Globals;
+        >21</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">bevy_render</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">globals</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-type">Globals</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#22"
             id="22"
@@ -239,13 +240,13 @@
             id="23"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >23</a>// Constant to convert RGB to luminance, taken from Real Time Rendering, Vol 4 pg. 278, 4th edition
+        >23</a><span class="syntax-comment syntax-comment-line">// Constant to convert RGB to luminance, taken from Real Time Rendering, Vol 4 pg. 278, 4th edition</span>
 <a
             href="#24"
             id="24"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >24</a>const RGB_TO_LUM = vec3&#60;f32&#62;(0.2125, 0.7154, 0.0721);
+        >24</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">const</span> <span class="syntax-constant">RGB_TO_LUM</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.2125</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.7154</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0721</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#25"
             id="25"
@@ -257,61 +258,61 @@
             id="26"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >26</a>struct AutoExposure {
+        >26</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">struct</span> <span class="syntax-type">AutoExposure</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#27"
             id="27"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >27</a>    min_log_lum: f32,
+        >27</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">min_log_lum</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#28"
             id="28"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >28</a>    inv_log_lum_range: f32,
+        >28</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">inv_log_lum_range</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#29"
             id="29"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >29</a>    log_lum_range: f32,
+        >29</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">log_lum_range</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#30"
             id="30"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >30</a>    low_percent: f32,
+        >30</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">low_percent</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#31"
             id="31"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >31</a>    high_percent: f32,
+        >31</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">high_percent</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#32"
             id="32"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >32</a>    speed_up: f32,
+        >32</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">speed_up</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#33"
             id="33"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >33</a>    speed_down: f32,
+        >33</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">speed_down</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#34"
             id="34"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >34</a>    exponential_transition_distance: f32,
+        >34</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">exponential_transition_distance</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#35"
             id="35"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >35</a>}
+        >35</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#36"
             id="36"
@@ -323,37 +324,37 @@
             id="37"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >37</a>struct CompensationCurve {
+        >37</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">struct</span> <span class="syntax-type">CompensationCurve</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#38"
             id="38"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >38</a>    min_log_lum: f32,
+        >38</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">min_log_lum</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#39"
             id="39"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >39</a>    inv_log_lum_range: f32,
+        >39</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">inv_log_lum_range</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#40"
             id="40"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >40</a>    min_compensation: f32,
+        >40</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">min_compensation</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#41"
             id="41"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >41</a>    compensation_range: f32,
+        >41</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">compensation_range</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#42"
             id="42"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >42</a>}
+        >42</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#43"
             id="43"
@@ -365,7 +366,7 @@
             id="44"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >44</a>@group(0) @binding(0) var&#60;uniform&#62; globals: Globals;
+        >44</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span><span class="syntax-punctuation">&lt;<span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-modifier">uniform</span>&gt;</span> <span class="syntax-variable">globals</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">Globals</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#45"
             id="45"
@@ -377,7 +378,7 @@
             id="46"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >46</a>@group(0) @binding(1) var&#60;uniform&#62; settings: AutoExposure;
+        >46</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span><span class="syntax-punctuation">&lt;<span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-modifier">uniform</span>&gt;</span> <span class="syntax-variable">settings</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">AutoExposure</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#47"
             id="47"
@@ -389,7 +390,7 @@
             id="48"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >48</a>@group(0) @binding(2) var tex_color: texture_2d&#60;f32&#62;;
+        >48</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">2</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">tex_color</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">texture_2d</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#49"
             id="49"
@@ -401,7 +402,7 @@
             id="50"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >50</a>@group(0) @binding(3) var tex_mask: texture_2d&#60;f32&#62;;
+        >50</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">3</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">tex_mask</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">texture_2d</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#51"
             id="51"
@@ -413,7 +414,7 @@
             id="52"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >52</a>@group(0) @binding(4) var tex_compensation: texture_1d&#60;f32&#62;;
+        >52</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">4</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">tex_compensation</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">texture_1d</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#53"
             id="53"
@@ -425,7 +426,7 @@
             id="54"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >54</a>@group(0) @binding(5) var&#60;uniform&#62; compensation_curve: CompensationCurve;
+        >54</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">5</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span><span class="syntax-punctuation">&lt;<span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-modifier">uniform</span>&gt;</span> <span class="syntax-variable">compensation_curve</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">CompensationCurve</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#55"
             id="55"
@@ -437,7 +438,7 @@
             id="56"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >56</a>@group(0) @binding(6) var&#60;storage, read_write&#62; histogram: array&#60;atomic&#60;u32&#62;, 64&#62;;
+        >56</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">6</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span><span class="syntax-punctuation">&lt;<span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-modifier">storage</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-modifier">read_write</span>&gt;</span> <span class="syntax-variable">histogram</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">array</span><span class="syntax-punctuation">&lt;<span class="syntax-type">atomic</span><span class="syntax-punctuation">&lt;<span class="syntax-type">u32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">64</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#57"
             id="57"
@@ -449,7 +450,7 @@
             id="58"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >58</a>@group(0) @binding(7) var&#60;storage, read_write&#62; exposure: f32;
+        >58</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">7</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span><span class="syntax-punctuation">&lt;<span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-modifier">storage</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-modifier">read_write</span>&gt;</span> <span class="syntax-variable">exposure</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#59"
             id="59"
@@ -461,7 +462,7 @@
             id="60"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >60</a>@group(0) @binding(8) var&#60;storage, read_write&#62; view: View;
+        >60</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">8</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span><span class="syntax-punctuation">&lt;<span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-modifier">storage</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-modifier">read_write</span>&gt;</span> <span class="syntax-variable">view</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">View</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#61"
             id="61"
@@ -473,7 +474,7 @@
             id="62"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >62</a>var&#60;workgroup&#62; histogram_shared: array&#60;atomic&#60;u32&#62;, 64&#62;;
+        >62</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span><span class="syntax-punctuation">&lt;<span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-modifier">workgroup</span>&gt;</span> <span class="syntax-variable">histogram_shared</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">array</span><span class="syntax-punctuation">&lt;<span class="syntax-type">atomic</span><span class="syntax-punctuation">&lt;<span class="syntax-type">u32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">64</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#63"
             id="63"
@@ -485,25 +486,25 @@
             id="64"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >64</a>// For a given color, return the histogram bin index
+        >64</a><span class="syntax-comment syntax-comment-line">// For a given color, return the histogram bin index</span>
 <a
             href="#65"
             id="65"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >65</a>fn color_to_bin(hdr: vec3&#60;f32&#62;) -&#62; u32 {
+        >65</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">color_to_bin</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">hdr</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-type">u32</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#66"
             id="66"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >66</a>    // Convert color to luminance
+        >66</a>    <span class="syntax-comment syntax-comment-line">// Convert color to luminance</span>
 <a
             href="#67"
             id="67"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >67</a>    let lum = dot(hdr, RGB_TO_LUM);
+        >67</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">lum</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">dot</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">hdr</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant">RGB_TO_LUM</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#68"
             id="68"
@@ -515,19 +516,19 @@
             id="69"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >69</a>    if lum &#60; exp2(settings.min_log_lum) {
+        >69</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-variable">lum</span> <span class="syntax-operator">&lt;</span> <span class="syntax-function syntax-function-call">exp2</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">settings</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">min_log_lum</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#70"
             id="70"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >70</a>        return 0u;
+        >70</a>        <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#71"
             id="71"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >71</a>    }
+        >71</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#72"
             id="72"
@@ -539,19 +540,19 @@
             id="73"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >73</a>    // Calculate the log_2 luminance and express it as a value in [0.0, 1.0]
+        >73</a>    <span class="syntax-comment syntax-comment-line">// Calculate the log_2 luminance and express it as a value in [0.0, 1.0]</span>
 <a
             href="#74"
             id="74"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >74</a>    // where 0.0 represents the minimum luminance, and 1.0 represents the max.
+        >74</a>    <span class="syntax-comment syntax-comment-line">// where 0.0 represents the minimum luminance, and 1.0 represents the max.</span>
 <a
             href="#75"
             id="75"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >75</a>    let log_lum = saturate((log2(lum) - settings.min_log_lum) * settings.inv_log_lum_range);
+        >75</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">log_lum</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">saturate</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">log2</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">lum</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-</span> <span class="syntax-variable">settings</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">min_log_lum</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-variable">settings</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">inv_log_lum_range</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#76"
             id="76"
@@ -563,19 +564,19 @@
             id="77"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >77</a>    // Map [0, 1] to [1, 63]. The zeroth bin is handled by the epsilon check above.
+        >77</a>    <span class="syntax-comment syntax-comment-line">// Map [0, 1] to [1, 63]. The zeroth bin is handled by the epsilon check above.</span>
 <a
             href="#78"
             id="78"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >78</a>    return u32(log_lum * 62.0 + 1.0);
+        >78</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-function syntax-function-call">u32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">log_lum</span> <span class="syntax-operator">*</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">62.0</span> <span class="syntax-operator">+</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#79"
             id="79"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >79</a>}
+        >79</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#80"
             id="80"
@@ -587,61 +588,61 @@
             id="81"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >81</a>// Read the metering mask at the given UV coordinates, returning a weight for the histogram.
+        >81</a><span class="syntax-comment syntax-comment-line">// Read the metering mask at the given UV coordinates, returning a weight for the histogram.</span>
 <a
             href="#82"
             id="82"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >82</a>//
+        >82</a><span class="syntax-comment syntax-comment-line">//</span>
 <a
             href="#83"
             id="83"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >83</a>// Since the histogram is summed in the compute_average step, there is a limit to the amount of
+        >83</a><span class="syntax-comment syntax-comment-line">// Since the histogram is summed in the compute_average step, there is a limit to the amount of</span>
 <a
             href="#84"
             id="84"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >84</a>// distinct values that can be represented. When using the chosen value of 16, the maximum
+        >84</a><span class="syntax-comment syntax-comment-line">// distinct values that can be represented. When using the chosen value of 16, the maximum</span>
 <a
             href="#85"
             id="85"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >85</a>// amount of pixels that can be weighted and summed is 2^32 / 16 = 16384^2.
+        >85</a><span class="syntax-comment syntax-comment-line">// amount of pixels that can be weighted and summed is 2^32 / 16 = 16384^2.</span>
 <a
             href="#86"
             id="86"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >86</a>fn metering_weight(coords: vec2&#60;f32&#62;) -&#62; u32 {
+        >86</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">metering_weight</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">coords</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-type">u32</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#87"
             id="87"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >87</a>    let pos = vec2&#60;i32&#62;(coords * vec2&#60;f32&#62;(textureDimensions(tex_mask)));
+        >87</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">pos</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">i32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">coords</span> <span class="syntax-operator">*</span> <span class="syntax-function syntax-function-call">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">textureDimensions</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">tex_mask</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#88"
             id="88"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >88</a>    let mask = textureLoad(tex_mask, pos, 0).r;
+        >88</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">mask</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">textureLoad</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">tex_mask</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">pos</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">r</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#89"
             id="89"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >89</a>    return u32(mask * 16.0);
+        >89</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-function syntax-function-call">u32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">mask</span> <span class="syntax-operator">*</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">16.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#90"
             id="90"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >90</a>}
+        >90</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#91"
             id="91"
@@ -653,55 +654,55 @@
             id="92"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >92</a>@compute @workgroup_size(16, 16, 1)
+        >92</a><span class="syntax-attribute">@<span class="syntax-attribute">compute</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">workgroup_size</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">16</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">16</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#93"
             id="93"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >93</a>fn compute_histogram(
+        >93</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">compute_histogram</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span>
 <a
             href="#94"
             id="94"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >94</a>    @builtin(global_invocation_id) global_invocation_id: vec3&#60;u32&#62;,
+        >94</a>    <span class="syntax-attribute">@<span class="syntax-attribute">builtin</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-builtin">global_invocation_id</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-variable syntax-variable-parameter">global_invocation_id</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">u32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#95"
             id="95"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >95</a>    @builtin(local_invocation_index) local_invocation_index: u32
+        >95</a>    <span class="syntax-attribute">@<span class="syntax-attribute">builtin</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-builtin">local_invocation_index</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-variable syntax-variable-parameter">local_invocation_index</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span>
 <a
             href="#96"
             id="96"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >96</a>) {
+        >96</a><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#97"
             id="97"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >97</a>    // Clear the workgroup shared histogram
+        >97</a>    <span class="syntax-comment syntax-comment-line">// Clear the workgroup shared histogram</span>
 <a
             href="#98"
             id="98"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >98</a>    if local_invocation_index &#60; 64 {
+        >98</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-variable">local_invocation_index</span> <span class="syntax-operator">&lt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">64</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#99"
             id="99"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >99</a>        histogram_shared[local_invocation_index] = 0u;
+        >99</a>        <span class="syntax-variable">histogram_shared</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">local_invocation_index</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#100"
             id="100"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >100</a>    }
+        >100</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#101"
             id="101"
@@ -713,13 +714,13 @@
             id="102"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >102</a>    // Wait for all workgroup threads to clear the shared histogram
+        >102</a>    <span class="syntax-comment syntax-comment-line">// Wait for all workgroup threads to clear the shared histogram</span>
 <a
             href="#103"
             id="103"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >103</a>    workgroupBarrier();
+        >103</a>    <span class="syntax-function">workgroupBarrier</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#104"
             id="104"
@@ -731,13 +732,13 @@
             id="105"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >105</a>    let dim = vec2&#60;u32&#62;(textureDimensions(tex_color));
+        >105</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">dim</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">u32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">textureDimensions</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">tex_color</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#106"
             id="106"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >106</a>    let uv = vec2&#60;f32&#62;(global_invocation_id.xy) / vec2&#60;f32&#62;(dim);
+        >106</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">uv</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">global_invocation_id</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">xy</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">/</span> <span class="syntax-function syntax-function-call">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">dim</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#107"
             id="107"
@@ -749,25 +750,25 @@
             id="108"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >108</a>    if global_invocation_id.x &#60; dim.x &#38;&#38; global_invocation_id.y &#60; dim.y {
+        >108</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-variable">global_invocation_id</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">x</span> <span class="syntax-operator">&lt;</span> <span class="syntax-variable">dim</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">x</span> <span class="syntax-operator">&amp;&amp;</span> <span class="syntax-variable">global_invocation_id</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">y</span> <span class="syntax-operator">&lt;</span> <span class="syntax-variable">dim</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">y</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#109"
             id="109"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >109</a>        let col = textureLoad(tex_color, vec2&#60;i32&#62;(global_invocation_id.xy), 0).rgb;
+        >109</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">col</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">textureLoad</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">tex_color</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-function syntax-function-call">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">i32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">global_invocation_id</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">xy</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">rgb</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#110"
             id="110"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >110</a>        let index = color_to_bin(col);
+        >110</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">index</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">color_to_bin</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">col</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#111"
             id="111"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >111</a>        let weight = metering_weight(uv);
+        >111</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">weight</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">metering_weight</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">uv</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#112"
             id="112"
@@ -779,19 +780,19 @@
             id="113"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >113</a>        // Increment the shared histogram bin by the weight obtained from the metering mask
+        >113</a>        <span class="syntax-comment syntax-comment-line">// Increment the shared histogram bin by the weight obtained from the metering mask</span>
 <a
             href="#114"
             id="114"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >114</a>        atomicAdd(&#38;histogram_shared[index], weight);
+        >114</a>        <span class="syntax-function">atomicAdd</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">&amp;</span><span class="syntax-variable">histogram_shared</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">index</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">weight</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#115"
             id="115"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >115</a>    }
+        >115</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#116"
             id="116"
@@ -803,13 +804,13 @@
             id="117"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >117</a>    // Wait for all workgroup threads to finish updating the workgroup histogram
+        >117</a>    <span class="syntax-comment syntax-comment-line">// Wait for all workgroup threads to finish updating the workgroup histogram</span>
 <a
             href="#118"
             id="118"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >118</a>    workgroupBarrier();
+        >118</a>    <span class="syntax-function">workgroupBarrier</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#119"
             id="119"
@@ -821,37 +822,37 @@
             id="120"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >120</a>    // Accumulate the workgroup histogram into the global histogram.
+        >120</a>    <span class="syntax-comment syntax-comment-line">// Accumulate the workgroup histogram into the global histogram.</span>
 <a
             href="#121"
             id="121"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >121</a>    // Note that the global histogram was not cleared at the beginning,
+        >121</a>    <span class="syntax-comment syntax-comment-line">// Note that the global histogram was not cleared at the beginning,</span>
 <a
             href="#122"
             id="122"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >122</a>    // as it will be cleared in compute_average.
+        >122</a>    <span class="syntax-comment syntax-comment-line">// as it will be cleared in compute_average.</span>
 <a
             href="#123"
             id="123"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >123</a>    var histogram_value = atomicLoad(&#38;histogram_shared[local_invocation_index]);
+        >123</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">histogram_value</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">atomicLoad</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">&amp;</span><span class="syntax-variable">histogram_shared</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">local_invocation_index</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#124"
             id="124"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >124</a>    atomicAdd(&#38;histogram[local_invocation_index], histogram_value);
+        >124</a>    <span class="syntax-function">atomicAdd</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">&amp;</span><span class="syntax-variable">histogram</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">local_invocation_index</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">histogram_value</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#125"
             id="125"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >125</a>}
+        >125</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#126"
             id="126"
@@ -863,19 +864,19 @@
             id="127"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >127</a>@compute @workgroup_size(1, 1, 1)
+        >127</a><span class="syntax-attribute">@<span class="syntax-attribute">compute</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">workgroup_size</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#128"
             id="128"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >128</a>fn compute_average(@builtin(local_invocation_index) local_index: u32) {
+        >128</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">compute_average</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-attribute">@<span class="syntax-attribute">builtin</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-builtin">local_invocation_index</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-variable syntax-variable-parameter">local_index</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#129"
             id="129"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >129</a>    var histogram_sum = 0u;
+        >129</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">histogram_sum</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#130"
             id="130"
@@ -887,43 +888,43 @@
             id="131"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >131</a>    // Calculate the cumulative histogram and clear the histogram bins.
+        >131</a>    <span class="syntax-comment syntax-comment-line">// Calculate the cumulative histogram and clear the histogram bins.</span>
 <a
             href="#132"
             id="132"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >132</a>    // Each bin in the cumulative histogram contains the sum of all bins up to that point.
+        >132</a>    <span class="syntax-comment syntax-comment-line">// Each bin in the cumulative histogram contains the sum of all bins up to that point.</span>
 <a
             href="#133"
             id="133"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >133</a>    // This way we can quickly exclude the portion of lowest and highest samples as required by
+        >133</a>    <span class="syntax-comment syntax-comment-line">// This way we can quickly exclude the portion of lowest and highest samples as required by</span>
 <a
             href="#134"
             id="134"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >134</a>    // the low_percent and high_percent settings.
+        >134</a>    <span class="syntax-comment syntax-comment-line">// the low_percent and high_percent settings.</span>
 <a
             href="#135"
             id="135"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >135</a>    for (var i=0u; i&#60;64u; i+=1u) {
+        >135</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-repeat">for</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">i</span><span class="syntax-operator">=</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span> <span class="syntax-variable">i</span><span class="syntax-operator">&lt;</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">64u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span> <span class="syntax-variable">i</span><span class="syntax-operator">+=</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1u</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#136"
             id="136"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >136</a>        histogram_sum += atomicLoad(&#38;histogram[i]);
+        >136</a>        <span class="syntax-variable">histogram_sum</span> <span class="syntax-operator">+=</span> <span class="syntax-function syntax-function-call">atomicLoad</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">&amp;</span><span class="syntax-variable">histogram</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">i</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#137"
             id="137"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >137</a>        histogram_shared[i] = histogram_sum;
+        >137</a>        <span class="syntax-variable">histogram_shared</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">i</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span> <span class="syntax-operator">=</span> <span class="syntax-variable">histogram_sum</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#138"
             id="138"
@@ -935,19 +936,19 @@
             id="139"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >139</a>        // Clear the histogram bin for the next frame
+        >139</a>        <span class="syntax-comment syntax-comment-line">// Clear the histogram bin for the next frame</span>
 <a
             href="#140"
             id="140"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >140</a>        histogram[i] = 0u;
+        >140</a>        <span class="syntax-variable">histogram</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">i</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#141"
             id="141"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >141</a>    }
+        >141</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#142"
             id="142"
@@ -959,13 +960,13 @@
             id="143"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >143</a>    let first_index = u32(f32(histogram_sum) * settings.low_percent);
+        >143</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">first_index</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">u32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">f32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">histogram_sum</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-variable">settings</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">low_percent</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#144"
             id="144"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >144</a>    let last_index = u32(f32(histogram_sum) * settings.high_percent);
+        >144</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">last_index</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">u32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">f32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">histogram_sum</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-variable">settings</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">high_percent</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#145"
             id="145"
@@ -977,49 +978,49 @@
             id="146"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >146</a>    var count = 0u;
+        >146</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">count</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#147"
             id="147"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >147</a>    var sum = 0.0;
+        >147</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">sum</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#148"
             id="148"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >148</a>    for (var i=1u; i&#60;64u; i+=1u) {
+        >148</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-repeat">for</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">i</span><span class="syntax-operator">=</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span> <span class="syntax-variable">i</span><span class="syntax-operator">&lt;</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">64u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span> <span class="syntax-variable">i</span><span class="syntax-operator">+=</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1u</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#149"
             id="149"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >149</a>        // The number of pixels in the bin. The histogram values are clamped to
+        >149</a>        <span class="syntax-comment syntax-comment-line">// The number of pixels in the bin. The histogram values are clamped to</span>
 <a
             href="#150"
             id="150"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >150</a>        // first_index and last_index to exclude the lowest and highest samples.
+        >150</a>        <span class="syntax-comment syntax-comment-line">// first_index and last_index to exclude the lowest and highest samples.</span>
 <a
             href="#151"
             id="151"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >151</a>        let bin_count =
+        >151</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">bin_count</span> <span class="syntax-operator">=</span>
 <a
             href="#152"
             id="152"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >152</a>            clamp(atomicLoad(&#38;histogram_shared[i]), first_index, last_index) -
+        >152</a>            <span class="syntax-function syntax-function-call">clamp</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">atomicLoad</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">&amp;</span><span class="syntax-variable">histogram_shared</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">i</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">first_index</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">last_index</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-</span>
 <a
             href="#153"
             id="153"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >153</a>            clamp(atomicLoad(&#38;histogram_shared[i - 1u]), first_index, last_index);
+        >153</a>            <span class="syntax-function syntax-function-call">clamp</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">atomicLoad</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">&amp;</span><span class="syntax-variable">histogram_shared</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">i</span> <span class="syntax-operator">-</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1u</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">first_index</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">last_index</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#154"
             id="154"
@@ -1031,19 +1032,19 @@
             id="155"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >155</a>        sum += f32(bin_count) * f32(i);
+        >155</a>        <span class="syntax-variable">sum</span> <span class="syntax-operator">+=</span> <span class="syntax-function syntax-function-call">f32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">bin_count</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-function syntax-function-call">f32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">i</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#156"
             id="156"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >156</a>        count += bin_count;
+        >156</a>        <span class="syntax-variable">count</span> <span class="syntax-operator">+=</span> <span class="syntax-variable">bin_count</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#157"
             id="157"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >157</a>    }
+        >157</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#158"
             id="158"
@@ -1055,7 +1056,7 @@
             id="159"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >159</a>    var avg_lum = settings.min_log_lum;
+        >159</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">avg_lum</span> <span class="syntax-operator">=</span> <span class="syntax-variable">settings</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">min_log_lum</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#160"
             id="160"
@@ -1067,37 +1068,37 @@
             id="161"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >161</a>    if count &#62; 0u {
+        >161</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-variable">count</span> <span class="syntax-operator">&gt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0u</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#162"
             id="162"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >162</a>        // The average luminance of the included histogram samples.
+        >162</a>        <span class="syntax-comment syntax-comment-line">// The average luminance of the included histogram samples.</span>
 <a
             href="#163"
             id="163"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >163</a>        avg_lum = sum / (f32(count) * 63.0)
+        >163</a>        <span class="syntax-variable">avg_lum</span> <span class="syntax-operator">=</span> <span class="syntax-variable">sum</span> <span class="syntax-operator">/</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">f32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">count</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">63.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span>
 <a
             href="#164"
             id="164"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >164</a>            * settings.log_lum_range
+        >164</a>            <span class="syntax-operator">*</span> <span class="syntax-variable">settings</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">log_lum_range</span>
 <a
             href="#165"
             id="165"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >165</a>            + settings.min_log_lum;
+        >165</a>            <span class="syntax-operator">+</span> <span class="syntax-variable">settings</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">min_log_lum</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#166"
             id="166"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >166</a>    }
+        >166</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#167"
             id="167"
@@ -1109,13 +1110,13 @@
             id="168"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >168</a>    // The position in the compensation curve texture to sample for avg_lum.
+        >168</a>    <span class="syntax-comment syntax-comment-line">// The position in the compensation curve texture to sample for avg_lum.</span>
 <a
             href="#169"
             id="169"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >169</a>    let u = (avg_lum - compensation_curve.min_log_lum) * compensation_curve.inv_log_lum_range;
+        >169</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">u</span> <span class="syntax-operator">=</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">avg_lum</span> <span class="syntax-operator">-</span> <span class="syntax-variable">compensation_curve</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">min_log_lum</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-variable">compensation_curve</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">inv_log_lum_range</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#170"
             id="170"
@@ -1127,43 +1128,43 @@
             id="171"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >171</a>    // The target exposure is the negative of the average log luminance.
+        >171</a>    <span class="syntax-comment syntax-comment-line">// The target exposure is the negative of the average log luminance.</span>
 <a
             href="#172"
             id="172"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >172</a>    // The compensation value is added to the target exposure to adjust the exposure for
+        >172</a>    <span class="syntax-comment syntax-comment-line">// The compensation value is added to the target exposure to adjust the exposure for</span>
 <a
             href="#173"
             id="173"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >173</a>    // artistic purposes.
+        >173</a>    <span class="syntax-comment syntax-comment-line">// artistic purposes.</span>
 <a
             href="#174"
             id="174"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >174</a>    let target_exposure = textureLoad(tex_compensation, i32(saturate(u) * 255.0), 0).r
+        >174</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">target_exposure</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">textureLoad</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">tex_compensation</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-function syntax-function-call">i32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">saturate</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">u</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">255.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">r</span>
 <a
             href="#175"
             id="175"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >175</a>        * compensation_curve.compensation_range
+        >175</a>        <span class="syntax-operator">*</span> <span class="syntax-variable">compensation_curve</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">compensation_range</span>
 <a
             href="#176"
             id="176"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >176</a>        + compensation_curve.min_compensation
+        >176</a>        <span class="syntax-operator">+</span> <span class="syntax-variable">compensation_curve</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">min_compensation</span>
 <a
             href="#177"
             id="177"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >177</a>        - avg_lum;
+        >177</a>        <span class="syntax-operator">-</span> <span class="syntax-variable">avg_lum</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#178"
             id="178"
@@ -1175,67 +1176,67 @@
             id="179"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >179</a>    // Smoothly adjust the `exposure` towards the `target_exposure`
+        >179</a>    <span class="syntax-comment syntax-comment-line">// Smoothly adjust the `exposure` towards the `target_exposure`</span>
 <a
             href="#180"
             id="180"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >180</a>    let delta = target_exposure - exposure;
+        >180</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">delta</span> <span class="syntax-operator">=</span> <span class="syntax-variable">target_exposure</span> <span class="syntax-operator">-</span> <span class="syntax-variable">exposure</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#181"
             id="181"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >181</a>    if target_exposure &#62; exposure {
+        >181</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-variable">target_exposure</span> <span class="syntax-operator">&gt;</span> <span class="syntax-variable">exposure</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#182"
             id="182"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >182</a>        let speed_down = settings.speed_down * globals.delta_time;
+        >182</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">speed_down</span> <span class="syntax-operator">=</span> <span class="syntax-variable">settings</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">speed_down</span> <span class="syntax-operator">*</span> <span class="syntax-variable">globals</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">delta_time</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#183"
             id="183"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >183</a>        let exp_down = speed_down / settings.exponential_transition_distance;
+        >183</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">exp_down</span> <span class="syntax-operator">=</span> <span class="syntax-variable">speed_down</span> <span class="syntax-operator">/</span> <span class="syntax-variable">settings</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">exponential_transition_distance</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#184"
             id="184"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >184</a>        exposure = exposure + min(speed_down, delta * exp_down);
+        >184</a>        <span class="syntax-variable">exposure</span> <span class="syntax-operator">=</span> <span class="syntax-variable">exposure</span> <span class="syntax-operator">+</span> <span class="syntax-function syntax-function-call">min</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">speed_down</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">delta</span> <span class="syntax-operator">*</span> <span class="syntax-variable">exp_down</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#185"
             id="185"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >185</a>    } else {
+        >185</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span> <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">else</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#186"
             id="186"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >186</a>        let speed_up = settings.speed_up * globals.delta_time;
+        >186</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">speed_up</span> <span class="syntax-operator">=</span> <span class="syntax-variable">settings</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">speed_up</span> <span class="syntax-operator">*</span> <span class="syntax-variable">globals</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">delta_time</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#187"
             id="187"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >187</a>        let exp_up = speed_up / settings.exponential_transition_distance;
+        >187</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">exp_up</span> <span class="syntax-operator">=</span> <span class="syntax-variable">speed_up</span> <span class="syntax-operator">/</span> <span class="syntax-variable">settings</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">exponential_transition_distance</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#188"
             id="188"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >188</a>        exposure = exposure + max(-speed_up, delta * exp_up);
+        >188</a>        <span class="syntax-variable">exposure</span> <span class="syntax-operator">=</span> <span class="syntax-variable">exposure</span> <span class="syntax-operator">+</span> <span class="syntax-function syntax-function-call">max</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">-</span><span class="syntax-variable">speed_up</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">delta</span> <span class="syntax-operator">*</span> <span class="syntax-variable">exp_up</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#189"
             id="189"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >189</a>    }
+        >189</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#190"
             id="190"
@@ -1247,25 +1248,25 @@
             id="191"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >191</a>    // Apply the exposure to the color grading settings, from where it will be used for the color
+        >191</a>    <span class="syntax-comment syntax-comment-line">// Apply the exposure to the color grading settings, from where it will be used for the color</span>
 <a
             href="#192"
             id="192"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >192</a>    // grading pass.
+        >192</a>    <span class="syntax-comment syntax-comment-line">// grading pass.</span>
 <a
             href="#193"
             id="193"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >193</a>    view.color_grading.exposure += exposure;
+        >193</a>    <span class="syntax-variable">view</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">color_grading</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">exposure</span> <span class="syntax-operator">+=</span> <span class="syntax-variable">exposure</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#194"
             id="194"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >194</a>}</code>
+        >194</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span></code>
 </pre>
 
         </div>

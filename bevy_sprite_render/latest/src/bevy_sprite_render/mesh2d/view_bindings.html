@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="../../../../../-/static/css/themes.css">
     <link rel="stylesheet" href="../../../../../-/static/css/styles.css">
     <link rel="stylesheet" href="../../../../../-/static/css/icons.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/syntax.css">
     <script src="../../../../../-/static/js/settings.js"></script>
 
     
@@ -102,13 +103,13 @@
             id="1"
             class="line-number line-number-digits-1"
             data-nosnippet
-        >1</a>import bevy_render::view::View;
+        >1</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">bevy_render</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">view</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-type">View</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#2"
             id="2"
             class="line-number line-number-digits-1"
             data-nosnippet
-        >2</a>import bevy_render::globals::Globals;
+        >2</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">bevy_render</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">globals</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-type">Globals</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#3"
             id="3"
@@ -120,7 +121,7 @@
             id="4"
             class="line-number line-number-digits-1"
             data-nosnippet
-        >4</a>@group(0) @binding(0) var&#60;uniform&#62; view: View;
+        >4</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span><span class="syntax-punctuation">&lt;<span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-modifier">uniform</span>&gt;</span> <span class="syntax-variable">view</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">View</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#5"
             id="5"
@@ -132,7 +133,7 @@
             id="6"
             class="line-number line-number-digits-1"
             data-nosnippet
-        >6</a>@group(0) @binding(1) var&#60;uniform&#62; globals: Globals;
+        >6</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span><span class="syntax-punctuation">&lt;<span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-modifier">uniform</span>&gt;</span> <span class="syntax-variable">globals</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">Globals</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#7"
             id="7"
@@ -144,13 +145,13 @@
             id="8"
             class="line-number line-number-digits-1"
             data-nosnippet
-        >8</a>@group(0) @binding(2) var dt_lut_texture: texture_3d&#60;f32&#62;;
+        >8</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">2</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">dt_lut_texture</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">texture_3d</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#9"
             id="9"
             class="line-number line-number-digits-1"
             data-nosnippet
-        >9</a>@group(0) @binding(3) var dt_lut_sampler: sampler;</code>
+        >9</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">3</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">dt_lut_sampler</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">sampler</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span></code>
 </pre>
 
         </div>

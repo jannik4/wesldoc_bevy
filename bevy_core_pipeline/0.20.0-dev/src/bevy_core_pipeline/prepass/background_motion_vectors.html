@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="../../../../../-/static/css/themes.css">
     <link rel="stylesheet" href="../../../../../-/static/css/styles.css">
     <link rel="stylesheet" href="../../../../../-/static/css/icons.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/syntax.css">
     <script src="../../../../../-/static/js/settings.js"></script>
 
     
@@ -102,19 +103,19 @@
             id="1"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >1</a>import bevy_render::view::View;
+        >1</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">bevy_render</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">view</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-type">View</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#2"
             id="2"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >2</a>import package::fullscreen_vertex_shader::FullscreenVertexOutput;
+        >2</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">package</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">fullscreen_vertex_shader</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-type">FullscreenVertexOutput</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#3"
             id="3"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >3</a>import bevy_pbr::render::view_transformations::uv_to_ndc;
+        >3</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">bevy_pbr</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">render</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">view_transformations</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">uv_to_ndc</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#4"
             id="4"
@@ -126,49 +127,49 @@
             id="5"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >5</a>struct PreviousViewUniforms {
+        >5</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">struct</span> <span class="syntax-type">PreviousViewUniforms</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#6"
             id="6"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >6</a>    view_from_world: mat4x4&#60;f32&#62;,
+        >6</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">view_from_world</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">mat4x4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#7"
             id="7"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >7</a>    clip_from_world: mat4x4&#60;f32&#62;,
+        >7</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">clip_from_world</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">mat4x4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#8"
             id="8"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >8</a>    unjittered_clip_from_world: mat4x4&#60;f32&#62;,
+        >8</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">unjittered_clip_from_world</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">mat4x4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#9"
             id="9"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >9</a>    clip_from_view: mat4x4&#60;f32&#62;,
+        >9</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">clip_from_view</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">mat4x4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#10"
             id="10"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >10</a>    world_from_clip: mat4x4&#60;f32&#62;,
+        >10</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">world_from_clip</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">mat4x4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#11"
             id="11"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >11</a>    view_from_clip: mat4x4&#60;f32&#62;,
+        >11</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">view_from_clip</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">mat4x4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#12"
             id="12"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >12</a>}
+        >12</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#13"
             id="13"
@@ -180,13 +181,13 @@
             id="14"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >14</a>@group(0) @binding(0) var&#60;uniform&#62; view: View;
+        >14</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span><span class="syntax-punctuation">&lt;<span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-modifier">uniform</span>&gt;</span> <span class="syntax-variable">view</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">View</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#15"
             id="15"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >15</a>@group(0) @binding(1) var&#60;uniform&#62; previous_view: PreviousViewUniforms;
+        >15</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span><span class="syntax-punctuation">&lt;<span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-modifier">uniform</span>&gt;</span> <span class="syntax-variable">previous_view</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">PreviousViewUniforms</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#16"
             id="16"
@@ -198,97 +199,97 @@
             id="17"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >17</a>/// Writes motion vectors for sky pixels (depth == 0 in reversed-Z) based on camera rotation.
+        >17</a><span class="syntax-comment syntax-comment-line">/// Writes motion vectors for sky pixels (depth == 0 in reversed-Z) based on camera rotation.</span>
 <a
             href="#18"
             id="18"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >18</a>///
+        >18</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#19"
             id="19"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >19</a>/// The fullscreen vertex outputs z=0.0, which equals the cleared depth at sky pixels in
+        >19</a><span class="syntax-comment syntax-comment-line">/// The fullscreen vertex outputs z=0.0, which equals the cleared depth at sky pixels in</span>
 <a
             href="#20"
             id="20"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >20</a>/// reversed-Z. The GreaterEqual depth test passes only where depth == 0, so this only writes
+        >20</a><span class="syntax-comment syntax-comment-line">/// reversed-Z. The GreaterEqual depth test passes only where depth == 0, so this only writes</span>
 <a
             href="#21"
             id="21"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >21</a>/// to pixels untouched by geometry.
+        >21</a><span class="syntax-comment syntax-comment-line">/// to pixels untouched by geometry.</span>
 <a
             href="#22"
             id="22"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >22</a>@fragment
+        >22</a><span class="syntax-attribute">@<span class="syntax-attribute">fragment</span></span>
 <a
             href="#23"
             id="23"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >23</a>fn fragment(in: FullscreenVertexOutput) -&#62; @location(1) vec4&#60;f32&#62; {
+        >23</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">fragment</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">in</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">FullscreenVertexOutput</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-attribute">@<span class="syntax-attribute">location</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-type">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#24"
             id="24"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >24</a>    let clip_pos = uv_to_ndc(in.uv);
+        >24</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">clip_pos</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">uv_to_ndc</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">in</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">uv</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#25"
             id="25"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >25</a>    let world_pos = view.world_from_clip * vec4(clip_pos, 0.0, 1.0);
+        >25</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">world_pos</span> <span class="syntax-operator">=</span> <span class="syntax-variable">view</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">world_from_clip</span> <span class="syntax-operator">*</span> <span class="syntax-function syntax-function-call">vec4</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">clip_pos</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#26"
             id="26"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >26</a>    // Use the unjittered matrices on both sides to strip TAA jitter from the motion
+        >26</a>    <span class="syntax-comment syntax-comment-line">// Use the unjittered matrices on both sides to strip TAA jitter from the motion</span>
 <a
             href="#27"
             id="27"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >27</a>    // vector.
+        >27</a>    <span class="syntax-comment syntax-comment-line">// vector.</span>
 <a
             href="#28"
             id="28"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >28</a>    let curr_clip_pos = (view.unjittered_clip_from_world * world_pos).xy;
+        >28</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">curr_clip_pos</span> <span class="syntax-operator">=</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">view</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">unjittered_clip_from_world</span> <span class="syntax-operator">*</span> <span class="syntax-variable">world_pos</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">xy</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#29"
             id="29"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >29</a>    let prev_clip_pos = (previous_view.unjittered_clip_from_world * world_pos).xy;
+        >29</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">prev_clip_pos</span> <span class="syntax-operator">=</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">previous_view</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">unjittered_clip_from_world</span> <span class="syntax-operator">*</span> <span class="syntax-variable">world_pos</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">xy</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#30"
             id="30"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >30</a>    let velocity = (curr_clip_pos - prev_clip_pos) * vec2(0.5, -0.5);
+        >30</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">velocity</span> <span class="syntax-operator">=</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">curr_clip_pos</span> <span class="syntax-operator">-</span> <span class="syntax-variable">prev_clip_pos</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-function syntax-function-call">vec2</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.5</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-operator">-</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.5</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#31"
             id="31"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >31</a>    return vec4(velocity.x, velocity.y, 0.0, 1.0);
+        >31</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-function syntax-function-call">vec4</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">velocity</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">x</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">velocity</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">y</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#32"
             id="32"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >32</a>}</code>
+        >32</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span></code>
 </pre>
 
         </div>

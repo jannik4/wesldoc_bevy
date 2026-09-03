@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="../../../../../-/static/css/themes.css">
     <link rel="stylesheet" href="../../../../../-/static/css/styles.css">
     <link rel="stylesheet" href="../../../../../-/static/css/icons.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/syntax.css">
     <script src="../../../../../-/static/js/settings.js"></script>
 
     
@@ -107,25 +108,25 @@
             id="1"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >1</a>import package::render::{
+        >1</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">package</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">render</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#2"
             id="2"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >2</a>    pbr_lighting::{EnvBRDFApprox, F_AB},
+        >2</a>    <span class="syntax-namespace">pbr_lighting</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-punctuation syntax-punctuation-bracket">{</span><span class="syntax-type">EnvBRDFApprox</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant">F_AB</span><span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#3"
             id="3"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >3</a>    mesh_view_bindings::lights,
+        >3</a>    <span class="syntax-namespace">mesh_view_bindings</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">lights</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#4"
             id="4"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >4</a>};
+        >4</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#5"
             id="5"
@@ -137,85 +138,85 @@
             id="6"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >6</a>// A precomputed `NdotV` is provided because it is computed regardless,
+        >6</a><span class="syntax-comment syntax-comment-line">// A precomputed `NdotV` is provided because it is computed regardless,</span>
 <a
             href="#7"
             id="7"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >7</a>// but `world_normal` and the view vector `V` are provided separately for more advanced uses.
+        >7</a><span class="syntax-comment syntax-comment-line">// but `world_normal` and the view vector `V` are provided separately for more advanced uses.</span>
 <a
             href="#8"
             id="8"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >8</a>fn ambient_light(
+        >8</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">ambient_light</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span>
 <a
             href="#9"
             id="9"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >9</a>    world_position: vec4&#60;f32&#62;,
+        >9</a>    <span class="syntax-variable syntax-variable-parameter">world_position</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#10"
             id="10"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >10</a>    world_normal: vec3&#60;f32&#62;,
+        >10</a>    <span class="syntax-variable syntax-variable-parameter">world_normal</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#11"
             id="11"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >11</a>    V: vec3&#60;f32&#62;,
+        >11</a>    <span class="syntax-constant">V</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#12"
             id="12"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >12</a>    NdotV: f32,
+        >12</a>    <span class="syntax-type">NdotV</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#13"
             id="13"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >13</a>    diffuse_color: vec3&#60;f32&#62;,
+        >13</a>    <span class="syntax-variable syntax-variable-parameter">diffuse_color</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#14"
             id="14"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >14</a>    specular_color: vec3&#60;f32&#62;,
+        >14</a>    <span class="syntax-variable syntax-variable-parameter">specular_color</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#15"
             id="15"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >15</a>    perceptual_roughness: f32,
+        >15</a>    <span class="syntax-variable syntax-variable-parameter">perceptual_roughness</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#16"
             id="16"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >16</a>    occlusion: vec3&#60;f32&#62;,
+        >16</a>    <span class="syntax-variable syntax-variable-parameter">occlusion</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#17"
             id="17"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >17</a>) -&#62; vec3&#60;f32&#62; {
+        >17</a><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#18"
             id="18"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >18</a>    let diffuse_ambient = EnvBRDFApprox(diffuse_color, F_AB(1.0, NdotV));
+        >18</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">diffuse_ambient</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">EnvBRDFApprox</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">diffuse_color</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-function syntax-function-call">F_AB</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">NdotV</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#19"
             id="19"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >19</a>    let specular_ambient = EnvBRDFApprox(specular_color, F_AB(perceptual_roughness, NdotV));
+        >19</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">specular_ambient</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">EnvBRDFApprox</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">specular_color</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-function syntax-function-call">F_AB</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">perceptual_roughness</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">NdotV</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#20"
             id="20"
@@ -227,25 +228,25 @@
             id="21"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >21</a>    // No real world material has specular values under 0.02, so we use this range as a
+        >21</a>    <span class="syntax-comment syntax-comment-line">// No real world material has specular values under 0.02, so we use this range as a</span>
 <a
             href="#22"
             id="22"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >22</a>    // &#34;pre-baked specular occlusion&#34; that extinguishes the fresnel term, for artistic control.
+        >22</a>    <span class="syntax-comment syntax-comment-line">// &quot;pre-baked specular occlusion&quot; that extinguishes the fresnel term, for artistic control.</span>
 <a
             href="#23"
             id="23"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >23</a>    // See: https://google.github.io/filament/Filament.md.html#specularocclusion
+        >23</a>    <span class="syntax-comment syntax-comment-line">// See: https://google.github.io/filament/Filament.md.html#specularocclusion</span>
 <a
             href="#24"
             id="24"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >24</a>    let specular_occlusion = saturate(dot(specular_color, vec3(50.0 * 0.33)));
+        >24</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">specular_occlusion</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">saturate</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">dot</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">specular_color</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-function syntax-function-call">vec3</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">50.0</span> <span class="syntax-operator">*</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.33</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#25"
             id="25"
@@ -257,13 +258,13 @@
             id="26"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >26</a>    return (diffuse_ambient + specular_ambient * specular_occlusion) * lights.ambient_color.rgb * occlusion;
+        >26</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">diffuse_ambient</span> <span class="syntax-operator">+</span> <span class="syntax-variable">specular_ambient</span> <span class="syntax-operator">*</span> <span class="syntax-variable">specular_occlusion</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-variable">lights</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">ambient_color</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">rgb</span> <span class="syntax-operator">*</span> <span class="syntax-variable">occlusion</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#27"
             id="27"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >27</a>}</code>
+        >27</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span></code>
 </pre>
 
         </div>

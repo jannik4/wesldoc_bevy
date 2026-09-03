@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="../../../../../-/static/css/themes.css">
     <link rel="stylesheet" href="../../../../../-/static/css/styles.css">
     <link rel="stylesheet" href="../../../../../-/static/css/icons.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/syntax.css">
     <script src="../../../../../-/static/js/settings.js"></script>
 
     
@@ -107,49 +108,49 @@
             id="1"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >1</a>import package::{
+        >1</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">package</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#2"
             id="2"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >2</a>    render::{
+        >2</a>    <span class="syntax-namespace">render</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#3"
             id="3"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >3</a>        pbr_types,
+        >3</a>        <span class="syntax-namespace">pbr_types</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#4"
             id="4"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >4</a>        pbr_functions::alpha_discard,
+        >4</a>        <span class="syntax-namespace">pbr_functions</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">alpha_discard</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#5"
             id="5"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >5</a>        pbr_fragment::pbr_input_from_standard_material,
+        >5</a>        <span class="syntax-namespace">pbr_fragment</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">pbr_input_from_standard_material</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#6"
             id="6"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >6</a>    },
+        >6</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#7"
             id="7"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >7</a>    decal::clustered::apply_decals,
+        >7</a>    <span class="syntax-namespace">decal</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">clustered</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">apply_decals</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#8"
             id="8"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >8</a>};
+        >8</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#9"
             id="9"
@@ -161,67 +162,67 @@
             id="10"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >10</a>@if(PREPASS_PIPELINE)
+        >10</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">PREPASS_PIPELINE</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#11"
             id="11"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >11</a>import package::{
+        >11</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">package</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#12"
             id="12"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >12</a>    prepass::io::{VertexOutput, FragmentOutput},
+        >12</a>    <span class="syntax-namespace">prepass</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">io</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-punctuation syntax-punctuation-bracket">{</span><span class="syntax-type">VertexOutput</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">FragmentOutput</span><span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#13"
             id="13"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >13</a>    deferred::functions::deferred_output,
+        >13</a>    <span class="syntax-namespace">deferred</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">functions</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">deferred_output</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#14"
             id="14"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >14</a>};
+        >14</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#15"
             id="15"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >15</a>@else
+        >15</a><span class="syntax-attribute">@<span class="syntax-attribute">else</span></span>
 <a
             href="#16"
             id="16"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >16</a>import package::render::{
+        >16</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">package</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">render</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#17"
             id="17"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >17</a>    forward_io::{VertexOutput, FragmentOutput},
+        >17</a>    <span class="syntax-namespace">forward_io</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-punctuation syntax-punctuation-bracket">{</span><span class="syntax-type">VertexOutput</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">FragmentOutput</span><span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#18"
             id="18"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >18</a>    pbr_functions::{apply_pbr_lighting, main_pass_post_lighting_processing},
+        >18</a>    <span class="syntax-namespace">pbr_functions</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-punctuation syntax-punctuation-bracket">{</span><span class="syntax-namespace">apply_pbr_lighting</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-namespace">main_pass_post_lighting_processing</span><span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#19"
             id="19"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >19</a>    pbr_types::STANDARD_MATERIAL_FLAGS_UNLIT_BIT,
+        >19</a>    <span class="syntax-namespace">pbr_types</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-constant">STANDARD_MATERIAL_FLAGS_UNLIT_BIT</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#20"
             id="20"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >20</a>};
+        >20</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#21"
             id="21"
@@ -233,13 +234,13 @@
             id="22"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >22</a>@if(VISIBILITY_RANGE_DITHER)
+        >22</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">VISIBILITY_RANGE_DITHER</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#23"
             id="23"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >23</a>import package::render::pbr_functions::visibility_range_dither;
+        >23</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">package</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">render</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">pbr_functions</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">visibility_range_dither</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#24"
             id="24"
@@ -251,13 +252,13 @@
             id="25"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >25</a>@if(MESHLET_MESH_MATERIAL_PASS)
+        >25</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">MESHLET_MESH_MATERIAL_PASS</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#26"
             id="26"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >26</a>import package::meshlet::visibility_buffer_resolve::resolve_vertex_output;
+        >26</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">package</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">meshlet</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">visibility_buffer_resolve</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">resolve_vertex_output</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#27"
             id="27"
@@ -269,13 +270,13 @@
             id="28"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >28</a>@if(MATERIAL_OIT_ENABLED)
+        >28</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">MATERIAL_OIT_ENABLED</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#29"
             id="29"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >29</a>import bevy_core_pipeline::oit::draw::oit_draw;
+        >29</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">bevy_core_pipeline</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">oit</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">draw</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">oit_draw</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#30"
             id="30"
@@ -287,13 +288,13 @@
             id="31"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >31</a>@if(FORWARD_DECAL)
+        >31</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">FORWARD_DECAL</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#32"
             id="32"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >32</a>import package::decal::forward::get_forward_decal_info;
+        >32</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">package</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">decal</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">forward</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">get_forward_decal_info</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#33"
             id="33"
@@ -305,79 +306,79 @@
             id="34"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >34</a>@fragment
+        >34</a><span class="syntax-attribute">@<span class="syntax-attribute">fragment</span></span>
 <a
             href="#35"
             id="35"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >35</a>fn fragment(
+        >35</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">fragment</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span>
 <a
             href="#36"
             id="36"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >36</a>@if(MESHLET_MESH_MATERIAL_PASS)
+        >36</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">MESHLET_MESH_MATERIAL_PASS</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#37"
             id="37"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >37</a>    @builtin(position) frag_coord: vec4&#60;f32&#62;,
+        >37</a>    <span class="syntax-attribute">@<span class="syntax-attribute">builtin</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-builtin">position</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-variable syntax-variable-parameter">frag_coord</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#38"
             id="38"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >38</a>@if(!MESHLET_MESH_MATERIAL_PASS)
+        >38</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">!</span><span class="syntax-constant">MESHLET_MESH_MATERIAL_PASS</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#39"
             id="39"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >39</a>    vertex_output: VertexOutput,
+        >39</a>    <span class="syntax-variable syntax-variable-parameter">vertex_output</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">VertexOutput</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#40"
             id="40"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >40</a>@if(!MESHLET_MESH_MATERIAL_PASS)
+        >40</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">!</span><span class="syntax-constant">MESHLET_MESH_MATERIAL_PASS</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#41"
             id="41"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >41</a>    @builtin(front_facing) is_front: bool,
+        >41</a>    <span class="syntax-attribute">@<span class="syntax-attribute">builtin</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-builtin">front_facing</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-variable syntax-variable-parameter">is_front</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">bool</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#42"
             id="42"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >42</a>) -&#62; FragmentOutput {
+        >42</a><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-type">FragmentOutput</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#43"
             id="43"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >43</a>@if(MESHLET_MESH_MATERIAL_PASS)
+        >43</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">MESHLET_MESH_MATERIAL_PASS</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#44"
             id="44"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >44</a>    let vertex_output = resolve_vertex_output(frag_coord);
+        >44</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">vertex_output</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">resolve_vertex_output</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">frag_coord</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#45"
             id="45"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >45</a>@if(MESHLET_MESH_MATERIAL_PASS)
+        >45</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">MESHLET_MESH_MATERIAL_PASS</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#46"
             id="46"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >46</a>    let is_front = true;
+        >46</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">is_front</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-builtin syntax-constant-builtin-boolean">true</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#47"
             id="47"
@@ -389,7 +390,7 @@
             id="48"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >48</a>    var in = vertex_output;
+        >48</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">in</span> <span class="syntax-operator">=</span> <span class="syntax-variable">vertex_output</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#49"
             id="49"
@@ -401,25 +402,25 @@
             id="50"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >50</a>    // If we&#39;re in the crossfade section of a visibility range, conditionally
+        >50</a>    <span class="syntax-comment syntax-comment-line">// If we&#39;re in the crossfade section of a visibility range, conditionally</span>
 <a
             href="#51"
             id="51"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >51</a>    // discard the fragment according to the visibility pattern.
+        >51</a>    <span class="syntax-comment syntax-comment-line">// discard the fragment according to the visibility pattern.</span>
 <a
             href="#52"
             id="52"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >52</a>@if(VISIBILITY_RANGE_DITHER)
+        >52</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">VISIBILITY_RANGE_DITHER</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#53"
             id="53"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >53</a>    visibility_range_dither(in.position, in.visibility_range_dither);
+        >53</a>    <span class="syntax-function">visibility_range_dither</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">in</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">position</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">in</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">visibility_range_dither</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#54"
             id="54"
@@ -431,37 +432,37 @@
             id="55"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >55</a>@if(FORWARD_DECAL)
+        >55</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">FORWARD_DECAL</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#56"
             id="56"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >56</a>    let forward_decal_info = get_forward_decal_info(in);
+        >56</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">forward_decal_info</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">get_forward_decal_info</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">in</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#57"
             id="57"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >57</a>@if(FORWARD_DECAL)
+        >57</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">FORWARD_DECAL</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#58"
             id="58"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >58</a>    in.world_position = forward_decal_info.world_position;
+        >58</a>    <span class="syntax-variable">in</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">world_position</span> <span class="syntax-operator">=</span> <span class="syntax-variable">forward_decal_info</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">world_position</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#59"
             id="59"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >59</a>@if(FORWARD_DECAL)
+        >59</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">FORWARD_DECAL</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#60"
             id="60"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >60</a>    in.uv = forward_decal_info.uv;
+        >60</a>    <span class="syntax-variable">in</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">uv</span> <span class="syntax-operator">=</span> <span class="syntax-variable">forward_decal_info</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">uv</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#61"
             id="61"
@@ -473,13 +474,13 @@
             id="62"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >62</a>    // generate a PbrInput struct from the StandardMaterial bindings
+        >62</a>    <span class="syntax-comment syntax-comment-line">// generate a PbrInput struct from the StandardMaterial bindings</span>
 <a
             href="#63"
             id="63"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >63</a>    var pbr_input = pbr_input_from_standard_material(in, is_front);
+        >63</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">pbr_input</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">pbr_input_from_standard_material</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">in</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">is_front</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#64"
             id="64"
@@ -491,37 +492,37 @@
             id="65"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >65</a>    // alpha discard
+        >65</a>    <span class="syntax-comment syntax-comment-line">// alpha discard</span>
 <a
             href="#66"
             id="66"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >66</a>    pbr_input.material.base_color = alpha_discard(
+        >66</a>    <span class="syntax-variable">pbr_input</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">material</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">base_color</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">alpha_discard</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span>
 <a
             href="#67"
             id="67"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >67</a>        pbr_input.material.flags,
+        >67</a>        <span class="syntax-variable">pbr_input</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">material</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">flags</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#68"
             id="68"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >68</a>        pbr_input.material.alpha_cutoff,
+        >68</a>        <span class="syntax-variable">pbr_input</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">material</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">alpha_cutoff</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#69"
             id="69"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >69</a>        pbr_input.material.base_color
+        >69</a>        <span class="syntax-variable">pbr_input</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">material</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">base_color</span>
 <a
             href="#70"
             id="70"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >70</a>    );
+        >70</a>    <span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#71"
             id="71"
@@ -533,13 +534,13 @@
             id="72"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >72</a>    // clustered decals
+        >72</a>    <span class="syntax-comment syntax-comment-line">// clustered decals</span>
 <a
             href="#73"
             id="73"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >73</a>    apply_decals(&#38;pbr_input);
+        >73</a>    <span class="syntax-function">apply_decals</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">&amp;</span><span class="syntax-variable">pbr_input</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#74"
             id="74"
@@ -551,79 +552,79 @@
             id="75"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >75</a>    // write the gbuffer, lighting pass id, and optionally normal and motion_vector textures
+        >75</a>    <span class="syntax-comment syntax-comment-line">// write the gbuffer, lighting pass id, and optionally normal and motion_vector textures</span>
 <a
             href="#76"
             id="76"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >76</a>@if(PREPASS_PIPELINE)
+        >76</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">PREPASS_PIPELINE</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#77"
             id="77"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >77</a>    let out = deferred_output(in, pbr_input);
+        >77</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">out</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">deferred_output</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">in</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">pbr_input</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#78"
             id="78"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >78</a>    // in forward mode, we calculate the lit color immediately, and then apply some post-lighting effects here.
+        >78</a>    <span class="syntax-comment syntax-comment-line">// in forward mode, we calculate the lit color immediately, and then apply some post-lighting effects here.</span>
 <a
             href="#79"
             id="79"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >79</a>    // in deferred mode the lit color and these effects will be calculated in the deferred lighting shader
+        >79</a>    <span class="syntax-comment syntax-comment-line">// in deferred mode the lit color and these effects will be calculated in the deferred lighting shader</span>
 <a
             href="#80"
             id="80"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >80</a>@if(!PREPASS_PIPELINE)
+        >80</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">!</span><span class="syntax-constant">PREPASS_PIPELINE</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#81"
             id="81"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >81</a>    var out: FragmentOutput;
+        >81</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">out</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">FragmentOutput</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#82"
             id="82"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >82</a>@if(!PREPASS_PIPELINE)
+        >82</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">!</span><span class="syntax-constant">PREPASS_PIPELINE</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#83"
             id="83"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >83</a>    if (pbr_input.material.flags &#38; STANDARD_MATERIAL_FLAGS_UNLIT_BIT) == 0u {
+        >83</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">pbr_input</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">material</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">flags</span> <span class="syntax-operator">&amp;</span> <span class="syntax-constant">STANDARD_MATERIAL_FLAGS_UNLIT_BIT</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">==</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0u</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#84"
             id="84"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >84</a>        out.color = apply_pbr_lighting(pbr_input);
+        >84</a>        <span class="syntax-variable">out</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">color</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">apply_pbr_lighting</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">pbr_input</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#85"
             id="85"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >85</a>    } else {
+        >85</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span> <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">else</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#86"
             id="86"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >86</a>        out.color = pbr_input.material.base_color;
+        >86</a>        <span class="syntax-variable">out</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">color</span> <span class="syntax-operator">=</span> <span class="syntax-variable">pbr_input</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">material</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">base_color</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#87"
             id="87"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >87</a>    }
+        >87</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#88"
             id="88"
@@ -635,25 +636,25 @@
             id="89"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >89</a>    // apply in-shader post processing (fog, alpha-premultiply, and also tonemapping, debanding if the camera is non-hdr)
+        >89</a>    <span class="syntax-comment syntax-comment-line">// apply in-shader post processing (fog, alpha-premultiply, and also tonemapping, debanding if the camera is non-hdr)</span>
 <a
             href="#90"
             id="90"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >90</a>    // note this does not include fullscreen postprocessing effects like bloom.
+        >90</a>    <span class="syntax-comment syntax-comment-line">// note this does not include fullscreen postprocessing effects like bloom.</span>
 <a
             href="#91"
             id="91"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >91</a>@if(!PREPASS_PIPELINE)
+        >91</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">!</span><span class="syntax-constant">PREPASS_PIPELINE</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#92"
             id="92"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >92</a>    out.color = main_pass_post_lighting_processing(pbr_input, out.color);
+        >92</a>    <span class="syntax-variable">out</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">color</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">main_pass_post_lighting_processing</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">pbr_input</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">out</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">color</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#93"
             id="93"
@@ -665,91 +666,91 @@
             id="94"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >94</a>@if(MATERIAL_OIT_ENABLED) {
+        >94</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">MATERIAL_OIT_ENABLED</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#95"
             id="95"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >95</a>    let alpha_mode = pbr_input.material.flags &#38; pbr_types::STANDARD_MATERIAL_FLAGS_ALPHA_MODE_RESERVED_BITS;
+        >95</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">alpha_mode</span> <span class="syntax-operator">=</span> <span class="syntax-variable">pbr_input</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">material</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">flags</span> <span class="syntax-operator">&amp;</span> <span class="syntax-namespace">pbr_types</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-constant">STANDARD_MATERIAL_FLAGS_ALPHA_MODE_RESERVED_BITS</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#96"
             id="96"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >96</a>    if alpha_mode == pbr_types::STANDARD_MATERIAL_FLAGS_ALPHA_MODE_BLEND {
+        >96</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-variable">alpha_mode</span> <span class="syntax-operator">==</span> <span class="syntax-namespace">pbr_types</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-constant">STANDARD_MATERIAL_FLAGS_ALPHA_MODE_BLEND</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#97"
             id="97"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >97</a>        // The fragments will only be drawn during the oit resolve pass.
+        >97</a>        <span class="syntax-comment syntax-comment-line">// The fragments will only be drawn during the oit resolve pass.</span>
 <a
             href="#98"
             id="98"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >98</a>        oit_draw(in.position, vec4(out.color.rgb * out.color.a, out.color.a));
+        >98</a>        <span class="syntax-function">oit_draw</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">in</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">position</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-function syntax-function-call">vec4</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">out</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">color</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">rgb</span> <span class="syntax-operator">*</span> <span class="syntax-variable">out</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">color</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">a</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">out</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">color</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">a</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#99"
             id="99"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >99</a>        discard;
+        >99</a>        <span class="syntax-keyword syntax-keyword-control">discard</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#100"
             id="100"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >100</a>    }
+        >100</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#101"
             id="101"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >101</a>    // Both `Premultiplied` and `Add` colors are premultiplied in `premultiply_alpha()`
+        >101</a>    <span class="syntax-comment syntax-comment-line">// Both `Premultiplied` and `Add` colors are premultiplied in `premultiply_alpha()`</span>
 <a
             href="#102"
             id="102"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >102</a>    if alpha_mode == pbr_types::STANDARD_MATERIAL_FLAGS_ALPHA_MODE_PREMULTIPLIED
+        >102</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-variable">alpha_mode</span> <span class="syntax-operator">==</span> <span class="syntax-namespace">pbr_types</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-constant">STANDARD_MATERIAL_FLAGS_ALPHA_MODE_PREMULTIPLIED</span>
 <a
             href="#103"
             id="103"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >103</a>        || alpha_mode == pbr_types::STANDARD_MATERIAL_FLAGS_ALPHA_MODE_ADD {
+        >103</a>        <span class="syntax-operator">||</span> <span class="syntax-variable">alpha_mode</span> <span class="syntax-operator">==</span> <span class="syntax-namespace">pbr_types</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-constant">STANDARD_MATERIAL_FLAGS_ALPHA_MODE_ADD</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#104"
             id="104"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >104</a>        // The fragments will only be drawn during the oit resolve pass.
+        >104</a>        <span class="syntax-comment syntax-comment-line">// The fragments will only be drawn during the oit resolve pass.</span>
 <a
             href="#105"
             id="105"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >105</a>        oit_draw(in.position, out.color);
+        >105</a>        <span class="syntax-function">oit_draw</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">in</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">position</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">out</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">color</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#106"
             id="106"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >106</a>        discard;
+        >106</a>        <span class="syntax-keyword syntax-keyword-control">discard</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#107"
             id="107"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >107</a>    }
+        >107</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#108"
             id="108"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >108</a>}
+        >108</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#109"
             id="109"
@@ -761,13 +762,13 @@
             id="110"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >110</a>@if(FORWARD_DECAL)
+        >110</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">FORWARD_DECAL</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#111"
             id="111"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >111</a>        out.color.a = min(forward_decal_info.alpha, out.color.a);
+        >111</a>        <span class="syntax-variable">out</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">color</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">a</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">min</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">forward_decal_info</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">alpha</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">out</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">color</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">a</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#112"
             id="112"
@@ -779,13 +780,13 @@
             id="113"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >113</a>        return out;
+        >113</a>        <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-variable">out</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#114"
             id="114"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >114</a>}</code>
+        >114</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span></code>
 </pre>
 
         </div>

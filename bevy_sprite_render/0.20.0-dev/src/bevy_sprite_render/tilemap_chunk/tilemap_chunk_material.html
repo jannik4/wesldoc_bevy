@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="../../../../../-/static/css/themes.css">
     <link rel="stylesheet" href="../../../../../-/static/css/styles.css">
     <link rel="stylesheet" href="../../../../../-/static/css/icons.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/syntax.css">
     <script src="../../../../../-/static/js/settings.js"></script>
 
     
@@ -102,31 +103,31 @@
             id="1"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >1</a>import package::mesh2d::{
+        >1</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">package</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">mesh2d</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#2"
             id="2"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >2</a>    functions as mesh_functions,
+        >2</a>    <span class="syntax-namespace">functions</span> <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">as</span> <span class="syntax-namespace">mesh_functions</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#3"
             id="3"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >3</a>    view_bindings::view,
+        >3</a>    <span class="syntax-namespace">view_bindings</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">view</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#4"
             id="4"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >4</a>    vertex_output::VertexOutput,
+        >4</a>    <span class="syntax-namespace">vertex_output</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-type">VertexOutput</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#5"
             id="5"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >5</a>};
+        >5</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#6"
             id="6"
@@ -138,19 +139,19 @@
             id="7"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >7</a>@group(constants::MATERIAL_BIND_GROUP) @binding(0) var tileset: texture_2d_array&#60;f32&#62;;
+        >7</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-namespace">constants</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-constant">MATERIAL_BIND_GROUP</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">tileset</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">texture_2d_array</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#8"
             id="8"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >8</a>@group(constants::MATERIAL_BIND_GROUP) @binding(1) var tileset_sampler: sampler;
+        >8</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-namespace">constants</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-constant">MATERIAL_BIND_GROUP</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">tileset_sampler</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">sampler</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#9"
             id="9"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >9</a>@group(constants::MATERIAL_BIND_GROUP) @binding(2) var tile_data: texture_2d&#60;u32&#62;;
+        >9</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-namespace">constants</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-constant">MATERIAL_BIND_GROUP</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">2</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">tile_data</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">texture_2d</span><span class="syntax-punctuation">&lt;<span class="syntax-type">u32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#10"
             id="10"
@@ -162,49 +163,49 @@
             id="11"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >11</a>struct TileData {
+        >11</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">struct</span> <span class="syntax-type">TileData</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#12"
             id="12"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >12</a>    tileset_index: u32,
+        >12</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">tileset_index</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#13"
             id="13"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >13</a>    color: vec4&#60;f32&#62;,
+        >13</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">color</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#14"
             id="14"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >14</a>    visible: bool,
+        >14</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">visible</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">bool</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#15"
             id="15"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >15</a>    mirror_h: bool,
+        >15</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">mirror_h</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">bool</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#16"
             id="16"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >16</a>    mirror_v: bool,
+        >16</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">mirror_v</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">bool</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#17"
             id="17"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >17</a>    mirror_d: bool,
+        >17</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">mirror_d</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">bool</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#18"
             id="18"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >18</a>}
+        >18</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#19"
             id="19"
@@ -216,13 +217,13 @@
             id="20"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >20</a>fn get_tile_data(coord: vec2&#60;u32&#62;) -&#62; TileData {
+        >20</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">get_tile_data</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">coord</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-type">u32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-type">TileData</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#21"
             id="21"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >21</a>    let data = textureLoad(tile_data, coord, 0);
+        >21</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">data</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">textureLoad</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">tile_data</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">coord</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#22"
             id="22"
@@ -234,7 +235,7 @@
             id="23"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >23</a>    let tileset_index = data.r;
+        >23</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">tileset_index</span> <span class="syntax-operator">=</span> <span class="syntax-variable">data</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">r</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#24"
             id="24"
@@ -246,25 +247,25 @@
             id="25"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >25</a>    let color_r = f32(data.g &#38; 0xFFu) / 255.0;
+        >25</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">color_r</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">f32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">data</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">g</span> <span class="syntax-operator">&amp;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer"><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0xFFu</span></span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">/</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">255.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#26"
             id="26"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >26</a>    let color_g = f32((data.g &#62;&#62; 8u) &#38; 0xFFu) / 255.0;
+        >26</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">color_g</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">f32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">data</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">g</span> <span class="syntax-operator">&gt;&gt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">8u</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">&amp;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer"><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0xFFu</span></span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">/</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">255.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#27"
             id="27"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >27</a>    let color_b = f32(data.b &#38; 0xFFu) / 255.0;
+        >27</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">color_b</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">f32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">data</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">b</span> <span class="syntax-operator">&amp;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer"><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0xFFu</span></span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">/</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">255.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#28"
             id="28"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >28</a>    let color_a = f32((data.b &#62;&#62; 8u) &#38; 0xFFu) / 255.0;
+        >28</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">color_a</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">f32</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">data</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">b</span> <span class="syntax-operator">&gt;&gt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">8u</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">&amp;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer"><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0xFFu</span></span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">/</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">255.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#29"
             id="29"
@@ -276,7 +277,7 @@
             id="30"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >30</a>    let color = vec4&#60;f32&#62;(color_r, color_g, color_b, color_a);
+        >30</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">color</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">color_r</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">color_g</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">color_b</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">color_a</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#31"
             id="31"
@@ -288,25 +289,25 @@
             id="32"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >32</a>    let mirror_h = (data.a &#38; 0x8u) != 0u;
+        >32</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">mirror_h</span> <span class="syntax-operator">=</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">data</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">a</span> <span class="syntax-operator">&amp;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer"><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0x8u</span></span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">!=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#33"
             id="33"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >33</a>    let mirror_v = (data.a &#38; 0x4u) != 0u;
+        >33</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">mirror_v</span> <span class="syntax-operator">=</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">data</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">a</span> <span class="syntax-operator">&amp;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer"><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0x4u</span></span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">!=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#34"
             id="34"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >34</a>    let mirror_d = (data.a &#38; 0x2u) != 0u;
+        >34</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">mirror_d</span> <span class="syntax-operator">=</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">data</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">a</span> <span class="syntax-operator">&amp;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer"><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0x2u</span></span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">!=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#35"
             id="35"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >35</a>    let visible = (data.a &#38; 0x1u) != 0u;
+        >35</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">visible</span> <span class="syntax-operator">=</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">data</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">a</span> <span class="syntax-operator">&amp;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer"><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0x1u</span></span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">!=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#36"
             id="36"
@@ -318,13 +319,13 @@
             id="37"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >37</a>    return TileData(tileset_index, color, visible, mirror_h, mirror_v, mirror_d);
+        >37</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-function syntax-function-call">TileData</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">tileset_index</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">color</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">visible</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">mirror_h</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">mirror_v</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">mirror_d</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#38"
             id="38"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >38</a>}
+        >38</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#39"
             id="39"
@@ -336,37 +337,37 @@
             id="40"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >40</a>@fragment
+        >40</a><span class="syntax-attribute">@<span class="syntax-attribute">fragment</span></span>
 <a
             href="#41"
             id="41"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >41</a>fn fragment(in: VertexOutput) -&#62; @location(0) vec4&#60;f32&#62; {
+        >41</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">fragment</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">in</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">VertexOutput</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-attribute">@<span class="syntax-attribute">location</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-type">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#42"
             id="42"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >42</a>    let chunk_size = textureDimensions(tile_data, 0);
+        >42</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">chunk_size</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">textureDimensions</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">tile_data</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#43"
             id="43"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >43</a>    let tile_uv = in.uv * vec2&#60;f32&#62;(chunk_size);
+        >43</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">tile_uv</span> <span class="syntax-operator">=</span> <span class="syntax-variable">in</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">uv</span> <span class="syntax-operator">*</span> <span class="syntax-function syntax-function-call">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">chunk_size</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#44"
             id="44"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >44</a>    var tile_coord = clamp(vec2&#60;u32&#62;(floor(tile_uv)), vec2&#60;u32&#62;(0), chunk_size - 1);
+        >44</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">tile_coord</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">clamp</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">u32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">floor</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">tile_uv</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-function syntax-function-call">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">u32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">chunk_size</span> <span class="syntax-operator">-</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#45"
             id="45"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >45</a>    var local_uv = tile_uv - vec2&#60;f32&#62;(tile_coord);
+        >45</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">local_uv</span> <span class="syntax-operator">=</span> <span class="syntax-variable">tile_uv</span> <span class="syntax-operator">-</span> <span class="syntax-function syntax-function-call">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">tile_coord</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#46"
             id="46"
@@ -378,7 +379,7 @@
             id="47"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >47</a>    tile_coord.y = chunk_size.y - 1 - tile_coord.y;
+        >47</a>    <span class="syntax-variable">tile_coord</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">y</span> <span class="syntax-operator">=</span> <span class="syntax-variable">chunk_size</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">y</span> <span class="syntax-operator">-</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span> <span class="syntax-operator">-</span> <span class="syntax-variable">tile_coord</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">y</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#48"
             id="48"
@@ -390,7 +391,7 @@
             id="49"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >49</a>    let tile = get_tile_data(tile_coord);
+        >49</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">tile</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">get_tile_data</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">tile_coord</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#50"
             id="50"
@@ -402,19 +403,19 @@
             id="51"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >51</a>    if (tile.tileset_index == 0xffffu || !tile.visible) {
+        >51</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">tile</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">tileset_index</span> <span class="syntax-operator">==</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer"><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0xffffu</span></span> <span class="syntax-operator">||</span> <span class="syntax-operator">!</span><span class="syntax-variable">tile</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">visible</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#52"
             id="52"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >52</a>        discard;
+        >52</a>        <span class="syntax-keyword syntax-keyword-control">discard</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#53"
             id="53"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >53</a>    }
+        >53</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#54"
             id="54"
@@ -426,19 +427,19 @@
             id="55"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >55</a>    if (tile.mirror_h) {
+        >55</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">tile</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">mirror_h</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#56"
             id="56"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >56</a>        local_uv.x = 1 - local_uv.x;
+        >56</a>        <span class="syntax-variable">local_uv</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">x</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span> <span class="syntax-operator">-</span> <span class="syntax-variable">local_uv</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">x</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#57"
             id="57"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >57</a>    }
+        >57</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#58"
             id="58"
@@ -450,19 +451,19 @@
             id="59"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >59</a>    if (tile.mirror_v) {
+        >59</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">tile</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">mirror_v</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#60"
             id="60"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >60</a>        local_uv.y = 1 - local_uv.y;
+        >60</a>        <span class="syntax-variable">local_uv</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">y</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span> <span class="syntax-operator">-</span> <span class="syntax-variable">local_uv</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">y</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#61"
             id="61"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >61</a>    }
+        >61</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#62"
             id="62"
@@ -474,19 +475,19 @@
             id="63"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >63</a>    if (tile.mirror_d) {
+        >63</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">tile</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">mirror_d</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#64"
             id="64"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >64</a>        local_uv = local_uv.yx;
+        >64</a>        <span class="syntax-variable">local_uv</span> <span class="syntax-operator">=</span> <span class="syntax-variable">local_uv</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">yx</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#65"
             id="65"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >65</a>    }
+        >65</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#66"
             id="66"
@@ -498,13 +499,13 @@
             id="67"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >67</a>    let tex_color = textureSample(tileset, tileset_sampler, local_uv, tile.tileset_index);
+        >67</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">tex_color</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">textureSample</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">tileset</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">tileset_sampler</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">local_uv</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">tile</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">tileset_index</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#68"
             id="68"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >68</a>    let final_color = tex_color * tile.color;
+        >68</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">final_color</span> <span class="syntax-operator">=</span> <span class="syntax-variable">tex_color</span> <span class="syntax-operator">*</span> <span class="syntax-variable">tile</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">color</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#69"
             id="69"
@@ -516,19 +517,19 @@
             id="70"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >70</a>    if (final_color.a &#60; 0.001) {
+        >70</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">final_color</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">a</span> <span class="syntax-operator">&lt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.001</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#71"
             id="71"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >71</a>        discard;
+        >71</a>        <span class="syntax-keyword syntax-keyword-control">discard</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#72"
             id="72"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >72</a>    }
+        >72</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#73"
             id="73"
@@ -540,13 +541,13 @@
             id="74"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >74</a>    return final_color;
+        >74</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-variable">final_color</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#75"
             id="75"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >75</a>}</code>
+        >75</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span></code>
 </pre>
 
         </div>

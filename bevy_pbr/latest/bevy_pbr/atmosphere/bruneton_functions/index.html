@@ -182,7 +182,11 @@ This function solves the quadratic equation for line-sphere intersection simplif
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Mapping from view height (r) and zenith cos angle (mu) to UV coordinates in the transmittance LUT
+Assuming r between ground and top atmosphere boundary, and mu= cos(zenith_angle)
+Chosen to increase precision near the ground and to work around a discontinuity at the horizon
+See Bruneton and Neyret 2008, "Precomputed Atmospheric Scattering" section 4</p>
+</div>
         </div>
     </li>
     
@@ -192,7 +196,8 @@ This function solves the quadratic equation for line-sphere intersection simplif
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Inverse of the mapping above, mapping from UV coordinates in the transmittance LUT to view height (r) and zenith cos angle (mu)</p>
+</div>
         </div>
     </li>
     

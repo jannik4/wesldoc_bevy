@@ -115,7 +115,10 @@
 
 <pre class="code-block"><code>fn read_local_position(first_vertex: u32, vertex_index: u32) -> vec3&lt;f32&gt;</code>
 </pre>
-
+<div class="comment"><p>finds the local-space vertex position for a given vertex index by reading from the vertex buffer using the provided
+parameters. the vertex buffer is interpreted as an array of u32s, so the parameters allow us to calculate the
+correct offset for the position attribute of the vertex at the given index.</p>
+</div>
 
 
         </div>

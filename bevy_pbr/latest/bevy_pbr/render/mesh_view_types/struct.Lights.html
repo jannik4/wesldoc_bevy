@@ -128,16 +128,26 @@
 <h2 class="item-list-title">Fields</h2>
 
 <div style="margin: 8px 0;"><code>directional_lights: array&lt;<a class="struct" href="../../render/mesh_view_types/struct.DirectionalLight.html">DirectionalLight</a>, <a class="module" href="../../../src/bevy_pbr/render/mesh_view_types.html#66">...</a>&gt;</code></div>
-
+<div class="comment"><p>NOTE: this array size must be kept in sync with the constants defined in bevy_pbr/src/render/light.rs</p>
+</div>
 
 <div style="margin: 8px 0;"><code>ambient_color: vec4&lt;f32&gt;</code></div>
 
 
 <div style="margin: 8px 0;"><code>cluster_dimensions: vec4&lt;u32&gt;</code></div>
-
+<div class="comment"><p>x/y/z dimensions and n_clusters in w</p>
+</div>
 
 <div style="margin: 8px 0;"><code>cluster_factors: vec4&lt;f32&gt;</code></div>
-
+<div class="comment"><p>xy are vec2(cluster_dimensions.xy) / vec2(view.width, view.height)</p>
+<p>For perspective projections:
+z is (cluster_dimensions.z - 1) / log(far / near)
+w is (cluster_dimensions.z - 1) * log(near) / log(far / near)</p>
+<p>For orthographic projections:
+NOTE: near and far are +ve but -z is infront of the camera
+z is -near
+w is cluster_dimensions.z / (-far - -near)</p>
+</div>
 
 <div style="margin: 8px 0;"><code>n_directional_lights: u32</code></div>
 

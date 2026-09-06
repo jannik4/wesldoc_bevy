@@ -109,7 +109,13 @@
 <a class="module" href="../../../src/bevy_pbr/render/reset_indirect_batch_sets.html">Source</a>
 
 
-
+<div class="comment"><p>Resets the indirect draw counts to zero.</p>
+<p>This shader is needed because we reuse the same indirect batch set count
+buffer (i.e. the buffer that gets passed to <code>multi_draw_indirect_count</code> to
+determine how many objects to draw) between phases (early, late, and main).
+Before launching <code>build_indirect_params.wesl</code>, we need to reinitialize the
+value to 0.</p>
+</div>
 
 
 

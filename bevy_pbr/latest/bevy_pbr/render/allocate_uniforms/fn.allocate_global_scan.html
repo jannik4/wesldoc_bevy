@@ -117,7 +117,12 @@ fn allocate_global_scan(
     local_id: vec3&lt;u32&gt;
 ) </code>
 </pre>
-
+<div class="comment"><p>The second step of the prefix sum.</p>
+<p>This step takes the intermediate fan values computed in the previous step
+(i.e. the sum going out of each chunk) and performs one or more Hillis-Steele
+scans in order to compute the fan value going into each chunk.</p>
+<p>This step is omitted if there are 256 or fewer total draws.</p>
+</div>
 
 
         </div>

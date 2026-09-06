@@ -123,7 +123,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Cutoff used for the premultiplied alpha modes BLEND, ADD, and ALPHA_TO_COVERAGE.</p>
+</div>
         </div>
     </li>
     
@@ -158,7 +159,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Reusable alpha discard logic suitable for use by custom materials in the prepass.
+We can use a simplified version of alpha_discard() here since we only need to handle the alpha_cutoff</p>
+</div>
         </div>
     </li>
     
@@ -168,7 +171,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Samples the StandardMaterial's base color (including the base color texture, if any) and then
+invokes <code>prepass_alpha_discard</code> with the material's flags and alpha cutoff.</p>
+</div>
         </div>
     </li>
     

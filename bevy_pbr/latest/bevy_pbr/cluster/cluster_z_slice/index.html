@@ -109,7 +109,16 @@
 <a class="module" href="../../../src/bevy_pbr/cluster/cluster_z_slice.html">Source</a>
 
 
-
+<div class="comment"><p>The shader that divides clusterable objects into Z slices.</p>
+<p>Treating the cluster froxel space as a grid of size WxHxD, for each
+clusterable object, we seek to rasterize D overlapping quads into a viewport
+of size WxH. Each quad represents a <em>Z slice</em> of the object. This shader
+calculates the number of Z slices needed for each object in parallel and
+prepares the <code>ClusterableObjectZSlice</code> data that the rasterization passes
+will consume. It also updates the indirect draw parameters for the
+rasterization pass and calculates statistics about the farthest Z value
+encountered that the CPU can later read back for dynamic froxel range tuning.</p>
+</div>
 
 
 
@@ -127,7 +136,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Metadata, including the indirect draw parameters that we write to.</p>
+</div>
         </div>
     </li>
     
@@ -137,7 +147,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Information about each clustered decal.</p>
+</div>
         </div>
     </li>
     
@@ -147,7 +158,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Information about each light.</p>
+</div>
         </div>
     </li>
     
@@ -157,7 +169,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Information about each light probe (reflection probe or irradiance volume).</p>
+</div>
         </div>
     </li>
     
@@ -167,7 +180,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Information about the clusters as a whole, including the dimensions of the
+cluster grid.</p>
+</div>
         </div>
     </li>
     
@@ -177,7 +192,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>A temporary workgroup-local buffer used to accelerate the "farthest depth of
+any object" calculation.</p>
+</div>
         </div>
     </li>
     
@@ -187,7 +204,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Information about the view.</p>
+</div>
         </div>
     </li>
     
@@ -197,7 +215,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>The list of clusterable object Z slices that we write to.</p>
+</div>
         </div>
     </li>
     
@@ -216,7 +235,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Records the farthest Z value for clusterable objects in this workgroup for
+the CPU to read back.</p>
+</div>
         </div>
     </li>
     
@@ -226,7 +247,11 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Encodes f32 bits into a u32 whose unsigned ordering matches
+the float's total order. Positive floats get the sign bit set so they
+sort above negative floats; negative floats get all bits flipped so
+their ordering is reversed (more negative -&gt; smaller u32).</p>
+</div>
         </div>
     </li>
     
@@ -236,7 +261,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Writes a Z slice to the list.</p>
+</div>
         </div>
     </li>
     
@@ -246,7 +272,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>The shader entry point.</p>
+</div>
         </div>
     </li>
     

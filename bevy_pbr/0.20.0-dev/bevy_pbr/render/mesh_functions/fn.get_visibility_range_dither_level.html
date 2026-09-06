@@ -115,7 +115,10 @@
 
 <pre class="code-block"><code>fn get_visibility_range_dither_level(instance_index: u32, world_position: vec4&lt;f32&gt;) -> i32</code>
 </pre>
-
+<div class="comment"><p>Returns an appropriate dither level for the current mesh instance.</p>
+<p>This looks up the LOD range in the <code>visibility_ranges</code> table and compares the
+camera distance to determine the dithering level.</p>
+</div>
 
 
         </div>

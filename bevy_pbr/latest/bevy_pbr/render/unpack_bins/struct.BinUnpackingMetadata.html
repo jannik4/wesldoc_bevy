@@ -120,23 +120,32 @@
     pad_b: array&lt;vec4&lt;u32&gt;, 15&gt;
 }</code>
 </pre>
-
+<div class="comment"><p>Information needed to unpack bins belonging to a single batch set.</p>
+</div>
 <h2 class="item-list-title">Fields</h2>
 
 <div style="margin: 8px 0;"><code>base_output_work_item_index: u32</code></div>
-
+<div class="comment"><p>The index of the first <code>PreprocessWorkItem</code> that this compute shader
+dispatch is to write to.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>base_indirect_parameters_index: u32</code></div>
-
+<div class="comment"><p>The index of the first GPU indirect parameters command for this batch
+set.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>binned_mesh_instance_count: u32</code></div>
-
+<div class="comment"><p>The number of binned mesh instances in the <code>binned_mesh_instances</code>
+array.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>pad_a: u32</code></div>
-
+<div class="comment"><p>Padding.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>pad_b: array&lt;vec4&lt;u32&gt;, 15&gt;</code></div>
-
+<div class="comment"><p>Padding.</p>
+</div>
 
 
 

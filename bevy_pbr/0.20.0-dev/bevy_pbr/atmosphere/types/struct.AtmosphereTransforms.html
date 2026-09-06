@@ -108,7 +108,7 @@
 
 
 
-<a class="module" href="../../../src/bevy_pbr/atmosphere/types.html#29-32">Source</a>
+<a class="module" href="../../../src/bevy_pbr/atmosphere/types.html#31-34">Source</a>
 
 
 <pre class="code-block">
@@ -117,7 +117,10 @@
     atmosphere_from_world: mat4x4&lt;f32&gt;
 }</code>
 </pre>
-
+<div class="comment"><p>"Atmosphere space" uses local up for the zenith so the horizon-detail
+parameterization concentrates texels at the viewer's horizon. Azimuth uses a
+world-fixed reference so the terminator stays stable when tilting the camera.</p>
+</div>
 <h2 class="item-list-title">Fields</h2>
 
 <div style="margin: 8px 0;"><code>world_from_atmosphere: mat4x4&lt;f32&gt;</code></div>

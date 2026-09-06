@@ -103,14 +103,18 @@
 
 
 
-<a class="module" href="../../../src/bevy_anti_alias/smaa/smaa.html#800-818">Source</a>
+<a class="module" href="../../../src/bevy_anti_alias/smaa/smaa.html#784-802">Source</a>
 
 
 <div><span class="conditional">SMAA_BLENDING_WEIGHT_CALCULATION</span></div>
 
 <pre class="code-block"><code>fn search_length(e: vec2&lt;f32&gt;, offset: f32) -> f32</code>
 </pre>
-
+<div class="comment"><p>This allows to determine how much length should we add in the last step
+of the searches. It takes the bilinearly interpolated edge (see
+@PSEUDO_GATHER4), and adds 0, 1 or 2, depending on which edges and
+crossing edges are active.</p>
+</div>
 
 
         </div>

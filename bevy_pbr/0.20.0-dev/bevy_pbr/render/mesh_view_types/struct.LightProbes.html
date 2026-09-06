@@ -128,7 +128,8 @@
 <h2 class="item-list-title">Fields</h2>
 
 <div style="margin: 8px 0;"><code>reflection_probes: array&lt;<a class="struct" href="../../render/mesh_view_types/struct.LightProbe.html">LightProbe</a>, 8&gt;</code></div>
-
+<div class="comment"><p>This must match <code>MAX_VIEW_LIGHT_PROBES</code> on the Rust side.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>irradiance_volumes: array&lt;<a class="struct" href="../../render/mesh_view_types/struct.LightProbe.html">LightProbe</a>, 8&gt;</code></div>
 
@@ -140,19 +141,26 @@
 
 
 <div style="margin: 8px 0;"><code>view_cubemap_index: i32</code></div>
-
+<div class="comment"><p>The index of the view environment map cubemap binding, or -1 if there's
+no such cubemap.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>smallest_specular_mip_level_for_view: u32</code></div>
-
+<div class="comment"><p>The smallest valid mipmap level for the specular environment cubemap
+associated with the view.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>view_rotation: vec4&lt;f32&gt;</code></div>
 
 
 <div style="margin: 8px 0;"><code>intensity_for_view: f32</code></div>
-
+<div class="comment"><p>The intensity of the environment map associated with the view.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>view_environment_map_affects_lightmapped_mesh_diffuse: u32</code></div>
-
+<div class="comment"><p>Whether the environment map attached to the view affects the diffuse
+lighting for lightmapped meshes.</p>
+</div>
 
 
 

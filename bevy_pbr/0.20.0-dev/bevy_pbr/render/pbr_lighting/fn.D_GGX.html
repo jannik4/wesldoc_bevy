@@ -113,7 +113,12 @@
 
 <pre class="code-block"><code>fn D_GGX(roughness: f32, NdotH: f32) -> f32</code>
 </pre>
-
+<div class="comment"><p>Normal distribution function (specular D)
+Based on https://google.github.io/filament/Filament.md.html#citation-walter07</p>
+<p>D_GGX(h,α) = α^2 / { π ((n⋅h)^2 (α2−1) + 1)^2 }</p>
+<p>Simple implementation, has precision problems when using fp16 instead of fp32
+see https://google.github.io/filament/Filament.md.html#listing_speculardfp16</p>
+</div>
 
 
         </div>

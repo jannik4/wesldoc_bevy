@@ -108,7 +108,7 @@
             id="1"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >1</a><span class="syntax-comment syntax-comment-line">// A postprocessing pass that performs screen-space reflections.</span>
+        >1</a><span class="syntax-comment syntax-comment-line">//! A postprocessing pass that performs screen-space reflections.</span>
 <a
             href="#2"
             id="2"
@@ -384,7 +384,7 @@
             id="47"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >47</a><span class="syntax-comment syntax-comment-line">// The texture representing the color framebuffer.</span>
+        >47</a><span class="syntax-comment syntax-comment-line">/// The texture representing the color framebuffer.</span>
 <a
             href="#48"
             id="48"
@@ -402,7 +402,7 @@
             id="50"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >50</a><span class="syntax-comment syntax-comment-line">// The sampler that lets us sample from the color framebuffer.</span>
+        >50</a><span class="syntax-comment syntax-comment-line">/// The sampler that lets us sample from the color framebuffer.</span>
 <a
             href="#51"
             id="51"
@@ -486,7 +486,7 @@
             id="64"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >64</a>    
+        >64</a>
 <a
             href="#65"
             id="65"
@@ -612,103 +612,103 @@
             id="85"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >85</a><span class="syntax-comment syntax-comment-line">// Returns the reflected color in the RGB channel and the specular occlusion in</span>
+        >85</a><span class="syntax-comment syntax-comment-line">/// Returns the reflected color in the RGB channel and the specular occlusion in</span>
 <a
             href="#86"
             id="86"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >86</a><span class="syntax-comment syntax-comment-line">// the alpha channel.</span>
+        >86</a><span class="syntax-comment syntax-comment-line">/// the alpha channel.</span>
 <a
             href="#87"
             id="87"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >87</a><span class="syntax-comment syntax-comment-line">//</span>
+        >87</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#88"
             id="88"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >88</a><span class="syntax-comment syntax-comment-line">// The general approach here is similar to [1]. We first project the reflection</span>
+        >88</a><span class="syntax-comment syntax-comment-line">/// The general approach here is similar to [1]. We first project the reflection</span>
 <a
             href="#89"
             id="89"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >89</a><span class="syntax-comment syntax-comment-line">// ray into screen space. Then we perform uniform steps along that screen-space</span>
+        >89</a><span class="syntax-comment syntax-comment-line">/// ray into screen space. Then we perform uniform steps along that screen-space</span>
 <a
             href="#90"
             id="90"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >90</a><span class="syntax-comment syntax-comment-line">// reflected ray, converting each step to view space.</span>
+        >90</a><span class="syntax-comment syntax-comment-line">/// reflected ray, converting each step to view space.</span>
 <a
             href="#91"
             id="91"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >91</a><span class="syntax-comment syntax-comment-line">//</span>
+        >91</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#92"
             id="92"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >92</a><span class="syntax-comment syntax-comment-line">// The arguments are:</span>
+        >92</a><span class="syntax-comment syntax-comment-line">/// The arguments are:</span>
 <a
             href="#93"
             id="93"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >93</a><span class="syntax-comment syntax-comment-line">//</span>
+        >93</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#94"
             id="94"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >94</a><span class="syntax-comment syntax-comment-line">// * `R_world`: The reflection vector in world space.</span>
+        >94</a><span class="syntax-comment syntax-comment-line">/// * `R_world`: The reflection vector in world space.</span>
 <a
             href="#95"
             id="95"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >95</a><span class="syntax-comment syntax-comment-line">//</span>
+        >95</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#96"
             id="96"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >96</a><span class="syntax-comment syntax-comment-line">// * `P_world`: The current position in world space.</span>
+        >96</a><span class="syntax-comment syntax-comment-line">/// * `P_world`: The current position in world space.</span>
 <a
             href="#97"
             id="97"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >97</a><span class="syntax-comment syntax-comment-line">//</span>
+        >97</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#98"
             id="98"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >98</a><span class="syntax-comment syntax-comment-line">// * `jitter`: Jitter to apply to the first step of the linear search; 0..=1</span>
+        >98</a><span class="syntax-comment syntax-comment-line">/// * `jitter`: Jitter to apply to the first step of the linear search; 0..=1</span>
 <a
             href="#99"
             id="99"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >99</a><span class="syntax-comment syntax-comment-line">//   range.</span>
+        >99</a><span class="syntax-comment syntax-comment-line">///   range.</span>
 <a
             href="#100"
             id="100"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >100</a><span class="syntax-comment syntax-comment-line">//</span>
+        >100</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#101"
             id="101"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >101</a><span class="syntax-comment syntax-comment-line">// [1]: https://lettier.github.io/3d-game-shaders-for-beginners/screen-space-reflection.html</span>
+        >101</a><span class="syntax-comment syntax-comment-line">/// [1]: https://lettier.github.io/3d-game-shaders-for-beginners/screen-space-reflection.html</span>
 <a
             href="#102"
             id="102"
@@ -1440,7 +1440,7 @@
             id="223"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >223</a>    
+        >223</a>
 <a
             href="#224"
             id="224"

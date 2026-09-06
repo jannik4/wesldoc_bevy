@@ -100,7 +100,7 @@
 
 
 
-<a class="module" href="../../src/bevy_render/view.html#14-71">Source</a>
+<a class="module" href="../../src/bevy_render/view.html#40-97">Source</a>
 
 
 <pre class="code-block">
@@ -142,7 +142,31 @@
 
 
 <div style="margin: 8px 0;"><code>clip_from_view: mat4x4&lt;f32&gt;</code></div>
+<div class="comment"><p>Typically a column-major right-handed projection matrix, one of either:</p>
+<p>Perspective (infinite reverse z)</p>
+<pre><code>f = 1 / tan(fov_y_radians / 2)
 
+⎡ f / aspect  0   0     0 ⎤
+⎢          0  f   0     0 ⎥
+⎢          0  0   0  near ⎥
+⎣          0  0  -1     0 ⎦
+</code></pre>
+<p>Orthographic</p>
+<pre><code>w = right - left
+h = top - bottom
+d = far - near
+cw = -right - left
+ch = -top - bottom
+
+⎡ 2 / w      0      0   cw / w ⎤
+⎢     0  2 / h      0   ch / h ⎥
+⎢     0      0  1 / d  far / d ⎥
+⎣     0      0      0        1 ⎦
+</code></pre>
+<p><code>clip_from_view[3][3] == 1.0</code> is the standard way to check if a projection is orthographic</p>
+<p>Wgsl matrices are column major, so for example getting the near plane of a perspective projection is <code>clip_from_view[3][2]</code></p>
+<p>Custom projections are also possible however.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>view_from_clip: mat4x4&lt;f32&gt;</code></div>
 
@@ -154,16 +178,24 @@
 
 
 <div style="margin: 8px 0;"><code>viewport: vec4&lt;f32&gt;</code></div>
-
+<div class="comment"><p>viewport(x_origin, y_origin, width, height)</p>
+</div>
 
 <div style="margin: 8px 0;"><code>main_pass_viewport: vec4&lt;f32&gt;</code></div>
 
 
 <div style="margin: 8px 0;"><code>frustum: array&lt;vec4&lt;f32&gt;, 6&gt;</code></div>
-
+<div class="comment"><p>6 world-space half spaces (normal: vec3, distance: f32) ordered left, right, top, bottom, near, far.
+The normal vectors point towards the interior of the frustum.
+A half space contains <code>p</code> if <code>normal.dot(p) + distance &gt; 0.</code></p>
+</div>
 
 <div style="margin: 8px 0;"><code>lod_view_world_position: vec3&lt;f32&gt;</code></div>
-
+<div class="comment"><p>The world-space position of the camera used to resolve visibility ranges.</p>
+<p>This is the position of the camera itself, unless this view isn't
+associated with a camera, in which case it's the position of the primary
+camera.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>color_grading: <a class="struct" href="../view/struct.ColorGrading.html">ColorGrading</a></code></div>
 

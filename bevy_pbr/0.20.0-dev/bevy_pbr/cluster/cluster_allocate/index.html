@@ -109,7 +109,30 @@
 <a class="module" href="../../../src/bevy_pbr/cluster/cluster_allocate.html">Source</a>
 
 
-
+<div class="comment"><p>The shader that allocates the clustered object ID buffer.</p>
+<p>The clustered object ID buffer consists of many tightly-packed
+variable-length arrays of clustered object IDs. The offset to the start of
+each list is stored in <code>ClusterOffsetsAndCounts</code>. To allocate the lists in
+the buffer, the number of objects of each type in each cluster must be known.</p>
+<p>Since the lists are tightly packed, determining the offsets in the global
+buffer is a <a href="https://en.wikipedia.org/wiki/Prefix_sum" rel="noopener noreferrer">prefix sum</a> problem. To deal with the fact that workgroup sizes
+are limited to 256 in <code>wgpu</code>, and we will usually have more clusters than
+that, we use a two-pass approach:</p>
+<ol>
+<li>
+<p>First, the <em>local</em> allocation pass runs on workgroups of 256 clusters
+each. A <a href="https://en.wikipedia.org/wiki/Prefix_sum#Algorithm_1:_Shorter_span,_more_parallel" rel="noopener noreferrer">Hillis-Steele scan</a> is performed to allocate the position in the
+buffer for each 256 clusters, relative to the first cluster in the workgroup.</p>
+</li>
+<li>
+<p>Next, the <em>global</em> allocation pass runs a sequential loop over each 256
+clusters to calculate the final offsets relative to the previous 256 cluster
+chunk.</p>
+</li>
+</ol>
+<p>At the end of this process, the clusters will have been assigned to their
+final positions in the list.</p>
+</div>
 
 
 
@@ -127,7 +150,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>The offset of the first clustered light within the buffer for each thread.</p>
+</div>
         </div>
     </li>
     
@@ -186,7 +210,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>The global allocation pass that propagates the offsets from each chunk of 256
+clusters to later chunks sequentially.</p>
+</div>
         </div>
     </li>
     
@@ -196,7 +222,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>The local allocation pass that, for each chunk of 256 clusters, calculates
+the offset for each cluster in the chunk.</p>
+</div>
         </div>
     </li>
     
@@ -206,7 +234,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Returns the total number of objects in the given cluster.</p>
+</div>
         </div>
     </li>
     

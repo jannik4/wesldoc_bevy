@@ -113,7 +113,11 @@
 
 <pre class="code-block"><code>fn getDistanceAttenuation(distanceSquare: f32, inverseRangeSquared: f32) -> f32</code>
 </pre>
-
+<div class="comment"><p>distanceAttenuation is simply the square falloff of light intensity
+combined with a smooth attenuation at the edge of the light radius</p>
+<p>light radius is a non-physical construct for efficiency purposes,
+because otherwise every light affects every fragment in the scene</p>
+</div>
 
 
         </div>

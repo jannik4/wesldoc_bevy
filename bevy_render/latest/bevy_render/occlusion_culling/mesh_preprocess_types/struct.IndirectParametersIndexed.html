@@ -112,23 +112,31 @@
     first_instance: u32
 }</code>
 </pre>
-
+<div class="comment"><p>The <code>wgpu</code> indirect parameters structure. This is a union of two structures.
+For more information, see the corresponding comment in
+<code>gpu_preprocessing.rs</code>.</p>
+</div>
 <h2 class="item-list-title">Fields</h2>
 
 <div style="margin: 8px 0;"><code>index_count: u32</code></div>
-
+<div class="comment"><p><code>vertex_count</code> or <code>index_count</code>.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>instance_count: u32</code></div>
-
+<div class="comment"><p><code>instance_count</code> in both structures.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>first_index: u32</code></div>
-
+<div class="comment"><p><code>first_vertex</code> or <code>first_index</code>.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>base_vertex: u32</code></div>
-
+<div class="comment"><p><code>base_vertex</code> or <code>first_instance</code>.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>first_instance: u32</code></div>
-
+<div class="comment"><p>A read-only copy of <code>instance_index</code>.</p>
+</div>
 
 
 

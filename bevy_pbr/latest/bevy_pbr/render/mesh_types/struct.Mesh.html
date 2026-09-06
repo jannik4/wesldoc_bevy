@@ -131,34 +131,46 @@
 <h2 class="item-list-title">Fields</h2>
 
 <div style="margin: 8px 0;"><code>world_from_local: mat3x4&lt;f32&gt;</code></div>
-
+<div class="comment"><p>Affine 4x3 matrices transposed to 3x4
+Use bevy_render::maths::affine3_to_square to unpack</p>
+</div>
 
 <div style="margin: 8px 0;"><code>previous_world_from_local: mat3x4&lt;f32&gt;</code></div>
 
 
 <div style="margin: 8px 0;"><code>local_from_world_transpose_a: mat2x4&lt;f32&gt;</code></div>
-
+<div class="comment"><p>3x3 matrix packed in mat2x4 and f32 as:
+<a href="0" title="0" rel="noopener noreferrer">0</a>.xyz, <a href="1" title="1" rel="noopener noreferrer">1</a>.x,
+<a href="1" title="1" rel="noopener noreferrer">1</a>.yz, <a href="2" title="2" rel="noopener noreferrer">2</a>.xy
+<a href="2" title="2" rel="noopener noreferrer">2</a>.z
+Use package::render::mesh_functions::mat2x4_f32_to_mat3x3_unpack to unpack</p>
+</div>
 
 <div style="margin: 8px 0;"><code>local_from_world_transpose_b: f32</code></div>
 
 
 <div style="margin: 8px 0;"><code>flags: u32</code></div>
-
+<div class="comment"><p>'flags' is a bit field indicating various options. u32 is 32 bits so we have up to 32 options.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>lightmap_uv_rect: vec2&lt;u32&gt;</code></div>
 
 
 <div style="margin: 8px 0;"><code>first_vertex_index: u32</code></div>
-
+<div class="comment"><p>The index of the mesh's first vertex in the vertex buffer.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>current_skin_index: u32</code></div>
 
 
 <div style="margin: 8px 0;"><code>material_and_lightmap_bind_group_slot: u32</code></div>
-
+<div class="comment"><p>Low 16 bits: index of the material inside the bind group data.
+High 16 bits: index of the lightmap in the binding array.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>tag: u32</code></div>
-
+<div class="comment"><p>User supplied index to identify the mesh instance</p>
+</div>
 
 <div style="margin: 8px 0;"><code>morph_descriptor_index: u32</code></div>
 

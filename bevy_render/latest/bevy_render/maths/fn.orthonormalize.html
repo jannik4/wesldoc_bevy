@@ -100,12 +100,18 @@
 
 
 
-<a class="module" href="../../src/bevy_render/maths.html#79-86">Source</a>
+<a class="module" href="../../src/bevy_render/maths.html#84-91">Source</a>
 
 
 <pre class="code-block"><code>fn orthonormalize(z_basis: vec3&lt;f32&gt;) -> mat3x3&lt;f32&gt;</code>
 </pre>
-
+<div class="comment"><p>Constructs a right-handed orthonormal basis from a given unit Z vector.</p>
+<p>NOTE: requires unit-length (normalized) input to function properly.</p>
+<p>https://jcgt.org/published/0006/01/01/paper.pdf
+this method of constructing a basis from a vec3 is also used by <code>glam::Vec3::any_orthonormal_pair</code>
+the construction of the orthonormal basis up and right vectors here needs to precisely match the rust
+implementation in bevy_light/spot_light.rs:spot_light_world_from_view</p>
+</div>
 
 
         </div>

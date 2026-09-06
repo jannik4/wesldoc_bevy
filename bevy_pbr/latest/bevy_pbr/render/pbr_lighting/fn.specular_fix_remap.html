@@ -108,12 +108,19 @@
 
 
 
-<a class="module" href="../../../src/bevy_pbr/render/pbr_lighting.html#625-628">Source</a>
+<a class="module" href="../../../src/bevy_pbr/render/pbr_lighting.html#628-631">Source</a>
 
 
 <pre class="code-block"><code>fn specular_fix_remap(a: f32) -> f32</code>
 </pre>
-
+<div class="comment"><p>This is a modification to Karis 2013 for area lights to fix an issue where the specular
+reflection on smooth materials looks too rough and dim. We lerp between the base roughness
+and Karis2013 roughness with a lerp factor tuned by looking at reference renders. The goal
+is to preserve sharp specular highlights on smooth materials, without blowing out specular
+highlights on rough materials.</p>
+<p>The ideal solution is to switch to Linearly Transformed Cosines, which is more accurate in
+all cases, and a popular choice for realtime.</p>
+</div>
 
 
         </div>

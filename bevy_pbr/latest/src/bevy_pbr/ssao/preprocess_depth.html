@@ -108,37 +108,37 @@
             id="1"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >1</a><span class="syntax-comment syntax-comment-line">// Inputs a depth texture and outputs a MIP-chain of depths.</span>
+        >1</a><span class="syntax-comment syntax-comment-line">//! Inputs a depth texture and outputs a MIP-chain of depths.</span>
 <a
             href="#2"
             id="2"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >2</a><span class="syntax-comment syntax-comment-line">//</span>
+        >2</a><span class="syntax-comment syntax-comment-line">//!</span>
 <a
             href="#3"
             id="3"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >3</a><span class="syntax-comment syntax-comment-line">// Because SSAO&#39;s performance is bound by texture reads, this increases</span>
+        >3</a><span class="syntax-comment syntax-comment-line">//! Because SSAO&#39;s performance is bound by texture reads, this increases</span>
 <a
             href="#4"
             id="4"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >4</a><span class="syntax-comment syntax-comment-line">// performance over using the full resolution depth for every sample.</span>
+        >4</a><span class="syntax-comment syntax-comment-line">//! performance over using the full resolution depth for every sample.</span>
 <a
             href="#5"
             id="5"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >5</a>
+        >5</a><span class="syntax-comment syntax-comment-line">//!</span>
 <a
             href="#6"
             id="6"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >6</a><span class="syntax-comment syntax-comment-line">// Reference: https://research.nvidia.com/sites/default/files/pubs/2012-06_Scalable-Ambient-Obscurance/McGuire12SAO.pdf, section 2.2</span>
+        >6</a><span class="syntax-comment syntax-comment-line">//! Reference: https://research.nvidia.com/sites/default/files/pubs/2012-06_Scalable-Ambient-Obscurance/McGuire12SAO.pdf, section 2.2</span>
 <a
             href="#7"
             id="7"
@@ -276,7 +276,7 @@
             id="29"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >29</a><span class="syntax-comment syntax-comment-line">// Using 4 depths from the previous MIP, compute a weighted average for the depth of the current MIP</span>
+        >29</a><span class="syntax-comment syntax-comment-line">/// Using 4 depths from the previous MIP, compute a weighted average for the depth of the current MIP</span>
 <a
             href="#30"
             id="30"
@@ -390,7 +390,7 @@
             id="48"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >48</a><span class="syntax-comment syntax-comment-line">// Used to share the depths from the previous MIP level between all invocations in a workgroup</span>
+        >48</a><span class="syntax-comment syntax-comment-line">/// Used to share the depths from the previous MIP level between all invocations in a workgroup</span>
 <a
             href="#49"
             id="49"

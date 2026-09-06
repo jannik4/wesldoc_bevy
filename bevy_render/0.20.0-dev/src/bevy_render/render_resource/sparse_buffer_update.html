@@ -100,55 +100,55 @@
             id="1"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >1</a><span class="syntax-comment syntax-comment-line">// A compute shader that performs scattering sparse updates to</span>
+        >1</a><span class="syntax-comment syntax-comment-line">//! A compute shader that performs scattering sparse updates to</span>
 <a
             href="#2"
             id="2"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >2</a><span class="syntax-comment syntax-comment-line">// `AtomicSparseBufferVec` types.</span>
+        >2</a><span class="syntax-comment syntax-comment-line">//! `AtomicSparseBufferVec` types.</span>
 <a
             href="#3"
             id="3"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >3</a><span class="syntax-comment syntax-comment-line">//</span>
+        >3</a><span class="syntax-comment syntax-comment-line">//!</span>
 <a
             href="#4"
             id="4"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >4</a><span class="syntax-comment syntax-comment-line">// This shader isn&#39;t used for every update. Only if the number of updates is</span>
+        >4</a><span class="syntax-comment syntax-comment-line">//! This shader isn&#39;t used for every update. Only if the number of updates is</span>
 <a
             href="#5"
             id="5"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >5</a><span class="syntax-comment syntax-comment-line">// small is this shader used. Otherwise, the standard `write_buffer` `wgpu`</span>
+        >5</a><span class="syntax-comment syntax-comment-line">//! small is this shader used. Otherwise, the standard `write_buffer` `wgpu`</span>
 <a
             href="#6"
             id="6"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >6</a><span class="syntax-comment syntax-comment-line">// command is used to update the buffer in bulk.</span>
+        >6</a><span class="syntax-comment syntax-comment-line">//! command is used to update the buffer in bulk.</span>
 <a
             href="#7"
             id="7"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >7</a><span class="syntax-comment syntax-comment-line">//</span>
+        >7</a><span class="syntax-comment syntax-comment-line">//!</span>
 <a
             href="#8"
             id="8"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >8</a><span class="syntax-comment syntax-comment-line">// We issue one thread per *word*, not per element. That allows us to achieve</span>
+        >8</a><span class="syntax-comment syntax-comment-line">//! We issue one thread per *word*, not per element. That allows us to achieve</span>
 <a
             href="#9"
             id="9"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >9</a><span class="syntax-comment syntax-comment-line">// maximum parallelism, without any loops.</span>
+        >9</a><span class="syntax-comment syntax-comment-line">//! maximum parallelism, without any loops.</span>
 <a
             href="#10"
             id="10"
@@ -160,7 +160,7 @@
             id="11"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >11</a><span class="syntax-comment syntax-comment-line">// Metadata that describes the update.</span>
+        >11</a><span class="syntax-comment syntax-comment-line">/// Metadata that describes the update.</span>
 <a
             href="#12"
             id="12"
@@ -172,7 +172,7 @@
             id="13"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >13</a>    <span class="syntax-comment syntax-comment-line">// The size of a single element in words.</span>
+        >13</a>    <span class="syntax-comment syntax-comment-line">/// The size of a single element in words.</span>
 <a
             href="#14"
             id="14"
@@ -184,7 +184,7 @@
             id="15"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >15</a>    <span class="syntax-comment syntax-comment-line">// The total number of elements to be updated.</span>
+        >15</a>    <span class="syntax-comment syntax-comment-line">/// The total number of elements to be updated.</span>
 <a
             href="#16"
             id="16"
@@ -208,7 +208,7 @@
             id="19"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >19</a><span class="syntax-comment syntax-comment-line">// The buffer we&#39;re copying to.</span>
+        >19</a><span class="syntax-comment syntax-comment-line">/// The buffer we&#39;re copying to.</span>
 <a
             href="#20"
             id="20"
@@ -220,7 +220,7 @@
             id="21"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >21</a><span class="syntax-comment syntax-comment-line">// The buffer we&#39;re copying from.</span>
+        >21</a><span class="syntax-comment syntax-comment-line">/// The buffer we&#39;re copying from.</span>
 <a
             href="#22"
             id="22"
@@ -232,13 +232,13 @@
             id="23"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >23</a><span class="syntax-comment syntax-comment-line">// For each element in `src_buffer`, the element in `dest_buffer` that we should</span>
+        >23</a><span class="syntax-comment syntax-comment-line">/// For each element in `src_buffer`, the element in `dest_buffer` that we should</span>
 <a
             href="#24"
             id="24"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >24</a><span class="syntax-comment syntax-comment-line">// copy it to.</span>
+        >24</a><span class="syntax-comment syntax-comment-line">/// copy it to.</span>
 <a
             href="#25"
             id="25"
@@ -250,7 +250,7 @@
             id="26"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >26</a><span class="syntax-comment syntax-comment-line">// Metadata that describes the operation.</span>
+        >26</a><span class="syntax-comment syntax-comment-line">/// Metadata that describes the operation.</span>
 <a
             href="#27"
             id="27"

@@ -122,29 +122,44 @@
     last_clusterable_object_index_offset: u32
 }</code>
 </pre>
-
+<div class="comment"><p>Offsets within the <code>cluster_offsets_and_counts</code> buffer for a single cluster.</p>
+<p>These offsets must be monotonically nondecreasing. That is, indices are
+always sorted into the following order: point lights, spot lights, rect
+lights, reflection probes, irradiance volumes.</p>
+</div>
 <h2 class="item-list-title">Fields</h2>
 
 <div style="margin: 8px 0;"><code>first_point_light_index_offset: u32</code></div>
-
+<div class="comment"><p>The offset of the index of the first point light.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>first_spot_light_index_offset: u32</code></div>
-
+<div class="comment"><p>The offset of the index of the first spot light, which also terminates
+the list of point lights.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>first_rect_light_index_offset: u32</code></div>
-
+<div class="comment"><p>The offset of the index of the first rect light, which also terminates
+the list of spot lights.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>first_reflection_probe_index_offset: u32</code></div>
-
+<div class="comment"><p>The offset of the index of the first reflection probe, which also
+terminates the list of rect lights.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>first_irradiance_volume_index_offset: u32</code></div>
-
+<div class="comment"><p>The offset of the index of the first irradiance volumes, which also
+terminates the list of reflection probes.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>first_decal_offset: u32</code></div>
 
 
 <div style="margin: 8px 0;"><code>last_clusterable_object_index_offset: u32</code></div>
-
+<div class="comment"><p>One past the offset of the index of the final clusterable object for this
+cluster.</p>
+</div>
 
 
 

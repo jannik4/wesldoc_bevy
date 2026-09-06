@@ -108,7 +108,15 @@
 
 <pre class="code-block"><code>fn select_corner_radius(point: vec2&lt;f32&gt;, corner_radii_x: vec4&lt;f32&gt;, corner_radii_y: vec4&lt;f32&gt;) -> vec2&lt;f32&gt;</code>
 </pre>
-
+<div class="comment"><p>Returns the radius of the corner closest to the given point.</p>
+<p>Arguments:</p>
+<ul>
+<li><code>point</code>          -&gt; The point used to choose the closest corner.</li>
+<li><code>corner_radii_x</code> -&gt; The horizontal radius of each rounded corner.</li>
+<li><code>corner_radii_y</code> -&gt; The vertical radius of each rounded corner.
+Both ordered x: top left, y: top right, z: bottom right, w: bottom left.</li>
+</ul>
+</div>
 
 
         </div>

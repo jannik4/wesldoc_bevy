@@ -108,7 +108,7 @@
 
 
 
-<a class="module" href="../../../src/bevy_pbr/atmosphere/types.html#1-9">Source</a>
+<a class="module" href="../../../src/bevy_pbr/atmosphere/types.html#1-11">Source</a>
 
 
 <pre class="code-block">
@@ -126,13 +126,18 @@
 
 
 <div style="margin: 8px 0;"><code>inner_radius: f32</code></div>
-
+<div class="comment"><p>Radius of the planet
+Units: m</p>
+</div>
 
 <div style="margin: 8px 0;"><code>outer_radius: f32</code></div>
-
+<div class="comment"><p>Radius at which we consider the atmosphere to 'end' for out calculations (from center of planet)
+Units: m</p>
+</div>
 
 <div style="margin: 8px 0;"><code>world_to_atmosphere: mat4x4&lt;f32&gt;</code></div>
-
+<div class="comment"><p>Transform from world space to atmosphere space, inverse of the atmosphere entity's transform</p>
+</div>
 
 
 

@@ -101,7 +101,16 @@
 <a class="module" href="../../src/bevy_render/bindless.html">Source</a>
 
 
-
+<div class="comment"><p>Defines the common arrays used to access bindless resources.</p>
+<p>This need to be kept up to date with the <code>BINDING_NUMBERS</code> table in
+<code>bindless.rs</code>.</p>
+<p>You access these by indexing into the bindless index table, and from there
+indexing into the appropriate binding array. For example, to access the base
+color texture of a <code>StandardMaterial</code> in bindless mode, write
+<code>bindless_textures_2d[materials[slot].base_color_texture]</code>, where
+<code>materials</code> is the bindless index table and <code>slot</code> is the index into that
+table (which can be found in the <code>Mesh</code>).</p>
+</div>
 
 
 
@@ -121,7 +130,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Comparison samplers (typically for shadow mapping).</p>
+</div>
         </div>
     </li>
     
@@ -145,7 +155,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Non-filtering samplers (nearest neighbor).</p>
+</div>
         </div>
     </li>
     
@@ -157,7 +168,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>1D textures.</p>
+</div>
         </div>
     </li>
     
@@ -169,7 +181,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>2D textures.</p>
+</div>
         </div>
     </li>
     
@@ -181,7 +194,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>2D array textures.</p>
+</div>
         </div>
     </li>
     
@@ -193,7 +207,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>3D textures.</p>
+</div>
         </div>
     </li>
     
@@ -205,7 +220,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Cubemap textures.</p>
+</div>
         </div>
     </li>
     
@@ -217,7 +233,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Cubemap array textures.</p>
+</div>
         </div>
     </li>
     

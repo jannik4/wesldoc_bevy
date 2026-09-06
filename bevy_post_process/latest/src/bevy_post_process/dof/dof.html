@@ -108,97 +108,97 @@
             id="1"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >1</a><span class="syntax-comment syntax-comment-line">// Performs depth of field postprocessing, with both Gaussian and bokeh kernels.</span>
+        >1</a><span class="syntax-comment syntax-comment-line">//! Performs depth of field postprocessing, with both Gaussian and bokeh kernels.</span>
 <a
             href="#2"
             id="2"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >2</a><span class="syntax-comment syntax-comment-line">//</span>
+        >2</a><span class="syntax-comment syntax-comment-line">//!</span>
 <a
             href="#3"
             id="3"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >3</a><span class="syntax-comment syntax-comment-line">// Gaussian blur is performed as a separable convolution: first blurring in the</span>
+        >3</a><span class="syntax-comment syntax-comment-line">//! Gaussian blur is performed as a separable convolution: first blurring in the</span>
 <a
             href="#4"
             id="4"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >4</a><span class="syntax-comment syntax-comment-line">// X direction, and then in the Y direction. This is asymptotically more</span>
+        >4</a><span class="syntax-comment syntax-comment-line">//! X direction, and then in the Y direction. This is asymptotically more</span>
 <a
             href="#5"
             id="5"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >5</a><span class="syntax-comment syntax-comment-line">// efficient than performing a 2D convolution.</span>
+        >5</a><span class="syntax-comment syntax-comment-line">//! efficient than performing a 2D convolution.</span>
 <a
             href="#6"
             id="6"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >6</a><span class="syntax-comment syntax-comment-line">//</span>
+        >6</a><span class="syntax-comment syntax-comment-line">//!</span>
 <a
             href="#7"
             id="7"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >7</a><span class="syntax-comment syntax-comment-line">// The Bokeh blur uses a similar, but more complex, separable convolution</span>
+        >7</a><span class="syntax-comment syntax-comment-line">//! The Bokeh blur uses a similar, but more complex, separable convolution</span>
 <a
             href="#8"
             id="8"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >8</a><span class="syntax-comment syntax-comment-line">// technique. The algorithm is described in Colin Barré-Brisebois, &quot;Hexagonal</span>
+        >8</a><span class="syntax-comment syntax-comment-line">//! technique. The algorithm is described in Colin Barré-Brisebois, &quot;Hexagonal</span>
 <a
             href="#9"
             id="9"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >9</a><span class="syntax-comment syntax-comment-line">// Bokeh Blur Revisited&quot; [1]. It&#39;s motivated by the observation that we can use</span>
+        >9</a><span class="syntax-comment syntax-comment-line">//! Bokeh Blur Revisited&quot; [1]. It&#39;s motivated by the observation that we can use</span>
 <a
             href="#10"
             id="10"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >10</a><span class="syntax-comment syntax-comment-line">// separable convolutions not only to produce boxes but to produce</span>
+        >10</a><span class="syntax-comment syntax-comment-line">//! separable convolutions not only to produce boxes but to produce</span>
 <a
             href="#11"
             id="11"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >11</a><span class="syntax-comment syntax-comment-line">// parallelograms. Thus, by performing three separable convolutions in sequence,</span>
+        >11</a><span class="syntax-comment syntax-comment-line">//! parallelograms. Thus, by performing three separable convolutions in sequence,</span>
 <a
             href="#12"
             id="12"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >12</a><span class="syntax-comment syntax-comment-line">// we can produce a hexagonal shape. The first and second convolutions are done</span>
+        >12</a><span class="syntax-comment syntax-comment-line">//! we can produce a hexagonal shape. The first and second convolutions are done</span>
 <a
             href="#13"
             id="13"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >13</a><span class="syntax-comment syntax-comment-line">// simultaneously using multiple render targets to cut the total number of</span>
+        >13</a><span class="syntax-comment syntax-comment-line">//! simultaneously using multiple render targets to cut the total number of</span>
 <a
             href="#14"
             id="14"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >14</a><span class="syntax-comment syntax-comment-line">// passes down to two.</span>
+        >14</a><span class="syntax-comment syntax-comment-line">//! passes down to two.</span>
 <a
             href="#15"
             id="15"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >15</a><span class="syntax-comment syntax-comment-line">//</span>
+        >15</a><span class="syntax-comment syntax-comment-line">//!</span>
 <a
             href="#16"
             id="16"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >16</a><span class="syntax-comment syntax-comment-line">// [1]: https://colinbarrebrisebois.com/2017/04/18/hexagonal-bokeh-blur-revisited-part-2-improved-2-pass-version/</span>
+        >16</a><span class="syntax-comment syntax-comment-line">//! [1]: https://colinbarrebrisebois.com/2017/04/18/hexagonal-bokeh-blur-revisited-part-2-improved-2-pass-version/</span>
 <a
             href="#17"
             id="17"
@@ -246,19 +246,19 @@
             id="24"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >24</a><span class="syntax-comment syntax-comment-line">// Parameters that control the depth of field effect. See</span>
+        >24</a><span class="syntax-comment syntax-comment-line">/// Parameters that control the depth of field effect. See</span>
 <a
             href="#25"
             id="25"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >25</a><span class="syntax-comment syntax-comment-line">// `bevy_core_pipeline::dof::DepthOfFieldUniforms` for information on what these</span>
+        >25</a><span class="syntax-comment syntax-comment-line">/// `bevy_core_pipeline::dof::DepthOfFieldUniforms` for information on what these</span>
 <a
             href="#26"
             id="26"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >26</a><span class="syntax-comment syntax-comment-line">// parameters mean.</span>
+        >26</a><span class="syntax-comment syntax-comment-line">/// parameters mean.</span>
 <a
             href="#27"
             id="27"
@@ -504,7 +504,7 @@
             id="67"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >67</a><span class="syntax-comment syntax-comment-line">// The first bokeh pass outputs to two render targets. We declare them here.</span>
+        >67</a><span class="syntax-comment syntax-comment-line">/// The first bokeh pass outputs to two render targets. We declare them here.</span>
 <a
             href="#68"
             id="68"
@@ -516,7 +516,7 @@
             id="69"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >69</a>    <span class="syntax-comment syntax-comment-line">// The vertical output.</span>
+        >69</a>    <span class="syntax-comment syntax-comment-line">/// The vertical output.</span>
 <a
             href="#70"
             id="70"
@@ -528,7 +528,7 @@
             id="71"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >71</a>    <span class="syntax-comment syntax-comment-line">// The diagonal output.</span>
+        >71</a>    <span class="syntax-comment syntax-comment-line">/// The diagonal output.</span>
 <a
             href="#72"
             id="72"
@@ -564,7 +564,7 @@
             id="77"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >77</a><span class="syntax-comment syntax-comment-line">// The depth texture for the main view.</span>
+        >77</a><span class="syntax-comment syntax-comment-line">/// The depth texture for the main view.</span>
 <a
             href="#78"
             id="78"
@@ -600,7 +600,7 @@
             id="83"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >83</a><span class="syntax-comment syntax-comment-line">// The main color texture.</span>
+        >83</a><span class="syntax-comment syntax-comment-line">/// The main color texture.</span>
 <a
             href="#84"
             id="84"
@@ -618,13 +618,13 @@
             id="86"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >86</a><span class="syntax-comment syntax-comment-line">// The auxiliary color texture that we&#39;re sampling from. This is only used as</span>
+        >86</a><span class="syntax-comment syntax-comment-line">/// The auxiliary color texture that we&#39;re sampling from. This is only used as</span>
 <a
             href="#87"
             id="87"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >87</a><span class="syntax-comment syntax-comment-line">// part of the second bokeh pass.</span>
+        >87</a><span class="syntax-comment syntax-comment-line">/// part of the second bokeh pass.</span>
 <a
             href="#88"
             id="88"
@@ -666,7 +666,7 @@
             id="94"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >94</a><span class="syntax-comment syntax-comment-line">// The parameters that control the depth of field effect.</span>
+        >94</a><span class="syntax-comment syntax-comment-line">/// The parameters that control the depth of field effect.</span>
 <a
             href="#95"
             id="95"
@@ -684,7 +684,7 @@
             id="97"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >97</a><span class="syntax-comment syntax-comment-line">// The sampler that&#39;s used to fetch texels from the source color buffer.</span>
+        >97</a><span class="syntax-comment syntax-comment-line">/// The sampler that&#39;s used to fetch texels from the source color buffer.</span>
 <a
             href="#98"
             id="98"
@@ -702,7 +702,7 @@
             id="100"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >100</a><span class="syntax-comment syntax-comment-line">// used to ensure `depth * (focus - f)` is always a positive number,</span>
+        >100</a><span class="syntax-comment syntax-comment-line">/// used to ensure `depth * (focus - f)` is always a positive number,</span>
 <a
             href="#101"
             id="101"
@@ -714,7 +714,7 @@
             id="102"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >102</a><span class="syntax-comment syntax-comment-line">// cos(-30°), used for the bokeh blur.</span>
+        >102</a><span class="syntax-comment syntax-comment-line">/// cos(-30°), used for the bokeh blur.</span>
 <a
             href="#103"
             id="103"
@@ -726,7 +726,7 @@
             id="104"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >104</a><span class="syntax-comment syntax-comment-line">// sin(-30°), used for the bokeh blur.</span>
+        >104</a><span class="syntax-comment syntax-comment-line">/// sin(-30°), used for the bokeh blur.</span>
 <a
             href="#105"
             id="105"
@@ -738,7 +738,7 @@
             id="106"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >106</a><span class="syntax-comment syntax-comment-line">// cos(-150°), used for the bokeh blur.</span>
+        >106</a><span class="syntax-comment syntax-comment-line">/// cos(-150°), used for the bokeh blur.</span>
 <a
             href="#107"
             id="107"
@@ -750,7 +750,7 @@
             id="108"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >108</a><span class="syntax-comment syntax-comment-line">// sin(-150°), used for the bokeh blur.</span>
+        >108</a><span class="syntax-comment syntax-comment-line">/// sin(-150°), used for the bokeh blur.</span>
 <a
             href="#109"
             id="109"
@@ -768,25 +768,25 @@
             id="111"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >111</a><span class="syntax-comment syntax-comment-line">// Calculates and returns the diameter (not the radius) of the [circle of</span>
+        >111</a><span class="syntax-comment syntax-comment-line">/// Calculates and returns the diameter (not the radius) of the [circle of</span>
 <a
             href="#112"
             id="112"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >112</a><span class="syntax-comment syntax-comment-line">// confusion].</span>
+        >112</a><span class="syntax-comment syntax-comment-line">/// confusion].</span>
 <a
             href="#113"
             id="113"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >113</a><span class="syntax-comment syntax-comment-line">//</span>
+        >113</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#114"
             id="114"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >114</a><span class="syntax-comment syntax-comment-line">// [circle of confusion]: https://en.wikipedia.org/wiki/Circle_of_confusion</span>
+        >114</a><span class="syntax-comment syntax-comment-line">/// [circle of confusion]: https://en.wikipedia.org/wiki/Circle_of_confusion</span>
 <a
             href="#115"
             id="115"
@@ -930,61 +930,61 @@
             id="138"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >138</a><span class="syntax-comment syntax-comment-line">// Performs a box blur in a single direction, sampling `color_texture_a`.</span>
+        >138</a><span class="syntax-comment syntax-comment-line">/// Performs a box blur in a single direction, sampling `color_texture_a`.</span>
 <a
             href="#139"
             id="139"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >139</a><span class="syntax-comment syntax-comment-line">//</span>
+        >139</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#140"
             id="140"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >140</a><span class="syntax-comment syntax-comment-line">// * `frag_coord` is the screen-space pixel coordinate of the fragment (i.e. the</span>
+        >140</a><span class="syntax-comment syntax-comment-line">/// * `frag_coord` is the screen-space pixel coordinate of the fragment (i.e. the</span>
 <a
             href="#141"
             id="141"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >141</a><span class="syntax-comment syntax-comment-line">//   `position` input to the fragment).</span>
+        >141</a><span class="syntax-comment syntax-comment-line">///   `position` input to the fragment).</span>
 <a
             href="#142"
             id="142"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >142</a><span class="syntax-comment syntax-comment-line">//</span>
+        >142</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#143"
             id="143"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >143</a><span class="syntax-comment syntax-comment-line">// * `coc` is the diameter (not the radius) of the circle of confusion for this</span>
+        >143</a><span class="syntax-comment syntax-comment-line">/// * `coc` is the diameter (not the radius) of the circle of confusion for this</span>
 <a
             href="#144"
             id="144"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >144</a><span class="syntax-comment syntax-comment-line">//   fragment.</span>
+        >144</a><span class="syntax-comment syntax-comment-line">///   fragment.</span>
 <a
             href="#145"
             id="145"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >145</a><span class="syntax-comment syntax-comment-line">//</span>
+        >145</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#146"
             id="146"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >146</a><span class="syntax-comment syntax-comment-line">// * `frag_offset` is the vector, in screen-space units, from one sample to the</span>
+        >146</a><span class="syntax-comment syntax-comment-line">/// * `frag_offset` is the vector, in screen-space units, from one sample to the</span>
 <a
             href="#147"
             id="147"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >147</a><span class="syntax-comment syntax-comment-line">//   next. This need not be horizontal or vertical.</span>
+        >147</a><span class="syntax-comment syntax-comment-line">///   next. This need not be horizontal or vertical.</span>
 <a
             href="#148"
             id="148"
@@ -1080,61 +1080,61 @@
             id="163"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >163</a><span class="syntax-comment syntax-comment-line">// Performs a box blur in a single direction, sampling `color_texture_b`.</span>
+        >163</a><span class="syntax-comment syntax-comment-line">/// Performs a box blur in a single direction, sampling `color_texture_b`.</span>
 <a
             href="#164"
             id="164"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >164</a><span class="syntax-comment syntax-comment-line">//</span>
+        >164</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#165"
             id="165"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >165</a><span class="syntax-comment syntax-comment-line">// * `frag_coord` is the screen-space pixel coordinate of the fragment (i.e. the</span>
+        >165</a><span class="syntax-comment syntax-comment-line">/// * `frag_coord` is the screen-space pixel coordinate of the fragment (i.e. the</span>
 <a
             href="#166"
             id="166"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >166</a><span class="syntax-comment syntax-comment-line">//   `position` input to the fragment).</span>
+        >166</a><span class="syntax-comment syntax-comment-line">///   `position` input to the fragment).</span>
 <a
             href="#167"
             id="167"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >167</a><span class="syntax-comment syntax-comment-line">//</span>
+        >167</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#168"
             id="168"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >168</a><span class="syntax-comment syntax-comment-line">// * `coc` is the diameter (not the radius) of the circle of confusion for this</span>
+        >168</a><span class="syntax-comment syntax-comment-line">/// * `coc` is the diameter (not the radius) of the circle of confusion for this</span>
 <a
             href="#169"
             id="169"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >169</a><span class="syntax-comment syntax-comment-line">//   fragment.</span>
+        >169</a><span class="syntax-comment syntax-comment-line">///   fragment.</span>
 <a
             href="#170"
             id="170"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >170</a><span class="syntax-comment syntax-comment-line">//</span>
+        >170</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#171"
             id="171"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >171</a><span class="syntax-comment syntax-comment-line">// * `frag_offset` is the vector, in screen-space units, from one sample to the</span>
+        >171</a><span class="syntax-comment syntax-comment-line">/// * `frag_offset` is the vector, in screen-space units, from one sample to the</span>
 <a
             href="#172"
             id="172"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >172</a><span class="syntax-comment syntax-comment-line">//   next. This need not be horizontal or vertical.</span>
+        >172</a><span class="syntax-comment syntax-comment-line">///   next. This need not be horizontal or vertical.</span>
 <a
             href="#173"
             id="173"
@@ -1236,7 +1236,7 @@
             id="189"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >189</a><span class="syntax-comment syntax-comment-line">// Calculates the horizontal component of the separable Gaussian blur.</span>
+        >189</a><span class="syntax-comment syntax-comment-line">/// Calculates the horizontal component of the separable Gaussian blur.</span>
 <a
             href="#190"
             id="190"
@@ -1278,7 +1278,7 @@
             id="196"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >196</a><span class="syntax-comment syntax-comment-line">// Calculates the vertical component of the separable Gaussian blur.</span>
+        >196</a><span class="syntax-comment syntax-comment-line">/// Calculates the vertical component of the separable Gaussian blur.</span>
 <a
             href="#197"
             id="197"
@@ -1320,49 +1320,49 @@
             id="203"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >203</a><span class="syntax-comment syntax-comment-line">// Calculates the vertical and first diagonal components of the separable</span>
+        >203</a><span class="syntax-comment syntax-comment-line">/// Calculates the vertical and first diagonal components of the separable</span>
 <a
             href="#204"
             id="204"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >204</a><span class="syntax-comment syntax-comment-line">// hexagonal bokeh blur.</span>
+        >204</a><span class="syntax-comment syntax-comment-line">/// hexagonal bokeh blur.</span>
 <a
             href="#205"
             id="205"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >205</a><span class="syntax-comment syntax-comment-line">//</span>
+        >205</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#206"
             id="206"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >206</a><span class="syntax-comment syntax-comment-line">//         ╱</span>
+        >206</a><span class="syntax-comment syntax-comment-line">///         ╱</span>
 <a
             href="#207"
             id="207"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >207</a><span class="syntax-comment syntax-comment-line">//        ╱</span>
+        >207</a><span class="syntax-comment syntax-comment-line">///        ╱</span>
 <a
             href="#208"
             id="208"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >208</a><span class="syntax-comment syntax-comment-line">//       •</span>
+        >208</a><span class="syntax-comment syntax-comment-line">///       •</span>
 <a
             href="#209"
             id="209"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >209</a><span class="syntax-comment syntax-comment-line">//       │</span>
+        >209</a><span class="syntax-comment syntax-comment-line">///       │</span>
 <a
             href="#210"
             id="210"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >210</a><span class="syntax-comment syntax-comment-line">//       │</span>
+        >210</a><span class="syntax-comment syntax-comment-line">///       │</span>
 <a
             href="#211"
             id="211"
@@ -1446,37 +1446,37 @@
             id="224"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >224</a><span class="syntax-comment syntax-comment-line">// Calculates the second diagonal components of the separable hexagonal bokeh</span>
+        >224</a><span class="syntax-comment syntax-comment-line">/// Calculates the second diagonal components of the separable hexagonal bokeh</span>
 <a
             href="#225"
             id="225"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >225</a><span class="syntax-comment syntax-comment-line">// blur.</span>
+        >225</a><span class="syntax-comment syntax-comment-line">/// blur.</span>
 <a
             href="#226"
             id="226"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >226</a><span class="syntax-comment syntax-comment-line">//</span>
+        >226</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#227"
             id="227"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >227</a><span class="syntax-comment syntax-comment-line">//     ╲   ╱</span>
+        >227</a><span class="syntax-comment syntax-comment-line">///     ╲   ╱</span>
 <a
             href="#228"
             id="228"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >228</a><span class="syntax-comment syntax-comment-line">//      ╲ ╱</span>
+        >228</a><span class="syntax-comment syntax-comment-line">///      ╲ ╱</span>
 <a
             href="#229"
             id="229"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >229</a><span class="syntax-comment syntax-comment-line">//       •</span>
+        >229</a><span class="syntax-comment syntax-comment-line">///       •</span>
 <a
             href="#230"
             id="230"

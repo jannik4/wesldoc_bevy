@@ -117,14 +117,20 @@
     aabb_half_extents: vec4&lt;f32&gt;
 }</code>
 </pre>
-
+<div class="comment"><p>Information about each mesh instance needed to cull it on GPU.</p>
+<p>At the moment, this just consists of its axis-aligned bounding box (AABB).</p>
+</div>
 <h2 class="item-list-title">Fields</h2>
 
 <div style="margin: 8px 0;"><code>aabb_center: vec4&lt;f32&gt;</code></div>
-
+<div class="comment"><p>The 3D center of the AABB in model space, padded with an extra unused
+float value.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>aabb_half_extents: vec4&lt;f32&gt;</code></div>
-
+<div class="comment"><p>The 3D extents of the AABB in model space, divided by two, padded with
+an extra unused float value.</p>
+</div>
 
 
 

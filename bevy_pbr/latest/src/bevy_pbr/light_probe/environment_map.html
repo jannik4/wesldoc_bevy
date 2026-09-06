@@ -168,7 +168,7 @@
             id="11"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >11</a><span class="syntax-comment syntax-comment-line">// The maximum representable value in a 32-bit floating point number.</span>
+        >11</a><span class="syntax-comment syntax-comment-line">/// The maximum representable value in a 32-bit floating point number.</span>
 <a
             href="#12"
             id="12"
@@ -282,67 +282,67 @@
             id="30"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >30</a><span class="syntax-comment syntax-comment-line">// Computes the direction at which to sample the reflection probe.</span>
+        >30</a><span class="syntax-comment syntax-comment-line">/// Computes the direction at which to sample the reflection probe.</span>
 <a
             href="#31"
             id="31"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >31</a><span class="syntax-comment syntax-comment-line">//</span>
+        >31</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#32"
             id="32"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >32</a><span class="syntax-comment syntax-comment-line">// * `light_from_world` is the matrix that transforms world space into light</span>
+        >32</a><span class="syntax-comment syntax-comment-line">/// * `light_from_world` is the matrix that transforms world space into light</span>
 <a
             href="#33"
             id="33"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >33</a><span class="syntax-comment syntax-comment-line">//   probe space (a 1×1×1 cube centered on the origin).</span>
+        >33</a><span class="syntax-comment syntax-comment-line">///   probe space (a 1×1×1 cube centered on the origin).</span>
 <a
             href="#34"
             id="34"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >34</a><span class="syntax-comment syntax-comment-line">//</span>
+        >34</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#35"
             id="35"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >35</a><span class="syntax-comment syntax-comment-line">// * `parallax_correction_bounds` is the half-extents of the simulated</span>
+        >35</a><span class="syntax-comment syntax-comment-line">/// * `parallax_correction_bounds` is the half-extents of the simulated</span>
 <a
             href="#36"
             id="36"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >36</a><span class="syntax-comment syntax-comment-line">//   reflection boundaries used for parallax correction, in light probe space.</span>
+        >36</a><span class="syntax-comment syntax-comment-line">///   reflection boundaries used for parallax correction, in light probe space.</span>
 <a
             href="#37"
             id="37"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >37</a><span class="syntax-comment syntax-comment-line">//   It&#39;s ignored if the `parallax_correct` parameter is false.</span>
+        >37</a><span class="syntax-comment syntax-comment-line">///   It&#39;s ignored if the `parallax_correct` parameter is false.</span>
 <a
             href="#38"
             id="38"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >38</a><span class="syntax-comment syntax-comment-line">//</span>
+        >38</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#39"
             id="39"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >39</a><span class="syntax-comment syntax-comment-line">// * `parallax_correct` is true if parallax correction is to be applied and</span>
+        >39</a><span class="syntax-comment syntax-comment-line">/// * `parallax_correct` is true if parallax correction is to be applied and</span>
 <a
             href="#40"
             id="40"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >40</a><span class="syntax-comment syntax-comment-line">//   false otherwise.</span>
+        >40</a><span class="syntax-comment syntax-comment-line">///   false otherwise.</span>
 <a
             href="#41"
             id="41"
@@ -1806,13 +1806,13 @@
             id="284"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >284</a><span class="syntax-comment syntax-comment-line">// Adds the environment map light from the clearcoat layer to that of the base</span>
+        >284</a><span class="syntax-comment syntax-comment-line">/// Adds the environment map light from the clearcoat layer to that of the base</span>
 <a
             href="#285"
             id="285"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >285</a><span class="syntax-comment syntax-comment-line">// layer.</span>
+        >285</a><span class="syntax-comment syntax-comment-line">/// layer.</span>
 <a
             href="#286"
             id="286"
@@ -2004,25 +2004,25 @@
             id="317"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >317</a><span class="syntax-comment syntax-comment-line">// Multiscattering approximation: https://www.jcgt.org/published/0008/01/03/paper.pdf</span>
+        >317</a><span class="syntax-comment syntax-comment-line">/// Multiscattering approximation: https://www.jcgt.org/published/0008/01/03/paper.pdf</span>
 <a
             href="#318"
             id="318"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >318</a><span class="syntax-comment syntax-comment-line">//</span>
+        >318</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#319"
             id="319"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >319</a><span class="syntax-comment syntax-comment-line">// We initially used this (https://bruop.github.io/ibl) reference with Roughness Dependent</span>
+        >319</a><span class="syntax-comment syntax-comment-line">/// We initially used this (https://bruop.github.io/ibl) reference with Roughness Dependent</span>
 <a
             href="#320"
             id="320"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >320</a><span class="syntax-comment syntax-comment-line">// Fresnel, but it made fresnel very bright so we reverted to the &quot;typical&quot; fresnel term.</span>
+        >320</a><span class="syntax-comment syntax-comment-line">/// Fresnel, but it made fresnel very bright so we reverted to the &quot;typical&quot; fresnel term.</span>
 <a
             href="#321"
             id="321"
@@ -2508,13 +2508,13 @@
             id="401"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >401</a><span class="syntax-comment syntax-comment-line">// &quot;Moving Frostbite to Physically Based Rendering 3.0&quot;, listing 22</span>
+        >401</a><span class="syntax-comment syntax-comment-line">/// &quot;Moving Frostbite to Physically Based Rendering 3.0&quot;, listing 22</span>
 <a
             href="#402"
             id="402"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >402</a><span class="syntax-comment syntax-comment-line">// https://seblagarde.wordpress.com/wp-content/uploads/2015/07/course_notes_moving_frostbite_to_pbr_v32.pdf#page=70</span>
+        >402</a><span class="syntax-comment syntax-comment-line">/// https://seblagarde.wordpress.com/wp-content/uploads/2015/07/course_notes_moving_frostbite_to_pbr_v32.pdf#page=70</span>
 <a
             href="#403"
             id="403"

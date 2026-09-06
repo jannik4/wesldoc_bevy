@@ -115,7 +115,11 @@
 
 <pre class="code-block"><code>fn bend_normal_for_anisotropy(lighting_input: ptr&lt;function, <a class="struct" href="../../render/pbr_lighting/struct.LightingInput.html">LightingInput</a>&gt;) </code>
 </pre>
-
+<div class="comment"><p>Modifies the normal to achieve a better approximate direction from the
+environment map when using anisotropy.</p>
+<p>This follows the suggested implementation in the <code>KHR_materials_anisotropy</code> specification:
+https://github.com/KhronosGroup/glTF/blob/main/extensions/2.0/Khronos/KHR_materials_anisotropy/README.md#image-based-lighting</p>
+</div>
 
 
         </div>

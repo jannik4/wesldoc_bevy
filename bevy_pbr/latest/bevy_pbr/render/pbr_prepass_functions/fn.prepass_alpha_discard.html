@@ -113,7 +113,9 @@
 
 <pre class="code-block"><code>fn prepass_alpha_discard(material_flags: u32, alpha_cutoff: f32, output_color: vec4&lt;f32&gt;) </code>
 </pre>
-
+<div class="comment"><p>Reusable alpha discard logic suitable for use by custom materials in the prepass.
+We can use a simplified version of alpha_discard() here since we only need to handle the alpha_cutoff</p>
+</div>
 
 
         </div>

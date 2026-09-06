@@ -126,29 +126,44 @@
     pad: vec4&lt;u32&gt;
 }</code>
 </pre>
-
+<div class="comment"><p>The parameters for the indirect compute dispatch for the late mesh
+preprocessing phase.</p>
+</div>
 <h2 class="item-list-title">Fields</h2>
 
 <div style="margin: 8px 0;"><code>dispatch_x: u32</code></div>
-
+<div class="comment"><p>The number of workgroups we're going to dispatch.</p>
+<p>This value should always be equal to <code>ceil(work_item_count / 64)</code>.</p>
+<p>In the late phase this buffer is bound read-only, and the atomic built-ins
+are only defined for <code>read_write</code> storage, so the fields are plain <code>u32</code>
+there and <code>atomic&lt;u32&gt;</code> in the early phase. <code>u32</code> and <code>atomic&lt;u32&gt;</code> are
+layout-identical, so the buffer's memory layout is unchanged either way.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>dispatch_x: atomic&lt;u32&gt;</code></div>
 
 
 <div style="margin: 8px 0;"><code>dispatch_y: u32</code></div>
-
+<div class="comment"><p>The number of workgroups in the Y direction; always 1.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>dispatch_z: u32</code></div>
-
+<div class="comment"><p>The number of workgroups in the Z direction; always 1.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>work_item_count: u32</code></div>
-
+<div class="comment"><p>The precise number of work items.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>work_item_count: atomic&lt;u32&gt;</code></div>
 
 
 <div style="margin: 8px 0;"><code>pad: vec4&lt;u32&gt;</code></div>
-
+<div class="comment"><p>Padding.</p>
+<p>This isn't the usual structure padding; it's needed because some hardware
+requires indirect compute dispatch parameters to be aligned on 64-byte
+boundaries.</p>
+</div>
 
 
 

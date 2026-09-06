@@ -181,7 +181,7 @@
             id="14"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >14</a><span class="syntax-comment syntax-comment-line">// Trims the algorithm from processing darks.</span>
+        >14</a><span class="syntax-comment syntax-comment-line">/// Trims the algorithm from processing darks.</span>
 <a
             href="#15"
             id="15"
@@ -277,7 +277,7 @@
             id="30"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >30</a><span class="syntax-comment syntax-comment-line">// The minimum amount of local contrast required to apply algorithm.</span>
+        >30</a><span class="syntax-comment syntax-comment-line">/// The minimum amount of local contrast required to apply algorithm.</span>
 <a
             href="#31"
             id="31"
@@ -481,7 +481,7 @@
             id="64"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >64</a><span class="syntax-comment syntax-comment-line">// Performs FXAA post-process anti-aliasing as described in the Nvidia FXAA white paper and the associated shader code.</span>
+        >64</a><span class="syntax-comment syntax-comment-line">/// Performs FXAA post-process anti-aliasing as described in the Nvidia FXAA white paper and the associated shader code.</span>
 <a
             href="#65"
             id="65"
@@ -769,13 +769,13 @@
             id="112"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >112</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">edgeHorizontal</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">abs</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">-</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">2.0</span> <span class="syntax-operator">*</span> <span class="syntax-variable">lumaLeft</span>   <span class="syntax-operator">+</span> <span class="syntax-variable">lumaLeftCorners</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span>  <span class="syntax-operator">+</span> 
+        >112</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">edgeHorizontal</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">abs</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">-</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">2.0</span> <span class="syntax-operator">*</span> <span class="syntax-variable">lumaLeft</span>   <span class="syntax-operator">+</span> <span class="syntax-variable">lumaLeftCorners</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span>  <span class="syntax-operator">+</span>
 <a
             href="#113"
             id="113"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >113</a>                         <span class="syntax-function syntax-function-call">abs</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">-</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">2.0</span> <span class="syntax-operator">*</span> <span class="syntax-variable">lumaCenter</span> <span class="syntax-operator">+</span> <span class="syntax-variable">lumaDownUp</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">2.0</span> <span class="syntax-operator">+</span> 
+        >113</a>                         <span class="syntax-function syntax-function-call">abs</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">-</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">2.0</span> <span class="syntax-operator">*</span> <span class="syntax-variable">lumaCenter</span> <span class="syntax-operator">+</span> <span class="syntax-variable">lumaDownUp</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">2.0</span> <span class="syntax-operator">+</span>
 <a
             href="#114"
             id="114"
@@ -793,13 +793,13 @@
             id="116"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >116</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">edgeVertical</span> <span class="syntax-operator">=</span>   <span class="syntax-function syntax-function-call">abs</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">-</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">2.0</span> <span class="syntax-operator">*</span> <span class="syntax-variable">lumaUp</span>     <span class="syntax-operator">+</span> <span class="syntax-variable">lumaUpCorners</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span>       <span class="syntax-operator">+</span> 
+        >116</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">edgeVertical</span> <span class="syntax-operator">=</span>   <span class="syntax-function syntax-function-call">abs</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">-</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">2.0</span> <span class="syntax-operator">*</span> <span class="syntax-variable">lumaUp</span>     <span class="syntax-operator">+</span> <span class="syntax-variable">lumaUpCorners</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span>       <span class="syntax-operator">+</span>
 <a
             href="#117"
             id="117"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >117</a>                         <span class="syntax-function syntax-function-call">abs</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">-</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">2.0</span> <span class="syntax-operator">*</span> <span class="syntax-variable">lumaCenter</span> <span class="syntax-operator">+</span> <span class="syntax-variable">lumaLeftRight</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">2.0</span> <span class="syntax-operator">+</span> 
+        >117</a>                         <span class="syntax-function syntax-function-call">abs</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">-</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">2.0</span> <span class="syntax-operator">*</span> <span class="syntax-variable">lumaCenter</span> <span class="syntax-operator">+</span> <span class="syntax-variable">lumaLeftRight</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">2.0</span> <span class="syntax-operator">+</span>
 <a
             href="#118"
             id="118"
@@ -1207,7 +1207,7 @@
             id="185"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >185</a>            <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">!</span><span class="syntax-variable">reached1</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span> 
+        >185</a>            <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">!</span><span class="syntax-variable">reached1</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#186"
             id="186"
@@ -1237,7 +1237,7 @@
             id="190"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >190</a>            <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">!</span><span class="syntax-variable">reached2</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span> 
+        >190</a>            <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">!</span><span class="syntax-variable">reached2</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#191"
             id="191"
@@ -1345,13 +1345,13 @@
             id="208"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >208</a>            <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">reachedBoth</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span> 
+        >208</a>            <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">reachedBoth</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#209"
             id="209"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >209</a>                <span class="syntax-keyword syntax-keyword-control">break</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span> 
+        >209</a>                <span class="syntax-keyword syntax-keyword-control">break</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#210"
             id="210"

@@ -121,20 +121,28 @@
     is_irradiance_volume: bool
 }</code>
 </pre>
-
+<div class="comment"><p>A type that allows iterating through the list of light probes that overlap
+the current fragment.</p>
+<p>This is the version used when light probes are clustered.</p>
+</div>
 <h2 class="item-list-title">Fields</h2>
 
 <div style="margin: 8px 0;"><code>current_offset: u32</code></div>
-
+<div class="comment"><p>The current offset in the light probes list.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>end_offset: u32</code></div>
-
+<div class="comment"><p>The last offset in the light probes list.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>world_position: vec3&lt;f32&gt;</code></div>
-
+<div class="comment"><p>The world-space position of the current fragment.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>is_irradiance_volume: bool</code></div>
-
+<div class="comment"><p>True if we're searching for an irradiance volume; false if we're
+searching for a reflection probe.</p>
+</div>
 
 
 
@@ -154,20 +162,32 @@
     is_irradiance_volume: bool
 }</code>
 </pre>
-
+<div class="comment"><p>A type that allows iterating through the list of light probes that overlap
+the current fragment.</p>
+<p>This is the version that's used when sufficient storage buffers aren't
+available and consequently when light probes aren't clustered. It simply does
+a brute force search of all light probes. Because platforms without
+sufficient SSBO bindings typically lack bindless shaders, there will usually
+only be one of each type of light probe present anyway.</p>
+</div>
 <h2 class="item-list-title">Fields</h2>
 
 <div style="margin: 8px 0;"><code>current_index: u32</code></div>
-
+<div class="comment"><p>The current index in the list of light probes for this cluster.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>end_index: u32</code></div>
-
+<div class="comment"><p>The last index in the list.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>world_position: vec3&lt;f32&gt;</code></div>
-
+<div class="comment"><p>The position of the current fragment.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>is_irradiance_volume: bool</code></div>
-
+<div class="comment"><p>True if we're searching for irradiance volumes; false if we're searching
+for reflection probes.</p>
+</div>
 
 
 

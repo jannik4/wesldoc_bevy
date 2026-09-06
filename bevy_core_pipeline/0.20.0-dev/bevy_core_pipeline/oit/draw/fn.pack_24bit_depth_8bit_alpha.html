@@ -108,7 +108,11 @@
 
 <pre class="code-block"><code>fn pack_24bit_depth_8bit_alpha(depth: f32, alpha: f32) -> u32</code>
 </pre>
-
+<div class="comment"><p>The packing scheme puts depth in the higher bits so that
+depth(a) &lt; depth(b) &lt;=&gt; packed(a) &lt; packed(b)
+irregardless of alpha(a) and alpha(b)
+The property is used to optimize the resolve step</p>
+</div>
 
 
         </div>

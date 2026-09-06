@@ -124,35 +124,48 @@
     world_position: vec3&lt;f32&gt;
 }</code>
 </pre>
-
+<div class="comment"><p>An object that allows stepping through all clustered decals that affect a
+single fragment.</p>
+</div>
 <h2 class="item-list-title">Fields</h2>
 
 <div style="margin: 8px 0;"><code>base_color_texture_index: i32</code></div>
-
+<div class="comment"><p>Public fields follow:
+The index of the decal base color texture in the binding array.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>normal_map_texture_index: i32</code></div>
-
+<div class="comment"><p>The index of the decal normal map texture in the binding array.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>metallic_roughness_texture_index: i32</code></div>
-
+<div class="comment"><p>The index of the decal metallic-roughness texture in the binding array.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>emissive_texture_index: i32</code></div>
-
+<div class="comment"><p>The index of the decal emissive texture in the binding array.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>uv: vec2&lt;f32&gt;</code></div>
-
+<div class="comment"><p>The UV coordinates at which to sample that decal texture.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>tag: u32</code></div>
-
+<div class="comment"><p>A custom tag you can use for your own purposes.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>decal_index_offset: i32</code></div>
-
+<div class="comment"><p>Private fields follow:
+The current offset of the index in the <code>ClusterableObjectIndexRanges</code> list.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>end_offset: i32</code></div>
-
+<div class="comment"><p>The end offset of the index in the <code>ClusterableObjectIndexRanges</code> list.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>world_position: vec3&lt;f32&gt;</code></div>
-
+<div class="comment"><p>The world-space position of the fragment.</p>
+</div>
 
 
 

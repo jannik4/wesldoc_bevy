@@ -100,12 +100,16 @@
 
 
 
-<a class="module" href="../../src/bevy_render/maths.html#160-173">Source</a>
+<a class="module" href="../../src/bevy_render/maths.html#165-178">Source</a>
 
 
 <pre class="code-block"><code>fn fast_acos_4(x: f32) -> f32</code>
 </pre>
-
+<div class="comment"><p>4th order polynomial approximation
+4 VGRP, 16 ALU Full Rate
+7 * 10^-5 radians precision
+Reference : Handbook of Mathematical Functions (chapter : Elementary Transcendental Functions), M. Abramowitz and I.A. Stegun, Ed.</p>
+</div>
 
 
         </div>

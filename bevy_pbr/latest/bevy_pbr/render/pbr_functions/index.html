@@ -123,7 +123,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>This is the standard 4x4 ordered dithering pattern from <a href="https://en.wikipedia.org/wiki/Ordered_dithering#Threshold_map" rel="noopener noreferrer">1</a>.</p>
+</div>
         </div>
     </li>
     
@@ -144,7 +145,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Biasing info needed to sample from a texture. How this is done depends on
+whether we're rendering meshlets or regular meshes.</p>
+</div>
         </div>
     </li>
     
@@ -207,7 +210,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Modifies the normal to achieve a better approximate direction from the
+environment map when using anisotropy.</p>
+</div>
         </div>
     </li>
     
@@ -217,7 +222,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Remapping <a href="0,1" title="0,1" rel="noopener noreferrer">0,1</a> reflectance to F0
+See https://google.github.io/filament/Filament.md.html#materialsystem/parameterization/remapping</p>
+</div>
         </div>
     </li>
     
@@ -227,7 +234,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Remapping <a href="0,1" title="0,1" rel="noopener noreferrer">0,1</a> reflectance to F0 for dielectrics</p>
+</div>
         </div>
     </li>
     
@@ -249,7 +257,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Diffuse strength is inversely related to metallicity, specular and diffuse transmission</p>
+</div>
         </div>
     </li>
     
@@ -259,7 +268,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Calculates the three TBN vectors according to <a href="http://www.mikktspace.com/" rel="noopener noreferrer">mikktspace</a>. Returns a matrix
+with T, B, N columns in that order.</p>
+</div>
         </div>
     </li>
     
@@ -269,7 +280,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>NOTE: Correctly calculates the view vector depending on whether
+the projection is orthographic or perspective.</p>
+</div>
         </div>
     </li>
     
@@ -279,7 +292,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>fog, alpha premultiply
+for non-hdr cameras, tonemapping and debanding</p>
+</div>
         </div>
     </li>
     
@@ -313,7 +328,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Processes a visibility range dither value and discards the fragment if
+needed.</p>
+</div>
         </div>
     </li>
     

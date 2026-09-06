@@ -105,7 +105,9 @@
 
 <pre class="code-block"><code>fn okhsl_compute_max_saturation(a: f32, b: f32) -> f32</code>
 </pre>
-
+<div class="comment"><p>Approximate max saturation using a polynomial, then refine with 1 step of Halley's method.
+a and b must be normalized (a^2 + b^2 == 1).</p>
+</div>
 
 
         </div>

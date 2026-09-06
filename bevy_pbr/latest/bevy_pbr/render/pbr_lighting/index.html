@@ -109,7 +109,36 @@
 <a class="module" href="../../../src/bevy_pbr/render/pbr_lighting.html">Source</a>
 
 
-
+<div class="comment"><p>The Bidirectional Reflectance Distribution Function (BRDF) describes the surface response of a standard material
+and consists of two components, the diffuse component (f_d) and the specular component (f_r):
+f(v,l) = f_d(v,l) + f_r(v,l)</p>
+<p>The form of the microfacet model is the same for diffuse and specular
+f_r(v,l) = f_d(v,l) = 1 / { |n⋅v||n⋅l| } ∫_Ω D(m,α) G(v,l,m) f_m(v,l,m) (v⋅m) (l⋅m) dm</p>
+<p>In which:
+D, also called the Normal Distribution Function (NDF) models the distribution of the microfacets
+G models the visibility (or occlusion or shadow-masking) of the microfacets
+f_m is the microfacet BRDF and differs between specular and diffuse components</p>
+<p>The above integration needs to be approximated.</p>
+<p>From the Filament design doc
+https://google.github.io/filament/Filament.md.html#table_symbols
+Symbol Definition
+v    View unit vector
+l    Incident light unit vector
+n    Surface normal unit vector
+h    Half unit vector between l and v
+f    BRDF
+f_d    Diffuse component of a BRDF
+f_r    Specular component of a BRDF
+α    Roughness, remapped from using input perceptualRoughness
+σ    Diffuse reflectance
+Ω    Spherical domain
+f0    Reflectance at normal incidence
+f90    Reflectance at grazing angle
+χ+(a)    Heaviside function (1 if a&gt;0 and 0 otherwise)
+nior    Index of refraction (IOR) of an interface
+⟨n⋅l⟩    Dot product clamped to <a href="0..1" title="0..1" rel="noopener noreferrer">0..1</a>
+⟨a⟩    Saturated value (clamped to <a href="0..1" title="0..1" rel="noopener noreferrer">0..1</a>)</p>
+</div>
 
 
 
@@ -254,7 +283,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Values derived from the <code>LightingInput</code> for both diffuse and specular lights.</p>
+</div>
         </div>
     </li>
     
@@ -264,7 +294,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Input to a lighting function for a single layer (either the base layer or the
+clearcoat layer).</p>
+</div>
         </div>
     </li>
     
@@ -274,7 +306,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Input to a lighting function (<code>point_light</code>, <code>spot_light</code>,
+<code>directional_light</code>).</p>
+</div>
         </div>
     </li>
     
@@ -291,7 +325,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Normal distribution function (specular D)
+Based on https://google.github.io/filament/Filament.md.html#citation-walter07</p>
+</div>
         </div>
     </li>
     
@@ -301,7 +337,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>An approximation of the anisotropic GGX distribution function.</p>
+</div>
         </div>
     </li>
     
@@ -331,7 +368,10 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Fresnel function
+see https://google.github.io/filament/Filament.md.html#citation-schlick94
+F_Schlick(v,h,f_0,f_90) = f_0 + (f_90 − f_0) (1 − v⋅h)^5</p>
+</div>
         </div>
     </li>
     
@@ -341,7 +381,10 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Fresnel function
+see https://google.github.io/filament/Filament.md.html#citation-schlick94
+F_Schlick(v,h,f_0,f_90) = f_0 + (f_90 − f_0) (1 − v⋅h)^5</p>
+</div>
         </div>
     </li>
     
@@ -351,7 +394,10 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Diffuse BRDF
+https://google.github.io/filament/Filament.md.html#materialsystem/diffusebrdf
+fd(v,l) = σ/π * 1 / { |n⋅v||n⋅l| } ∫Ω D(m,α) G(v,l,m) (v⋅m) (l⋅m) dm</p>
+</div>
         </div>
     </li>
     
@@ -361,7 +407,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Smith geometric shadowing function</p>
+</div>
         </div>
     </li>
     
@@ -371,7 +418,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>The visibility function, anisotropic variant.</p>
+</div>
         </div>
     </li>
     
@@ -381,7 +429,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>A simpler, but nonphysical, alternative to Smith-GGX. We use this for
+clearcoat, per the Filament spec.</p>
+</div>
         </div>
     </li>
     
@@ -391,7 +441,14 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Visibility function (Specular G)
+V(v,l,a) = G(v,l,α) / { 4 (n⋅v) (n⋅l) }
+such that f_r becomes
+f_r(v,l) = D(h,α) V(v,l,α) F(v,h,f0)
+where
+V(v,l,α) = 0.5 / { n⋅l sqrt((n⋅v)^2 (1−α2) + α2) + n⋅v sqrt((n⋅l)^2 (1−α2) + α2) }
+Note the two sqrt's, that may be slow on mobile, see https://google.github.io/filament/Filament.md.html#listing_approximatedspecularv</p>
+</div>
         </div>
     </li>
     
@@ -401,7 +458,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Returns L in the <code>xyz</code> components and the modified roughness in the <code>w</code> component.</p>
+</div>
         </div>
     </li>
     
@@ -421,7 +479,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>N, V, and L must all be normalized.</p>
+</div>
         </div>
     </li>
     
@@ -451,7 +510,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>distanceAttenuation is simply the square falloff of light intensity
+combined with a smooth attenuation at the edge of the light radius</p>
+</div>
         </div>
     </li>
     
@@ -471,7 +532,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Probability-density function that matches the bounded VNDF sampler
+https://gpuopen.com/download/Bounded_VNDF_Sampling_for_Smith-GGX_Reflections.pdf (Listing 2)</p>
+</div>
         </div>
     </li>
     
@@ -481,7 +544,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Linearly Transformed Cosines (LTC) area light evaluation.
+Based on: Heitz et al. 2016, "Real-Time Polygonal-Light Shading with Linearly Transformed Cosines"</p>
+</div>
         </div>
     </li>
     
@@ -545,7 +610,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>https://gpuopen.com/download/Bounded_VNDF_Sampling_for_Smith-GGX_Reflections.pdf (Listing 1)</p>
+</div>
         </div>
     </li>
     
@@ -555,7 +621,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Cook-Torrance approximation of the microfacet model integration using Fresnel law F to model f_m
+f_r(v,l) = { D(h,α) G(v,l,α) F(v,h,f0) } / { 4 (n⋅v) (n⋅l) }</p>
+</div>
         </div>
     </li>
     
@@ -577,7 +645,10 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Calculates the specular light for the clearcoat layer. Returns Fc, the
+Fresnel term, in the first channel, and Frc, the specular clearcoat light, in
+the second channel.</p>
+</div>
         </div>
     </li>
     
@@ -587,7 +658,12 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>This is a modification to Karis 2013 for area lights to fix an issue where the specular
+reflection on smooth materials looks too rough and dim. We lerp between the base roughness
+and Karis2013 roughness with a lerp factor tuned by looking at reference renders. The goal
+is to preserve sharp specular highlights on smooth materials, without blowing out specular
+highlights on rough materials.</p>
+</div>
         </div>
     </li>
     
@@ -597,7 +673,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Given distribution, visibility, and Fresnel term, calculates the final
+specular light.</p>
+</div>
         </div>
     </li>
     

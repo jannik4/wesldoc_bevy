@@ -109,7 +109,33 @@
 <a class="module" href="../../../src/bevy_pbr/render/allocate_uniforms.html">Source</a>
 
 
-
+<div class="comment"><p>A compute shader that allocates <code>MeshUniform</code>s.</p>
+<p>This shader runs before mesh preprocessing in order to determine the
+positions of <code>MeshUniform</code>s. Unlike <code>MeshInputUniform</code>s, which are scattered
+throughout the buffer, <code>MeshUniform</code>s are indexed by instance ID, and so we
+must place instances of the same mesh together in the buffer. One dispatch
+call corresponds to one batch set (i.e. one multidraw operation), and one
+thread corresponds to one bin (a.k.a. draw, a.k.a. batch).</p>
+<p>Essentially, the goal of this shader is to perform a prefix sum, using the
+"scan-then-fan" approach. It has three phases:</p>
+<ol>
+<li>
+<p><em>Local scan</em>: Perform a <a href="https://en.wikipedia.org/wiki/Prefix_sum#Algorithm_1:_Shorter_span,_more_parallel" rel="noopener noreferrer">Hillis-Steele scan</a> on each chunk of draws, where
+the size of each chunk (i.e. the number of draws) is equal to the workgroup
+size (256). Write the total size for this chunk to the fan buffer.</p>
+</li>
+<li>
+<p><em>Global scan</em>: Do a Hillis-Steele scan on the fan buffer. Now we know the
+running total for each chunk.</p>
+</li>
+<li>
+<p><em>Fan</em>: Copy the running total for each chunk to every element of that
+chunk.</p>
+</li>
+</ol>
+<p>Note that, for batch sets (i.e. multidraw indirect calls) that have fewer
+than 256 batches in them, we only need step (1). This is the common case.</p>
+</div>
 
 
 
@@ -123,7 +149,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>The number of threads in a workgroup.</p>
+</div>
         </div>
     </li>
     
@@ -142,7 +169,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Information needed to allocate <code>MeshUniform</code>s.</p>
+</div>
         </div>
     </li>
     
@@ -152,7 +180,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Information for each bin, including the indirect parameters offset and the
+instance count.</p>
+</div>
         </div>
     </li>
     
@@ -162,7 +192,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>A temporary buffer that stores the mesh uniform index of the last instance
+plus one for each workgroup (i.e. for each 256-bin chunk).</p>
+</div>
         </div>
     </li>
     
@@ -172,7 +204,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>The array of indirect parameters metadata that we fill out, one for each
+batch.</p>
+</div>
         </div>
     </li>
     
@@ -182,7 +216,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Scratch memory that stores the prefix sum for every element in our chunk.</p>
+</div>
         </div>
     </li>
     
@@ -199,7 +234,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Information needed to allocate <code>MeshUniform</code>s.</p>
+</div>
         </div>
     </li>
     
@@ -216,7 +252,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>The third step of the prefix sum.</p>
+</div>
         </div>
     </li>
     
@@ -226,7 +263,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>The second step of the prefix sum.</p>
+</div>
         </div>
     </li>
     
@@ -236,7 +274,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>The first step of the prefix sum. This computes the prefix sum for each
+256-element chunk.</p>
+</div>
         </div>
     </li>
     
@@ -246,7 +286,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Divides unsigned integer a by b, rounding up.</p>
+</div>
         </div>
     </li>
     
@@ -256,7 +297,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Calculates a running exclusive sum.
+https://en.wikipedia.org/wiki/Prefix_sum#Algorithm_1:_Shorter_span,_more_parallel</p>
+</div>
         </div>
     </li>
     

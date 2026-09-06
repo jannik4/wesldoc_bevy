@@ -121,7 +121,13 @@ fn allocate_local_scan(
     global_id: vec3&lt;u32&gt;
 ) </code>
 </pre>
-
+<div class="comment"><p>The first step of the prefix sum. This computes the prefix sum for each
+256-element chunk.</p>
+<p>Note that this will be the <em>only</em> step in the operation if the total number
+of bins in this batch set is 256 or fewer. Thus we must fill in the indirect
+parameters metadata for each batch here, as we can't guarantee that the
+following two steps will be run at all.</p>
+</div>
 
 
         </div>

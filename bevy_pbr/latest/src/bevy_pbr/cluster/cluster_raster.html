@@ -108,85 +108,85 @@
             id="1"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >1</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">package</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">cluster</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-punctuation syntax-punctuation-bracket">{</span>
+        >1</a><span class="syntax-comment syntax-comment-line">//! The shader that performs the cluster-object intersection tests and assigns</span>
 <a
             href="#2"
             id="2"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >2</a>    <span class="syntax-type">Aabb</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant">CLUSTERABLE_OBJECT_TYPE_DECAL</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant">CLUSTERABLE_OBJECT_TYPE_IRRADIANCE_VOLUME</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
+        >2</a><span class="syntax-comment syntax-comment-line">//! objects to clusters as appropriate.</span>
 <a
             href="#3"
             id="3"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >3</a>    <span class="syntax-constant">CLUSTERABLE_OBJECT_TYPE_POINT_LIGHT</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant">CLUSTERABLE_OBJECT_TYPE_REFLECTION_PROBE</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
+        >3</a><span class="syntax-comment syntax-comment-line">//!</span>
 <a
             href="#4"
             id="4"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >4</a>    <span class="syntax-constant">CLUSTERABLE_OBJECT_TYPE_SPOT_LIGHT</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant">CLUSTERABLE_OBJECT_TYPE_RECT_LIGHT</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">ClusterableObjectZSlice</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
+        >4</a><span class="syntax-comment syntax-comment-line">//! Assuming the froxel grid has size WxHxD, this shader is expected to run on a</span>
 <a
             href="#5"
             id="5"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >5</a>    <span class="syntax-namespace">calculate_sphere_cluster_bounds</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-namespace">compute_view_from_world_scale</span>
+        >5</a><span class="syntax-comment syntax-comment-line">//! viewport of size WxH. It draws each *Z slice* as an axis aligned quad such</span>
 <a
             href="#6"
             id="6"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >6</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >6</a><span class="syntax-comment syntax-comment-line">//! that each fragment shader invocation represents a single cluster-object pair</span>
 <a
             href="#7"
             id="7"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >7</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">package</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">render</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">clustered_forward</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >7</a><span class="syntax-comment syntax-comment-line">//! in the froxel grid. The fragment shader performs a finer test to see if the</span>
 <a
             href="#8"
             id="8"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >8</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">package</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">light_probe</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">transpose_affine_matrix</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >8</a><span class="syntax-comment syntax-comment-line">//! object might intersects the cluster and, if it succeeds, records the result.</span>
 <a
             href="#9"
             id="9"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >9</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">package</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">render</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">mesh_view_types</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-punctuation syntax-punctuation-bracket">{</span>
+        >9</a><span class="syntax-comment syntax-comment-line">//! Because the result is written to storage buffers, color writes are disabled</span>
 <a
             href="#10"
             id="10"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >10</a>    <span class="syntax-type">ClusterOffsetsAndCounts</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">ClusterableObjectIndexLists</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">ClusteredDecals</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">ClusteredLights</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
+        >10</a><span class="syntax-comment syntax-comment-line">//! for this shader invocation.</span>
 <a
             href="#11"
             id="11"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >11</a>    <span class="syntax-type">LightProbes</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">Lights</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant">POINT_LIGHT_FLAGS_SPOT_LIGHT_Y_NEGATIVE</span>
+        >11</a><span class="syntax-comment syntax-comment-line">//!</span>
 <a
             href="#12"
             id="12"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >12</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >12</a><span class="syntax-comment syntax-comment-line">//! This shader runs twice: once to accumulate the *count* of each object type in</span>
 <a
             href="#13"
             id="13"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >13</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">bevy_render</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">view</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-type">View</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >13</a><span class="syntax-comment syntax-comment-line">//! each cluster, and once to *populate* the actual IDs. Both invocations of the</span>
 <a
             href="#14"
             id="14"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >14</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">bevy_render</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">maths</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">quat_rotate</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >14</a><span class="syntax-comment syntax-comment-line">//! shader must compute the exact same visibility results.</span>
 <a
             href="#15"
             id="15"
@@ -198,85 +198,85 @@
             id="16"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >16</a><span class="syntax-comment syntax-comment-line">// The shader that performs the cluster-object intersection tests and assigns</span>
+        >16</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">package</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">cluster</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#17"
             id="17"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >17</a><span class="syntax-comment syntax-comment-line">// objects to clusters as appropriate.</span>
+        >17</a>    <span class="syntax-type">Aabb</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant">CLUSTERABLE_OBJECT_TYPE_DECAL</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant">CLUSTERABLE_OBJECT_TYPE_IRRADIANCE_VOLUME</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#18"
             id="18"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >18</a><span class="syntax-comment syntax-comment-line">//</span>
+        >18</a>    <span class="syntax-constant">CLUSTERABLE_OBJECT_TYPE_POINT_LIGHT</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant">CLUSTERABLE_OBJECT_TYPE_REFLECTION_PROBE</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#19"
             id="19"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >19</a><span class="syntax-comment syntax-comment-line">// Assuming the froxel grid has size WxHxD, this shader is expected to run on a</span>
+        >19</a>    <span class="syntax-constant">CLUSTERABLE_OBJECT_TYPE_SPOT_LIGHT</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant">CLUSTERABLE_OBJECT_TYPE_RECT_LIGHT</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">ClusterableObjectZSlice</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#20"
             id="20"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >20</a><span class="syntax-comment syntax-comment-line">// viewport of size WxH. It draws each *Z slice* as an axis aligned quad such</span>
+        >20</a>    <span class="syntax-namespace">calculate_sphere_cluster_bounds</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-namespace">compute_view_from_world_scale</span>
 <a
             href="#21"
             id="21"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >21</a><span class="syntax-comment syntax-comment-line">// that each fragment shader invocation represents a single cluster-object pair</span>
+        >21</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#22"
             id="22"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >22</a><span class="syntax-comment syntax-comment-line">// in the froxel grid. The fragment shader performs a finer test to see if the</span>
+        >22</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">package</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">render</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">clustered_forward</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#23"
             id="23"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >23</a><span class="syntax-comment syntax-comment-line">// object might intersects the cluster and, if it succeeds, records the result.</span>
+        >23</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">package</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">light_probe</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">transpose_affine_matrix</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#24"
             id="24"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >24</a><span class="syntax-comment syntax-comment-line">// Because the result is written to storage buffers, color writes are disabled</span>
+        >24</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">package</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">render</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">mesh_view_types</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#25"
             id="25"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >25</a><span class="syntax-comment syntax-comment-line">// for this shader invocation.</span>
+        >25</a>    <span class="syntax-type">ClusterOffsetsAndCounts</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">ClusterableObjectIndexLists</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">ClusteredDecals</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">ClusteredLights</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#26"
             id="26"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >26</a><span class="syntax-comment syntax-comment-line">//</span>
+        >26</a>    <span class="syntax-type">LightProbes</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">Lights</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant">POINT_LIGHT_FLAGS_SPOT_LIGHT_Y_NEGATIVE</span>
 <a
             href="#27"
             id="27"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >27</a><span class="syntax-comment syntax-comment-line">// This shader runs twice: once to accumulate the *count* of each object type in</span>
+        >27</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#28"
             id="28"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >28</a><span class="syntax-comment syntax-comment-line">// each cluster, and once to *populate* the actual IDs. Both invocations of the</span>
+        >28</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">bevy_render</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">view</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-type">View</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#29"
             id="29"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >29</a><span class="syntax-comment syntax-comment-line">// shader must compute the exact same visibility results.</span>
+        >29</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">bevy_render</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">maths</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">quat_rotate</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#30"
             id="30"
@@ -318,7 +318,7 @@
             id="36"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >36</a><span class="syntax-comment syntax-comment-line">// Data output from the vertex shader and input to the fragment shader.</span>
+        >36</a><span class="syntax-comment syntax-comment-line">/// Data output from the vertex shader and input to the fragment shader.</span>
 <a
             href="#37"
             id="37"
@@ -336,7 +336,7 @@
             id="39"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >39</a>    <span class="syntax-comment syntax-comment-line">// The index of the Z slice we&#39;re rasterizing.</span>
+        >39</a>    <span class="syntax-comment syntax-comment-line">/// The index of the Z slice we&#39;re rasterizing.</span>
 <a
             href="#40"
             id="40"
@@ -348,7 +348,7 @@
             id="41"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >41</a>    <span class="syntax-comment syntax-comment-line">// The view-space center of the bounding sphere of the object.</span>
+        >41</a>    <span class="syntax-comment syntax-comment-line">/// The view-space center of the bounding sphere of the object.</span>
 <a
             href="#42"
             id="42"
@@ -360,7 +360,7 @@
             id="43"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >43</a>    <span class="syntax-comment syntax-comment-line">// The view-space radius of the bounding sphere of the object.</span>
+        >43</a>    <span class="syntax-comment syntax-comment-line">/// The view-space radius of the bounding sphere of the object.</span>
 <a
             href="#44"
             id="44"
@@ -384,13 +384,13 @@
             id="47"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >47</a><span class="syntax-comment syntax-comment-line">// The same as the `ClusterOffsetsAndCounts` structure, but with atomic fields</span>
+        >47</a><span class="syntax-comment syntax-comment-line">/// The same as the `ClusterOffsetsAndCounts` structure, but with atomic fields</span>
 <a
             href="#48"
             id="48"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >48</a><span class="syntax-comment syntax-comment-line">// so that we can write to it.</span>
+        >48</a><span class="syntax-comment syntax-comment-line">/// so that we can write to it.</span>
 <a
             href="#49"
             id="49"
@@ -420,13 +420,13 @@
             id="53"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >53</a><span class="syntax-comment syntax-comment-line">// The same as the `ClusterOffsetsAndCountsElement` structure, but with atomic</span>
+        >53</a><span class="syntax-comment syntax-comment-line">/// The same as the `ClusterOffsetsAndCountsElement` structure, but with atomic</span>
 <a
             href="#54"
             id="54"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >54</a><span class="syntax-comment syntax-comment-line">// fields so that we can write to it.</span>
+        >54</a><span class="syntax-comment syntax-comment-line">/// fields so that we can write to it.</span>
 <a
             href="#55"
             id="55"
@@ -498,7 +498,7 @@
             id="66"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >66</a><span class="syntax-comment syntax-comment-line">// The list of clusterable object Z slices that we read from to.</span>
+        >66</a><span class="syntax-comment syntax-comment-line">/// The list of clusterable object Z slices that we read from to.</span>
 <a
             href="#67"
             id="67"
@@ -516,7 +516,7 @@
             id="69"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >69</a><span class="syntax-comment syntax-comment-line">// The list of indices per cluster that we write to in the populate pass.</span>
+        >69</a><span class="syntax-comment syntax-comment-line">/// The list of indices per cluster that we write to in the populate pass.</span>
 <a
             href="#70"
             id="70"
@@ -528,7 +528,7 @@
             id="71"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >71</a><span class="syntax-comment syntax-comment-line">// Information about each light.</span>
+        >71</a><span class="syntax-comment syntax-comment-line">/// Information about each light.</span>
 <a
             href="#72"
             id="72"
@@ -540,7 +540,7 @@
             id="73"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >73</a><span class="syntax-comment syntax-comment-line">// Information about each light probe (reflection probe or irradiance volume).</span>
+        >73</a><span class="syntax-comment syntax-comment-line">/// Information about each light probe (reflection probe or irradiance volume).</span>
 <a
             href="#74"
             id="74"
@@ -552,7 +552,7 @@
             id="75"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >75</a><span class="syntax-comment syntax-comment-line">// Information about each clustered decal.</span>
+        >75</a><span class="syntax-comment syntax-comment-line">/// Information about each clustered decal.</span>
 <a
             href="#76"
             id="76"
@@ -564,13 +564,13 @@
             id="77"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >77</a><span class="syntax-comment syntax-comment-line">// Information about the clusters as a whole, including the dimensions of the</span>
+        >77</a><span class="syntax-comment syntax-comment-line">/// Information about the clusters as a whole, including the dimensions of the</span>
 <a
             href="#78"
             id="78"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >78</a><span class="syntax-comment syntax-comment-line">// cluster grid.</span>
+        >78</a><span class="syntax-comment syntax-comment-line">/// cluster grid.</span>
 <a
             href="#79"
             id="79"
@@ -582,7 +582,7 @@
             id="80"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >80</a><span class="syntax-comment syntax-comment-line">// Information about the view.</span>
+        >80</a><span class="syntax-comment syntax-comment-line">/// Information about the view.</span>
 <a
             href="#81"
             id="81"
@@ -600,7 +600,7 @@
             id="83"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >83</a><span class="syntax-comment syntax-comment-line">// The number of objects in each cluster, and the offset of each list.</span>
+        >83</a><span class="syntax-comment syntax-comment-line">/// The number of objects in each cluster, and the offset of each list.</span>
 <a
             href="#84"
             id="84"
@@ -612,25 +612,25 @@
             id="85"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >85</a><span class="syntax-comment syntax-comment-line">// For each cluster, the counts of objects written *so far* to it.</span>
+        >85</a><span class="syntax-comment syntax-comment-line">/// For each cluster, the counts of objects written *so far* to it.</span>
 <a
             href="#86"
             id="86"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >86</a><span class="syntax-comment syntax-comment-line">//</span>
+        >86</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#87"
             id="87"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >87</a><span class="syntax-comment syntax-comment-line">// We use this during the populate phase in order to write the ID of each object</span>
+        >87</a><span class="syntax-comment syntax-comment-line">/// We use this during the populate phase in order to write the ID of each object</span>
 <a
             href="#88"
             id="88"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >88</a><span class="syntax-comment syntax-comment-line">// to the correct spot.</span>
+        >88</a><span class="syntax-comment syntax-comment-line">/// to the correct spot.</span>
 <a
             href="#89"
             id="89"
@@ -660,19 +660,19 @@
             id="93"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >93</a><span class="syntax-comment syntax-comment-line">// The number of objects in each cluster.</span>
+        >93</a><span class="syntax-comment syntax-comment-line">/// The number of objects in each cluster.</span>
 <a
             href="#94"
             id="94"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >94</a><span class="syntax-comment syntax-comment-line">//</span>
+        >94</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#95"
             id="95"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >95</a><span class="syntax-comment syntax-comment-line">// During the count pass, we write to this.</span>
+        >95</a><span class="syntax-comment syntax-comment-line">/// During the count pass, we write to this.</span>
 <a
             href="#96"
             id="96"
@@ -690,7 +690,7 @@
             id="98"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >98</a><span class="syntax-comment syntax-comment-line">// The vertex entry point.</span>
+        >98</a><span class="syntax-comment syntax-comment-line">/// The vertex entry point.</span>
 <a
             href="#99"
             id="99"
@@ -972,19 +972,19 @@
             id="145"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >145</a><span class="syntax-comment syntax-comment-line">// Returns the position of the quad vertex necessary to enclose all the</span>
+        >145</a><span class="syntax-comment syntax-comment-line">/// Returns the position of the quad vertex necessary to enclose all the</span>
 <a
             href="#146"
             id="146"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >146</a><span class="syntax-comment syntax-comment-line">// fragments that represent the cluster AABB.</span>
+        >146</a><span class="syntax-comment syntax-comment-line">/// fragments that represent the cluster AABB.</span>
 <a
             href="#147"
             id="147"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >147</a><span class="syntax-comment syntax-comment-line">// The cluster bounds are supplied as `vec4(min X, min Y, max X, max Y)`.</span>
+        >147</a><span class="syntax-comment syntax-comment-line">/// The cluster bounds are supplied as `vec4(min X, min Y, max X, max Y)`.</span>
 <a
             href="#148"
             id="148"
@@ -1062,13 +1062,13 @@
             id="160"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >160</a><span class="syntax-comment syntax-comment-line">// Performs a fine-grained test to ensure that the object intersects a single</span>
+        >160</a><span class="syntax-comment syntax-comment-line">/// Performs a fine-grained test to ensure that the object intersects a single</span>
 <a
             href="#161"
             id="161"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >161</a><span class="syntax-comment syntax-comment-line">// froxel and records the result.</span>
+        >161</a><span class="syntax-comment syntax-comment-line">/// froxel and records the result.</span>
 <a
             href="#162"
             id="162"
@@ -1560,13 +1560,13 @@
             id="243"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >243</a><span class="syntax-comment syntax-comment-line">// Returns true if the given sphere intersects the AABB with the given</span>
+        >243</a><span class="syntax-comment syntax-comment-line">/// Returns true if the given sphere intersects the AABB with the given</span>
 <a
             href="#244"
             id="244"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >244</a><span class="syntax-comment syntax-comment-line">// boundaries.</span>
+        >244</a><span class="syntax-comment syntax-comment-line">/// boundaries.</span>
 <a
             href="#245"
             id="245"
@@ -1638,7 +1638,7 @@
             id="256"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >256</a><span class="syntax-comment syntax-comment-line">// See `bevy_light::cluster::assign::compute_aabb_for_cluster`.</span>
+        >256</a><span class="syntax-comment syntax-comment-line">/// See `bevy_light::cluster::assign::compute_aabb_for_cluster`.</span>
 <a
             href="#257"
             id="257"
@@ -2040,13 +2040,13 @@
             id="323"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >323</a><span class="syntax-comment syntax-comment-line">// Converts a screen-space position to a view-space position.</span>
+        >323</a><span class="syntax-comment syntax-comment-line">/// Converts a screen-space position to a view-space position.</span>
 <a
             href="#324"
             id="324"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >324</a><span class="syntax-comment syntax-comment-line">// See `bevy_light::cluster::assign::screen_to_view`.</span>
+        >324</a><span class="syntax-comment syntax-comment-line">/// See `bevy_light::cluster::assign::screen_to_view`.</span>
 <a
             href="#325"
             id="325"
@@ -2148,13 +2148,13 @@
             id="341"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >341</a><span class="syntax-comment syntax-comment-line">// Converts a clip-space position to a view-space position.</span>
+        >341</a><span class="syntax-comment syntax-comment-line">/// Converts a clip-space position to a view-space position.</span>
 <a
             href="#342"
             id="342"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >342</a><span class="syntax-comment syntax-comment-line">// See `bevy_light::cluster::assign::clip_to_view`.</span>
+        >342</a><span class="syntax-comment syntax-comment-line">/// See `bevy_light::cluster::assign::clip_to_view`.</span>
 <a
             href="#343"
             id="343"
@@ -2190,19 +2190,19 @@
             id="348"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >348</a><span class="syntax-comment syntax-comment-line">// Calculate the intersection of a ray from the eye through the view space</span>
+        >348</a><span class="syntax-comment syntax-comment-line">/// Calculate the intersection of a ray from the eye through the view space</span>
 <a
             href="#349"
             id="349"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >349</a><span class="syntax-comment syntax-comment-line">// position to a z plane</span>
+        >349</a><span class="syntax-comment syntax-comment-line">/// position to a z plane</span>
 <a
             href="#350"
             id="350"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >350</a><span class="syntax-comment syntax-comment-line">// See `bevy_light::cluster::assign::line_intersection_to_z_plane`.</span>
+        >350</a><span class="syntax-comment syntax-comment-line">/// See `bevy_light::cluster::assign::line_intersection_to_z_plane`.</span>
 <a
             href="#351"
             id="351"
@@ -2244,7 +2244,7 @@
             id="357"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >357</a><span class="syntax-comment syntax-comment-line">// Computes the near and far extents of the cluster grid.</span>
+        >357</a><span class="syntax-comment syntax-comment-line">/// Computes the near and far extents of the cluster grid.</span>
 <a
             href="#358"
             id="358"
@@ -2340,13 +2340,13 @@
             id="373"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >373</a><span class="syntax-comment syntax-comment-line">// Returns true if a spot light should be culled.</span>
+        >373</a><span class="syntax-comment syntax-comment-line">/// Returns true if a spot light should be culled.</span>
 <a
             href="#374"
             id="374"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >374</a><span class="syntax-comment syntax-comment-line">// See `assign_objects_to_clusters` in `bevy_light/src/cluster/assign.rs`.</span>
+        >374</a><span class="syntax-comment syntax-comment-line">/// See `assign_objects_to_clusters` in `bevy_light/src/cluster/assign.rs`.</span>
 <a
             href="#375"
             id="375"
@@ -2688,7 +2688,7 @@
             id="431"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >431</a><span class="syntax-comment syntax-comment-line">// Returns true if a rect light should be culled.</span>
+        >431</a><span class="syntax-comment syntax-comment-line">/// Returns true if a rect light should be culled.</span>
 <a
             href="#432"
             id="432"
@@ -2796,13 +2796,13 @@
             id="449"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >449</a><span class="syntax-comment syntax-comment-line">// Computes `cos(atan(x))` cheaply.</span>
+        >449</a><span class="syntax-comment syntax-comment-line">/// Computes `cos(atan(x))` cheaply.</span>
 <a
             href="#450"
             id="450"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >450</a><span class="syntax-comment syntax-comment-line">// See https://en.wikipedia.org/wiki/List_of_trigonometric_identities</span>
+        >450</a><span class="syntax-comment syntax-comment-line">/// See https://en.wikipedia.org/wiki/List_of_trigonometric_identities</span>
 <a
             href="#451"
             id="451"
@@ -2832,13 +2832,13 @@
             id="455"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >455</a><span class="syntax-comment syntax-comment-line">// Computes `sin(atan(x))` cheaply.</span>
+        >455</a><span class="syntax-comment syntax-comment-line">/// Computes `sin(atan(x))` cheaply.</span>
 <a
             href="#456"
             id="456"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >456</a><span class="syntax-comment syntax-comment-line">// See https://en.wikipedia.org/wiki/List_of_trigonometric_identities</span>
+        >456</a><span class="syntax-comment syntax-comment-line">/// See https://en.wikipedia.org/wiki/List_of_trigonometric_identities</span>
 <a
             href="#457"
             id="457"
@@ -2874,13 +2874,13 @@
             id="462"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >462</a><span class="syntax-comment syntax-comment-line">// Allocates space in the appropriate list and returns the global index that the</span>
+        >462</a><span class="syntax-comment syntax-comment-line">/// Allocates space in the appropriate list and returns the global index that the</span>
 <a
             href="#463"
             id="463"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >463</a><span class="syntax-comment syntax-comment-line">// object index should be written to.</span>
+        >463</a><span class="syntax-comment syntax-comment-line">/// object index should be written to.</span>
 <a
             href="#464"
             id="464"
@@ -3180,7 +3180,7 @@
             id="513"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >513</a><span class="syntax-comment syntax-comment-line">// Increments the count of objects of the given type for the given cluster.</span>
+        >513</a><span class="syntax-comment syntax-comment-line">/// Increments the count of objects of the given type for the given cluster.</span>
 <a
             href="#514"
             id="514"
@@ -3330,19 +3330,19 @@
             id="538"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >538</a><span class="syntax-comment syntax-comment-line">// Looks up and returns the world-space center and radius of the bounding sphere</span>
+        >538</a><span class="syntax-comment syntax-comment-line">/// Looks up and returns the world-space center and radius of the bounding sphere</span>
 <a
             href="#539"
             id="539"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >539</a><span class="syntax-comment syntax-comment-line">// for the object with the given index and type.</span>
+        >539</a><span class="syntax-comment syntax-comment-line">/// for the object with the given index and type.</span>
 <a
             href="#540"
             id="540"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >540</a><span class="syntax-comment syntax-comment-line">// Returns a 4-vector with the fields `vec4(center X, center Y, center Z, radius)`.</span>
+        >540</a><span class="syntax-comment syntax-comment-line">/// Returns a 4-vector with the fields `vec4(center X, center Y, center Z, radius)`.</span>
 <a
             href="#541"
             id="541"

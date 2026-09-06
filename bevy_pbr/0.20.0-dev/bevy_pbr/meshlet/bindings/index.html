@@ -659,7 +659,12 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Either a BVH node or a meshlet, along with the instance it is associated with.
+Refers to BVH nodes in <code>meshlet_bvh_cull_queue</code> and <code>meshlet_second_pass_bvh_queue</code>, where <code>offset</code> is the index into <code>meshlet_bvh_nodes</code>.
+Refers to meshlets in <code>meshlet_meshlet_cull_queue</code> and <code>meshlet_raster_clusters</code>.
+In <code>meshlet_meshlet_cull_queue</code>, <code>offset</code> is the index into <code>meshlet_cull_data</code>.
+In <code>meshlet_raster_clusters</code>, <code>offset</code> is the index into <code>meshlets</code>.</p>
+</div>
         </div>
     </li>
     

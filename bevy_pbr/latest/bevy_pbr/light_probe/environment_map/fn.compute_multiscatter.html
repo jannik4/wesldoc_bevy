@@ -118,7 +118,10 @@
     specular_occlusion: f32
 ) -> <a class="struct" href="../../light_probe/environment_map/struct.MultiscatterResult.html">MultiscatterResult</a></code>
 </pre>
-
+<div class="comment"><p>Multiscattering approximation: https://www.jcgt.org/published/0008/01/03/paper.pdf</p>
+<p>We initially used this (https://bruop.github.io/ibl) reference with Roughness Dependent
+Fresnel, but it made fresnel very bright so we reverted to the "typical" fresnel term.</p>
+</div>
 
 
         </div>

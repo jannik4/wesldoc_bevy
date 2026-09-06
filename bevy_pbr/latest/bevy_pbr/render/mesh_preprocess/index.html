@@ -109,7 +109,20 @@
 <a class="module" href="../../../src/bevy_pbr/render/mesh_preprocess.html">Source</a>
 
 
-
+<div class="comment"><p>GPU mesh transforming and culling.</p>
+<p>This is a compute shader that expands each <code>MeshInputUniform</code> out to a full
+<code>MeshUniform</code> for each view before rendering. (Thus <code>MeshInputUniform</code> and
+<code>MeshUniform</code> are in a 1:N relationship.) It runs in parallel for all meshes
+for all views. As part of this process, the shader gathers each mesh's
+transform on the previous frame and writes it into the <code>MeshUniform</code> so that
+TAA works. It also performs frustum culling and occlusion culling, if
+requested.</p>
+<p>If occlusion culling is on, this shader runs twice: once to prepare the
+meshes that were visible last frame, and once to prepare the meshes that
+weren't visible last frame but became visible this frame. The two invocations
+are known as <em>early mesh preprocessing</em> and <em>late mesh preprocessing</em>
+respectively.</p>
+</div>
 
 
 
@@ -127,7 +140,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>The current frame's <code>MeshInput</code>.</p>
+</div>
         </div>
     </li>
     
@@ -199,7 +213,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Data needed to cull the meshes.</p>
+</div>
         </div>
     </li>
     
@@ -209,7 +224,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>The output array of <code>Mesh</code>es.</p>
+</div>
         </div>
     </li>
     
@@ -219,7 +235,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>The <code>MeshInput</code> values from the previous frame.</p>
+</div>
         </div>
     </li>
     
@@ -241,7 +258,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Indices into the <code>MeshInput</code> buffer.</p>
+</div>
         </div>
     </li>
     
@@ -258,7 +276,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>These have to be in a structure because of Naga limitations on DX12.</p>
+</div>
         </div>
     </li>
     
@@ -268,7 +287,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>The parameters for the indirect compute dispatch for the late mesh
+preprocessing phase.</p>
+</div>
         </div>
     </li>
     
@@ -278,7 +299,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Information about each mesh instance needed to cull it on GPU.</p>
+</div>
         </div>
     </li>
     

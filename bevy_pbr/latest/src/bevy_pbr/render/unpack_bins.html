@@ -108,55 +108,55 @@
             id="1"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >1</a><span class="syntax-comment syntax-comment-line">// A compute shader that unpacks bins.</span>
+        >1</a><span class="syntax-comment syntax-comment-line">//! A compute shader that unpacks bins.</span>
 <a
             href="#2"
             id="2"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >2</a><span class="syntax-comment syntax-comment-line">//</span>
+        >2</a><span class="syntax-comment syntax-comment-line">//!</span>
 <a
             href="#3"
             id="3"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >3</a><span class="syntax-comment syntax-comment-line">// This shader runs before mesh preprocessing in order to generate</span>
+        >3</a><span class="syntax-comment syntax-comment-line">//! This shader runs before mesh preprocessing in order to generate</span>
 <a
             href="#4"
             id="4"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >4</a><span class="syntax-comment syntax-comment-line">// `PreprocessWorkItem`s from cached bins. A single dispatch of this shader</span>
+        >4</a><span class="syntax-comment syntax-comment-line">//! `PreprocessWorkItem`s from cached bins. A single dispatch of this shader</span>
 <a
             href="#5"
             id="5"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >5</a><span class="syntax-comment syntax-comment-line">// corresponds to a single batch set, and one invocation of this shader</span>
+        >5</a><span class="syntax-comment syntax-comment-line">//! corresponds to a single batch set, and one invocation of this shader</span>
 <a
             href="#6"
             id="6"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >6</a><span class="syntax-comment syntax-comment-line">// corresponds to one binned entity. Each shader invocation builds the work item</span>
+        >6</a><span class="syntax-comment syntax-comment-line">//! corresponds to one binned entity. Each shader invocation builds the work item</span>
 <a
             href="#7"
             id="7"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >7</a><span class="syntax-comment syntax-comment-line">// for its entity by copying over the mesh input uniform index and calculating</span>
+        >7</a><span class="syntax-comment syntax-comment-line">//! for its entity by copying over the mesh input uniform index and calculating</span>
 <a
             href="#8"
             id="8"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >8</a><span class="syntax-comment syntax-comment-line">// the position of the command in the indirect parameters buffer that will draw</span>
+        >8</a><span class="syntax-comment syntax-comment-line">//! the position of the command in the indirect parameters buffer that will draw</span>
 <a
             href="#9"
             id="9"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >9</a><span class="syntax-comment syntax-comment-line">// that entity.</span>
+        >9</a><span class="syntax-comment syntax-comment-line">//! that entity.</span>
 <a
             href="#10"
             id="10"
@@ -180,7 +180,7 @@
             id="13"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >13</a><span class="syntax-comment syntax-comment-line">// Information needed to unpack bins belonging to a single batch set.</span>
+        >13</a><span class="syntax-comment syntax-comment-line">/// Information needed to unpack bins belonging to a single batch set.</span>
 <a
             href="#14"
             id="14"
@@ -192,13 +192,13 @@
             id="15"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >15</a>    <span class="syntax-comment syntax-comment-line">// The index of the first `PreprocessWorkItem` that this compute shader</span>
+        >15</a>    <span class="syntax-comment syntax-comment-line">/// The index of the first `PreprocessWorkItem` that this compute shader</span>
 <a
             href="#16"
             id="16"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >16</a>    <span class="syntax-comment syntax-comment-line">// dispatch is to write to.</span>
+        >16</a>    <span class="syntax-comment syntax-comment-line">/// dispatch is to write to.</span>
 <a
             href="#17"
             id="17"
@@ -210,13 +210,13 @@
             id="18"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >18</a>    <span class="syntax-comment syntax-comment-line">// The index of the first GPU indirect parameters command for this batch</span>
+        >18</a>    <span class="syntax-comment syntax-comment-line">/// The index of the first GPU indirect parameters command for this batch</span>
 <a
             href="#19"
             id="19"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >19</a>    <span class="syntax-comment syntax-comment-line">// set.</span>
+        >19</a>    <span class="syntax-comment syntax-comment-line">/// set.</span>
 <a
             href="#20"
             id="20"
@@ -228,13 +228,13 @@
             id="21"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >21</a>    <span class="syntax-comment syntax-comment-line">// The number of binned mesh instances in the `binned_mesh_instances`</span>
+        >21</a>    <span class="syntax-comment syntax-comment-line">/// The number of binned mesh instances in the `binned_mesh_instances`</span>
 <a
             href="#22"
             id="22"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >22</a>    <span class="syntax-comment syntax-comment-line">// array.</span>
+        >22</a>    <span class="syntax-comment syntax-comment-line">/// array.</span>
 <a
             href="#23"
             id="23"
@@ -246,7 +246,7 @@
             id="24"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >24</a>    <span class="syntax-comment syntax-comment-line">// Padding.</span>
+        >24</a>    <span class="syntax-comment syntax-comment-line">/// Padding.</span>
 <a
             href="#25"
             id="25"
@@ -258,7 +258,7 @@
             id="26"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >26</a>    <span class="syntax-comment syntax-comment-line">// Padding.</span>
+        >26</a>    <span class="syntax-comment syntax-comment-line">/// Padding.</span>
 <a
             href="#27"
             id="27"
@@ -282,43 +282,43 @@
             id="30"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >30</a><span class="syntax-comment syntax-comment-line">// One mesh instance in a bin.</span>
+        >30</a><span class="syntax-comment syntax-comment-line">/// One mesh instance in a bin.</span>
 <a
             href="#31"
             id="31"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >31</a><span class="syntax-comment syntax-comment-line">//</span>
+        >31</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#32"
             id="32"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >32</a><span class="syntax-comment syntax-comment-line">// This corresponds to the CPU-side `GpuRenderBinnedMeshInstance` structure.</span>
+        >32</a><span class="syntax-comment syntax-comment-line">/// This corresponds to the CPU-side `GpuRenderBinnedMeshInstance` structure.</span>
 <a
             href="#33"
             id="33"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >33</a><span class="syntax-comment syntax-comment-line">//</span>
+        >33</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#34"
             id="34"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >34</a><span class="syntax-comment syntax-comment-line">// Note that this structure isn&#39;t sorted within the</span>
+        >34</a><span class="syntax-comment syntax-comment-line">/// Note that this structure isn&#39;t sorted within the</span>
 <a
             href="#35"
             id="35"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >35</a><span class="syntax-comment syntax-comment-line">// `binned_mesh_instances` buffer. Instances from the same bin aren&#39;t</span>
+        >35</a><span class="syntax-comment syntax-comment-line">/// `binned_mesh_instances` buffer. Instances from the same bin aren&#39;t</span>
 <a
             href="#36"
             id="36"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >36</a><span class="syntax-comment syntax-comment-line">// guaranteed to be adjacent to one another.</span>
+        >36</a><span class="syntax-comment syntax-comment-line">/// guaranteed to be adjacent to one another.</span>
 <a
             href="#37"
             id="37"
@@ -330,13 +330,13 @@
             id="38"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >38</a>    <span class="syntax-comment syntax-comment-line">// The index of the `MeshInputUniform` corresponding to this mesh instance</span>
+        >38</a>    <span class="syntax-comment syntax-comment-line">/// The index of the `MeshInputUniform` corresponding to this mesh instance</span>
 <a
             href="#39"
             id="39"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >39</a>    <span class="syntax-comment syntax-comment-line">// in the `MeshInputUniform` buffer.</span>
+        >39</a>    <span class="syntax-comment syntax-comment-line">/// in the `MeshInputUniform` buffer.</span>
 <a
             href="#40"
             id="40"
@@ -348,7 +348,7 @@
             id="41"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >41</a>    <span class="syntax-comment syntax-comment-line">// The index of the bin that this mesh instance belongs to.</span>
+        >41</a>    <span class="syntax-comment syntax-comment-line">/// The index of the bin that this mesh instance belongs to.</span>
 <a
             href="#42"
             id="42"
@@ -372,7 +372,7 @@
             id="45"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >45</a><span class="syntax-comment syntax-comment-line">// Metadata for the entire batch set.</span>
+        >45</a><span class="syntax-comment syntax-comment-line">/// Metadata for the entire batch set.</span>
 <a
             href="#46"
             id="46"
@@ -390,19 +390,19 @@
             id="48"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >48</a><span class="syntax-comment syntax-comment-line">// The input array of `BinnedMeshInstance`s.</span>
+        >48</a><span class="syntax-comment syntax-comment-line">/// The input array of `BinnedMeshInstance`s.</span>
 <a
             href="#49"
             id="49"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >49</a><span class="syntax-comment syntax-comment-line">//</span>
+        >49</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#50"
             id="50"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >50</a><span class="syntax-comment syntax-comment-line">// Note that this array isn&#39;t sorted.</span>
+        >50</a><span class="syntax-comment syntax-comment-line">/// Note that this array isn&#39;t sorted.</span>
 <a
             href="#51"
             id="51"
@@ -420,7 +420,7 @@
             id="53"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >53</a><span class="syntax-comment syntax-comment-line">// The output list of `PreprocessWorkItem`s.</span>
+        >53</a><span class="syntax-comment syntax-comment-line">/// The output list of `PreprocessWorkItem`s.</span>
 <a
             href="#54"
             id="54"
@@ -438,31 +438,31 @@
             id="56"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >56</a><span class="syntax-comment syntax-comment-line">// The bin metadata, which contains the index of the GPU indirect parameters for</span>
+        >56</a><span class="syntax-comment syntax-comment-line">/// The bin metadata, which contains the index of the GPU indirect parameters for</span>
 <a
             href="#57"
             id="57"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >57</a><span class="syntax-comment syntax-comment-line">// this bin, relative to the start of the indirect parameters for this batch</span>
+        >57</a><span class="syntax-comment syntax-comment-line">/// this bin, relative to the start of the indirect parameters for this batch</span>
 <a
             href="#58"
             id="58"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >58</a><span class="syntax-comment syntax-comment-line">// set.</span>
+        >58</a><span class="syntax-comment syntax-comment-line">/// set.</span>
 <a
             href="#59"
             id="59"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >59</a><span class="syntax-comment syntax-comment-line">//</span>
+        >59</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#60"
             id="60"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >60</a><span class="syntax-comment syntax-comment-line">// This is indexed by the bin metadata index below.</span>
+        >60</a><span class="syntax-comment syntax-comment-line">/// This is indexed by the bin metadata index below.</span>
 <a
             href="#61"
             id="61"
@@ -480,13 +480,13 @@
             id="63"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >63</a><span class="syntax-comment syntax-comment-line">// A mapping from the bin index to the metadata index within the `bin_metadata`</span>
+        >63</a><span class="syntax-comment syntax-comment-line">/// A mapping from the bin index to the metadata index within the `bin_metadata`</span>
 <a
             href="#64"
             id="64"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >64</a><span class="syntax-comment syntax-comment-line">// buffer.</span>
+        >64</a><span class="syntax-comment syntax-comment-line">/// buffer.</span>
 <a
             href="#65"
             id="65"

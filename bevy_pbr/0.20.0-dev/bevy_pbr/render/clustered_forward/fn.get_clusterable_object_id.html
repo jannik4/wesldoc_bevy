@@ -113,7 +113,10 @@
 
 <pre class="code-block"><code>fn get_clusterable_object_id(index: u32) -> u32</code>
 </pre>
-
+<div class="comment"><p>Returns the index of the clusterable object at the given offset.</p>
+<p>Note that, in the case of a light probe, the index refers to an element in
+one of the two <code>light_probes</code> sublists, not the <code>clustered_lights</code> list.</p>
+</div>
 
 
         </div>

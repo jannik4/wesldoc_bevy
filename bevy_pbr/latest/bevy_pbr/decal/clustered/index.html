@@ -109,7 +109,31 @@
 <a class="module" href="../../../src/bevy_pbr/decal/clustered.html">Source</a>
 
 
+<div class="comment"><p>Support code for clustered decals.</p>
+<p>This module provides an iterator API, which you may wish to use in your own
+shaders if you want clustered decals to provide textures other than the base
+color. The iterator API allows you to iterate over all decals affecting the
+current fragment. Use <code>clustered_decal_iterator_new()</code> and
+<code>clustered_decal_iterator_next()</code> as follows:</p>
+<pre><code>  let view_z = get_view_z(vec4(world_position, 1.0));
+  let is_orthographic = view_is_orthographic();
 
+  let cluster_index =
+      clustered_forward::view_fragment_cluster_index(frag_coord, view_z, is_orthographic);
+  var clusterable_object_index_ranges =
+      clustered_forward::unpack_clusterable_object_index_ranges(cluster_index);
+
+  var iterator = clustered_decal_iterator_new(world_position, &amp;clusterable_object_index_ranges);
+  while (clustered_decal_iterator_next(&amp;iterator)) {
+      ... sample from the texture at iterator.texture_index at iterator.uv ...
+  }
+</code></pre>
+<p>In this way, in conjunction with a custom material, you can provide your own
+texture arrays that mirror <code>mesh_view_bindings::clustered_decal_textures</code> in
+order to support decals with normal maps, etc.</p>
+<p>Note that the order in which decals are returned is currently unpredictable,
+though generally stable from frame to frame.</p>
+</div>
 
 
 
@@ -129,7 +153,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>An object that allows stepping through all clustered decals that affect a
+single fragment.</p>
+</div>
         </div>
     </li>
     
@@ -180,7 +206,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Returns the view-space Z coordinate for the given world position.</p>
+</div>
         </div>
     </li>
     
@@ -190,7 +217,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Returns true if the current view describes an orthographic projection or
+false otherwise.</p>
+</div>
         </div>
     </li>
     

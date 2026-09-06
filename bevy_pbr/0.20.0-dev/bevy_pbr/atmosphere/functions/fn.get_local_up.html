@@ -108,12 +108,15 @@
 
 
 
-<a class="module" href="../../../src/bevy_pbr/atmosphere/functions.html#294-296">Source</a>
+<a class="module" href="../../../src/bevy_pbr/atmosphere/functions.html#301-303">Source</a>
 
 
 <pre class="code-block"><code>fn get_local_up(r: f32, t: f32, ray_dir: vec3&lt;f32&gt;) -> vec3&lt;f32&gt;</code>
 </pre>
-
+<div class="comment"><p>We assume the <code>up</code> vector at the view position is the y axis, since the world is locally flat/level.
+t = distance along view ray in atmosphere space
+NOTE: this means that if your world is actually spherical, this will be wrong.</p>
+</div>
 
 
         </div>

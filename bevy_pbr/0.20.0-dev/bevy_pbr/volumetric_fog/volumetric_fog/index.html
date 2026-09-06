@@ -109,7 +109,16 @@
 <a class="module" href="../../../src/bevy_pbr/volumetric_fog/volumetric_fog.html">Source</a>
 
 
-
+<div class="comment"><p>A postprocessing shader that implements volumetric fog via raymarching and
+sampling directional light shadow maps.</p>
+<p>The overall approach is a combination of the volumetric rendering in <a href="https://www.scratchapixel.com/lessons/3d-basic-rendering/volume-rendering-for-developers/intro-volume-rendering.html" rel="noopener noreferrer">1</a> and
+the shadow map raymarching in <a href="http://www.alexandre-pestana.com/volumetric-lights/" rel="noopener noreferrer">2</a>. First, we raytrace the AABB of the fog
+volume in order to determine how long our ray is. Then we do a raymarch, with
+physically-based calculations at each step to determine how much light was
+absorbed, scattered out, and scattered in. To determine in-scattering, we
+sample the shadow map for the light to determine whether the point was in
+shadow or not.</p>
+</div>
 
 
 
@@ -123,7 +132,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>1 / (4π)</p>
+</div>
         </div>
     </li>
     
@@ -203,7 +213,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>The GPU version of <a href="../../volumetric_fog/volumetric_fog/struct.VolumetricFog.html" title="VolumetricFog" rel="noopener noreferrer"><code>VolumetricFog</code></a>. See the comments in
+<code>volumetric_fog/mod.rs</code> for descriptions of the fields here.</p>
+</div>
         </div>
     </li>
     
@@ -250,7 +262,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>The common Henyey-Greenstein asymmetric phase function <a href="https://www.scratchapixel.com/lessons/3d-basic-rendering/volume-rendering-for-developers/ray-marching-get-it-right.html" rel="noopener noreferrer">1</a> <a href="https://www.pbr-book.org/4ed/Volume_Scattering/Phase_Functions#TheHenyeyndashGreensteinPhaseFunction" rel="noopener noreferrer">2</a>.</p>
+</div>
         </div>
     </li>
     

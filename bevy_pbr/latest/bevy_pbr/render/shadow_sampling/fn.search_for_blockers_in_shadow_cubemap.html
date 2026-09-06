@@ -119,7 +119,12 @@
     light_id: u32
 ) -> f32</code>
 </pre>
-
+<div class="comment"><p>Searches for PCSS blockers in a cubemap. This is the variant of the blocker
+search used for point and spot lights.</p>
+<p>This follows the logic in <code>sample_shadow_cubemap_gaussian</code>, but uses linear
+sampling instead of percentage-closer filtering.</p>
+<p>The <code>scale</code> parameter represents the size of the light.</p>
+</div>
 
 
         </div>

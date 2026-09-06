@@ -109,7 +109,19 @@
 <a class="module" href="../../../src/bevy_pbr/cluster/cluster_raster.html">Source</a>
 
 
-
+<div class="comment"><p>The shader that performs the cluster-object intersection tests and assigns
+objects to clusters as appropriate.</p>
+<p>Assuming the froxel grid has size WxHxD, this shader is expected to run on a
+viewport of size WxH. It draws each <em>Z slice</em> as an axis aligned quad such
+that each fragment shader invocation represents a single cluster-object pair
+in the froxel grid. The fragment shader performs a finer test to see if the
+object might intersects the cluster and, if it succeeds, records the result.
+Because the result is written to storage buffers, color writes are disabled
+for this shader invocation.</p>
+<p>This shader runs twice: once to accumulate the <em>count</em> of each object type in
+each cluster, and once to <em>populate</em> the actual IDs. Both invocations of the
+shader must compute the exact same visibility results.</p>
+</div>
 
 
 
@@ -127,7 +139,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Information about each clustered decal.</p>
+</div>
         </div>
     </li>
     
@@ -137,7 +150,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Information about each light.</p>
+</div>
         </div>
     </li>
     
@@ -159,7 +173,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Information about each light probe (reflection probe or irradiance volume).</p>
+</div>
         </div>
     </li>
     
@@ -169,7 +184,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Information about the clusters as a whole, including the dimensions of the
+cluster grid.</p>
+</div>
         </div>
     </li>
     
@@ -181,7 +198,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>The number of objects in each cluster, and the offset of each list.</p>
+</div>
         </div>
     </li>
     
@@ -193,7 +211,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>For each cluster, the counts of objects written <em>so far</em> to it.</p>
+</div>
         </div>
     </li>
     
@@ -203,7 +222,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Information about the view.</p>
+</div>
         </div>
     </li>
     
@@ -213,7 +233,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>The list of clusterable object Z slices that we read from to.</p>
+</div>
         </div>
     </li>
     
@@ -230,7 +251,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>The same as the <code>ClusterOffsetsAndCounts</code> structure, but with atomic fields
+so that we can write to it.</p>
+</div>
         </div>
     </li>
     
@@ -240,7 +263,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>The same as the <code>ClusterOffsetsAndCountsElement</code> structure, but with atomic
+fields so that we can write to it.</p>
+</div>
         </div>
     </li>
     
@@ -250,7 +275,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Data output from the vertex shader and input to the fragment shader.</p>
+</div>
         </div>
     </li>
     
@@ -289,7 +315,10 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Returns the position of the quad vertex necessary to enclose all the
+fragments that represent the cluster AABB.
+The cluster bounds are supplied as <code>vec4(min X, min Y, max X, max Y)</code>.</p>
+</div>
         </div>
     </li>
     
@@ -299,7 +328,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Converts a clip-space position to a view-space position.
+See <code>bevy_light::cluster::assign::clip_to_view</code>.</p>
+</div>
         </div>
     </li>
     
@@ -309,7 +340,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>See <code>bevy_light::cluster::assign::compute_aabb_for_cluster</code>.</p>
+</div>
         </div>
     </li>
     
@@ -319,7 +351,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Computes the near and far extents of the cluster grid.</p>
+</div>
         </div>
     </li>
     
@@ -329,7 +362,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Computes <code>cos(atan(x))</code> cheaply.
+See https://en.wikipedia.org/wiki/List_of_trigonometric_identities</p>
+</div>
         </div>
     </li>
     
@@ -339,7 +374,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Returns true if a rect light should be culled.</p>
+</div>
         </div>
     </li>
     
@@ -349,7 +385,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Returns true if a spot light should be culled.
+See <code>assign_objects_to_clusters</code> in <code>bevy_light/src/cluster/assign.rs</code>.</p>
+</div>
         </div>
     </li>
     
@@ -371,7 +409,10 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Looks up and returns the world-space center and radius of the bounding sphere
+for the object with the given index and type.
+Returns a 4-vector with the fields <code>vec4(center X, center Y, center Z, radius)</code>.</p>
+</div>
         </div>
     </li>
     
@@ -393,7 +434,10 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Calculate the intersection of a ray from the eye through the view space
+position to a z plane
+See <code>bevy_light::cluster::assign::line_intersection_to_z_plane</code>.</p>
+</div>
         </div>
     </li>
     
@@ -403,7 +447,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Converts a screen-space position to a view-space position.
+See <code>bevy_light::cluster::assign::screen_to_view</code>.</p>
+</div>
         </div>
     </li>
     
@@ -413,7 +459,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Computes <code>sin(atan(x))</code> cheaply.
+See https://en.wikipedia.org/wiki/List_of_trigonometric_identities</p>
+</div>
         </div>
     </li>
     
@@ -423,7 +471,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Returns true if the given sphere intersects the AABB with the given
+boundaries.</p>
+</div>
         </div>
     </li>
     
@@ -433,7 +483,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>The vertex entry point.</p>
+</div>
         </div>
     </li>
     

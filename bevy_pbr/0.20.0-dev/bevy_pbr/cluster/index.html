@@ -118,21 +118,25 @@
     <li>
         <div><a class="module" href="cluster_allocate/index.html">cluster_allocate</a></div>
         <div>
-            
+            <div class="comment-inline"><p>The shader that allocates the clustered object ID buffer.</p>
+</div>
         </div>
     </li>
     
     <li>
         <div><a class="module" href="cluster_raster/index.html">cluster_raster</a></div>
         <div>
-            
+            <div class="comment-inline"><p>The shader that performs the cluster-object intersection tests and assigns
+objects to clusters as appropriate.</p>
+</div>
         </div>
     </li>
     
     <li>
         <div><a class="module" href="cluster_z_slice/index.html">cluster_z_slice</a></div>
         <div>
-            
+            <div class="comment-inline"><p>The shader that divides clusterable objects into Z slices.</p>
+</div>
         </div>
     </li>
     
@@ -240,7 +244,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>An axis-aligned bounding box.</p>
+</div>
         </div>
     </li>
     
@@ -250,7 +255,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>An axis-aligned bounding box using unsigned integer coordinates.</p>
+</div>
         </div>
     </li>
     
@@ -260,7 +266,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Metadata stored on GPU that's global to all clusters for a view.</p>
+</div>
         </div>
     </li>
     
@@ -270,7 +277,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Indirect draw parameters in the format required by the WebGPU specification.</p>
+</div>
         </div>
     </li>
     
@@ -280,7 +288,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>The GPU representation of a single Z-slice of a clusterable object.</p>
+</div>
         </div>
     </li>
     
@@ -297,7 +306,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Returns the AABB encompassing all clusters that intersect a sphere.</p>
+</div>
         </div>
     </li>
     
@@ -307,7 +317,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Returns the AABB of an object suitable for conversion into an AABB of
+clusters.</p>
+</div>
         </div>
     </li>
     
@@ -317,7 +329,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Computes the scale of the camera from the view matrix.</p>
+</div>
         </div>
     </li>
     
@@ -327,7 +340,10 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Returns the cluster coordinates corresponding to a position in normalized
+device coordinates.
+See <code>bevy_light::cluster::assign::ndc_position_to_cluster</code>.</p>
+</div>
         </div>
     </li>
     

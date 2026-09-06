@@ -113,7 +113,10 @@
 
 <pre class="code-block"><code>fn F_Schlick_vec(f0: vec3&lt;f32&gt;, f90: f32, VdotH: f32) -> vec3&lt;f32&gt;</code>
 </pre>
-
+<div class="comment"><p>Fresnel function
+see https://google.github.io/filament/Filament.md.html#citation-schlick94
+F_Schlick(v,h,f_0,f_90) = f_0 + (f_90 − f_0) (1 − v⋅h)^5</p>
+</div>
 
 
         </div>

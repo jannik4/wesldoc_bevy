@@ -113,7 +113,22 @@
 
 <pre class="code-block"><code>fn box_blur_a(frag_coord: vec4&lt;f32&gt;, coc: f32, frag_offset: vec2&lt;f32&gt;) -> vec4&lt;f32&gt;</code>
 </pre>
-
+<div class="comment"><p>Performs a box blur in a single direction, sampling <code>color_texture_a</code>.</p>
+<ul>
+<li>
+<p><code>frag_coord</code> is the screen-space pixel coordinate of the fragment (i.e. the
+<code>position</code> input to the fragment).</p>
+</li>
+<li>
+<p><code>coc</code> is the diameter (not the radius) of the circle of confusion for this
+fragment.</p>
+</li>
+<li>
+<p><code>frag_offset</code> is the vector, in screen-space units, from one sample to the
+next. This need not be horizontal or vertical.</p>
+</li>
+</ul>
+</div>
 
 
         </div>

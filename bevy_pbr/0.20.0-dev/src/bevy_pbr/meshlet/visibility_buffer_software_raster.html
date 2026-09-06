@@ -108,145 +108,145 @@
             id="1"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >1</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">package</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-punctuation syntax-punctuation-bracket">{</span>
+        >1</a><span class="syntax-comment syntax-comment-line">//! Compute shader for rasterizing small clusters into a visibility buffer.</span>
 <a
             href="#2"
             id="2"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >2</a>    <span class="syntax-namespace">meshlet</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">bindings</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-punctuation syntax-punctuation-bracket">{</span>
+        >2</a>
 <a
             href="#3"
             id="3"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >3</a>        <span class="syntax-namespace">meshlet_cluster_meshlet_ids</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
+        >3</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">package</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#4"
             id="4"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >4</a>        <span class="syntax-namespace">meshlets</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
+        >4</a>    <span class="syntax-namespace">meshlet</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">bindings</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#5"
             id="5"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >5</a>        <span class="syntax-namespace">meshlet_cluster_instance_ids</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
+        >5</a>        <span class="syntax-namespace">meshlet_cluster_meshlet_ids</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#6"
             id="6"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >6</a>        <span class="syntax-namespace">meshlet_instance_uniforms</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
+        >6</a>        <span class="syntax-namespace">meshlets</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#7"
             id="7"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >7</a>        <span class="syntax-namespace">meshlet_raster_clusters</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
+        >7</a>        <span class="syntax-namespace">meshlet_cluster_instance_ids</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#8"
             id="8"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >8</a>        <span class="syntax-namespace">meshlet_previous_raster_counts</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
+        >8</a>        <span class="syntax-namespace">meshlet_instance_uniforms</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#9"
             id="9"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >9</a>        <span class="syntax-namespace">meshlet_software_raster_cluster_count</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
+        >9</a>        <span class="syntax-namespace">meshlet_raster_clusters</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#10"
             id="10"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >10</a>        <span class="syntax-namespace">meshlet_visibility_buffer</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
+        >10</a>        <span class="syntax-namespace">meshlet_previous_raster_counts</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#11"
             id="11"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >11</a>        <span class="syntax-namespace">view</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
+        >11</a>        <span class="syntax-namespace">meshlet_software_raster_cluster_count</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#12"
             id="12"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >12</a>        <span class="syntax-namespace">get_meshlet_vertex_count</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
+        >12</a>        <span class="syntax-namespace">meshlet_visibility_buffer</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#13"
             id="13"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >13</a>        <span class="syntax-namespace">get_meshlet_triangle_count</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
+        >13</a>        <span class="syntax-namespace">view</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#14"
             id="14"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >14</a>        <span class="syntax-namespace">get_meshlet_vertex_id</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
+        >14</a>        <span class="syntax-namespace">get_meshlet_vertex_count</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#15"
             id="15"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >15</a>        <span class="syntax-namespace">get_meshlet_vertex_position</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
+        >15</a>        <span class="syntax-namespace">get_meshlet_triangle_count</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#16"
             id="16"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >16</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
+        >16</a>        <span class="syntax-namespace">get_meshlet_vertex_id</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#17"
             id="17"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >17</a>    <span class="syntax-namespace">render</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-punctuation syntax-punctuation-bracket">{</span>
+        >17</a>        <span class="syntax-namespace">get_meshlet_vertex_position</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#18"
             id="18"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >18</a>        <span class="syntax-namespace">mesh_functions</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">mesh_position_local_to_world</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
+        >18</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#19"
             id="19"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >19</a>        <span class="syntax-namespace">view_transformations</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">ndc_to_uv</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
+        >19</a>    <span class="syntax-namespace">render</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#20"
             id="20"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >20</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
+        >20</a>        <span class="syntax-namespace">mesh_functions</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">mesh_position_local_to_world</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#21"
             id="21"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >21</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >21</a>        <span class="syntax-namespace">view_transformations</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">ndc_to_uv</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#22"
             id="22"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >22</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">bevy_render</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">maths</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">affine3_to_square</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >22</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#23"
             id="23"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >23</a>
+        >23</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#24"
             id="24"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >24</a><span class="syntax-comment syntax-comment-line">/// Compute shader for rasterizing small clusters into a visibility buffer.</span>
+        >24</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">bevy_render</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">maths</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">affine3_to_square</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#25"
             id="25"

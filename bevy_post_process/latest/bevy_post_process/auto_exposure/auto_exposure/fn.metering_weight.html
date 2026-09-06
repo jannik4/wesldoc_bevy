@@ -113,7 +113,11 @@
 
 <pre class="code-block"><code>fn metering_weight(coords: vec2&lt;f32&gt;) -> u32</code>
 </pre>
-
+<div class="comment"><p>Read the metering mask at the given UV coordinates, returning a weight for the histogram.</p>
+<p>Since the histogram is summed in the compute_average step, there is a limit to the amount of
+distinct values that can be represented. When using the chosen value of 16, the maximum
+amount of pixels that can be weighted and summed is 2^32 / 16 = 16384^2.</p>
+</div>
 
 
         </div>

@@ -122,23 +122,28 @@
     position: vec4&lt;f32&gt;
 }</code>
 </pre>
-
+<div class="comment"><p>The Vertex output of the default vertex shader for the Ui Material pipeline.</p>
+</div>
 <h2 class="item-list-title">Fields</h2>
 
 <div style="margin: 8px 0;"><code>@location(0) uv: vec2&lt;f32&gt;</code></div>
 
 
 <div style="margin: 8px 0;"><code>@location(1) border_widths: vec4&lt;f32&gt;</code></div>
-
+<div class="comment"><p>The size of the borders in UV space. Order is Left, Right, Top, Bottom.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>@location(2) border_radius_x: vec4&lt;f32&gt;</code></div>
-
+<div class="comment"><p>The border radius x value in pixels. Order is top left, top right, bottom right, bottom left.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>@location(3) border_radius_y: vec4&lt;f32&gt;</code></div>
-
+<div class="comment"><p>The border radius y value in pixels. Order is top left, top right, bottom right, bottom left.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>@location(4) @interpolate(flat) size: vec2&lt;f32&gt;</code></div>
-
+<div class="comment"><p>The size of the node in pixels. Order is width, height.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>@builtin(position) position: vec4&lt;f32&gt;</code></div>
 

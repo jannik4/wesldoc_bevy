@@ -108,175 +108,175 @@
             id="1"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >1</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">package</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">cluster</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-type">ClusterMetadata</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >1</a><span class="syntax-comment syntax-comment-line">//! The shader that allocates the clustered object ID buffer.</span>
 <a
             href="#2"
             id="2"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >2</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">package</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">render</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">mesh_view_types</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-punctuation syntax-punctuation-bracket">{</span><span class="syntax-type">ClusterOffsetsAndCounts</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">Lights</span><span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >2</a><span class="syntax-comment syntax-comment-line">//!</span>
 <a
             href="#3"
             id="3"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >3</a>
+        >3</a><span class="syntax-comment syntax-comment-line">//! The clustered object ID buffer consists of many tightly-packed</span>
 <a
             href="#4"
             id="4"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >4</a><span class="syntax-comment syntax-comment-line">// The shader that allocates the clustered object ID buffer.</span>
+        >4</a><span class="syntax-comment syntax-comment-line">//! variable-length arrays of clustered object IDs. The offset to the start of</span>
 <a
             href="#5"
             id="5"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >5</a><span class="syntax-comment syntax-comment-line">//</span>
+        >5</a><span class="syntax-comment syntax-comment-line">//! each list is stored in `ClusterOffsetsAndCounts`. To allocate the lists in</span>
 <a
             href="#6"
             id="6"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >6</a><span class="syntax-comment syntax-comment-line">// The clustered object ID buffer consists of many tightly-packed</span>
+        >6</a><span class="syntax-comment syntax-comment-line">//! the buffer, the number of objects of each type in each cluster must be known.</span>
 <a
             href="#7"
             id="7"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >7</a><span class="syntax-comment syntax-comment-line">// variable-length arrays of clustered object IDs. The offset to the start of</span>
+        >7</a><span class="syntax-comment syntax-comment-line">//!</span>
 <a
             href="#8"
             id="8"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >8</a><span class="syntax-comment syntax-comment-line">// each list is stored in `ClusterOffsetsAndCounts`. To allocate the lists in</span>
+        >8</a><span class="syntax-comment syntax-comment-line">//! Since the lists are tightly packed, determining the offsets in the global</span>
 <a
             href="#9"
             id="9"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >9</a><span class="syntax-comment syntax-comment-line">// the buffer, the number of objects of each type in each cluster must be known.</span>
+        >9</a><span class="syntax-comment syntax-comment-line">//! buffer is a [prefix sum] problem. To deal with the fact that workgroup sizes</span>
 <a
             href="#10"
             id="10"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >10</a><span class="syntax-comment syntax-comment-line">//</span>
+        >10</a><span class="syntax-comment syntax-comment-line">//! are limited to 256 in `wgpu`, and we will usually have more clusters than</span>
 <a
             href="#11"
             id="11"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >11</a><span class="syntax-comment syntax-comment-line">// Since the lists are tightly packed, determining the offsets in the global</span>
+        >11</a><span class="syntax-comment syntax-comment-line">//! that, we use a two-pass approach:</span>
 <a
             href="#12"
             id="12"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >12</a><span class="syntax-comment syntax-comment-line">// buffer is a [prefix sum] problem. To deal with the fact that workgroup sizes</span>
+        >12</a><span class="syntax-comment syntax-comment-line">//!</span>
 <a
             href="#13"
             id="13"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >13</a><span class="syntax-comment syntax-comment-line">// are limited to 256 in `wgpu`, and we will usually have more clusters than</span>
+        >13</a><span class="syntax-comment syntax-comment-line">//! 1. First, the *local* allocation pass runs on workgroups of 256 clusters</span>
 <a
             href="#14"
             id="14"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >14</a><span class="syntax-comment syntax-comment-line">// that, we use a two-pass approach:</span>
+        >14</a><span class="syntax-comment syntax-comment-line">//! each. A [Hillis-Steele scan] is performed to allocate the position in the</span>
 <a
             href="#15"
             id="15"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >15</a><span class="syntax-comment syntax-comment-line">//</span>
+        >15</a><span class="syntax-comment syntax-comment-line">//! buffer for each 256 clusters, relative to the first cluster in the workgroup.</span>
 <a
             href="#16"
             id="16"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >16</a><span class="syntax-comment syntax-comment-line">// 1. First, the *local* allocation pass runs on workgroups of 256 clusters</span>
+        >16</a><span class="syntax-comment syntax-comment-line">//!</span>
 <a
             href="#17"
             id="17"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >17</a><span class="syntax-comment syntax-comment-line">// each. A [Hillis-Steele scan] is performed to allocate the position in the</span>
+        >17</a><span class="syntax-comment syntax-comment-line">//! 2. Next, the *global* allocation pass runs a sequential loop over each 256</span>
 <a
             href="#18"
             id="18"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >18</a><span class="syntax-comment syntax-comment-line">// buffer for each 256 clusters, relative to the first cluster in the workgroup.</span>
+        >18</a><span class="syntax-comment syntax-comment-line">//! clusters to calculate the final offsets relative to the previous 256 cluster</span>
 <a
             href="#19"
             id="19"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >19</a><span class="syntax-comment syntax-comment-line">//</span>
+        >19</a><span class="syntax-comment syntax-comment-line">//! chunk.</span>
 <a
             href="#20"
             id="20"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >20</a><span class="syntax-comment syntax-comment-line">// 2. Next, the *global* allocation pass runs a sequential loop over each 256</span>
+        >20</a><span class="syntax-comment syntax-comment-line">//!</span>
 <a
             href="#21"
             id="21"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >21</a><span class="syntax-comment syntax-comment-line">// clusters to calculate the final offsets relative to the previous 256 cluster</span>
+        >21</a><span class="syntax-comment syntax-comment-line">//! At the end of this process, the clusters will have been assigned to their</span>
 <a
             href="#22"
             id="22"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >22</a><span class="syntax-comment syntax-comment-line">// chunk.</span>
+        >22</a><span class="syntax-comment syntax-comment-line">//! final positions in the list.</span>
 <a
             href="#23"
             id="23"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >23</a><span class="syntax-comment syntax-comment-line">//</span>
+        >23</a><span class="syntax-comment syntax-comment-line">//!</span>
 <a
             href="#24"
             id="24"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >24</a><span class="syntax-comment syntax-comment-line">// At the end of this process, the clusters will have been assigned to their</span>
+        >24</a><span class="syntax-comment syntax-comment-line">//! [prefix sum]: https://en.wikipedia.org/wiki/Prefix_sum</span>
 <a
             href="#25"
             id="25"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >25</a><span class="syntax-comment syntax-comment-line">// final positions in the list.</span>
+        >25</a><span class="syntax-comment syntax-comment-line">//!</span>
 <a
             href="#26"
             id="26"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >26</a><span class="syntax-comment syntax-comment-line">//</span>
+        >26</a><span class="syntax-comment syntax-comment-line">//! [Hillis-Steele scan]: https://en.wikipedia.org/wiki/Prefix_sum#Algorithm_1:_Shorter_span,_more_parallel</span>
 <a
             href="#27"
             id="27"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >27</a><span class="syntax-comment syntax-comment-line">// [prefix sum]: https://en.wikipedia.org/wiki/Prefix_sum</span>
+        >27</a>
 <a
             href="#28"
             id="28"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >28</a><span class="syntax-comment syntax-comment-line">//</span>
+        >28</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">package</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">cluster</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-type">ClusterMetadata</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#29"
             id="29"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >29</a><span class="syntax-comment syntax-comment-line">// [Hillis-Steele scan]: https://en.wikipedia.org/wiki/Prefix_sum#Algorithm_1:_Shorter_span,_more_parallel</span>
+        >29</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-import">import</span> <span class="syntax-namespace">package</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">render</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-namespace">mesh_view_types</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-punctuation syntax-punctuation-bracket">{</span><span class="syntax-type">ClusterOffsetsAndCounts</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">Lights</span><span class="syntax-punctuation syntax-punctuation-bracket">}</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#30"
             id="30"
@@ -324,7 +324,7 @@
             id="37"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >37</a><span class="syntax-comment syntax-comment-line">// The offset of the first clustered light within the buffer for each thread.</span>
+        >37</a><span class="syntax-comment syntax-comment-line">/// The offset of the first clustered light within the buffer for each thread.</span>
 <a
             href="#38"
             id="38"
@@ -342,13 +342,13 @@
             id="40"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >40</a><span class="syntax-comment syntax-comment-line">// The local allocation pass that, for each chunk of 256 clusters, calculates</span>
+        >40</a><span class="syntax-comment syntax-comment-line">/// The local allocation pass that, for each chunk of 256 clusters, calculates</span>
 <a
             href="#41"
             id="41"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >41</a><span class="syntax-comment syntax-comment-line">// the offset for each cluster in the chunk.</span>
+        >41</a><span class="syntax-comment syntax-comment-line">/// the offset for each cluster in the chunk.</span>
 <a
             href="#42"
             id="42"
@@ -636,13 +636,13 @@
             id="89"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >89</a><span class="syntax-comment syntax-comment-line">// The global allocation pass that propagates the offsets from each chunk of 256</span>
+        >89</a><span class="syntax-comment syntax-comment-line">/// The global allocation pass that propagates the offsets from each chunk of 256</span>
 <a
             href="#90"
             id="90"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >90</a><span class="syntax-comment syntax-comment-line">// clusters to later chunks sequentially.</span>
+        >90</a><span class="syntax-comment syntax-comment-line">/// clusters to later chunks sequentially.</span>
 <a
             href="#91"
             id="91"
@@ -828,31 +828,31 @@
             id="121"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >121</a><span class="syntax-comment syntax-comment-line">// Returns the total number of objects in the given cluster.</span>
+        >121</a><span class="syntax-comment syntax-comment-line">/// Returns the total number of objects in the given cluster.</span>
 <a
             href="#122"
             id="122"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >122</a><span class="syntax-comment syntax-comment-line">//</span>
+        >122</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#123"
             id="123"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >123</a><span class="syntax-comment syntax-comment-line">// The per-type counts are laid out as:</span>
+        >123</a><span class="syntax-comment syntax-comment-line">/// The per-type counts are laid out as:</span>
 <a
             href="#124"
             id="124"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >124</a><span class="syntax-comment syntax-comment-line">//   [0] = (offset, point lights, spot lights, rect lights)</span>
+        >124</a><span class="syntax-comment syntax-comment-line">///   [0] = (offset, point lights, spot lights, rect lights)</span>
 <a
             href="#125"
             id="125"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >125</a><span class="syntax-comment syntax-comment-line">//   [1] = (reflection probes, irradiance volumes, decals, pad)</span>
+        >125</a><span class="syntax-comment syntax-comment-line">///   [1] = (reflection probes, irradiance volumes, decals, pad)</span>
 <a
             href="#126"
             id="126"

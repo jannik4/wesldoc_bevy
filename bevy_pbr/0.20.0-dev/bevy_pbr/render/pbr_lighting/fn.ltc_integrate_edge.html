@@ -108,12 +108,17 @@
 
 
 
-<a class="module" href="../../../src/bevy_pbr/render/pbr_lighting.html#952-960">Source</a>
+<a class="module" href="../../../src/bevy_pbr/render/pbr_lighting.html#955-963">Source</a>
 
 
 <pre class="code-block"><code>fn ltc_integrate_edge(v1: vec3&lt;f32&gt;, v2: vec3&lt;f32&gt;) -> f32</code>
 </pre>
-
+<div class="comment"><p>Linearly Transformed Cosines (LTC) area light evaluation.
+Based on: Heitz et al. 2016, "Real-Time Polygonal-Light Shading with Linearly Transformed Cosines"</p>
+<p>Integrate one edge of the spherical polygon formed by the LTC-transformed quad.
+Implements Eq. 11 using a polynomial approximation based on https://advances.realtimerendering.com/s2016/s2016_ltc_rnd.pdf
+Using the equation as-is produces visible artifacts.</p>
+</div>
 
 
         </div>

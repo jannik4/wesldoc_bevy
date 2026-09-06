@@ -110,7 +110,11 @@
 
 <pre class="code-block"><code>fn load_mip_0_single_sample(st: vec2&lt;f32&gt;, sample: i32) -> f32</code>
 </pre>
-
+<div class="comment"><p>Loads a single 2×2 square of texels at the given position from the source
+image, reduces them, and returns the result.</p>
+<p><code>st</code> should be in texels, not in the <a href="0,%201" title="0, 1" rel="noopener noreferrer">0, 1</a> range like UVs. That is, <code>st</code> is
+<code>uv * textureDimensions(mip_0).xy</code>.</p>
+</div>
 
 
         </div>

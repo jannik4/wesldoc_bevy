@@ -119,7 +119,15 @@
     search_size: f32
 ) -> f32</code>
 </pre>
-
+<div class="comment"><p>Performs the blocker search portion of percentage-closer soft shadows (PCSS).
+This is the variation used for directional lights.</p>
+<p>We can't use Castano '13 here because that has a hard-wired fixed size, while
+the PCSS algorithm requires a search size that varies based on the size of
+the light. So we instead use the D3D sample point positions, spaced according
+to the search size, to provide a sample pattern in a similar manner to the
+cubemap sampling approach we use for PCF.</p>
+<p><code>search_size</code> is the size of the search region in texels.</p>
+</div>
 
 
         </div>

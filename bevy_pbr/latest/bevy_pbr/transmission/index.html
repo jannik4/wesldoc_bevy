@@ -157,7 +157,12 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>The IOR impacts how much a single microfacet refracts incoming light. In turn this changes how
+"wide" the distribution of output ray directions is and how rough the BRDF should be.
+This function scales the roughness toward 0.0 as IOR tends towards 1.0, while leaving the default
+roughness for IOR = 1.5.
+Adapted from Khronos gltf-Sample-Renderer (https://github.com/KhronosGroup/glTF-Sample-Renderer/blob/bec106e53da4a6a398aa3205f0f96563519a657e/source/Renderer/shaders/functions.glsl#L84-L89)</p>
+</div>
         </div>
     </li>
     

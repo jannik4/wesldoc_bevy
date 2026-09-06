@@ -123,20 +123,24 @@
     sphere_radius: f32
 }</code>
 </pre>
-
+<div class="comment"><p>Data output from the vertex shader and input to the fragment shader.</p>
+</div>
 <h2 class="item-list-title">Fields</h2>
 
 <div style="margin: 8px 0;"><code>@builtin(position) position: vec4&lt;f32&gt;</code></div>
 
 
 <div style="margin: 8px 0;"><code>@location(0) @interpolate(flat) instance_id: u32</code></div>
-
+<div class="comment"><p>The index of the Z slice we're rasterizing.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>@location(1) @interpolate(flat) sphere_position: vec3&lt;f32&gt;</code></div>
-
+<div class="comment"><p>The view-space center of the bounding sphere of the object.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>@location(2) @interpolate(flat) sphere_radius: f32</code></div>
-
+<div class="comment"><p>The view-space radius of the bounding sphere of the object.</p>
+</div>
 
 
 

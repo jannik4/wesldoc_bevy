@@ -108,12 +108,15 @@
 
 
 
-<a class="module" href="../../../src/bevy_pbr/render/pbr_lighting.html#311-314">Source</a>
+<a class="module" href="../../../src/bevy_pbr/render/pbr_lighting.html#314-317">Source</a>
 
 
 <pre class="code-block"><code>fn F_Schlick(f0: f32, f90: f32, VdotH: f32) -> f32</code>
 </pre>
-
+<div class="comment"><p>Fresnel function
+see https://google.github.io/filament/Filament.md.html#citation-schlick94
+F_Schlick(v,h,f_0,f_90) = f_0 + (f_90 − f_0) (1 − v⋅h)^5</p>
+</div>
 
 
         </div>

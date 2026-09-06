@@ -101,7 +101,14 @@
 <a class="module" href="../../../src/bevy_render/render_resource/sparse_buffer_update.html">Source</a>
 
 
-
+<div class="comment"><p>A compute shader that performs scattering sparse updates to
+<code>AtomicSparseBufferVec</code> types.</p>
+<p>This shader isn't used for every update. Only if the number of updates is
+small is this shader used. Otherwise, the standard <code>write_buffer</code> <code>wgpu</code>
+command is used to update the buffer in bulk.</p>
+<p>We issue one thread per <em>word</em>, not per element. That allows us to achieve
+maximum parallelism, without any loops.</p>
+</div>
 
 
 
@@ -119,7 +126,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>The buffer we're copying to.</p>
+</div>
         </div>
     </li>
     
@@ -129,7 +137,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>For each element in <code>src_buffer</code>, the element in <code>dest_buffer</code> that we should
+copy it to.</p>
+</div>
         </div>
     </li>
     
@@ -139,7 +149,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Metadata that describes the operation.</p>
+</div>
         </div>
     </li>
     
@@ -149,7 +160,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>The buffer we're copying from.</p>
+</div>
         </div>
     </li>
     
@@ -166,7 +178,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Metadata that describes the update.</p>
+</div>
         </div>
     </li>
     

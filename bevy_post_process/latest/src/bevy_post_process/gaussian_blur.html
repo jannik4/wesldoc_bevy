@@ -108,25 +108,25 @@
             id="1"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >1</a><span class="syntax-comment syntax-comment-line">// A library containing a 1D Gaussian blur kernel.</span>
+        >1</a><span class="syntax-comment syntax-comment-line">//! A library containing a 1D Gaussian blur kernel.</span>
 <a
             href="#2"
             id="2"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >2</a><span class="syntax-comment syntax-comment-line">//</span>
+        >2</a><span class="syntax-comment syntax-comment-line">//!</span>
 <a
             href="#3"
             id="3"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >3</a><span class="syntax-comment syntax-comment-line">// This is used by depth of field, but you can also use it in custom</span>
+        >3</a><span class="syntax-comment syntax-comment-line">//! This is used by depth of field, but you can also use it in custom</span>
 <a
             href="#4"
             id="4"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >4</a><span class="syntax-comment syntax-comment-line">// postprocessing passes.</span>
+        >4</a><span class="syntax-comment syntax-comment-line">//! postprocessing passes.</span>
 <a
             href="#5"
             id="5"
@@ -138,109 +138,109 @@
             id="6"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >6</a><span class="syntax-comment syntax-comment-line">// Performs a single direction of the separable Gaussian blur kernel.</span>
+        >6</a><span class="syntax-comment syntax-comment-line">/// Performs a single direction of the separable Gaussian blur kernel.</span>
 <a
             href="#7"
             id="7"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >7</a><span class="syntax-comment syntax-comment-line">//</span>
+        >7</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#8"
             id="8"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >8</a><span class="syntax-comment syntax-comment-line">// * `color_texture` is the texture to blur.</span>
+        >8</a><span class="syntax-comment syntax-comment-line">/// * `color_texture` is the texture to blur.</span>
 <a
             href="#9"
             id="9"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >9</a><span class="syntax-comment syntax-comment-line">//</span>
+        >9</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#10"
             id="10"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >10</a><span class="syntax-comment syntax-comment-line">// * `color_texture_sampler` is a sampler to sample the texture. It must have</span>
+        >10</a><span class="syntax-comment syntax-comment-line">/// * `color_texture_sampler` is a sampler to sample the texture. It must have</span>
 <a
             href="#11"
             id="11"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >11</a><span class="syntax-comment syntax-comment-line">//   linear filtering for both minification and magnification.</span>
+        >11</a><span class="syntax-comment syntax-comment-line">///   linear filtering for both minification and magnification.</span>
 <a
             href="#12"
             id="12"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >12</a><span class="syntax-comment syntax-comment-line">//</span>
+        >12</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#13"
             id="13"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >13</a><span class="syntax-comment syntax-comment-line">// * `frag_coord` is the screen-space pixel coordinate of the fragment (i.e. the</span>
+        >13</a><span class="syntax-comment syntax-comment-line">/// * `frag_coord` is the screen-space pixel coordinate of the fragment (i.e. the</span>
 <a
             href="#14"
             id="14"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >14</a><span class="syntax-comment syntax-comment-line">//   `position` input to the fragment).</span>
+        >14</a><span class="syntax-comment syntax-comment-line">///   `position` input to the fragment).</span>
 <a
             href="#15"
             id="15"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >15</a><span class="syntax-comment syntax-comment-line">//</span>
+        >15</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#16"
             id="16"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >16</a><span class="syntax-comment syntax-comment-line">// * `coc` is the diameter (not the radius) of the circle of confusion for this</span>
+        >16</a><span class="syntax-comment syntax-comment-line">/// * `coc` is the diameter (not the radius) of the circle of confusion for this</span>
 <a
             href="#17"
             id="17"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >17</a><span class="syntax-comment syntax-comment-line">//   fragment.</span>
+        >17</a><span class="syntax-comment syntax-comment-line">///   fragment.</span>
 <a
             href="#18"
             id="18"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >18</a><span class="syntax-comment syntax-comment-line">//</span>
+        >18</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#19"
             id="19"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >19</a><span class="syntax-comment syntax-comment-line">// * `frag_offset` is the vector, in screen-space units, from one sample to the</span>
+        >19</a><span class="syntax-comment syntax-comment-line">/// * `frag_offset` is the vector, in screen-space units, from one sample to the</span>
 <a
             href="#20"
             id="20"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >20</a><span class="syntax-comment syntax-comment-line">//   next. For a horizontal blur this will be `vec2(1.0, 0.0)`; for a vertical</span>
+        >20</a><span class="syntax-comment syntax-comment-line">///   next. For a horizontal blur this will be `vec2(1.0, 0.0)`; for a vertical</span>
 <a
             href="#21"
             id="21"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >21</a><span class="syntax-comment syntax-comment-line">//   blur this will be `vec2(0.0, 1.0)`.</span>
+        >21</a><span class="syntax-comment syntax-comment-line">///   blur this will be `vec2(0.0, 1.0)`.</span>
 <a
             href="#22"
             id="22"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >22</a><span class="syntax-comment syntax-comment-line">//</span>
+        >22</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#23"
             id="23"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >23</a><span class="syntax-comment syntax-comment-line">// Returns the resulting color of the fragment.</span>
+        >23</a><span class="syntax-comment syntax-comment-line">/// Returns the resulting color of the fragment.</span>
 <a
             href="#24"
             id="24"
@@ -534,13 +534,7 @@
             id="72"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >72</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
-<a
-            href="#73"
-            id="73"
-            class="line-number line-number-digits-2"
-            data-nosnippet
-        >73</a></code>
+        >72</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span></code>
 </pre>
 
         </div>

@@ -108,7 +108,7 @@
 
 
 
-<a class="module" href="../../../src/bevy_pbr/render/pbr_lighting.html#328-341">Source</a>
+<a class="module" href="../../../src/bevy_pbr/render/pbr_lighting.html#331-344">Source</a>
 
 
 <pre class="code-block"><code>fn specular_multiscatter(
@@ -120,7 +120,11 @@
     specular_intensity: f32
 ) -> vec3&lt;f32&gt;</code>
 </pre>
-
+<div class="comment"><p>Given distribution, visibility, and Fresnel term, calculates the final
+specular light.</p>
+<p>Multiscattering approximation:
+<a href="https://google.github.io/filament/Filament.md.html#listing_energycompensationimpl" rel="noopener noreferrer">https://google.github.io/filament/Filament.md.html#listing_energycompensationimpl</a></p>
+</div>
 
 
         </div>

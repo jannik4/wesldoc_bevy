@@ -117,14 +117,22 @@
     bin_index: u32
 }</code>
 </pre>
-
+<div class="comment"><p>One mesh instance in a bin.</p>
+<p>This corresponds to the CPU-side <code>GpuRenderBinnedMeshInstance</code> structure.</p>
+<p>Note that this structure isn't sorted within the
+<code>binned_mesh_instances</code> buffer. Instances from the same bin aren't
+guaranteed to be adjacent to one another.</p>
+</div>
 <h2 class="item-list-title">Fields</h2>
 
 <div style="margin: 8px 0;"><code>input_uniform_index: u32</code></div>
-
+<div class="comment"><p>The index of the <code>MeshInputUniform</code> corresponding to this mesh instance
+in the <code>MeshInputUniform</code> buffer.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>bin_index: u32</code></div>
-
+<div class="comment"><p>The index of the bin that this mesh instance belongs to.</p>
+</div>
 
 
 

@@ -127,16 +127,22 @@
 <h2 class="item-list-title">Fields</h2>
 
 <div style="margin: 8px 0;"><code>light_from_world_transposed: mat3x4&lt;f32&gt;</code></div>
-
+<div class="comment"><p>This is stored as the transpose in order to save space in this structure.
+It'll be transposed in the <code>environment_map_light</code> function.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>falloff: vec3&lt;f32&gt;</code></div>
-
+<div class="comment"><p>The falloff region, specified as a fraction of the light probe's
+bounding box.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>bounding_sphere_radius: f32</code></div>
 
 
 <div style="margin: 8px 0;"><code>parallax_correction_bounds: vec3&lt;f32&gt;</code></div>
-
+<div class="comment"><p>The boundaries of the simulated space used for parallax correction,
+specified as <em>half</em> extents in light probe space.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>intensity: f32</code></div>
 
@@ -148,7 +154,8 @@
 
 
 <div style="margin: 8px 0;"><code>flags: u32</code></div>
-
+<div class="comment"><p>Various flags that apply to this light probe.</p>
+</div>
 
 
 

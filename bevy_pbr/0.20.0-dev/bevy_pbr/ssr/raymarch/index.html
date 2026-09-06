@@ -109,7 +109,10 @@
 <a class="module" href="../../../src/bevy_pbr/ssr/raymarch.html">Source</a>
 
 
-
+<div class="comment"><p>This is a port of the original <a href="https://gist.github.com/h3r2tic/9c8356bdaefbe80b1a22ae0aaee192db" rel="noopener noreferrer"><code>raymarch.hlsl</code></a> to WGSL. It's deliberately
+kept as close as possible so that patches to the original <code>raymarch.hlsl</code>
+have the greatest chances of applying to this version.</p>
+</div>
 
 
 
@@ -141,7 +144,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Allows us to sample from the depth buffer with nearest-neighbor filtering.</p>
+</div>
         </div>
     </li>
     
@@ -357,7 +361,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Manual depth fetch helpers used on WebGPU where depth + filtering sampler is invalid.</p>
+</div>
         </div>
     </li>
     

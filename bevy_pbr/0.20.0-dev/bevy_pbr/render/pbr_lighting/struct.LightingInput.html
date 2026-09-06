@@ -134,7 +134,9 @@
     Ba: vec3&lt;f32&gt;
 }</code>
 </pre>
-
+<div class="comment"><p>Input to a lighting function (<code>point_light</code>, <code>spot_light</code>,
+<code>directional_light</code>).</p>
+</div>
 <h2 class="item-list-title">Fields</h2>
 
 <div style="margin: 8px 0;"><code>layers: array&lt;<a class="struct" href="../../render/pbr_lighting/struct.LayerLightingInput.html">LayerLightingInput</a>, 2&gt;</code></div>
@@ -144,37 +146,53 @@
 
 
 <div style="margin: 8px 0;"><code>P: vec3&lt;f32&gt;</code></div>
-
+<div class="comment"><p>The world-space position.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>V: vec3&lt;f32&gt;</code></div>
-
+<div class="comment"><p>The vector to the view.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>diffuse_color: vec3&lt;f32&gt;</code></div>
-
+<div class="comment"><p>The diffuse color of the material.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>metallic: f32</code></div>
-
+<div class="comment"><p>The 0-1 metallic factor of the material.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>F0_dielectric: vec3&lt;f32&gt;</code></div>
-
+<div class="comment"><p>Specular reflectance at the normal incidence angle.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>F0_metallic: vec3&lt;f32&gt;</code></div>
 
 
 <div style="margin: 8px 0;"><code>F_ab: vec2&lt;f32&gt;</code></div>
-
+<div class="comment"><p>Constants for the BRDF approximation.</p>
+<p>See <code>EnvBRDFApprox</code> in
+<a href="https://www.unrealengine.com/en-US/blog/physically-based-shading-on-mobile" rel="noopener noreferrer">https://www.unrealengine.com/en-US/blog/physically-based-shading-on-mobile</a>.
+What we call <code>F_ab</code> they call <code>AB</code>.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>clearcoat_strength: f32</code></div>
-
+<div class="comment"><p>The strength of the clearcoat layer.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>anisotropy: f32</code></div>
-
+<div class="comment"><p>The anisotropy strength, reflecting the amount of increased roughness in
+the tangent direction.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>Ta: vec3&lt;f32&gt;</code></div>
-
+<div class="comment"><p>The tangent direction for anisotropy: i.e. the direction in which
+roughness increases.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>Ba: vec3&lt;f32&gt;</code></div>
-
+<div class="comment"><p>The bitangent direction, which is the cross product of the normal with
+the tangent direction.</p>
+</div>
 
 
 

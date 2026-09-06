@@ -108,7 +108,9 @@
 
 <pre class="code-block"><code>fn decompress_vertex(vertex_in: <a class="struct" href="../../mesh2d/vertex_input/struct.Vertex.html">Vertex</a>, instance_index: u32) -> <a class="struct" href="../../mesh2d/vertex_input/struct.UncompressedVertex.html">UncompressedVertex</a></code>
 </pre>
-
+<div class="comment"><p>The instance_index parameter must match vertex_in.instance_index. This is a work around for a wgpu dx12 bug.
+See https://github.com/gfx-rs/naga/issues/2416</p>
+</div>
 
 
         </div>

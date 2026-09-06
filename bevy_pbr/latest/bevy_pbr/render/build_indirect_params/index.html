@@ -109,7 +109,14 @@
 <a class="module" href="../../../src/bevy_pbr/render/build_indirect_params.html">Source</a>
 
 
-
+<div class="comment"><p>Builds GPU indirect draw parameters from metadata.</p>
+<p>This only runs when indirect drawing is enabled. It takes the output of
+<code>mesh_preprocess.wesl</code> and creates indirect parameters for the GPU.</p>
+<p>This shader runs separately for indexed and non-indexed meshes. Unlike
+<code>mesh_preprocess.wesl</code>, which runs one instance per mesh <em>instance</em>, one
+instance of this shader corresponds to a single <em>batch</em> which could contain
+arbitrarily many instances of a single mesh.</p>
+</div>
 
 
 
@@ -127,7 +134,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>The data for each mesh that the CPU supplied to the GPU.</p>
+</div>
         </div>
     </li>
     
@@ -137,7 +145,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Information about each batch set.</p>
+</div>
         </div>
     </li>
     
@@ -157,7 +166,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Specifies the batches that this shader invocation is to process.</p>
+</div>
         </div>
     </li>
     
@@ -167,7 +177,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Data that we use to generate the indirect parameters.</p>
+</div>
         </div>
     </li>
     
@@ -184,7 +195,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Specifies the batches that this shader invocation is to process.</p>
+</div>
         </div>
     </li>
     

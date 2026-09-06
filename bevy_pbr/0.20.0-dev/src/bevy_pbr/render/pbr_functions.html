@@ -336,13 +336,13 @@
             id="39"
             class="line-number line-number-digits-4"
             data-nosnippet
-        >39</a><span class="syntax-comment syntax-comment-line">// Biasing info needed to sample from a texture. How this is done depends on</span>
+        >39</a><span class="syntax-comment syntax-comment-line">/// Biasing info needed to sample from a texture. How this is done depends on</span>
 <a
             href="#40"
             id="40"
             class="line-number line-number-digits-4"
             data-nosnippet
-        >40</a><span class="syntax-comment syntax-comment-line">// whether we&#39;re rendering meshlets or regular meshes.</span>
+        >40</a><span class="syntax-comment syntax-comment-line">/// whether we&#39;re rendering meshlets or regular meshes.</span>
 <a
             href="#41"
             id="41"
@@ -402,43 +402,43 @@
             id="50"
             class="line-number line-number-digits-4"
             data-nosnippet
-        >50</a><span class="syntax-comment syntax-comment-line">// This is the standard 4x4 ordered dithering pattern from [1].</span>
+        >50</a><span class="syntax-comment syntax-comment-line">/// This is the standard 4x4 ordered dithering pattern from [1].</span>
 <a
             href="#51"
             id="51"
             class="line-number line-number-digits-4"
             data-nosnippet
-        >51</a><span class="syntax-comment syntax-comment-line">//</span>
+        >51</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#52"
             id="52"
             class="line-number line-number-digits-4"
             data-nosnippet
-        >52</a><span class="syntax-comment syntax-comment-line">// We can&#39;t use `array&lt;vec4&lt;u32&gt;, 4&gt;` because they can&#39;t be indexed dynamically</span>
+        >52</a><span class="syntax-comment syntax-comment-line">/// We can&#39;t use `array&lt;vec4&lt;u32&gt;, 4&gt;` because they can&#39;t be indexed dynamically</span>
 <a
             href="#53"
             id="53"
             class="line-number line-number-digits-4"
             data-nosnippet
-        >53</a><span class="syntax-comment syntax-comment-line">// due to Naga limitations. So instead we pack into a single `vec4` and extract</span>
+        >53</a><span class="syntax-comment syntax-comment-line">/// due to Naga limitations. So instead we pack into a single `vec4` and extract</span>
 <a
             href="#54"
             id="54"
             class="line-number line-number-digits-4"
             data-nosnippet
-        >54</a><span class="syntax-comment syntax-comment-line">// individual bytes.</span>
+        >54</a><span class="syntax-comment syntax-comment-line">/// individual bytes.</span>
 <a
             href="#55"
             id="55"
             class="line-number line-number-digits-4"
             data-nosnippet
-        >55</a><span class="syntax-comment syntax-comment-line">//</span>
+        >55</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#56"
             id="56"
             class="line-number line-number-digits-4"
             data-nosnippet
-        >56</a><span class="syntax-comment syntax-comment-line">// [1]: https://en.wikipedia.org/wiki/Ordered_dithering#Threshold_map</span>
+        >56</a><span class="syntax-comment syntax-comment-line">/// [1]: https://en.wikipedia.org/wiki/Ordered_dithering#Threshold_map</span>
 <a
             href="#57"
             id="57"
@@ -486,85 +486,85 @@
             id="64"
             class="line-number line-number-digits-4"
             data-nosnippet
-        >64</a><span class="syntax-comment syntax-comment-line">// Processes a visibility range dither value and discards the fragment if</span>
+        >64</a><span class="syntax-comment syntax-comment-line">/// Processes a visibility range dither value and discards the fragment if</span>
 <a
             href="#65"
             id="65"
             class="line-number line-number-digits-4"
             data-nosnippet
-        >65</a><span class="syntax-comment syntax-comment-line">// needed.</span>
+        >65</a><span class="syntax-comment syntax-comment-line">/// needed.</span>
 <a
             href="#66"
             id="66"
             class="line-number line-number-digits-4"
             data-nosnippet
-        >66</a><span class="syntax-comment syntax-comment-line">//</span>
+        >66</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#67"
             id="67"
             class="line-number line-number-digits-4"
             data-nosnippet
-        >67</a><span class="syntax-comment syntax-comment-line">// Visibility ranges, also known as HLODs, are crossfades between different</span>
+        >67</a><span class="syntax-comment syntax-comment-line">/// Visibility ranges, also known as HLODs, are crossfades between different</span>
 <a
             href="#68"
             id="68"
             class="line-number line-number-digits-4"
             data-nosnippet
-        >68</a><span class="syntax-comment syntax-comment-line">// levels of detail.</span>
+        >68</a><span class="syntax-comment syntax-comment-line">/// levels of detail.</span>
 <a
             href="#69"
             id="69"
             class="line-number line-number-digits-4"
             data-nosnippet
-        >69</a><span class="syntax-comment syntax-comment-line">//</span>
+        >69</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#70"
             id="70"
             class="line-number line-number-digits-4"
             data-nosnippet
-        >70</a><span class="syntax-comment syntax-comment-line">// The `dither` value ranges from [-16, 16]. When zooming out, positive values</span>
+        >70</a><span class="syntax-comment syntax-comment-line">/// The `dither` value ranges from [-16, 16]. When zooming out, positive values</span>
 <a
             href="#71"
             id="71"
             class="line-number line-number-digits-4"
             data-nosnippet
-        >71</a><span class="syntax-comment syntax-comment-line">// are used for meshes that are in the process of disappearing, while negative</span>
+        >71</a><span class="syntax-comment syntax-comment-line">/// are used for meshes that are in the process of disappearing, while negative</span>
 <a
             href="#72"
             id="72"
             class="line-number line-number-digits-4"
             data-nosnippet
-        >72</a><span class="syntax-comment syntax-comment-line">// values are used for meshes that are in the process of appearing. In other</span>
+        >72</a><span class="syntax-comment syntax-comment-line">/// values are used for meshes that are in the process of appearing. In other</span>
 <a
             href="#73"
             id="73"
             class="line-number line-number-digits-4"
             data-nosnippet
-        >73</a><span class="syntax-comment syntax-comment-line">// words, when the camera is moving backwards, the `dither` value counts up from</span>
+        >73</a><span class="syntax-comment syntax-comment-line">/// words, when the camera is moving backwards, the `dither` value counts up from</span>
 <a
             href="#74"
             id="74"
             class="line-number line-number-digits-4"
             data-nosnippet
-        >74</a><span class="syntax-comment syntax-comment-line">// -16 to 0 when the object is fading in, stays at 0 while the object is</span>
+        >74</a><span class="syntax-comment syntax-comment-line">/// -16 to 0 when the object is fading in, stays at 0 while the object is</span>
 <a
             href="#75"
             id="75"
             class="line-number line-number-digits-4"
             data-nosnippet
-        >75</a><span class="syntax-comment syntax-comment-line">// visible, and then counts up to 16 while the object is fading out.</span>
+        >75</a><span class="syntax-comment syntax-comment-line">/// visible, and then counts up to 16 while the object is fading out.</span>
 <a
             href="#76"
             id="76"
             class="line-number line-number-digits-4"
             data-nosnippet
-        >76</a><span class="syntax-comment syntax-comment-line">// Distinguishing between negative and positive values allows the dither</span>
+        >76</a><span class="syntax-comment syntax-comment-line">/// Distinguishing between negative and positive values allows the dither</span>
 <a
             href="#77"
             id="77"
             class="line-number line-number-digits-4"
             data-nosnippet
-        >77</a><span class="syntax-comment syntax-comment-line">// patterns for different LOD levels of a single mesh to mesh together properly.</span>
+        >77</a><span class="syntax-comment syntax-comment-line">/// patterns for different LOD levels of a single mesh to mesh together properly.</span>
 <a
             href="#78"
             id="78"
@@ -966,25 +966,25 @@
             id="144"
             class="line-number line-number-digits-4"
             data-nosnippet
-        >144</a><span class="syntax-comment syntax-comment-line">// Calculates the three TBN vectors according to [mikktspace]. Returns a matrix</span>
+        >144</a><span class="syntax-comment syntax-comment-line">/// Calculates the three TBN vectors according to [mikktspace]. Returns a matrix</span>
 <a
             href="#145"
             id="145"
             class="line-number line-number-digits-4"
             data-nosnippet
-        >145</a><span class="syntax-comment syntax-comment-line">// with T, B, N columns in that order.</span>
+        >145</a><span class="syntax-comment syntax-comment-line">/// with T, B, N columns in that order.</span>
 <a
             href="#146"
             id="146"
             class="line-number line-number-digits-4"
             data-nosnippet
-        >146</a><span class="syntax-comment syntax-comment-line">//</span>
+        >146</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#147"
             id="147"
             class="line-number line-number-digits-4"
             data-nosnippet
-        >147</a><span class="syntax-comment syntax-comment-line">// [mikktspace]: http://www.mikktspace.com/</span>
+        >147</a><span class="syntax-comment syntax-comment-line">/// [mikktspace]: http://www.mikktspace.com/</span>
 <a
             href="#148"
             id="148"
@@ -1392,31 +1392,31 @@
             id="215"
             class="line-number line-number-digits-4"
             data-nosnippet
-        >215</a><span class="syntax-comment syntax-comment-line">// Modifies the normal to achieve a better approximate direction from the</span>
+        >215</a><span class="syntax-comment syntax-comment-line">/// Modifies the normal to achieve a better approximate direction from the</span>
 <a
             href="#216"
             id="216"
             class="line-number line-number-digits-4"
             data-nosnippet
-        >216</a><span class="syntax-comment syntax-comment-line">// environment map when using anisotropy.</span>
+        >216</a><span class="syntax-comment syntax-comment-line">/// environment map when using anisotropy.</span>
 <a
             href="#217"
             id="217"
             class="line-number line-number-digits-4"
             data-nosnippet
-        >217</a><span class="syntax-comment syntax-comment-line">//</span>
+        >217</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#218"
             id="218"
             class="line-number line-number-digits-4"
             data-nosnippet
-        >218</a><span class="syntax-comment syntax-comment-line">// This follows the suggested implementation in the `KHR_materials_anisotropy` specification:</span>
+        >218</a><span class="syntax-comment syntax-comment-line">/// This follows the suggested implementation in the `KHR_materials_anisotropy` specification:</span>
 <a
             href="#219"
             id="219"
             class="line-number line-number-digits-4"
             data-nosnippet
-        >219</a><span class="syntax-comment syntax-comment-line">// https://github.com/KhronosGroup/glTF/blob/main/extensions/2.0/Khronos/KHR_materials_anisotropy/README.md#image-based-lighting</span>
+        >219</a><span class="syntax-comment syntax-comment-line">/// https://github.com/KhronosGroup/glTF/blob/main/extensions/2.0/Khronos/KHR_materials_anisotropy/README.md#image-based-lighting</span>
 <a
             href="#220"
             id="220"
@@ -1596,13 +1596,13 @@
             id="249"
             class="line-number line-number-digits-4"
             data-nosnippet
-        >249</a><span class="syntax-comment syntax-comment-line">// NOTE: Correctly calculates the view vector depending on whether</span>
+        >249</a><span class="syntax-comment syntax-comment-line">/// NOTE: Correctly calculates the view vector depending on whether</span>
 <a
             href="#250"
             id="250"
             class="line-number line-number-digits-4"
             data-nosnippet
-        >250</a><span class="syntax-comment syntax-comment-line">// the projection is orthographic or perspective.</span>
+        >250</a><span class="syntax-comment syntax-comment-line">/// the projection is orthographic or perspective.</span>
 <a
             href="#251"
             id="251"
@@ -1698,7 +1698,7 @@
             id="266"
             class="line-number line-number-digits-4"
             data-nosnippet
-        >266</a><span class="syntax-comment syntax-comment-line">// Diffuse strength is inversely related to metallicity, specular and diffuse transmission</span>
+        >266</a><span class="syntax-comment syntax-comment-line">/// Diffuse strength is inversely related to metallicity, specular and diffuse transmission</span>
 <a
             href="#267"
             id="267"
@@ -1764,7 +1764,7 @@
             id="277"
             class="line-number line-number-digits-4"
             data-nosnippet
-        >277</a><span class="syntax-comment syntax-comment-line">// Remapping [0,1] reflectance to F0 for dielectrics</span>
+        >277</a><span class="syntax-comment syntax-comment-line">/// Remapping [0,1] reflectance to F0 for dielectrics</span>
 <a
             href="#278"
             id="278"
@@ -1794,13 +1794,13 @@
             id="282"
             class="line-number line-number-digits-4"
             data-nosnippet
-        >282</a><span class="syntax-comment syntax-comment-line">// Remapping [0,1] reflectance to F0</span>
+        >282</a><span class="syntax-comment syntax-comment-line">/// Remapping [0,1] reflectance to F0</span>
 <a
             href="#283"
             id="283"
             class="line-number line-number-digits-4"
             data-nosnippet
-        >283</a><span class="syntax-comment syntax-comment-line">// See https://google.github.io/filament/Filament.md.html#materialsystem/parameterization/remapping</span>
+        >283</a><span class="syntax-comment syntax-comment-line">/// See https://google.github.io/filament/Filament.md.html#materialsystem/parameterization/remapping</span>
 <a
             href="#284"
             id="284"
@@ -5958,13 +5958,13 @@
             id="976"
             class="line-number line-number-digits-4"
             data-nosnippet
-        >976</a><span class="syntax-comment syntax-comment-line">// fog, alpha premultiply</span>
+        >976</a><span class="syntax-comment syntax-comment-line">/// fog, alpha premultiply</span>
 <a
             href="#977"
             id="977"
             class="line-number line-number-digits-4"
             data-nosnippet
-        >977</a><span class="syntax-comment syntax-comment-line">// for non-hdr cameras, tonemapping and debanding</span>
+        >977</a><span class="syntax-comment syntax-comment-line">/// for non-hdr cameras, tonemapping and debanding</span>
 <a
             href="#978"
             id="978"

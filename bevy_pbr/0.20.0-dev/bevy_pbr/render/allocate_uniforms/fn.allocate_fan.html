@@ -119,7 +119,12 @@ fn allocate_fan(
     global_id: vec3&lt;u32&gt;
 ) </code>
 </pre>
-
+<div class="comment"><p>The third step of the prefix sum.</p>
+<p>We take the summed fan value computed in the previous step and add it in to
+each value of each chunk beyond the first. We dispatch one fewer workgroup
+here than in step (1), because there's nothing to do for the first chunk.</p>
+<p>This step is omitted if there are 256 or fewer total draws.</p>
+</div>
 
 
         </div>

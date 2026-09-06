@@ -108,7 +108,13 @@
 
 <pre class="code-block"><code>fn load_mip_0(x: u32, y: u32) -> f32</code>
 </pre>
-
+<div class="comment"><p>Loads the top mip level at virtual position (x, y).</p>
+<p>This is the value that <em>would be</em> returned from sampling a scaled depth
+buffer with side lengths rounded up to the next power of two, without
+actually constructing such a depth buffer.</p>
+<p>See the comments in <code>ViewDepthPyramid::downsample_depth</code> for more
+information.</p>
+</div>
 
 
         </div>

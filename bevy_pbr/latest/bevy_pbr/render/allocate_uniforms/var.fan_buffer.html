@@ -115,7 +115,10 @@
 <code>@group(0) @binding(3)
 var&#60;storage, read_write&#62; fan_buffer: array&lt;u32&gt;;</code>
 </pre>
-
+<div class="comment"><p>A temporary buffer that stores the mesh uniform index of the last instance
+plus one for each workgroup (i.e. for each 256-bin chunk).</p>
+<p>This is accumulated in the second stage and written out in the third.</p>
+</div>
 
 
         </div>

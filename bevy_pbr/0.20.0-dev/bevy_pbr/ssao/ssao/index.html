@@ -109,7 +109,15 @@
 <a class="module" href="../../../src/bevy_pbr/ssao/ssao.html">Source</a>
 
 
-
+<div class="comment"><p>Visibility Bitmask Ambient Occlusion (VBAO)
+Paper: ttps://ar5iv.labs.arxiv.org/html/2301.11376</p>
+<p>Source code heavily based on XeGTAO v1.30 from Intel
+https://github.com/GameTechDev/XeGTAO/blob/0d177ce06bfa642f64d8af4de1197ad1bcb862d4/Source/Rendering/Shaders/XeGTAO.hlsli</p>
+<p>Source code based on the existing XeGTAO implementation and
+https://cdrinmatane.github.io/posts/ssaovb-code/</p>
+<p>Source code base on SSRT3 implementation
+https://github.com/cdrinmatane/SSRT3</p>
+</div>
 
 
 
@@ -251,7 +259,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Calculate differences in depth between neighbor pixels (later used by the spatial denoiser pass to preserve object edges)</p>
+</div>
         </div>
     </li>
     

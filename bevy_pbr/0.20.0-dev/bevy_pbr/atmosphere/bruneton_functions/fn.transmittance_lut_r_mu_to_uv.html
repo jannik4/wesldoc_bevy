@@ -113,7 +113,11 @@
 
 <pre class="code-block"><code>fn transmittance_lut_r_mu_to_uv(atm: <a class="struct" href="../../atmosphere/types/struct.Atmosphere.html">Atmosphere</a>, r: f32, mu: f32) -> vec2&lt;f32&gt;</code>
 </pre>
-
+<div class="comment"><p>Mapping from view height (r) and zenith cos angle (mu) to UV coordinates in the transmittance LUT
+Assuming r between ground and top atmosphere boundary, and mu= cos(zenith_angle)
+Chosen to increase precision near the ground and to work around a discontinuity at the horizon
+See Bruneton and Neyret 2008, "Precomputed Atmospheric Scattering" section 4</p>
+</div>
 
 
         </div>

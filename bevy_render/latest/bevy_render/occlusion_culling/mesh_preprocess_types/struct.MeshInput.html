@@ -120,20 +120,26 @@
     metadata_index: u32
 }</code>
 </pre>
-
+<div class="comment"><p>Per-frame data that the CPU supplies to the GPU.</p>
+</div>
 <h2 class="item-list-title">Fields</h2>
 
 <div style="margin: 8px 0;"><code>world_from_local: mat3x4&lt;f32&gt;</code></div>
-
+<div class="comment"><p>The model transform.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>lightmap_uv_rect: vec2&lt;u32&gt;</code></div>
-
+<div class="comment"><p>The lightmap UV rect, packed into 64 bits.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>flags: u32</code></div>
-
+<div class="comment"><p>Various flags.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>previous_input_index: u32</code></div>
-
+<div class="comment"><p>The index of the <code>PreviousMeshInput</code> uniform in the buffer, or <code>u32::MAX</code>
+if there's no such uniform.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>first_vertex_index: u32</code></div>
 
@@ -148,16 +154,22 @@
 
 
 <div style="margin: 8px 0;"><code>material_and_lightmap_bind_group_slot: u32</code></div>
-
+<div class="comment"><p>Low 16 bits: index of the material inside the bind group data.
+High 16 bits: index of the lightmap in the binding array.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>timestamp: u32</code></div>
 
 
 <div style="margin: 8px 0;"><code>tag: u32</code></div>
-
+<div class="comment"><p>User supplied index to identify the mesh instance</p>
+</div>
 
 <div style="margin: 8px 0;"><code>morph_descriptor_index: u32</code></div>
-
+<div class="comment"><p>The index of the morph descriptor for this mesh instance in the
+<code>morph_descriptors</code> table.</p>
+<p>If the mesh has no morph targets, this is <code>u32::MAX</code>.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>metadata_index: u32</code></div>
 

@@ -113,7 +113,10 @@
 
 <pre class="code-block"><code>fn mesh_position_local_to_clip(world_from_local: mat4x4&lt;f32&gt;, vertex_position: vec4&lt;f32&gt;) -> vec4&lt;f32&gt;</code>
 </pre>
-
+<div class="comment"><p>NOTE: The intermediate world_position assignment is important
+for precision purposes when using the 'equals' depth comparison
+function.</p>
+</div>
 
 
         </div>

@@ -109,14 +109,20 @@
     output_or_indirect_parameters_index: u32
 }</code>
 </pre>
-
+<div class="comment"><p>One invocation of this compute shader: i.e. one mesh instance in a view.</p>
+</div>
 <h2 class="item-list-title">Fields</h2>
 
 <div style="margin: 8px 0;"><code>input_index: u32</code></div>
-
+<div class="comment"><p>The index of the <code>MeshInput</code> in the <code>current_input</code> buffer that we read
+from.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>output_or_indirect_parameters_index: u32</code></div>
-
+<div class="comment"><p>In direct mode, the index of the <code>Mesh</code> in <code>output</code> that we write to. In
+indirect mode, the index of the <code>IndirectParameters</code> in
+<code>indirect_parameters</code> that we write to.</p>
+</div>
 
 
 

@@ -113,7 +113,11 @@
 
 <pre class="code-block"><code>fn try_write_z_slice(object_index: u32, object_type: u32, z_slice: u32) </code>
 </pre>
-
+<div class="comment"><p>Writes a Z slice to the list.</p>
+<p>This silently fails if the list is too small, but it still updates the
+instance count, which the CPU reads back. So, if the list is too small, the
+CPU will end up being notified and can resize the buffer.</p>
+</div>
 
 
         </div>

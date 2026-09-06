@@ -119,7 +119,31 @@
     frag_offset: vec2&lt;f32&gt;
 ) -> vec4&lt;f32&gt;</code>
 </pre>
-
+<div class="comment"><p>Performs a single direction of the separable Gaussian blur kernel.</p>
+<ul>
+<li>
+<p><code>color_texture</code> is the texture to blur.</p>
+</li>
+<li>
+<p><code>color_texture_sampler</code> is a sampler to sample the texture. It must have
+linear filtering for both minification and magnification.</p>
+</li>
+<li>
+<p><code>frag_coord</code> is the screen-space pixel coordinate of the fragment (i.e. the
+<code>position</code> input to the fragment).</p>
+</li>
+<li>
+<p><code>coc</code> is the diameter (not the radius) of the circle of confusion for this
+fragment.</p>
+</li>
+<li>
+<p><code>frag_offset</code> is the vector, in screen-space units, from one sample to the
+next. For a horizontal blur this will be <code>vec2(1.0, 0.0)</code>; for a vertical
+blur this will be <code>vec2(0.0, 1.0)</code>.</p>
+</li>
+</ul>
+<p>Returns the resulting color of the fragment.</p>
+</div>
 
 
         </div>

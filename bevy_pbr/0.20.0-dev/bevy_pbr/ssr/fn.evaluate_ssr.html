@@ -113,7 +113,25 @@
 
 <pre class="code-block"><code>fn evaluate_ssr(R_world: vec3&lt;f32&gt;, P_world: vec3&lt;f32&gt;, jitter: f32) -> vec4&lt;f32&gt;</code>
 </pre>
-
+<div class="comment"><p>Returns the reflected color in the RGB channel and the specular occlusion in
+the alpha channel.</p>
+<p>The general approach here is similar to <a href="https://lettier.github.io/3d-game-shaders-for-beginners/screen-space-reflection.html" rel="noopener noreferrer">1</a>. We first project the reflection
+ray into screen space. Then we perform uniform steps along that screen-space
+reflected ray, converting each step to view space.</p>
+<p>The arguments are:</p>
+<ul>
+<li>
+<p><code>R_world</code>: The reflection vector in world space.</p>
+</li>
+<li>
+<p><code>P_world</code>: The current position in world space.</p>
+</li>
+<li>
+<p><code>jitter</code>: Jitter to apply to the first step of the linear search; 0..=1
+range.</p>
+</li>
+</ul>
+</div>
 
 
         </div>

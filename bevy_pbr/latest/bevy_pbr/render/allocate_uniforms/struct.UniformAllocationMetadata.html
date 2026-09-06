@@ -120,23 +120,32 @@
     pad: array&lt;vec4&lt;f32&gt;, 15&gt;
 }</code>
 </pre>
-
+<div class="comment"><p>Information needed to allocate <code>MeshUniform</code>s.</p>
+</div>
 <h2 class="item-list-title">Fields</h2>
 
 <div style="margin: 8px 0;"><code>batch_set_index: u32</code></div>
-
+<div class="comment"><p>The index of this batch set in the <code>IndirectBatchSet</code> array.</p>
+<p>We write this into the <code>indirect_parameters_metadata</code>.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>bin_count: u32</code></div>
-
+<div class="comment"><p>The number of bins (a.k.a. draws, a.k.a. batches) in this batch set.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>first_indirect_parameters_index: u32</code></div>
-
+<div class="comment"><p>The index of the first set of indirect parameters for this batch set.</p>
+<p>This is also the index of the first <code>IndirectParametersMetadata</code>, as
+that's a parallel array with the indirect parameters.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>first_output_mesh_uniform_index: u32</code></div>
-
+<div class="comment"><p>The index of the first <code>MeshUniform</code> slot for this batch set.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>pad: array&lt;vec4&lt;f32&gt;, 15&gt;</code></div>
-
+<div class="comment"><p>Padding.</p>
+</div>
 
 
 

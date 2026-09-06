@@ -120,7 +120,16 @@
     light_size: f32
 ) -> f32</code>
 </pre>
-
+<div class="comment"><p>Samples the shadow map for a directional light when percentage-closer soft
+shadows are being used.</p>
+<p>We first search for a <em>blocker</em>, which is the average depth value of any
+shadow map samples that are adjacent to the sample we're considering. That
+allows us to determine the penumbra size; a larger gap between the blocker
+and the depth of this sample results in a wider penumbra. Finally, we sample
+the shadow map the same way we do in PCF, using that penumbra width.</p>
+<p>A good overview of the technique:
+<a href="https://medium.com/@varunm100/soft-shadows-for-mobile-ar-9e8da2e6f4ba" rel="noopener noreferrer">https://medium.com/@varunm100/soft-shadows-for-mobile-ar-9e8da2e6f4ba</a></p>
+</div>
 
 
         </div>

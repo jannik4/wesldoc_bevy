@@ -113,7 +113,11 @@
 
 <pre class="code-block"><code>fn unpack_clusterable_object_index_ranges(cluster_index: u32) -> <a class="struct" href="../../render/clustered_forward/struct.ClusterableObjectIndexRanges.html">ClusterableObjectIndexRanges</a></code>
 </pre>
-
+<div class="comment"><p>Returns the indices of clusterable objects belonging to the given cluster.</p>
+<p>Note that if fewer than 3 SSBO bindings are available (in WebGL 2,
+primarily), light probes aren't clustered, and therefore both light probe
+index ranges will be empty.</p>
+</div>
 
 
         </div>

@@ -100,12 +100,18 @@
 
 
 
-<a class="module" href="../../src/bevy_render/maths.html#115-131">Source</a>
+<a class="module" href="../../src/bevy_render/maths.html#120-136">Source</a>
 
 
 <pre class="code-block"><code>fn ray_sphere_intersect(r: f32, mu: f32, sphere_radius: f32) -> vec2&lt;f32&gt;</code>
 </pre>
-
+<div class="comment"><p>Returns the distances along the ray to its intersections with a sphere
+centered at the origin.</p>
+<p>r: distance from the sphere center to the ray origin
+mu: cosine of the zenith angle
+sphere_radius: radius of the sphere</p>
+<p>Returns vec2(t0, t1). If there is no intersection, returns vec2(-1.0).</p>
+</div>
 
 
         </div>

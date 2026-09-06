@@ -119,7 +119,28 @@
     BdotH: f32
 ) -> f32</code>
 </pre>
-
+<div class="comment"><p>An approximation of the anisotropic GGX distribution function.</p>
+<pre><code>                                 1
+ D(𝐡) = ───────────────────────────────────────────────────
+        παₜα_b((𝐡 ⋅ 𝐭)² / αₜ²) + (𝐡 ⋅ 𝐛)² / α_b² + (𝐡 ⋅ 𝐧)²)²
+</code></pre>
+<ul>
+<li>
+<p><code>T</code> = 𝐭 = the tangent direction = the direction of increased roughness.</p>
+</li>
+<li>
+<p><code>B</code> = 𝐛 = the bitangent direction = the direction of decreased roughness.</p>
+</li>
+<li>
+<p><code>at</code> = αₜ = the alpha-roughness in the tangent direction.</p>
+</li>
+<li>
+<p><code>ab</code> = α_b = the alpha-roughness in the bitangent direction.</p>
+</li>
+</ul>
+<p>This is from the <code>KHR_materials_anisotropy</code> spec:
+<a href="https://github.com/KhronosGroup/glTF/blob/main/extensions/2.0/Khronos/KHR_materials_anisotropy/README.md#individual-lights" rel="noopener noreferrer">https://github.com/KhronosGroup/glTF/blob/main/extensions/2.0/Khronos/KHR_materials_anisotropy/README.md#individual-lights</a></p>
+</div>
 
 
         </div>

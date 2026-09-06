@@ -109,7 +109,15 @@
 <a class="module" href="../../../src/bevy_pbr/render/unpack_bins.html">Source</a>
 
 
-
+<div class="comment"><p>A compute shader that unpacks bins.</p>
+<p>This shader runs before mesh preprocessing in order to generate
+<code>PreprocessWorkItem</code>s from cached bins. A single dispatch of this shader
+corresponds to a single batch set, and one invocation of this shader
+corresponds to one binned entity. Each shader invocation builds the work item
+for its entity by copying over the mesh input uniform index and calculating
+the position of the command in the indirect parameters buffer that will draw
+that entity.</p>
+</div>
 
 
 
@@ -127,7 +135,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>A mapping from the bin index to the metadata index within the <code>bin_metadata</code>
+buffer.</p>
+</div>
         </div>
     </li>
     
@@ -137,7 +147,10 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>The bin metadata, which contains the index of the GPU indirect parameters for
+this bin, relative to the start of the indirect parameters for this batch
+set.</p>
+</div>
         </div>
     </li>
     
@@ -147,7 +160,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Metadata for the entire batch set.</p>
+</div>
         </div>
     </li>
     
@@ -157,7 +171,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>The input array of <code>BinnedMeshInstance</code>s.</p>
+</div>
         </div>
     </li>
     
@@ -167,7 +182,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>The output list of <code>PreprocessWorkItem</code>s.</p>
+</div>
         </div>
     </li>
     
@@ -184,7 +200,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Information needed to unpack bins belonging to a single batch set.</p>
+</div>
         </div>
     </li>
     
@@ -194,7 +211,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>One mesh instance in a bin.</p>
+</div>
         </div>
     </li>
     

@@ -113,7 +113,13 @@
 
 <pre class="code-block"><code>fn rand_u(state: ptr&lt;function, u32&gt;) -> u32</code>
 </pre>
-
+<div class="comment"><p>Generates a random u32 in range <a href="0,%20u32::MAX" title="0, u32::MAX" rel="noopener noreferrer">0, u32::MAX</a>.</p>
+<p><code>state</code> is a mutable reference to a u32 used as the seed.</p>
+<p>Values are generated via "white noise", with no correlation between values.
+In shaders, you often want spatial and/or temporal correlation. Use a different RNG method for these use cases.</p>
+<p>https://www.pcg-random.org
+https://www.reedbeta.com/blog/hash-functions-for-gpu-rendering</p>
+</div>
 
 
         </div>

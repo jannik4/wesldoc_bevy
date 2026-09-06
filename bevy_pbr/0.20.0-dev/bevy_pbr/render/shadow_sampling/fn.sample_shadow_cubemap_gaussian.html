@@ -119,7 +119,12 @@
     light_id: u32
 ) -> f32</code>
 </pre>
-
+<div class="comment"><p>This more or less does what Castano13 does, but in 3D space. Castano13 is
+essentially an optimized 2D Gaussian filter that takes advantage of the
+bilinear filtering hardware to reduce the number of samples needed. This
+trick doesn't apply to cubemaps, so we manually apply a Gaussian filter over
+the standard 8xMSAA pattern instead.</p>
+</div>
 
 
         </div>

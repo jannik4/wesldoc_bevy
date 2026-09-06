@@ -137,7 +137,10 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Half the size of the crossfade region between shadows and midtones and
+between midtones and highlights. This value, 0.1, corresponds to 10% of the
+gamut on either side of the cutoff point.</p>
+</div>
         </div>
     </li>
     
@@ -147,7 +150,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>The inverse reciprocal of twice the above, used when scaling the midtone
+region.</p>
+</div>
         </div>
     </li>
     
@@ -200,7 +205,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Prepare the data for display encoding. Converted to log domain.</p>
+</div>
         </div>
     </li>
     
@@ -220,7 +226,11 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>This is an <strong>incredibly crude</strong> approximation of the inverse of the tone mapping function.
+We assume here that there's a simple linear relationship between the input and output
+which is not true at all, but useful to at least preserve the overall luminance of colors
+when sampling from an already tonemapped image. (e.g. for transmissive materials when HDR is off)</p>
+</div>
         </div>
     </li>
     
@@ -310,7 +320,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Source: Advanced VR Rendering, GDC 2015, Alex Vlachos, Valve, Slide 49
+https://media.steampowered.com/apps/valve/2015/Alex_Vlachos_Advanced_VR_Rendering_GDC2015.pdf</p>
+</div>
         </div>
     </li>
     
@@ -320,7 +332,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Performs the "sectional" color grading: i.e. the color grading that applies
+individually to shadows, midtones, and highlights.</p>
+</div>
         </div>
     </li>
     
@@ -380,7 +394,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>luminance coefficients from Rec. 709.
+https://en.wikipedia.org/wiki/Rec._709</p>
+</div>
         </div>
     </li>
     
@@ -390,7 +406,10 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>PBR Neutral tone mapping
+https://github.com/KhronosGroup/ToneMapping/blob/main/PBR_Neutral/pbrNeutral.glsl
+Adapted under Apache 2.0, per https://github.com/KhronosGroup/ToneMapping/tree/main/LICENSES</p>
+</div>
         </div>
     </li>
     
@@ -400,7 +419,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>from https://64.github.io/tonemapping/
+reinhard on RGB oversaturates colors</p>
+</div>
         </div>
     </li>
     

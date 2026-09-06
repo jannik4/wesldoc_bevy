@@ -113,7 +113,11 @@
 
 <pre class="code-block"><code>fn coords_to_viewport_uv(position: vec2&lt;f32&gt;, viewport: vec4&lt;f32&gt;) -> vec2&lt;f32&gt;</code>
 </pre>
-
+<div class="comment"><p>returns the (0-1, 0-1) position within the given viewport for the current buffer coords .
+buffer coords can be obtained from <code>@builtin(position).xy</code>.
+the view uniform struct contains the current camera viewport in <code>view.viewport</code>.
+topleft = 0,0</p>
+</div>
 
 
         </div>

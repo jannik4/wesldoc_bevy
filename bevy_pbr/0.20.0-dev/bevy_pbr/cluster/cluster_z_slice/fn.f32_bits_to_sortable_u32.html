@@ -113,7 +113,12 @@
 
 <pre class="code-block"><code>fn f32_bits_to_sortable_u32(bits: u32) -> u32</code>
 </pre>
-
+<div class="comment"><p>Encodes f32 bits into a u32 whose unsigned ordering matches
+the float's total order. Positive floats get the sign bit set so they
+sort above negative floats; negative floats get all bits flipped so
+their ordering is reversed (more negative -&gt; smaller u32).</p>
+<p>The CPU decodes with <code>sortable_u32_to_f32_bits</code> in <code>gpu.rs</code>.</p>
+</div>
 
 
         </div>

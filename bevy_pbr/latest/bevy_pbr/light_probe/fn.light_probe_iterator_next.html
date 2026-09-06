@@ -115,7 +115,11 @@
 
 <pre class="code-block"><code>fn light_probe_iterator_next(iterator: ptr&lt;function, <a class="struct" href="../light_probe/struct.LightProbeIterator.html">LightProbeIterator</a>&gt;) -> <a class="struct" href="../light_probe/struct.LightProbeQueryResult.html">LightProbeQueryResult</a></code>
 </pre>
-
+<div class="comment"><p>Searches for a light probe that contains the fragment and returns the next
+such probe.</p>
+<p>Note that multiple light probes can affect a fragment. The caller is
+generally expected to blend their influences together in a weighted sum.</p>
+</div>
 
 
 <br />
@@ -128,7 +132,14 @@
 
 <pre class="code-block"><code>fn light_probe_iterator_next(iterator: ptr&lt;function, <a class="struct" href="../light_probe/struct.LightProbeIterator.html">LightProbeIterator</a>&gt;) -> <a class="struct" href="../light_probe/struct.LightProbeQueryResult.html">LightProbeQueryResult</a></code>
 </pre>
-
+<div class="comment"><p>Searches for a light probe that contains the fragment and returns the next
+such probe.</p>
+<p>Note that, theoretically, multiple light probes can affect a fragment, and
+the caller is generally expected to blend their influences together in a
+weighted sum. In practice, this version of <code>light_probe_iterator_next</code> is
+used on platforms that lack bindless shaders, so there will only be at most
+one light probe that affects the current fragment in the first place.</p>
+</div>
 
 
         </div>

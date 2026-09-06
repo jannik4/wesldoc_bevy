@@ -120,7 +120,23 @@
     view_rotation: vec4&lt;f32&gt;
 ) -> vec3&lt;f32&gt;</code>
 </pre>
-
+<div class="comment"><p>Computes the direction at which to sample the reflection probe.</p>
+<ul>
+<li>
+<p><code>light_from_world</code> is the matrix that transforms world space into light
+probe space (a 1×1×1 cube centered on the origin).</p>
+</li>
+<li>
+<p><code>parallax_correction_bounds</code> is the half-extents of the simulated
+reflection boundaries used for parallax correction, in light probe space.
+It's ignored if the <code>parallax_correct</code> parameter is false.</p>
+</li>
+<li>
+<p><code>parallax_correct</code> is true if parallax correction is to be applied and
+false otherwise.</p>
+</li>
+</ul>
+</div>
 
 
         </div>

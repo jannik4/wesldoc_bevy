@@ -113,7 +113,10 @@
 
 <pre class="code-block"><code>fn calculate_vertex_position(vertex: <a class="struct" href="../../cluster/cluster_raster/struct.Vertex.html">Vertex</a>, cluster_bounds: vec4&lt;u32&gt;) -> vec4&lt;f32&gt;</code>
 </pre>
-
+<div class="comment"><p>Returns the position of the quad vertex necessary to enclose all the
+fragments that represent the cluster AABB.
+The cluster bounds are supplied as <code>vec4(min X, min Y, max X, max Y)</code>.</p>
+</div>
 
 
         </div>

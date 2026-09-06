@@ -109,7 +109,19 @@
 <a class="module" href="../../../src/bevy_post_process/dof/dof.html">Source</a>
 
 
-
+<div class="comment"><p>Performs depth of field postprocessing, with both Gaussian and bokeh kernels.</p>
+<p>Gaussian blur is performed as a separable convolution: first blurring in the
+X direction, and then in the Y direction. This is asymptotically more
+efficient than performing a 2D convolution.</p>
+<p>The Bokeh blur uses a similar, but more complex, separable convolution
+technique. The algorithm is described in Colin Barré-Brisebois, "Hexagonal
+Bokeh Blur Revisited" <a href="https://colinbarrebrisebois.com/2017/04/18/hexagonal-bokeh-blur-revisited-part-2-improved-2-pass-version/" rel="noopener noreferrer">1</a>. It's motivated by the observation that we can use
+separable convolutions not only to produce boxes but to produce
+parallelograms. Thus, by performing three separable convolutions in sequence,
+we can produce a hexagonal shape. The first and second convolutions are done
+simultaneously using multiple render targets to cut the total number of
+passes down to two.</p>
+</div>
 
 
 
@@ -123,7 +135,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>cos(-150°), used for the bokeh blur.</p>
+</div>
         </div>
     </li>
     
@@ -133,7 +146,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>cos(-30°), used for the bokeh blur.</p>
+</div>
         </div>
     </li>
     
@@ -143,7 +157,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>used to ensure <code>depth * (focus - f)</code> is always a positive number,</p>
+</div>
         </div>
     </li>
     
@@ -153,7 +168,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>sin(-150°), used for the bokeh blur.</p>
+</div>
         </div>
     </li>
     
@@ -163,7 +179,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>sin(-30°), used for the bokeh blur.</p>
+</div>
         </div>
     </li>
     
@@ -182,7 +199,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>The main color texture.</p>
+</div>
         </div>
     </li>
     
@@ -194,7 +212,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>The auxiliary color texture that we're sampling from. This is only used as
+part of the second bokeh pass.</p>
+</div>
         </div>
     </li>
     
@@ -204,7 +224,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>The sampler that's used to fetch texels from the source color buffer.</p>
+</div>
         </div>
     </li>
     
@@ -214,7 +235,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>The depth texture for the main view.</p>
+</div>
         </div>
     </li>
     
@@ -224,7 +246,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>The parameters that control the depth of field effect.</p>
+</div>
         </div>
     </li>
     
@@ -241,7 +264,10 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Parameters that control the depth of field effect. See
+<code>bevy_core_pipeline::dof::DepthOfFieldUniforms</code> for information on what these
+parameters mean.</p>
+</div>
         </div>
     </li>
     
@@ -251,7 +277,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>The first bokeh pass outputs to two render targets. We declare them here.</p>
+</div>
         </div>
     </li>
     
@@ -268,7 +295,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Calculates the vertical and first diagonal components of the separable
+hexagonal bokeh blur.</p>
+</div>
         </div>
     </li>
     
@@ -280,7 +309,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Calculates the second diagonal components of the separable hexagonal bokeh
+blur.</p>
+</div>
         </div>
     </li>
     
@@ -290,7 +321,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Performs a box blur in a single direction, sampling <code>color_texture_a</code>.</p>
+</div>
         </div>
     </li>
     
@@ -302,7 +334,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Performs a box blur in a single direction, sampling <code>color_texture_b</code>.</p>
+</div>
         </div>
     </li>
     
@@ -312,7 +345,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Calculates and returns the diameter (not the radius) of the <a href="https://en.wikipedia.org/wiki/Circle_of_confusion" rel="noopener noreferrer">circle of
+confusion</a>.</p>
+</div>
         </div>
     </li>
     
@@ -322,7 +357,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Calculates the horizontal component of the separable Gaussian blur.</p>
+</div>
         </div>
     </li>
     
@@ -332,7 +368,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Calculates the vertical component of the separable Gaussian blur.</p>
+</div>
         </div>
     </li>
     

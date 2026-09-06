@@ -110,17 +110,31 @@
     instance_count: u32
 }</code>
 </pre>
-
+<div class="comment"><p>Information about each bin in a batch set.</p>
+<p>This is maintained by the CPU and cached for bins that don't change from
+frame to frame.</p>
+</div>
 <h2 class="item-list-title">Fields</h2>
 
 <div style="margin: 8px 0;"><code>indirect_parameters_offset: u32</code></div>
-
+<div class="comment"><p>The index of the indirect parameters for this bin, relative to the first
+indirect parameter index for the batch set.</p>
+<p>That is, the final indirect parameters index for this bin is
+<code>first_indirect_parameters_index</code> in the <code>UniformAllocationMetadata</code> plus
+this value.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>bin_index: u32</code></div>
-
+<div class="comment"><p>The index of the bin that this metadata corresponds to.</p>
+<p>The GPU doesn't use this, but the CPU does in order to perform the
+reverse mapping from bin metadata index back to the bin. We could store
+this in a non-GPU-accessible buffer, but I figured the extra complexity
+wasn't worth it.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>instance_count: u32</code></div>
-
+<div class="comment"><p>The number of mesh instances in this bin.</p>
+</div>
 
 
 

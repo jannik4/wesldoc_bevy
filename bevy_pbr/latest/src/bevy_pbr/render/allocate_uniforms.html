@@ -108,157 +108,157 @@
             id="1"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >1</a><span class="syntax-comment syntax-comment-line">// A compute shader that allocates `MeshUniform`s.</span>
+        >1</a><span class="syntax-comment syntax-comment-line">//! A compute shader that allocates `MeshUniform`s.</span>
 <a
             href="#2"
             id="2"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >2</a><span class="syntax-comment syntax-comment-line">//</span>
+        >2</a><span class="syntax-comment syntax-comment-line">//!</span>
 <a
             href="#3"
             id="3"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >3</a><span class="syntax-comment syntax-comment-line">// This shader runs before mesh preprocessing in order to determine the</span>
+        >3</a><span class="syntax-comment syntax-comment-line">//! This shader runs before mesh preprocessing in order to determine the</span>
 <a
             href="#4"
             id="4"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >4</a><span class="syntax-comment syntax-comment-line">// positions of `MeshUniform`s. Unlike `MeshInputUniform`s, which are scattered</span>
+        >4</a><span class="syntax-comment syntax-comment-line">//! positions of `MeshUniform`s. Unlike `MeshInputUniform`s, which are scattered</span>
 <a
             href="#5"
             id="5"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >5</a><span class="syntax-comment syntax-comment-line">// throughout the buffer, `MeshUniform`s are indexed by instance ID, and so we</span>
+        >5</a><span class="syntax-comment syntax-comment-line">//! throughout the buffer, `MeshUniform`s are indexed by instance ID, and so we</span>
 <a
             href="#6"
             id="6"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >6</a><span class="syntax-comment syntax-comment-line">// must place instances of the same mesh together in the buffer. One dispatch</span>
+        >6</a><span class="syntax-comment syntax-comment-line">//! must place instances of the same mesh together in the buffer. One dispatch</span>
 <a
             href="#7"
             id="7"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >7</a><span class="syntax-comment syntax-comment-line">// call corresponds to one batch set (i.e. one multidraw operation), and one</span>
+        >7</a><span class="syntax-comment syntax-comment-line">//! call corresponds to one batch set (i.e. one multidraw operation), and one</span>
 <a
             href="#8"
             id="8"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >8</a><span class="syntax-comment syntax-comment-line">// thread corresponds to one bin (a.k.a. draw, a.k.a. batch).</span>
+        >8</a><span class="syntax-comment syntax-comment-line">//! thread corresponds to one bin (a.k.a. draw, a.k.a. batch).</span>
 <a
             href="#9"
             id="9"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >9</a><span class="syntax-comment syntax-comment-line">//</span>
+        >9</a><span class="syntax-comment syntax-comment-line">//!</span>
 <a
             href="#10"
             id="10"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >10</a><span class="syntax-comment syntax-comment-line">// Essentially, the goal of this shader is to perform a prefix sum, using the</span>
+        >10</a><span class="syntax-comment syntax-comment-line">//! Essentially, the goal of this shader is to perform a prefix sum, using the</span>
 <a
             href="#11"
             id="11"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >11</a><span class="syntax-comment syntax-comment-line">// &quot;scan-then-fan&quot; approach. It has three phases:</span>
+        >11</a><span class="syntax-comment syntax-comment-line">//! &quot;scan-then-fan&quot; approach. It has three phases:</span>
 <a
             href="#12"
             id="12"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >12</a><span class="syntax-comment syntax-comment-line">//</span>
+        >12</a><span class="syntax-comment syntax-comment-line">//!</span>
 <a
             href="#13"
             id="13"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >13</a><span class="syntax-comment syntax-comment-line">// 1. *Local scan*: Perform a [Hillis-Steele scan] on each chunk of draws, where</span>
+        >13</a><span class="syntax-comment syntax-comment-line">//! 1. *Local scan*: Perform a [Hillis-Steele scan] on each chunk of draws, where</span>
 <a
             href="#14"
             id="14"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >14</a><span class="syntax-comment syntax-comment-line">// the size of each chunk (i.e. the number of draws) is equal to the workgroup</span>
+        >14</a><span class="syntax-comment syntax-comment-line">//! the size of each chunk (i.e. the number of draws) is equal to the workgroup</span>
 <a
             href="#15"
             id="15"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >15</a><span class="syntax-comment syntax-comment-line">// size (256). Write the total size for this chunk to the fan buffer.</span>
+        >15</a><span class="syntax-comment syntax-comment-line">//! size (256). Write the total size for this chunk to the fan buffer.</span>
 <a
             href="#16"
             id="16"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >16</a><span class="syntax-comment syntax-comment-line">//</span>
+        >16</a><span class="syntax-comment syntax-comment-line">//!</span>
 <a
             href="#17"
             id="17"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >17</a><span class="syntax-comment syntax-comment-line">// 2. *Global scan*: Do a Hillis-Steele scan on the fan buffer. Now we know the</span>
+        >17</a><span class="syntax-comment syntax-comment-line">//! 2. *Global scan*: Do a Hillis-Steele scan on the fan buffer. Now we know the</span>
 <a
             href="#18"
             id="18"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >18</a><span class="syntax-comment syntax-comment-line">// running total for each chunk.</span>
+        >18</a><span class="syntax-comment syntax-comment-line">//! running total for each chunk.</span>
 <a
             href="#19"
             id="19"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >19</a><span class="syntax-comment syntax-comment-line">//</span>
+        >19</a><span class="syntax-comment syntax-comment-line">//!</span>
 <a
             href="#20"
             id="20"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >20</a><span class="syntax-comment syntax-comment-line">// 3. *Fan*: Copy the running total for each chunk to every element of that</span>
+        >20</a><span class="syntax-comment syntax-comment-line">//! 3. *Fan*: Copy the running total for each chunk to every element of that</span>
 <a
             href="#21"
             id="21"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >21</a><span class="syntax-comment syntax-comment-line">// chunk.</span>
+        >21</a><span class="syntax-comment syntax-comment-line">//! chunk.</span>
 <a
             href="#22"
             id="22"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >22</a><span class="syntax-comment syntax-comment-line">//</span>
+        >22</a><span class="syntax-comment syntax-comment-line">//!</span>
 <a
             href="#23"
             id="23"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >23</a><span class="syntax-comment syntax-comment-line">// Note that, for batch sets (i.e. multidraw indirect calls) that have fewer</span>
+        >23</a><span class="syntax-comment syntax-comment-line">//! Note that, for batch sets (i.e. multidraw indirect calls) that have fewer</span>
 <a
             href="#24"
             id="24"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >24</a><span class="syntax-comment syntax-comment-line">// than 256 batches in them, we only need step (1). This is the common case.</span>
+        >24</a><span class="syntax-comment syntax-comment-line">//! than 256 batches in them, we only need step (1). This is the common case.</span>
 <a
             href="#25"
             id="25"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >25</a><span class="syntax-comment syntax-comment-line">//</span>
+        >25</a><span class="syntax-comment syntax-comment-line">//!</span>
 <a
             href="#26"
             id="26"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >26</a><span class="syntax-comment syntax-comment-line">// [Hillis-Steele scan]: https://en.wikipedia.org/wiki/Prefix_sum#Algorithm_1:_Shorter_span,_more_parallel</span>
+        >26</a><span class="syntax-comment syntax-comment-line">//! [Hillis-Steele scan]: https://en.wikipedia.org/wiki/Prefix_sum#Algorithm_1:_Shorter_span,_more_parallel</span>
 <a
             href="#27"
             id="27"
@@ -282,7 +282,7 @@
             id="30"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >30</a><span class="syntax-comment syntax-comment-line">// Information needed to allocate `MeshUniform`s.</span>
+        >30</a><span class="syntax-comment syntax-comment-line">/// Information needed to allocate `MeshUniform`s.</span>
 <a
             href="#31"
             id="31"
@@ -294,19 +294,19 @@
             id="32"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >32</a>    <span class="syntax-comment syntax-comment-line">// The index of this batch set in the `IndirectBatchSet` array.</span>
+        >32</a>    <span class="syntax-comment syntax-comment-line">/// The index of this batch set in the `IndirectBatchSet` array.</span>
 <a
             href="#33"
             id="33"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >33</a>    <span class="syntax-comment syntax-comment-line">//</span>
+        >33</a>    <span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#34"
             id="34"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >34</a>    <span class="syntax-comment syntax-comment-line">// We write this into the `indirect_parameters_metadata`.</span>
+        >34</a>    <span class="syntax-comment syntax-comment-line">/// We write this into the `indirect_parameters_metadata`.</span>
 <a
             href="#35"
             id="35"
@@ -324,7 +324,7 @@
             id="37"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >37</a>    <span class="syntax-comment syntax-comment-line">// The number of bins (a.k.a. draws, a.k.a. batches) in this batch set.</span>
+        >37</a>    <span class="syntax-comment syntax-comment-line">/// The number of bins (a.k.a. draws, a.k.a. batches) in this batch set.</span>
 <a
             href="#38"
             id="38"
@@ -342,25 +342,25 @@
             id="40"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >40</a>    <span class="syntax-comment syntax-comment-line">// The index of the first set of indirect parameters for this batch set.</span>
+        >40</a>    <span class="syntax-comment syntax-comment-line">/// The index of the first set of indirect parameters for this batch set.</span>
 <a
             href="#41"
             id="41"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >41</a>    <span class="syntax-comment syntax-comment-line">//</span>
+        >41</a>    <span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#42"
             id="42"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >42</a>    <span class="syntax-comment syntax-comment-line">// This is also the index of the first `IndirectParametersMetadata`, as</span>
+        >42</a>    <span class="syntax-comment syntax-comment-line">/// This is also the index of the first `IndirectParametersMetadata`, as</span>
 <a
             href="#43"
             id="43"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >43</a>    <span class="syntax-comment syntax-comment-line">// that&#39;s a parallel array with the indirect parameters.</span>
+        >43</a>    <span class="syntax-comment syntax-comment-line">/// that&#39;s a parallel array with the indirect parameters.</span>
 <a
             href="#44"
             id="44"
@@ -378,7 +378,7 @@
             id="46"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >46</a>    <span class="syntax-comment syntax-comment-line">// The index of the first `MeshUniform` slot for this batch set.</span>
+        >46</a>    <span class="syntax-comment syntax-comment-line">/// The index of the first `MeshUniform` slot for this batch set.</span>
 <a
             href="#47"
             id="47"
@@ -396,7 +396,7 @@
             id="49"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >49</a>    <span class="syntax-comment syntax-comment-line">// Padding.</span>
+        >49</a>    <span class="syntax-comment syntax-comment-line">/// Padding.</span>
 <a
             href="#50"
             id="50"
@@ -420,7 +420,7 @@
             id="53"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >53</a><span class="syntax-comment syntax-comment-line">// The number of threads in a workgroup.</span>
+        >53</a><span class="syntax-comment syntax-comment-line">/// The number of threads in a workgroup.</span>
 <a
             href="#54"
             id="54"
@@ -438,7 +438,7 @@
             id="56"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >56</a><span class="syntax-comment syntax-comment-line">// Information needed to allocate `MeshUniform`s.</span>
+        >56</a><span class="syntax-comment syntax-comment-line">/// Information needed to allocate `MeshUniform`s.</span>
 <a
             href="#57"
             id="57"
@@ -456,13 +456,13 @@
             id="59"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >59</a><span class="syntax-comment syntax-comment-line">// Information for each bin, including the indirect parameters offset and the</span>
+        >59</a><span class="syntax-comment syntax-comment-line">/// Information for each bin, including the indirect parameters offset and the</span>
 <a
             href="#60"
             id="60"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >60</a><span class="syntax-comment syntax-comment-line">// instance count.</span>
+        >60</a><span class="syntax-comment syntax-comment-line">/// instance count.</span>
 <a
             href="#61"
             id="61"
@@ -480,13 +480,13 @@
             id="63"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >63</a><span class="syntax-comment syntax-comment-line">// The array of indirect parameters metadata that we fill out, one for each</span>
+        >63</a><span class="syntax-comment syntax-comment-line">/// The array of indirect parameters metadata that we fill out, one for each</span>
 <a
             href="#64"
             id="64"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >64</a><span class="syntax-comment syntax-comment-line">// batch.</span>
+        >64</a><span class="syntax-comment syntax-comment-line">/// batch.</span>
 <a
             href="#65"
             id="65"
@@ -510,25 +510,25 @@
             id="68"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >68</a><span class="syntax-comment syntax-comment-line">// A temporary buffer that stores the mesh uniform index of the last instance</span>
+        >68</a><span class="syntax-comment syntax-comment-line">/// A temporary buffer that stores the mesh uniform index of the last instance</span>
 <a
             href="#69"
             id="69"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >69</a><span class="syntax-comment syntax-comment-line">// plus one for each workgroup (i.e. for each 256-bin chunk).</span>
+        >69</a><span class="syntax-comment syntax-comment-line">/// plus one for each workgroup (i.e. for each 256-bin chunk).</span>
 <a
             href="#70"
             id="70"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >70</a><span class="syntax-comment syntax-comment-line">//</span>
+        >70</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#71"
             id="71"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >71</a><span class="syntax-comment syntax-comment-line">// This is accumulated in the second stage and written out in the third.</span>
+        >71</a><span class="syntax-comment syntax-comment-line">/// This is accumulated in the second stage and written out in the third.</span>
 <a
             href="#72"
             id="72"
@@ -546,7 +546,7 @@
             id="74"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >74</a><span class="syntax-comment syntax-comment-line">// Scratch memory that stores the prefix sum for every element in our chunk.</span>
+        >74</a><span class="syntax-comment syntax-comment-line">/// Scratch memory that stores the prefix sum for every element in our chunk.</span>
 <a
             href="#75"
             id="75"
@@ -564,43 +564,43 @@
             id="77"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >77</a><span class="syntax-comment syntax-comment-line">// The first step of the prefix sum. This computes the prefix sum for each</span>
+        >77</a><span class="syntax-comment syntax-comment-line">/// The first step of the prefix sum. This computes the prefix sum for each</span>
 <a
             href="#78"
             id="78"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >78</a><span class="syntax-comment syntax-comment-line">// 256-element chunk.</span>
+        >78</a><span class="syntax-comment syntax-comment-line">/// 256-element chunk.</span>
 <a
             href="#79"
             id="79"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >79</a><span class="syntax-comment syntax-comment-line">//</span>
+        >79</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#80"
             id="80"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >80</a><span class="syntax-comment syntax-comment-line">// Note that this will be the *only* step in the operation if the total number</span>
+        >80</a><span class="syntax-comment syntax-comment-line">/// Note that this will be the *only* step in the operation if the total number</span>
 <a
             href="#81"
             id="81"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >81</a><span class="syntax-comment syntax-comment-line">// of bins in this batch set is 256 or fewer. Thus we must fill in the indirect</span>
+        >81</a><span class="syntax-comment syntax-comment-line">/// of bins in this batch set is 256 or fewer. Thus we must fill in the indirect</span>
 <a
             href="#82"
             id="82"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >82</a><span class="syntax-comment syntax-comment-line">// parameters metadata for each batch here, as we can&#39;t guarantee that the</span>
+        >82</a><span class="syntax-comment syntax-comment-line">/// parameters metadata for each batch here, as we can&#39;t guarantee that the</span>
 <a
             href="#83"
             id="83"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >83</a><span class="syntax-comment syntax-comment-line">// following two steps will be run at all.</span>
+        >83</a><span class="syntax-comment syntax-comment-line">/// following two steps will be run at all.</span>
 <a
             href="#84"
             id="84"
@@ -984,43 +984,43 @@
             id="147"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >147</a><span class="syntax-comment syntax-comment-line">// The second step of the prefix sum.</span>
+        >147</a><span class="syntax-comment syntax-comment-line">/// The second step of the prefix sum.</span>
 <a
             href="#148"
             id="148"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >148</a><span class="syntax-comment syntax-comment-line">//</span>
+        >148</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#149"
             id="149"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >149</a><span class="syntax-comment syntax-comment-line">// This step takes the intermediate fan values computed in the previous step</span>
+        >149</a><span class="syntax-comment syntax-comment-line">/// This step takes the intermediate fan values computed in the previous step</span>
 <a
             href="#150"
             id="150"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >150</a><span class="syntax-comment syntax-comment-line">// (i.e. the sum going out of each chunk) and performs one or more Hillis-Steele</span>
+        >150</a><span class="syntax-comment syntax-comment-line">/// (i.e. the sum going out of each chunk) and performs one or more Hillis-Steele</span>
 <a
             href="#151"
             id="151"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >151</a><span class="syntax-comment syntax-comment-line">// scans in order to compute the fan value going into each chunk.</span>
+        >151</a><span class="syntax-comment syntax-comment-line">/// scans in order to compute the fan value going into each chunk.</span>
 <a
             href="#152"
             id="152"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >152</a><span class="syntax-comment syntax-comment-line">//</span>
+        >152</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#153"
             id="153"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >153</a><span class="syntax-comment syntax-comment-line">// This step is omitted if there are 256 or fewer total draws.</span>
+        >153</a><span class="syntax-comment syntax-comment-line">/// This step is omitted if there are 256 or fewer total draws.</span>
 <a
             href="#154"
             id="154"
@@ -1224,43 +1224,43 @@
             id="187"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >187</a><span class="syntax-comment syntax-comment-line">// The third step of the prefix sum.</span>
+        >187</a><span class="syntax-comment syntax-comment-line">/// The third step of the prefix sum.</span>
 <a
             href="#188"
             id="188"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >188</a><span class="syntax-comment syntax-comment-line">//</span>
+        >188</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#189"
             id="189"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >189</a><span class="syntax-comment syntax-comment-line">// We take the summed fan value computed in the previous step and add it in to</span>
+        >189</a><span class="syntax-comment syntax-comment-line">/// We take the summed fan value computed in the previous step and add it in to</span>
 <a
             href="#190"
             id="190"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >190</a><span class="syntax-comment syntax-comment-line">// each value of each chunk beyond the first. We dispatch one fewer workgroup</span>
+        >190</a><span class="syntax-comment syntax-comment-line">/// each value of each chunk beyond the first. We dispatch one fewer workgroup</span>
 <a
             href="#191"
             id="191"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >191</a><span class="syntax-comment syntax-comment-line">// here than in step (1), because there&#39;s nothing to do for the first chunk.</span>
+        >191</a><span class="syntax-comment syntax-comment-line">/// here than in step (1), because there&#39;s nothing to do for the first chunk.</span>
 <a
             href="#192"
             id="192"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >192</a><span class="syntax-comment syntax-comment-line">//</span>
+        >192</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#193"
             id="193"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >193</a><span class="syntax-comment syntax-comment-line">// This step is omitted if there are 256 or fewer total draws.</span>
+        >193</a><span class="syntax-comment syntax-comment-line">/// This step is omitted if there are 256 or fewer total draws.</span>
 <a
             href="#194"
             id="194"
@@ -1374,13 +1374,13 @@
             id="212"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >212</a><span class="syntax-comment syntax-comment-line">// Calculates a running exclusive sum.</span>
+        >212</a><span class="syntax-comment syntax-comment-line">/// Calculates a running exclusive sum.</span>
 <a
             href="#213"
             id="213"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >213</a><span class="syntax-comment syntax-comment-line">// https://en.wikipedia.org/wiki/Prefix_sum#Algorithm_1:_Shorter_span,_more_parallel</span>
+        >213</a><span class="syntax-comment syntax-comment-line">/// https://en.wikipedia.org/wiki/Prefix_sum#Algorithm_1:_Shorter_span,_more_parallel</span>
 <a
             href="#214"
             id="214"
@@ -1458,7 +1458,7 @@
             id="226"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >226</a><span class="syntax-comment syntax-comment-line">// Divides unsigned integer a by b, rounding up.</span>
+        >226</a><span class="syntax-comment syntax-comment-line">/// Divides unsigned integer a by b, rounding up.</span>
 <a
             href="#227"
             id="227"

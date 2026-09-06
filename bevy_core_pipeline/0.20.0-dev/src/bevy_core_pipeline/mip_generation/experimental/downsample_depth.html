@@ -103,175 +103,175 @@
             id="1"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >1</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">MESHLET_VISIBILITY_BUFFER_RASTER_PASS_OUTPUT</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
+        >1</a><span class="syntax-comment syntax-comment-line">//! Generates a hierarchical depth buffer.</span>
 <a
             href="#2"
             id="2"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >2</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">mip_0</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">texture_storage_2d</span><span class="syntax-punctuation">&lt;<span class="syntax-type">r64uint</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">read</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >2</a><span class="syntax-comment syntax-comment-line">//! Based on FidelityFX SPD v2.1 https://github.com/GPUOpen-LibrariesAndSDKs/FidelityFX-SDK/blob/d7531ae47d8b36a5d4025663e731a47a38be882f/sdk/include/FidelityFX/gpu/spd/ffx_spd.h#L528</span>
 <a
             href="#3"
             id="3"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >3</a><span class="syntax-attribute">@<span class="syntax-attribute">elif</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">MESHLET</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
+        >3</a><span class="syntax-comment syntax-comment-line">//!</span>
 <a
             href="#4"
             id="4"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >4</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">mip_0</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">texture_storage_2d</span><span class="syntax-punctuation">&lt;<span class="syntax-type">r32uint</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">read</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >4</a><span class="syntax-comment syntax-comment-line">//! `mip_0` may be of any size, but `mip_1` and down must have side lengths that</span>
 <a
             href="#5"
             id="5"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >5</a><span class="syntax-attribute">@<span class="syntax-attribute">elif</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">MULTISAMPLE</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
+        >5</a><span class="syntax-comment syntax-comment-line">//! are powers of two.</span>
 <a
             href="#6"
             id="6"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >6</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">mip_0</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">texture_depth_multisampled_2d</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >6</a>
 <a
             href="#7"
             id="7"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >7</a><span class="syntax-attribute">@<span class="syntax-attribute">else</span></span>
+        >7</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">MESHLET_VISIBILITY_BUFFER_RASTER_PASS_OUTPUT</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#8"
             id="8"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >8</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">mip_0</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">texture_depth_2d</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >8</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">mip_0</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">texture_storage_2d</span><span class="syntax-punctuation">&lt;<span class="syntax-type">r64uint</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">read</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#9"
             id="9"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >9</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">mip_1</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">texture_storage_2d</span><span class="syntax-punctuation">&lt;<span class="syntax-type">r32float</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">write</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >9</a><span class="syntax-attribute">@<span class="syntax-attribute">elif</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">MESHLET</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#10"
             id="10"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >10</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">2</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">mip_2</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">texture_storage_2d</span><span class="syntax-punctuation">&lt;<span class="syntax-type">r32float</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">write</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >10</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">mip_0</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">texture_storage_2d</span><span class="syntax-punctuation">&lt;<span class="syntax-type">r32uint</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">read</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#11"
             id="11"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >11</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">3</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">mip_3</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">texture_storage_2d</span><span class="syntax-punctuation">&lt;<span class="syntax-type">r32float</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">write</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >11</a><span class="syntax-attribute">@<span class="syntax-attribute">elif</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">MULTISAMPLE</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#12"
             id="12"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >12</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">4</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">mip_4</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">texture_storage_2d</span><span class="syntax-punctuation">&lt;<span class="syntax-type">r32float</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">write</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >12</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">mip_0</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">texture_depth_multisampled_2d</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#13"
             id="13"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >13</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">5</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">mip_5</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">texture_storage_2d</span><span class="syntax-punctuation">&lt;<span class="syntax-type">r32float</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">write</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >13</a><span class="syntax-attribute">@<span class="syntax-attribute">else</span></span>
 <a
             href="#14"
             id="14"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >14</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">6</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">mip_6</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">texture_storage_2d</span><span class="syntax-punctuation">&lt;<span class="syntax-type">r32float</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">read_write</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >14</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">mip_0</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">texture_depth_2d</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#15"
             id="15"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >15</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">7</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">mip_7</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">texture_storage_2d</span><span class="syntax-punctuation">&lt;<span class="syntax-type">r32float</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">write</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >15</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">mip_1</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">texture_storage_2d</span><span class="syntax-punctuation">&lt;<span class="syntax-type">r32float</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">write</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#16"
             id="16"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >16</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">8</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">mip_8</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">texture_storage_2d</span><span class="syntax-punctuation">&lt;<span class="syntax-type">r32float</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">write</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >16</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">2</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">mip_2</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">texture_storage_2d</span><span class="syntax-punctuation">&lt;<span class="syntax-type">r32float</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">write</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#17"
             id="17"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >17</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">9</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">mip_9</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">texture_storage_2d</span><span class="syntax-punctuation">&lt;<span class="syntax-type">r32float</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">write</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >17</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">3</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">mip_3</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">texture_storage_2d</span><span class="syntax-punctuation">&lt;<span class="syntax-type">r32float</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">write</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#18"
             id="18"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >18</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">10</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">mip_10</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">texture_storage_2d</span><span class="syntax-punctuation">&lt;<span class="syntax-type">r32float</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">write</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >18</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">4</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">mip_4</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">texture_storage_2d</span><span class="syntax-punctuation">&lt;<span class="syntax-type">r32float</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">write</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#19"
             id="19"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >19</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">11</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">mip_11</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">texture_storage_2d</span><span class="syntax-punctuation">&lt;<span class="syntax-type">r32float</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">write</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >19</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">5</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">mip_5</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">texture_storage_2d</span><span class="syntax-punctuation">&lt;<span class="syntax-type">r32float</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">write</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#20"
             id="20"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >20</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">12</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">mip_12</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">texture_storage_2d</span><span class="syntax-punctuation">&lt;<span class="syntax-type">r32float</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">write</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >20</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">6</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">mip_6</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">texture_storage_2d</span><span class="syntax-punctuation">&lt;<span class="syntax-type">r32float</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">read_write</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#21"
             id="21"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >21</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">13</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">samplr</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">sampler</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >21</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">7</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">mip_7</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">texture_storage_2d</span><span class="syntax-punctuation">&lt;<span class="syntax-type">r32float</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">write</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#22"
             id="22"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >22</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">struct</span> <span class="syntax-type">Constants</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span> <span class="syntax-variable syntax-variable-other syntax-variable-other-member">max_mip_level</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span> <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
+        >22</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">8</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">mip_8</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">texture_storage_2d</span><span class="syntax-punctuation">&lt;<span class="syntax-type">r32float</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">write</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#23"
             id="23"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >23</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span><span class="syntax-punctuation">&lt;<span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-modifier">immediate</span>&gt;</span> <span class="syntax-variable">constants</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">Constants</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >23</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">9</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">mip_9</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">texture_storage_2d</span><span class="syntax-punctuation">&lt;<span class="syntax-type">r32float</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">write</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#24"
             id="24"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >24</a>
+        >24</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">10</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">mip_10</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">texture_storage_2d</span><span class="syntax-punctuation">&lt;<span class="syntax-type">r32float</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">write</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#25"
             id="25"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >25</a><span class="syntax-comment syntax-comment-line">/// Generates a hierarchical depth buffer.</span>
+        >25</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">11</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">mip_11</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">texture_storage_2d</span><span class="syntax-punctuation">&lt;<span class="syntax-type">r32float</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">write</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#26"
             id="26"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >26</a><span class="syntax-comment syntax-comment-line">/// Based on FidelityFX SPD v2.1 https://github.com/GPUOpen-LibrariesAndSDKs/FidelityFX-SDK/blob/d7531ae47d8b36a5d4025663e731a47a38be882f/sdk/include/FidelityFX/gpu/spd/ffx_spd.h#L528</span>
+        >26</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">12</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">mip_12</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">texture_storage_2d</span><span class="syntax-punctuation">&lt;<span class="syntax-type">r32float</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">write</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#27"
             id="27"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >27</a><span class="syntax-comment syntax-comment-line">///</span>
+        >27</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">13</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">samplr</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">sampler</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#28"
             id="28"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >28</a><span class="syntax-comment syntax-comment-line">/// `mip_0` may be of any size, but `mip_1` and down must have side lengths that</span>
+        >28</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">struct</span> <span class="syntax-type">Constants</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span> <span class="syntax-variable syntax-variable-other syntax-variable-other-member">max_mip_level</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span> <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#29"
             id="29"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >29</a><span class="syntax-comment syntax-comment-line">/// are powers of two.</span>
+        >29</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span><span class="syntax-punctuation">&lt;<span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-modifier">immediate</span>&gt;</span> <span class="syntax-variable">constants</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">Constants</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#30"
             id="30"
@@ -1945,49 +1945,49 @@
             id="308"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >308</a><span class="syntax-comment syntax-comment-line">// Loads the top mip level at virtual position (x, y).</span>
+        >308</a><span class="syntax-comment syntax-comment-line">/// Loads the top mip level at virtual position (x, y).</span>
 <a
             href="#309"
             id="309"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >309</a><span class="syntax-comment syntax-comment-line">//</span>
+        >309</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#310"
             id="310"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >310</a><span class="syntax-comment syntax-comment-line">// This is the value that *would be* returned from sampling a scaled depth</span>
+        >310</a><span class="syntax-comment syntax-comment-line">/// This is the value that *would be* returned from sampling a scaled depth</span>
 <a
             href="#311"
             id="311"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >311</a><span class="syntax-comment syntax-comment-line">// buffer with side lengths rounded up to the next power of two, without</span>
+        >311</a><span class="syntax-comment syntax-comment-line">/// buffer with side lengths rounded up to the next power of two, without</span>
 <a
             href="#312"
             id="312"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >312</a><span class="syntax-comment syntax-comment-line">// actually constructing such a depth buffer.</span>
+        >312</a><span class="syntax-comment syntax-comment-line">/// actually constructing such a depth buffer.</span>
 <a
             href="#313"
             id="313"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >313</a><span class="syntax-comment syntax-comment-line">//</span>
+        >313</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#314"
             id="314"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >314</a><span class="syntax-comment syntax-comment-line">// See the comments in `ViewDepthPyramid::downsample_depth` for more</span>
+        >314</a><span class="syntax-comment syntax-comment-line">/// See the comments in `ViewDepthPyramid::downsample_depth` for more</span>
 <a
             href="#315"
             id="315"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >315</a><span class="syntax-comment syntax-comment-line">// information.</span>
+        >315</a><span class="syntax-comment syntax-comment-line">/// information.</span>
 <a
             href="#316"
             id="316"
@@ -2179,31 +2179,31 @@
             id="347"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >347</a><span class="syntax-comment syntax-comment-line">// Loads a single 2×2 square of texels at the given position from the source</span>
+        >347</a><span class="syntax-comment syntax-comment-line">/// Loads a single 2×2 square of texels at the given position from the source</span>
 <a
             href="#348"
             id="348"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >348</a><span class="syntax-comment syntax-comment-line">// image and returns all four (like `textureGather` does).</span>
+        >348</a><span class="syntax-comment syntax-comment-line">/// image and returns all four (like `textureGather` does).</span>
 <a
             href="#349"
             id="349"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >349</a><span class="syntax-comment syntax-comment-line">//</span>
+        >349</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#350"
             id="350"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >350</a><span class="syntax-comment syntax-comment-line">// `st` should be in texels, not in the [0, 1] range like UVs. That is, `st` is</span>
+        >350</a><span class="syntax-comment syntax-comment-line">/// `st` should be in texels, not in the [0, 1] range like UVs. That is, `st` is</span>
 <a
             href="#351"
             id="351"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >351</a><span class="syntax-comment syntax-comment-line">// `uv * textureDimensions(mip_0).xy`.</span>
+        >351</a><span class="syntax-comment syntax-comment-line">/// `uv * textureDimensions(mip_0).xy`.</span>
 <a
             href="#352"
             id="352"
@@ -2281,31 +2281,31 @@
             id="364"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >364</a><span class="syntax-comment syntax-comment-line">// Loads a single 2×2 square of texels at the given position from the source</span>
+        >364</a><span class="syntax-comment syntax-comment-line">/// Loads a single 2×2 square of texels at the given position from the source</span>
 <a
             href="#365"
             id="365"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >365</a><span class="syntax-comment syntax-comment-line">// image, reduces them, and returns the result.</span>
+        >365</a><span class="syntax-comment syntax-comment-line">/// image, reduces them, and returns the result.</span>
 <a
             href="#366"
             id="366"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >366</a><span class="syntax-comment syntax-comment-line">//</span>
+        >366</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#367"
             id="367"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >367</a><span class="syntax-comment syntax-comment-line">// `st` should be in texels, not in the [0, 1] range like UVs. That is, `st` is</span>
+        >367</a><span class="syntax-comment syntax-comment-line">/// `st` should be in texels, not in the [0, 1] range like UVs. That is, `st` is</span>
 <a
             href="#368"
             id="368"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >368</a><span class="syntax-comment syntax-comment-line">// `uv * textureDimensions(mip_0).xy`.</span>
+        >368</a><span class="syntax-comment syntax-comment-line">/// `uv * textureDimensions(mip_0).xy`.</span>
 <a
             href="#369"
             id="369"
@@ -2413,25 +2413,25 @@
             id="386"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >386</a><span class="syntax-comment syntax-comment-line">// Returns the next power of two of x.</span>
+        >386</a><span class="syntax-comment syntax-comment-line">/// Returns the next power of two of x.</span>
 <a
             href="#387"
             id="387"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >387</a><span class="syntax-comment syntax-comment-line">//</span>
+        >387</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#388"
             id="388"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >388</a><span class="syntax-comment syntax-comment-line">// If x is itself a power of two, this still returns the *next* power of two.</span>
+        >388</a><span class="syntax-comment syntax-comment-line">/// If x is itself a power of two, this still returns the *next* power of two.</span>
 <a
             href="#389"
             id="389"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >389</a><span class="syntax-comment syntax-comment-line">// This is different from Rust&#39;s `next_power_of_two` function.</span>
+        >389</a><span class="syntax-comment syntax-comment-line">/// This is different from Rust&#39;s `next_power_of_two` function.</span>
 <a
             href="#390"
             id="390"

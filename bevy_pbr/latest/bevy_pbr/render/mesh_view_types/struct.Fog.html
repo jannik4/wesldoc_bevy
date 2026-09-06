@@ -131,7 +131,15 @@
 
 
 <div style="margin: 8px 0;"><code>be: vec3&lt;f32&gt;</code></div>
-
+<div class="comment"><p><code>be</code> and <code>bi</code> are allocated differently depending on the fog mode</p>
+<p>For Linear Fog:
+be.x = start, be.y = end
+For Exponential and ExponentialSquared Fog:
+be.x = density
+For Atmospheric Fog:
+be = per-channel extinction density
+bi = per-channel inscattering density</p>
+</div>
 
 <div style="margin: 8px 0;"><code>directional_light_exponent: f32</code></div>
 

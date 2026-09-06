@@ -109,7 +109,28 @@
 <a class="module" href="../../../src/bevy_pbr/render/view_transformations.html">Source</a>
 
 
-
+<div class="comment"><p>World space:
++y is up</p>
+<p>View space:
+-z is forward, +x is right, +y is up
+Forward is from the camera position into the scene.
+(0.0, 0.0, -1.0) is linear distance of 1.0 in front of the camera's view relative to the camera's rotation
+(0.0, 1.0, 0.0) is linear distance of 1.0 above the camera's view relative to the camera's rotation</p>
+<p>NDC (normalized device coordinate):
+https://www.w3.org/TR/webgpu/#coordinate-systems
+(-1.0, -1.0) in NDC is located at the bottom-left corner of NDC
+(1.0, 1.0) in NDC is located at the top-right corner of NDC
+Z is depth where:
+1.0 is near clipping plane
+Perspective projection: 0.0 is inf far away
+Orthographic projection: 0.0 is far clipping plane</p>
+<p>Clip space:
+This is NDC before the perspective divide, still in homogenous coordinate space.
+Dividing a clip space point by its w component yields a point in NDC space.</p>
+<p>UV space:
+0.0, 0.0 is the top left
+1.0, 1.0 is the bottom right</p>
+</div>
 
 
 

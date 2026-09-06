@@ -109,7 +109,21 @@
 <a class="module" href="../../../src/bevy_pbr/atmosphere/functions.html">Source</a>
 
 
-
+<div class="comment"><p>NOTE FOR CONVENTIONS:
+r:
+radius, or distance from planet center</p>
+<p>altitude:
+distance from planet <strong>surface</strong></p>
+<p>mu:
+cosine of the zenith angle of a ray with
+respect to the planet normal</p>
+<p>atmosphere space:
+abbreviated as "as" (contrast with vs, cs, ws), this space is similar
+to view space, but with the camera positioned horizontally on the planet
+surface, so the horizon is a horizontal line centered vertically in the
+frame. This enables the non-linear latitude parametrization the paper uses
+to concentrate detail near the horizon</p>
+</div>
 
 
 
@@ -133,7 +147,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>1 meter</p>
+</div>
         </div>
     </li>
     
@@ -143,7 +158,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>1 / (2π)</p>
+</div>
         </div>
     </li>
     
@@ -153,7 +169,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>3 / (16π)</p>
+</div>
         </div>
     </li>
     
@@ -163,7 +180,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>1 / (4π)</p>
+</div>
         </div>
     </li>
     
@@ -173,7 +191,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>1 / π</p>
+</div>
         </div>
     </li>
     
@@ -183,7 +202,11 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>During raymarching, each segment is sampled at a single point. This constant determines
+where in the segment that sample is taken (0.0 = start, 0.5 = middle, 1.0 = end).
+We use 0.3 to sample closer to the start of each segment, which better approximates
+the exponential falloff of atmospheric density.</p>
+</div>
         </div>
     </li>
     
@@ -213,7 +236,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>√2</p>
+</div>
         </div>
     </li>
     
@@ -314,7 +338,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Given a ray starting at radius r, with mu = cos(zenith angle),
+and a t = distance along the ray, gives the new radius at point t</p>
+</div>
         </div>
     </li>
     
@@ -324,7 +350,10 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>We assume the <code>up</code> vector at the view position is the y axis, since the world is locally flat/level.
+t = distance along view ray in atmosphere space
+NOTE: this means that if your world is actually spherical, this will be wrong.</p>
+</div>
         </div>
     </li>
     
@@ -416,7 +445,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>RGB channels: total inscattered light along the camera ray to the current sample.
+A channel: average transmittance across all wavelengths to the current sample.</p>
+</div>
         </div>
     </li>
     
@@ -426,7 +457,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>samples from the atmosphere density LUT.</p>
+</div>
         </div>
     </li>
     
@@ -457,7 +489,10 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>samples from the atmosphere scattering LUT. <code>neg_LdotV</code> is the dot product
+of the light direction and the incoming view vector.
+Nonlinear phase mapping to mitigate banding in low-resolution LUTs.</p>
+</div>
         </div>
     </li>
     
@@ -537,7 +572,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Convert uv <a href="0.0%20..%201.0" title="0.0 .. 1.0" rel="noopener noreferrer">0.0 .. 1.0</a> coordinate to ndc space xy <a href="-1.0%20..%201.0" title="-1.0 .. 1.0" rel="noopener noreferrer">-1.0 .. 1.0</a></p>
+</div>
         </div>
     </li>
     
@@ -547,7 +583,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Returns a normalized ray direction in world space.</p>
+</div>
         </div>
     </li>
     

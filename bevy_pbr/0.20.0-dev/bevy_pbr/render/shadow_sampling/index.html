@@ -123,7 +123,10 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>And these are the coefficients corresponding to the probability distribution
+function of a 2D Gaussian lobe with zero mean and the identity covariance
+matrix at those points.</p>
+</div>
         </div>
     </li>
     
@@ -133,7 +136,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>These are the standard MSAA sample point positions from D3D. They were chosen
+to get a reasonable distribution that's not too regular.</p>
+</div>
         </div>
     </li>
     
@@ -186,7 +191,10 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Calculates the distance between spiral samples for the given texel size and
+penumbra size. This is used for the Jimenez '14 (i.e. temporal) variant of
+shadow sampling.</p>
+</div>
         </div>
     </li>
     
@@ -206,7 +214,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Creates a random rotation matrix using interleaved gradient noise.</p>
+</div>
         </div>
     </li>
     
@@ -236,7 +245,12 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>This more or less does what Castano13 does, but in 3D space. Castano13 is
+essentially an optimized 2D Gaussian filter that takes advantage of the
+bilinear filtering hardware to reduce the number of samples needed. This
+trick doesn't apply to cubemaps, so we manually apply a Gaussian filter over
+the standard 8xMSAA pattern instead.</p>
+</div>
         </div>
     </li>
     
@@ -256,7 +270,10 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>This is a port of the Jimenez14 filter above to the 3D space. It jitters the
+points in the spiral pattern after first creating a 2D orthonormal basis
+along the principal light direction.</p>
+</div>
         </div>
     </li>
     
@@ -266,7 +283,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Samples the shadow map for a point or spot light when percentage-closer soft
+shadows are being used.</p>
+</div>
         </div>
     </li>
     
@@ -286,7 +305,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>https://web.archive.org/web/20230210095515/http://the-witness.net/news/2013/09/shadow-mapping-summary-part-1</p>
+</div>
         </div>
     </li>
     
@@ -296,7 +316,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Do the lookup, using HW 2x2 PCF and comparison</p>
+</div>
         </div>
     </li>
     
@@ -316,7 +337,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Samples the shadow map for a directional light when percentage-closer soft
+shadows are being used.</p>
+</div>
         </div>
     </li>
     
@@ -326,7 +349,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Searches for PCSS blockers in a cubemap. This is the variant of the blocker
+search used for point and spot lights.</p>
+</div>
         </div>
     </li>
     
@@ -336,7 +361,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Computes the search position and performs one sample of the blocker search.
+This variation of the blocker search function is for point and spot lights.</p>
+</div>
         </div>
     </li>
     
@@ -346,7 +373,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Performs one sample of the blocker search. This variation of the blocker
+search function is for point and spot lights.</p>
+</div>
         </div>
     </li>
     
@@ -356,7 +385,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Performs the blocker search portion of percentage-closer soft shadows (PCSS).
+This is the variation used for directional lights.</p>
+</div>
         </div>
     </li>
     
@@ -366,7 +397,9 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Does a single sample of the blocker search, a part of the PCSS algorithm.
+This is the variant used for directional lights.</p>
+</div>
         </div>
     </li>
     

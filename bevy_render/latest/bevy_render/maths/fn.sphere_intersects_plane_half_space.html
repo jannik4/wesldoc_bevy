@@ -100,12 +100,15 @@
 
 
 
-<a class="module" href="../../src/bevy_render/maths.html#99-105">Source</a>
+<a class="module" href="../../src/bevy_render/maths.html#104-110">Source</a>
 
 
 <pre class="code-block"><code>fn sphere_intersects_plane_half_space(plane: vec4&lt;f32&gt;, sphere_center: vec4&lt;f32&gt;, sphere_radius: f32) -> bool</code>
 </pre>
-
+<div class="comment"><p>Returns true if any part of a sphere is on the positive side of a plane.</p>
+<p><code>sphere_center.w</code> should be 1.0.</p>
+<p>This is used for frustum culling.</p>
+</div>
 
 
         </div>

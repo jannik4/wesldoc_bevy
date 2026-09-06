@@ -109,7 +109,11 @@
 <a class="module" href="../../../src/bevy_pbr/ssao/preprocess_depth.html">Source</a>
 
 
-
+<div class="comment"><p>Inputs a depth texture and outputs a MIP-chain of depths.</p>
+<p>Because SSAO's performance is bound by texture reads, this increases
+performance over using the full resolution depth for every sample.</p>
+<p>Reference: https://research.nvidia.com/sites/default/files/pubs/2012-06_Scalable-Ambient-Obscurance/McGuire12SAO.pdf, section 2.2</p>
+</div>
 
 
 
@@ -207,7 +211,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Used to share the depths from the previous MIP level between all invocations in a workgroup</p>
+</div>
         </div>
     </li>
     
@@ -246,7 +251,8 @@
             
         </div>
         <div>
-            
+            <div class="comment-inline"><p>Using 4 depths from the previous MIP, compute a weighted average for the depth of the current MIP</p>
+</div>
         </div>
     </li>
     

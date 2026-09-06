@@ -118,29 +118,55 @@
     late_instance_count: u32
 }</code>
 </pre>
-
+<div class="comment"><p>Information needed to construct indirect draw parameters for a single draw.</p>
+<p>Note that is per-<em>draw</em> (i.e. per-mesh), not per-mesh-instance or
+per-batch-set. A single multi-draw indirect call can perform multiple draws.</p>
+<p>Typically, the uniform allocation and mesh preprocessing phases fill in this
+structure. However, parts of it may be filled in on the CPU for objects that
+aren't multidrawn.</p>
+</div>
 <h2 class="item-list-title">Fields</h2>
 
 <div style="margin: 8px 0;"><code>base_output_index: u32</code></div>
-
+<div class="comment"><p>The index of the first <code>MeshUniform</code> for this draw in the mesh uniform
+buffer.</p>
+<p><code>MeshUniform</code>s for all instances are stored consecutively.</p>
+<p>This is filled in in the <code>allocate_uniforms</code> shader, or on the CPU when
+multidraw isn't in use.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>batch_set_index: u32</code></div>
-
+<div class="comment"><p>The index of this batch set in the <code>IndirectBatchSet</code> array.</p>
+<p>This is filled in in the <code>allocate_uniforms</code> shader, or on the CPU when
+multidraw isn't in use.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>mesh_index: u32</code></div>
-
+<div class="comment"><p>The index of the mesh in the <code>MeshInput</code> buffer.</p>
+<p>The mesh preprocessing shader fills this in.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>early_instance_count: atomic&lt;u32&gt;</code></div>
-
+<div class="comment"><p>The number of instances that were visible last frame (if occlusion
+culling is in use) or that were visible at all (if occlusion culling
+isn't in use).</p>
+</div>
 
 <div style="margin: 8px 0;"><code>late_instance_count: atomic&lt;u32&gt;</code></div>
-
+<div class="comment"><p>The number of instances that were visible this frame if occlusion culling
+is in use.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>early_instance_count: u32</code></div>
-
+<div class="comment"><p>The number of instances that were visible last frame (if occlusion
+culling is in use) or that were visible at all (if occlusion culling
+isn't in use).</p>
+</div>
 
 <div style="margin: 8px 0;"><code>late_instance_count: u32</code></div>
-
+<div class="comment"><p>The number of instances that were visible this frame if occlusion culling
+is in use.</p>
+</div>
 
 
 

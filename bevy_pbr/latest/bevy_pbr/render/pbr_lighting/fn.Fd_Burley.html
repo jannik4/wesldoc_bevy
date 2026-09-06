@@ -108,12 +108,23 @@
 
 
 
-<a class="module" href="../../../src/bevy_pbr/render/pbr_lighting.html#507-521">Source</a>
+<a class="module" href="../../../src/bevy_pbr/render/pbr_lighting.html#510-524">Source</a>
 
 
 <pre class="code-block"><code>fn Fd_Burley(input: ptr&lt;function, <a class="struct" href="../../render/pbr_lighting/struct.LightingInput.html">LightingInput</a>&gt;, derived_input: ptr&lt;function, <a class="struct" href="../../render/pbr_lighting/struct.DerivedLightingInput.html">DerivedLightingInput</a>&gt;) -> f32</code>
 </pre>
-
+<div class="comment"><p>Diffuse BRDF
+https://google.github.io/filament/Filament.md.html#materialsystem/diffusebrdf
+fd(v,l) = σ/π * 1 / { |n⋅v||n⋅l| } ∫Ω D(m,α) G(v,l,m) (v⋅m) (l⋅m) dm</p>
+<p>simplest approximation
+float Fd_Lambert() {
+return 1.0 / PI;
+}</p>
+<p>vec3 Fd = diffuseColor * Fd_Lambert();</p>
+<p>Disney approximation
+See https://google.github.io/filament/Filament.md.html#citation-burley12
+minimal quality difference</p>
+</div>
 
 
         </div>

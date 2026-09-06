@@ -108,61 +108,61 @@
             id="1"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >1</a><span class="syntax-comment syntax-comment-line">// 3x3 bilaterial filter (edge-preserving blur)</span>
+        >1</a><span class="syntax-comment syntax-comment-line">//! 3x3 bilaterial filter (edge-preserving blur)</span>
 <a
             href="#2"
             id="2"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >2</a><span class="syntax-comment syntax-comment-line">// https://people.csail.mit.edu/sparis/bf_course/course_notes.pdf</span>
+        >2</a><span class="syntax-comment syntax-comment-line">//! https://people.csail.mit.edu/sparis/bf_course/course_notes.pdf</span>
 <a
             href="#3"
             id="3"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >3</a>
+        >3</a><span class="syntax-comment syntax-comment-line">//!</span>
 <a
             href="#4"
             id="4"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >4</a><span class="syntax-comment syntax-comment-line">// Note: Does not use the Gaussian kernel part of a typical bilateral blur</span>
+        >4</a><span class="syntax-comment syntax-comment-line">//! Note: Does not use the Gaussian kernel part of a typical bilateral blur</span>
 <a
             href="#5"
             id="5"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >5</a><span class="syntax-comment syntax-comment-line">// From the paper: &quot;use the information gathered on a neighborhood of 4 × 4 using a bilateral filter for</span>
+        >5</a><span class="syntax-comment syntax-comment-line">//! From the paper: &quot;use the information gathered on a neighborhood of 4 × 4 using a bilateral filter for</span>
 <a
             href="#6"
             id="6"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >6</a><span class="syntax-comment syntax-comment-line">// reconstruction, using _uniform_ convolution weights&quot;</span>
+        >6</a><span class="syntax-comment syntax-comment-line">//! reconstruction, using _uniform_ convolution weights&quot;</span>
 <a
             href="#7"
             id="7"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >7</a>
+        >7</a><span class="syntax-comment syntax-comment-line">//!</span>
 <a
             href="#8"
             id="8"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >8</a><span class="syntax-comment syntax-comment-line">// Note: The paper does a 4x4 (not quite centered) filter, offset by +/- 1 pixel every other frame</span>
+        >8</a><span class="syntax-comment syntax-comment-line">//! Note: The paper does a 4x4 (not quite centered) filter, offset by +/- 1 pixel every other frame</span>
 <a
             href="#9"
             id="9"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >9</a><span class="syntax-comment syntax-comment-line">// XeGTAO does a 3x3 filter, on two pixels at a time per compute thread, applied twice</span>
+        >9</a><span class="syntax-comment syntax-comment-line">//! XeGTAO does a 3x3 filter, on two pixels at a time per compute thread, applied twice</span>
 <a
             href="#10"
             id="10"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >10</a><span class="syntax-comment syntax-comment-line">// We do a 3x3 filter, on 1 pixel per compute thread, applied once</span>
+        >10</a><span class="syntax-comment syntax-comment-line">//! We do a 3x3 filter, on 1 pixel per compute thread, applied once</span>
 <a
             href="#11"
             id="11"

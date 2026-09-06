@@ -100,7 +100,7 @@
             id="1"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >1</a><span class="syntax-comment syntax-comment-line">// Types needed for GPU mesh uniform building.</span>
+        >1</a><span class="syntax-comment syntax-comment-line">//! Types needed for GPU mesh uniform building.</span>
 <a
             href="#2"
             id="2"
@@ -112,7 +112,7 @@
             id="3"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >3</a><span class="syntax-comment syntax-comment-line">// Per-frame data that the CPU supplies to the GPU.</span>
+        >3</a><span class="syntax-comment syntax-comment-line">/// Per-frame data that the CPU supplies to the GPU.</span>
 <a
             href="#4"
             id="4"
@@ -124,7 +124,7 @@
             id="5"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >5</a>    <span class="syntax-comment syntax-comment-line">// The model transform.</span>
+        >5</a>    <span class="syntax-comment syntax-comment-line">/// The model transform.</span>
 <a
             href="#6"
             id="6"
@@ -136,7 +136,7 @@
             id="7"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >7</a>    <span class="syntax-comment syntax-comment-line">// The lightmap UV rect, packed into 64 bits.</span>
+        >7</a>    <span class="syntax-comment syntax-comment-line">/// The lightmap UV rect, packed into 64 bits.</span>
 <a
             href="#8"
             id="8"
@@ -148,7 +148,7 @@
             id="9"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >9</a>    <span class="syntax-comment syntax-comment-line">// Various flags.</span>
+        >9</a>    <span class="syntax-comment syntax-comment-line">/// Various flags.</span>
 <a
             href="#10"
             id="10"
@@ -160,13 +160,13 @@
             id="11"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >11</a>    <span class="syntax-comment syntax-comment-line">// The index of the `PreviousMeshInput` uniform in the buffer, or `u32::MAX`</span>
+        >11</a>    <span class="syntax-comment syntax-comment-line">/// The index of the `PreviousMeshInput` uniform in the buffer, or `u32::MAX`</span>
 <a
             href="#12"
             id="12"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >12</a>    <span class="syntax-comment syntax-comment-line">// if there&#39;s no such uniform.</span>
+        >12</a>    <span class="syntax-comment syntax-comment-line">/// if there&#39;s no such uniform.</span>
 <a
             href="#13"
             id="13"
@@ -202,13 +202,13 @@
             id="18"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >18</a>    <span class="syntax-comment syntax-comment-line">// Low 16 bits: index of the material inside the bind group data.</span>
+        >18</a>    <span class="syntax-comment syntax-comment-line">/// Low 16 bits: index of the material inside the bind group data.</span>
 <a
             href="#19"
             id="19"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >19</a>    <span class="syntax-comment syntax-comment-line">// High 16 bits: index of the lightmap in the binding array.</span>
+        >19</a>    <span class="syntax-comment syntax-comment-line">/// High 16 bits: index of the lightmap in the binding array.</span>
 <a
             href="#20"
             id="20"
@@ -226,7 +226,7 @@
             id="22"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >22</a>    <span class="syntax-comment syntax-comment-line">// User supplied index to identify the mesh instance</span>
+        >22</a>    <span class="syntax-comment syntax-comment-line">/// User supplied index to identify the mesh instance</span>
 <a
             href="#23"
             id="23"
@@ -238,25 +238,25 @@
             id="24"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >24</a>    <span class="syntax-comment syntax-comment-line">// The index of the morph descriptor for this mesh instance in the</span>
+        >24</a>    <span class="syntax-comment syntax-comment-line">/// The index of the morph descriptor for this mesh instance in the</span>
 <a
             href="#25"
             id="25"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >25</a>    <span class="syntax-comment syntax-comment-line">// `morph_descriptors` table.</span>
+        >25</a>    <span class="syntax-comment syntax-comment-line">/// `morph_descriptors` table.</span>
 <a
             href="#26"
             id="26"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >26</a>    <span class="syntax-comment syntax-comment-line">//</span>
+        >26</a>    <span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#27"
             id="27"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >27</a>    <span class="syntax-comment syntax-comment-line">// If the mesh has no morph targets, this is `u32::MAX`.</span>
+        >27</a>    <span class="syntax-comment syntax-comment-line">/// If the mesh has no morph targets, this is `u32::MAX`.</span>
 <a
             href="#28"
             id="28"
@@ -286,7 +286,7 @@
             id="32"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >32</a><span class="syntax-comment syntax-comment-line">// Per-mesh-instance data that we retain from the previous frame.</span>
+        >32</a><span class="syntax-comment syntax-comment-line">/// Per-mesh-instance data that we retain from the previous frame.</span>
 <a
             href="#33"
             id="33"
@@ -298,7 +298,7 @@
             id="34"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >34</a>    <span class="syntax-comment syntax-comment-line">// The model transform.</span>
+        >34</a>    <span class="syntax-comment syntax-comment-line">/// The model transform.</span>
 <a
             href="#35"
             id="35"
@@ -322,19 +322,19 @@
             id="38"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >38</a><span class="syntax-comment syntax-comment-line">// The `wgpu` indirect parameters structure. This is a union of two structures.</span>
+        >38</a><span class="syntax-comment syntax-comment-line">/// The `wgpu` indirect parameters structure. This is a union of two structures.</span>
 <a
             href="#39"
             id="39"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >39</a><span class="syntax-comment syntax-comment-line">// For more information, see the corresponding comment in</span>
+        >39</a><span class="syntax-comment syntax-comment-line">/// For more information, see the corresponding comment in</span>
 <a
             href="#40"
             id="40"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >40</a><span class="syntax-comment syntax-comment-line">// `gpu_preprocessing.rs`.</span>
+        >40</a><span class="syntax-comment syntax-comment-line">/// `gpu_preprocessing.rs`.</span>
 <a
             href="#41"
             id="41"
@@ -346,7 +346,7 @@
             id="42"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >42</a>    <span class="syntax-comment syntax-comment-line">// `vertex_count` or `index_count`.</span>
+        >42</a>    <span class="syntax-comment syntax-comment-line">/// `vertex_count` or `index_count`.</span>
 <a
             href="#43"
             id="43"
@@ -358,7 +358,7 @@
             id="44"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >44</a>    <span class="syntax-comment syntax-comment-line">// `instance_count` in both structures.</span>
+        >44</a>    <span class="syntax-comment syntax-comment-line">/// `instance_count` in both structures.</span>
 <a
             href="#45"
             id="45"
@@ -370,7 +370,7 @@
             id="46"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >46</a>    <span class="syntax-comment syntax-comment-line">// `first_vertex` or `first_index`.</span>
+        >46</a>    <span class="syntax-comment syntax-comment-line">/// `first_vertex` or `first_index`.</span>
 <a
             href="#47"
             id="47"
@@ -382,7 +382,7 @@
             id="48"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >48</a>    <span class="syntax-comment syntax-comment-line">// `base_vertex` or `first_instance`.</span>
+        >48</a>    <span class="syntax-comment syntax-comment-line">/// `base_vertex` or `first_instance`.</span>
 <a
             href="#49"
             id="49"
@@ -394,7 +394,7 @@
             id="50"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >50</a>    <span class="syntax-comment syntax-comment-line">// A read-only copy of `instance_index`.</span>
+        >50</a>    <span class="syntax-comment syntax-comment-line">/// A read-only copy of `instance_index`.</span>
 <a
             href="#51"
             id="51"
@@ -460,49 +460,49 @@
             id="61"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >61</a><span class="syntax-comment syntax-comment-line">// Information needed to construct indirect draw parameters for a single draw.</span>
+        >61</a><span class="syntax-comment syntax-comment-line">/// Information needed to construct indirect draw parameters for a single draw.</span>
 <a
             href="#62"
             id="62"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >62</a><span class="syntax-comment syntax-comment-line">//</span>
+        >62</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#63"
             id="63"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >63</a><span class="syntax-comment syntax-comment-line">// Note that is per-*draw* (i.e. per-mesh), not per-mesh-instance or</span>
+        >63</a><span class="syntax-comment syntax-comment-line">/// Note that is per-*draw* (i.e. per-mesh), not per-mesh-instance or</span>
 <a
             href="#64"
             id="64"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >64</a><span class="syntax-comment syntax-comment-line">// per-batch-set. A single multi-draw indirect call can perform multiple draws.</span>
+        >64</a><span class="syntax-comment syntax-comment-line">/// per-batch-set. A single multi-draw indirect call can perform multiple draws.</span>
 <a
             href="#65"
             id="65"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >65</a><span class="syntax-comment syntax-comment-line">//</span>
+        >65</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#66"
             id="66"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >66</a><span class="syntax-comment syntax-comment-line">// Typically, the uniform allocation and mesh preprocessing phases fill in this</span>
+        >66</a><span class="syntax-comment syntax-comment-line">/// Typically, the uniform allocation and mesh preprocessing phases fill in this</span>
 <a
             href="#67"
             id="67"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >67</a><span class="syntax-comment syntax-comment-line">// structure. However, parts of it may be filled in on the CPU for objects that</span>
+        >67</a><span class="syntax-comment syntax-comment-line">/// structure. However, parts of it may be filled in on the CPU for objects that</span>
 <a
             href="#68"
             id="68"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >68</a><span class="syntax-comment syntax-comment-line">// aren&#39;t multidrawn.</span>
+        >68</a><span class="syntax-comment syntax-comment-line">/// aren&#39;t multidrawn.</span>
 <a
             href="#69"
             id="69"
@@ -514,43 +514,43 @@
             id="70"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >70</a>    <span class="syntax-comment syntax-comment-line">// The index of the first `MeshUniform` for this draw in the mesh uniform</span>
+        >70</a>    <span class="syntax-comment syntax-comment-line">/// The index of the first `MeshUniform` for this draw in the mesh uniform</span>
 <a
             href="#71"
             id="71"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >71</a>    <span class="syntax-comment syntax-comment-line">// buffer.</span>
+        >71</a>    <span class="syntax-comment syntax-comment-line">/// buffer.</span>
 <a
             href="#72"
             id="72"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >72</a>    <span class="syntax-comment syntax-comment-line">//</span>
+        >72</a>    <span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#73"
             id="73"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >73</a>    <span class="syntax-comment syntax-comment-line">// `MeshUniform`s for all instances are stored consecutively.</span>
+        >73</a>    <span class="syntax-comment syntax-comment-line">/// `MeshUniform`s for all instances are stored consecutively.</span>
 <a
             href="#74"
             id="74"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >74</a>    <span class="syntax-comment syntax-comment-line">//</span>
+        >74</a>    <span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#75"
             id="75"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >75</a>    <span class="syntax-comment syntax-comment-line">// This is filled in in the `allocate_uniforms` shader, or on the CPU when</span>
+        >75</a>    <span class="syntax-comment syntax-comment-line">/// This is filled in in the `allocate_uniforms` shader, or on the CPU when</span>
 <a
             href="#76"
             id="76"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >76</a>    <span class="syntax-comment syntax-comment-line">// multidraw isn&#39;t in use.</span>
+        >76</a>    <span class="syntax-comment syntax-comment-line">/// multidraw isn&#39;t in use.</span>
 <a
             href="#77"
             id="77"
@@ -568,25 +568,25 @@
             id="79"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >79</a>    <span class="syntax-comment syntax-comment-line">// The index of this batch set in the `IndirectBatchSet` array.</span>
+        >79</a>    <span class="syntax-comment syntax-comment-line">/// The index of this batch set in the `IndirectBatchSet` array.</span>
 <a
             href="#80"
             id="80"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >80</a>    <span class="syntax-comment syntax-comment-line">//</span>
+        >80</a>    <span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#81"
             id="81"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >81</a>    <span class="syntax-comment syntax-comment-line">// This is filled in in the `allocate_uniforms` shader, or on the CPU when</span>
+        >81</a>    <span class="syntax-comment syntax-comment-line">/// This is filled in in the `allocate_uniforms` shader, or on the CPU when</span>
 <a
             href="#82"
             id="82"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >82</a>    <span class="syntax-comment syntax-comment-line">// multidraw isn&#39;t in use.</span>
+        >82</a>    <span class="syntax-comment syntax-comment-line">/// multidraw isn&#39;t in use.</span>
 <a
             href="#83"
             id="83"
@@ -604,19 +604,19 @@
             id="85"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >85</a>    <span class="syntax-comment syntax-comment-line">// The index of the mesh in the `MeshInput` buffer.</span>
+        >85</a>    <span class="syntax-comment syntax-comment-line">/// The index of the mesh in the `MeshInput` buffer.</span>
 <a
             href="#86"
             id="86"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >86</a>    <span class="syntax-comment syntax-comment-line">//</span>
+        >86</a>    <span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#87"
             id="87"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >87</a>    <span class="syntax-comment syntax-comment-line">// The mesh preprocessing shader fills this in.</span>
+        >87</a>    <span class="syntax-comment syntax-comment-line">/// The mesh preprocessing shader fills this in.</span>
 <a
             href="#88"
             id="88"
@@ -634,19 +634,19 @@
             id="90"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >90</a>    <span class="syntax-comment syntax-comment-line">// The number of instances that were visible last frame (if occlusion</span>
+        >90</a>    <span class="syntax-comment syntax-comment-line">/// The number of instances that were visible last frame (if occlusion</span>
 <a
             href="#91"
             id="91"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >91</a>    <span class="syntax-comment syntax-comment-line">// culling is in use) or that were visible at all (if occlusion culling</span>
+        >91</a>    <span class="syntax-comment syntax-comment-line">/// culling is in use) or that were visible at all (if occlusion culling</span>
 <a
             href="#92"
             id="92"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >92</a>    <span class="syntax-comment syntax-comment-line">// isn&#39;t in use).</span>
+        >92</a>    <span class="syntax-comment syntax-comment-line">/// isn&#39;t in use).</span>
 <a
             href="#93"
             id="93"
@@ -664,13 +664,13 @@
             id="95"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >95</a>    <span class="syntax-comment syntax-comment-line">// The number of instances that were visible this frame if occlusion culling</span>
+        >95</a>    <span class="syntax-comment syntax-comment-line">/// The number of instances that were visible this frame if occlusion culling</span>
 <a
             href="#96"
             id="96"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >96</a>    <span class="syntax-comment syntax-comment-line">// is in use.</span>
+        >96</a>    <span class="syntax-comment syntax-comment-line">/// is in use.</span>
 <a
             href="#97"
             id="97"
@@ -688,19 +688,19 @@
             id="99"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >99</a>    <span class="syntax-comment syntax-comment-line">// The number of instances that were visible last frame (if occlusion</span>
+        >99</a>    <span class="syntax-comment syntax-comment-line">/// The number of instances that were visible last frame (if occlusion</span>
 <a
             href="#100"
             id="100"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >100</a>    <span class="syntax-comment syntax-comment-line">// culling is in use) or that were visible at all (if occlusion culling</span>
+        >100</a>    <span class="syntax-comment syntax-comment-line">/// culling is in use) or that were visible at all (if occlusion culling</span>
 <a
             href="#101"
             id="101"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >101</a>    <span class="syntax-comment syntax-comment-line">// isn&#39;t in use).</span>
+        >101</a>    <span class="syntax-comment syntax-comment-line">/// isn&#39;t in use).</span>
 <a
             href="#102"
             id="102"
@@ -718,13 +718,13 @@
             id="104"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >104</a>    <span class="syntax-comment syntax-comment-line">// The number of instances that were visible this frame if occlusion culling</span>
+        >104</a>    <span class="syntax-comment syntax-comment-line">/// The number of instances that were visible this frame if occlusion culling</span>
 <a
             href="#105"
             id="105"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >105</a>    <span class="syntax-comment syntax-comment-line">// is in use.</span>
+        >105</a>    <span class="syntax-comment syntax-comment-line">/// is in use.</span>
 <a
             href="#106"
             id="106"
@@ -784,7 +784,7 @@
             id="115"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >115</a><span class="syntax-comment syntax-comment-line">// One invocation of this compute shader: i.e. one mesh instance in a view.</span>
+        >115</a><span class="syntax-comment syntax-comment-line">/// One invocation of this compute shader: i.e. one mesh instance in a view.</span>
 <a
             href="#116"
             id="116"
@@ -796,13 +796,13 @@
             id="117"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >117</a>    <span class="syntax-comment syntax-comment-line">// The index of the `MeshInput` in the `current_input` buffer that we read</span>
+        >117</a>    <span class="syntax-comment syntax-comment-line">/// The index of the `MeshInput` in the `current_input` buffer that we read</span>
 <a
             href="#118"
             id="118"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >118</a>    <span class="syntax-comment syntax-comment-line">// from.</span>
+        >118</a>    <span class="syntax-comment syntax-comment-line">/// from.</span>
 <a
             href="#119"
             id="119"
@@ -814,19 +814,19 @@
             id="120"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >120</a>    <span class="syntax-comment syntax-comment-line">// In direct mode, the index of the `Mesh` in `output` that we write to. In</span>
+        >120</a>    <span class="syntax-comment syntax-comment-line">/// In direct mode, the index of the `Mesh` in `output` that we write to. In</span>
 <a
             href="#121"
             id="121"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >121</a>    <span class="syntax-comment syntax-comment-line">// indirect mode, the index of the `IndirectParameters` in</span>
+        >121</a>    <span class="syntax-comment syntax-comment-line">/// indirect mode, the index of the `IndirectParameters` in</span>
 <a
             href="#122"
             id="122"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >122</a>    <span class="syntax-comment syntax-comment-line">// `indirect_parameters` that we write to.</span>
+        >122</a>    <span class="syntax-comment syntax-comment-line">/// `indirect_parameters` that we write to.</span>
 <a
             href="#123"
             id="123"
@@ -850,25 +850,25 @@
             id="126"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >126</a><span class="syntax-comment syntax-comment-line">// Information about each bin in a batch set.</span>
+        >126</a><span class="syntax-comment syntax-comment-line">/// Information about each bin in a batch set.</span>
 <a
             href="#127"
             id="127"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >127</a><span class="syntax-comment syntax-comment-line">//</span>
+        >127</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#128"
             id="128"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >128</a><span class="syntax-comment syntax-comment-line">// This is maintained by the CPU and cached for bins that don&#39;t change from</span>
+        >128</a><span class="syntax-comment syntax-comment-line">/// This is maintained by the CPU and cached for bins that don&#39;t change from</span>
 <a
             href="#129"
             id="129"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >129</a><span class="syntax-comment syntax-comment-line">// frame to frame.</span>
+        >129</a><span class="syntax-comment syntax-comment-line">/// frame to frame.</span>
 <a
             href="#130"
             id="130"
@@ -880,37 +880,37 @@
             id="131"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >131</a>    <span class="syntax-comment syntax-comment-line">// The index of the indirect parameters for this bin, relative to the first</span>
+        >131</a>    <span class="syntax-comment syntax-comment-line">/// The index of the indirect parameters for this bin, relative to the first</span>
 <a
             href="#132"
             id="132"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >132</a>    <span class="syntax-comment syntax-comment-line">// indirect parameter index for the batch set.</span>
+        >132</a>    <span class="syntax-comment syntax-comment-line">/// indirect parameter index for the batch set.</span>
 <a
             href="#133"
             id="133"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >133</a>    <span class="syntax-comment syntax-comment-line">//</span>
+        >133</a>    <span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#134"
             id="134"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >134</a>    <span class="syntax-comment syntax-comment-line">// That is, the final indirect parameters index for this bin is</span>
+        >134</a>    <span class="syntax-comment syntax-comment-line">/// That is, the final indirect parameters index for this bin is</span>
 <a
             href="#135"
             id="135"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >135</a>    <span class="syntax-comment syntax-comment-line">// `first_indirect_parameters_index` in the `UniformAllocationMetadata` plus</span>
+        >135</a>    <span class="syntax-comment syntax-comment-line">/// `first_indirect_parameters_index` in the `UniformAllocationMetadata` plus</span>
 <a
             href="#136"
             id="136"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >136</a>    <span class="syntax-comment syntax-comment-line">// this value.</span>
+        >136</a>    <span class="syntax-comment syntax-comment-line">/// this value.</span>
 <a
             href="#137"
             id="137"
@@ -928,37 +928,37 @@
             id="139"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >139</a>    <span class="syntax-comment syntax-comment-line">// The index of the bin that this metadata corresponds to.</span>
+        >139</a>    <span class="syntax-comment syntax-comment-line">/// The index of the bin that this metadata corresponds to.</span>
 <a
             href="#140"
             id="140"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >140</a>    <span class="syntax-comment syntax-comment-line">//</span>
+        >140</a>    <span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#141"
             id="141"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >141</a>    <span class="syntax-comment syntax-comment-line">// The GPU doesn&#39;t use this, but the CPU does in order to perform the</span>
+        >141</a>    <span class="syntax-comment syntax-comment-line">/// The GPU doesn&#39;t use this, but the CPU does in order to perform the</span>
 <a
             href="#142"
             id="142"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >142</a>    <span class="syntax-comment syntax-comment-line">// reverse mapping from bin metadata index back to the bin. We could store</span>
+        >142</a>    <span class="syntax-comment syntax-comment-line">/// reverse mapping from bin metadata index back to the bin. We could store</span>
 <a
             href="#143"
             id="143"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >143</a>    <span class="syntax-comment syntax-comment-line">// this in a non-GPU-accessible buffer, but I figured the extra complexity</span>
+        >143</a>    <span class="syntax-comment syntax-comment-line">/// this in a non-GPU-accessible buffer, but I figured the extra complexity</span>
 <a
             href="#144"
             id="144"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >144</a>    <span class="syntax-comment syntax-comment-line">// wasn&#39;t worth it.</span>
+        >144</a>    <span class="syntax-comment syntax-comment-line">/// wasn&#39;t worth it.</span>
 <a
             href="#145"
             id="145"
@@ -976,7 +976,7 @@
             id="147"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >147</a>    <span class="syntax-comment syntax-comment-line">// The number of mesh instances in this bin.</span>
+        >147</a>    <span class="syntax-comment syntax-comment-line">/// The number of mesh instances in this bin.</span>
 <a
             href="#148"
             id="148"

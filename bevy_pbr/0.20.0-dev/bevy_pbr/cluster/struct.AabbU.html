@@ -117,14 +117,19 @@
     max: vec3&lt;u32&gt;
 }</code>
 </pre>
-
+<div class="comment"><p>An axis-aligned bounding box using unsigned integer coordinates.</p>
+<p>This is used for cluster bounds.</p>
+</div>
 <h2 class="item-list-title">Fields</h2>
 
 <div style="margin: 8px 0;"><code>min: vec3&lt;u32&gt;</code></div>
-
+<div class="comment"><p>The minimum extents of the box.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>max: vec3&lt;u32&gt;</code></div>
-
+<div class="comment"><p>The maximum extents of the box, plus one.</p>
+<p>We add 1 here so that 0-size AABBs can be expressed.</p>
+</div>
 
 
 

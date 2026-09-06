@@ -103,7 +103,7 @@
 
 
 
-<a class="module" href="../../src/bevy_ui_render/ui_texture_slice.html#68-92">Source</a>
+<a class="module" href="../../src/bevy_ui_render/ui_texture_slice.html#75-93">Source</a>
 
 
 <pre class="code-block"><code>fn map_axis_with_repeat(
@@ -115,7 +115,16 @@
     r: f32
 ) -> f32</code>
 </pre>
-<div class="comment"><p>maps a point along the axis of the render target to slice coordinates</p>
+<div class="comment"><p>maps a point along the axis of the render target to slice coordinates
+Arguments:</p>
+<ul>
+<li>p: normalized distance along the axis</li>
+<li>il: target min dividing point</li>
+<li>ih: target max dividing point</li>
+<li>tl: slice min dividing point</li>
+<li>th: slice max dividing point</li>
+<li>r: number of times to repeat the slice for sides and the center</li>
+</ul>
 </div>
 
 

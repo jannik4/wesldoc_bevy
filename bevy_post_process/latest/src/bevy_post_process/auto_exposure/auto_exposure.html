@@ -108,109 +108,109 @@
             id="1"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >1</a><span class="syntax-comment syntax-comment-line">// Auto exposure</span>
+        >1</a><span class="syntax-comment syntax-comment-line">//! Auto exposure</span>
 <a
             href="#2"
             id="2"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >2</a><span class="syntax-comment syntax-comment-line">//</span>
+        >2</a><span class="syntax-comment syntax-comment-line">//!</span>
 <a
             href="#3"
             id="3"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >3</a><span class="syntax-comment syntax-comment-line">// This shader computes an auto exposure value for the current frame,</span>
+        >3</a><span class="syntax-comment syntax-comment-line">//! This shader computes an auto exposure value for the current frame,</span>
 <a
             href="#4"
             id="4"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >4</a><span class="syntax-comment syntax-comment-line">// which is then used as an exposure correction in the tone mapping shader.</span>
+        >4</a><span class="syntax-comment syntax-comment-line">//! which is then used as an exposure correction in the tone mapping shader.</span>
 <a
             href="#5"
             id="5"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >5</a><span class="syntax-comment syntax-comment-line">//</span>
+        >5</a><span class="syntax-comment syntax-comment-line">//!</span>
 <a
             href="#6"
             id="6"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >6</a><span class="syntax-comment syntax-comment-line">// The auto exposure value is computed in two passes:</span>
+        >6</a><span class="syntax-comment syntax-comment-line">//! The auto exposure value is computed in two passes:</span>
 <a
             href="#7"
             id="7"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >7</a><span class="syntax-comment syntax-comment-line">// * The compute_histogram pass calculates a histogram of the luminance values in the scene,</span>
+        >7</a><span class="syntax-comment syntax-comment-line">//! * The compute_histogram pass calculates a histogram of the luminance values in the scene,</span>
 <a
             href="#8"
             id="8"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >8</a><span class="syntax-comment syntax-comment-line">// taking into account the metering mask texture. The metering mask is a grayscale texture</span>
+        >8</a><span class="syntax-comment syntax-comment-line">//! taking into account the metering mask texture. The metering mask is a grayscale texture</span>
 <a
             href="#9"
             id="9"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >9</a><span class="syntax-comment syntax-comment-line">// that defines the areas of the screen that should be given more weight when calculating</span>
+        >9</a><span class="syntax-comment syntax-comment-line">//! that defines the areas of the screen that should be given more weight when calculating</span>
 <a
             href="#10"
             id="10"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >10</a><span class="syntax-comment syntax-comment-line">// the average luminance value. For example, the middle area of the screen might be more important</span>
+        >10</a><span class="syntax-comment syntax-comment-line">//! the average luminance value. For example, the middle area of the screen might be more important</span>
 <a
             href="#11"
             id="11"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >11</a><span class="syntax-comment syntax-comment-line">// than the edges.</span>
+        >11</a><span class="syntax-comment syntax-comment-line">//! than the edges.</span>
 <a
             href="#12"
             id="12"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >12</a><span class="syntax-comment syntax-comment-line">// * The compute_average pass calculates the average luminance value of the scene, taking</span>
+        >12</a><span class="syntax-comment syntax-comment-line">//! * The compute_average pass calculates the average luminance value of the scene, taking</span>
 <a
             href="#13"
             id="13"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >13</a><span class="syntax-comment syntax-comment-line">// into account the low_percent and high_percent settings. These settings define the</span>
+        >13</a><span class="syntax-comment syntax-comment-line">//! into account the low_percent and high_percent settings. These settings define the</span>
 <a
             href="#14"
             id="14"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >14</a><span class="syntax-comment syntax-comment-line">// percentage of the histogram that should be excluded when calculating the average. This</span>
+        >14</a><span class="syntax-comment syntax-comment-line">//! percentage of the histogram that should be excluded when calculating the average. This</span>
 <a
             href="#15"
             id="15"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >15</a><span class="syntax-comment syntax-comment-line">// is useful to avoid overexposure when you have a lot of shadows, or underexposure when you</span>
+        >15</a><span class="syntax-comment syntax-comment-line">//! is useful to avoid overexposure when you have a lot of shadows, or underexposure when you</span>
 <a
             href="#16"
             id="16"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >16</a><span class="syntax-comment syntax-comment-line">// have a lot of bright specular reflections.</span>
+        >16</a><span class="syntax-comment syntax-comment-line">//! have a lot of bright specular reflections.</span>
 <a
             href="#17"
             id="17"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >17</a><span class="syntax-comment syntax-comment-line">//</span>
+        >17</a><span class="syntax-comment syntax-comment-line">//!</span>
 <a
             href="#18"
             id="18"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >18</a><span class="syntax-comment syntax-comment-line">// The final target_exposure is finally used to smoothly adjust the exposure value over time.</span>
+        >18</a><span class="syntax-comment syntax-comment-line">//! The final target_exposure is finally used to smoothly adjust the exposure value over time.</span>
 <a
             href="#19"
             id="19"
@@ -240,7 +240,7 @@
             id="23"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >23</a><span class="syntax-comment syntax-comment-line">// Constant to convert RGB to luminance, taken from Real Time Rendering, Vol 4 pg. 278, 4th edition</span>
+        >23</a><span class="syntax-comment syntax-comment-line">/// Constant to convert RGB to luminance, taken from Real Time Rendering, Vol 4 pg. 278, 4th edition</span>
 <a
             href="#24"
             id="24"
@@ -486,7 +486,7 @@
             id="64"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >64</a><span class="syntax-comment syntax-comment-line">// For a given color, return the histogram bin index</span>
+        >64</a><span class="syntax-comment syntax-comment-line">/// For a given color, return the histogram bin index</span>
 <a
             href="#65"
             id="65"
@@ -588,31 +588,31 @@
             id="81"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >81</a><span class="syntax-comment syntax-comment-line">// Read the metering mask at the given UV coordinates, returning a weight for the histogram.</span>
+        >81</a><span class="syntax-comment syntax-comment-line">/// Read the metering mask at the given UV coordinates, returning a weight for the histogram.</span>
 <a
             href="#82"
             id="82"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >82</a><span class="syntax-comment syntax-comment-line">//</span>
+        >82</a><span class="syntax-comment syntax-comment-line">///</span>
 <a
             href="#83"
             id="83"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >83</a><span class="syntax-comment syntax-comment-line">// Since the histogram is summed in the compute_average step, there is a limit to the amount of</span>
+        >83</a><span class="syntax-comment syntax-comment-line">/// Since the histogram is summed in the compute_average step, there is a limit to the amount of</span>
 <a
             href="#84"
             id="84"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >84</a><span class="syntax-comment syntax-comment-line">// distinct values that can be represented. When using the chosen value of 16, the maximum</span>
+        >84</a><span class="syntax-comment syntax-comment-line">/// distinct values that can be represented. When using the chosen value of 16, the maximum</span>
 <a
             href="#85"
             id="85"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >85</a><span class="syntax-comment syntax-comment-line">// amount of pixels that can be weighted and summed is 2^32 / 16 = 16384^2.</span>
+        >85</a><span class="syntax-comment syntax-comment-line">/// amount of pixels that can be weighted and summed is 2^32 / 16 = 16384^2.</span>
 <a
             href="#86"
             id="86"

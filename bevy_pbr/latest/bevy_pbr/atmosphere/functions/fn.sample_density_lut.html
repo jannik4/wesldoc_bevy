@@ -108,12 +108,15 @@
 
 
 
-<a class="module" href="../../../src/bevy_pbr/atmosphere/functions.html#170-175">Source</a>
+<a class="module" href="../../../src/bevy_pbr/atmosphere/functions.html#175-180">Source</a>
 
 
 <pre class="code-block"><code>fn sample_density_lut(r: f32, component: f32) -> vec3&lt;f32&gt;</code>
 </pre>
-
+<div class="comment"><p>samples from the atmosphere density LUT.</p>
+<p>calling with <code>component = 0.0</code> will return the atmosphere's absorption density,
+while calling with <code>component = 1.0</code> will return the atmosphere's scattering density.</p>
+</div>
 
 
         </div>

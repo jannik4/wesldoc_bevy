@@ -103,44 +103,14 @@
 
 
 
-<a class="module" href="../../../src/bevy_core_pipeline/mip_generation/downsample.html#20">Source</a>
+<a class="module" href="../../../src/bevy_core_pipeline/mip_generation/downsample.html#180">Source</a>
 
 
-<div><span class="conditional">ARRAY_TEXTURE &#38;&#38; COMBINE_BIND_GROUP</span></div>
-
-<pre class="code-block">
-<code>@group(0) @binding(14)
-var mip_12: texture_storage_2d_array&lt;TEXTURE_FORMAT, write&gt;;</code>
-</pre>
-
-
-
-<br />
-
-
-<a class="module" href="../../../src/bevy_core_pipeline/mip_generation/downsample.html#40">Source</a>
-
-
-<div><span class="conditional">ARRAY_TEXTURE &#38;&#38; SECOND_PASS</span></div>
-
-<pre class="code-block">
-<code>@group(0) @binding(8)
-var mip_12: texture_storage_2d_array&lt;TEXTURE_FORMAT, write&gt;;</code>
-</pre>
-
-
-
-<br />
-
-
-<a class="module" href="../../../src/bevy_core_pipeline/mip_generation/downsample.html#56">Source</a>
-
-
-<div><span class="conditional">!ARRAY_TEXTURE &#38;&#38; COMBINE_BIND_GROUP</span></div>
+<div><span class="conditional">COMBINE_BIND_GROUP</span></div>
 
 <pre class="code-block">
 <code>@group(0) @binding(14)
-var mip_12: texture_storage_2d&lt;TEXTURE_FORMAT, write&gt;;</code>
+var mip_12: MipWrite;</code>
 </pre>
 
 
@@ -148,14 +118,14 @@ var mip_12: texture_storage_2d&lt;TEXTURE_FORMAT, write&gt;;</code>
 <br />
 
 
-<a class="module" href="../../../src/bevy_core_pipeline/mip_generation/downsample.html#76">Source</a>
+<a class="module" href="../../../src/bevy_core_pipeline/mip_generation/downsample.html#194">Source</a>
 
 
-<div><span class="conditional">!ARRAY_TEXTURE &#38;&#38; SECOND_PASS</span></div>
+<div><span class="conditional">SPLIT_BIND_GROUP_SECOND</span></div>
 
 <pre class="code-block">
 <code>@group(0) @binding(8)
-var mip_12: texture_storage_2d&lt;TEXTURE_FORMAT, write&gt;;</code>
+var mip_12: MipWrite;</code>
 </pre>
 
 

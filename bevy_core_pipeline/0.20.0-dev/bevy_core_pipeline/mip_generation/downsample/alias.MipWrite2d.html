@@ -1,0 +1,415 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+        MipWrite2d - bevy_core_pipeline
+        
+    </title>
+
+    <link rel="stylesheet" href="../../../../../-/static/css/inter/inter.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/source_code_pro/source_code_pro.css">
+
+    <link rel="stylesheet" href="../../../../../-/static/css/themes.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/styles.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/icons.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/syntax.css">
+    <script src="../../../../../-/static/js/settings.js"></script>
+
+    
+</head>
+
+<body>
+    <div class="nav">
+        <a class="nav-item nav-item-bd-right muted-link" href="../../../../../index.html">
+            <span class="icon icon-home"></span>
+        </a>
+        <a id="show-package" class="nav-item nav-item-bd-right muted-link icon-and-text" href="#">
+            bevy_core_pipeline 0.20.0-dev
+            <span class="icon icon-mod-small icon-down"></span>
+        </a>
+        <div id="package-menu">
+    <div>
+        <div class="title">Package</div>
+        <div class="body">
+            
+            <a class="muted-link icon-and-text" href="https://bevy.org"><span class="icon icon-home"></span>Homepage</a>
+            
+            
+            <a class="muted-link icon-and-text" href="https://github.com/bevyengine/bevy"><span
+                    class="icon icon-repository"></span>Repository</a>
+            
+            
+            <a class="muted-link icon-and-text" href="#"><span class="icon icon-license"></span>MIT OR Apache-2.0</a>
+            
+        </div>
+    </div>
+
+    <div>
+        <div class="title">Dependencies</div>
+        <div class="body">
+            
+            <a class="muted-link"
+                href="../../../../../bevy_render/0.20.0-dev/bevy_render/index.html">
+                bevy_render 0.20.0-dev
+            </a>
+            
+            
+        </div>
+    </div>
+
+    <div>
+        <div class="title">Versions</div>
+        <div id="package-versions-list" class="body"></div>
+    </div>
+</div>
+        <button id="show-settings" class="nav-item nav-item-bd-left muted-link" aria-label="Show settings">
+            <span class="icon icon-settings"></span>
+        </button>
+        <div id="settings-menu">
+    <div class="settings-title">Theme</div>
+    <label>
+        <input type="radio" name="theme" id="theme-auto" value="auto"> Auto
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-dark" value="dark"> Dark
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-light" value="light"> Light
+    </label>
+</div>
+    </div>
+    <div class="content">
+        <input type="text" id="search" placeholder="Search" oninput="searchDebounced()" autocomplete="off">
+
+        <div id="innerContent">
+            
+            <h2>
+                <a class="path" href="../../index.html">bevy_core_pipeline</a><span>::</span><wbr><a class="path" href="../index.html">mip_generation</a><span>::</span><wbr><a class="path" href="index.html">downsample</a><span>::</span><wbr><a class="type" href="#">MipWrite2d</a>
+            </h2>
+            
+
+            
+
+
+
+<a class="module" href="../../../src/bevy_core_pipeline/mip_generation/downsample.html#8">Source</a>
+
+
+<div><span class="conditional">TEXTURE_FORMAT_RGBA8UNORM</span></div>
+
+<pre class="code-block">
+<code>alias MipWrite2d = texture_storage_2d&lt;rgba8unorm, write&gt;;</code>
+</pre>
+
+
+
+<br />
+
+
+<a class="module" href="../../../src/bevy_core_pipeline/mip_generation/downsample.html#15">Source</a>
+
+
+<div><span class="conditional">TEXTURE_FORMAT_RGBA8SNORM</span></div>
+
+<pre class="code-block">
+<code>alias MipWrite2d = texture_storage_2d&lt;rgba8snorm, write&gt;;</code>
+</pre>
+
+
+
+<br />
+
+
+<a class="module" href="../../../src/bevy_core_pipeline/mip_generation/downsample.html#22">Source</a>
+
+
+<div><span class="conditional">TEXTURE_FORMAT_RGBA16UNORM</span></div>
+
+<pre class="code-block">
+<code>alias MipWrite2d = texture_storage_2d&lt;rgba16unorm, write&gt;;</code>
+</pre>
+
+
+
+<br />
+
+
+<a class="module" href="../../../src/bevy_core_pipeline/mip_generation/downsample.html#29">Source</a>
+
+
+<div><span class="conditional">TEXTURE_FORMAT_RGBA16SNORM</span></div>
+
+<pre class="code-block">
+<code>alias MipWrite2d = texture_storage_2d&lt;rgba16snorm, write&gt;;</code>
+</pre>
+
+
+
+<br />
+
+
+<a class="module" href="../../../src/bevy_core_pipeline/mip_generation/downsample.html#36">Source</a>
+
+
+<div><span class="conditional">TEXTURE_FORMAT_RGBA16FLOAT</span></div>
+
+<pre class="code-block">
+<code>alias MipWrite2d = texture_storage_2d&lt;rgba16float, write&gt;;</code>
+</pre>
+
+
+
+<br />
+
+
+<a class="module" href="../../../src/bevy_core_pipeline/mip_generation/downsample.html#43">Source</a>
+
+
+<div><span class="conditional">TEXTURE_FORMAT_RG8UNORM</span></div>
+
+<pre class="code-block">
+<code>alias MipWrite2d = texture_storage_2d&lt;rg8unorm, write&gt;;</code>
+</pre>
+
+
+
+<br />
+
+
+<a class="module" href="../../../src/bevy_core_pipeline/mip_generation/downsample.html#50">Source</a>
+
+
+<div><span class="conditional">TEXTURE_FORMAT_RG8SNORM</span></div>
+
+<pre class="code-block">
+<code>alias MipWrite2d = texture_storage_2d&lt;rg8snorm, write&gt;;</code>
+</pre>
+
+
+
+<br />
+
+
+<a class="module" href="../../../src/bevy_core_pipeline/mip_generation/downsample.html#57">Source</a>
+
+
+<div><span class="conditional">TEXTURE_FORMAT_RG16UNORM</span></div>
+
+<pre class="code-block">
+<code>alias MipWrite2d = texture_storage_2d&lt;rg16unorm, write&gt;;</code>
+</pre>
+
+
+
+<br />
+
+
+<a class="module" href="../../../src/bevy_core_pipeline/mip_generation/downsample.html#64">Source</a>
+
+
+<div><span class="conditional">TEXTURE_FORMAT_RG16SNORM</span></div>
+
+<pre class="code-block">
+<code>alias MipWrite2d = texture_storage_2d&lt;rg16snorm, write&gt;;</code>
+</pre>
+
+
+
+<br />
+
+
+<a class="module" href="../../../src/bevy_core_pipeline/mip_generation/downsample.html#71">Source</a>
+
+
+<div><span class="conditional">TEXTURE_FORMAT_RG16FLOAT</span></div>
+
+<pre class="code-block">
+<code>alias MipWrite2d = texture_storage_2d&lt;rg16float, write&gt;;</code>
+</pre>
+
+
+
+<br />
+
+
+<a class="module" href="../../../src/bevy_core_pipeline/mip_generation/downsample.html#78">Source</a>
+
+
+<div><span class="conditional">TEXTURE_FORMAT_R32FLOAT</span></div>
+
+<pre class="code-block">
+<code>alias MipWrite2d = texture_storage_2d&lt;r32float, write&gt;;</code>
+</pre>
+
+
+
+<br />
+
+
+<a class="module" href="../../../src/bevy_core_pipeline/mip_generation/downsample.html#85">Source</a>
+
+
+<div><span class="conditional">TEXTURE_FORMAT_RG32FLOAT</span></div>
+
+<pre class="code-block">
+<code>alias MipWrite2d = texture_storage_2d&lt;rg32float, write&gt;;</code>
+</pre>
+
+
+
+<br />
+
+
+<a class="module" href="../../../src/bevy_core_pipeline/mip_generation/downsample.html#92">Source</a>
+
+
+<div><span class="conditional">TEXTURE_FORMAT_RGBA32FLOAT</span></div>
+
+<pre class="code-block">
+<code>alias MipWrite2d = texture_storage_2d&lt;rgba32float, write&gt;;</code>
+</pre>
+
+
+
+<br />
+
+
+<a class="module" href="../../../src/bevy_core_pipeline/mip_generation/downsample.html#99">Source</a>
+
+
+<div><span class="conditional">TEXTURE_FORMAT_BGRA8UNORM</span></div>
+
+<pre class="code-block">
+<code>alias MipWrite2d = texture_storage_2d&lt;bgra8unorm, write&gt;;</code>
+</pre>
+
+
+
+<br />
+
+
+<a class="module" href="../../../src/bevy_core_pipeline/mip_generation/downsample.html#106">Source</a>
+
+
+<div><span class="conditional">TEXTURE_FORMAT_R8UNORM</span></div>
+
+<pre class="code-block">
+<code>alias MipWrite2d = texture_storage_2d&lt;r8unorm, write&gt;;</code>
+</pre>
+
+
+
+<br />
+
+
+<a class="module" href="../../../src/bevy_core_pipeline/mip_generation/downsample.html#113">Source</a>
+
+
+<div><span class="conditional">TEXTURE_FORMAT_R8SNORM</span></div>
+
+<pre class="code-block">
+<code>alias MipWrite2d = texture_storage_2d&lt;r8snorm, write&gt;;</code>
+</pre>
+
+
+
+<br />
+
+
+<a class="module" href="../../../src/bevy_core_pipeline/mip_generation/downsample.html#120">Source</a>
+
+
+<div><span class="conditional">TEXTURE_FORMAT_R16UNORM</span></div>
+
+<pre class="code-block">
+<code>alias MipWrite2d = texture_storage_2d&lt;r16unorm, write&gt;;</code>
+</pre>
+
+
+
+<br />
+
+
+<a class="module" href="../../../src/bevy_core_pipeline/mip_generation/downsample.html#127">Source</a>
+
+
+<div><span class="conditional">TEXTURE_FORMAT_R16SNORM</span></div>
+
+<pre class="code-block">
+<code>alias MipWrite2d = texture_storage_2d&lt;r16snorm, write&gt;;</code>
+</pre>
+
+
+
+<br />
+
+
+<a class="module" href="../../../src/bevy_core_pipeline/mip_generation/downsample.html#134">Source</a>
+
+
+<div><span class="conditional">TEXTURE_FORMAT_R16FLOAT</span></div>
+
+<pre class="code-block">
+<code>alias MipWrite2d = texture_storage_2d&lt;r16float, write&gt;;</code>
+</pre>
+
+
+
+<br />
+
+
+<a class="module" href="../../../src/bevy_core_pipeline/mip_generation/downsample.html#141">Source</a>
+
+
+<div><span class="conditional">TEXTURE_FORMAT_RGB10A2UNORM</span></div>
+
+<pre class="code-block">
+<code>alias MipWrite2d = texture_storage_2d&lt;rgb10a2unorm, write&gt;;</code>
+</pre>
+
+
+
+<br />
+
+
+<a class="module" href="../../../src/bevy_core_pipeline/mip_generation/downsample.html#148">Source</a>
+
+
+<div><span class="conditional">TEXTURE_FORMAT_RG11B10UFLOAT</span></div>
+
+<pre class="code-block">
+<code>alias MipWrite2d = texture_storage_2d&lt;rg11b10ufloat, write&gt;;</code>
+</pre>
+
+
+
+        </div>
+    </div>
+
+    <script src="../../../../common.js"></script>
+    <script src="../../../items.js"></script>
+
+    <script>
+        window.DOCS_THIS_PACKAGE = {
+            version: "0.20.0-dev",
+            name: "bevy_core_pipeline",
+            root: "../../../",
+        };
+    </script>
+    <script src="../../../../../-/static/js/package.js"></script>
+    <script src="../../../../../-/static/js/search.js"></script>
+    <script src="../../../../../-/static/js/lineNumbers.js"></script>
+</body>
+
+</html>

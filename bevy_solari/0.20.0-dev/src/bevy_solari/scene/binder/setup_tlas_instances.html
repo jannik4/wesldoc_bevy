@@ -1,0 +1,276 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+        setup_tlas_instances - bevy_solari
+        
+    </title>
+
+    <link rel="stylesheet" href="../../../../../../-/static/css/inter/inter.css">
+    <link rel="stylesheet" href="../../../../../../-/static/css/source_code_pro/source_code_pro.css">
+
+    <link rel="stylesheet" href="../../../../../../-/static/css/themes.css">
+    <link rel="stylesheet" href="../../../../../../-/static/css/styles.css">
+    <link rel="stylesheet" href="../../../../../../-/static/css/icons.css">
+    <link rel="stylesheet" href="../../../../../../-/static/css/syntax.css">
+    <script src="../../../../../../-/static/js/settings.js"></script>
+
+    
+</head>
+
+<body>
+    <div class="nav">
+        <a class="nav-item nav-item-bd-right muted-link" href="../../../../../../index.html">
+            <span class="icon icon-home"></span>
+        </a>
+        <a id="show-package" class="nav-item nav-item-bd-right muted-link icon-and-text" href="#">
+            bevy_solari 0.20.0-dev
+            <span class="icon icon-mod-small icon-down"></span>
+        </a>
+        <div id="package-menu">
+    <div>
+        <div class="title">Package</div>
+        <div class="body">
+            
+            <a class="muted-link icon-and-text" href="https://bevy.org"><span class="icon icon-home"></span>Homepage</a>
+            
+            
+            <a class="muted-link icon-and-text" href="https://github.com/bevyengine/bevy"><span
+                    class="icon icon-repository"></span>Repository</a>
+            
+            
+            <a class="muted-link icon-and-text" href="#"><span class="icon icon-license"></span>MIT OR Apache-2.0</a>
+            
+        </div>
+    </div>
+
+    <div>
+        <div class="title">Dependencies</div>
+        <div class="body">
+            
+            <a class="muted-link"
+                href="../../../../../../bevy_pbr/0.20.0-dev/bevy_pbr/index.html">
+                bevy_pbr 0.20.0-dev
+            </a>
+            
+            <a class="muted-link"
+                href="../../../../../../bevy_render/0.20.0-dev/bevy_render/index.html">
+                bevy_render 0.20.0-dev
+            </a>
+            
+            
+        </div>
+    </div>
+
+    <div>
+        <div class="title">Versions</div>
+        <div id="package-versions-list" class="body"></div>
+    </div>
+</div>
+        <button id="show-settings" class="nav-item nav-item-bd-left muted-link" aria-label="Show settings">
+            <span class="icon icon-settings"></span>
+        </button>
+        <div id="settings-menu">
+    <div class="settings-title">Theme</div>
+    <label>
+        <input type="radio" name="theme" id="theme-auto" value="auto"> Auto
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-dark" value="dark"> Dark
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-light" value="light"> Light
+    </label>
+</div>
+    </div>
+    <div class="content">
+        <input type="text" id="search" placeholder="Search" oninput="searchDebounced()" autocomplete="off">
+
+        <div id="innerContent">
+            
+
+            
+
+<pre class="code-block">
+<code><a
+            href="#1"
+            id="1"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >1</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span><span class="syntax-punctuation">&lt;<span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-modifier">storage</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-modifier">read</span>&gt;</span> <span class="syntax-variable">transforms</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">array</span><span class="syntax-punctuation">&lt;<span class="syntax-type">array</span><span class="syntax-punctuation">&lt;<span class="syntax-type">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">3</span>&gt;</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+<a
+            href="#2"
+            id="2"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >2</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span><span class="syntax-punctuation">&lt;<span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-modifier">storage</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-modifier">read</span>&gt;</span> <span class="syntax-variable">blas_refs</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">array</span><span class="syntax-punctuation">&lt;<span class="syntax-type">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-type">u32</span>&gt;</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+<a
+            href="#3"
+            id="3"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >3</a><span class="syntax-attribute">@<span class="syntax-attribute">group</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">binding</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">2</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span><span class="syntax-punctuation">&lt;<span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-modifier">storage</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-modifier">read_write</span>&gt;</span> <span class="syntax-variable">instances</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">array</span><span class="syntax-punctuation">&lt;<span class="syntax-type">TlasInstance</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+<a
+            href="#4"
+            id="4"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >4</a>
+<a
+            href="#5"
+            id="5"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >5</a><span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">struct</span> <span class="syntax-type">TlasInstance</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
+<a
+            href="#6"
+            id="6"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >6</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">transform</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">array</span><span class="syntax-punctuation">&lt;<span class="syntax-type">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">3</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
+<a
+            href="#7"
+            id="7"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >7</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">custom_data_and_mask</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
+<a
+            href="#8"
+            id="8"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >8</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">sbt_offset_and_flags</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
+<a
+            href="#9"
+            id="9"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >9</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">blas_ref</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec2</span><span class="syntax-punctuation">&lt;<span class="syntax-type">u32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
+<a
+            href="#10"
+            id="10"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >10</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
+<a
+            href="#11"
+            id="11"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >11</a>
+<a
+            href="#12"
+            id="12"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >12</a><span class="syntax-attribute">@<span class="syntax-attribute">compute</span></span> <span class="syntax-attribute">@<span class="syntax-attribute">workgroup_size</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">64</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
+<a
+            href="#13"
+            id="13"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >13</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">setup_tlas_instances</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-attribute">@<span class="syntax-attribute">builtin</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-builtin">global_invocation_id</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-variable syntax-variable-parameter">global_id</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">u32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
+<a
+            href="#14"
+            id="14"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >14</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">slot</span> <span class="syntax-operator">=</span> <span class="syntax-variable">global_id</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">x</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+<a
+            href="#15"
+            id="15"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >15</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-variable">slot</span> <span class="syntax-operator">&gt;=</span> <span class="syntax-function syntax-function-call">arrayLength</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">&amp;</span><span class="syntax-variable">instances</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">||</span> <span class="syntax-variable">slot</span> <span class="syntax-operator">&gt;=</span> <span class="syntax-function syntax-function-call">arrayLength</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">&amp;</span><span class="syntax-variable">blas_refs</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">||</span> <span class="syntax-variable">slot</span> <span class="syntax-operator">&gt;=</span> <span class="syntax-function syntax-function-call">arrayLength</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">&amp;</span><span class="syntax-variable">transforms</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
+<a
+            href="#16"
+            id="16"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >16</a>        <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+<a
+            href="#17"
+            id="17"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >17</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
+<a
+            href="#18"
+            id="18"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >18</a>
+<a
+            href="#19"
+            id="19"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >19</a>    <span class="syntax-variable">instances</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">slot</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">TlasInstance</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span>
+<a
+            href="#20"
+            id="20"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >20</a>        <span class="syntax-variable">transforms</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">slot</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
+<a
+            href="#21"
+            id="21"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >21</a>        <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">slot</span> <span class="syntax-operator">&amp;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer"><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0xFFFFFFu</span></span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">|</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer"><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0xFF000000u</span></span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
+<a
+            href="#22"
+            id="22"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >22</a>        <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0u</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
+<a
+            href="#23"
+            id="23"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >23</a>        <span class="syntax-variable">blas_refs</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">slot</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
+<a
+            href="#24"
+            id="24"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >24</a>    <span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+<a
+            href="#25"
+            id="25"
+            class="line-number line-number-digits-2"
+            data-nosnippet
+        >25</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span></code>
+</pre>
+
+        </div>
+    </div>
+
+    <script src="../../../../../common.js"></script>
+    <script src="../../../../items.js"></script>
+
+    <script>
+        window.DOCS_THIS_PACKAGE = {
+            version: "0.20.0-dev",
+            name: "bevy_solari",
+            root: "../../../../",
+        };
+    </script>
+    <script src="../../../../../../-/static/js/package.js"></script>
+    <script src="../../../../../../-/static/js/search.js"></script>
+    <script src="../../../../../../-/static/js/lineNumbers.js"></script>
+</body>
+
+</html>

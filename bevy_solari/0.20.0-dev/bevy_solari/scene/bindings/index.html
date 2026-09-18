@@ -1,0 +1,639 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+        bindings - bevy_solari
+        
+    </title>
+
+    <link rel="stylesheet" href="../../../../../-/static/css/inter/inter.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/source_code_pro/source_code_pro.css">
+
+    <link rel="stylesheet" href="../../../../../-/static/css/themes.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/styles.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/icons.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/syntax.css">
+    <script src="../../../../../-/static/js/settings.js"></script>
+
+    
+</head>
+
+<body>
+    <div class="nav">
+        <a class="nav-item nav-item-bd-right muted-link" href="../../../../../index.html">
+            <span class="icon icon-home"></span>
+        </a>
+        <a id="show-package" class="nav-item nav-item-bd-right muted-link icon-and-text" href="#">
+            bevy_solari 0.20.0-dev
+            <span class="icon icon-mod-small icon-down"></span>
+        </a>
+        <div id="package-menu">
+    <div>
+        <div class="title">Package</div>
+        <div class="body">
+            
+            <a class="muted-link icon-and-text" href="https://bevy.org"><span class="icon icon-home"></span>Homepage</a>
+            
+            
+            <a class="muted-link icon-and-text" href="https://github.com/bevyengine/bevy"><span
+                    class="icon icon-repository"></span>Repository</a>
+            
+            
+            <a class="muted-link icon-and-text" href="#"><span class="icon icon-license"></span>MIT OR Apache-2.0</a>
+            
+        </div>
+    </div>
+
+    <div>
+        <div class="title">Dependencies</div>
+        <div class="body">
+            
+            <a class="muted-link"
+                href="../../../../../bevy_pbr/0.20.0-dev/bevy_pbr/index.html">
+                bevy_pbr 0.20.0-dev
+            </a>
+            
+            <a class="muted-link"
+                href="../../../../../bevy_render/0.20.0-dev/bevy_render/index.html">
+                bevy_render 0.20.0-dev
+            </a>
+            
+            
+        </div>
+    </div>
+
+    <div>
+        <div class="title">Versions</div>
+        <div id="package-versions-list" class="body"></div>
+    </div>
+</div>
+        <button id="show-settings" class="nav-item nav-item-bd-left muted-link" aria-label="Show settings">
+            <span class="icon icon-settings"></span>
+        </button>
+        <div id="settings-menu">
+    <div class="settings-title">Theme</div>
+    <label>
+        <input type="radio" name="theme" id="theme-auto" value="auto"> Auto
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-dark" value="dark"> Dark
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-light" value="light"> Light
+    </label>
+</div>
+    </div>
+    <div class="content">
+        <input type="text" id="search" placeholder="Search" oninput="searchDebounced()" autocomplete="off">
+
+        <div id="innerContent">
+            
+            <h2>
+                <a class="path" href="../../index.html">bevy_solari</a><span>::</span><wbr><a class="path" href="../index.html">scene</a><span>::</span><wbr><a class="module" href="index.html">bindings</a>
+            </h2>
+            
+
+            
+
+<a class="module" href="../../../src/bevy_solari/scene/bindings.html">Source</a>
+
+
+
+
+
+
+
+<h3 class="item-list-title">Constants</h3>
+<ul class="item-list">
+    
+    <li>
+        <div>
+            <a class="const" href="const.LIGHT_NOT_PRESENT_THIS_FRAME.html">LIGHT_NOT_PRESENT_THIS_FRAME</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.LIGHT_SOURCE_KIND_DIRECTIONAL.html">LIGHT_SOURCE_KIND_DIRECTIONAL</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.LIGHT_SOURCE_KIND_EMISSIVE_MESH.html">LIGHT_SOURCE_KIND_EMISSIVE_MESH</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.MIRROR_ROUGHNESS_THRESHOLD.html">MIRROR_ROUGHNESS_THRESHOLD</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.RAY_NO_CULL.html">RAY_NO_CULL</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.RAY_T_MAX.html">RAY_T_MAX</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.RAY_T_MIN.html">RAY_T_MIN</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.TEXTURE_MAP_NONE.html">TEXTURE_MAP_NONE</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+</ul>
+
+
+
+
+
+<h3 class="item-list-title">Global Variables</h3>
+<ul class="item-list">
+    
+    <li>
+        <div>
+            <a class="var" href="var.brdf_dfg_lut.html">brdf_dfg_lut</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.brdf_dfg_lut_sampler.html">brdf_dfg_lut_sampler</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.directional_lights.html">directional_lights</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.environment_map.html">environment_map</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.environment_map_light.html">environment_map_light</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.environment_map_sampler.html">environment_map_sampler</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.geometry_ids.html">geometry_ids</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.index_buffers.html">index_buffers</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.light_sources.html">light_sources</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.material_ids.html">material_ids</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.materials.html">materials</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.previous_frame_light_id_translations.html">previous_frame_light_id_translations</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.previous_frame_tlas.html">previous_frame_tlas</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.previous_frame_transforms.html">previous_frame_transforms</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.samplers.html">samplers</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.textures.html">textures</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.tlas.html">tlas</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.transforms.html">transforms</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.vertex_buffers.html">vertex_buffers</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+</ul>
+
+
+
+<h3 class="item-list-title">Structs</h3>
+<ul class="item-list">
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.DirectionalLight.html">DirectionalLight</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.EnvironmentMapLight.html">EnvironmentMapLight</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.IndexBuffer.html">IndexBuffer</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.InstanceGeometryIds.html">InstanceGeometryIds</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.LightSource.html">LightSource</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.Material.html">Material</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.PackedVertex.html">PackedVertex</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.ResolvedMaterial.html">ResolvedMaterial</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.ResolvedRayHitFull.html">ResolvedRayHitFull</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.Vertex.html">Vertex</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.VertexBuffer.html">VertexBuffer</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+</ul>
+
+
+
+<h3 class="item-list-title">Functions</h3>
+<ul class="item-list">
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.load_vertices.html">load_vertices</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.resolve_material.html">resolve_material</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.resolve_ray_hit_full.html">resolve_ray_hit_full</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.resolve_triangle_data_full.html">resolve_triangle_data_full</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.sample_texture.html">sample_texture</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.trace_ray.html">trace_ray</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.trace_ray_previous_frame.html">trace_ray_previous_frame</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.transform_positions.html">transform_positions</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.unpack_vertex.html">unpack_vertex</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+</ul>
+
+
+
+
+
+
+
+        </div>
+    </div>
+
+    <script src="../../../../common.js"></script>
+    <script src="../../../items.js"></script>
+
+    <script>
+        window.DOCS_THIS_PACKAGE = {
+            version: "0.20.0-dev",
+            name: "bevy_solari",
+            root: "../../../",
+        };
+    </script>
+    <script src="../../../../../-/static/js/package.js"></script>
+    <script src="../../../../../-/static/js/search.js"></script>
+    <script src="../../../../../-/static/js/lineNumbers.js"></script>
+</body>
+
+</html>

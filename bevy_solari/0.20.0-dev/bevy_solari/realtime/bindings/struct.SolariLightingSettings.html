@@ -1,0 +1,191 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+        SolariLightingSettings - bevy_solari
+        
+    </title>
+
+    <link rel="stylesheet" href="../../../../../-/static/css/inter/inter.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/source_code_pro/source_code_pro.css">
+
+    <link rel="stylesheet" href="../../../../../-/static/css/themes.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/styles.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/icons.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/syntax.css">
+    <script src="../../../../../-/static/js/settings.js"></script>
+
+    
+</head>
+
+<body>
+    <div class="nav">
+        <a class="nav-item nav-item-bd-right muted-link" href="../../../../../index.html">
+            <span class="icon icon-home"></span>
+        </a>
+        <a id="show-package" class="nav-item nav-item-bd-right muted-link icon-and-text" href="#">
+            bevy_solari 0.20.0-dev
+            <span class="icon icon-mod-small icon-down"></span>
+        </a>
+        <div id="package-menu">
+    <div>
+        <div class="title">Package</div>
+        <div class="body">
+            
+            <a class="muted-link icon-and-text" href="https://bevy.org"><span class="icon icon-home"></span>Homepage</a>
+            
+            
+            <a class="muted-link icon-and-text" href="https://github.com/bevyengine/bevy"><span
+                    class="icon icon-repository"></span>Repository</a>
+            
+            
+            <a class="muted-link icon-and-text" href="#"><span class="icon icon-license"></span>MIT OR Apache-2.0</a>
+            
+        </div>
+    </div>
+
+    <div>
+        <div class="title">Dependencies</div>
+        <div class="body">
+            
+            <a class="muted-link"
+                href="../../../../../bevy_pbr/0.20.0-dev/bevy_pbr/index.html">
+                bevy_pbr 0.20.0-dev
+            </a>
+            
+            <a class="muted-link"
+                href="../../../../../bevy_render/0.20.0-dev/bevy_render/index.html">
+                bevy_render 0.20.0-dev
+            </a>
+            
+            
+        </div>
+    </div>
+
+    <div>
+        <div class="title">Versions</div>
+        <div id="package-versions-list" class="body"></div>
+    </div>
+</div>
+        <button id="show-settings" class="nav-item nav-item-bd-left muted-link" aria-label="Show settings">
+            <span class="icon icon-settings"></span>
+        </button>
+        <div id="settings-menu">
+    <div class="settings-title">Theme</div>
+    <label>
+        <input type="radio" name="theme" id="theme-auto" value="auto"> Auto
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-dark" value="dark"> Dark
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-light" value="light"> Light
+    </label>
+</div>
+    </div>
+    <div class="content">
+        <input type="text" id="search" placeholder="Search" oninput="searchDebounced()" autocomplete="off">
+
+        <div id="innerContent">
+            
+            <h2>
+                <a class="path" href="../../index.html">bevy_solari</a><span>::</span><wbr><a class="path" href="../index.html">realtime</a><span>::</span><wbr><a class="path" href="index.html">bindings</a><span>::</span><wbr><a class="struct" href="#">SolariLightingSettings</a>
+            </h2>
+            
+
+            
+
+
+
+<a class="module" href="../../../src/bevy_solari/realtime/bindings.html#45-58">Source</a>
+
+
+<pre class="code-block">
+<code>struct SolariLightingSettings {
+    confidence_weight_cap: f32,
+    primary_di_samples: u32,
+    secondary_di_samples: u32,
+    max_bounces: u32,
+    world_cache_max_temporal_samples: f32,
+    world_cache_direct_light_sample_count: u32,
+    world_cache_max_gi_ray_distance: f32,
+    world_cache_cell_updates_soft_target: u32,
+    world_cache_position_base_cell_size: f32,
+    world_cache_position_lod_scale: f32,
+    frame_rng: u32,
+    reset: u32
+}</code>
+</pre>
+<div class="comment"><p>User-configurable settings from the <code>SolariLighting</code> component, plus per-frame
+state. Field order and types must match <code>SolariLightingUniforms</code> in <code>prepare.rs</code>.</p>
+</div>
+<h2 class="item-list-title">Fields</h2>
+
+<div style="margin: 8px 0;"><code>confidence_weight_cap: f32</code></div>
+
+
+<div style="margin: 8px 0;"><code>primary_di_samples: u32</code></div>
+
+
+<div style="margin: 8px 0;"><code>secondary_di_samples: u32</code></div>
+
+
+<div style="margin: 8px 0;"><code>max_bounces: u32</code></div>
+
+
+<div style="margin: 8px 0;"><code>world_cache_max_temporal_samples: f32</code></div>
+
+
+<div style="margin: 8px 0;"><code>world_cache_direct_light_sample_count: u32</code></div>
+
+
+<div style="margin: 8px 0;"><code>world_cache_max_gi_ray_distance: f32</code></div>
+
+
+<div style="margin: 8px 0;"><code>world_cache_cell_updates_soft_target: u32</code></div>
+
+
+<div style="margin: 8px 0;"><code>world_cache_position_base_cell_size: f32</code></div>
+
+
+<div style="margin: 8px 0;"><code>world_cache_position_lod_scale: f32</code></div>
+
+
+<div style="margin: 8px 0;"><code>frame_rng: u32</code></div>
+
+
+<div style="margin: 8px 0;"><code>reset: u32</code></div>
+
+
+
+
+        </div>
+    </div>
+
+    <script src="../../../../common.js"></script>
+    <script src="../../../items.js"></script>
+
+    <script>
+        window.DOCS_THIS_PACKAGE = {
+            version: "0.20.0-dev",
+            name: "bevy_solari",
+            root: "../../../",
+        };
+    </script>
+    <script src="../../../../../-/static/js/package.js"></script>
+    <script src="../../../../../-/static/js/search.js"></script>
+    <script src="../../../../../-/static/js/lineNumbers.js"></script>
+</body>
+
+</html>

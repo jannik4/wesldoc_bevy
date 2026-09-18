@@ -1,0 +1,460 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+        bindings - bevy_solari
+        
+    </title>
+
+    <link rel="stylesheet" href="../../../../../-/static/css/inter/inter.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/source_code_pro/source_code_pro.css">
+
+    <link rel="stylesheet" href="../../../../../-/static/css/themes.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/styles.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/icons.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/syntax.css">
+    <script src="../../../../../-/static/js/settings.js"></script>
+
+    
+</head>
+
+<body>
+    <div class="nav">
+        <a class="nav-item nav-item-bd-right muted-link" href="../../../../../index.html">
+            <span class="icon icon-home"></span>
+        </a>
+        <a id="show-package" class="nav-item nav-item-bd-right muted-link icon-and-text" href="#">
+            bevy_solari 0.20.0-dev
+            <span class="icon icon-mod-small icon-down"></span>
+        </a>
+        <div id="package-menu">
+    <div>
+        <div class="title">Package</div>
+        <div class="body">
+            
+            <a class="muted-link icon-and-text" href="https://bevy.org"><span class="icon icon-home"></span>Homepage</a>
+            
+            
+            <a class="muted-link icon-and-text" href="https://github.com/bevyengine/bevy"><span
+                    class="icon icon-repository"></span>Repository</a>
+            
+            
+            <a class="muted-link icon-and-text" href="#"><span class="icon icon-license"></span>MIT OR Apache-2.0</a>
+            
+        </div>
+    </div>
+
+    <div>
+        <div class="title">Dependencies</div>
+        <div class="body">
+            
+            <a class="muted-link"
+                href="../../../../../bevy_pbr/0.20.0-dev/bevy_pbr/index.html">
+                bevy_pbr 0.20.0-dev
+            </a>
+            
+            <a class="muted-link"
+                href="../../../../../bevy_render/0.20.0-dev/bevy_render/index.html">
+                bevy_render 0.20.0-dev
+            </a>
+            
+            
+        </div>
+    </div>
+
+    <div>
+        <div class="title">Versions</div>
+        <div id="package-versions-list" class="body"></div>
+    </div>
+</div>
+        <button id="show-settings" class="nav-item nav-item-bd-left muted-link" aria-label="Show settings">
+            <span class="icon icon-settings"></span>
+        </button>
+        <div id="settings-menu">
+    <div class="settings-title">Theme</div>
+    <label>
+        <input type="radio" name="theme" id="theme-auto" value="auto"> Auto
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-dark" value="dark"> Dark
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-light" value="light"> Light
+    </label>
+</div>
+    </div>
+    <div class="content">
+        <input type="text" id="search" placeholder="Search" oninput="searchDebounced()" autocomplete="off">
+
+        <div id="innerContent">
+            
+            <h2>
+                <a class="path" href="../../index.html">bevy_solari</a><span>::</span><wbr><a class="path" href="../index.html">realtime</a><span>::</span><wbr><a class="module" href="index.html">bindings</a>
+            </h2>
+            
+
+            
+
+<a class="module" href="../../../src/bevy_solari/realtime/bindings.html">Source</a>
+
+
+
+
+
+
+
+
+
+
+
+<h3 class="item-list-title">Global Variables</h3>
+<ul class="item-list">
+    
+    <li>
+        <div>
+            <a class="var" href="var.constants.html">constants</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.depth_buffer.html">depth_buffer</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.diffuse_albedo.html">diffuse_albedo</a>
+            
+            <span class="conditional-inline">DLSS_RR_GUIDE_BUFFERS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.dlss_rr_depth.html">dlss_rr_depth</a>
+            
+            <span class="conditional-inline">DLSS_RR_GUIDE_BUFFERS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.gbuffer.html">gbuffer</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.light_tile_resolved_samples.html">light_tile_resolved_samples</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.light_tile_samples.html">light_tile_samples</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.motion_vectors.html">motion_vectors</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.normal_roughness.html">normal_roughness</a>
+            
+            <span class="conditional-inline">DLSS_RR_GUIDE_BUFFERS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.previous_depth_buffer.html">previous_depth_buffer</a>
+            
+            <span class="conditional-inline">RESTIR</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.previous_gbuffer.html">previous_gbuffer</a>
+            
+            <span class="conditional-inline">RESTIR</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.previous_view.html">previous_view</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.reservoirs_a.html">reservoirs_a</a>
+            
+            <span class="conditional-inline">RESTIR</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.reservoirs_b.html">reservoirs_b</a>
+            
+            <span class="conditional-inline">RESTIR</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.specular_albedo.html">specular_albedo</a>
+            
+            <span class="conditional-inline">DLSS_RR_GUIDE_BUFFERS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.specular_motion_vectors.html">specular_motion_vectors</a>
+            
+            <span class="conditional-inline">DLSS_RR_GUIDE_BUFFERS</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.view.html">view</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.view_output.html">view_output</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="var" href="var.world_cache.html">world_cache</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+</ul>
+
+
+
+<h3 class="item-list-title">Structs</h3>
+<ul class="item-list">
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.Reservoir.html">Reservoir</a>
+            
+        </div>
+        <div>
+            <div class="comment-inline"><p>Don't adjust the size of this struct without also adjusting <code>prepare::RESERVOIR_STRUCT_SIZE</code>.</p>
+</div>
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.ResolvedLightSamplePacked.html">ResolvedLightSamplePacked</a>
+            
+        </div>
+        <div>
+            <div class="comment-inline"><p>Don't adjust the size of this struct without also adjusting <code>prepare::RESOLVED_LIGHT_SAMPLE_STRUCT_SIZE</code>.</p>
+</div>
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.SolariLightingSettings.html">SolariLightingSettings</a>
+            
+        </div>
+        <div>
+            <div class="comment-inline"><p>User-configurable settings from the <code>SolariLighting</code> component, plus per-frame
+state. Field order and types must match <code>SolariLightingUniforms</code> in <code>prepare.rs</code>.</p>
+</div>
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.WorldCache.html">WorldCache</a>
+            
+        </div>
+        <div>
+            <div class="comment-inline"><p>Keep in sync with the packed world-cache layout constants in <code>prepare.rs</code>.</p>
+</div>
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.WorldCacheGeometryData.html">WorldCacheGeometryData</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+</ul>
+
+
+
+<h3 class="item-list-title">Functions</h3>
+<ul class="item-list">
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.empty_reservoir.html">empty_reservoir</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.load_motion_vector.html">load_motion_vector</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+</ul>
+
+
+
+
+
+<h3 class="item-list-title">Translate-time features</h3>
+<ul class="item-list">
+    
+    <li class="feature">DLSS_RR_GUIDE_BUFFERS</li>
+    
+    <li class="feature">MOTION_VECTORS_READ_WRITE</li>
+    
+    <li class="feature">RESTIR</li>
+    
+    <li class="feature">WORLD_CACHE_NON_ATOMIC_LIFE_BUFFER</li>
+    
+</ul>
+
+
+
+        </div>
+    </div>
+
+    <script src="../../../../common.js"></script>
+    <script src="../../../items.js"></script>
+
+    <script>
+        window.DOCS_THIS_PACKAGE = {
+            version: "0.20.0-dev",
+            name: "bevy_solari",
+            root: "../../../",
+        };
+    </script>
+    <script src="../../../../../-/static/js/package.js"></script>
+    <script src="../../../../../-/static/js/search.js"></script>
+    <script src="../../../../../-/static/js/lineNumbers.js"></script>
+</body>
+
+</html>

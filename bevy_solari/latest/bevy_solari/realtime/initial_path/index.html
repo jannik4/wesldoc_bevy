@@ -1,0 +1,358 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        
+        initial_path - bevy_solari
+        
+    </title>
+
+    <link rel="stylesheet" href="../../../../../-/static/css/inter/inter.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/source_code_pro/source_code_pro.css">
+
+    <link rel="stylesheet" href="../../../../../-/static/css/themes.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/styles.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/icons.css">
+    <link rel="stylesheet" href="../../../../../-/static/css/syntax.css">
+    <script src="../../../../../-/static/js/settings.js"></script>
+
+    
+</head>
+
+<body>
+    <div class="nav">
+        <a class="nav-item nav-item-bd-right muted-link" href="../../../../../index.html">
+            <span class="icon icon-home"></span>
+        </a>
+        <a id="show-package" class="nav-item nav-item-bd-right muted-link icon-and-text" href="#">
+            bevy_solari 0.20.0-dev
+            <span class="icon icon-mod-small icon-down"></span>
+        </a>
+        <div id="package-menu">
+    <div>
+        <div class="title">Package</div>
+        <div class="body">
+            
+            <a class="muted-link icon-and-text" href="https://bevy.org"><span class="icon icon-home"></span>Homepage</a>
+            
+            
+            <a class="muted-link icon-and-text" href="https://github.com/bevyengine/bevy"><span
+                    class="icon icon-repository"></span>Repository</a>
+            
+            
+            <a class="muted-link icon-and-text" href="#"><span class="icon icon-license"></span>MIT OR Apache-2.0</a>
+            
+        </div>
+    </div>
+
+    <div>
+        <div class="title">Dependencies</div>
+        <div class="body">
+            
+            <a class="muted-link"
+                href="../../../../../bevy_pbr/0.20.0-dev/bevy_pbr/index.html">
+                bevy_pbr 0.20.0-dev
+            </a>
+            
+            <a class="muted-link"
+                href="../../../../../bevy_render/0.20.0-dev/bevy_render/index.html">
+                bevy_render 0.20.0-dev
+            </a>
+            
+            
+        </div>
+    </div>
+
+    <div>
+        <div class="title">Versions</div>
+        <div id="package-versions-list" class="body"></div>
+    </div>
+</div>
+        <button id="show-settings" class="nav-item nav-item-bd-left muted-link" aria-label="Show settings">
+            <span class="icon icon-settings"></span>
+        </button>
+        <div id="settings-menu">
+    <div class="settings-title">Theme</div>
+    <label>
+        <input type="radio" name="theme" id="theme-auto" value="auto"> Auto
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-dark" value="dark"> Dark
+    </label>
+    <label>
+        <input type="radio" name="theme" id="theme-light" value="light"> Light
+    </label>
+</div>
+    </div>
+    <div class="content">
+        <input type="text" id="search" placeholder="Search" oninput="searchDebounced()" autocomplete="off">
+
+        <div id="innerContent">
+            
+            <h2>
+                <a class="path" href="../../index.html">bevy_solari</a><span>::</span><wbr><a class="path" href="../index.html">realtime</a><span>::</span><wbr><a class="module" href="index.html">initial_path</a>
+            </h2>
+            
+
+            
+
+<a class="module" href="../../../src/bevy_solari/realtime/initial_path.html">Source</a>
+
+
+
+
+
+
+
+<h3 class="item-list-title">Constants</h3>
+<ul class="item-list">
+    
+    <li>
+        <div>
+            <a class="const" href="const.CACHE_TERMINATION_MIN_SOLID_ANGLE.html">CACHE_TERMINATION_MIN_SOLID_ANGLE</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.RECONNECTION_FOOTPRINT_KAPPA.html">RECONNECTION_FOOTPRINT_KAPPA</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.RECONNECTION_RELAX_DISTANCE.html">RECONNECTION_RELAX_DISTANCE</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="const" href="const.RECONNECTION_ROUGHNESS_MIN.html">RECONNECTION_ROUGHNESS_MIN</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+</ul>
+
+
+
+
+
+
+
+<h3 class="item-list-title">Structs</h3>
+<ul class="item-list">
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.DiSample.html">DiSample</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.InitialSamplingResult.html">InitialSamplingResult</a>
+            
+        </div>
+        <div>
+            <div class="comment-inline"><p>What tracing one path produced.</p>
+</div>
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="struct" href="struct.PathState.html">PathState</a>
+            
+        </div>
+        <div>
+            <div class="comment-inline"><p>Path vertices use the following convention: x0 = camera, x1 = primary ray hit (the G-buffer
+surface), x2 = first BRDF-sampled hit (the reconnection vertex).</p>
+</div>
+        </div>
+    </li>
+    
+</ul>
+
+
+
+<h3 class="item-list-title">Functions</h3>
+<ul class="item-list">
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.generate_emissive_candidate.html">generate_emissive_candidate</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.generate_environment_map_light_candidate.html">generate_environment_map_light_candidate</a>
+            
+            <span class="conditional-inline">RESTIR</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.generate_initial_path.html">generate_initial_path</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.generate_nee_candidate.html">generate_nee_candidate</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.new_path_state.html">new_path_state</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.reconnection_reusable.html">reconnection_reusable</a>
+            
+            <span class="conditional-inline">RESTIR</span>
+            
+        </div>
+        <div>
+            <div class="comment-inline"><p>ReSTIR PT Enhanced: Algorithmic Advances for Faster and More Robust ReSTIR Path Tracing
+Section 4 (sorta)
+https://research.nvidia.com/labs/rtr/publication/lin2026restirptenhanced/lin2026restirptenhanced.pdf</p>
+</div>
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.resample_reconnection_candidate.html">resample_reconnection_candidate</a>
+            
+            <span class="conditional-inline">RESTIR</span>
+            
+        </div>
+        <div>
+            <div class="comment-inline"><p>Resample radiance arriving at x1 through the reconnection vertex x2. <code>L_at_reconnection</code> excludes the
+brdf*cos at x1, which is re-applied at shade time from whichever pixel ends up reusing the candidate.</p>
+</div>
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.sample_light_ris.html">sample_light_ris</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.terminate_into_cache.html">terminate_into_cache</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.x1_lobe_reusable.html">x1_lobe_reusable</a>
+            
+            <span class="conditional-inline">RESTIR</span>
+            
+        </div>
+        <div>
+            <div class="comment-inline"><p>Whether the lobe sampled at x1 is wide enough for its candidates to be reused by neighbors.</p>
+</div>
+        </div>
+    </li>
+    
+</ul>
+
+
+
+
+
+<h3 class="item-list-title">Translate-time features</h3>
+<ul class="item-list">
+    
+    <li class="feature">RESTIR</li>
+    
+</ul>
+
+
+
+        </div>
+    </div>
+
+    <script src="../../../../common.js"></script>
+    <script src="../../../items.js"></script>
+
+    <script>
+        window.DOCS_THIS_PACKAGE = {
+            version: "latest",
+            name: "bevy_solari",
+            root: "../../../",
+        };
+    </script>
+    <script src="../../../../../-/static/js/package.js"></script>
+    <script src="../../../../../-/static/js/search.js"></script>
+    <script src="../../../../../-/static/js/lineNumbers.js"></script>
+</body>
+
+</html>

@@ -115,8 +115,8 @@
 <code>struct LightProbes {
     reflection_probes: array&lt;<a class="struct" href="../../render/mesh_view_types/struct.LightProbe.html">LightProbe</a>, 8&gt;,
     irradiance_volumes: array&lt;<a class="struct" href="../../render/mesh_view_types/struct.LightProbe.html">LightProbe</a>, 8&gt;,
-    reflection_probe_count: i32,
-    irradiance_volume_count: i32,
+    reflection_probe_count: u32,
+    irradiance_volume_count: u32,
     view_cubemap_index: i32,
     smallest_specular_mip_level_for_view: u32,
     view_rotation: vec4&lt;f32&gt;,
@@ -134,10 +134,10 @@
 <div style="margin: 8px 0;"><code>irradiance_volumes: array&lt;<a class="struct" href="../../render/mesh_view_types/struct.LightProbe.html">LightProbe</a>, 8&gt;</code></div>
 
 
-<div style="margin: 8px 0;"><code>reflection_probe_count: i32</code></div>
+<div style="margin: 8px 0;"><code>reflection_probe_count: u32</code></div>
 
 
-<div style="margin: 8px 0;"><code>irradiance_volume_count: i32</code></div>
+<div style="margin: 8px 0;"><code>irradiance_volume_count: u32</code></div>
 
 
 <div style="margin: 8px 0;"><code>view_cubemap_index: i32</code></div>

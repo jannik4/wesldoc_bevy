@@ -1332,277 +1332,295 @@
             id="205"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >205</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">result</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">LightProbeQueryResult</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >205</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">world_position</span> <span class="syntax-operator">=</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">*</span><span class="syntax-variable">iterator</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">world_position</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#206"
             id="206"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >206</a>    <span class="syntax-variable">result</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">texture_index</span> <span class="syntax-operator">=</span> <span class="syntax-operator">-</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >206</a>
 <a
             href="#207"
             id="207"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >207</a>    <span class="syntax-variable">result</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">weight</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >207</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">result</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">LightProbeQueryResult</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#208"
             id="208"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >208</a>
+        >208</a>    <span class="syntax-variable">result</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">texture_index</span> <span class="syntax-operator">=</span> <span class="syntax-operator">-</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#209"
             id="209"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >209</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-repeat">while</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-builtin syntax-constant-builtin-boolean">true</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
+        >209</a>    <span class="syntax-variable">result</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">weight</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#210"
             id="210"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >210</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">light_probe_index</span> <span class="syntax-operator">=</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">*</span><span class="syntax-variable">iterator</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">current_index</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >210</a>
 <a
             href="#211"
             id="211"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >211</a>
+        >211</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-repeat">while</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">*</span><span class="syntax-variable">iterator</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">current_index</span> <span class="syntax-operator">&lt;</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">*</span><span class="syntax-variable">iterator</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">end_index</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#212"
             id="212"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >212</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">light_probe</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">LightProbe</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >212</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">light_probe_index</span> <span class="syntax-operator">=</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">*</span><span class="syntax-variable">iterator</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">current_index</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#213"
             id="213"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >213</a>        <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-variable">is_irradiance_volume</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
+        >213</a>        <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">*</span><span class="syntax-variable">iterator</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">current_index</span> <span class="syntax-operator">+=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#214"
             id="214"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >214</a>            <span class="syntax-variable">light_probe</span> <span class="syntax-operator">=</span> <span class="syntax-variable">light_probes</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">irradiance_volumes</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">light_probe_index</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >214</a>
 <a
             href="#215"
             id="215"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >215</a>        <span class="syntax-punctuation syntax-punctuation-bracket">}</span> <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">else</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
+        >215</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">light_probe</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">LightProbe</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#216"
             id="216"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >216</a>            <span class="syntax-variable">light_probe</span> <span class="syntax-operator">=</span> <span class="syntax-variable">light_probes</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">reflection_probes</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">light_probe_index</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >216</a>        <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">*</span><span class="syntax-variable">iterator</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">is_irradiance_volume</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#217"
             id="217"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >217</a>        <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
+        >217</a>            <span class="syntax-variable">light_probe</span> <span class="syntax-operator">=</span> <span class="syntax-variable">light_probes</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">irradiance_volumes</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">light_probe_index</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#218"
             id="218"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >218</a>
+        >218</a>        <span class="syntax-punctuation syntax-punctuation-bracket">}</span> <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">else</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#219"
             id="219"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >219</a>        <span class="syntax-comment syntax-comment-line">// Unpack the inverse transform.</span>
+        >219</a>            <span class="syntax-variable">light_probe</span> <span class="syntax-operator">=</span> <span class="syntax-variable">light_probes</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">reflection_probes</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">light_probe_index</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#220"
             id="220"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >220</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">light_from_world</span> <span class="syntax-operator">=</span>
+        >220</a>        <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#221"
             id="221"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >221</a>            <span class="syntax-function syntax-function-call">transpose_affine_matrix</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">light_probe</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">light_from_world_transposed</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >221</a>
 <a
             href="#222"
             id="222"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >222</a>
+        >222</a>        <span class="syntax-comment syntax-comment-line">// Unpack the inverse transform.</span>
 <a
             href="#223"
             id="223"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >223</a>        <span class="syntax-comment syntax-comment-line">// Transform the point into local space, with the cube edges at ±0.5 on</span>
+        >223</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">light_from_world</span> <span class="syntax-operator">=</span>
 <a
             href="#224"
             id="224"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >224</a>        <span class="syntax-comment syntax-comment-line">// each axis.</span>
+        >224</a>            <span class="syntax-function syntax-function-call">transpose_affine_matrix</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">light_probe</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">light_from_world_transposed</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#225"
             id="225"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >225</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">probe_space_pos</span> <span class="syntax-operator">=</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">light_from_world</span> <span class="syntax-operator">*</span> <span class="syntax-function syntax-function-call">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">world_position</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0f</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">xyz</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >225</a>
 <a
             href="#226"
             id="226"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >226</a>        <span class="syntax-comment syntax-comment-line">// Avoid division by zero.</span>
+        >226</a>        <span class="syntax-comment syntax-comment-line">// Transform the point into local space, with the cube edges at ±0.5 on</span>
 <a
             href="#227"
             id="227"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >227</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">falloff</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">max</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">light_probe</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">falloff</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-function syntax-function-call">vec3</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0001</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >227</a>        <span class="syntax-comment syntax-comment-line">// each axis.</span>
 <a
             href="#228"
             id="228"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >228</a>        <span class="syntax-comment syntax-comment-line">// Calculate the per-axis weight by doing a linear ramp from 0.0 at the</span>
+        >228</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">probe_space_pos</span> <span class="syntax-operator">=</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">light_from_world</span> <span class="syntax-operator">*</span> <span class="syntax-function syntax-function-call">vec4</span><span class="syntax-punctuation">&lt;<span class="syntax-variable">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">world_position</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0f</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">xyz</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#229"
             id="229"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >229</a>        <span class="syntax-comment syntax-comment-line">// inside of the falloff region to 1.0 at the outside of the falloff</span>
+        >229</a>        <span class="syntax-comment syntax-comment-line">// Avoid division by zero.</span>
 <a
             href="#230"
             id="230"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >230</a>        <span class="syntax-comment syntax-comment-line">// region.</span>
+        >230</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">falloff</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">max</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">light_probe</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">falloff</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-function syntax-function-call">vec3</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0001</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#231"
             id="231"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >231</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">axis_weights</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">saturate</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span> <span class="syntax-operator">-</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">2.0</span> <span class="syntax-operator">*</span> <span class="syntax-function syntax-function-call">abs</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">probe_space_pos</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">/</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">2.0</span> <span class="syntax-operator">*</span> <span class="syntax-variable">falloff</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >231</a>        <span class="syntax-comment syntax-comment-line">// Calculate the per-axis weight by doing a linear ramp from 0.0 at the</span>
 <a
             href="#232"
             id="232"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >232</a>        <span class="syntax-comment syntax-comment-line">// The actual weight is the minimum of all the per-axis weights.</span>
+        >232</a>        <span class="syntax-comment syntax-comment-line">// inside of the falloff region to 1.0 at the outside of the falloff</span>
 <a
             href="#233"
             id="233"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >233</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">weight</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">min</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">min</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">axis_weights</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">x</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">axis_weights</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">y</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">axis_weights</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">z</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >233</a>        <span class="syntax-comment syntax-comment-line">// region.</span>
 <a
             href="#234"
             id="234"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >234</a>        <span class="syntax-comment syntax-comment-line">// If the resulting weight is zero, we&#39;re outside the light probe</span>
+        >234</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">axis_weights</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">saturate</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span> <span class="syntax-operator">-</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">2.0</span> <span class="syntax-operator">*</span> <span class="syntax-function syntax-function-call">abs</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">probe_space_pos</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">/</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">2.0</span> <span class="syntax-operator">*</span> <span class="syntax-variable">falloff</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#235"
             id="235"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >235</a>        <span class="syntax-comment syntax-comment-line">// entirely. Bail.</span>
+        >235</a>        <span class="syntax-comment syntax-comment-line">// The actual weight is the minimum of all the per-axis weights.</span>
 <a
             href="#236"
             id="236"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >236</a>        <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">weight</span> <span class="syntax-operator">==</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
+        >236</a>        <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">weight</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">min</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">min</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">axis_weights</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">x</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">axis_weights</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">y</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">axis_weights</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">z</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#237"
             id="237"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >237</a>            <span class="syntax-keyword syntax-keyword-control">continue</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >237</a>        <span class="syntax-comment syntax-comment-line">// If the resulting weight is zero, we&#39;re outside the light probe</span>
 <a
             href="#238"
             id="238"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >238</a>        <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
+        >238</a>        <span class="syntax-comment syntax-comment-line">// entirely. Bail.</span>
 <a
             href="#239"
             id="239"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >239</a>
+        >239</a>        <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">weight</span> <span class="syntax-operator">==</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#240"
             id="240"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >240</a>        <span class="syntax-variable">result</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">texture_index</span> <span class="syntax-operator">=</span> <span class="syntax-variable">light_probe</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">cubemap_index</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >240</a>            <span class="syntax-keyword syntax-keyword-control">continue</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#241"
             id="241"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >241</a>        <span class="syntax-variable">result</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">intensity</span> <span class="syntax-operator">=</span> <span class="syntax-variable">light_probe</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">intensity</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >241</a>        <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#242"
             id="242"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >242</a>        <span class="syntax-variable">result</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">light_from_world</span> <span class="syntax-operator">=</span> <span class="syntax-variable">light_from_world</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >242</a>
 <a
             href="#243"
             id="243"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >243</a>        <span class="syntax-variable">result</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">parallax_correction_bounds</span> <span class="syntax-operator">=</span> <span class="syntax-variable">light_probe</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">parallax_correction_bounds</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >243</a>        <span class="syntax-variable">result</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">texture_index</span> <span class="syntax-operator">=</span> <span class="syntax-variable">light_probe</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">cubemap_index</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#244"
             id="244"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >244</a>        <span class="syntax-variable">result</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">flags</span> <span class="syntax-operator">=</span> <span class="syntax-variable">light_probe</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">flags</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >244</a>        <span class="syntax-variable">result</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">intensity</span> <span class="syntax-operator">=</span> <span class="syntax-variable">light_probe</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">intensity</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#245"
             id="245"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >245</a>        <span class="syntax-variable">result</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">weight</span> <span class="syntax-operator">=</span> <span class="syntax-variable">weight</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >245</a>        <span class="syntax-variable">result</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">light_from_world</span> <span class="syntax-operator">=</span> <span class="syntax-variable">light_from_world</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#246"
             id="246"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >246</a>        <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-variable">result</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >246</a>        <span class="syntax-variable">result</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">parallax_correction_bounds</span> <span class="syntax-operator">=</span> <span class="syntax-variable">light_probe</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">parallax_correction_bounds</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#247"
             id="247"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >247</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
+        >247</a>        <span class="syntax-variable">result</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">flags</span> <span class="syntax-operator">=</span> <span class="syntax-variable">light_probe</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">flags</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#248"
             id="248"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >248</a>
+        >248</a>        <span class="syntax-variable">result</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">weight</span> <span class="syntax-operator">=</span> <span class="syntax-variable">weight</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#249"
             id="249"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >249</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-variable">result</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >249</a>        <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-variable">result</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#250"
             id="250"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >250</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span></code>
+        >250</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
+<a
+            href="#251"
+            id="251"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >251</a>
+<a
+            href="#252"
+            id="252"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >252</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-variable">result</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+<a
+            href="#253"
+            id="253"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >253</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span></code>
 </pre>
 
         </div>

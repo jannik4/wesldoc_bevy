@@ -252,6 +252,20 @@ surface), x2 = first BRDF-sampled hit (the reconnection vertex).</p>
     
     <li>
         <div>
+            <a class="fn" href="fn.nee_probability.html">nee_probability</a>
+            
+        </div>
+        <div>
+            <div class="comment-inline"><p>Probability of running NEE for lights that BRDF rays can also hit, proportional to how diffuse the
+vertex is. On smooth metals BRDF samples find those lights well, so mostly skip NEE there to
+increase performance. Perfect mirrors skip NEE entirely, since NEE can't sample their delta lobe.
+Pure dielectrics always run NEE.</p>
+</div>
+        </div>
+    </li>
+    
+    <li>
+        <div>
             <a class="fn" href="fn.new_path_state.html">new_path_state</a>
             
         </div>

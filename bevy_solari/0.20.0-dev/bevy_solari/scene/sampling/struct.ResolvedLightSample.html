@@ -108,7 +108,7 @@
 
 
 
-<a class="module" href="../../../src/bevy_solari/scene/sampling.html#101-106">Source</a>
+<a class="module" href="../../../src/bevy_solari/scene/sampling.html#105-124">Source</a>
 
 
 <pre class="code-block">
@@ -116,23 +116,55 @@
     world_position: vec4&lt;f32&gt;,
     world_normal: vec3&lt;f32&gt;,
     radiance: vec3&lt;f32&gt;,
-    inverse_pdf: f32
+    inverse_pdf: f32,
+    emission_axis: vec3&lt;f32&gt;,
+    cone_cos_inner: f32,
+    cone_cos_outer: f32,
+    emission_cosine_exponent: f32,
+    brdf_rays_can_hit: bool
 }</code>
 </pre>
-
+<div class="comment"><p>A point on (or direction to) a light, resolved independently of any shading point.</p>
+<p>Every kind of light is described by the same data, and shaded by the same formula in
+<code>calculate_resolved_light_contribution</code>.</p>
+</div>
 <h2 class="item-list-title">Fields</h2>
 
 <div style="margin: 8px 0;"><code>world_position: vec4&lt;f32&gt;</code></div>
-
+<div class="comment"><p>If w = 1, the sample is a point on a light. If w = 0, it's a direction towards a light.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>world_normal: vec3&lt;f32&gt;</code></div>
-
+<div class="comment"><p>The emitting surface's normal. Unused when <code>emission_cosine_exponent</code> is 0.</p>
+</div>
 
 <div style="margin: 8px 0;"><code>radiance: vec3&lt;f32&gt;</code></div>
 
 
 <div style="margin: 8px 0;"><code>inverse_pdf: f32</code></div>
+<div class="comment"><p>inverse_pdf may not be in solid angle measure (e.g. area measure)</p>
+</div>
 
+<div style="margin: 8px 0;"><code>emission_axis: vec3&lt;f32&gt;</code></div>
+<div class="comment"><p>Axis of the emission cone, see <code>emission_cone_attenuation</code>.</p>
+</div>
+
+<div style="margin: 8px 0;"><code>cone_cos_inner: f32</code></div>
+<div class="comment"><p>Cosines of the emission cone's inner and outer angles. <code>cos_outer &lt;= -1</code> means no cone.</p>
+</div>
+
+<div style="margin: 8px 0;"><code>cone_cos_outer: f32</code></div>
+
+
+<div style="margin: 8px 0;"><code>emission_cosine_exponent: f32</code></div>
+<div class="comment"><p>1 if emission falls off with the cosine of the angle to <code>world_normal</code>, e.g. emissive triangles, rect lights, and sphere lights.
+0 if emission is the same in every direction, e.g. point and spot lights with no radius.</p>
+</div>
+
+<div style="margin: 8px 0;"><code>brdf_rays_can_hit: bool</code></div>
+<div class="comment"><p>Whether rays can hit this light, needed for MIS between NEE and BRDF sampling.
+Only emissive meshes can be hit. Analytic lights (directional, point, spot, rect) can only be found via NEE.</p>
+</div>
 
 
 

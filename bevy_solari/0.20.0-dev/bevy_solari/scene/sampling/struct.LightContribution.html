@@ -108,7 +108,7 @@
 
 
 
-<a class="module" href="../../../src/bevy_solari/scene/sampling.html#108-117">Source</a>
+<a class="module" href="../../../src/bevy_solari/scene/sampling.html#126-136">Source</a>
 
 
 <pre class="code-block">
@@ -132,7 +132,8 @@
 <div style="margin: 8px 0;"><code>inverse_solid_angle_pdf: f32</code></div>
 <div class="comment"><p>inverse_pdf may not be in solid angle measure (e.g. area measure)
 but inverse_solid_angle_pdf is always in solid angle measure
-for cases where it's required, e.g. MIS between light sampling techniques</p>
+for cases where it's required, e.g. MIS between light sampling techniques.
+Only meaningful when <code>brdf_rays_can_hit</code> is true.</p>
 </div>
 
 <div style="margin: 8px 0;"><code>wi: vec3&lt;f32&gt;</code></div>

@@ -103,23 +103,19 @@
 
 
 
-<a class="module" href="../../../src/bevy_post_process/dof/dof.html#27-65">Source</a>
+<a class="module" href="../../../src/bevy_post_process/dof/dof.html#27-52">Source</a>
 
 
 <pre class="code-block">
 <code>struct DepthOfFieldParams {
     focal_distance: f32,
-    focal_length: f32,
     coc_scale_factor: f32,
     max_circle_of_confusion_diameter: f32,
-    max_depth: f32,
-    pad_a: u32,
-    pad_b: u32,
-    pad_c: u32
+    max_depth: f32
 }</code>
 </pre>
 <div class="comment"><p>Parameters that control the depth of field effect. See
-<code>bevy_core_pipeline::dof::DepthOfFieldUniforms</code> for information on what these
+<code>bevy_post_process::dof::DepthOfFieldUniform</code> for information on what these
 parameters mean.</p>
 </div>
 <h2 class="item-list-title">Fields</h2>
@@ -128,18 +124,13 @@ parameters mean.</p>
 <div class="comment"><p>The distance in meters to the location in focus.</p>
 </div>
 
-<div style="margin: 8px 0;"><code>focal_length: f32</code></div>
-<div class="comment"><p>The <a href="https://en.wikipedia.org/wiki/Focal_length" rel="noopener noreferrer">focal length</a>. Physically speaking, this represents "the distance
-from the center of the lens to the principal foci of the lens". The
-default value, 50 mm, is considered representative of human eyesight.
-Real-world lenses range anywhere from 5 mm for "fisheye" lenses to
-2000 mm for "super-telephoto" lenses designed for very distant objects.</p>
-<p>The higher the value, the more blurry objects not in focus will be.</p>
-</div>
-
 <div style="margin: 8px 0;"><code>coc_scale_factor: f32</code></div>
 <div class="comment"><p>The premultiplied factor that we scale the circle of confusion by.</p>
-<p>This is calculated as <code>focal_length² / (sensor_height * aperture_f_stops)</code>.</p>
+<p>This is calculated as:</p>
+<pre><code>sensor_height / (aperture_f_stops * view_height * (view_height - sensor_height))
+</code></pre>
+<p><code>view_height</code> is the height of the view at the focal plane. See
+<code>calculate_circle_of_confusion</code> below for the derivation.</p>
 </div>
 
 <div style="margin: 8px 0;"><code>max_circle_of_confusion_diameter: f32</code></div>
@@ -152,18 +143,6 @@ behavior.</p>
 <div style="margin: 8px 0;"><code>max_depth: f32</code></div>
 <div class="comment"><p>The depth value that we clamp distant objects to. See the comment in
 <a href="DepthOfField" title="DepthOfField" rel="noopener noreferrer"><code>DepthOfField</code></a> for more information.</p>
-</div>
-
-<div style="margin: 8px 0;"><code>pad_a: u32</code></div>
-<div class="comment"><p>Padding.</p>
-</div>
-
-<div style="margin: 8px 0;"><code>pad_b: u32</code></div>
-<div class="comment"><p>Padding.</p>
-</div>
-
-<div style="margin: 8px 0;"><code>pad_c: u32</code></div>
-<div class="comment"><p>Padding.</p>
 </div>
 
 

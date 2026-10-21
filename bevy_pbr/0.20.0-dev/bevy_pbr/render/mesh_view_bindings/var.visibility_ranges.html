@@ -103,13 +103,13 @@
 
 
 
-<a class="module" href="../../../src/bevy_pbr/render/mesh_view_bindings.html#46-47">Source</a>
+<a class="module" href="../../../src/bevy_pbr/render/mesh_view_bindings.html#41-42">Source</a>
 
 
 <div><span class="conditional">AVAILABLE_STORAGE_BUFFER_BINDINGS__GE_6</span></div>
 
 <pre class="code-block">
-<code>@group(0) @binding(14)
+<code>@group(0) @binding(11)
 var&#60;storage&#62; visibility_ranges: array&lt;vec4&lt;f32&gt;&gt;;</code>
 </pre>
 
@@ -118,13 +118,13 @@ var&#60;storage&#62; visibility_ranges: array&lt;vec4&lt;f32&gt;&gt;;</code>
 <br />
 
 
-<a class="module" href="../../../src/bevy_pbr/render/mesh_view_bindings.html#48-49">Source</a>
+<a class="module" href="../../../src/bevy_pbr/render/mesh_view_bindings.html#43-44">Source</a>
 
 
 <div><span class="conditional">!AVAILABLE_STORAGE_BUFFER_BINDINGS__GE_6</span></div>
 
 <pre class="code-block">
-<code>@group(0) @binding(14)
+<code>@group(0) @binding(11)
 var&#60;uniform&#62; visibility_ranges: array&lt;vec4&lt;f32&gt;, <a class="const" href="../../render/mesh_view_bindings/const.VISIBILITY_RANGE_UNIFORM_BUFFER_SIZE.html">VISIBILITY_RANGE_UNIFORM_BUFFER_SIZE</a>&gt;;</code>
 </pre>
 

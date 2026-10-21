@@ -103,13 +103,13 @@
 
 
 
-<a class="module" href="../../../src/bevy_pbr/render/mesh_view_bindings.html#31">Source</a>
+<a class="module" href="../../../src/bevy_pbr/render/mesh_view_bindings.html#26">Source</a>
 
 
 <div><span class="conditional">AVAILABLE_STORAGE_BUFFER_BINDINGS__GE_3</span></div>
 
 <pre class="code-block">
-<code>@group(0) @binding(10)
+<code>@group(0) @binding(7)
 var&#60;storage&#62; cluster_offsets_and_counts: <a class="struct" href="../../render/mesh_view_types/struct.ClusterOffsetsAndCounts.html">ClusterOffsetsAndCounts</a>;</code>
 </pre>
 
@@ -118,13 +118,13 @@ var&#60;storage&#62; cluster_offsets_and_counts: <a class="struct" href="../../r
 <br />
 
 
-<a class="module" href="../../../src/bevy_pbr/render/mesh_view_bindings.html#36">Source</a>
+<a class="module" href="../../../src/bevy_pbr/render/mesh_view_bindings.html#31">Source</a>
 
 
 <div><span class="conditional">!AVAILABLE_STORAGE_BUFFER_BINDINGS__GE_3</span></div>
 
 <pre class="code-block">
-<code>@group(0) @binding(10)
+<code>@group(0) @binding(7)
 var&#60;uniform&#62; cluster_offsets_and_counts: <a class="struct" href="../../render/mesh_view_types/struct.ClusterOffsetsAndCounts.html">ClusterOffsetsAndCounts</a>;</code>
 </pre>
 

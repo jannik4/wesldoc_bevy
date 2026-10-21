@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
         
-        EPSILON - bevy_post_process
+        shadow_textures_comparison_sampler - bevy_pbr
         
     </title>
 
@@ -30,7 +30,7 @@
             <span class="icon icon-home"></span>
         </a>
         <a id="show-package" class="nav-item nav-item-bd-right muted-link icon-and-text" href="#">
-            bevy_post_process 0.20.0-dev
+            bevy_pbr 0.20.0-dev
             <span class="icon icon-mod-small icon-down"></span>
         </a>
         <div id="package-menu">
@@ -95,7 +95,7 @@
         <div id="innerContent">
             
             <h2>
-                <a class="path" href="../../index.html">bevy_post_process</a><span>::</span><wbr><a class="path" href="../index.html">dof</a><span>::</span><wbr><a class="path" href="index.html">dof</a><span>::</span><wbr><a class="const" href="#">EPSILON</a>
+                <a class="path" href="../../index.html">bevy_pbr</a><span>::</span><wbr><a class="path" href="../index.html">render</a><span>::</span><wbr><a class="path" href="index.html">mesh_view_bindings</a><span>::</span><wbr><a class="var" href="#">shadow_textures_comparison_sampler</a>
             </h2>
             
 
@@ -103,14 +103,14 @@
 
 
 
-<a class="module" href="../../../src/bevy_post_process/dof/dof.html#101">Source</a>
+<a class="module" href="../../../src/bevy_pbr/render/mesh_view_bindings.html#17">Source</a>
 
 
 <pre class="code-block">
-<code>const EPSILON: f32 = 0.00000011920929;</code>
+<code>@group(0) @binding(3)
+var shadow_textures_comparison_sampler: sampler_comparison;</code>
 </pre>
-<div class="comment"><p>used to ensure <code>depth * (focus - f)</code> is always a positive number,</p>
-</div>
+
 
 
         </div>
@@ -121,7 +121,7 @@
 
     <script>
         window.DOCS_THIS_PACKAGE = {
-            name: "bevy_post_process",
+            name: "bevy_pbr",
             root: "../../../",
         };
     </script>

@@ -228,10 +228,8 @@ NOTE: The names have a final underscore to avoid the following error:
             
         </div>
         <div>
-            <div class="comment-inline"><p>returns the (0-1, 0-1) position within the given viewport for the current buffer coords .
-buffer coords can be obtained from <code>@builtin(position).xy</code>.
-the view uniform struct contains the current camera viewport in <code>view.viewport</code>.
-topleft = 0,0</p>
+            <div class="comment-inline"><p>Converts <code>@builtin(position).xy</code> to viewport UVs, with (0, 0) at the top left.
+Use <code>view.main_pass_viewport</code> before upscaling and <code>view.viewport</code> after.</p>
 </div>
         </div>
     </li>

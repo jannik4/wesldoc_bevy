@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
         
-        sample_transmittance_lut - bevy_pbr
+        atmosphere - bevy_solari
         
     </title>
 
@@ -28,7 +28,7 @@
             <span class="icon icon-home"></span>
         </a>
         <a id="show-package" class="nav-item nav-item-bd-right muted-link icon-and-text" href="#">
-            bevy_pbr 0.20.0-dev
+            bevy_solari 0.20.0-dev
             <span class="icon icon-mod-small icon-down"></span>
         </a>
         <div id="package-menu">
@@ -53,8 +53,8 @@
         <div class="body">
             
             <a class="muted-link"
-                href="../../../../../bevy_core_pipeline/0.20.0-dev/bevy_core_pipeline/index.html">
-                bevy_core_pipeline 0.20.0-dev
+                href="../../../../../bevy_pbr/0.20.0-dev/bevy_pbr/index.html">
+                bevy_pbr 0.20.0-dev
             </a>
             
             <a class="muted-link"
@@ -93,7 +93,7 @@
         <div id="innerContent">
             
             <h2>
-                <a class="path" href="../../index.html">bevy_pbr</a><span>::</span><wbr><a class="path" href="../index.html">render</a><span>::</span><wbr><a class="path" href="index.html">pbr_lighting</a><span>::</span><wbr><a class="fn" href="#">sample_transmittance_lut</a>
+                <a class="path" href="../../index.html">bevy_solari</a><span>::</span><wbr><a class="path" href="../index.html">realtime</a><span>::</span><wbr><a class="path" href="index.html">bindings</a><span>::</span><wbr><a class="var" href="#">atmosphere</a>
             </h2>
             
 
@@ -101,12 +101,12 @@
 
 
 
-<a class="module" href="../../../src/bevy_pbr/render/pbr_lighting.html#1130-1136">Source</a>
+<a class="module" href="../../../src/bevy_solari/realtime/bindings.html#24">Source</a>
 
 
-<div><span class="conditional">ATMOSPHERE</span></div>
-
-<pre class="code-block"><code>fn sample_transmittance_lut(r: f32, mu: f32) -> vec3&lt;f32&gt;</code>
+<pre class="code-block">
+<code>@group(1) @binding(12)
+var&#60;uniform&#62; atmosphere: <a class="struct" href="../../../../../bevy_pbr/0.20.0-dev/bevy_pbr/atmosphere/types/struct.Atmosphere.html">Atmosphere</a>;</code>
 </pre>
 
 
@@ -119,7 +119,7 @@
 
     <script>
         window.DOCS_THIS_PACKAGE = {
-            name: "bevy_pbr",
+            name: "bevy_solari",
             root: "../../../",
         };
     </script>

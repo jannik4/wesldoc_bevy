@@ -1115,7 +1115,7 @@
             id="170"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >170</a>        <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-function syntax-function-call">terminate_into_cache</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">&amp;</span><span class="syntax-variable">path</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">ray_hit</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">ray</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">t</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">p_brdf</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">bounce</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">rng</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
+        >170</a>        <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-function syntax-function-call">terminate_into_cache</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">&amp;</span><span class="syntax-variable">path</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">ray</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">ray_hit</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">p_brdf</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">bounce</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">rng</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#171"
             id="171"
@@ -2609,13 +2609,13 @@
             id="419"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >419</a>    <span class="syntax-variable syntax-variable-parameter">ray_hit</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">ResolvedRayHitFull</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
+        >419</a>    <span class="syntax-variable syntax-variable-parameter">ray</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">RayIntersection</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#420"
             id="420"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >420</a>    <span class="syntax-variable syntax-variable-parameter">ray_t</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
+        >420</a>    <span class="syntax-variable syntax-variable-parameter">ray_hit</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">ResolvedRayHitFull</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#421"
             id="421"
@@ -2645,109 +2645,109 @@
             id="425"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >425</a>    <span class="syntax-comment syntax-comment-line">// Only terminate into the world cache when the bounce was from a wide-enough BRDF sample</span>
+        >425</a>    <span class="syntax-comment syntax-comment-line">// Terminate the path if hitting the back face of a single-sided mesh</span>
 <a
             href="#426"
             id="426"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >426</a>    <span class="syntax-comment syntax-comment-line">// because the cache is less noisy than continuing the path for rough surfaces,</span>
+        >426</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-operator">!</span><span class="syntax-variable">ray</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">front_face</span> <span class="syntax-operator">&amp;&amp;</span> <span class="syntax-operator">!</span><span class="syntax-variable">ray_hit</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">double_sided</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span> <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-constant syntax-constant-builtin syntax-constant-builtin-boolean">true</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span> <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#427"
             id="427"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >427</a>    <span class="syntax-comment syntax-comment-line">// but less accurate for smooth surfaces</span>
+        >427</a>
 <a
             href="#428"
             id="428"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >428</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">lobe_solid_angle</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span> <span class="syntax-operator">/</span> <span class="syntax-variable">p_brdf</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >428</a>    <span class="syntax-comment syntax-comment-line">// Only terminate into the world cache when the bounce was from a wide-enough BRDF sample</span>
 <a
             href="#429"
             id="429"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >429</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">broad_enough_to_terminate</span> <span class="syntax-operator">=</span> <span class="syntax-variable">lobe_solid_angle</span> <span class="syntax-operator">&gt;=</span> <span class="syntax-constant">CACHE_TERMINATION_MIN_SOLID_ANGLE</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >429</a>    <span class="syntax-comment syntax-comment-line">// because the cache is less noisy than continuing the path for rough surfaces,</span>
 <a
             href="#430"
             id="430"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >430</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">forced_terminate</span> <span class="syntax-operator">=</span> <span class="syntax-variable">bounce</span> <span class="syntax-operator">==</span> <span class="syntax-variable">constants</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">max_bounces</span> <span class="syntax-operator">-</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >430</a>    <span class="syntax-comment syntax-comment-line">// but less accurate for smooth surfaces</span>
 <a
             href="#431"
             id="431"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >431</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-operator">!</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">broad_enough_to_terminate</span> <span class="syntax-operator">||</span> <span class="syntax-variable">forced_terminate</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span> <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-constant syntax-constant-builtin syntax-constant-builtin-boolean">false</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span> <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
+        >431</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">lobe_solid_angle</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span> <span class="syntax-operator">/</span> <span class="syntax-variable">p_brdf</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#432"
             id="432"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >432</a>
+        >432</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">broad_enough_to_terminate</span> <span class="syntax-operator">=</span> <span class="syntax-variable">lobe_solid_angle</span> <span class="syntax-operator">&gt;=</span> <span class="syntax-constant">CACHE_TERMINATION_MIN_SOLID_ANGLE</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#433"
             id="433"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >433</a>    <span class="syntax-comment syntax-comment-line">// Only use the cache when the ray cleared the cache cell (diagonal = sqrt(3) * cell_size). Short</span>
+        >433</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">forced_terminate</span> <span class="syntax-operator">=</span> <span class="syntax-variable">bounce</span> <span class="syntax-operator">==</span> <span class="syntax-variable">constants</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">max_bounces</span> <span class="syntax-operator">-</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1u</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#434"
             id="434"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >434</a>    <span class="syntax-comment syntax-comment-line">// rays land in a cell that may straddle occluders and leak light through corners.</span>
+        >434</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-operator">!</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">broad_enough_to_terminate</span> <span class="syntax-operator">||</span> <span class="syntax-variable">forced_terminate</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span> <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-constant syntax-constant-builtin syntax-constant-builtin-boolean">false</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span> <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#435"
             id="435"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >435</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">rng_copy</span> <span class="syntax-operator">=</span> <span class="syntax-operator">*</span><span class="syntax-variable">rng</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >435</a>
 <a
             href="#436"
             id="436"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >436</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">world_cache_cell_size</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">get_cell_size</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">ray_hit</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">world_position</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">view</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">world_position</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">ray_t</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-operator">&amp;</span><span class="syntax-variable">rng_copy</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >436</a>    <span class="syntax-comment syntax-comment-line">// Only use the cache when the ray cleared the cache cell (diagonal = sqrt(3) * cell_size). Short</span>
 <a
             href="#437"
             id="437"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >437</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-variable">ray_t</span> <span class="syntax-operator">&lt;=</span> <span class="syntax-function syntax-function-call">sqrt</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">3.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-variable">world_cache_cell_size</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span> <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-constant syntax-constant-builtin syntax-constant-builtin-boolean">false</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span> <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
+        >437</a>    <span class="syntax-comment syntax-comment-line">// rays land in a cell that may straddle occluders and leak light through corners.</span>
 <a
             href="#438"
             id="438"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >438</a>
+        >438</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">rng_copy</span> <span class="syntax-operator">=</span> <span class="syntax-operator">*</span><span class="syntax-variable">rng</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#439"
             id="439"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >439</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">cached_radiance</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">query_world_cache</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">ray_hit</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">world_position</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">ray_hit</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">geometric_world_normal</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">view</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">world_position</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">ray_t</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant">WORLD_CACHE_CELL_LIFETIME</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">rng</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >439</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">world_cache_cell_size</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">get_cell_size</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">ray_hit</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">world_position</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">view</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">world_position</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">ray</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">t</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-operator">&amp;</span><span class="syntax-variable">rng_copy</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#440"
             id="440"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >440</a>
+        >440</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-variable">ray</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">t</span> <span class="syntax-operator">&lt;=</span> <span class="syntax-function syntax-function-call">sqrt</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">3.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-variable">world_cache_cell_size</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span> <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-constant syntax-constant-builtin syntax-constant-builtin-boolean">false</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span> <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#441"
             id="441"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >441</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">cache_outgoing</span> <span class="syntax-operator">=</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">ray_hit</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">material</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">base_color</span> <span class="syntax-operator">/</span> <span class="syntax-constant">PI</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-variable">cached_radiance</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >441</a>
 <a
             href="#442"
             id="442"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >442</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">cache_L_at_reconnection</span> <span class="syntax-operator">=</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">*</span><span class="syntax-variable">path</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">throughput_past_first_hit</span> <span class="syntax-operator">*</span> <span class="syntax-variable">cache_outgoing</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >442</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">cached_radiance</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">query_world_cache</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">ray_hit</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">world_position</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">ray_hit</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">geometric_world_normal</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">view</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">world_position</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">ray</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">t</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant">WORLD_CACHE_CELL_LIFETIME</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">rng</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#443"
             id="443"
@@ -2759,49 +2759,49 @@
             id="444"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >444</a>    <span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">RESTIR</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
+        >444</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">cache_outgoing</span> <span class="syntax-operator">=</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">ray_hit</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">material</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">base_color</span> <span class="syntax-operator">/</span> <span class="syntax-constant">PI</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-variable">cached_radiance</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#445"
             id="445"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >445</a>        <span class="syntax-function">resample_reconnection_candidate</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">path</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">cache_L_at_reconnection</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">rng</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >445</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">cache_L_at_reconnection</span> <span class="syntax-operator">=</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">*</span><span class="syntax-variable">path</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">throughput_past_first_hit</span> <span class="syntax-operator">*</span> <span class="syntax-variable">cache_outgoing</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#446"
             id="446"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >446</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span> <span class="syntax-attribute">@<span class="syntax-attribute">else</span></span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
+        >446</a>
 <a
             href="#447"
             id="447"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >447</a>        <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">*</span><span class="syntax-variable">path</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">radiance</span> <span class="syntax-operator">+=</span> <span class="syntax-variable">cache_L_at_reconnection</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >447</a>    <span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">RESTIR</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#448"
             id="448"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >448</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
+        >448</a>        <span class="syntax-function">resample_reconnection_candidate</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">path</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">cache_L_at_reconnection</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">rng</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#449"
             id="449"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >449</a>
+        >449</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span> <span class="syntax-attribute">@<span class="syntax-attribute">else</span></span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#450"
             id="450"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >450</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-constant syntax-constant-builtin syntax-constant-builtin-boolean">true</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >450</a>        <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">*</span><span class="syntax-variable">path</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">radiance</span> <span class="syntax-operator">+=</span> <span class="syntax-variable">cache_L_at_reconnection</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#451"
             id="451"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >451</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
+        >451</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#452"
             id="452"
@@ -2813,73 +2813,73 @@
             id="453"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >453</a><span class="syntax-comment syntax-comment-line">/// Resample radiance arriving at x1 through the reconnection vertex x2. `L_at_reconnection` excludes the</span>
+        >453</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-constant syntax-constant-builtin syntax-constant-builtin-boolean">true</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#454"
             id="454"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >454</a><span class="syntax-comment syntax-comment-line">/// brdf*cos at x1, which is re-applied at shade time from whichever pixel ends up reusing the candidate.</span>
+        >454</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#455"
             id="455"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >455</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">RESTIR</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
+        >455</a>
 <a
             href="#456"
             id="456"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >456</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">resample_reconnection_candidate</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">path</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">ptr</span><span class="syntax-punctuation">&lt;<span class="syntax-type">function</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">PathState</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">L_at_reconnection</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">rng</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">ptr</span><span class="syntax-punctuation">&lt;<span class="syntax-type">function</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">u32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
+        >456</a><span class="syntax-comment syntax-comment-line">/// Resample radiance arriving at x1 through the reconnection vertex x2. `L_at_reconnection` excludes the</span>
 <a
             href="#457"
             id="457"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >457</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-operator">!</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">*</span><span class="syntax-variable">path</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">x2_reusable</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
+        >457</a><span class="syntax-comment syntax-comment-line">/// brdf*cos at x1, which is re-applied at shade time from whichever pixel ends up reusing the candidate.</span>
 <a
             href="#458"
             id="458"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >458</a>        <span class="syntax-comment syntax-comment-line">// x1 -&gt; x2 not reuse-safe: shade directly at this pixel instead of publishing.</span>
+        >458</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">RESTIR</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#459"
             id="459"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >459</a>        <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">*</span><span class="syntax-variable">path</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">radiance</span> <span class="syntax-operator">+=</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">*</span><span class="syntax-variable">path</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">x1_brdf</span> <span class="syntax-operator">*</span> <span class="syntax-type">L_at_reconnection</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >459</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">resample_reconnection_candidate</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">path</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">ptr</span><span class="syntax-punctuation">&lt;<span class="syntax-type">function</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">PathState</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">L_at_reconnection</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">rng</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">ptr</span><span class="syntax-punctuation">&lt;<span class="syntax-type">function</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-type">u32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#460"
             id="460"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >460</a>        <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >460</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-operator">!</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">*</span><span class="syntax-variable">path</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">x2_reusable</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#461"
             id="461"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >461</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
+        >461</a>        <span class="syntax-comment syntax-comment-line">// x1 -&gt; x2 not reuse-safe: shade directly at this pixel instead of publishing.</span>
 <a
             href="#462"
             id="462"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >462</a>
+        >462</a>        <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">*</span><span class="syntax-variable">path</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">radiance</span> <span class="syntax-operator">+=</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">*</span><span class="syntax-variable">path</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">x1_brdf</span> <span class="syntax-operator">*</span> <span class="syntax-type">L_at_reconnection</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#463"
             id="463"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >463</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">target_function</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">luminance</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">*</span><span class="syntax-variable">path</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">x1_brdf</span> <span class="syntax-operator">*</span> <span class="syntax-type">L_at_reconnection</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >463</a>        <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#464"
             id="464"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >464</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">resampling_weight</span> <span class="syntax-operator">=</span> <span class="syntax-variable">target_function</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >464</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#465"
             id="465"
@@ -2891,223 +2891,223 @@
             id="466"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >466</a>    <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">*</span><span class="syntax-variable">path</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">weight_sum</span> <span class="syntax-operator">+=</span> <span class="syntax-variable">resampling_weight</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >466</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">target_function</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">luminance</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">*</span><span class="syntax-variable">path</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">x1_brdf</span> <span class="syntax-operator">*</span> <span class="syntax-type">L_at_reconnection</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#467"
             id="467"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >467</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-function syntax-function-call">rand_f</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">rng</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">*</span><span class="syntax-variable">path</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">weight_sum</span> <span class="syntax-operator">&lt;</span> <span class="syntax-variable">resampling_weight</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
+        >467</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">resampling_weight</span> <span class="syntax-operator">=</span> <span class="syntax-variable">target_function</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#468"
             id="468"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >468</a>        <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">*</span><span class="syntax-variable">path</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">reservoir</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">light_sample</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">LightSample</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">NULL_LIGHT_ID</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0u</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >468</a>
 <a
             href="#469"
             id="469"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >469</a>        <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">*</span><span class="syntax-variable">path</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">reservoir</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">sample_point_world_position</span> <span class="syntax-operator">=</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">*</span><span class="syntax-variable">path</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">x2_position</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >469</a>    <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">*</span><span class="syntax-variable">path</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">weight_sum</span> <span class="syntax-operator">+=</span> <span class="syntax-variable">resampling_weight</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#470"
             id="470"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >470</a>        <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">*</span><span class="syntax-variable">path</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">reservoir</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">sample_point_world_normal</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">octahedral_encode</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">*</span><span class="syntax-variable">path</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">x2_normal</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >470</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-conditional">if</span> <span class="syntax-function syntax-function-call">rand_f</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">rng</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">*</span><span class="syntax-variable">path</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">weight_sum</span> <span class="syntax-operator">&lt;</span> <span class="syntax-variable">resampling_weight</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#471"
             id="471"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >471</a>        <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">*</span><span class="syntax-variable">path</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">reservoir</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">radiance</span> <span class="syntax-operator">=</span> <span class="syntax-type">L_at_reconnection</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >471</a>        <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">*</span><span class="syntax-variable">path</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">reservoir</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">light_sample</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">LightSample</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">NULL_LIGHT_ID</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0u</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#472"
             id="472"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >472</a>        <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">*</span><span class="syntax-variable">path</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">selected_target_function</span> <span class="syntax-operator">=</span> <span class="syntax-variable">target_function</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >472</a>        <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">*</span><span class="syntax-variable">path</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">reservoir</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">sample_point_world_position</span> <span class="syntax-operator">=</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">*</span><span class="syntax-variable">path</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">x2_position</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#473"
             id="473"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >473</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
+        >473</a>        <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">*</span><span class="syntax-variable">path</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">reservoir</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">sample_point_world_normal</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">octahedral_encode</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">*</span><span class="syntax-variable">path</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">x2_normal</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#474"
             id="474"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >474</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
+        >474</a>        <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">*</span><span class="syntax-variable">path</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">reservoir</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">radiance</span> <span class="syntax-operator">=</span> <span class="syntax-type">L_at_reconnection</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#475"
             id="475"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >475</a>
+        >475</a>        <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">*</span><span class="syntax-variable">path</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">selected_target_function</span> <span class="syntax-operator">=</span> <span class="syntax-variable">target_function</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#476"
             id="476"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >476</a><span class="syntax-comment syntax-comment-line">/// ReSTIR PT Enhanced: Algorithmic Advances for Faster and More Robust ReSTIR Path Tracing</span>
+        >476</a>    <span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#477"
             id="477"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >477</a><span class="syntax-comment syntax-comment-line">/// Section 4 (sorta)</span>
+        >477</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#478"
             id="478"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >478</a><span class="syntax-comment syntax-comment-line">/// https://research.nvidia.com/labs/rtr/publication/lin2026restirptenhanced/lin2026restirptenhanced.pdf</span>
+        >478</a>
 <a
             href="#479"
             id="479"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >479</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">RESTIR</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
+        >479</a><span class="syntax-comment syntax-comment-line">/// ReSTIR PT Enhanced: Algorithmic Advances for Faster and More Robust ReSTIR Path Tracing</span>
 <a
             href="#480"
             id="480"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >480</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">reconnection_reusable</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">ray_t</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">p_brdf</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">wi</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">diffuse_selected</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">bool</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">ray_hit</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">ResolvedRayHitFull</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">world_position</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">x1_perceptual_roughness</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">primary_NdotV</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-type">bool</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
+        >480</a><span class="syntax-comment syntax-comment-line">/// Section 4 (sorta)</span>
 <a
             href="#481"
             id="481"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >481</a>    <span class="syntax-comment syntax-comment-line">// ray_footprint = t^2 / (p_brdf * cos_x2) is the area a sample represents at x2. It goes to 0 for</span>
+        >481</a><span class="syntax-comment syntax-comment-line">/// https://research.nvidia.com/labs/rtr/publication/lin2026restirptenhanced/lin2026restirptenhanced.pdf</span>
 <a
             href="#482"
             id="482"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >482</a>    <span class="syntax-comment syntax-comment-line">// mirror lobes (p_brdf = INF) and shrinks for sharp lobes or short segments. Compared against a</span>
+        >482</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">RESTIR</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
 <a
             href="#483"
             id="483"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >483</a>    <span class="syntax-comment syntax-comment-line">// uniform 1/(4*PI) primary footprint, so the test trades roughness against distance.</span>
+        >483</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">reconnection_reusable</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">ray_t</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">p_brdf</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">wi</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">diffuse_selected</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">bool</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">ray_hit</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">ResolvedRayHitFull</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">world_position</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">x1_perceptual_roughness</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">primary_NdotV</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-type">bool</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#484"
             id="484"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >484</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">cos_x2</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">max</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">dot</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">ray_hit</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">world_normal</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-operator">-</span><span class="syntax-variable">wi</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0001</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >484</a>    <span class="syntax-comment syntax-comment-line">// ray_footprint = t^2 / (p_brdf * cos_x2) is the area a sample represents at x2. It goes to 0 for</span>
 <a
             href="#485"
             id="485"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >485</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">ray_footprint</span> <span class="syntax-operator">=</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">ray_t</span> <span class="syntax-operator">*</span> <span class="syntax-variable">ray_t</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">/</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">p_brdf</span> <span class="syntax-operator">*</span> <span class="syntax-variable">cos_x2</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >485</a>    <span class="syntax-comment syntax-comment-line">// mirror lobes (p_brdf = INF) and shrinks for sharp lobes or short segments. Compared against a</span>
 <a
             href="#486"
             id="486"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >486</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">primary_dist</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">length</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">view</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">world_position</span> <span class="syntax-operator">-</span> <span class="syntax-variable">world_position</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >486</a>    <span class="syntax-comment syntax-comment-line">// uniform 1/(4*PI) primary footprint, so the test trades roughness against distance.</span>
 <a
             href="#487"
             id="487"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >487</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">primary_footprint</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">4.0</span> <span class="syntax-operator">*</span> <span class="syntax-constant">PI</span> <span class="syntax-operator">*</span> <span class="syntax-variable">primary_dist</span> <span class="syntax-operator">*</span> <span class="syntax-variable">primary_dist</span> <span class="syntax-operator">/</span> <span class="syntax-variable">primary_NdotV</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >487</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">cos_x2</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">max</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">dot</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">ray_hit</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">world_normal</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-operator">-</span><span class="syntax-variable">wi</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0001</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#488"
             id="488"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >488</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">footprint_ok</span> <span class="syntax-operator">=</span> <span class="syntax-variable">ray_footprint</span> <span class="syntax-operator">&gt;=</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">RECONNECTION_FOOTPRINT_KAPPA</span> <span class="syntax-operator">/</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">100.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-variable">primary_footprint</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >488</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">ray_footprint</span> <span class="syntax-operator">=</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">ray_t</span> <span class="syntax-operator">*</span> <span class="syntax-variable">ray_t</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">/</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">p_brdf</span> <span class="syntax-operator">*</span> <span class="syntax-variable">cos_x2</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#489"
             id="489"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >489</a>
+        >489</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">primary_dist</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">length</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">view</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">world_position</span> <span class="syntax-operator">-</span> <span class="syntax-variable">world_position</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#490"
             id="490"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >490</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">x1_lobe_ok</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">x1_lobe_reusable</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">p_brdf</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">diffuse_selected</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">x1_perceptual_roughness</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >490</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">primary_footprint</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">4.0</span> <span class="syntax-operator">*</span> <span class="syntax-constant">PI</span> <span class="syntax-operator">*</span> <span class="syntax-variable">primary_dist</span> <span class="syntax-operator">*</span> <span class="syntax-variable">primary_dist</span> <span class="syntax-operator">/</span> <span class="syntax-variable">primary_NdotV</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#491"
             id="491"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >491</a>
+        >491</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">footprint_ok</span> <span class="syntax-operator">=</span> <span class="syntax-variable">ray_footprint</span> <span class="syntax-operator">&gt;=</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">RECONNECTION_FOOTPRINT_KAPPA</span> <span class="syntax-operator">/</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">100.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-variable">primary_footprint</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#492"
             id="492"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >492</a>    <span class="syntax-comment syntax-comment-line">// Guard at x2. A sharp reflector there makes the stored radiance view-dependent and wrong to</span>
+        >492</a>
 <a
             href="#493"
             id="493"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >493</a>    <span class="syntax-comment syntax-comment-line">// reuse from a neighbor&#39;s direction. The roughness floor relaxes with segment length: a distant</span>
+        >493</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">x1_lobe_ok</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">x1_lobe_reusable</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">p_brdf</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">diffuse_selected</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">x1_perceptual_roughness</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#494"
             id="494"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >494</a>    <span class="syntax-comment syntax-comment-line">// glossy x2 is seen by neighbors from nearly the same direction, so the view-dependence washes out.</span>
+        >494</a>
 <a
             href="#495"
             id="495"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >495</a>    <span class="syntax-comment syntax-comment-line">// Diffuse, rough, and emissive vertices are always reuse-safe.</span>
+        >495</a>    <span class="syntax-comment syntax-comment-line">// Guard at x2. A sharp reflector there makes the stored radiance view-dependent and wrong to</span>
 <a
             href="#496"
             id="496"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >496</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">x2_is_light</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">any</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">ray_hit</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">material</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">emissive</span> <span class="syntax-operator">&gt;</span> <span class="syntax-function syntax-function-call">vec3</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >496</a>    <span class="syntax-comment syntax-comment-line">// reuse from a neighbor&#39;s direction. The roughness floor relaxes with segment length: a distant</span>
 <a
             href="#497"
             id="497"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >497</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">x2_roughness</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">mix</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">ray_hit</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">material</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">perceptual_roughness</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">ray_hit</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">material</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">metallic</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >497</a>    <span class="syntax-comment syntax-comment-line">// glossy x2 is seen by neighbors from nearly the same direction, so the view-dependence washes out.</span>
 <a
             href="#498"
             id="498"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >498</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">x2_roughness_floor</span> <span class="syntax-operator">=</span> <span class="syntax-constant">RECONNECTION_ROUGHNESS_MIN</span> <span class="syntax-operator">*</span> <span class="syntax-function syntax-function-call">saturate</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">RECONNECTION_RELAX_DISTANCE</span> <span class="syntax-operator">/</span> <span class="syntax-variable">ray_t</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >498</a>    <span class="syntax-comment syntax-comment-line">// Diffuse, rough, and emissive vertices are always reuse-safe.</span>
 <a
             href="#499"
             id="499"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >499</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">x2_end_ok</span> <span class="syntax-operator">=</span> <span class="syntax-variable">x2_is_light</span> <span class="syntax-operator">||</span> <span class="syntax-variable">x2_roughness</span> <span class="syntax-operator">&gt;=</span> <span class="syntax-variable">x2_roughness_floor</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >499</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">x2_is_light</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">any</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">ray_hit</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">material</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">emissive</span> <span class="syntax-operator">&gt;</span> <span class="syntax-function syntax-function-call">vec3</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#500"
             id="500"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >500</a>
+        >500</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">x2_roughness</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">mix</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">ray_hit</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">material</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">perceptual_roughness</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">ray_hit</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">material</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">metallic</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#501"
             id="501"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >501</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-variable">footprint_ok</span> <span class="syntax-operator">&amp;&amp;</span> <span class="syntax-variable">x1_lobe_ok</span> <span class="syntax-operator">&amp;&amp;</span> <span class="syntax-variable">x2_end_ok</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >501</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">x2_roughness_floor</span> <span class="syntax-operator">=</span> <span class="syntax-constant">RECONNECTION_ROUGHNESS_MIN</span> <span class="syntax-operator">*</span> <span class="syntax-function syntax-function-call">saturate</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">RECONNECTION_RELAX_DISTANCE</span> <span class="syntax-operator">/</span> <span class="syntax-variable">ray_t</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#502"
             id="502"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >502</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
+        >502</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">x2_end_ok</span> <span class="syntax-operator">=</span> <span class="syntax-variable">x2_is_light</span> <span class="syntax-operator">||</span> <span class="syntax-variable">x2_roughness</span> <span class="syntax-operator">&gt;=</span> <span class="syntax-variable">x2_roughness_floor</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#503"
             id="503"
@@ -3119,31 +3119,49 @@
             id="504"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >504</a><span class="syntax-comment syntax-comment-line">/// Whether the lobe sampled at x1 is wide enough for its candidates to be reused by neighbors.</span>
+        >504</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-variable">footprint_ok</span> <span class="syntax-operator">&amp;&amp;</span> <span class="syntax-variable">x1_lobe_ok</span> <span class="syntax-operator">&amp;&amp;</span> <span class="syntax-variable">x2_end_ok</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#505"
             id="505"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >505</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">RESTIR</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
+        >505</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#506"
             id="506"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >506</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">x1_lobe_reusable</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">p_brdf</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">diffuse_selected</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">bool</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">x1_perceptual_roughness</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-type">bool</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
+        >506</a>
 <a
             href="#507"
             id="507"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >507</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-operator">!</span><span class="syntax-function syntax-function-call">isinf</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">p_brdf</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">&amp;&amp;</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">diffuse_selected</span> <span class="syntax-operator">||</span> <span class="syntax-variable">x1_perceptual_roughness</span> <span class="syntax-operator">&gt;=</span> <span class="syntax-constant">RECONNECTION_ROUGHNESS_MIN</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >507</a><span class="syntax-comment syntax-comment-line">/// Whether the lobe sampled at x1 is wide enough for its candidates to be reused by neighbors.</span>
 <a
             href="#508"
             id="508"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >508</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span></code>
+        >508</a><span class="syntax-attribute">@<span class="syntax-attribute">if</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">RESTIR</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span></span>
+<a
+            href="#509"
+            id="509"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >509</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">x1_lobe_reusable</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">p_brdf</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">diffuse_selected</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">bool</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">x1_perceptual_roughness</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-type">bool</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
+<a
+            href="#510"
+            id="510"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >510</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-operator">!</span><span class="syntax-function syntax-function-call">isinf</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">p_brdf</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">&amp;&amp;</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">diffuse_selected</span> <span class="syntax-operator">||</span> <span class="syntax-variable">x1_perceptual_roughness</span> <span class="syntax-operator">&gt;=</span> <span class="syntax-constant">RECONNECTION_ROUGHNESS_MIN</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+<a
+            href="#511"
+            id="511"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >511</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span></code>
 </pre>
 
         </div>

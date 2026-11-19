@@ -202,6 +202,16 @@
     
     <li>
         <div>
+            <a class="const" href="const.MIN_SHADING_NDOTV.html">MIN_SHADING_NDOTV</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
             <a class="const" href="const.MIRROR_ROUGHNESS_THRESHOLD.html">MIRROR_ROUGHNESS_THRESHOLD</a>
             
         </div>
@@ -614,6 +624,19 @@
 
 <h3 class="item-list-title">Functions</h3>
 <ul class="item-list">
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.bend_normal_towards_viewer.html">bend_normal_towards_viewer</a>
+            
+        </div>
+        <div>
+            <div class="comment-inline"><p>The BRDF only reflects light toward viewers on the side the normal points to, and returns zero otherwise.
+At grazing angles, interpolated or normal-mapped normals can point away from the viewer even though
+the triangle faces the viewer, which renders as a black outline. Bend the normal just enough to face the viewer.</p>
+</div>
+        </div>
+    </li>
     
     <li>
         <div>

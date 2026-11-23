@@ -945,25 +945,25 @@
             id="143"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >143</a><span class="syntax-comment syntax-comment-line">/// https://en.wikipedia.org/wiki/Vector_projection#Vector_projection_2</span>
+        >143</a><span class="syntax-comment syntax-comment-line">/// pow(x, 5.0) but faster and safe for negatives, useful for fresnel equations</span>
 <a
             href="#144"
             id="144"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >144</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">project_onto</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">lhs</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">rhs</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
+        >144</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">pow5</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">x</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-type">f32</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#145"
             id="145"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >145</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">other_len_sq_rcp</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span> <span class="syntax-operator">/</span> <span class="syntax-function syntax-function-call">dot</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">rhs</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">rhs</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >145</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">x2</span> <span class="syntax-operator">=</span> <span class="syntax-variable">x</span> <span class="syntax-operator">*</span> <span class="syntax-variable">x</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#146"
             id="146"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >146</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-variable">rhs</span> <span class="syntax-operator">*</span> <span class="syntax-function syntax-function-call">dot</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">lhs</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">rhs</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-variable">other_len_sq_rcp</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >146</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-variable">x2</span> <span class="syntax-operator">*</span> <span class="syntax-variable">x2</span> <span class="syntax-operator">*</span> <span class="syntax-variable">x</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#147"
             id="147"
@@ -981,229 +981,229 @@
             id="149"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >149</a><span class="syntax-comment syntax-comment-line">// Below are fast approximations of common irrational and trig functions. These</span>
+        >149</a><span class="syntax-comment syntax-comment-line">/// https://en.wikipedia.org/wiki/Vector_projection#Vector_projection_2</span>
 <a
             href="#150"
             id="150"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >150</a><span class="syntax-comment syntax-comment-line">// are likely most useful when raymarching, for example, where complete numeric</span>
+        >150</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">project_onto</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">lhs</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">rhs</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#151"
             id="151"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >151</a><span class="syntax-comment syntax-comment-line">// accuracy can be sacrificed for greater sample count.</span>
+        >151</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">other_len_sq_rcp</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span> <span class="syntax-operator">/</span> <span class="syntax-function syntax-function-call">dot</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">rhs</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">rhs</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#152"
             id="152"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >152</a>
+        >152</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-variable">rhs</span> <span class="syntax-operator">*</span> <span class="syntax-function syntax-function-call">dot</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">lhs</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">rhs</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-variable">other_len_sq_rcp</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#153"
             id="153"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >153</a><span class="syntax-comment syntax-comment-line">/// Slightly less accurate than fast_acos_4, but much simpler.</span>
+        >153</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#154"
             id="154"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >154</a><span class="syntax-comment syntax-comment-line">/// Inputs outside [-1, 1] are clamped to that range.</span>
+        >154</a>
 <a
             href="#155"
             id="155"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >155</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">fast_acos</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">in_x</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-type">f32</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
+        >155</a><span class="syntax-comment syntax-comment-line">// Below are fast approximations of common irrational and trig functions. These</span>
 <a
             href="#156"
             id="156"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >156</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">x</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">min</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">abs</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">in_x</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >156</a><span class="syntax-comment syntax-comment-line">// are likely most useful when raymarching, for example, where complete numeric</span>
 <a
             href="#157"
             id="157"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >157</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">res</span> <span class="syntax-operator">=</span> <span class="syntax-operator">-</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.156583</span> <span class="syntax-operator">*</span> <span class="syntax-variable">x</span> <span class="syntax-operator">+</span> <span class="syntax-constant">HALF_PI</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >157</a><span class="syntax-comment syntax-comment-line">// accuracy can be sacrificed for greater sample count.</span>
 <a
             href="#158"
             id="158"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >158</a>    <span class="syntax-variable">res</span> <span class="syntax-operator">*=</span> <span class="syntax-function syntax-function-call">sqrt</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span> <span class="syntax-operator">-</span> <span class="syntax-variable">x</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >158</a>
 <a
             href="#159"
             id="159"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >159</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-function syntax-function-call">select</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">PI</span> <span class="syntax-operator">-</span> <span class="syntax-variable">res</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">res</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">in_x</span> <span class="syntax-operator">&gt;=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >159</a><span class="syntax-comment syntax-comment-line">/// Slightly less accurate than fast_acos_4, but much simpler.</span>
 <a
             href="#160"
             id="160"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >160</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
+        >160</a><span class="syntax-comment syntax-comment-line">/// Inputs outside [-1, 1] are clamped to that range.</span>
 <a
             href="#161"
             id="161"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >161</a>
+        >161</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">fast_acos</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">in_x</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-type">f32</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#162"
             id="162"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >162</a><span class="syntax-comment syntax-comment-line">/// 4th order polynomial approximation</span>
+        >162</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">x</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">min</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">abs</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">in_x</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#163"
             id="163"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >163</a><span class="syntax-comment syntax-comment-line">/// 4 VGRP, 16 ALU Full Rate</span>
+        >163</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">res</span> <span class="syntax-operator">=</span> <span class="syntax-operator">-</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.156583</span> <span class="syntax-operator">*</span> <span class="syntax-variable">x</span> <span class="syntax-operator">+</span> <span class="syntax-constant">HALF_PI</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#164"
             id="164"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >164</a><span class="syntax-comment syntax-comment-line">/// 7 * 10^-5 radians precision</span>
+        >164</a>    <span class="syntax-variable">res</span> <span class="syntax-operator">*=</span> <span class="syntax-function syntax-function-call">sqrt</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span> <span class="syntax-operator">-</span> <span class="syntax-variable">x</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#165"
             id="165"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >165</a><span class="syntax-comment syntax-comment-line">/// Reference : Handbook of Mathematical Functions (chapter : Elementary Transcendental Functions), M. Abramowitz and I.A. Stegun, Ed.</span>
+        >165</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-function syntax-function-call">select</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">PI</span> <span class="syntax-operator">-</span> <span class="syntax-variable">res</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">res</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">in_x</span> <span class="syntax-operator">&gt;=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#166"
             id="166"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >166</a><span class="syntax-comment syntax-comment-line">/// Inputs outside [-1, 1] are clamped to that range.</span>
+        >166</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#167"
             id="167"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >167</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">fast_acos_4</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">x</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-type">f32</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
+        >167</a>
 <a
             href="#168"
             id="168"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >168</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">x1</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">min</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">abs</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">x</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >168</a><span class="syntax-comment syntax-comment-line">/// 4th order polynomial approximation</span>
 <a
             href="#169"
             id="169"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >169</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">x2</span> <span class="syntax-operator">=</span> <span class="syntax-variable">x1</span> <span class="syntax-operator">*</span> <span class="syntax-variable">x1</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >169</a><span class="syntax-comment syntax-comment-line">/// 4 VGRP, 16 ALU Full Rate</span>
 <a
             href="#170"
             id="170"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >170</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">x3</span> <span class="syntax-operator">=</span> <span class="syntax-variable">x2</span> <span class="syntax-operator">*</span> <span class="syntax-variable">x1</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >170</a><span class="syntax-comment syntax-comment-line">/// 7 * 10^-5 radians precision</span>
 <a
             href="#171"
             id="171"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >171</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">s</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >171</a><span class="syntax-comment syntax-comment-line">/// Reference : Handbook of Mathematical Functions (chapter : Elementary Transcendental Functions), M. Abramowitz and I.A. Stegun, Ed.</span>
 <a
             href="#172"
             id="172"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >172</a>
+        >172</a><span class="syntax-comment syntax-comment-line">/// Inputs outside [-1, 1] are clamped to that range.</span>
 <a
             href="#173"
             id="173"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >173</a>    <span class="syntax-variable">s</span> <span class="syntax-operator">=</span> <span class="syntax-operator">-</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.2121144</span> <span class="syntax-operator">*</span> <span class="syntax-variable">x1</span> <span class="syntax-operator">+</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.5707288</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >173</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">fast_acos_4</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">x</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-type">f32</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#174"
             id="174"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >174</a>    <span class="syntax-variable">s</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0742610</span> <span class="syntax-operator">*</span> <span class="syntax-variable">x2</span> <span class="syntax-operator">+</span> <span class="syntax-variable">s</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >174</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">x1</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">min</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">abs</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">x</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#175"
             id="175"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >175</a>    <span class="syntax-variable">s</span> <span class="syntax-operator">=</span> <span class="syntax-operator">-</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0187293</span> <span class="syntax-operator">*</span> <span class="syntax-variable">x3</span> <span class="syntax-operator">+</span> <span class="syntax-variable">s</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >175</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">x2</span> <span class="syntax-operator">=</span> <span class="syntax-variable">x1</span> <span class="syntax-operator">*</span> <span class="syntax-variable">x1</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#176"
             id="176"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >176</a>    <span class="syntax-variable">s</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">sqrt</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span> <span class="syntax-operator">-</span> <span class="syntax-variable">x1</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-variable">s</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >176</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">x3</span> <span class="syntax-operator">=</span> <span class="syntax-variable">x2</span> <span class="syntax-operator">*</span> <span class="syntax-variable">x1</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#177"
             id="177"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >177</a>
+        >177</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">s</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#178"
             id="178"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >178</a>	<span class="syntax-comment syntax-comment-line">// acos function mirroring</span>
+        >178</a>
 <a
             href="#179"
             id="179"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >179</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-function syntax-function-call">select</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">PI</span> <span class="syntax-operator">-</span> <span class="syntax-variable">s</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">s</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">x</span> <span class="syntax-operator">&gt;=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >179</a>    <span class="syntax-variable">s</span> <span class="syntax-operator">=</span> <span class="syntax-operator">-</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.2121144</span> <span class="syntax-operator">*</span> <span class="syntax-variable">x1</span> <span class="syntax-operator">+</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.5707288</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#180"
             id="180"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >180</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
+        >180</a>    <span class="syntax-variable">s</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0742610</span> <span class="syntax-operator">*</span> <span class="syntax-variable">x2</span> <span class="syntax-operator">+</span> <span class="syntax-variable">s</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#181"
             id="181"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >181</a>
+        >181</a>    <span class="syntax-variable">s</span> <span class="syntax-operator">=</span> <span class="syntax-operator">-</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0187293</span> <span class="syntax-operator">*</span> <span class="syntax-variable">x3</span> <span class="syntax-operator">+</span> <span class="syntax-variable">s</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#182"
             id="182"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >182</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">fast_atan2</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">y</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">x</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-type">f32</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
+        >182</a>    <span class="syntax-variable">s</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">sqrt</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span> <span class="syntax-operator">-</span> <span class="syntax-variable">x1</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">*</span> <span class="syntax-variable">s</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#183"
             id="183"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >183</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">t0</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">max</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">abs</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">x</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-function syntax-function-call">abs</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">y</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >183</a>
 <a
             href="#184"
             id="184"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >184</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">t1</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">min</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">abs</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">x</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-function syntax-function-call">abs</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">y</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >184</a>	<span class="syntax-comment syntax-comment-line">// acos function mirroring</span>
 <a
             href="#185"
             id="185"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >185</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">t3</span> <span class="syntax-operator">=</span> <span class="syntax-variable">t1</span> <span class="syntax-operator">/</span> <span class="syntax-variable">t0</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >185</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-function syntax-function-call">select</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant">PI</span> <span class="syntax-operator">-</span> <span class="syntax-variable">s</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">s</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">x</span> <span class="syntax-operator">&gt;=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#186"
             id="186"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >186</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">t4</span> <span class="syntax-operator">=</span> <span class="syntax-variable">t3</span> <span class="syntax-operator">*</span> <span class="syntax-variable">t3</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >186</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span>
 <a
             href="#187"
             id="187"
@@ -1215,67 +1215,103 @@
             id="188"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >188</a>    <span class="syntax-variable">t0</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0872929</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >188</a><span class="syntax-keyword syntax-keyword-control syntax-keyword-control-function">fn</span> <span class="syntax-function">fast_atan2</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable syntax-variable-parameter">y</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable syntax-variable-parameter">x</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">f32</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-&gt;</span> <span class="syntax-type">f32</span> <span class="syntax-punctuation syntax-punctuation-bracket">{</span>
 <a
             href="#189"
             id="189"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >189</a>    <span class="syntax-variable">t0</span> <span class="syntax-operator">=</span> <span class="syntax-variable">t0</span> <span class="syntax-operator">*</span> <span class="syntax-variable">t4</span> <span class="syntax-operator">-</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.301895</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >189</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">t0</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">max</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">abs</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">x</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-function syntax-function-call">abs</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">y</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#190"
             id="190"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >190</a>    <span class="syntax-variable">t0</span> <span class="syntax-operator">=</span> <span class="syntax-variable">t0</span> <span class="syntax-operator">*</span> <span class="syntax-variable">t4</span> <span class="syntax-operator">+</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >190</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">t1</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">min</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-function syntax-function-call">abs</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">x</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-function syntax-function-call">abs</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">y</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#191"
             id="191"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >191</a>    <span class="syntax-variable">t3</span> <span class="syntax-operator">=</span> <span class="syntax-variable">t0</span> <span class="syntax-operator">*</span> <span class="syntax-variable">t3</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >191</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">t3</span> <span class="syntax-operator">=</span> <span class="syntax-variable">t1</span> <span class="syntax-operator">/</span> <span class="syntax-variable">t0</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#192"
             id="192"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >192</a>
+        >192</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">t4</span> <span class="syntax-operator">=</span> <span class="syntax-variable">t3</span> <span class="syntax-operator">*</span> <span class="syntax-variable">t3</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#193"
             id="193"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >193</a>    <span class="syntax-variable">t3</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">select</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">t3</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.5</span> <span class="syntax-operator">*</span> <span class="syntax-constant">PI</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-</span> <span class="syntax-variable">t3</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-function syntax-function-call">abs</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">y</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">&gt;</span> <span class="syntax-function syntax-function-call">abs</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">x</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >193</a>
 <a
             href="#194"
             id="194"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >194</a>    <span class="syntax-variable">t3</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">select</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">t3</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant">PI</span> <span class="syntax-operator">-</span> <span class="syntax-variable">t3</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">x</span> <span class="syntax-operator">&lt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >194</a>    <span class="syntax-variable">t0</span> <span class="syntax-operator">=</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.0872929</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#195"
             id="195"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >195</a>    <span class="syntax-variable">t3</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">select</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">-</span><span class="syntax-variable">t3</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">t3</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">y</span> <span class="syntax-operator">&gt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >195</a>    <span class="syntax-variable">t0</span> <span class="syntax-operator">=</span> <span class="syntax-variable">t0</span> <span class="syntax-operator">*</span> <span class="syntax-variable">t4</span> <span class="syntax-operator">-</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.301895</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#196"
             id="196"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >196</a>
+        >196</a>    <span class="syntax-variable">t0</span> <span class="syntax-operator">=</span> <span class="syntax-variable">t0</span> <span class="syntax-operator">*</span> <span class="syntax-variable">t4</span> <span class="syntax-operator">+</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">1.0</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#197"
             id="197"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >197</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-variable">t3</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >197</a>    <span class="syntax-variable">t3</span> <span class="syntax-operator">=</span> <span class="syntax-variable">t0</span> <span class="syntax-operator">*</span> <span class="syntax-variable">t3</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#198"
             id="198"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >198</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span></code>
+        >198</a>
+<a
+            href="#199"
+            id="199"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >199</a>    <span class="syntax-variable">t3</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">select</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">t3</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-float">0.5</span> <span class="syntax-operator">*</span> <span class="syntax-constant">PI</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">-</span> <span class="syntax-variable">t3</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-function syntax-function-call">abs</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">y</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span> <span class="syntax-operator">&gt;</span> <span class="syntax-function syntax-function-call">abs</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">x</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+<a
+            href="#200"
+            id="200"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >200</a>    <span class="syntax-variable">t3</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">select</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">t3</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant">PI</span> <span class="syntax-operator">-</span> <span class="syntax-variable">t3</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">x</span> <span class="syntax-operator">&lt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+<a
+            href="#201"
+            id="201"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >201</a>    <span class="syntax-variable">t3</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">select</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-operator">-</span><span class="syntax-variable">t3</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">t3</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">y</span> <span class="syntax-operator">&gt;</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">0</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+<a
+            href="#202"
+            id="202"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >202</a>
+<a
+            href="#203"
+            id="203"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >203</a>    <span class="syntax-keyword syntax-keyword-control syntax-keyword-control-return">return</span> <span class="syntax-variable">t3</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+<a
+            href="#204"
+            id="204"
+            class="line-number line-number-digits-3"
+            data-nosnippet
+        >204</a><span class="syntax-punctuation syntax-punctuation-bracket">}</span></code>
 </pre>
 
         </div>

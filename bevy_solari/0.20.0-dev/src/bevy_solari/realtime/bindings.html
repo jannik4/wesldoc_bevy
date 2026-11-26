@@ -443,7 +443,7 @@
             id="58"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >58</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">world_cache_cell_updates_soft_target</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
+        >58</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">world_cache_max_cell_updates_per_frame</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#59"
             id="59"
@@ -749,31 +749,31 @@
             id="109"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >109</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">active_cells_new_radiance</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">array</span><span class="syntax-punctuation">&lt;<span class="syntax-type">vec3</span><span class="syntax-punctuation">&lt;<span class="syntax-type">f32</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-namespace">constants</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-type">WORLD_CACHE_SIZE</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
+        >109</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">a</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">array</span><span class="syntax-punctuation">&lt;<span class="syntax-type">u32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-namespace">constants</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-type">WORLD_CACHE_SIZE</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#110"
             id="110"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >110</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">a</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">array</span><span class="syntax-punctuation">&lt;<span class="syntax-type">u32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-namespace">constants</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-type">WORLD_CACHE_SIZE</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
+        >110</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">b</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">array</span><span class="syntax-punctuation">&lt;<span class="syntax-type">u32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-namespace">constants</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-constant">WORLD_CACHE_SIZE</span> <span class="syntax-operator">/</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1024u</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#111"
             id="111"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >111</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">b</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">array</span><span class="syntax-punctuation">&lt;<span class="syntax-type">u32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-constant syntax-constant-numeric syntax-constant-numeric-integer">1024u</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
+        >111</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">active_cell_indices</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">array</span><span class="syntax-punctuation">&lt;<span class="syntax-type">u32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-namespace">constants</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-type">WORLD_CACHE_SIZE</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#112"
             id="112"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >112</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">active_cell_indices</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">array</span><span class="syntax-punctuation">&lt;<span class="syntax-type">u32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-namespace">constants</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-type">WORLD_CACHE_SIZE</span>&gt;</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
+        >112</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">active_cells_count</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#113"
             id="113"
             class="line-number line-number-digits-3"
             data-nosnippet
-        >113</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">active_cells_count</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
+        >113</a>    <span class="syntax-variable syntax-variable-other syntax-variable-other-member">update_window_start</span><span class="syntax-punctuation syntax-punctuation-delimiter">:</span> <span class="syntax-type">u32</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span>
 <a
             href="#114"
             id="114"

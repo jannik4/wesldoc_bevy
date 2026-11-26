@@ -123,6 +123,17 @@
     
     <li>
         <div>
+            <a class="const" href="const.WORLD_CACHE_CELL_NOT_FOUND.html">WORLD_CACHE_CELL_NOT_FOUND</a>
+            
+        </div>
+        <div>
+            <div class="comment-inline"><p>Marker for a cell that isn't in the cache</p>
+</div>
+        </div>
+    </li>
+    
+    <li>
+        <div>
             <a class="const" href="const.WORLD_CACHE_EMPTY_CELL.html">WORLD_CACHE_EMPTY_CELL</a>
             
         </div>
@@ -138,7 +149,7 @@
             
         </div>
         <div>
-            <div class="comment-inline"><p>Maximum amount of attempts to find a cache entry after a hash collision</p>
+            <div class="comment-inline"><p>Number of slots to search for a cell</p>
 </div>
         </div>
     </li>
@@ -178,6 +189,18 @@
     
     <li>
         <div>
+            <a class="fn" href="fn.find_cell_slot.html">find_cell_slot</a>
+            
+            <span class="conditional-inline">!WORLD_CACHE_NON_ATOMIC_LIFE_BUFFER</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
             <a class="fn" href="fn.get_cell_size.html">get_cell_size</a>
             
         </div>
@@ -188,7 +211,7 @@
     
     <li>
         <div>
-            <a class="fn" href="fn.iqint_hash.html">iqint_hash</a>
+            <a class="fn" href="fn.jenkins_hash.html">jenkins_hash</a>
             
         </div>
         <div>
@@ -229,6 +252,18 @@
     <li>
         <div>
             <a class="fn" href="fn.query_world_cache.html">query_world_cache</a>
+            
+            <span class="conditional-inline">!WORLD_CACHE_NON_ATOMIC_LIFE_BUFFER</span>
+            
+        </div>
+        <div>
+            
+        </div>
+    </li>
+    
+    <li>
+        <div>
+            <a class="fn" href="fn.reset_cell_lifetime.html">reset_cell_lifetime</a>
             
             <span class="conditional-inline">!WORLD_CACHE_NON_ATOMIC_LIFE_BUFFER</span>
             

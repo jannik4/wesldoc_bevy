@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
         
-        blend_new_samples - bevy_solari
+        NO_ACTIVE_CELL - bevy_solari
         
     </title>
 
@@ -93,7 +93,7 @@
         <div id="innerContent">
             
             <h2>
-                <a class="path" href="../../index.html">bevy_solari</a><span>::</span><wbr><a class="path" href="../index.html">realtime</a><span>::</span><wbr><a class="path" href="index.html">world_cache_update</a><span>::</span><wbr><a class="fn" href="#">blend_new_samples</a>
+                <a class="path" href="../../index.html">bevy_solari</a><span>::</span><wbr><a class="path" href="../index.html">realtime</a><span>::</span><wbr><a class="path" href="index.html">world_cache_update</a><span>::</span><wbr><a class="const" href="#">NO_ACTIVE_CELL</a>
             </h2>
             
 
@@ -101,14 +101,11 @@
 
 
 
-<a class="module" href="../../../src/bevy_solari/realtime/world_cache_update.html#65-92">Source</a>
+<a class="module" href="../../../src/bevy_solari/realtime/world_cache_update.html#70">Source</a>
 
 
-<pre class="code-block"><code>@compute @workgroup_size(64, 1, 1)
-fn blend_new_samples(
-    @builtin(global_invocation_id)
-    active_cell_id: vec3&lt;u32&gt;
-) </code>
+<pre class="code-block">
+<code>const NO_ACTIVE_CELL = 4294967295;</code>
 </pre>
 
 

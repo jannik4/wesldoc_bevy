@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
         
-        sample_gi - bevy_solari
+        get_active_cell - bevy_solari
         
     </title>
 
@@ -93,7 +93,7 @@
         <div id="innerContent">
             
             <h2>
-                <a class="path" href="../../index.html">bevy_solari</a><span>::</span><wbr><a class="path" href="../index.html">realtime</a><span>::</span><wbr><a class="path" href="index.html">world_cache_update</a><span>::</span><wbr><a class="fn" href="#">sample_gi</a>
+                <a class="path" href="../../index.html">bevy_solari</a><span>::</span><wbr><a class="path" href="../index.html">realtime</a><span>::</span><wbr><a class="path" href="index.html">world_cache_update</a><span>::</span><wbr><a class="fn" href="#">get_active_cell</a>
             </h2>
             
 
@@ -101,16 +101,10 @@
 
 
 
-<a class="module" href="../../../src/bevy_solari/realtime/world_cache_update.html#38-63">Source</a>
+<a class="module" href="../../../src/bevy_solari/realtime/world_cache_update.html#72-77">Source</a>
 
 
-<pre class="code-block"><code>@compute @workgroup_size(64, 1, 1)
-fn sample_gi(
-    @builtin(workgroup_id)
-    workgroup_id: vec3&lt;u32&gt;, 
-    @builtin(global_invocation_id)
-    active_cell_id: vec3&lt;u32&gt;
-) </code>
+<pre class="code-block"><code>fn get_active_cell(thread_id: u32) -> u32</code>
 </pre>
 
 

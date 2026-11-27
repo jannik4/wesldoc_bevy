@@ -222,13 +222,13 @@
             id="22"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >22</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">instance_index</span> <span class="syntax-operator">=</span> <span class="syntax-variable">vertex</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">instance_index</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >22</a>    <span class="syntax-comment syntax-comment-line">// Use vertex.instance_index at each use, not a copy of it, to work around a wgpu dx12 bug.</span>
 <a
             href="#23"
             id="23"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >23</a>
+        >23</a>    <span class="syntax-comment syntax-comment-line">// See https://github.com/gfx-rs/wgpu/issues/4564</span>
 <a
             href="#24"
             id="24"
@@ -240,7 +240,7 @@
             id="25"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >25</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">slot</span> <span class="syntax-operator">=</span> <span class="syntax-namespace">mesh2d_bindings</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-variable">mesh</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">instance_index</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">material_bind_group_slot</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >25</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">slot</span> <span class="syntax-operator">=</span> <span class="syntax-namespace">mesh2d_bindings</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-variable">mesh</span><span class="syntax-punctuation syntax-punctuation-bracket">[</span><span class="syntax-variable">vertex</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">instance_index</span><span class="syntax-punctuation syntax-punctuation-bracket">]</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">material_bind_group_slot</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#26"
             id="26"
@@ -306,7 +306,7 @@
             id="36"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >36</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">uncompressed_vertex</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">decompress_vertex</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">vertex</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">instance_index</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >36</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">let</span> <span class="syntax-variable">uncompressed_vertex</span> <span class="syntax-operator">=</span> <span class="syntax-function syntax-function-call">decompress_vertex</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">vertex</span><span class="syntax-punctuation syntax-punctuation-delimiter">,</span> <span class="syntax-variable">vertex</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">instance_index</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#37"
             id="37"
@@ -336,7 +336,7 @@
             id="41"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >41</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">world_from_local</span> <span class="syntax-operator">=</span> <span class="syntax-namespace">mesh_functions</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-function syntax-function-call">get_world_from_local</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">instance_index</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >41</a>    <span class="syntax-keyword syntax-keyword-storage syntax-keyword-storage-type">var</span> <span class="syntax-variable">world_from_local</span> <span class="syntax-operator">=</span> <span class="syntax-namespace">mesh_functions</span><span class="syntax-punctuation syntax-punctuation-delimiter">::</span><span class="syntax-function syntax-function-call">get_world_from_local</span><span class="syntax-punctuation syntax-punctuation-bracket">(</span><span class="syntax-variable">vertex</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">instance_index</span><span class="syntax-punctuation syntax-punctuation-bracket">)</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#42"
             id="42"
@@ -480,7 +480,7 @@
             id="65"
             class="line-number line-number-digits-2"
             data-nosnippet
-        >65</a>    <span class="syntax-variable">out</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">instance_index</span> <span class="syntax-operator">=</span> <span class="syntax-variable">instance_index</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
+        >65</a>    <span class="syntax-variable">out</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">instance_index</span> <span class="syntax-operator">=</span> <span class="syntax-variable">vertex</span><span class="syntax-punctuation syntax-punctuation-delimiter">.</span><span class="syntax-variable syntax-variable-other syntax-variable-other-member">instance_index</span><span class="syntax-punctuation syntax-punctuation-delimiter">;</span>
 <a
             href="#66"
             id="66"
